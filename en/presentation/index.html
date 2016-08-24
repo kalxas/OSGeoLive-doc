@@ -1003,12 +1003,140 @@
 		            </aside>
 		          </section>
                 </section>
-
 		        </section>
                 <!-- How OSGeo-Live is built/Packaging -->
                 <section>
                    <section>
                       <h2>How is OSGeo-Live created?</h2>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Source Code</h2>
+                      <ul>
+                         <li>Maintained through git (previously subversion)</li>
+                         <li>on <a href="http://github.com/OSGeo/OSGeoLive">GitHub</a></li>
+                         <li>and recently on OSGeo infrastructure through <a href="http://git.osgeo.org/gogs/osgeo/OSGeoLive">Gogs</a> (Thanks Sandro Santilli/SAC for maintaining)</li>
+                         <li>git proved to be less easy for beginers, but more efficient as a tool for team work</li>
+                         <li>Web UI, helped newcomers to contribute through pull requests</li>
+                      </ul>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>GitHub UI</h2>
+                      <p><img src="../../images/presentation/github-code.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Gogs UI</h2>
+                      <p><img src="../../images/presentation/gogs-main.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Bash scripts</h2>
+                      <ul>
+                         <li>OSGeo-Live build process is heavily based on bash script</li>
+                         <li>Each project contributes an individual shell installer</li>
+                         <li>There are 3 script categories:
+                            <ul>
+                               <li>base installers (for core packages like C, Python, Java stacks etc)</li>
+                               <li>service installers (for apache, tomcat, postgresql etc)</li>
+                               <li>project installers (for included OSGeo-Live projects)</li>
+                            </ul>
+                         </li>
+                      </ul>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Bash scripts</h2>
+                      <ul>
+                          <li>The core build process is based on official Ubuntu customization documentation</li>
+                          <li>A base Lubuntu iso is used (currently 16.04.1)</li>
+                          <li>The base iso gets extracted</li>
+                          <li>All install scripts are executed in a chroot environment</li>
+                          <li>The iso gets compressed again</li>
+                      </ul>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                       <h2>Debian Packaging</h2>
+                       <ul>
+                          <li>OSGeo-Live installer scripts are heavily using debian packages</li>
+                          <li>Almost all C and Python projects are installed through deb packages</li>
+                          <li>Only some desktop Java applications use deb files</li>
+                       </ul>
+                   </section>
+                   <section>
+                      <h2>Package sources</h2>
+                      <ul>
+                         <li>DebianGIS project / Debian distribution (upstream to Ubuntu)</li>
+                         <li>UbuntuGIS project: more recent versions than Ubuntu</li>
+                         <li>OSGeo-Live ppa repository</li>
+                      </ul>
+                   </section>
+                   <section>
+                      <h2>DebianGIS</h2>
+                      <p><img src="../../images/presentation/debiangis-thermo.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Debian archive</h2>
+                      <p><img src="../../images/presentation/debian-packages.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>UbuntuGIS</h2>
+                      <p><img src="../../images/presentation/ubuntugis.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>UbuntuGIS ppa</h2>
+                      <p><img src="../../images/presentation/ubuntugis-ppa.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>OSGeo-Live ppa</h2>
+                      <p><img src="../../images/presentation/osgeolive-ppa.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Building the iso</h2>
+                      <p><img src="../../images/presentation/okeanos-ui.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Testing the iso</h2>
+                      <p><img src="../../images/presentation/package-status.jpg" width="800"/></p>
+                      <aside class="notes">
+                         <p>.</p>
+                      </aside>
+                   </section>
+                   <section>
+                      <h2>Reporting issues</h2>
+                      <p><img src="../../images/presentation/trac-osgeolive.jpg" width="800"/></p>
                       <aside class="notes">
                          <p>.</p>
                       </aside>
