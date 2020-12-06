@@ -1,0 +1,166 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>zyGrib Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Natural Earth" href="../overview/naturalearth_overview.html" />
+    <link rel="prev" title="zyGrib" href="../overview/zygrib_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.zygrib.org"><img alt="../../_images/logo_zygrib.png" class="align-right" src="../../_images/logo_zygrib.png" /></a>
+<div class="section" id="zygrib-quickstart">
+<h1>zyGrib Quickstart<a class="headerlink" href="#zygrib-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>zyGrib is a program to download and visualize weather forecast data in the standard GRIB distribution format.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-zygrib" id="id1">Start zyGrib</a></li>
+<li><a class="reference internal" href="#download-data" id="id2">Download data</a></li>
+<li><a class="reference internal" href="#change-views" id="id3">Change views</a></li>
+<li><a class="reference internal" href="#create-an-animation" id="id4">Create an animation</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="start-zygrib">
+<h2><a class="toc-backref" href="#id1">Start zyGrib</a><a class="headerlink" href="#start-zygrib" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>From the desktop, choose <span class="menuselection">Navigation and Maps ‣ zyGrib GRIB file viewer</span>.</li>
+<li>Select your preferred language and click <span class="guilabel">OK</span>. The program opens and you are presented with a map of the world.</li>
+<li>Check the connection to the data server. On the toolbar at the top right of the screen, click the power plug icon. The File Server Status window opens and after a moment, it will confirm the status of the connection.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You’ll need an internet connection to download GRIB weather forecast data. You can get GRIB data from many sources, but as a convenience the zyGrib authors maintain a data server to use with zyGrib.</p>
+</div>
+</div>
+<div class="section" id="download-data">
+<h2><a class="toc-backref" href="#id2">Download data</a><a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use the mouse to click and drag a box on the map canvas on a part of the world you are interested in. The Gulf of Mexico or the southern tip of Africa often have dynamic winds.</li>
+<li>With your box drawn on the map, click the zoom-to-box icon on the taskbar (the magnifying glass with a small box underneath it)</li>
+<li>Again,  mark out a box of interest with a left-click drag, but this time covering most or all of the zoomed-in map canvas.</li>
+<li>Select <span class="menuselection">File ‣ Download GRIB</span> and select the features you want to download. If in doubt, accept the defaults.</li>
+<li>When ready click the <code class="docutils literal"><span class="pre">Download</span></code> button, and save the file to disk.</li>
+</ol>
+<p>The application displays a weather map with a time slider along the bottom, set for the current time. You can use the mouse wheel to zoom in if you like.</p>
+</div>
+<div class="section" id="change-views">
+<h2><a class="toc-backref" href="#id3">Change views</a><a class="headerlink" href="#change-views" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Move the mouse around the map you’ll see the exact conditions listed in the pane on the left.</li>
+<li>You can change the time by moving the slider along the bottom, or from the drop down menu in the top-left of the window.</li>
+<li>From the <code class="docutils literal"><span class="pre">Weather</span> <span class="pre">map</span></code> menu, select a variable to visualize. For example, select <span class="menuselection">Weather map ‣ Cloud cover</span> and the view should change.</li>
+</ol>
+<p>If you downloaded data for the Gulf of Mexico you’ll be interested to view the CAPE data. “CAPE” stands for Convective Available Potential Energy at ground level. It is a measure of atmospheric instability, and high values (1000s of J/kg) indicate a threat of thunderstorms and/or tornadoes.</p>
+<p>If you downloaded data for southern Africa, cloud cover may be more interesting.</p>
+</div>
+<div class="section" id="create-an-animation">
+<h2><a class="toc-backref" href="#id4">Create an animation</a><a class="headerlink" href="#create-an-animation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click the right-hand most icon on the toolbar (a rocketship). A new window opens and an animation will be generated.</li>
+<li>Wait while it runs through the time sequence for the first time. When it is done it will rewind to the beginning of the time series.</li>
+<li>You can play, pause and rewind the sequence as you like.</li>
+<li>You can also save each frame as an image file for later encoding into an AVI, MPEG, or animated GIF <a class="reference external" href="https://grasswiki.osgeo.org/wiki/Movies">using other software</a>.</li>
+<li>When you’re done, click the red power button to close.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id5">What next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../overview/opencpn_overview.html"><span class="doc">OpenCPN software</span></a> (also on this
+disc) has a GRIB overlay plugin which you may try with your newly
+downloaded GRIB file.
+See
+the <a class="reference internal" href="opencpn_quickstart.html"><span class="doc">OpenCPN quickstart</span></a> for details.</p>
+<ul class="simple">
+<li>Website: <a class="reference external" href="https://www.zygrib.org">https://www.zygrib.org</a></li>
+<li>Support: <a class="reference external" href="https://zygrib.org/forum/">https://zygrib.org/forum/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

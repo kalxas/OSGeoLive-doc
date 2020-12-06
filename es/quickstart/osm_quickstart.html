@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guía de Inicio Rápido de OpenStreetMap &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Editor iD" href="../overview/ideditor_overview.html" />
+    <link rel="prev" title="OpenStreetMap" href="../overview/osm_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.openstreetmap.org/"><img alt="../../_images/logo_osm.png" class="align-right" src="../../_images/logo_osm.png" /></a>
+<div class="section" id="openstreetmap-quickstart">
+<h1>Guía de Inicio Rápido de OpenStreetMap<a class="headerlink" href="#openstreetmap-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>OpenStreetMap es un mapa libre de nivel calle  del mundo, creado por una comunidad permanentemente creciente de mappers. Cualquiera puede editar OpenStreetMap. El <a class="reference external" href="https://learnosm.org">Sitio Web Aprenda OSM</a> proporciona guías fáciles de entender,  paso a paso, para que usted pueda comenzar a contribuir a OpenStreetMap y usando  los datos OpenStreetMap . La guía Aprenda OSM en el enlace de arriba paso a paso muestra cómo navegar por el Sitio Web de OpenStreetMap, vistas y mapas de impresión y regístrese para una cuenta de usuario. Después de tener tu propio nombre de usuario y contraseña, podrás añadir tus primeros puntos en el mapa, aprende a hacer encuestas de calle y trabajo con imágenes aéreas.</p>
+<p>El resto de esta guía presenta parte del software en línea y fuera de línea utilizada para editar y representar datos OSM.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#programs-that-work-with-osm-data" id="id1">Programas que funcionan con datos OSM</a><ul>
+<li><a class="reference internal" href="#id" id="id2">iD</a></li>
+<li><a class="reference internal" href="#josm" id="id3">JOSM</a></li>
+<li><a class="reference internal" href="#merkaartor" id="id4">Merkaartor</a></li>
+<li><a class="reference internal" href="#qgis" id="id5">QGIS</a></li>
+<li><a class="reference internal" href="#osmosis" id="id6">Osmosis</a></li>
+<li><a class="reference internal" href="#osm2pgsql" id="id7">osm2pgsql</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id8">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="programs-that-work-with-osm-data">
+<h2><a class="toc-backref" href="#id1">Programas que funcionan con datos OSM</a><a class="headerlink" href="#programs-that-work-with-osm-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="id">
+<h3><a class="toc-backref" href="#id2">iD</a><a class="headerlink" href="#id" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>** iD ** es el editor en línea de predeterminado para OpenStreetMap (OSM). iD es rápido y fácil de usar y permite la asignación de datos de fuentes como la encuesta de terreno, vía satélite e imaginarios aéreas, GPS rastros o imágenes a escala vial.</p>
+<ul class="simple">
+<li>Página de Inicio: <a class="reference external" href="https://www.openstreetmap.org/edit">https://www.openstreetmap.org/edit</a></li>
+<li>Documentación: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+<li>Tutorial: <a class="reference external" href="https://learnosm.org/en/beginner/id-editor/">https://learnosm.org/en/beginner/id-editor/</a></li>
+</ul>
+</div>
+<div class="section" id="josm">
+<h3><a class="toc-backref" href="#id3">JOSM</a><a class="headerlink" href="#josm" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>JOSM</strong> (Java OpenStreetMap Editor) es un avanzado editor para OpenStreetMap (OSM), escrito en Java. Es más potente y complejo que iD, puede utilizarse para la edición masiva, fuera de línea o en una conexión a Internet no fiable. Se puede extender con plugins, preconfiguraciones personalizadas, y más extensiones.</p>
+<ul class="simple">
+<li>Página Web: <a class="reference external" href="https://josm.openstreetmap.de">https://josm.openstreetmap.de</a></li>
+<li>Guía de usuario: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/JOSM/Guide">https://wiki.openstreetmap.org/wiki/JOSM/Guide</a></li>
+<li>Tutorial: <a class="reference external" href="https://learnosm.org/en/josm/start-josm/">https://learnosm.org/en/josm/start-josm/</a></li>
+<li>Colección de conectores de JOSM: <a class="reference external" href="https://josm.openstreetmap.de/wiki/Plugins">https://josm.openstreetmap.de/wiki/Plugins</a></li>
+</ul>
+</div>
+<div class="section" id="merkaartor">
+<h3><a class="toc-backref" href="#id4">Merkaartor</a><a class="headerlink" href="#merkaartor" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Merkaartor</strong> es un editor de mapas de OpenStreetMap que utiliza el kit de herramientas de Qt. Es un poco más fácil de usar que JOSM, pero tiene un poco menos de funciones.</p>
+<ul class="simple">
+<li>Página Web: <a class="reference external" href="http://merkaartor.be">http://merkaartor.be</a></li>
+<li>Ayuda en línea: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation">https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="qgis">
+<h3><a class="toc-backref" href="#id5">QGIS</a><a class="headerlink" href="#qgis" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los datos de OpenStreetMap se pueden cargar en ** QGIS ** como capa vectorial, como una funcionalidad central o a través de plugins como QuickOSM.</p>
+<ul class="simple">
+<li>QuickOSM: <a class="reference external" href="https://plugins.qgis.org/plugins/QuickOSM/">https://plugins.qgis.org/plugins/QuickOSM/</a></li>
+<li>Ayuda en línea: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
+<li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osm-in-qgis/">https://learnosm.org/en/osm-data/osm-in-qgis/</a></li>
+</ul>
+</div>
+<div class="section" id="osmosis">
+<h3><a class="toc-backref" href="#id6">Osmosis</a><a class="headerlink" href="#osmosis" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Osmosis</strong> es un programa muy capaz para realizar muchas tareas a un nivel bruto en datos OSM. Esto incluye datos de importación y exportación a bases de datos, clasificación, limpieza y creación de volcados de datos.</p>
+<ul class="simple">
+<li>Documentación: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osmosis#Usage">https://wiki.openstreetmap.org/wiki/Osmosis#Usage</a></li>
+<li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osmosis/">https://learnosm.org/en/osm-data/osmosis/</a></li>
+</ul>
+</div>
+<div class="section" id="osm2pgsql">
+<h3><a class="toc-backref" href="#id7">osm2pgsql</a><a class="headerlink" href="#osm2pgsql" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>osm2pgsql</strong> es un programa que convierte datos de OpenStreetMap (.osm) en un formato que puede cargarse en PostgreSQL (PostGIS). A menudo se utiliza para renderizar visualmente los datos de OSM utilizando Mapnik, ya que Mapnik puede consultar PostgreSQL para datos del mapa, pero no trabaja directamente con archivos OSM.</p>
+<ul class="simple">
+<li>Página Web: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
+<li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osm2pgsql/">https://learnosm.org/en/osm-data/osm2pgsql/</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id8">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Obtenga más información sobre OSM en el sitio web: <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a></p>
+<p>Obtenga soporte: <a class="reference external" href="https://www.openstreetmap.org/help">https://www.openstreetmap.org/help</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

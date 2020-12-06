@@ -1,0 +1,259 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapCache Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="deegree" href="../overview/deegree_overview.html" />
+    <link rel="prev" title="MapCache" href="../overview/mapcache_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapserver.org/mapcache"><img alt="../../_images/logo_mapcache.png" class="align-right" src="../../_images/logo_mapcache.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapcache-quickstart">
+<h1>MapCache Quickstart<a class="headerlink" href="#mapcache-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>MapCache is a tile server that speeds up access to WMS layers. It can be run as a CGI application
+under many different web servers, or as an Apache module. OSGeoLive has MapCache installed and configured as an Apache module.</p>
+<p>This quick start shows how to add a new WMS layer to a MapCache set-up, display the tile service in an OpenLayers web map, and
+seed a tile cache from the command line.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#adding-a-new-tileset-and-displaying-in-openlayers" id="id1">Adding a New Tileset and Displaying in OpenLayers</a></li>
+<li><a class="reference internal" href="#adding-new-services" id="id2">Adding New Services</a></li>
+<li><a class="reference internal" href="#the-seeder-application" id="id3">The Seeder Application</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">What Next?</a></li>
+</ul>
+</div>
+<div class="section" id="adding-a-new-tileset-and-displaying-in-openlayers">
+<h2><a class="toc-backref" href="#id1">Adding a New Tileset and Displaying in OpenLayers</a><a class="headerlink" href="#adding-a-new-tileset-and-displaying-in-openlayers" title="Permalink to this headline">¶</a></h2>
+<p>MapCache is configured using XML files. OSGeoLive includes an example configuration file at <code class="docutils literal"><span class="pre">/usr/local/share/mapcache/mapcache-quickstart.xml</span></code>.
+The example uses the OSGeoLive demo MapServer application of Itasca County in the United States as its source.</p>
+<p>In this quick start we will set up tile caching for an additional WMS layer and display the tiles in a simple HTML page containing an OpenLayers map.</p>
+<p>First let’s open the MapCache configuration file in FeatherPad - a text editor. Open FeatherPad from the command line with elevated permissions, so you can save the file,
+using System Tools &gt; QTerminal and then running run the command below:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
+</pre></div>
+</div>
+<p>We can see which layers are available in our source WMS server by opening the following link: <a class="reference external" href="http://localhost/itasca/?service=wms&amp;request=getcapabilities">http://localhost/itasca/?service=wms&amp;request=getcapabilities</a>
+MapCache is configured to forward on any requests it can’t handle, such as GetCapabilities, to MapServer with the rule shown below:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;forwarding_rule</span> <span class="na">name=</span><span class="s">&quot;catch all&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;http&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/http&gt;</span>
+<span class="nt">&lt;/forwarding_rule&gt;</span>
+</pre></div>
+</div>
+<p>One of the layer names listed in the WMS Capabilities document is <code class="docutils literal"><span class="pre">dlgstln2</span></code> - streams for Itasca county. We will add this as a new tileset to the
+MapCache service. First we add a <code class="docutils literal"><span class="pre">&lt;source&gt;</span></code> block - this is the configuration to retrieve data from the WMS server. Add the following XML block after the
+existing <code class="docutils literal"><span class="pre">&lt;source</span> <span class="pre">name=&quot;lake_source&quot;</span> <span class="pre">type=&quot;wms&quot;&gt;...&lt;/source&gt;</span></code> block used for the lakes to <code class="docutils literal"><span class="pre">mapcache-quickstart.xml</span></code>:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;source</span> <span class="na">name=</span><span class="s">&quot;streams_source&quot;</span> <span class="na">type=</span><span class="s">&quot;wms&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;getmap&gt;</span>
+    <span class="nt">&lt;params&gt;</span>
+      <span class="nt">&lt;FORMAT&gt;</span>image/png<span class="nt">&lt;/FORMAT&gt;</span>
+      <span class="nt">&lt;LAYERS&gt;</span>dlgstln2<span class="nt">&lt;/LAYERS&gt;</span>
+      <span class="nt">&lt;MAP&gt;</span>/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map<span class="nt">&lt;/MAP&gt;</span>
+    <span class="nt">&lt;/params&gt;</span>
+  <span class="nt">&lt;/getmap&gt;</span>
+  <span class="nt">&lt;http&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://localhost/cgi-bin/mapserv?<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/http&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal"><span class="pre">&lt;params&gt;</span></code> block to pass the WMS layer name, and the image format back to the WMS server, along with the MapServer specific
+<code class="docutils literal"><span class="pre">&lt;map&gt;</span></code> parameter. The URL to the WMS server is in the <code class="docutils literal"><span class="pre">&lt;http&gt;</span></code> block. For documentation on all configuration file elements
+see the <a class="reference external" href="https://mapserver.org/mapcache/config.html">Configuration Documentation</a>.</p>
+<p>Next we will add a <code class="docutils literal"><span class="pre">&lt;tileset&gt;</span></code> block, which defines how the source will be stored and served as tiles. Place the following block after
+the existing <code class="docutils literal"><span class="pre">&lt;tileset</span> <span class="pre">name=&quot;lakes&quot;&gt;...&lt;/tileset&gt;</span></code> block.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tileset</span> <span class="na">name=</span><span class="s">&quot;streams&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source&gt;</span>streams_source<span class="nt">&lt;/source&gt;</span>
+  <span class="nt">&lt;cache&gt;</span>disk<span class="nt">&lt;/cache&gt;</span>
+  <span class="nt">&lt;grid&gt;</span>GoogleMapsCompatible<span class="nt">&lt;/grid&gt;</span>
+  <span class="nt">&lt;format&gt;</span>PNG<span class="nt">&lt;/format&gt;</span>
+<span class="nt">&lt;/tileset&gt;</span>
+</pre></div>
+</div>
+<p>We set the grid type to the inbuilt <code class="docutils literal"><span class="pre">GoogleMapsCompatible</span></code> grid used as the default tiling scheme in many web mapping applications.
+The <code class="docutils literal"><span class="pre">name=streams</span></code> is used by client applications to access the tileset. We are using a disk-based cache (rather than storing tiles in a database or in
+a cloud environment).</p>
+<p>Anytime you modify the MapCache configuration file you need to reload Apache for the changes to come into effect. This can be
+run from the command line as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apachectl -k graceful
+</pre></div>
+</div>
+<p>You should now be able to access a tile with the following URL: <a class="reference external" href="http://localhost/itasca/gmaps/streams&#64;GoogleMapsCompatible/12/987/1433.png">http://localhost/itasca/gmaps/streams&#64;GoogleMapsCompatible/12/987/1433.png</a></p>
+<img alt="../../_images/stream_tile.png" src="../../_images/stream_tile.png" />
+<p>Now let’s add the tileset to our OpenLayers map. Open the HTML page using the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /var/www/html/mapcache-quickstart/index.html
+</pre></div>
+</div>
+<p>Uncomment out the JavaScript code below:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">,</span><span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">XYZ</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost/itasca/gmaps/streams@GoogleMapsCompatible/{z}/{x}/{y}.png&#39;</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Now refresh the page at <a class="reference external" href="http://localhost/mapcache-quickstart/">http://localhost/mapcache-quickstart/</a> - you should see the new streams layer being served by MapCache.</p>
+<img alt="../../_images/openlayers.png" src="../../_images/openlayers.png" />
+<p>As you browse the map you will see the tile cache folders in <code class="docutils literal"><span class="pre">/var/cache/mapcache</span></code> fill with PNG images.</p>
+<img alt="../../_images/tilecache.png" src="../../_images/tilecache.png" />
+<p>The location and type of the cache is set by the following block in the configuration file:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cache</span> <span class="na">name=</span><span class="s">&quot;disk&quot;</span> <span class="na">type=</span><span class="s">&quot;disk&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;base&gt;</span>/var/cache/mapcache<span class="nt">&lt;/base&gt;</span>
+  <span class="nt">&lt;symlink_blank/&gt;</span>
+<span class="nt">&lt;/cache&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-new-services">
+<h2><a class="toc-backref" href="#id2">Adding New Services</a><a class="headerlink" href="#adding-new-services" title="Permalink to this headline">¶</a></h2>
+<p>You can configure Apache to run as many different MapCache services, each with its own configuration file by editing the
+<code class="docutils literal"><span class="pre">/etc/apache2/conf-enabled/mapcache.conf</span></code> file. As this requires super user permissions you can open it for editing in FeatherPad by
+running the command below:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /etc/apache2/conf-enabled/mapcache.conf
+</pre></div>
+</div>
+<p>OSGeoLive has two MapCache services, each with an alias and a configuration file.
+The alias is the URL to use on the server, e.g. <a class="reference external" href="http://localhost/mapcache">http://localhost/mapcache</a> and <a class="reference external" href="http://localhost/itasca">http://localhost/itasca</a></p>
+<div class="highlight-apache"><div class="highlight"><pre><span></span><span class="nt">&lt;IfModule</span> <span class="s">mapcache_module</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;Directory</span> <span class="s">/path/to/directory</span><span class="nt">&gt;</span>
+      <span class="nb">Order</span> Allow,Deny
+      <span class="nb">Allow</span> from <span class="k">all</span>
+   <span class="nt">&lt;/Directory&gt;</span>
+   <span class="nb">MapCacheAlias</span> <span class="sx">/mapcache</span> <span class="s2">&quot;/usr/share/doc/libapache2-mod-mapcache/examples/mapcache.xml&quot;</span>
+   <span class="nb">MapCacheAlias</span> <span class="sx">/itasca</span> <span class="s2">&quot;/home/user/mapcache.xml&quot;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>To add a new service simply add a new line in the following format, replacing WEB_PATH and PATH_TO_CONFIG_FILE with the
+relevant parameters:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>MapCacheAlias WEB_PATH &quot;PATH_TO_CONFIG_FILE&quot;
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://mapserver.org/mapcache/install.html#apache-module-specific-instructions">Apache Module Instructions</a> for further details
+on configuring the Apache module.</p>
+</div>
+<div class="section" id="the-seeder-application">
+<h2><a class="toc-backref" href="#id3">The Seeder Application</a><a class="headerlink" href="#the-seeder-application" title="Permalink to this headline">¶</a></h2>
+<p>Map tiles are dynamically created when requested by the web server. To speed up request times
+we can generate tiles using a command line application. This process is known as <em>seeding</em>, and the
+MapCache command line application is <code class="docutils literal"><span class="pre">mapcache_seed</span></code>.</p>
+<p>To make sure the tiles created by the seeder application are accessible by the web server account
+we add <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">www-data</span></code> before running the <code class="docutils literal"><span class="pre">mapcache_seed</span></code> application.</p>
+<p>In the example below we pass in three options to <code class="docutils literal"><span class="pre">mapcache_seed</span></code>:</p>
+<ul class="simple">
+<li><em>config</em>: <code class="docutils literal"><span class="pre">/home/user/mapcache/mapcache-quickstart.xml</span></code> - this is the path to the MapCache
+configuration file</li>
+<li><em>tileset</em>: <code class="docutils literal"><span class="pre">lakes</span></code> - this is the tileset name we are going to seed, and is found in <code class="docutils literal"><span class="pre">mapcache-quickstart.xml</span></code></li>
+<li><em>zoom</em>: <code class="docutils literal"><span class="pre">0,5</span></code> - this is the range of zoom levels we are going to seed, from zoom level 0 (the extent of the world
+in a single tile) to zoom level 5</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo -u www-data mapcache_seed --config /home/user/mapcache/mapcache-quickstart.xml --tileset lakes --zoom <span class="m">0</span>,5
+</pre></div>
+</div>
+<p>For the many other <code class="docutils literal"><span class="pre">mapcache_seed</span></code> options please see the
+<a class="reference external" href="https://mapserver.org/mapcache/seed.html">Seeder Documentation</a>.</p>
+<img alt="../../_images/seeder.png" src="../../_images/seeder.png" />
+<p>If you want to remove a cache folder you can run the following command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rm -r /var/cache/mapcache/lakes
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">What Next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Read the <a class="reference external" href="https://mapserver.org/mapcache/index.html">MapCache Documentation</a>.</li>
+<li>Then join the MapServer community, of which MapCache is a part, on the <a class="reference external" href="https://www.mapserver.org/community/lists.html">Mailing Lists</a> to exchange ideas, discuss
+potential software improvements and ask questions.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

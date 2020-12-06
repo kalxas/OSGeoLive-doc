@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNetwork Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Sisällysluettelo" href="../genindex.html" />
+    <link rel="search" title="Etsi" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="pycsw" href="../overview/pycsw_overview.html" />
+    <link rel="prev" title="GeoNetwork" href="../overview/geonetwork_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonetwork-opensource.org"><img alt="../../_images/logo_geonetwork.png" class="align-right" src="../../_images/logo_geonetwork.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonetwork-quickstart">
+<h1>GeoNetwork Quickstart<a class="headerlink" href="#geonetwork-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>GeoNetwork is a catalog application to manage spatially referenced resources. It provides powerful metadata editing and search functions as well as an interactive web map viewer. It is currently used in numerous Spatial Data Infrastructure initiatives across the world.</p>
+<div class="contents local topic" id="sisallys">
+<ul class="simple">
+<li><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></li>
+<li><a class="reference internal" href="#access-the-catalog" id="id2">Access the catalog</a></li>
+<li><a class="reference internal" href="#sign-in" id="id3">Sign in</a></li>
+<li><a class="reference internal" href="#load-sample-data" id="id4">Load sample data</a></li>
+<li><a class="reference internal" href="#search-for-spatial-data" id="id5">Search for spatial data</a></li>
+<li><a class="reference internal" href="#display-results" id="id6">Display results</a></li>
+<li><a class="reference internal" href="#add-layers-to-the-map" id="id7">Add layers to the map</a></li>
+<li><a class="reference internal" href="#what-next" id="id8">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id1">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>GeoNetwork can directly be started from the OSGeo Live start menu and will be available at <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a> some moments later. Check the <a class="reference external" href="https://geonetwork-opensource.org/manuals/trunk/en/install-guide/index.html">Installation Guide</a> if you are using GeoNetwork is some other context.</p>
+<p>Throughout this guide we will use the URL <code class="docutils literal"><span class="pre">http://localhost:8880/geonetwork</span></code> to refer to the catalog, please substitute a different URL if this is not correct for your system.</p>
+</div>
+<div class="section" id="access-the-catalog">
+<h2><a class="toc-backref" href="#id2">Access the catalog</a><a class="headerlink" href="#access-the-catalog" title="Permalink to this headline">¶</a></h2>
+<p>In the Web Services folder on the Desktop (or via the start menu), double-click <strong>start GeoNetwork</strong>. This will open the Firefox web browser at the URL <code class="docutils literal"><span class="pre">http://localhost:8880/geonetwork</span></code>. This will be referred to throughout this document as the <em>homepage</em>.</p>
+<p>You can return to the  homepage at any point by selecting the catalogue logo in the top left of the top toolbar. In the screenshot below, this is labelled  “My GeoNetwork catalogue” but it may have a different name and logo.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_home-page.png"><img alt="../../_images/geonetwork_home-page.png" src="../../_images/geonetwork_home-page.png" style="width: 716.8px; height: 427.7px;" /></a>
+</div>
+</div>
+<div class="section" id="sign-in">
+<h2><a class="toc-backref" href="#id3">Sign in</a><a class="headerlink" href="#sign-in" title="Permalink to this headline">¶</a></h2>
+<p>Select <strong>Sign in</strong> in the top right of the top toolbar in the homepage to visit the sign in page. Enter the username <code class="docutils literal"><span class="pre">admin</span></code> and password <code class="docutils literal"><span class="pre">admin</span></code> and select the blue <strong>Sign in</strong> button to sign in as the catalog administrator.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_signin.png"><img alt="../../_images/geonetwork_signin.png" src="../../_images/geonetwork_signin.png" style="width: 539.0px; height: 161.7px;" /></a>
+</div>
+<p>Once signed in, the top toolbar will change to include some additional elements, namely a link to the Admin console, the name of the signed in user, a link to Sign out, and a dropdown box for changing the interface language.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_identified-user.png"><img alt="../../_images/geonetwork_identified-user.png" src="../../_images/geonetwork_identified-user.png" style="width: 347.9px; height: 32.199999999999996px;" /></a>
+</div>
+</div>
+<div class="section" id="load-sample-data">
+<h2><a class="toc-backref" href="#id4">Load sample data</a><a class="headerlink" href="#load-sample-data" title="Permalink to this headline">¶</a></h2>
+<p>Select <strong>Admin console</strong> in the top toolbar to access the administrative functions in the catalog, then select the <strong>Metadata and templates</strong> menuitem to access the sample data and templates tab.</p>
+<p>This page lists all the metadata standards loaded in the catalog. The default standards in GeoNetwork are:</p>
+<ul class="simple">
+<li>Geographic information - Metadata (iso19139:2007)</li>
+<li>Geographic information - Metadata (iso19115-3.2018)</li>
+<li>Dublin Core (for CSW only) (csw-record)</li>
+<li>Dublin Core (dublin core)</li>
+<li>Geographic information - Methodology for feature cataloguing (iso9110)</li>
+</ul>
+<p>For the purposes of this Quick Start Guide, select <code class="docutils literal"><span class="pre">Geographic</span> <span class="pre">information</span> <span class="pre">-</span> <span class="pre">Metadata</span> <span class="pre">(iso19139:2007)</span></code> and then select first the <strong>Load samples for selected standards</strong> button below the list.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_templates.png"><img alt="../../_images/geonetwork_templates.png" src="../../_images/geonetwork_templates.png" style="width: 534.1px; height: 467.59999999999997px;" /></a>
+</div>
+<p><em>When this process is complete, a notice will appear in the right of the window indicating that 5 record(s) have been added for schema ‘iso19139’.</em></p>
+</div>
+<div class="section" id="search-for-spatial-data">
+<h2><a class="toc-backref" href="#id5">Search for spatial data</a><a class="headerlink" href="#search-for-spatial-data" title="Permalink to this headline">¶</a></h2>
+<p>Return to the catalog homepage by selecting the catalog name in the top left of the top toolbar. The homepage will now show icons representing the loaded records, classified by topic (in blue) and resource type (in green). Below this are tabs classifying the records by date added (latest news) and popularity (most popular).</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_screenshot.png"><img alt="../../_images/geonetwork_screenshot.png" src="../../_images/geonetwork_screenshot.png" style="width: 716.8px; height: 532.0px;" /></a>
+</div>
+<p>Select <strong>Search</strong> in the top toolbar to access the Search page.</p>
+<p>The Search page provides different ways for search:</p>
+<ul class="simple">
+<li>a full text search box providing suggestions as you type,</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_full-text.png"><img alt="../../_images/geonetwork_full-text.png" src="../../_images/geonetwork_full-text.png" style="width: 415.79999999999995px; height: 43.4px;" /></a>
+</div>
+<ul class="simple">
+<li><em>Search facets</em>, or  filters, that provide ways of narrowing down the search results, such as <em>Type of Resource</em>, <em>Topic</em>, <em>Keywords</em>,</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_facets.png"><img alt="../../_images/geonetwork_facets.png" src="../../_images/geonetwork_facets.png" style="width: 215.6px; height: 248.49999999999997px;" /></a>
+</div>
+<ul class="simple">
+<li>An overview map, where you can draw a box to filter results spatially (Hint- if you can’t see this, select MAP in the bottom right corner of your page)</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_spatial-filter.png"><img alt="../../_images/geonetwork_spatial-filter.png" src="../../_images/geonetwork_spatial-filter.png" style="width: 169.39999999999998px; height: 162.39999999999998px;" /></a>
+</div>
+<ul class="simple">
+<li>By selecting the vertical ellipsis in the search box you can access the <strong>advanced search</strong> panel and search by <em>category</em>, <em>keyword</em>, <em>contact</em>, or records within a specific time period.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_advanced.png"><img alt="../../_images/geonetwork_advanced.png" src="../../_images/geonetwork_advanced.png" style="width: 640.5px; height: 142.79999999999998px;" /></a>
+</div>
+</div>
+<div class="section" id="display-results">
+<h2><a class="toc-backref" href="#id6">Display results</a><a class="headerlink" href="#display-results" title="Permalink to this headline">¶</a></h2>
+<p>The search results are depicted as “cards”, showing the Categories the metadata is classified with, the title of the record, a thumbnail, an abstract (if present) and links to downloads and other resources (if present).</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_a-result.png"><img alt="../../_images/geonetwork_a-result.png" src="../../_images/geonetwork_a-result.png" style="width: 315.7px; height: 177.1px;" /></a>
+</div>
+<p>Select a card to take you to a page showing the full details for that record. Select the blue <strong>Back to search</strong> button to return to the Search page when you’re done.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_a-record.png"><img alt="../../_images/geonetwork_a-record.png" src="../../_images/geonetwork_a-record.png" style="width: 716.8px; height: 448.7px;" /></a>
+</div>
+<p>In the top right of the record are icons for:</p>
+<ul class="simple">
+<li>Editing the record (when logged in)</li>
+<li>Deleting the record</li>
+<li>Managing the record (such as assigning viewing or editing privileges, transferring ownership to a different user)</li>
+<li>Downloading the record as multiple formats</li>
+<li>Switching to <strong>Full view</strong> or <strong>XML view</strong></li>
+</ul>
+<p>Switching to <strong>Full view</strong> will show more detailed metadata. To switch back to the original view select <strong>Default view</strong> from the list.</p>
+</div>
+<div class="section" id="add-layers-to-the-map">
+<h2><a class="toc-backref" href="#id7">Add layers to the map</a><a class="headerlink" href="#add-layers-to-the-map" title="Permalink to this headline">¶</a></h2>
+<p>From the <strong>Search tab</strong>, click on the card for <strong>Physiographic Map of North and Central Eurasia (Sample record, please remove!)</strong> to view the metadata. Move down the page until the <strong>Download and links</strong> section is visible.</p>
+<p>The <strong>Download and links</strong> section shows external resources associated with the metadata record, such as:</p>
+<ul class="simple">
+<li>A file download of the data,</li>
+<li>Further information such as a web page,</li>
+<li>A Web Mapping Service (WMS) or Web Feature Service (WFS) link to the data.</li>
+</ul>
+<p>Locate the link labelled as <strong>This dataset is published in the view service (WMS) available at http://data.fao.org/maps/wms with layer name GEONETWORK:phy_landf_7386.</strong> and select <strong>Add to map</strong>.</p>
+<p>This step will switch you to the <strong>Map</strong> tab in the catalog, and after a short delay the WMS layer will be added to the map.</p>
+<p>Tools for using the Map are arranged in two groups in the right-hand side of the map. The top group looks like this:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maptools_top.png"><img alt="../../_images/geonetwork_maptools_top.png" src="../../_images/geonetwork_maptools_top.png" style="width: 27.299999999999997px; height: 203.0px;" /></a>
+</div>
+<p>The tools are as follows:</p>
+<ul class="simple">
+<li>Add new layers to the map. You can search the catalog, add layers from web services, or KML,</li>
+<li>Manage existing layers or change the background map (the default is openstreetmap),</li>
+<li>Filter layers on the map (if configured),</li>
+<li>Manage the Map, by setting it back to default settings, loading a new map definition, downloading the current map, or saving the map configuration as a layer in the catalog,</li>
+<li>Print the map,</li>
+<li>Synchronise layers with the small map on the Search tab,</li>
+<li>Measure distances on the map,</li>
+<li>Draw annotations on the map.</li>
+</ul>
+<p>The lower group of tools look like this:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maptools_bottom.png"><img alt="../../_images/geonetwork_maptools_bottom.png" src="../../_images/geonetwork_maptools_bottom.png" style="width: 28.7px; height: 126.69999999999999px;" /></a>
+</div>
+<p>They are as follows:</p>
+<ul class="simple">
+<li>Zoom in on the map,</li>
+<li>Zoom out on the map,</li>
+<li>Zoom to the initial extent of the map,</li>
+<li>Zoom to your position (if your browser is location-enabled),</li>
+<li>Add a graticule (grid lines) to your map.</li>
+</ul>
+<p>Additionally there is a geographic search tool in the top left.</p>
+<p>Using the Manage Layers tool, select the cog symbol next to <strong>Physiography of North and Central Eurasia Landform</strong> and select <strong>Zoom to layer</strong>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_manage_layers_cog.png"><img alt="../../_images/geonetwork_manage_layers_cog.png" src="../../_images/geonetwork_manage_layers_cog.png" style="width: 291.9px; height: 272.29999999999995px;" /></a>
+</div>
+<p>The map will zoom to the extent of this layer.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_zoom_to_layer.png"><img alt="../../_images/geonetwork_zoom_to_layer.png" src="../../_images/geonetwork_zoom_to_layer.png" style="width: 1302.0px; height: 576.8px;" /></a>
+</div>
+<p>Select the <strong>paintbrush</strong> icon next to the layer to see the legend, showing you the classification used for the display. You can dismiss this dialog by selecting the <strong>X</strong> in the top right corner.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_layer_legend.png"><img alt="../../_images/geonetwork_layer_legend.png" src="../../_images/geonetwork_layer_legend.png" style="width: 249.89999999999998px; height: 357.7px;" /></a>
+</div>
+<p>Select a feature on the map corresponding to a category in the legend, such as an area of water. Zoom and pan around the map as needed to identify a suitable area. Clicking on the feature will bring up an identification box at the bottom of the map showing details about the area selected.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maplayer_infoclick.png"><img alt="../../_images/geonetwork_maplayer_infoclick.png" src="../../_images/geonetwork_maplayer_infoclick.png" style="width: 1271.1999999999998px; height: 535.5px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id8">What next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>Visit the <a class="reference external" href="https://geonetwork-opensource.org/manuals/trunk/en/user-guide/index.html">Geonetwork User Guide</a> and try the chapter on <strong>Describing Information</strong>, to learn how to create and edit metadata records.</p>
+<p>Follow up by visiting subsequent chapters to learn how to associate resources with your metadata, tag it with keywords and add it to categories, and publish your metadata to the outside world.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,287 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>QGIS Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GRASS GIS" href="../overview/grass_overview.html" />
+    <link rel="prev" title="QGIS" href="../overview/qgis_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1>QGIS Quickstart<a class="headerlink" href="#qgis-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
+<p>QGIS ist ein benutzerfreundlicher Desktop GIS-Client, mit dem Sie Daten visualisieren, verwalten, bearbeiten, analysieren und druckbare Karten erstellen können.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-qgis" id="id1">Start QGIS</a></li>
+<li><a class="reference internal" href="#create-a-project" id="id2">Create a project</a></li>
+<li><a class="reference internal" href="#open-an-existing-project" id="id3">Öffnen eines vorhandenen Projekts</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigate the map</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">Style your layers</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id6">Was Sie noch ausprobieren können</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">Was kommt als Nächstes?</a></li>
+</ul>
+</div>
+<div class="section" id="start-qgis">
+<h2><a class="toc-backref" href="#id1">Start QGIS</a><a class="headerlink" href="#start-qgis" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Öffnen Sie den Ordner „Desktop GIS“.</li>
+<li>Klicken Sie doppelt Sie auf das „QGIS“-Symbol.</li>
+</ol>
+<p>You will see QGIS launch with an empty project. The various parts of the QGIS Interface are listed below.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>[1] Menu bar: Access to various QGIS features using a standard hierarchical menu.</li>
+<li>[2] Toolbars: For interaction with the map, layers, attributes and selections.</li>
+<li>[3] Browser Panel: A spatial file browser allowing drag and drop content into the map frame.</li>
+<li>[4] Layer Panel: Controls the map layers, their order, and visibility.</li>
+<li>[5] Status Bar: General information about the map and access to a universal search bar.</li>
+</ul>
+</div>
+<div class="section" id="create-a-project">
+<h2><a class="toc-backref" href="#id2">Create a project</a><a class="headerlink" href="#create-a-project" title="Link zu dieser Überschrift">¶</a></h2>
+<p>To create a new project, choose <span class="menuselection">Project ‣ New</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.1999999999999px; height: 499.09999999999997px;" /></a>
+</div></blockquote>
+<p>Beginnen wir mit dem Hinzufügen eines Vektor-Layers zur Karte. Layer können in QGIS über das Browser-Bedienfeld auf der linken Seite des Bildschirms hinzugefügt werden.</p>
+<ol class="arabic simple">
+<li>Wechseln Sie in das Browser-Bedienfeld auf der linken Seite des Bildschirms.</li>
+<li>Navigieren Sie zum Ordner ‚home/data/natural_earth2‘.</li>
+<li>Wählen Sie ‚ne_10m_admin_0_countries.shp‘.</li>
+<li>Ziehen Sie den Layer aus dem Browserfenster, und lassen ihn im Kartenrahmen fallen.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div></blockquote>
+<p>Once the layer has been dragged onto the map frame, you will see a layer showing
+countries.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
+<p>Now let’s try adding a raster layer to the project.</p>
+<ol class="arabic simple">
+<li>Wechseln Sie in das Browser-Bedienfeld auf der linken Seite des Bildschirms.</li>
+<li>Navigieren Sie zum Ordner ‚home/data/natural_earth2‘.</li>
+<li>Wählen Sie ‚HYP_50M_SR_W.tif‘.</li>
+<li>Ziehen Sie den Layer aus dem Browserfenster, und lassen ihn im Kartenrahmen fallen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Once the layer has been dragged onto the map frame, you will see a raster layer
+showing land cover and bathymetry.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Nachdem wir nun einige Inhalte zu unserem Projekt hinzugefügt haben, können wir das Projekt speichern, damit wir zu einem späteren Zeitpunkt darauf zurückkommen können.</p>
+<ol class="arabic">
+<li><p class="first">Choose <span class="menuselection">Project ‣ Save</span>.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</li>
+<li><p class="first">Speichern Sie das Projekt unter ‚/home/user/desktop‘.</p>
+</li>
+<li><p class="first">Nennen Sie das Projekt ‚Mein QGIS-Projekt‘.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+</li>
+<li><p class="first">Click ‚Save‘.</p>
+</li>
+</ol>
+<p>Auf dem Desktop befindet sich nun eine Projektdatei mit dem Namen „Mein QGIS-Projekt“ und im oberen Teil ihres Projektes wird nun  nicht mehr „untitled“ angezeigt, sondern „Mein QGIS-Projekt“.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_saved_project.png"><img alt="QGIS saved project" src="../../_images/qgis_saved_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div>
+<div class="section" id="open-an-existing-project">
+<h2><a class="toc-backref" href="#id3">Öffnen eines vorhandenen Projekts</a><a class="headerlink" href="#open-an-existing-project" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ein QGIS-Projekt speichert Layer, Stile, Kartenausdehnungen und Einstellungen für die Verwendung zu einem späteren Zeitpunkt. Diese Informationen werden als QGIS-Projektdatei gespeichert und haben eine Erweiterung von ‚.qgs‘ oder ‚.qgz‘, wobei ‚.qgz‘ das Standarddateiformat in QGIS ist, das in die Zukunft geht.</p>
+<p>Öffnen wir ein bestehendes QGIS-Projekt und werfen einen Blick darauf.</p>
+<ol class="arabic simple">
+<li>Open QGIS. Note that when QGIS is opened you will be presented with a list of recent projects to chose from. This is a convenient way to open a project you have used recently.</li>
+<li>Choose <span class="menuselection">Project ‣ Open</span>.</li>
+<li>Navigieren Sie zu ‚/home/user/qgis-example‘.</li>
+<li>Wählen Sie das Projekt ‚QGIS-NaturalEarth-Example.qgs‘.</li>
+<li>Click ‚Open‘.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+<p>Dadurch wird ein QGIS-Projekt mit einer Reihe von Natural Earth-Datensätzen geöffnet, wie unten gezeigt. Dieses Projekt enthält eine Reihe von Layern im Ebenenbedienfeld und zeigt den räumlichen Inhalt im Kartenrahmen an.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>Layer können aktiviert oder deaktiviert werden, indem Sie im Ebenenbedienfeld auf das Kontrollkästchen neben dem Layernamen klicken. Wenn ein Layer im Layer-Bedienfeld aktiviert ist, wird der Kartenrahmen aktualisiert, um den Layer anzuzeigen. Eine Detailansicht des Ebenenbereichs ist unten dargestellt.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.49999999999997px;" /></a>
+<p>Testen wir das Layer-Bedienfeld und ändern die Sichtbarkeit einiger Karten-Layer.</p>
+<ol class="arabic simple">
+<li>Klicken Sie auf das Kontrollkästchen neben dem Layer ‚ne_10m_populated_places‘, um es zu aktivieren.</li>
+<li>Klicken Sie auf das Kontrollkästchen neben der Ebene „Wasser“, um die Ebene auszuschalten.</li>
+</ol>
+<p>Beachten Sie, wie der Kartenrahmen aktualisiert wurde, um die Änderungen in der Layer-Liste widerzuspiegeln. Wir können jetzt den Layer ‚ne_10m_populated_places‘ als Punkte sehen, aber nicht mehr die Flüsse und Seen, die Teil des ‚Waters‘-Layers sind.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_visibility.png"><img alt="QGIS result of layer visibility changes" src="../../_images/qgis_layer_visibility.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>Neben der Steuerung der Layer-Sichtbarkeit können wir auch die Reihenfolge ändern, in der Layer im Layer-Panel gezeichnet werden. Dies geschieht, indem Sie eine Ebene im Ebenenbereich auswählen und in der Liste nach oben oder unten ziehen. Die Reihenfolge, in der die Layer in der Layer-Liste angezeigt werden, ist die Reihenfolge, auf die sie im Kartenrahmen zeichnen.</p>
+<ol class="arabic simple">
+<li>Linksklick auf den Layer ‚HYP_50M_SR_W‘.</li>
+<li>Ziehen Sie beim Halten der Maustaste nach unten die Ebene an den oberen Rand der Liste.</li>
+</ol>
+<p>Beachten Sie, wie sich der Raster-Layer jetzt über allen anderen Layern im Ebenenbereich befindet. Dadurch wird der Raster-Layer nun über allen anderen Layern im Kartenrahmen gezeichnet.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Versuchen Sie, den Layer ‚HYP_50M_SR_W‘ an den unteren Rand der Layer-Liste zu verschieben. Dies wäre eine geeignetere Position für einen Karten-Layer wie diesen.</p>
+</div>
+<div class="section" id="navigate-the-map">
+<h2><a class="toc-backref" href="#id4">Navigate the map</a><a class="headerlink" href="#navigate-the-map" title="Link zu dieser Überschrift">¶</a></h2>
+<p>The navigation toolbar allows users to move around the map and change the map extent.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
+<ul class="simple">
+<li>[1] Pan: Allows the map to be dragged (‚panned‘) to a new location.</li>
+<li>[2] Zoom in: Allows the map extent to be zoomed in.</li>
+<li>[3] Zoom out: Allows the map to be zoomed out.</li>
+<li>[4] Zoom to full extent: Changes the map extent to fit all of the map layers into the map frame.</li>
+<li>[5] Zoom to layer: Changes the map extent to fit the extent of the layer highlighted in the layer panel.</li>
+</ul>
+<p>Let’s try changing the map extent with the zoom-in tool.</p>
+<ol class="arabic simple">
+<li>Wählen Sie das Werkzeug „Zoom in“ in der Navigationsleiste aus.</li>
+<li>Bewegen Sie den Cursor über der Karte.</li>
+<li>Klicken und halten Sie die linke Maustaste.</li>
+<li>Während Sie die Maustaste gedrückt halten, bewegen Sie den Cursor diagonal in eine beliebige Richtung. Beachten Sie, dass hier ein Rechteck gezeichnet wird, auf das gezoomt wird.</li>
+<li>Lassen Sie die Maustaste los, wenn Sie mit dem erstellten Bereich zufrieden sind.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Der Vorgang der Verwendung des Zoom-Out-Werkzeugs ist derselbe wie beim Zoom-In-Werkzeug. Das Ergebnis ist genau das Gegenteil.</p>
+</div>
+<p>Sehen wir uns nun das Zoom-Werkzeug Auf volle Ausdehnung Zoomen an. Mit diesem Werkzeug wird die Karte auf eine Ausdehnung vergrößert, die zu allen Layern in der Karte passt. Um dieses Werkzeug zu verwenden, klicken Sie auf die Schaltfläche „Zoom auf volle Ausdehnung“.</p>
+<p>Testen Sie nun das Werkzeug Zoom auf Layer. Gehen Sie wie folgt vor, um dieses Werkzeug zu verwenden:</p>
+<ol class="arabic simple">
+<li>Klicken Sie im Ebenenbedienfeld auf einen Layer-Namen.</li>
+<li>Klicken Sie auf die Schaltfläche „Zoom to layer“.</li>
+</ol>
+<p>Die Karte sollte auf die Ausdehnung des ausgewählten (‚aktiven‘) Layers zoomen.</p>
+</div>
+<div class="section" id="style-your-layers">
+<h2><a class="toc-backref" href="#id5">Style your layers</a><a class="headerlink" href="#style-your-layers" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Layer können in QGIS mit dem Stil-Editor gestylt werden. Der Style-Editor ist standardmäßig nicht sichtbar, aber leicht über eine Schaltfläche am oberen Rand des Ebenenbedienfelds zugänglich, wie unten gezeigt.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
+<p>Die obige Schaltfläche fungiert als Umschalter, sodass der Stil-Editor leicht ausgeblendet werden kann, indem Sie erneut auf dieselbe Schaltfläche klicken. Wenn der Stil-Editor aktiviert ist, wird er auf der rechten Seite des Bildschirms angezeigt, um die aktive Ebene, die im Ebenenbereich hervorgehoben ist, zu bearbeiten.</p>
+<p>Wenn der Stil-Editor geöffnet ist, können wir die Darstellung der Ebene ändern, die oben im Stil-Editor angezeigt wird.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_layer.png"><img alt="QGIS style dock layer" src="../../_images/qgis_style_dock_layer.png" style="width: 286.29999999999995px; height: 294.7px;" /></a>
+<p>Wenn der Stil-Editor jetzt geöffnet ist, können wir die Farbe und die Breite der Linien im Layer ‚ne_10m_rivers_lakes_centrelines‘ ändern. Versuchen wir zuerst, die Farbe zu ändern.</p>
+<ol class="arabic">
+<li><p class="first">Klicken Sie auf das unten angezeigte Farbfeld. Dadurch wird eine Farbpalette geöffnet, mit der Sie eine andere Farbe auswählen können.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_color.png"><img alt="QGIS style dock color" src="../../_images/qgis_style_dock_color.png" style="width: 298.2px; height: 225.39999999999998px;" /></a>
+</li>
+<li><p class="first">Verschieben Sie in der Palette „Farbe auswählen“ das Fadenkreuz zu Ihrer bevorzugten Farbe.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_color_palette.png"><img alt="QGIS color palette" src="../../_images/qgis_style_color_palette.png" style="width: 284.2px; height: 224.7px;" /></a>
+</li>
+<li><p class="first">Klicken Sie dann auf den Zurück-Pfeil, um zur Symbol-Vorschau zurückzukehren.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_back.png"><img alt="QGIS style return" src="../../_images/qgis_style_back.png" style="width: 281.4px; height: 128.1px;" /></a>
+</li>
+<li><p class="first">Die Symbol-Vorschau wird mit der neuen Farbe aktualisiert, ebenso der Layer im Kartenfenster.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_result.png"><img alt="QGIS style result" src="../../_images/qgis_style_result.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Im Stil-Editor können wir auch die Größe der Karten-Features ändern. Gehen Sie wie folgt vor, um die Dicke der Linien zu ändern:</p>
+<ol class="arabic">
+<li><p class="first">Stellen Sie sicher, dass die Option ‚ne_10m_rivers_lakes_centrelines‘ oben im Stilfenster ausgewählt ist.</p>
+</li>
+<li><p class="first">Geben Sie im Stil-Editor den Wert ‚0.5‘ unter ‚width‘ (Breite) ein.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_width.png"><img alt="QGIS style width" src="../../_images/qgis_style_width.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Beachten Sie, dass die Linie in der Symbolvorschau breiter wird, und ebenso auch die Linien in der Karte.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id6">Was Sie noch ausprobieren können</a><a class="headerlink" href="#things-to-try" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>QGIS Funktionalität über <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">Plugins</a> erhöhen.</li>
+<li>Beginnen Sie mit der Bearbeitung von Daten mit der <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">Processing toolbox</a>.</li>
+<li>Verwenden Sie QGIS, um Inhalte aus der <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">PostGIS Datenbank</a> anzuzeigen.</li>
+<li>Versuchen Sie, Ihre QGIS-Karte im Web mit dem <a class="reference external" href="../overview/qgis_mapserver_overview.html">QGIS Server</a> zu veröffentlichen. Sie finden diesen unter <span class="menuselection">Geospatial ‣ Web Services</span>.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id7">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um mehr über QGIS zu erfahren, dient die Seite <a class="reference external" href="https://www.qgis.org/en/docs/index.html">QGIS Dokumentation</a> auf der QGIS Webseite als Ausgangspunkt. Ebenso die englische Einführung <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS</a> als eBook.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

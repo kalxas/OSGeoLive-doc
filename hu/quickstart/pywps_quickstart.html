@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PyWPS gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="MapProxy" href="../overview/mapproxy_overview.html" />
+    <link rel="prev" title="PyWPS" href="../overview/pywps_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pywps.org/"><img alt="../../_images/logo_pywps.png" class="align-right" src="../../_images/logo_pywps.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="pywps-quickstart">
+<h1>PyWPS gyorstalpaló<a class="headerlink" href="#pywps-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A PyWPS egy <a class="reference external" href="https://www.python.org">Python-ban</a> írt OGC WPS  (Web Processing Service 1.0.0) szerver implementáció.</p>
+<p>APyWPS 4.0.0. könyvtárat telepítették az OSGeoLive-on. Ez egy alap könyvtár nem a közvetlen végrehajtás a cél, hanem inkább WPS szolgáltatások fejlesztésére használható. Egy  <a class="reference external" href="https://flask.palletsprojects.com">Flask</a>  alapú <a class="reference external" href="https://github.com/geopython/pywps-flask">példa szolgáltatás</a> elérhető a GitHub-on az első PyWPS találkozás megkönnyítése érdekében.</p>
+<p>Ez a gyorstalpaló leírja:</p>
+<ul class="simple">
+<li>A pywps-flask&nbsp; példa szolgáltatás telepítése és konfigurálása</li>
+<li>Hajtson végre <code class="docutils literal"><span class="pre">GetCapabilities</span></code>, <code class="docutils literal"><span class="pre">DescribeProcess</span></code> és <code class="docutils literal"><span class="pre">Execute</span></code> kéréseket</li>
+<li>Saját WPS feldolgozások fejlesztése</li>
+</ul>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#installing-pywps-flask" id="id1">pywps-flask telepítés</a></li>
+<li><a class="reference internal" href="#testing-available-processes" id="id2">Elérhető feldolgozások tesztelése</a></li>
+<li><a class="reference internal" href="#developing-wps-processes" id="id3">WPS feldolgozások fejlesztése</a></li>
+<li><a class="reference internal" href="#what-s-next" id="id4">Mi a következő</a></li>
+</ul>
+</div>
+<div class="section" id="installing-pywps-flask">
+<h2><a class="toc-backref" href="#id1">pywps-flask telepítés</a><a class="headerlink" href="#installing-pywps-flask" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Mivel a minta szolgáltatás a Flask-et használja, győződjön meg, hogy telepítették-e az OSGeoLive-ra:</p>
+<p><cite>sudo apt install python-flask</cite></p>
+<p>Majd klónozza a GitHub-ról a tárházat:</p>
+<p><cite>git clone https://github.com/geopython/pywps-flask.git</cite></p>
+<p>Mozogjon a tárház mappába  és módosítsa a konfigurációs fájlt. Ezt megteheti a <cite>nano</cite> programmal:</p>
+<p><cite>nano pywps.cfg</cite></p>
+<p>Az egyetelen kritikus, ellenőrizendő dolog a napló adatbázis helye. A <cite>Pywps-flask</cite>&nbsp; gondoskodik egy minta adatbázisról, mely használható erre a célra. Győződjön meg róla, hogy a <cite>database</cite> beállítás így néz ki:</p>
+<p><cite>database=sqlite:////home/user/pywps-flask/logs/pywps-logs.sqlite3</cite></p>
+<p>Mentse a konfigurációs fájlt és lépen ki a <cite>nano</cite>-ból, most futtathatja a szolgáltatást:</p>
+<p><cite>python demo.py</cite></p>
+<p>Ha minden rendben megy egy ilyen üzenetet kap vissza:</p>
+<p><cite>* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</cite></p>
+</div>
+<div class="section" id="testing-available-processes">
+<h2><a class="toc-backref" href="#id2">Elérhető feldolgozások tesztelése</a><a class="headerlink" href="#testing-available-processes" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Nyisson meg egy web böngészőt és mutasson arra a címre, ahol a példa szolgáltatás figyel: <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>  A következő lap jelenik meg:</p>
+<a class="reference internal image-reference" href="../../_images/pywps-4.0.0_example.png"><img alt="../../_images/pywps-4.0.0_example.png" src="../../_images/pywps-4.0.0_example.png" style="width: 1024.0px; height: 768.0px;" /></a>
+<p>Használja a zöld gombokat a szolgáltatás felfedezéséhez. Adjon ki egy <cite>GetCapabilities</cite> kérést a szolgáltatás áttekintéséhez; adjon ki egy <cite>DescribeProcess</cite> kérést egy adott projekt részleteinek megismeréséhez. Nézze meg a kérés URL-jét a böngésző cím sorában.</p>
+<p>It az ideje, hogy az <cite>Execute</cite> kérést teszteljük. Megpróbálhatja a <cite>say_hello</cite> feldolgozást, mely egészen egyszerű. Irányítsa a böngészőjét a következő címre:</p>
+<p><cite>http://localhost:5000/wps?service=WPS&amp;version=1.0.0&amp;request=Execute&amp;identifier=say_hello&amp;dataInputs=name=OSGeo-Live</cite></p>
+<p>A feldolgozás egyszerűen visszaválaszol a „Hello OSGeo” üzenettel, egy szabványos WPS válasz dokumentumba ágyazva. A böngészőjének valami hasonlót kellene mutatnia:</p>
+<a class="reference internal image-reference" href="../../_images/pywps-4.0.0_response.png"><img alt="../../_images/pywps-4.0.0_response.png" src="../../_images/pywps-4.0.0_response.png" style="width: 1024.0px; height: 768.0px;" /></a>
+</div>
+<div class="section" id="developing-wps-processes">
+<h2><a class="toc-backref" href="#id3">WPS feldolgozások fejlesztése</a><a class="headerlink" href="#developing-wps-processes" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy új feldolgozás fejlesztéséhez csak egy új Python modult kell létrehoznia a <cite>processes</cite> mappában. Használja a meglévő feldolgozásokat sablonként a kódjának strukturálásához. Egy közelebbi pillantás a <cite>say_hello</cite> feldolgozásra megmutatja egy PyWPS feldolgozás főbb elemeit:</p>
+<p>1. Import the necessary assets and create a class inheriting from the PyWPS
+<cite>Process</cite> class. In the constructor create the necessary objects for inputs
+and outputs:</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pywps</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span> <span class="n">LiteralInput</span><span class="p">,</span> <span class="n">LiteralOutput</span><span class="p">,</span> <span class="n">UOM</span>
+
+<span class="k">class</span> <span class="nc">SayHello</span><span class="p">(</span><span class="n">Process</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">LiteralInput</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Input name&#39;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">)]</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">LiteralOutput</span><span class="p">(</span><span class="s1">&#39;response&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Output response&#39;</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>A szülő konstruktor hívása, a feldolgozás metaadatainak átadása:</li>
+</ol>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">(</span><span class="n">SayHello</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span><span class="p">,</span>
+    <span class="n">identifier</span><span class="o">=</span><span class="s1">&#39;say_hello&#39;</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Process Say Hello&#39;</span><span class="p">,</span>
+    <span class="n">abstract</span><span class="o">=</span><span class="s1">&#39;Returns a literal string output</span><span class="se">\</span>
+<span class="s1">     with Hello plus the inputed name&#39;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.3.3.7&#39;</span><span class="p">,</span>
+    <span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span>
+    <span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">,</span>
+    <span class="n">store_supported</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">status_supported</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>A <cite>handler</cite> metódus létrehozása, melyet majd az <cite>Execute</cite> kérések kezelésére indítunk el. Használja a <cite>request</cite> és <cite>response</cite> objektumokat az input kinyerésére és az output beállítására.</p>
+<div class="code highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> \
+        <span class="n">request</span><span class="o">.</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;response&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">uom</span> <span class="o">=</span> <span class="n">UOM</span><span class="p">(</span><span class="s1">&#39;unity&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-s-next">
+<h2><a class="toc-backref" href="#id4">Mi a következő</a><a class="headerlink" href="#what-s-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>PyWPS szabadságot és rugalmasságot biztosít, hogy saját Python folyamatokat írjon és ennek megfelelően kifejtse.</p>
+<ul class="simple">
+<li>Hivatalos dokumentáció - További információkért a PyWPS konfigurációról és az API-ról olvassa a <a class="reference external" href="https://pywps.org/docs/">documentation</a> a PyWPS honlapon.</li>
+<li>Próbálja ki a  <a class="reference external" href="https://github.com/PyWPS/pywps-workshop">workshop</a>-ot, ami egy workshop oktatóanyag az új felhasználóknak a PyWPS 4 bemutatásáról.</li>
+<li>A <cite>pywps-flask</cite> szolgáltatás csak egy példa, nem terveztük komoly használatra. Egy lehetséges alternatíva a Django alapú szolgáltatás, <a class="reference external" href="https://github.com/jorgejesus/pywps-django">pywps-django</a>. A dokumentáció további részleteket tartalmaz hogyan <a class="reference external" href="https://pywps.readthedocs.io/en/latest/deployment.html">állítsunk fel egy produktív szolgáltatást</a> Apache-val &lt;<a class="reference external" href="https://httpd.apache.org/">https://httpd.apache.org/</a>&gt;`_ vagy <a class="reference external" href="https://nginx.org/">nginx-el</a> és <a class="reference external" href="https://gunicorn.org/">Gunicorn-nal</a>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

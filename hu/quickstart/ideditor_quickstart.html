@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iD editor gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="JOSM" href="../overview/josm_overview.html" />
+    <link rel="prev" title="iD editor" href="../overview/ideditor_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://wiki.openstreetmap.org/wiki/ID"><img alt="../../_images/logo_ideditor.png" class="align-right" src="../../_images/logo_ideditor.png" /></a>
+<div class="section" id="id-editor-quickstart">
+<h1>iD editor gyorstalpaló<a class="headerlink" href="#id-editor-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az iD editor gyakorlatilag aböngésző alapú OpenStreetMap szerkesztő. Az iD gyors és könnyen használható és lehetővé teszi a térképezést különböző forrásokból, mint például műhold és légi felvételek, GPS, jegyzőkönyvek vagy Mapillary.</p>
+<p>Az iD editor egy nagyszerű lehetőség a kis és egyszerű módosításokra, melyek nem igénylik a JOSM speciális funkcióit (egy kifinomultabb térkép szerkesztő). Ez a fejezet az alap szerkesztéseket mutatja be az iD-vel.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#starting-the-id-editor" id="id1">iD Editor indítása</a></li>
+<li><a class="reference internal" href="#configuring-the-background-layer" id="id2">Háttér réteg konfigurálása</a></li>
+<li><a class="reference internal" href="#adding-points" id="id3">Pontok hozzáadása</a></li>
+<li><a class="reference internal" href="#drawing-lines" id="id4">Vonalak rajzolása</a></li>
+<li><a class="reference internal" href="#drawing-shapes-polygons" id="id5">Alakzatok (zárt idomok) rajzolása</a></li>
+<li><a class="reference internal" href="#drawing-multipolygons" id="id6">Többsrészű zárt alakzatok rajzolása</a></li>
+<li><a class="reference internal" href="#saving-your-changes" id="id7">Változtatásainak mentése</a></li>
+<li><a class="reference internal" href="#add-additional-information-and-custom-tags" id="id8">További információ és egyéni címkék hozzáadása</a></li>
+<li><a class="reference internal" href="#what-next" id="id9">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="starting-the-id-editor">
+<h2><a class="toc-backref" href="#id1">iD Editor indítása</a><a class="headerlink" href="#starting-the-id-editor" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az iD editornak egy aktív internet kapcsolatra van szüksége.</p>
+<ol class="arabic simple">
+<li>Nyissa meg az internet böngészőjét és menjen az OpenStreetMap honlapra <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a>.</li>
+<li>Jelentkezzen be az OpenStreetMap bejelentkezésével.</li>
+<li>Tolja el és nagyítsa a térképet a szerkesztendő területre. Tolhatja a bal egérgomb nyomva tartásával és a térkép húzásával a szükséges területre.</li>
+<li>Kattintson a kis nyílra az <strong>Edit</strong> mellett. Majd kattintson az <strong>Edit with iD (in-browser editor)</strong>-ra.</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/id-editor_image1.png" src="../../_images/id-editor_image1.png" />
+<img alt="../../_images/id-editor_image2.png" src="../../_images/id-editor_image2.png" />
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>[1] <strong>Edit Feature Panel:</strong> Ez a panel a térképen kiválasztott objektum tegjeit mutatja</dt>
+<dd>selected on the map. You can add or edit tags from this panel.</dd>
+</dl>
+</li>
+<li>[2] <strong>*Tools:</strong> Ez a panel az alapvető szerkesztő eszközöket tartalmazza:</li>
+<li>[3] <strong>Map panel:</strong> Ez a panel különböző konfigurációs funkciókat jelenít meg.</li>
+<li><dl class="first docutils">
+<dt>[4] <strong>Information panel:</strong> Ez a panel különböző információkat mutat mint például</dt>
+<dd>a lépték vonalzó. melyik felhasználó dolgozott a területen.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-the-background-layer">
+<h2><a class="toc-backref" href="#id2">Háttér réteg konfigurálása</a><a class="headerlink" href="#configuring-the-background-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Kattintson a <strong>Background settings</strong> gombra vagy használja a <strong>b</strong> <em>gyorsbillentyűt</em>. <a class="reference internal" href="../../_images/id-editor_image14.png"><img alt="image14" src="../../_images/id-editor_image14.png" style="height: 24px;" /></a></p>
+<p><img alt="image15" src="../../_images/id-editor_image15.png" /></p>
+</li>
+<li><p class="first">A <strong>fényességi szint</strong> változtatásához kattintson a az egyikre a téglalapok közül, a lehetséges szintek 100%, 75%, 50%, és 25% <a class="reference internal" href="../../_images/id-editor_image16.png"><img alt="image16" src="../../_images/id-editor_image16.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first"><strong>Módosíthatja a háttér réteget</strong> is a kívánt csempe szolgáltató alapján (az alapértelmezett a Bing Aerial Imagery).</p>
+</li>
+<li><p class="first">A <strong>Custom</strong>-ra kattintva hozzáadhatja a saját térképcsempéit. Például, ha egy <strong>terepi papírtérképet</strong> [1] akar hozzáadni, kattintson a <strong>Custom</strong>-ra , utána kattintson a nagyító (keresés) ikonra a következő ablak megnyitásához:</p>
+<p><img alt="image17" src="../../_images/id-editor_image17.png" /></p>
+</li>
+<li><p class="first">Írja be a  <strong>FieldPaper snapshot URL</strong>-jét ami valami ilyesmi: <a class="reference external" href="http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715">http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715</a></p>
+</li>
+<li><p class="first"><strong>GPS trackek megjelenítéséhez a számítógépéről</strong> (GPX formátum) húzza a GPX fájlt az iD szerkesztőre és engedje el.</p>
+</li>
+<li><p class="first">Az <strong>OpenStreetMap GPS nyomvonalak</strong> bekapcsolásához kattintson a négyzetbe- Az alábbi képen a GPS nyomvonalak különböző színekkel jelennek meg, az utazás irányát jelölve.</p>
+<p><img alt="osm gps traces" src="../../_images/id-editor_gps_public.png" /></p>
+</li>
+<li><p class="first">Ha a <a class="reference external" href="/en/josm/aerial-imagery">kép eltolódást</a> tapasztal, akkor <strong>korrigálhatja a kép eltolódást</strong> a <strong>Fix Alignment</strong>-re kattintva.</p>
+<p><img alt="image18" src="../../_images/id-editor_image18.png" /></p>
+</li>
+<li><p class="first">Kattintson a navigációs gombokra a kép mozgatásához. Kattintson a visszaállít gombra a visszatéréshez az alapértelmezett pozícióhoz. <img alt="image20" src="../../_images/id-editor_image20.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-points">
+<h2><a class="toc-backref" href="#id3">Pontok hozzáadása</a><a class="headerlink" href="#adding-points" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy új pont hozzáadásához kattintson a <strong>Point</strong> gombot. <a class="reference internal" href="../../_images/id-editor_image3.png"><img alt="image3" src="../../_images/id-editor_image3.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">Az egér mutató plusz (+) jellé változik. Most kattintson egy pozícióba, ahol meg akar jelölni egy helyet. Például, ha tudja, hogy van egy kórház a területén, kattintson a kórház épület helyére.</p>
+<p><img alt="image21" src="../../_images/id-editor_image21.png" /></p>
+</li>
+<li><p class="first">Vegye észre, hogy egy új pontot adtunk hozzá. Ezzel egyidőben megváltozik a baloldali panel, egy űrlapot jelenít meg, ahol kiválaszthatja az objektum attribútumait. Kattintson a <strong>Hospital Grounds</strong>-ra, hogy a pontot kórházként jelölje meg.</p>
+<p><img alt="image22" src="../../_images/id-editor_image22.png" /></p>
+</li>
+<li><p class="first">Az űrlapokat használhatja a pont részletes adatainak megadására. Kitöltheti a kórház nevét, címét és/vagy más további információt. Ne feledje, hogy minden elemnek különböző beállításai lesznek, attól függően, hogy melyik címkét választja a funkciópanelből.</p>
+</li>
+<li><p class="first">Ha hibázik, például rossz a pozíció, áthelyezheti a pontot egy új helyre úgy, hogy az egér bal gombját lenyomva tartja, és áthúzza. Vagy, ha törölni szeretné a pontot, kattintson az egér bal gombbal a pontra, aktiválja a helyi menüt a jobb egérgombbal kattintva, majd kattintson a gombra, amely úgy néz ki, mint egy szemétláda. | image23 |</p>
+<p>Az iD szerkesztőben létrehozott „pontunk” aktuálisan egy önálló „csomópont” a „címkék” egy csoportjával.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="drawing-lines">
+<h2><a class="toc-backref" href="#id4">Vonalak rajzolása</a><a class="headerlink" href="#drawing-lines" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy új vonal hozzáadásához kattintson a <strong>Line</strong> gombra <a class="reference internal" href="../../_images/id-editor_image4.png"><img alt="image4" src="../../_images/id-editor_image4.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">Az egér mutató plusz (+) jellé változik. Keressen a térképen még nem megrajzolt utat és kövesse azt. Kattintson a pontra ahol az útszakasz kezdődik, mozgassa az egerét és kattintson a további pontokra. Duplán kattintson a rajzolás befejezéséhez. Figyelje a baloldali panelt.</p>
+<p><img alt="image24" src="../../_images/id-editor_image24.png" /></p>
+</li>
+<li><p class="first">Ugyanúgy mint egy pontnál, válassza ki a megfelelő címkéket a vonalához.</p>
+</li>
+<li><p class="first">Elhúzhatja a vonal pontjait a bal egérgombbal kattintson egy pontra és húzza el azt.</p>
+</li>
+<li><p class="first">Teljes vonalat is mozgathat, válassza ki a vonalat és válassza a <strong>Mozgatás eszközt</strong>. Ezután húzza a vonalat egy új pozícióba. <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Ha rákattint a bal egérgombbal egy vonal bizonyos pontjára (csomópontjára) és a jobb egérgombra kattintva aktiválja a helyi menüt, ezeket az eszközöket fogja látni:</p>
+</li>
+<li><p class="first">Pont törlése a vonalból. <a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Pont leválasztása a vonalról. <a class="reference internal" href="../../_images/id-editor_image26.png"><img alt="image26" src="../../_images/id-editor_image26.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Vonal szétvágása két vonalra a szelektált pontnál. <a class="reference internal" href="../../_images/id-editor_image27.png"><img alt="image27" src="../../_images/id-editor_image27.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Amikor a bal egérgombbal egy vonalra (de nem egy pontra) kattint, ezeket az eszközöket látja:</p>
+</li>
+<li><p class="first">Vonal törlés. <a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Kör létrehozása egy vonalból (csak akkor aktív, ha zárt a vonal) <a class="reference internal" href="../../_images/id-editor_image29.png"><img alt="image29" src="../../_images/id-editor_image29.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Vonal mozgatás <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Négyzet alakzat kialakítása egy vonalból (csak akkor aktív, ha zárt a vonal) <a class="reference internal" href="../../_images/id-editor_image31.png"><img alt="image31" src="../../_images/id-editor_image31.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">Vonalirány megfordítása (hasznos folyókhoz és egyirányú utcákhoz) <a class="reference internal" href="../../_images/id-editor_image32.png"><img alt="image32" src="../../_images/id-editor_image32.png" style="height: 24px;" /></a></p>
+</li>
+</ul>
+<p>Az iD szerkesztőben létrehozott „vonal” tulajdonképpen egy „út” „címkékkel”.</p>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">Egy speciális megjegyzés a <strong>Törléshez</strong>: általánosságban kerülni kell mások térképezésének a törlését, ha csak javításra szorul. Törölheti a saját hibáit, de meg kell próbálnia <em>javítani</em> más emberek által térképezett objektumokat, ha módosítást igényelnek. Ez megőrzi az elemek történetét az OSM adatbázisban és tisztességes a térképező társakkal szemben. Ha igazán úgy érzi, hogy törölni kellene valamit, fontolja meg az eredeti térképező vagy az egyik OSM levelezőlista megkérdezését erről először.</p>
+</div>
+</div>
+<div class="section" id="drawing-shapes-polygons">
+<h2><a class="toc-backref" href="#id5">Alakzatok (zárt idomok) rajzolása</a><a class="headerlink" href="#drawing-shapes-polygons" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy új több oldalú alakzat hozzáadásához kattintson a <strong>terület</strong> gombra.</p>
+<blockquote>
+<div><a class="reference internal" href="../../_images/id-editor_image34.png"><img alt="image34" src="../../_images/id-editor_image34.png" style="height: 24px;" /></a></div></blockquote>
+<ul class="simple">
+<li>Az egérkurzor plusz (+) jellé változik. Próbáljon egy épületet követni a képet használva útmutatóként.</li>
+<li>Észreveheti, hogy az alakzat színe a hozzá hozzárendelni kívánt attribútumtól függően megváltozik. <img alt="image35" src="../../_images/id-editor_image35.png" /></li>
+<li>Egy alakzat kiválasztása és a jobb gombbal a felbukkanó menü aktiválása esetén a rendelkezésre álló eszközök hasonlóak ahhoz, amikor egy vonalra kattint.</li>
+</ul>
+<p>Egy <strong>zárt alakzat</strong> az iD szerkesztőben címkékkel ellátott „zárt út”.</p>
+</div>
+<div class="section" id="drawing-multipolygons">
+<h2><a class="toc-backref" href="#id6">Többsrészű zárt alakzatok rajzolása</a><a class="headerlink" href="#drawing-multipolygons" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Időnként egy olyan zárt idomot kell rajzolnia, mely nem csak egy külső határral, hanem egy vagy több belső határral rendelkezik. Gondoljon egy épületekre belső udvarral vagy tavakra szigetekkel. <em>Ne rajzolja ezeket  egy vonallal</em>, úgy hogy a belső körvonalat ráakasztja a külsőre. Inkább ezeket a körvonalakat rajzolja meg külön, kapcsolja a címkéket csak a külső körvonalhoz, válassza ki az összes körvonalat és nyomja meg a <strong>c</strong> billentyűt, hogy egy többszörös körvonallal rendelkező elemmé tegye őket össze.</p>
+<blockquote>
+<div><img alt="create multipolygon" src="../../_images/id-editor_create_multipolygon.png" />
+</div></blockquote>
+<p>Amikor az újonnan létrehozott többszörös határral rendelkező elem bármelyik körvonalát kiválasztja, a bal oldalon láthatja melyik elemhez tartozik az</p>
+<blockquote>
+<div><img alt="part of multipolygon" src="../../_images/id-editor_part_of_multipolygon.png" />
+</div></blockquote>
+</div>
+<div class="section" id="saving-your-changes">
+<h2><a class="toc-backref" href="#id7">Változtatásainak mentése</a><a class="headerlink" href="#saving-your-changes" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Amikor (és ha) menteni akarja a szerkesztéseit az OpenStreetMap-be kattintson a <em>Save*</em> gombra. A baloldali panel jeleníti meg a feltöltés panelt.</p>
+<p><img alt="image36" src="../../_images/id-editor_image36.png" /></p>
+</li>
+<li><p class="first">Írja be a megjegyzését a szerkesztéseihez és kattintson a <strong>Save</strong>-re.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">Ha ugyanazt a elemet (pont, út, terület) ugyanakkor szerkeszti amikor egy másik személy szerkeszti azt, egy figyelmeztetést kap, hogy a szerkesztései nem tölthetők fel amíg a <strong>konfliktusokat</strong> nem oldja fel. - válasszon kinek a szerkesztését fogadja el és töltse fel a módosításait. <em>A konfliktusok feloldása gyakran más személyek szerkesztéseinek elfogadását jelenti, ebben az esetben vissza kíván térni a kérdéses elem szerkesztéséhez (**ezúttal mentsen gyorsan a szerkesztés után, hogy megpróbálja elkerülni a konfliktust!*</em>).*</p>
+</div>
+</div>
+<div class="section" id="add-additional-information-and-custom-tags">
+<h2><a class="toc-backref" href="#id8">További információ és egyéni címkék hozzáadása</a><a class="headerlink" href="#add-additional-information-and-custom-tags" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ha egy objektumot szerkeszt, akkor az attribútum panel alján megjelenik egy ikonsáv. Az ikonokra kattintva további információkat is hozzáadhat:</p>
+<ul class="simple">
+<li>Magasság hozzáadása <a class="reference internal" href="../../_images/id-editor_image37.png"><img alt="image37" src="../../_images/id-editor_image37.png" style="height: 24px;" /></a></li>
+<li>Megjegyzés hozzáadása <a class="reference internal" href="../../_images/id-editor_image38.png"><img alt="image38" src="../../_images/id-editor_image38.png" style="height: 24px;" /></a></li>
+<li>Kontaktok / telefonszámok hozzáadása <a class="reference internal" href="../../_images/id-editor_image39.png"><img alt="image39" src="../../_images/id-editor_image39.png" style="height: 24px;" /></a></li>
+<li>Forrás címke hozzáadása <a class="reference internal" href="../../_images/id-editor_image40.png"><img alt="image40" src="../../_images/id-editor_image40.png" style="height: 24px;" /></a></li>
+<li>Weboldal hozzáadása <a class="reference internal" href="../../_images/id-editor_image41.png"><img alt="image41" src="../../_images/id-editor_image41.png" style="height: 24px;" /></a></li>
+<li>Kisegítő lehetőségekkel kapcsolatos információk hozzáadása <a class="reference internal" href="../../_images/id-editor_image42.png"><img alt="image42" src="../../_images/id-editor_image42.png" style="height: 24px;" /></a></li>
+<li>Wikipedia link hozzáadása <a class="reference internal" href="../../_images/id-editor_image43.png"><img alt="image43" src="../../_images/id-editor_image43.png" style="height: 24px;" /></a></li>
+</ul>
+<p>Vagy egyéni címkéket adhat meg a <strong>Minden címké</strong>-re kattintva. <a class="reference internal" href="../../_images/id-editor_image44.png"><img alt="image44" src="../../_images/id-editor_image44.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">Ez megmutatja az elemhez kapcsolt összes címkét.</p>
+<p><img alt="image45" src="../../_images/id-editor_image45.png" /></p>
+</li>
+<li><p class="first">Kattintson a plusz (+) jelre kulcsok és értékek hozzáadásához vagy kattintson a szemetes ikonra a címkék törléséhez.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id9">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Próbálja ki a LearnOSM dokumentációt, melyből ezt a gyorstalpaló származik:  <a class="reference external" href="https://learnosm.org/en/beginner/id-editor/">https://learnosm.org/en/beginner/id-editor/</a></li>
+<li>Honlap: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

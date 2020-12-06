@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JOSM Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="OpenCPN" href="../overview/opencpn_overview.html" />
+    <link rel="prev" title="JOSM" href="../overview/josm_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://josm.openstreetmap.de"><img alt="../../_images/logo_josm.png" class="align-right" src="../../_images/logo_josm.png" /></a>
+<div class="section" id="josm-quickstart">
+<h1>JOSM Quickstart<a class="headerlink" href="#josm-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
+<p>JOSM ist ein funktionsreicher, erweiterbarer, offline Desktop Editor für OpenStreetMap (OSM) Daten, der in Java geschrieben wurde.</p>
+<p>Er unterstützt sowohl das Laden von unabhängigen GPX Tracks und GPX Track Daten als auch das Editieren von existierenden Knoten (Punkten), Wegen (Linien), Meta-Tags (Name/Wert Information) und Relationen (Anordnung von Punkten und Linien) aus der OSM Datenbank. GPX Tracks werden in der Regel im Vorfeld über einen GPS Empfänger oder anderen Quellen heruntergeladen.</p>
+<p>Diese Quickstart-Anleitung erklärt die grundsätzliche Bedienung des Java OpenStreetmMap Editors.</p>
+<div class="contents local topic" id="inhalt">
+<ul class="simple">
+<li><a class="reference internal" href="#start-josm" id="id1">Start JOSM</a></li>
+<li><a class="reference internal" href="#load-a-sample-ficticious-map" id="id2">Load a sample (ficticious) map</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id3">Navigate the map</a><ul>
+<li><a class="reference internal" href="#points-lines-and-shapes" id="id4">Punkte, Linien und Flächen</a></li>
+<li><a class="reference internal" href="#changing-objects" id="id5">Ändern von Objekten</a></li>
+<li><a class="reference internal" href="#drawing" id="id6">Zeichnen</a></li>
+<li><a class="reference internal" href="#add-presets" id="id7">Vorlagen hinzufügen</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#draw-your-own-map" id="id8">Erstelle Deine eigene Karte</a></li>
+<li><a class="reference internal" href="#remove-the-sample-layer" id="id9">Entfernen der Beispielebene</a></li>
+<li><a class="reference internal" href="#what-next" id="id10">Was kommt als Nächstes?</a></li>
+</ul>
+</div>
+<div class="section" id="start-josm">
+<h2><a class="toc-backref" href="#id1">Start JOSM</a><a class="headerlink" href="#start-josm" title="Link zu dieser Überschrift">¶</a></h2>
+<p>From the desktop, choose <span class="menuselection">Navigation and Maps ‣ JOSM</span>. When JOSM starts, it will look something like this:</p>
+<img alt="JOSM splash page" src="../../_images/josm-splash-page.png" />
+</div>
+<div class="section" id="load-a-sample-ficticious-map">
+<h2><a class="toc-backref" href="#id2">Load a sample (ficticious) map</a><a class="headerlink" href="#load-a-sample-ficticious-map" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Öffnen wir nun eine OSM Beispieldatei, an der wir die grundlegende Erstellung von Karten mit JOSM lernen. Da diese Karte keinen realen Ort repräsentiert, werden wir sie natürlich nicht in Openstreetmap speichern.</p>
+</li>
+<li><p class="first">Laden wir nun diese Datei herunter: <a class="reference external" href="https://learnosm.org/files/sample.osm">sample.osm</a></p>
+</li>
+<li><p class="first">Öffne die eben heruntergeladene Datei in JOSM durch Auswählen der Schaltfläche „Öffnen“ oben links.</p>
+<img alt="Open file" src="../../_images/josm_open-file.png" />
+</li>
+<li><p class="first">Finde die Datei <strong>sample.osm</strong>. Sie befindet sich wahrscheinlich im Ordner „Downloads“, es sei denn Du hast sie woanders gespeichert.</p>
+</li>
+<li><p class="first">Click on it, and then click “Open”. You should now see a sample map that looks like this:</p>
+<img alt="Sample file" src="../../_images/josm_sample-file.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Du wirst diese Daten nutzen, um verschiedene Bearbeitungstechniken auszuprobieren. <em>Niemals jedoch sollen diese fiktiven Daten in die Datenbank hochgeladen werden.</em></p>
+</div>
+</div>
+<div class="section" id="navigate-the-map">
+<h2><a class="toc-backref" href="#id3">Navigate the map</a><a class="headerlink" href="#navigate-the-map" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Um die Karte nach links, rechts, oben oder unten zu bewegen, halte die rechte Maustaste gedrückt und bewege dabei die Maus.</p>
+</li>
+<li><p class="first">Es gibt verschiedene Arten, in die Karte hinein- oder hinauszuzoomen. Mit einer Maus ist das Mausrad hierfür nutzbar. Bei einem Notebook ohne Maus kannst Du den Maßstabsregler links oben in der Kartenansicht verwenden. Benutze die linke Maustaste, um den Regler zu fassen und verschiebe ihn bei gedrückt gehaltener Taste.</p>
+<img alt="Scale bar" src="../../_images/josm_scale-bar.png" />
+</li>
+<li><p class="first">Sieh‘ Dir die Beispielkarte an. Es gibt eine Reihe verschiedener Objekte: Einen Fluss, einen Wald, einige Gebäude und Straßen sowie ein paar Geschäfte. Um ein Objekt auszuwählen, klicke es mit der linken Maustaste an.</p>
+</li>
+</ul>
+<div class="section" id="points-lines-and-shapes">
+<h3><a class="toc-backref" href="#id4">Punkte, Linien und Flächen</a><a class="headerlink" href="#points-lines-and-shapes" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Beachte beim Auswählen verschiedener Objekte auf der Karte, dass es drei Typen von Objekten gibt: Punkte, Linien und Flächen.</p>
+<ul>
+<li><p class="first">Punkte beschreiben eine einzelne Position, die durch Symbole dargestellt wird. Auf dieser Beispielkarte befinden sich zwei Punkte, ein Schuhgeschäft und ein Supermarkt. Das Schuhgeschäft wird durch ein Schuhsymbol und der Markt durch einen Einkaufswagen dargestellt.</p>
+</li>
+<li><p class="first">Es gibt auch mehrere Linien auf der Karte, die Straßen darstellen. Wenn man genau hinschaut, wird man sehen, dass es innerhalb der Linien auch Punkte gibt. Diesen Punkten sind keine Symbole oder andere Informationen zugeordnet, aber sie helfen zu definieren, wo sich die Linie befindet.</p>
+</li>
+<li><p class="first">Schließlich gibt es zahlreiche Formen auf der Beispielkarte, die verschiedene Orte darstellen – einen Wald, einen Fluss, einen Park und Gebäude. Eine Form wird verwendet, um einen Bereich darzustellen, z. B. ein Feld oder ein Gebäude. Eine Form ist genau wie eine Linie – der einzige Unterschied ist, dass die Linie an der gleichen Stelle beginnt, an der sie endet.</p>
+<blockquote>
+<div><p>Es ist leicht, sich eine Karte so vorzustellen, dass sie diese drei grundlegenden Objekttypen enthält – Punkte, Linien und Formen. In OpenStreetMap gibt es eine spezielle Terminologie, die Du kennenlernen wirst. In OSM werden Punkte eigentlich <strong>Knoten</strong> und Linien als <strong>Weg</strong> bezeichnet. Eine Form wird als <strong>geschlossener Weg</strong> bezeichnet, da es sich nur um eine Linie handelt, die an derselben Stelle endet, an der sie beginnt.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Du wirst feststellen, dass bei der Auswahl eines Objekts rechts neben der Karte in einem Fenster mit dem Namen „Merkmale“ eine Liste angezeigt wird. Diese werden als Tags bezeichnet. Tags sind Informationen, die an einen Punkt, einer Linie oder eine Form gebunden sind und beschreiben, worum es sich handelt. Weitere Informationen zu Tags finden Sie in einem späteren Kapitel. Im Moment müssen Sie nur wissen, dass diese Informationen helfen zu beschreiben, ob unser Objekt ein Wald, ein Fluss, ein Gebäude oder etwas anderes ist.</p>
+</li>
+<li><p class="first">Überlege wie es ist, eine Karte von Hand zu zeichnen und wie Du auch dort Punkte, Linien und Formen zeichnest. Welche anderen Orte werden am besten durch Punkte, Linien oder Formen dargestellt?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="changing-objects">
+<h3><a class="toc-backref" href="#id5">Ändern von Objekten</a><a class="headerlink" href="#changing-objects" title="Link zu dieser Überschrift">¶</a></h3>
+<ol class="arabic simple">
+<li>Wähle den Wald auf der linken Seite der Karte aus. Achte darauf, auf die Linie um den Wald zu klicken, nicht auf einen der Punkte auf der Linie.</li>
+<li>Halte nun die linke Maustaste gedrückt und bewege die Maus. Du solltest nun in der Lage sein, den Wald an eine neue Position auf der Karte zu verschieben.</li>
+<li>Klicke auf einen der Punkte auf der Linie rund um den Wald. Halte die linke Maustaste gedrückt und bewege die Maus. Du solltest in der Lage sein, den Punkt zu bewegen. Auf diese Weise kannst Du die Form eines Objekts ändern oder einen Punkt verschieben.</li>
+</ol>
+</div>
+<div class="section" id="drawing">
+<h3><a class="toc-backref" href="#id6">Zeichnen</a><a class="headerlink" href="#drawing" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li>Auf der linken Seite von JOSM befindet sich eine Spalte von Schaltflächen. Viele dieser Schaltflächen öffnen neue Fenster auf der rechten Seite, welche weitere Informationen zur Karte bereitstellen. Die wichtigsten Schaltflächen befinden sich jedoch oben in dieser Spalte. Diese Schaltflächen ändern, was Sie mit der Maus tun können.</li>
+<li>Die oberen Schaltflächen in dieser Spalte sind die, die Du am meisten verwenden wirst. Sie werden zum Auswählen von Objekten und zum Zeichnen neuer Objekte verwendet.</li>
+<li>Bisher hast Du das Auswahl-Werkzeug verwendet, das wie folgt aussieht:</li>
+</ul>
+<img alt="Select tool" src="../../_images/josm_select-tool.png" />
+<p>Before you draw, you need to make sure that nothing is selected.</p>
+<ol class="arabic">
+<li><p class="first">Klicke in den schwarzen leeren Bereich auf der Karte, um sicherzustellen, dass nichts ausgewählt ist.</p>
+</li>
+<li><p class="first">Klicke auf das zweite Werkzeug, das Zeichenwerkzeug.</p>
+<img alt="Draw tool" src="../../_images/josm_draw-tool.png" />
+</li>
+<li><p class="first">Suche einen leeren Bereich auf der Karte, und doppelklicke mit der Maus. Dadurch wird ein einziger Punkt erstellt.</p>
+</li>
+</ol>
+<ul class="simple">
+<li>Um eine Linie zu zeichnen, klicke Sie mit der Maus. Bewege die Maus und klicke erneut. Fahre fort, bis Du mit der Linie zufrieden bist. Um die Zeile zu beenden, doppelklicke mit der Maus.</li>
+<li>Zeichne eine Form auf die gleiche Weise, wie eine Linie, aber beende die Form, indem Du auf den Punkt doppelklickst, an dem Du die Linie gestartet hast.</li>
+</ul>
+</div>
+<div class="section" id="add-presets">
+<h3><a class="toc-backref" href="#id7">Vorlagen hinzufügen</a><a class="headerlink" href="#add-presets" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Jetzt wissen wir, wie man Punkte, Linien und Formen zeichnet, aber wir haben immer noch nicht definiert, was sie darstellen. Wir wollen sagen können, dass unsere Punkte Geschäfte, Schulen oder etwas anderes sind und ob unsere Formen Felder, Gebäude oder etwas anderes sind.</p>
+<ol class="arabic">
+<li><p class="first">Klicke auf das Werkzeug „Auswählen“ in der Arbeitswerkzeugleiste auf der linken Seite.</p>
+<img alt="Select tool" src="../../_images/josm_select-tool.png" />
+</li>
+<li><p class="first">Select one of the objects that you drew with the Draw tool.</p>
+</li>
+<li><p class="first">On the top menu, click “Presets” and choose the type of location you would like to define.</p>
+</li>
+<li><p class="first">Wenn Du auf eine Vorlage klickst erscheint ein Formular, in dem Du nach weiteren Informationen gefragt wirst. Du musst nicht jedes Feld ausfüllen, aber kannst aber einige der wichtigen Felder hinzufügen, z. B. den Namen des Objekts.</p>
+</li>
+<li><p class="first">Wenn Du mit der Eingabe der Informationen fertig bist, wähle „Vorlage anwenden“. Wenn alles gut gelaufen ist, sollte das bearbeitete Objekt (Punkt, Linie oder Form) die Farbe ändern oder ein Symbol anzeigen. Das liegt daran, dass Du definiert hast, um was es sich dabei handelt.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="draw-your-own-map">
+<h2><a class="toc-backref" href="#id8">Erstelle Deine eigene Karte</a><a class="headerlink" href="#draw-your-own-map" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zeichnen wir nun eine Karte, um die Techniken zu üben, die Du gelernt hast. Du magst vielleicht eine Karte, die Du zuvor auf Papier gezeichnet hast, neu zeichnen.</p>
+<ul class="simple">
+<li>Bewege die Karte von der Beispielkarte weg. Halte die rechte Maustaste gedrückt und bewege die Maus, bis Du einen schönen leeren Bereich zum Zeichnen hast.</li>
+<li>Benutze das Zeichnen-Werkzeug, um Punkte, Linien und Formen zu erstellen. Beschreibe, was Deine Objekte sind, indem Du aus dem Menü „Vorlagen“ auswählst.</li>
+<li>Wenn Du fertig bist solltest Du eine eigene Karte haben, ähnlich der Beispielkarte, die wir in der Datei „sample.osm“ geöffnet haben.</li>
+</ul>
+</div>
+<div class="section" id="remove-the-sample-layer">
+<h2><a class="toc-backref" href="#id9">Entfernen der Beispielebene</a><a class="headerlink" href="#remove-the-sample-layer" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Sobald Du Dich mit diesen grundlegenden Bearbeitungstechniken wohl fühlst, möchtest Du Dich vielleicht dem Kartieren wirklicher Dinge widmen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last"><em>Es ist sehr wichtig, dass Du zuerst die Ebene mit den Beispieldaten entfernst. Diese Daten sind fiktiv und dürfen nicht in die OpenStreetMap-Datenbank hochgeladen werden (neuere JOSM-Releases verhindern dies automatisch).</em></p>
+</div>
+<p>Wähle im Fenster Ebenen oben rechts auf dem Bildschirm die Ebene sample.osm aus. Klicke dann auf das Papierkorbsymbol in der unteren rechten Ecke dieses Fensters. Alternativ kannst Du aus dem Kontextmenü der Ebene „Entfernen“ auswählen.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id10">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Probiere die LearnOSM-Dokumentation aus, aus der dieser Schnellstart abgeleitet wurde: <a class="reference external" href="https://learnosm.org/de/josm/start-josm/">https://learnosm.org/de/josm/start-josm/</a></li>
+<li>Um die Bearbeitung fortzusetzen, musst Du zunächst echte Daten herunterladen. Dies wird im nächsten Kapitel erläutert: <a class="reference external" href="https://learnosm.org/en/josm/more-about-josm/">https://learnosm.org/en/josm/more-about-josm/</a></li>
+<li>Webseite: <a class="reference external" href="https://josm.openstreetmap.de/">https://josm.openstreetmap.de/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

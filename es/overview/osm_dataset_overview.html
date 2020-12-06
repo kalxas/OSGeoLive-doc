@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenStreetMap &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Conjunto de datos NetCDF" href="netcdf_dataset_overview.html" />
+    <link rel="prev" title="Carolina del Norte USA Conjunto de datos educativo" href="nc_dataset_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.openstreetmap.org/"><img alt="../../_images/logo_osm_dataset.png" class="align-right" src="../../_images/logo_osm_dataset.png" /></a>
+<div class="section" id="openstreetmap">
+<h1>OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="map-data">
+<h2>Datos de mapas<a class="headerlink" href="#map-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>OpenStreetMap es un mapa del mundo creado por una multitud de personas, que se ha convertido en una de las fuentes más detalladas de datos de mapas a escala local disponibles. Los datos del mapa fuente son creados y mantenidos por miles de voluntarios de todo el mundo, utilizando procesos similares al mantenimiento de la enciclopedia de wikipedia.</p>
+<p>El aspecto más visible de OSM es la interfaz en línea de mosaico web de <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a>, pero los mapas también se pueden ver, importar o editar en muchas aplicaciones como <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> , <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>, ArcGIS y aplicaciones dedicadas de OSM.</p>
+<p>El corazón del proyecto es la información subyacente que está abierta para que todos puedan editar, ver o crear mapas personalizados. Fundamentalmente, el enfoque de OSM está en los datos, los mapas ricos simplemente se salen de esto.</p>
+<p>La distribución de OSGeoLive incluye un extracto de datos de OSM del tamaño de una ciudad, que algunas aplicaciones usan como ejemplos.</p>
+<a class="reference internal image-reference" href="../../_images/osm_dataset_screenshot.png"><img alt="osm_dataset screenshot" class="align-right" src="../../_images/osm_dataset_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Características Principales<a class="headerlink" href="#core-features" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>Las características del vector están etiquetadas con nombres y otros atributos.</li>
+<li>Extrae subconjuntos locales de los datos.</li>
+<li>Los datos se almacenan como nodos WGS84 de longitud de latitud, cadenas de nodos y meta-características que permiten el punto, la polilínea, la cobertura de área y las relaciones.</li>
+<li>Etiquetado rico de atributos, a menudo mucho más detallado que cualquier otra fuente.</li>
+<li>Un repositorio global de conocimiento local.</li>
+</ul>
+</div>
+<div class="section" id="data-sets-included-in-osgeo-live">
+<h3>Data Sets included in OSGeo LiveConjuntos de datos incluidos en OSGeo Live<a class="headerlink" href="#data-sets-included-in-osgeo-live" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>feature_city.osm.bz2: Un gran extracto del área metropolitana de la ciudad como archivo de texto XML comprimido en BZip2.</li>
+<li>feature_city_CBD.osm.bz2: Un subconjunto más pequeño que cubre solo el Distrito Comercial Central (CBD).</li>
+<li>feature_city_poi.db: Sqlite DB de nodos de «posiciones de interés» extraídos de la anterior ciudad más grande, a su vez extraída de OSM. Contiene ubicaciones de bares, gasolineras, restaurantes, supermercados, etc.</li>
+<li>Los archivos que hacen referencia al nombre de la ciudad mostrada contienen los mismos datos que los archivos anteriores. Las Guías de Inicio Rápidos y las Vistas Generales utilizan los nombres genéricos de los archivos, para que la ciudad ejemplo pueda cambiar con cada nueva versión.</li>
+</ul>
+<p>Los datos de ciudad de la característica OSM se han importado a una base de datos PostGIS llamada «osm_local» utilizando la herramienta osm2pgsql. El sistema de referencia espacial utilizado para esta base de datos es latitud-longitud con el datum WGS84 (EPSG código 4326) y puede reproyectarse a otros sistemas de referencia espacial (SRS), como Spherical-Mercator, según demanda. El extracto CBD más pequeño se carga en otra base de datos PostGIS llamada «pgrouting».</p>
+</div>
+<div class="section" id="details">
+<h3>Detalles<a class="headerlink" href="#details" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Sitio web:</strong> <a class="reference external" href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="https://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License (ODbL)</a></p>
+<p><strong>Versión de datos:</strong> Extracto de base de datos en vivo</p>
+<p><strong>Formato de datos:</strong> XML</p>
+<p><strong>Sistema de coordenadas espaciales:</strong> WGS84 latitud y longitud</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="https://www.openstreetmap.org/help">https://www.openstreetmap.org/help</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

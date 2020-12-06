@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Re3gistry Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="pygeoapi" href="../overview/pygeoapi_overview.html" />
+    <link rel="prev" title="Re3gistry" href="../overview/re3gistry_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://inspire.ec.europa.eu/about-inspire/563"><img alt="../../_images/logo_inspire.png" class="align-right" src="../../_images/logo_inspire.png" /></a>
+<div class="section" id="re3gistry-quickstart">
+<h1>Re3gistry Quickstart<a class="headerlink" href="#re3gistry-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The Re3gistry 2 is a reusable open source solution for managing and sharing
+「reference codes」. It provides a consistent central access point where labels
+and descriptions for reference codes can be easily browsed by humans and
+retrieved by machines.  Reference codes are exchanged between applications to
+uniquely reference some ‘thing’. They can be used to define sets of permissible
+values for a data field or to provide a reference or context for the data being
+exchanged. Examples are enumerations, controlled vocabularies, taxonomies,
+thesauri or, simply, ‘lists of things’.  The Re3gistry 2 supports organisations
+in managing and updating reference codes in a consistent way.</p>
+<p>This Quick Start describes how to:</p>
+<ul class="simple">
+<li>Start and install the Re3gistry using the wizard (first start only)</li>
+<li>Manage data from the <code class="docutils literal"><span class="pre">pgAdmin</span></code> client.</li>
+</ul>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-the-re3gistry" id="id1">Start the Re3gistry</a></li>
+<li><a class="reference internal" href="#introduction-to-the-re3gistry-2" id="id2">Introduction to the Re3gistry 2</a></li>
+<li><a class="reference internal" href="#users-roles-and-groups" id="id3">Users, roles and groups</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="start-the-re3gistry">
+<h2><a class="toc-backref" href="#id1">Start the Re3gistry</a><a class="headerlink" href="#start-the-re3gistry" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Choose <em>『Start Re3gistry』</em> from the <span class="menuselection">Geospatial ‣ Web Services
+‣ Re3gistry</span> menu.  The application will take a few moments to start up.
+Firefox opens the <em>Re3gistry landing page</em> (you can also open this manually by
+pointing your browser to <a class="reference external" href="http://localhost:8080/re3gistry2">http://localhost:8080/re3gistry2</a>).</p>
+<p>If this is the first start, the Re3gistry will launch the installation wizard.
+This wizard will guide the user to the setup and first run of the tool.</p>
+<ul class="simple">
+<li>The first page is just an introductory description. Click on 「continue」.</li>
+<li>The 「Registry manager」 page allows you to define the account for the system
+administration (Registry manager). Insert a valid e-mail address and a
+password. Then click on 「Save and continue」.</li>
+<li>The next step allows you to choose between 2 options:<ul>
+<li>Installation: choose this option if you want to
+install the Re3gistry software for the first time and to create a registry
+from scratch.</li>
+<li>Migration: choose this option if you want to upgrade a pre-existing
+Re3gistry instance. This option will keep your settings and content. Note
+that this option will only work on an existing instance running on Re3gistry
+version 1.3.X.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Installation option</strong></p>
+<p>In case the 「Installation」 option is chosen, the basic configuration for the new
+registry will be requested.</p>
+<ul class="simple">
+<li>System languages: the system languages are the languages supported and handled
+by the Re3gistry 2. Note that you can select one or more system languages.</li>
+<li>Master language: the master language is the one used by the Re3gistry 2 to
+handle multilingualism. Note that this will require all content to be
+available in the chosen master language.</li>
+<li>Base URI: the base URI will be part of the public URL, generally this should
+match with your own domain name: <cite>**http://example.com**/registry</cite></li>
+<li>Local ID: the local ID will be part of the public URL, generally the path
+following the domain name: <cite>http://example.com/**registry**</cite></li>
+<li>Label: the label of the registry will be the ‘title’ of the Re3gistry 2
+instance. It will be shown in the registry’s landing page.</li>
+<li>Content summary: this text should shortly describe what would be available
+under your Re3gistry 2 instance. It will be shown in the registry’s landing
+page.</li>
+</ul>
+<p>After filling all the information, click on 「Save and continue」.</p>
+<p>The next step will present a summary of the information inserted. If all the
+fields are correct, click on 「Install」 to begin the installation.  Once the
+installation is finished, the user is redirected to the login page.</p>
+<p><strong>Migration option</strong></p>
+<p>In case the 「Migration」 option is chosen, the details of the database from the
+existing Re3gistry installation are requested.</p>
+<ul class="simple">
+<li>Fill the requested fields and</li>
+<li>click the 「Save and continue」 button. You will then get a page containing a
+summary of the data retrieved from the existing instance of the Re3gistry.</li>
+<li>Click on 「Install」 to begin the migration. An information page will be shown.</li>
+</ul>
+<p>Now you can close the browser and the system will notify you via e-mail using
+the address specified in the 「Registry manager」 definition step.</p>
+</div>
+<div class="section" id="introduction-to-the-re3gistry-2">
+<h2><a class="toc-backref" href="#id2">Introduction to the Re3gistry 2</a><a class="headerlink" href="#introduction-to-the-re3gistry-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Re3gistry editing interface allows to graphically manage the complete
+life-cycle of reference codes, such as code lists, enumerations, controlled
+vocabularies, taxonomies, thesauri or, simply, 『lists of things』.  If you choose
+the 「installation mode」 from the wizard, the first time you log in to the
+system, you will have an empty registry. You can then start populating it using
+the tools provided by the editing interface.  If you choose the 「migration mode」
+from the wizard, you will find the registers imported from the older version of
+the tool.</p>
+<p>For detailed documentation on the editing interface, please read the <a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">user
+manual</a>.</p>
+</div>
+<div class="section" id="users-roles-and-groups">
+<h2><a class="toc-backref" href="#id3">Users, roles and groups</a><a class="headerlink" href="#users-roles-and-groups" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Re3gistry 2 follows the <a class="reference external" href="https://www.iso.org/standard/54721.html">ISO 19135 Standard 「Geographic information —
+Procedures for item registration」</a>.</p>
+<p>The possible user roles that the Re3gistry 2 manages are:</p>
+<ol class="arabic simple">
+<li>Registry manager</li>
+<li>Register owner</li>
+<li>Register manager</li>
+<li>Control body</li>
+<li>Submitting organisations</li>
+</ol>
+<p>The registry manager has the highest privileges in the system. This role can
+perform three different tasks:</p>
+<ul class="simple">
+<li>Make any action on the reference codes.<ul>
+<li>The changes done to the reference codes need to undergo the approval
+workflow by obtaining the approval from the control body,</li>
+</ul>
+</li>
+<li>Manage the structural elements of the system.</li>
+<li>Change and edit information related to the registry and the registers,</li>
+<li>Add new registers,</li>
+<li>Manage the fields of the registry, registers, reference codes.<ul>
+<li>These structural changes do not need to have the approval workflow, and</li>
+</ul>
+</li>
+<li>Manage both users and groups.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This was just a very brief overview of the Re3gistry.  There is more information
+in the demo installation and on the Re3gistry GitHub space.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">User manual</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/administrator-manual.md">Administrator manual</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/developer-manual.md">Developer manual</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

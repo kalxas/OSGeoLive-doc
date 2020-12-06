@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de OpenCPN &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GMT" href="../overview/gmt_overview.html" />
+    <link rel="prev" title="OpenCPN" href="../overview/opencpn_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.opencpn.org"><img alt="../../_images/logo_opencpn.png" class="align-right" src="../../_images/logo_opencpn.png" /></a>
+<div class="section" id="opencpn-quickstart">
+<h1>Inicio Rápido de OpenCPN<a class="headerlink" href="#opencpn-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>OpenCPN es un conciso Chart Plotter y Navegador (CPN). Como siempre, nunca use una pieza de software o equipo electrónico como su único medio de navegación y esté atento a la ventana.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#setting-up-your-charts" id="id1">Configuración de los gráficos</a></li>
+<li><a class="reference internal" href="#setting-up-your-gps" id="id2">Configuración de su GPS</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id3">Cosas para probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="setting-up-your-charts">
+<h2><a class="toc-backref" href="#id1">Configuración de los gráficos</a><a class="headerlink" href="#setting-up-your-charts" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Antes de ejecutar OpenCPN en el LiveDVD, debe activar los datos de ejemplo. Esta es una condición para redistribuir las cartas náuticas gratuitas de la NOAA. La primera vez que abra OpenCPN se le presentará la opción de hacerlo automáticamente.</p>
+<ol class="arabic simple">
+<li>En el menú Inicio, seleccione <span class="menuselection">Geospatial ‣ Navegación y mapas ‣ OpenCPN</span>.</li>
+<li>Haga click en <span class="guilabel">Aceptar</span> en el Acuerdo de Datos de Cartas Náuticas NOAA.</li>
+<li>Haga click en <span class="guilabel">OK</span> para aceptar la licencia de OpenCPN.</li>
+</ol>
+<p>Puede descargar cartas náuticas adicionales de EUA de la NOAA en <a class="reference external" href="https://www.charts.noaa.gov/">https://www.charts.noaa.gov/</a></p>
+</div>
+<div class="section" id="setting-up-your-gps">
+<h2><a class="toc-backref" href="#id2">Configuración de su GPS</a><a class="headerlink" href="#setting-up-your-gps" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Si tiene un GPS conectado, querrá iniciar el servicio GPSd. Para ello, abra un terminal y ejecute:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">gpsd</span>
+</pre></div>
+</div>
+<p>y</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">gpsd</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>Los usuarios de GPS BlueTooth deben tener especial cuidado al leer acerca de la opción no-sonda.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">“<cite>xgps</cite>” es un buen programa para comprobar que Gpsd puede ver bien su GPS.</p>
+</div>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id3">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los datos actuales de pronóstico del tiempo y las ondas se pueden descargar y cubrir sobre sus gráficos utilizando el plugin GRIB. El software <a class="reference internal" href="../overview/zygrib_overview.html"><span class="doc">zyGrib</span></a> (también en este disco) es una manera fácil de descargar eso.</p>
+<ol class="arabic simple">
+<li>Haga click en el ícono <span class="guilabel">Opciones</span> de la barra de herramientas. Aparecerá la ventana Opciones.</li>
+<li>Seleccione la pestaña <span class="guilabel">Complementos</span>.</li>
+<li>Elija GRIB y, a continuación, haga click en <span class="guilabel">Habilitar</span>.</li>
+<li>Haga click en <span class="guilabel">OK</span>. Ahora se muestra un ícono de cierre de viento en la barra de herramientas.</li>
+</ol>
+<p>Ejecute el inicio rápido de <a class="reference internal" href="zygrib_quickstart.html"><span class="doc">zyGrib</span></a>  y cargue el archivo zyGrib sobre su gráfico.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>Si ha guardado el archivo zyGrib en el directorio de inicio, desplácese a: <code class="file docutils literal"><span class="pre">/home</span></code>  y seleccione su directorio de <code class="docutils literal"><span class="pre">user</span></code> como el directorio de datos GRIB. A continuación, haga clic en  de la lista de archivos de fondo para mostrar los archivos ocultos, incluyendo el directorio de  <code class="docutils literal"><span class="pre">.zygrib</span></code> que contiene los archivos de descarga GRIB.</p>
+<p class="last">No hay necesidad de descomprimir el archivo.  Haga click  en el «&gt;» a la izquierda del nombre del archivo y seleccione de la lista de pronósticos de tiempo disponibles.</p>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>La documentación está disponible en el menú Ayuda o en línea en <a class="reference external" href="https://opencpn.org/OpenCPN/info/manuals.html">https://opencpn.org/OpenCPN/info/manuals.html</a></li>
+<li><a class="reference external" href="../../opencpn/tips.html">Consejos para comenzar</a></li>
+<li>Sitio web: <a class="reference external" href="https://www.opencpn.org">https://www.opencpn.org</a></li>
+<li>Soporte: <a class="reference external" href="https://www.cruisersforum.com/forums/f134">https://www.cruisersforum.com/forums/f134</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

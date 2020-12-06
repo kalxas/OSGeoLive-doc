@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JOSM &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="JOSM Quickstart" href="../quickstart/josm_quickstart.html" />
+    <link rel="prev" title="iD editor Quickstart" href="../quickstart/ideditor_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://josm.openstreetmap.de"><img alt="../../_images/logo_josm.png" class="align-right" src="../../_images/logo_josm.png" /></a>
+<div class="section" id="josm">
+<h1>JOSM<a class="headerlink" href="#josm" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="desktop-editor-for-openstreetmap-data">
+<h2>Desktop Editor per dati OpenStreetMap<a class="headerlink" href="#desktop-editor-for-openstreetmap-data" title="Link a questa intestazione">¶</a></h2>
+<p>JOSM è un editor offline per dati OpenStreetMap (OSM) ricco di caratteristiche ed estensibile, scritto in Java.</p>
+<p>Supporta il caricamento di tracce GPX a se stanti e dati da traccie GPX così come editare gli esistenti nodes (punti), ways (linee), tags per i metadati (informazioni chiave/valore) e relations (sequenze ordinate di punti e linee) dal database OSM. Le tracce GPX, sono usualmente scaricate precedentemente da un ricevitore GPS o da altre sorgenti di dati.</p>
+<p>Un grande numero di plugins specializzati sono stati scritti per JSOM, che sono disponibili per lo scaricamento e l’installazione.</p>
+<a class="reference internal image-reference" href="../../_images/josm_screenshot.png"><img alt="josm screenshot" class="align-right" src="../../_images/josm_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>Strumenti comuni alle interfacce Desktop GIS:<ul>
+<li>Toolbar customization, View control (zoom, pan. etc), styles, icons and layers management.</li>
+</ul>
+</li>
+<li>Scaricamento e caricamento dei dati vettoriali OSM.</li>
+<li>Apre dati locali:<ul>
+<li>files NMEA-0183: .nmea, .nme, .nma, .log, .txt</li>
+<li>files OSM: .osm, .xlm, .osmbz2, .osmbz</li>
+<li>OSM change file: .osc, .osc.bz2, .osc.bz, .osc.gz</li>
+<li>immagini (.jpg)</li>
+</ul>
+</li>
+<li>Immagini:<ul>
+<li>Visualizzazione di mappe di base da OSM, Bingsat, Lansat, MapBox satellite, MapQuest Open Aerial o qualsiasi altre sorgenti WMS.</li>
+</ul>
+</li>
+<li>Strumenti per la modifica:<ul>
+<li>Nodi: fondi, unisci, separa, distribuisce, allinea in cerchio, allinea in linee, unisci nodo a via, e altri.</li>
+<li>Linee: dividi, unisci, verso opposto, semplifica, unglue ways, e altri.</li>
+<li>Aree: unisci aree sovrapposte, crea multipoligoni, e altro.</li>
+</ul>
+</li>
+<li>Mappatura audio: gestione rilevamento tramite registrazioni audio.</li>
+<li>Mappatura foto: gestione rilevamento tramite immagini.</li>
+<li>Plugins: una lista di plugin specializzata è disponibile per essere scaricata.</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Standards implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>JOSM visualizza layer WMS, ma usa le <a class="reference external" href="https://wiki.openstreetmap.org/wiki/API_v0.6">OSM API</a> per communicare con i database OSM.</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="https://josm.openstreetmap.de">https://josm.openstreetmap.de</a></p>
+<p><strong>Licenza:</strong> GNU General Public License (GPL) version 2. Nota: i plugin di JOSM potrebbero usare un’altra licenza.</p>
+<p><strong>Versione del Software:</strong> r11427</p>
+<p><strong>Piattaforme Supportate:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfacce API:</strong> Java</p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/josm_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

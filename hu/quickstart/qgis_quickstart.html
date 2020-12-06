@@ -1,0 +1,285 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>QGIS gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GRASS GIS" href="../overview/grass_overview.html" />
+    <link rel="prev" title="QGIS" href="../overview/qgis_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1>QGIS gyorstalpaló<a class="headerlink" href="#qgis-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A QGIS egy felhasználóbarát asztali GIS kliens, mely lehetővé teszi, hogy megjelenítsen, kezeljen, szerkesszen, elemezzen és nyomtatható térképeket állítson össze.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-qgis" id="id1">QGIS elindítása</a></li>
+<li><a class="reference internal" href="#create-a-project" id="id2">Projekt létrehozása</a></li>
+<li><a class="reference internal" href="#open-an-existing-project" id="id3">Létező projekt megnyitása</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigáció a térképen</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">Rétegei stílus beállítása</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id6">Kipróbálandó dolgok</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-qgis">
+<h2><a class="toc-backref" href="#id1">QGIS elindítása</a><a class="headerlink" href="#start-qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Nyissa meg «Desktop GIS»&nbsp; mappát.</li>
+<li>Duplán kattintson a «QGIS» ikonra.</li>
+</ol>
+<p>Egy üres projekttel induló QGIS-t lát. A QGIS interfész különböző részeit lentebb soroljuk fel.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>[1] Menü sor: Hozzáférés a különböző QGIS funkciókhoz a szabványos, hierarchikus menü használatával.</li>
+<li>[2] Eszközsorok: Interaktív munka a térképpel,rétegekkel, attribútumokkal és kiválasztásokkal.</li>
+<li>[3] Böngésző panel: Egy téradat fájl böngésző, mely lehetővé teszi a tartalom áthúzását a térkép keretbe.</li>
+<li>[4] Réteg panel: szabályozza a térképrétegeket, azok sorrendjét, és a láthatóságukat.</li>
+<li>5] Státusz sor: Általános információk a térképről és az univerzális kereső elérése.</li>
+</ul>
+</div>
+<div class="section" id="create-a-project">
+<h2><a class="toc-backref" href="#id2">Projekt létrehozása</a><a class="headerlink" href="#create-a-project" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy új projekt létrehozásához válassza a <span class="menuselection">Project ‣ New</span>-t a menüből.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.1999999999999px; height: 499.09999999999997px;" /></a>
+</div></blockquote>
+<p>Kezdjük egy vektor réteg hozzáadásával a térképhez. Rétegeket hozzáadhatunk a térképhez a képernyő bal oldalán található böngésző panel használatával.</p>
+<ol class="arabic simple">
+<li>Menjen a képernyő bal oldalán található böngésző panelbe.</li>
+<li>Navigáljon a mappa fában a «home/data/natural_earth2»-höz.</li>
+<li>Válassza a «ne_10m_admin_0_countries.shp»-t.</li>
+<li>Húzza ki a réteget a böngésző panelból és dobja be a térkép keretbe.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div></blockquote>
+<p>Miután áthúzta a réteget a térkép keretbe az országokat tartalmazó réteget lát.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
+<p>Most adjunk hozzá egy raszter réteget a projekthez.</p>
+<ol class="arabic simple">
+<li>Menjen a képernyő bal oldalán található böngésző panelbe.</li>
+<li>Navigáljon a mappa fában a «home/data/natural_earth2»-höz.</li>
+<li>Válassza a «HYP_50M_SR_W.tif»-et.</li>
+<li>Húzza ki a réteget a böngésző panelból és dobja be a térkép keretbe.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Miután áthúzta a réteget a térkép keretbe a felszínborítást és tengermélységet mutató raszter réteget lát.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Most hogy valamennyi tartalmat adtunk a projektünkhöz elmenthetjük ezt a projektet, hogy később visszatérhessünk hozzá.</p>
+<ol class="arabic">
+<li><p class="first">Válassza a <span class="menuselection">Project ‣ Save</span>-t a menüből.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</li>
+<li><p class="first">A projekt mentés helye legyen «/home/user/desktop».</p>
+</li>
+<li><p class="first">Legyen a projekt neve «My QGIS project».</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+</li>
+<li><p class="first">Kattintson a «Save»-re.</p>
+</li>
+</ol>
+<p>Abból tudhatja, hogy a projektet elmentette, hogy az asztalom megjelenik a «My QGIS project» nevű projekt fájl az asztalon és a  projekt már nem «untitled», hanem «My QGIS project» névvel jelenik meg.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_saved_project.png"><img alt="QGIS saved project" src="../../_images/qgis_saved_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div>
+<div class="section" id="open-an-existing-project">
+<h2><a class="toc-backref" href="#id3">Létező projekt megnyitása</a><a class="headerlink" href="#open-an-existing-project" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy QGIS projekt egy későbbi felhasználáshoz megőrzi a rétegeket, a stílusokat, a térkép terjedelmét és a beállításokat. Ezen információkat a projekt fájlban tároljuk, mely «.qgs» vvagy «.qgz» kiterjesztéssel rendelkezik, a jövőben a «.qgz» lesz az alapértelmezett kiterjesztés.</p>
+<p>Nyissunk meg egy létező QGIS projektet és nézzük meg hogyan működik ez.</p>
+<ol class="arabic simple">
+<li>Nyissa meg a QGIS-t.  Vegye észre, hogy amikor a QGIS megnyílik a korábbi projektek listáját látja, melyekből választhat. Ez egy kényelmes módszer a nemrégiben használt projektek megnyitására.</li>
+<li>Válassza a <span class="menuselection">Project ‣ Open</span>-t a menüből.</li>
+<li>Navigáljon a «/home/user/qgis-example» mappába.</li>
+<li>Válassza a «QGIS-NaturalEarth-Example.qgs» projektet.</li>
+<li>Kattintson az «Open»-re.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+<p>Ez egy Natural Earth adatállományokat tartalmazó QGIS projektet fog megnyitni, amint lentebb láthatja. Ez a projekt számos réteget tartalmaz a réteg panelben és a térképi tartalmaz a térkép keretben jeleníti meg.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>A rétegek ki- és bekapcsolhatók, a réteg melletti jelölő négyzetbe kattintva a réteg panelben. Amikor egy réteget bekapcsol a réteg panelben, a térképet frissítjük a réteg megjelenítéséhez. A rétegpanel bezárása látható lentebb.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.49999999999997px;" /></a>
+<p>Dogozzunk  réteg panellel és változtassuk meg néhány térképi réteg láthatóságát-</p>
+<ol class="arabic simple">
+<li>Kattintson a jelölőnégyzetbe a «ne_10m_populated_places» réteg mellett, hogy kikapcsolja.</li>
+<li>Kattintson a jelölőnégyzetbe a «Water» réteg mellett, hogy kikapcsolja.</li>
+</ol>
+<p>Vegye észre, hogy a térkép frissült, hogy tükrözze a módosításokat a réteg listában.  Most láthatjuk az «ne_10m_populated_places» réteget mint pontok, de nem látjuk többet  folyókat és tavakat, melyek a «Waters» rétegen vannak.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_visibility.png"><img alt="QGIS result of layer visibility changes" src="../../_images/qgis_layer_visibility.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>A réteg láthatóság vezérlése mellett  a sorrendet is módosíthatjuk, melyben  rétegek a réteg panelen megjelennek. Ezt megtehetjük s réteg kiválasztásával a réteg listában és fel- vagy lehúzásával a listában. A sorrend, ahogy a rétegek megjelennek a réteglistában megegyezik  térképre rajzolásuk sorrendjével.</p>
+<ol class="arabic simple">
+<li>Bal kattintás a «HYP_50M_SR_W» rétegen.</li>
+<li>Az egérgomb nyomvatartása mellett húzzuk a réteget a lista tetejére.</li>
+</ol>
+<p>A raszter réteg most minden más réteg felett van a réteg panelben. Most a raszter réteget az összes többi réteg felett rajzolja ki a rendszer a térképen.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Próbálja a  «HYP_50M_SR_W» réteget a réteglista aljár mozgatni. Ez egy megfelelőbb pozíció az ilyen rétegeknek.</p>
+</div>
+<div class="section" id="navigate-the-map">
+<h2><a class="toc-backref" href="#id4">Navigáció a térképen</a><a class="headerlink" href="#navigate-the-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A navigációs eszköztár lehetővé teszi, hogy a felhasználónak a térkép mozgatását és a térképi terjedelmet módosítását.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
+<ul class="simple">
+<li>[1] Eltolás: lehetővé teszi, hogy a térképet elhúzzuk egy új helyre.</li>
+<li>[2] Nagyítás: lehetővé teszi, hogy belenagyítsunk a térképbe.</li>
+<li>[3] Kicsinyítés: lehetővé teszi, hogy a térképet kicsinyítsük.</li>
+<li>[4] Nagyítás a terjedelemre: módosítja a térkép nagyítását és helyzetét, hogy az összes réteg tartalma megjelenjen a térképen.</li>
+<li>[5] Nagyítás a rétegre: a térkép nagyítás és pozíció módosítása, hogy a réteg panelen kijelölt réteg teljesen megjelenjen.</li>
+</ul>
+<p>Próbáljuk meg a térkép terjedelmét módosítani a nagyítás eszközzel.</p>
+<ol class="arabic simple">
+<li>Válassza ki a nagyítás eszközt a navigációs eszköztárból.</li>
+<li>Mozgassa az egeret a térkép fölé.</li>
+<li>Kattintson és tartsa nyomva a bal egérgombot.</li>
+<li>Az egérgomb nyomvatartása mellett mozgassa átlósan a kurzort bármelyik irányban. Ez egy téglalapot rajzol, melyre nagyítani fogunk.</li>
+<li>Engedje el az egérgombot, ha elégedett a kialakított területtel.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">A kicsinyítés eszköz esetén az eljárás ugyanaz mint a nagyítás eszköznél. Az eredmény éppen ellenkező.</p>
+</div>
+<p>Most nézzük meg a nagyítás a terjedelemre eszközt. Ez az eszköz kicsinyíti a térképet, hogy minden réteg beleférjen a térképbe. Az eszköz használatához kattintson a nagyítás a terjedelemre gombra.</p>
+<p>Végül próbálja meg a nagyítás a rétegre eszközt. Az eszköz használatához kövesse a következő lépéseket:</p>
+<ol class="arabic simple">
+<li>Kattintson a réteg nevére a réteg panelban.</li>
+<li>Kattintson a nagyítás a rétegre gombra.</li>
+</ol>
+<p>A térkép a kiválasztott (aktív) réteg terjedelmére nagyít.</p>
+</div>
+<div class="section" id="style-your-layers">
+<h2><a class="toc-backref" href="#id5">Rétegei stílus beállítása</a><a class="headerlink" href="#style-your-layers" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A QGIS-ben a stílus dokk használatával állíthatjuk be a rétegek stílusát. Alapértelmezésben a stílus dokk nem látható, de könnyen elérhető a réteg panel tetején található gombbal, amint lentebb látható.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
+<p>A fenti gomb mint egy kapcsoló működik, így a stílus dokk könnyen elrejthető ugyanarra a gombra kattintva ismét. Amikor a stílus dokkot bekapcsoljuk  a képernyő jobb-felső sarkában jelenik meg, készen arra, hogy az aktív réteg stílusát beállítsuk.</p>
+<p>Nyitott stílus dokk esetén módosíthatjuk a stílus dokk tetején látható réteg megjelenését.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_layer.png"><img alt="QGIS style dock layer" src="../../_images/qgis_style_dock_layer.png" style="width: 286.29999999999995px; height: 294.7px;" /></a>
+<p>A most nyitott stílus dokkal módosíthatjuk a vonalak színét és vastagságát a «ne_10m_rivers_lakes_centrelines» rétegen. Először módosítsuk a színt.</p>
+<ol class="arabic">
+<li><p class="first">Kattintson a „Color” mintára, ahogy alább látható. Ez egy színpalettát jelenít meg, mely lehetővé teszi, hogy különböző színeket válasszon.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_color.png"><img alt="QGIS style dock color" src="../../_images/qgis_style_dock_color.png" style="width: 298.2px; height: 225.39999999999998px;" /></a>
+</li>
+<li><p class="first">A «Select Color» palettában mozgassa a szálkeresztet a kiválasztott színre.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_color_palette.png"><img alt="QGIS color palette" src="../../_images/qgis_style_color_palette.png" style="width: 284.2px; height: 224.7px;" /></a>
+</li>
+<li><p class="first">Majd kattintson a balra mutató nyílra, hogy visszatérjen a szimbólum előnézethez.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_back.png"><img alt="QGIS style return" src="../../_images/qgis_style_back.png" style="width: 281.4px; height: 128.1px;" /></a>
+</li>
+<li><p class="first">A szimbólum előnézetet frissítette a program az új színnel és a réteget is a térképen.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_result.png"><img alt="QGIS style result" src="../../_images/qgis_style_result.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>A stílus dokkban módosíthatjuk a térképi elemek méretét is. A vonalszélességek módosításához kövese a következő lépéseket:</p>
+<ol class="arabic">
+<li><p class="first">Győződjön meg, hogy a kiválasztott az «ne_10m_rivers_lakes_centrelines» réteg, a stílus panel tetején.</p>
+</li>
+<li><p class="first">A stílus panelben vigye be a  «0.5» értéket a  «width» mezőbe.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_width.png"><img alt="QGIS style width" src="../../_images/qgis_style_width.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Figyelje meg, hogy a szimbólum előnézetben a vonalvastagság megnő és ugyanúgy a térképen is.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id6">Kipróbálandó dolgok</a><a class="headerlink" href="#things-to-try" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Bővítse a QGIS funkcionalitását <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">modulokkal</a>.</li>
+<li>Kezdje el az adatok manipulálását a <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">Feldolgozás eszköztárral</a>.</li>
+<li>Használja a QGIS-t <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">PostGIS adatbázis</a> tartalmának megtekintésére.</li>
+<li>Próbálja meg a QGIS térképét publikálni a weben, a <a class="reference external" href="../overview/qgis_mapserver_overview.html">QGIS Map Server</a> használatával a <span class="menuselection">Geospatial ‣ Web Services</span> menüből.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id7">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A további tanuláshoz a QGIS-ről egy jó kiinduló pont a <a class="reference external" href="https://www.qgis.org/en/docs/index.html">Documentation page</a> A QGIS honlapon és az <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS</a> e-könyv.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

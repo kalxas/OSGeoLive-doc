@@ -1,0 +1,146 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mapnik gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="MapSlicer" href="../overview/mapslicer_overview.html" />
+    <link rel="prev" title="Mapnik" href="../overview/mapnik_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapnik.org/"><img alt="../../_images/logo_mapnik.png" class="align-right" src="../../_images/logo_mapnik.png" /></a>
+<div class="section" id="mapnik-quickstart">
+<h1>Mapnik gyorstalpaló<a class="headerlink" href="#mapnik-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A Mapnik egy eszközkészlet térképes alkalmazások fejlesztéséhez. Mindenekelőtt a Mapnik gyönyörű térképeket készít. Könnyen bővíthető és alkalmas asztali és webes fejlesztésre.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#mapnik-python" id="id1">Mapnik &amp; Python</a></li>
+<li><a class="reference internal" href="#mapnik-leaflet" id="id2">Mapnik &amp; Leaflet</a></li>
+<li><a class="reference internal" href="#what-next" id="id3">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="mapnik-python">
+<h2><a class="toc-backref" href="#id1">Mapnik &amp; Python</a><a class="headerlink" href="#mapnik-python" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A Mapnik-et és a python kötéseit telepítették ezen a gépen és készen áll szkriptek készítéséhez.</p>
+<p>A Mapnikkal könnyű pythonból térképeket létrehozni. A parancssorba gépelje be <cite>python</cite>, a python értelmező elindításához. Utána próbálja ezt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mapnik</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapnik</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;/usr/local/share/mapnik/demo/population.xml&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">load_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">zoom_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s1">&#39;map.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;xdg-open map.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">A fenti kód egy XML stíluslap meglététől függ, melyet a Mapnik olvasni tud, ebben van a rétegek definíciója melyekből az adatok jönnek és azokhoz a rétegekhez alkalmazandó stílusok. Egy ilyet a QGIS-en belül létre tud hozni a Quantumnik modullal: <a class="reference external" href="https://plugins.qgis.org/plugins/quantumnik/">https://plugins.qgis.org/plugins/quantumnik/</a></p>
+</div>
+</div>
+<div class="section" id="mapnik-leaflet">
+<h2><a class="toc-backref" href="#id2">Mapnik &amp; Leaflet</a><a class="headerlink" href="#mapnik-leaflet" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy alap demó alkalmazás rendelkezésre áll, mely bemutatja a Mapnik által szolgáltatott csempék használatát egy OpenLayers web térképen, az OSM/Google csempe sémában.</p>
+<p>A demó a Mapnikhez tervezett „TileStache” nevű csempe szervert használja. Látogassa meg a TileCache honlapját további információért: <a class="reference external" href="http://tilestache.org/">http://tilestache.org/</a></p>
+<ol class="arabic simple">
+<li>Kattintson a <span class="menuselection">Desktop ‣ Spatial Tools ‣ Start Mapnik &amp; TileStache</span>. menüpontra. A szerver egy terminál ablakban indul (mely nyitva marad és alap nyomkövetési információk jelennek meg benne).</li>
+<li>Bizonyosodjon meg róla, hogy a szerver dolgozik, kérjen le egy csempét a szervertől. Kattintson erre a linkre <a class="reference external" href="http://localhost:8012/example/0/0/0.png">http://localhost:8012/example/0/0/0.png</a> és nézze meg a outputot a szerver terminál ablakában.</li>
+<li>Látogassa meg a Leaflet demó alkalmazás oldalát <a class="reference external" href="../../../leaflet-demo.html">http://localhost/leaflet-demo.html</a>.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id3">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Kövesse az oktatóanyagokat, hogy többet megtudjon a Mapnikról: <a class="reference external" href="https://github.com/mapnik/mapnik/wiki/MapnikTutorials">https://github.com/mapnik/mapnik/wiki/MapnikTutorials</a></li>
+<li>Fedezze fel a legujabb OSGeoLive kiadásban található fájlokat ebben a könyvtárban: <a class="reference external" href="file:///usr/local/share/mapnik/">file:///usr/local/share/mapnik/</a></li>
+<li>Látogassa meg a Mapnik honlapot: <a class="reference external" href="https://mapnik.org">https://mapnik.org</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

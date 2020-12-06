@@ -1,0 +1,354 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoExt Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GeoMoose" href="../overview/geomoose_overview.html" />
+    <link rel="prev" title="GeoExt" href="../overview/geoext_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geoext.github.io/geoext3"><img alt="../../_images/logo_geoext.png" class="align-right" src="../../_images/logo_geoext.png" /></a>
+<div class="section" id="geoext-quickstart">
+<h1>GeoExt Quickstart<a class="headerlink" href="#geoext-quickstart" title="Link a questa intestazione">¶</a></h1>
+<p>GeoExt is a JavaScript library that runs in the browser, it combines and enhances the ExtJS framework and OpenLayers library.
+This quick start details the steps to create a rich web application using GeoExt components in less than 200 lines of code.
+We will be using the installed MapServer web services on OSGeoLive a MapServer to supply map layers to the application. Completing the steps below will result in the demo GeoExt application at <a class="reference external" href="http://localhost/geoext/">http://localhost/geoext/</a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-an-html-page" id="id1">Create an HTML page</a></li>
+<li><a class="reference internal" href="#configure-openlayers-objects" id="id2">Configure OpenLayers objects</a></li>
+<li><a class="reference internal" href="#work-with-geoext-components" id="id3">Work with GeoExt components</a></li>
+<li><a class="reference internal" href="#create-a-viewport" id="id4">Create a viewport</a></li>
+<li><a class="reference internal" href="#what-s-next" id="id5">What’s next?</a></li>
+</ul>
+</div>
+<div class="section" id="create-an-html-page">
+<h2><a class="toc-backref" href="#id1">Create an HTML page</a><a class="headerlink" href="#create-an-html-page" title="Link a questa intestazione">¶</a></h2>
+<p>In this step we will set-up an empty HTML page which will contain the application. We’ll use the text editor FeatherPad installed on OSGeoLive to create a new HTML file at <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
+<ol class="arabic">
+<li><p class="first">Open FeatherPad from the command line with elevated permissions, so you can save the file, using System Tools &gt; QTerminal and then running run the command below:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next paste in the HTML below, and save the file as <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. The file contains links to the ExtJS and OpenLayers JavaScript libraries, and two CSS files used to style ExtJS and OpenLayers components.</p>
+<p>We will use the <code class="docutils literal"><span class="pre">Ext.Loader</span></code> class to load in GeoExt JavaScript source files. These are all in the <code class="docutils literal"><span class="pre">src</span></code> folder in <code class="docutils literal"><span class="pre">/var/www/html/geoext/</span></code>.</p>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>OSGeoLive | GeoExt QuickStart<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;resources/theme-triton-all.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ext-all.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;ol.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+
+       <span class="nx">Ext</span><span class="p">.</span><span class="nx">Loader</span><span class="p">.</span><span class="nx">setConfig</span><span class="p">({</span>
+           <span class="nx">enabled</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nx">paths</span><span class="o">:</span> <span class="p">{</span>
+               <span class="s1">&#39;GeoExt&#39;</span><span class="o">:</span> <span class="s1">&#39;src/&#39;</span>
+           <span class="p">}</span>
+       <span class="p">});</span>
+
+        <span class="nx">Ext</span><span class="p">.</span><span class="nx">onReady</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// all JavaScript application code should go here</span>
+        <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>You should now be able to view an empty HTML page in Firefox at <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a></p>
+<p>All the JavaScript in the following sections should be pasted after the <code class="docutils literal"><span class="pre">//</span> <span class="pre">all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> comment in the
+<code class="docutils literal"><span class="pre">Ext.onReady</span></code> function. Placing code here ensures the JavaScript libraries have been loaded before running any custom JavaScript code.</p>
+</div>
+<div class="section" id="configure-openlayers-objects">
+<h2><a class="toc-backref" href="#id2">Configure OpenLayers objects</a><a class="headerlink" href="#configure-openlayers-objects" title="Link a questa intestazione">¶</a></h2>
+<p>Next we will configure some OpenLayers objects used by the application.</p>
+<ol class="arabic">
+<li><p class="first">First lets create a map tile layer using OpenStreetMap, and some WMS layers that are available from the MapServer Itasca demo on OSGeoLive.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">mapServerUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map&amp;&#39;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">osmLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">(),</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;OpenStreetMap&#39;</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">wmsLayer1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
+        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;ctybdpy2&#39;</span> <span class="p">}</span>
+    <span class="p">}),</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;County Boundary&#39;</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">wmsLayer2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
+        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;lakespy2&#39;</span> <span class="p">}</span>
+    <span class="p">}),</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Lakes &amp; Rivers&#39;</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">wmsLayer3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
+        <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;majrdln3,majrdln3_anno&#39;</span> <span class="p">}</span>
+    <span class="p">}),</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Highways&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next we are going to add in a WFS vector layer - this is a little more complicated, but follows the same approach of creating a source and then a layer as the previous layers:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">(),</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">extent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">mapServerUrl</span> <span class="o">+</span> <span class="s1">&#39;service=WFS&amp;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;version=1.1.0&amp;request=GetFeature&amp;typename=airports&amp;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;outputFormat=application/json&amp;srsname=EPSG:3857&amp;&#39;</span> <span class="o">+</span>
+            <span class="s1">&#39;bbox=&#39;</span> <span class="o">+</span> <span class="nx">extent</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;,EPSG:3857&#39;</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">strategy</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">loadingstrategy</span><span class="p">.</span><span class="nx">bbox</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="nx">vectorSource</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Airports&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now we are going to create our OpenLayers map object configured with the layers we just created. We will also set the center
+and zoom level of the map, and add in a select interaction so we can select features in our vector layer.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+    <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
+        <span class="nx">wmsLayer1</span><span class="p">,</span> <span class="nx">wmsLayer2</span><span class="p">,</span> <span class="nx">wmsLayer3</span><span class="p">,</span> <span class="nx">vectorLayer</span>
+    <span class="p">],</span>
+    <span class="nx">view</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+        <span class="nx">center</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">fromLonLat</span><span class="p">([</span><span class="o">-</span><span class="mf">93.33</span><span class="p">,</span> <span class="mf">47.32</span><span class="p">]),</span>
+        <span class="nx">zoom</span><span class="o">:</span> <span class="mf">6</span>
+    <span class="p">})</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">selectInteraction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">interaction</span><span class="p">.</span><span class="nx">Select</span><span class="p">();</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addInteraction</span><span class="p">(</span><span class="nx">selectInteraction</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="work-with-geoext-components">
+<h2><a class="toc-backref" href="#id3">Work with GeoExt components</a><a class="headerlink" href="#work-with-geoext-components" title="Link a questa intestazione">¶</a></h2>
+<p>Now the map and layers have been configured we are going to create and configure our GeoExt components.</p>
+<ol class="arabic">
+<li><p class="first">First of all we will create a <code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code>. This uses the OpenLayers map we created, and will be positioned in the “center” region of our application.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mapComponent</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.Map&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
+    <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Next we will create a layer tree component. The tree has its own data store - <code class="docutils literal"><span class="pre">GeoExt.data.store.LayersTree</span></code>, which we will fill
+with layers from our OpenLayers map. The store will then be used to populate our tree panel. We will also add in a plugin to the
+tree to allow the map layer order to be changed by dragging and dropping the layers. The <code class="docutils literal"><span class="pre">flex</span></code> property causes the tree panel
+to fill up all available space in its region of the screen.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">treeStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.LayersTree&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">layerGroup</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getLayerGroup</span><span class="p">()</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">layerTreePanel</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.tree.Panel&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Map Layers&#39;</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mf">300</span><span class="p">,</span>
+    <span class="nx">flex</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+    <span class="nx">store</span><span class="o">:</span> <span class="nx">treeStore</span><span class="p">,</span>
+    <span class="nx">rootVisible</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">viewConfig</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">plugins</span><span class="o">:</span> <span class="p">{</span> <span class="nx">ptype</span><span class="o">:</span> <span class="s1">&#39;treeviewdragdrop&#39;</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">We are also going to create a grid component to display the attributes of features in our WFS layer.
+Similar to the layer tree store and tree panel, we create a <code class="docutils literal"><span class="pre">GeoExt.data.store.Features</span></code> store and a grid panel.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">featureStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.Features&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">layer</span><span class="o">:</span> <span class="nx">vectorLayer</span><span class="p">,</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">featureGrid</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.grid.Panel&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">store</span><span class="o">:</span> <span class="nx">featureStore</span><span class="p">,</span>
+    <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;south&#39;</span><span class="p">,</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Airport Runways for Itasca County&#39;</span><span class="p">,</span>
+    <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="nx">dataIndex</span><span class="o">:</span> <span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="nx">flex</span><span class="o">:</span> <span class="mf">3</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Quadrant&#39;</span><span class="p">,</span> <span class="nx">dataIndex</span><span class="o">:</span> <span class="s1">&#39;QUADNAME&#39;</span><span class="p">,</span> <span class="nx">flex</span><span class="o">:</span> <span class="mf">1</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;Elevation&#39;</span><span class="p">,</span> <span class="nx">dataIndex</span><span class="o">:</span> <span class="s1">&#39;ELEVATION&#39;</span><span class="p">,</span> <span class="nx">flex</span><span class="o">:</span> <span class="mf">1</span> <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nx">listeners</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">selectionchange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">sm</span><span class="p">,</span> <span class="nx">selected</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">Ext</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">selected</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">rec</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">selectInteraction</span><span class="p">.</span><span class="nx">getFeatures</span><span class="p">().</span><span class="nx">clear</span><span class="p">();</span>
+                <span class="nx">selectInteraction</span><span class="p">.</span><span class="nx">getFeatures</span><span class="p">().</span><span class="nx">push</span><span class="p">(</span><span class="nx">rec</span><span class="p">.</span><span class="nx">getFeature</span><span class="p">());</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mf">300</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Our final GeoExt component is an overview map - <code class="docutils literal"><span class="pre">GeoExt.component.OverviewMap</span></code>.
+We will configure this to display the OpenStreetMap layer we created earlier, and place it in an ExtJS panel.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">overview</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.OverviewMap&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">parentMap</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
+    <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="nx">osmLayer</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">overviewPanel</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.panel.Panel&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Overview&#39;</span><span class="p">,</span>
+    <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;fit&#39;</span><span class="p">,</span>
+    <span class="nx">items</span><span class="o">:</span> <span class="nx">overview</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mf">300</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mf">300</span><span class="p">,</span>
+    <span class="nx">collapsible</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-viewport">
+<h2><a class="toc-backref" href="#id4">Create a viewport</a><a class="headerlink" href="#create-a-viewport" title="Link a questa intestazione">¶</a></h2>
+<p>The final step in creating our application is to create a viewport - a container representing the application which will display all the components we created above.</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vp</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.container.Viewport&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;border&#39;</span><span class="p">,</span>
+    <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
+        <span class="nx">mapComponent</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nx">xtype</span><span class="o">:</span> <span class="s1">&#39;container&#39;</span><span class="p">,</span>
+            <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;west&#39;</span><span class="p">,</span>
+            <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;vbox&#39;</span><span class="p">,</span>
+            <span class="nx">collapsible</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
+                <span class="nx">overviewPanel</span><span class="p">,</span>
+                <span class="nx">layerTreePanel</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nx">featureGrid</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>You should now be able to refresh the link <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a> in your browser and see a complete GeoExt application similar to the image below.</p>
+<a class="reference internal image-reference" href="../../_images/geoext_quickstart.png"><img alt="../../_images/geoext_quickstart.png" src="../../_images/geoext_quickstart.png" style="width: 1521.0px; height: 725.0px;" /></a>
+</div>
+<div class="section" id="what-s-next">
+<h2><a class="toc-backref" href="#id5">What’s next?</a><a class="headerlink" href="#what-s-next" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>The <a class="reference external" href="https://geoext.github.io/geoext3/">GeoExt homepage</a> contains full <a class="reference external" href="https://geoext.github.io/geoext3/v3.1.0/docs">API documentation</a>
+and examples</li>
+<li>A <a class="reference external" href="https://github.com/geoext/geoext3-ws">GeoExt workshop</a> details all the steps for configuring and using
+GeoExt3 in your ExtJS applications</li>
+<li>The <a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc">OpenLayers v4.6.5 API docs</a></li>
+<li>The <a class="reference external" href="https://docs.sencha.com/extjs/6.2.0/">ExtJS 6.2.0 API docs</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GMT Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="OTB" href="../overview/otb_overview.html" />
+    <link rel="prev" title="GMT" href="../overview/gmt_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://gmt.soest.hawaii.edu"><img alt="../../_images/logo_gmt.png" class="align-right" src="../../_images/logo_gmt.png" /></a>
+<div class="section" id="gmt-quickstart">
+<h1>GMT Quickstart<a class="headerlink" href="#gmt-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
+<p>GMT is a collection of tools that allow users to manipulate (x,y) and
+(x,y,z) data sets (including filtering, trend fitting, gridding,
+projecting, etc.) and produce Encapsulated PostScript File (EPS)
+illustrations ranging from simple x-y plots through contour maps to
+artificially illuminated surfaces and 3-D perspective views in black and
+white, gray tone, hachure patterns, and 24-bit color.</p>
+<p>In this quick GMT tutorial we will use a digital terrain model (DTM) to generate a shaded relief map.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-a-map" id="id1">Create a map</a></li>
+<li><a class="reference internal" href="#make-a-color-palette" id="id2">Make a color palette</a></li>
+<li><a class="reference internal" href="#define-the-gradient" id="id3">Define the gradient</a></li>
+<li><a class="reference internal" href="#display-the-color-bar" id="id4">Display the color bar</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id5">Things to try</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="create-a-map">
+<h2><a class="toc-backref" href="#id1">Create a map</a><a class="headerlink" href="#create-a-map" title="Link zu dieser Überschrift">¶</a></h2>
+<p>As our input dataset we will use a DTM from the GRASS GIS example dataset, which is accessible by GDAL using the GDAL-GRASS driver.</p>
+<p>From a quick look at the DTM metadata, open a terminal and use the GDAL command <cite>gdalinfo</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">grassdata</span><span class="o">/</span><span class="n">nc_basic_spm_grass7</span><span class="o">/</span><span class="n">PERMANENT</span><span class="o">/</span><span class="n">cellhd</span><span class="o">/</span><span class="n">elevation</span>
+</pre></div>
+</div>
+<p>We can see the DTM is in a projected coordinate system and the data range is between 50 and 160 meters.</p>
+<p>We can convert the DTM in a GMT Compatible netCDF file format with <cite>gdal_translate</cite> as follow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">of</span> <span class="n">GMT</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">grassdata</span><span class="o">/</span><span class="n">nc_basic_spm_grass7</span><span class="o">/</span><span class="n">PERMANENT</span><span class="o">/</span><span class="n">cellhd</span><span class="o">/</span><span class="n">elevation</span> <span class="n">elevation</span><span class="o">.</span><span class="n">gmt</span>
+</pre></div>
+</div>
+<p>For our GMT example we will first transform the dataset into geographic coordinates Longitude-Latitude (EPSG:4326) using the <cite>gdalwarp</cite> command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalwarp</span> <span class="n">elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">t_srs</span> <span class="n">EPSG</span><span class="p">:</span><span class="mi">4326</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-a-color-palette">
+<h2><a class="toc-backref" href="#id2">Make a color palette</a><a class="headerlink" href="#make-a-color-palette" title="Link zu dieser Überschrift">¶</a></h2>
+<p>To assign a color map to our grid we can make a GMT color palette tables
+with the <cite>makecpt</cite> command. We will set the range and number of colors with the flag <cite>-T</cite>
+and assign a colormap with the flag <cite>-C</cite>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Chaxby</span> <span class="o">-</span><span class="n">T50</span><span class="o">/</span><span class="mi">160</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">elevation</span><span class="o">.</span><span class="n">cpt</span>
+</pre></div>
+</div>
+<p>You can experiment with other colortables, see <cite>man gmt makecpt</cite> for a complete list.</p>
+</div>
+<div class="section" id="define-the-gradient">
+<h2><a class="toc-backref" href="#id3">Define the gradient</a><a class="headerlink" href="#define-the-gradient" title="Link zu dieser Überschrift">¶</a></h2>
+<p>For our shaded relief example we need to specify show how the color intensity is distributed along the grid.
+To do so, we will compute the directional derivative, or gradient, from our grid using the <cite>grdgradient</cite> command.
+In <cite>grdgradient</cite> we will use the <cite>-Ne</cite> flag to normalize the output using a cumulative Laplace distribution and the <cite>-A</cite> flag for Azimuthal direction for a directional derivative.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">Ne0</span><span class="o">.</span><span class="mi">8</span> <span class="o">-</span><span class="n">A100</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">Ggradient</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>The output is a netCDF file which can then be used as color intensity by the <cite>grdimage</cite> command as follow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">Igradient</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">Ba</span> <span class="o">-</span><span class="n">Celevation</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">K</span> <span class="o">&gt;</span> <span class="n">GMT_tut_OSGeoLive</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-the-color-bar">
+<h2><a class="toc-backref" href="#id4">Display the color bar</a><a class="headerlink" href="#display-the-color-bar" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Finally we can add a colorbar with <cite>psscale</cite>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psscale</span> <span class="o">-</span><span class="n">DjTC</span><span class="o">+</span><span class="n">w5i</span><span class="o">/</span><span class="mf">0.25</span><span class="n">i</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="n">o0</span><span class="o">/-</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Rgeo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">Celevation</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lm</span> <span class="o">-</span><span class="n">O</span> <span class="o">&gt;&gt;</span> <span class="n">GMT_tut_OSGeoLive</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+<p>Here the flag <cite>-D</cite> is used to select the colorbar position <cite>TC: Top Center</cite>, the size <cite>5x0.25</cite> expressed in inches <cite>i</cite> the orientation by <cite>h: horizontal</cite>
+and the flag <cite>-By</cite> to set a label <cite>m</cite> on the <cite>y axis</cite>.</p>
+<p>The output ps document should look like:</p>
+<a class="reference internal image-reference" href="../../_images/GMT_tut_OSGeoLive.png"><img alt="North Caroline - sample elevation data" class="align-center" src="../../_images/GMT_tut_OSGeoLive.png" style="width: 555.8px; height: 497.7px;" /></a>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id5">Things to try</a><a class="headerlink" href="#things-to-try" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Look at some of the examples found in: <a class="reference external" href="../../gmt/examples/">/usr/share/doc/gmt/examples</a></p>
+<p>Go through the GMT tutorial and follow the several examples available in the src code.
+There are 30 example jobs built in, to test:</p>
+<p>Open a terminal, then</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">gmt</span><span class="o">/</span><span class="n">examples</span> <span class="n">gmt</span><span class="o">-</span><span class="n">examples</span>
+<span class="n">cd</span> <span class="n">gmt</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">ex20</span>
+<span class="o">./</span><span class="n">example_20</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>To view the results in Ghostview (<a class="reference external" href="http://www.gnu.org/software/gv/">http://www.gnu.org/software/gv/</a>) , use command <cite>gv</cite>. Type <cite>q</cite> to quit Ghostview.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gv</span> <span class="n">example_20</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Have a read of the local documentation stored in: <a class="reference external" href="../../gmt/html/index.html">/usr/share/doc/gmt/html/</a></li>
+<li>Website: <a class="reference external" href="https://gmt.soest.hawaii.edu">https://gmt.soest.hawaii.edu</a></li>
+<li>Support: <a class="reference external" href="https://gmt.soest.hawaii.edu/projects/gmt/boards/1">https://gmt.soest.hawaii.edu/projects/gmt/boards/1</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

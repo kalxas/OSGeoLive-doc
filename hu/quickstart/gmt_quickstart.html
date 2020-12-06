@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GMT gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="OTB" href="../overview/otb_overview.html" />
+    <link rel="prev" title="GMT" href="../overview/gmt_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://gmt.soest.hawaii.edu"><img alt="../../_images/logo_gmt.png" class="align-right" src="../../_images/logo_gmt.png" /></a>
+<div class="section" id="gmt-quickstart">
+<h1>GMT gyorstalpaló<a class="headerlink" href="#gmt-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A GMT az eszközök gyűjteménye, melyek lehetővé teszik (x,y) és (x,y,z) adathalmazok kezelését (beleértve a szűrést, a trend illesztést, a rács készítést, vetület váltást, stb.) és Encapsulated PostScript File (EPS) illusztrációk készítését az egyszerű x-y rajzoktól, a szintvonalas térképeken át, a mesterségesen megvilágított felületekig és háromdimenziós perspektivikus nézetekig fekete-fehér, szürke árnyalatos, speciális minták és 24 bites színekkel.</p>
+<p>Ebben a rövid GMT bemutatóban digitális terepmodellt (DTM) fogunk használni, hogy árnyalt domborzati térképet hozzunk létre.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#create-a-map" id="id1">Térkép létrehozása</a></li>
+<li><a class="reference internal" href="#make-a-color-palette" id="id2">Színpaletta létrehozása</a></li>
+<li><a class="reference internal" href="#define-the-gradient" id="id3">Gradiens meghatározása</a></li>
+<li><a class="reference internal" href="#display-the-color-bar" id="id4">Színskála megjelenítése</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id5">Kipróbálandó dolgok</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="create-a-map">
+<h2><a class="toc-backref" href="#id1">Térkép létrehozása</a><a class="headerlink" href="#create-a-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Input adathalmazként egy DTM-et fogunk használni a GRASS GIS példa adatok közül, mely kezelhető a GDAL-lal a GDAL-GRASS meghajtóval.</p>
+<p>A DTM metaadatok gyors megtekintéséhez nyisson egy terminál ablakot és használjuk a <cite>gdalinfo</cite> GDAL parancsot:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">grassdata</span><span class="o">/</span><span class="n">nc_basic_spm_grass7</span><span class="o">/</span><span class="n">PERMANENT</span><span class="o">/</span><span class="n">cellhd</span><span class="o">/</span><span class="n">elevation</span>
+</pre></div>
+</div>
+<p>Láthatjuk, hogy a DTM vetületi koordináta-rendszerben van és az adatok terjedelme 50 és 160 méter közötti.</p>
+<p>A DTM-et egy GMT kompatibilis netCDF fájlformátumba konvertálhatjuk a  <cite>gdal_translate</cite> paranccsal így:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">of</span> <span class="n">GMT</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">grassdata</span><span class="o">/</span><span class="n">nc_basic_spm_grass7</span><span class="o">/</span><span class="n">PERMANENT</span><span class="o">/</span><span class="n">cellhd</span><span class="o">/</span><span class="n">elevation</span> <span class="n">elevation</span><span class="o">.</span><span class="n">gmt</span>
+</pre></div>
+</div>
+<p>A GMT példánkhoz először a az adathalmazt földrajzi koordinátákba alakítjuk át, hosszúság-szélesség (EPSG:4326), a  <cite>gdalwarp</cite> parancsot használva:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalwarp</span> <span class="n">elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">t_srs</span> <span class="n">EPSG</span><span class="p">:</span><span class="mi">4326</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-a-color-palette">
+<h2><a class="toc-backref" href="#id2">Színpaletta létrehozása</a><a class="headerlink" href="#make-a-color-palette" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A rácsunkhoz egy szín beállítás hozzárendeléséhez egy GMT színpalettát hozhatunk létre a <cite>makecpt</cite> paranccsal. A színek tartományát és számát a <cite>-T</cite> kapcsolóval állítjuk be és a <cite>-C</cite> kapcsolóval rendeljük hozzá a színeket.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Chaxby</span> <span class="o">-</span><span class="n">T50</span><span class="o">/</span><span class="mi">160</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">elevation</span><span class="o">.</span><span class="n">cpt</span>
+</pre></div>
+</div>
+<p>Kísérletezhet más színtáblákkal, lásd a  <cite>man gmt makecpt</cite> parancsot a teljes listához.</p>
+</div>
+<div class="section" id="define-the-gradient">
+<h2><a class="toc-backref" href="#id3">Gradiens meghatározása</a><a class="headerlink" href="#define-the-gradient" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az árnyékolt domborzat példánkhoz meg kell adnunk hogyan változik a szín intenzitás a rács mentén. Ehhez kiszámoljuk az irány szerinti deriváltat vagy gradienst a rácsunkból a <cite>grdgradient</cite> parancs segítségével.  A <cite>grdgradient</cite> parancshoz használjuk a <cite>-Ne</cite> kapcsolót az output normalizálásához a kumulatív Laplace elosztást használva és a <cite>-A</cite> kapcsolót az irány szerinti deriváltak északtól mért irányához.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">Ne0</span><span class="o">.</span><span class="mi">8</span> <span class="o">-</span><span class="n">A100</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">Ggradient</span><span class="o">.</span><span class="n">nc</span>
+</pre></div>
+</div>
+<p>Az output egy netCDF fájl, mely a következőképpen használható mint szín intenzitás a  <cite>grdimage</cite> parancshoz:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">geo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">Igradient</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">Ba</span> <span class="o">-</span><span class="n">Celevation</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">K</span> <span class="o">&gt;</span> <span class="n">GMT_tut_OSGeoLive</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="display-the-color-bar">
+<h2><a class="toc-backref" href="#id4">Színskála megjelenítése</a><a class="headerlink" href="#display-the-color-bar" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Végül egy színskálát hozzáadhatunk a <cite>psscale</cite> paranccsal:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psscale</span> <span class="o">-</span><span class="n">DjTC</span><span class="o">+</span><span class="n">w5i</span><span class="o">/</span><span class="mf">0.25</span><span class="n">i</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="n">o0</span><span class="o">/-</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Rgeo_elevation</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">J</span> <span class="o">-</span><span class="n">Celevation</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lm</span> <span class="o">-</span><span class="n">O</span> <span class="o">&gt;&gt;</span> <span class="n">GMT_tut_OSGeoLive</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+<p>Itt a -D kapcsolót használjuk a színskála pozíciójának kiválasztásához <cite>TC: felül középen</cite>, a méret <cite>5x0.25</cite> hüvelykben <cite>i</cite> kifejezve a tájolás <cite>h: vizszintes</cite> és a <cite>-By</cite> állítja be az <cite>m</cite> címkét az <cite>y tengelyen</cite>.</p>
+<p>Az eredmény ps dokumentumnak így kellene kinéznie:</p>
+<a class="reference internal image-reference" href="../../_images/GMT_tut_OSGeoLive.png"><img alt="North Caroline - sample elevation data" class="align-center" src="../../_images/GMT_tut_OSGeoLive.png" style="width: 555.8px; height: 497.7px;" /></a>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id5">Kipróbálandó dolgok</a><a class="headerlink" href="#things-to-try" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Nézzen meg néhányat az itt található példákból: <a class="reference external" href="../../gmt/examples/">/usr/share/doc/gmt/examples</a></p>
+<p>Menjen végig a GMT oktatóanyagokon és kövesse a számos a forráskódban elérhető példát. A teszteléshez 30 példa munkát építettek be:</p>
+<p>Nyisson egy terminál ablakot ezután</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">gmt</span><span class="o">/</span><span class="n">examples</span> <span class="n">gmt</span><span class="o">-</span><span class="n">examples</span>
+<span class="n">cd</span> <span class="n">gmt</span><span class="o">-</span><span class="n">examples</span><span class="o">/</span><span class="n">ex20</span>
+<span class="o">./</span><span class="n">example_20</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Az eredmények Ghostview-ban (<a class="reference external" href="http://www.gnu.org/software/gv/">http://www.gnu.org/software/gv/</a>) megjelenítéséhez használja a <cite>gv</cite> parancsot. Nyomja meg a <cite>q</cite>-t a Ghostview-ból kilépéshez.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gv</span> <span class="n">example_20</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Olvassa el az itt található helyi dokumentációt: <a class="reference external" href="../../gmt/html/index.html">/usr/share/doc/gmt/html/</a></li>
+<li>Honlap: <a class="reference external" href="https://gmt.soest.hawaii.edu">https://gmt.soest.hawaii.edu</a></li>
+<li>Támogatás: <a class="reference external" href="https://gmt.soest.hawaii.edu/projects/gmt/boards/1">https://gmt.soest.hawaii.edu/projects/gmt/boards/1</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

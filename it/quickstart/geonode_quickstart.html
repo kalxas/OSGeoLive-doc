@@ -1,0 +1,323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guida Rapida GeoNode &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GeoStyler" href="../overview/geostyler_overview.html" />
+    <link rel="prev" title="GeoNode" href="../overview/geonode_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonode.org"><img alt="../../_images/logo_geonode.png" class="align-right" src="../../_images/logo_geonode.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonode-quickstart">
+<h1>Guida Rapida GeoNode<a class="headerlink" href="#geonode-quickstart" title="Link a questa intestazione">¶</a></h1>
+<p>Content Management System Geospaziale e Open Source</p>
+<p>GeoNode è un’applicazione e una piattaforma Web per lo sviluppo di sistemi informativi geospaziali (GIS) e per l’implementazione di infrastrutture di dati spaziali (SDI).</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-geonode" id="id1">Start GeoNode</a></li>
+<li><a class="reference internal" href="#sign-in-as-a-registered-user" id="id2">Accedi come utente registrato</a></li>
+<li><a class="reference internal" href="#add-a-new-layer" id="id3">Aggiungi un nuovo layer</a></li>
+<li><a class="reference internal" href="#create-a-new-map" id="id4">Crea una nuova mappa</a></li>
+<li><a class="reference internal" href="#share-your-map" id="id5">Condivi la tua mappa</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="start-geonode">
+<h2><a class="toc-backref" href="#id1">Start GeoNode</a><a class="headerlink" href="#start-geonode" title="Link a questa intestazione">¶</a></h2>
+<p>Per avviare GeoNode sul tuo DVD OSGeoLive devi selezionare  <span class="menuselection">Geospatial ‣ Browser Clients ‣ GeoNode ‣ Start GeoNode</span> e dopo pochi secondi la homepage di GeoNode si aprirà automaticamente all’indirizzo <a class="reference external" href="http://geonode">http://geonode</a>. La pagina apparirà come nell’immagine qui sotto.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_screenshot.png"><img alt="../../_images/geonode_screenshot.png" src="../../_images/geonode_screenshot.png" style="width: 709.8px; height: 452.2px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sign-in-as-a-registered-user">
+<h2><a class="toc-backref" href="#id2">Accedi come utente registrato</a><a class="headerlink" href="#sign-in-as-a-registered-user" title="Link a questa intestazione">¶</a></h2>
+<p>Dall’interfaccia mostrata sopra, è possibile visualizzare e modificare layers e mappe esistenti, nonché trovare informazioni sugli altri utenti di GeoNode. Ma, se non si è loggati, si è limitati all’accesso in sola lettura dei layers pubblici. Per creare una mappa e aggiungervi dei layers, devi prima loggarti.</p>
+<p>Da qualsiasi pagina dell’interfaccia web, vedrai  il link al <em>Sign in</em> in alto a destra della pagina. Clicca  su quel link e, nella finestra che si aprirà, inserisci le credeziali dell’utente. Prova con «admin» e «admin» come Username e Passoword.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_signin_quickstart.png"><img alt="../../_images/geonode_signin_quickstart.png" src="../../_images/geonode_signin_quickstart.png" style="width: 422.09999999999997px; height: 218.39999999999998px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="add-a-new-layer">
+<h2><a class="toc-backref" href="#id3">Aggiungi un nuovo layer</a><a class="headerlink" href="#add-a-new-layer" title="Link a questa intestazione">¶</a></h2>
+<p>I layer sono risorse pubblicate che  possono essere sia vettori che dati raster. I layers possono anche essere implementati con metadati, votazioni e commenti.</p>
+<ol class="arabic">
+<li><p class="first">Per vedere i layer esistenti, dal menù di navigazione che è in ogni pagina in alto, seleziona <em>Data</em> e clicca su <em>Layers</em>.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_menu_data.png"><img alt="../../_images/geonode_menu_data.png" src="../../_images/geonode_menu_data.png" style="width: 344.4px; height: 191.1px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Il risultato sarà simile a questo:</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_layers_page.png"><img alt="../../_images/geonode_layers_page.png" src="../../_images/geonode_layers_page.png" style="width: 710.5px; height: 450.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Per aggiungere un layer al tuo account, seleziona il pulsante <em>Upload</em> in alto a destra nella pagina <em>Layers</em>:</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload2.png"><img alt="../../_images/geonode_data_upload2.png" src="../../_images/geonode_data_upload2.png" style="width: 199.5px; height: 109.89999999999999px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Se desideri caricare dati da una qualsiasi altra pagina, dalla barra di navigazione, seleziona il menu <em>Data</em> e fai clic sul link <em>Upload Layers</em>.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload1.png"><img alt="../../_images/geonode_data_upload1.png" src="../../_images/geonode_data_upload1.png" style="width: 267.4px; height: 186.89999999999998px;" /></a>
+</div>
+</div></blockquote>
+<p>Cliccando su uno dei link di <em>Upload</em> sarai indirizzato alla pagina di upload.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_page.png"><img alt="../../_images/geonode_upload_page.png" src="../../_images/geonode_upload_page.png" style="width: 676.1999999999999px; height: 398.29999999999995px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Ci sono due modi per aggiungere i tuoi file. Puoi farlo usando <em>drag &amp; drop</em> nell’area  <em>Drop Files Here</em> o usando il pulsante <em>Choose Files</em> per selezionarli. Tieni presente che devi caricare un set completo di file, per esempio uno shape è composto da un file <em>shp</em>, un <em>prj</em>, un <em>dbf</em> e da un <em>shx</em>. Se uno di questi file manca, GeoNode ti avviserà prima di iniziare il caricamento</p>
+</li>
+<li><p class="first">Ora clicca il bottone <em>Choose Files</em> e vedrai una finestra per selezionare i file. Naviga fino alla cartella <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2</span></code> e seleziona tutti i file <code class="file docutils literal"><span class="pre">ne_10m_admin_0_countries</span></code> .</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_select_files.png"><img alt="../../_images/geonode_upload_select_files.png" src="../../_images/geonode_upload_select_files.png" style="width: 689.5px; height: 419.29999999999995px;" /></a>
+</div>
+</li>
+</ol>
+<p>Ora dovresti riuscire a vedere tutti i file che vuoi caricare.</p>
+<blockquote>
+<div><blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_files_to_be_uploaded.png"><img alt="../../_images/geonode_files_to_be_uploaded.png" src="../../_images/geonode_files_to_be_uploaded.png" style="width: 199.5px; height: 310.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Suggerimento</p>
+<p>GeoNode ha la possibilità di limitare chi può visualizzare, modificare e gestire i layers. Sul lato destro della pagina puoi vedere la sezione <em>Permission</em>, dove puoi limitare l’accesso al tuo layer. In <em>Who can view and download this data</em>, selezionare <em>Qualsiasi utente registrato</em>. Questa opzione disabiliterà la visualizzazione dei layer agli utenti non loggati. Nella stessa area, sotto <em>Who can edit this data</em>, seleziona il tuo nome utente; questo farà sì che solo tu abbia i permessi di modifica del layer.</p>
+<blockquote class="last">
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_permission.png"><img alt="../../_images/geonode_permission.png" src="../../_images/geonode_permission.png" style="width: 213.5px; height: 299.59999999999997px;" /></a>
+</div>
+</div></blockquote>
+</div>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">Per caricare i dati, clicca sul bottone <em>Upload</em> in alto.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_bar.png"><img alt="../../_images/geonode_upload_bar.png" src="../../_images/geonode_upload_bar.png" style="width: 438.9px; height: 140.0px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Una volta completato il caricamento del layer, puoi visualizzare l’anteprima del layer con il pulsante <em>Layer Info</em>, oppure modificare i metadati con <em>Edit Metadata</em> o modificare lo stile del layer su GeoServer con il pulsante <em>Manage Styles</em>.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_result.png"><img alt="../../_images/geonode_upload_result.png" src="../../_images/geonode_upload_result.png" style="width: 231.7px; height: 69.3px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Clicca il bottone <em>Layer Info</em> per vedere la pagina del layer.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_new_layer.png"><img alt="../../_images/geonode_new_layer.png" src="../../_images/geonode_new_layer.png" style="width: 542.5px; height: 399.7px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-map">
+<h2><a class="toc-backref" href="#id4">Crea una nuova mappa</a><a class="headerlink" href="#create-a-new-map" title="Link a questa intestazione">¶</a></h2>
+<p>Il prossimo passo è creare una mappa e aggiungerci i layer appena caricati.</p>
+<ol class="arabic">
+<li><p class="first">Clicca sul link <em>Explore Maps</em> sul menù <em>Maps</em>. Questo link ti porterà alla pagina con l’elenco delle mappe esistenti.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_maps_quickstart.png"><img alt="../../_images/geonode_maps_quickstart.png" src="../../_images/geonode_maps_quickstart.png" style="width: 331.09999999999997px; height: 94.5px;" /></a>
+</div>
+</li>
+<li><p class="first">Currently, there aren’t any maps here. To add one click the <em>Create a New Map</em> button.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap2.png"><img alt="../../_images/geonode_createmap2.png" src="../../_images/geonode_createmap2.png" style="width: 673.4px; height: 109.89999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>Si aprirà l’interfaccia per la composizione di mappe.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap.png"><img alt="../../_images/geonode_createmap.png" src="../../_images/geonode_createmap.png" style="width: 711.1999999999999px; height: 448.0px;" /></a>
+</div>
+<p>Se appare il popup col messaggio di errore 404, è perchè sull’OSGeoLive non sono installati alcuni plugin di GeoServer.</p>
+<p>In questa interfaccia c’è una barra degli strumenti, un elenco dei leyer e una finestra della mappa. La finestra della mappa contiene la basemap di OpenStreetMap.</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Clicca su <em>New Layers</em> e seleziona <em>Add Layers</em>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayerslink.png"><img alt="../../_images/geonode_addlayerslink.png" src="../../_images/geonode_addlayerslink.png" style="width: 84.69999999999999px; height: 141.39999999999998px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>Now you should be able to see all the available layers. In this case, this should include the ones you’ve added before.</div></blockquote>
+<ol class="arabic" start="4">
+<li><p class="first">Per selzionare più layers, clicca sul primo e per aggiungerne altri alla selezioni tieni premuto il tasto Ctrl. Clicca <em>Add Layers</em> per aggiungere tutti i layer selezionati nella mappa.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayersselect_quickstart.png"><img alt="../../_images/geonode_addlayersselect_quickstart.png" src="../../_images/geonode_addlayersselect_quickstart.png" style="width: 226.1px; height: 375.9px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>I layers saranno aggiunti alla mappa.</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">Per salvare la mappa clicca su <em>Map</em> nel menù, e selziona <em>Save Map</em>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemaplink.png"><img alt="../../_images/geonode_savemaplink.png" src="../../_images/geonode_savemaplink.png" style="width: 93.8px; height: 63.699999999999996px;" /></a>
+</div>
+</li>
+<li><p class="first">Aggiungi un titolo ed una descrizione alla tua mappa.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemapdialog.png"><img alt="../../_images/geonode_savemapdialog.png" src="../../_images/geonode_savemapdialog.png" style="width: 277.9px; height: 239.39999999999998px;" /></a>
+</div>
+</li>
+<li><p class="first">Clicca <em>Save</em>. Nota bene che il link in alto a destra della pagina è cambiato per essere coerente col nome della mappa.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapname.png"><img alt="../../_images/geonode_mapname.png" src="../../_images/geonode_mapname.png" style="width: 124.6px; height: 21.7px;" /></a>
+</div>
+<p>Questo link contiene un permalink alla tua mappa. Se tu apri questo link da una nuova finestra, la tua mappa apparirà esattamente come è stata salvata.</p>
+</li>
+<li><p class="first">Clicca <em>Done</em> vicino al pulsante <em>Add Layers</em> per vedere la legenda della tua mappa.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="share-your-map">
+<h2><a class="toc-backref" href="#id5">Condivi la tua mappa</a><a class="headerlink" href="#share-your-map" title="Link a questa intestazione">¶</a></h2>
+<p>Ora finiamo la nostra mappa.</p>
+<ol class="arabic">
+<li><p class="first">Tasto destri sul layer <em>USA Population</em> e seleziona <em>Zoom to layer extend</em>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapcomposition.png"><img alt="../../_images/geonode_mapcomposition.png" src="../../_images/geonode_mapcomposition.png" style="width: 714.0px; height: 399.0px;" /></a>
+</div>
+</li>
+<li><p class="first">Apporta le modifiche finali alla composizione della mappa come desideri, comprese le impostazioni di zoom e panoramica.</p>
+</li>
+<li><p class="first">Clicca il pulsante <em>Map</em> nel menù e poi clicca su <em>Publish Map</em>.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmaplink.png"><img alt="../../_images/geonode_publishmaplink.png" src="../../_images/geonode_publishmaplink.png" style="width: 87.5px; height: 58.099999999999994px;" /></a>
+</div>
+</li>
+<li><p class="first">Il titolo e la descrizione, come erano stati creati prima, dovrebbero essere ancora lì. Fai le modifiche necessarie e poi clicca su <em>Save</em>.</p>
+</li>
+<li><p class="first">Apparirà una nuova finestra con le istruzioni su come incorporare questa mappa in una pagina web, incluso uno snippet di codice. È possibile impostare i parametri secondo le proprie necessità.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmap.png"><img alt="../../_images/geonode_publishmap.png" src="../../_images/geonode_publishmap.png" style="width: 263.2px; height: 120.39999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<p>Your map can now be shared.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="Link a questa intestazione">¶</a></h2>
+<p>Ora hai avuto una breve panoramica sulle possibilità di GeoNode. Per imparare di più su GeoNode e le sue funzionalità, visita www.geonode.org.</p>
+<p>To install GeoNode on your own server, follow our <a class="reference external" href="https://docs.geonode.org/en/master/start/index.html#quick-installation-guide">Quick Installation Guide</a> .</p>
+<p>In order to get started with GeoNode our <a class="reference external" href="https://docs.geonode.org/en/master/">documentation</a> might be useful.</p>
+<p>If you need help or want to get some information about a specific topic please
+don’t hasitate to ask us! You can do this through the #geonode IRC channel using
+<a class="reference external" href="https://webchat.freenode.net/">https://webchat.freenode.net/</a>, through the <a class="reference external" href="https://gitter.im/GeoNode/general">GeoNode Gitter channel</a>
+or by asking your question in our <a class="reference external" href="https://lists.osgeo.org/cgi-bin/mailman/listinfo/geonode-users">mailing list</a> !</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

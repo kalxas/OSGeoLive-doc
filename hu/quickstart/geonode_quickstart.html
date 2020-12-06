@@ -1,0 +1,320 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNode gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GeoStyler" href="../overview/geostyler_overview.html" />
+    <link rel="prev" title="GeoNode" href="../overview/geonode_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonode.org"><img alt="../../_images/logo_geonode.png" class="align-right" src="../../_images/logo_geonode.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonode-quickstart">
+<h1>GeoNode gyorstalpaló<a class="headerlink" href="#geonode-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Nyílt forráskódú érinformatikai tartalomkezelő rendszer</p>
+<p>A GeoNode egy web alapú alkalmazás és platform térinformatikai rendszerek (GIS) fejlesztésére és téradat infrastruktúra (SDI) telepítésére.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-geonode" id="id1">GeoNode indítása</a></li>
+<li><a class="reference internal" href="#sign-in-as-a-registered-user" id="id2">Jelentkezzen be mint egy regisztrált felhasználó</a></li>
+<li><a class="reference internal" href="#add-a-new-layer" id="id3">Új réteg hozzáadása</a></li>
+<li><a class="reference internal" href="#create-a-new-map" id="id4">Egy új térkép létrehozása</a></li>
+<li><a class="reference internal" href="#share-your-map" id="id5">Ossza meg a térképét</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-geonode">
+<h2><a class="toc-backref" href="#id1">GeoNode indítása</a><a class="headerlink" href="#start-geonode" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A GeoNode elindításához a OSGeoLive  DVD-n a <span class="menuselection">Geospatial ‣ Browser Clients ‣ GeoNode ‣ Start GeoNode</span>-t kell választania és kisvártatva a GeoNode honlap nyílik meg automatikusan <a class="reference external" href="http://geonode.org">http://geonode.org</a>. Az oldal úgy fog kinézni mint a lenti kép.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_screenshot.png"><img alt="../../_images/geonode_screenshot.png" src="../../_images/geonode_screenshot.png" style="width: 709.8px; height: 452.2px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sign-in-as-a-registered-user">
+<h2><a class="toc-backref" href="#id2">Jelentkezzen be mint egy regisztrált felhasználó</a><a class="headerlink" href="#sign-in-as-a-registered-user" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A felül látható felületen láthatja és módosíthatja a létező rétegeket és térképeket, mint ahogy más GeoNode felhasználókról találhat információt. Bejelentkezés nélkül azonban cak olvasásra férhet hozzá a nyilvános rétegekhez. Egy térkép létrehozásához és rétegek hozzáadásához először be kell jelentkeznie.</p>
+<p>A webinterfész bármelyik oldalán a jobb felső sarokban láthat egy <em>Sign in</em> linket. Kattintson a linkre és a megjelenő párbeszédablakban töltse ki a felhasználó hitelesítő adatokat. Próbálja az „admin”-t és „admin”-t a Username-ra és a Password-re.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_signin_quickstart.png"><img alt="../../_images/geonode_signin_quickstart.png" src="../../_images/geonode_signin_quickstart.png" style="width: 422.09999999999997px; height: 218.39999999999998px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="add-a-new-layer">
+<h2><a class="toc-backref" href="#id3">Új réteg hozzáadása</a><a class="headerlink" href="#add-a-new-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A rétegek publikált adatforrások, melyek egy raszter vagy vektor térinformatikai adatforrást reprezentáltak. A rétegekhez metaadatokat, értékelést és megjegyzést rendelhetünk.</p>
+<ol class="arabic">
+<li><p class="first">A létező rétegek megtekintéséhez bármelyik lap tetején a navigáció sorból válassza a <em>Data</em> menüt és kattintson a <em>Layers</em> linkre.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_menu_data.png"><img alt="../../_images/geonode_menu_data.png" src="../../_images/geonode_menu_data.png" style="width: 344.4px; height: 191.1px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Az eredmény így fog kinézni:</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_layers_page.png"><img alt="../../_images/geonode_layers_page.png" src="../../_images/geonode_layers_page.png" style="width: 710.5px; height: 450.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Egy réteg a fiókjához hozzáadásához válassza az <em>Upload</em> gombot  a <em>Layers</em> oldal jobb felső sarkában:</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload2.png"><img alt="../../_images/geonode_data_upload2.png" src="../../_images/geonode_data_upload2.png" style="width: 199.5px; height: 109.89999999999999px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Amennyiben egy másik oldalról akar adatokat feltölteni, válassza a navigációs sorban a <em>Data</em> menüből az <em>Upload Layers</em> linket.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload1.png"><img alt="../../_images/geonode_data_upload1.png" src="../../_images/geonode_data_upload1.png" style="width: 267.4px; height: 186.89999999999998px;" /></a>
+</div>
+</div></blockquote>
+<p>A fenti egyik <em>Upload</em> linkre kattintva a feltöltés oldalra kerül.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_page.png"><img alt="../../_images/geonode_upload_page.png" src="../../_images/geonode_upload_page.png" style="width: 676.1999999999999px; height: 398.29999999999995px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Két lehetősége van a fájljainak hozzáadására. Vagy a <em>drag &amp; drop</em>-ot használhatja a <em>Drop Files Here</em> területen  vagy a <em>Choose Files</em> gombot a kiválasztásukhoz. Vegye figyelembe, hogy a fájlok teljes készletét fel kell töltenie, mely egy <em>shp</em>, egy <em>prj</em>, egy <em>dbf</em> és egy <em>shx</em> fájlból áll. Ha az egyik hiányzik , a GeoNode figyelmezteti önt a feltöltés előtt.</p>
+</li>
+<li><p class="first">Most kattintson a <em>Choose Files</em> gombra és egy fájl kiválasztó ablak jelenik meg. Navigáljon a  <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2</span></code> mappába és válassza a <code class="file docutils literal"><span class="pre">ne_10m_admin_0_countries</span></code> fájlokat.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_select_files.png"><img alt="../../_images/geonode_upload_select_files.png" src="../../_images/geonode_upload_select_files.png" style="width: 689.5px; height: 419.29999999999995px;" /></a>
+</div>
+</li>
+</ol>
+<p>Most látnia kell az összes fájlt amit fel akar tölteni.</p>
+<blockquote>
+<div><blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_files_to_be_uploaded.png"><img alt="../../_images/geonode_files_to_be_uploaded.png" src="../../_images/geonode_files_to_be_uploaded.png" style="width: 199.5px; height: 310.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p>A GeoNode rendelkezik azzal a képességgel, hogy korlátozza ki láthatja, szerkesztheti és kezelheti a rétegeket. Az oldal jobb oldalán láthatja a <em>Permission</em> szakaszt, ahol korlátozhatja a hozzáférést a rétegéhez. A <em>Who can view and download this data</em> alatt  válassza az <em>Any registered user</em>-t. Ez biztosítja az azonosítatlan megtekintés tiltását. Ugyanezen a területen a <em>Who can edit this data</em> alatt válassza a felhasználó nevét. Ez biztosítja, hogy csak ön tudja szerkeszteni a réteg adatokat.</p>
+<blockquote class="last">
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_permission.png"><img alt="../../_images/geonode_permission.png" src="../../_images/geonode_permission.png" style="width: 213.5px; height: 299.59999999999997px;" /></a>
+</div>
+</div></blockquote>
+</div>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">Az adatok feltöltéséhez kattintson az <em>Upload</em> gombra alul.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_bar.png"><img alt="../../_images/geonode_upload_bar.png" src="../../_images/geonode_upload_bar.png" style="width: 438.9px; height: 140.0px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">A réteg feltöltés befejezése után vagy a réteg előnézetét tekintheti meg a <em>Layer Info</em> gombbal vagy szerkesztheti a réteg metaadatait az <em>Edit Metadata</em>-val vagy szerkesztheti  réteg stílusát a GeoServeren a <em>Manage Styles</em> gombbal.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_result.png"><img alt="../../_images/geonode_upload_result.png" src="../../_images/geonode_upload_result.png" style="width: 231.7px; height: 69.3px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Nyomj meg a <em>Layer Info</em> gombot a réteg oldal megjelenítéséhez</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_new_layer.png"><img alt="../../_images/geonode_new_layer.png" src="../../_images/geonode_new_layer.png" style="width: 542.5px; height: 399.7px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-map">
+<h2><a class="toc-backref" href="#id4">Egy új térkép létrehozása</a><a class="headerlink" href="#create-a-new-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A következő lépése egy térkép létrehozása és az újonnan létrehozott rétegek hozzáadása lesz ehhez a térképhez.</p>
+<ol class="arabic">
+<li><p class="first">Kattintson az <em>Explore Maps</em> linkre a <em>Maps</em> eszközsorban. Ez a térképek listáját hozza fel.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_maps_quickstart.png"><img alt="../../_images/geonode_maps_quickstart.png" src="../../_images/geonode_maps_quickstart.png" style="width: 331.09999999999997px; height: 94.5px;" /></a>
+</div>
+</li>
+<li><p class="first">Jelenleg nincs egyetlen térkép sem itt. Egy hozzáadásához kattintson a <em>Create a New Map</em> gombra.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap2.png"><img alt="../../_images/geonode_createmap2.png" src="../../_images/geonode_createmap2.png" style="width: 673.4px; height: 109.89999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>Megjelenik egy térkép összetállítási felület.</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap.png"><img alt="../../_images/geonode_createmap.png" src="../../_images/geonode_createmap.png" style="width: 711.1999999999999px; height: 448.0px;" /></a>
+</div>
+<p>Ha egy 404 felbukkanó üzenet jelenik meg, hagyja figyelmen kívül, ezt a hiányzó GoServer modul okozza, melyet az OSGeoLive-re nem telepítenek.</p>
+<p>Ebben az interfészben van egy eszközsor, egy réteg lista és térkép ablak. A térkép ablak az OpenStreetMap réteget tartalmazza alapértelmezés szerint.</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Kattintson a <em>New Layers</em> gombra és válassza az Add Layers*-t.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayerslink.png"><img alt="../../_images/geonode_addlayerslink.png" src="../../_images/geonode_addlayerslink.png" style="width: 84.69999999999999px; height: 141.39999999999998px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>Most látnia kell az összes elérhető réteget. Az ön esetében tartalmaznia kellene az ön által korábban hozzáadott rétegeket.</div></blockquote>
+<ol class="arabic" start="4">
+<li><p class="first">Válasszon néhány réteget, az első elemre kattintva és a többire CRL-kattintva. Kattintson az <em>Add Layers</em>-re az összes hozzáadásához a térképhez.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayersselect_quickstart.png"><img alt="../../_images/geonode_addlayersselect_quickstart.png" src="../../_images/geonode_addlayersselect_quickstart.png" style="width: 226.1px; height: 375.9px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>A rétegeket hozzáadjuk a térképhez.</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">A térkép mentéséhez kattintson a <em>Map</em> gombra az eszközsorban és válassza a <em>Save Map</em>-ot.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemaplink.png"><img alt="../../_images/geonode_savemaplink.png" src="../../_images/geonode_savemaplink.png" style="width: 93.8px; height: 63.699999999999996px;" /></a>
+</div>
+</li>
+<li><p class="first">Írjon be egy címet és egy összefoglalót a térképéhez.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemapdialog.png"><img alt="../../_images/geonode_savemapdialog.png" src="../../_images/geonode_savemapdialog.png" style="width: 277.9px; height: 239.39999999999998px;" /></a>
+</div>
+</li>
+<li><p class="first">Kattintson a <em>Save</em>-re. Vegye észre, hogy az oldal jobb felső részén a link megváltozott, hogy a térkép nevét tükrözze.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapname.png"><img alt="../../_images/geonode_mapname.png" src="../../_images/geonode_mapname.png" style="width: 124.6px; height: 21.7px;" /></a>
+</div>
+<p>Ez a link egy permalinket tartalmaz a térképhez. Ha egy új ablakban megnyitja ezt a linket a térképe pontosan úgy jelenik meg, ahogy elmentette.</p>
+</li>
+<li><p class="first">Kattintson a <em>Done</em>-ra az <em>Add Layers</em> gomb mellett a térkép jelmagyarázatának megtekintéséhez.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="share-your-map">
+<h2><a class="toc-backref" href="#id5">Ossza meg a térképét</a><a class="headerlink" href="#share-your-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Most fejezzük be a térképünket.</p>
+<ol class="arabic">
+<li><p class="first">Jobb gomb kattintás az <em>USA Population</em> rétegen és válassza a <em>Zoom to layer extend</em>-et.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapcomposition.png"><img alt="../../_images/geonode_mapcomposition.png" src="../../_images/geonode_mapcomposition.png" style="width: 714.0px; height: 399.0px;" /></a>
+</div>
+</li>
+<li><p class="first">Végezze el a szükséges végső simításokat beleértve a nagyítást és az eltolás beállítását.</p>
+</li>
+<li><p class="first">Kattintson a <em>Map</em> gombra az eszközsorban és utána kattintson a <em>Publish Map</em>-re.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmaplink.png"><img alt="../../_images/geonode_publishmaplink.png" src="../../_images/geonode_publishmaplink.png" style="width: 87.5px; height: 58.099999999999994px;" /></a>
+</div>
+</li>
+<li><p class="first">A korábban beállított címnek és az összefoglalónak még ott kell lennie. Végezze el szükség szerint a módosításukat és kattintson a <em>Save</em>-re.</p>
+</li>
+<li><p class="first">Egy új párbeszédablak jelenik meg az utasításokkal, ahogy ezt a térképet egy honlapra beágyazhatjuk,  beleértve egy kódrészletet. Szükség szerint módosíthatja a paramétereket.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmap.png"><img alt="../../_images/geonode_publishmap.png" src="../../_images/geonode_publishmap.png" style="width: 263.2px; height: 120.39999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<p>A térképe most megosztható.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Kapott egy gyors betekintést a GeoNode képességeibe. Látogassa meg a www.geonode.org honlapunkat, hogy többet tnuljon a GeoNode-ról és a funkcionalitásáról.</p>
+<p>A GeoNode telepítéséhez a saját szerverén, kövesse a  <a class="reference external" href="https://docs.geonode.org/en/master/start/index.html#quick-installation-guide">Quick Installation Guide-ot</a> .</p>
+<p>Az induláshoz a GeoNode-dal a <a class="reference external" href="https://docs.geonode.org/en/master/">dokumentációnk</a> hasznos lehet.</p>
+<p>Ha segítségre van szüksége vagy egy konkrét témakörben akarna több információt kapni, kérjük ne habozzon megkérdezni minket! Ezt megteheti a #geonode IRC csatorna használatával <a class="reference external" href="https://webchat.freenode.net/">https://webchat.freenode.net/</a>, a  <a class="reference external" href="https://gitter.im/GeoNode/general">GeoNode Gitter csatornán</a> vagy kérdés feltevésével a <a class="reference external" href="https://lists.osgeo.org/cgi-bin/mailman/listinfo/geonode-users">levelező listánkon</a> !</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>
