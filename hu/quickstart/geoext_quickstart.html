@@ -85,14 +85,14 @@
 </div>
 <div class="section" id="create-an-html-page">
 <h2><a class="toc-backref" href="#id1">Egy HTML oldal létrehozása</a><a class="headerlink" href="#create-an-html-page" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>In this step we will set-up an empty HTML page which will contain the application. We’ll use the text editor FeatherPad installed on OSGeoLive to create a new HTML file at <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
+<p>Ebben a lépésben egy üres HTML oldalt készítünk el, mely az alkalmazást fogja tartalmazni. Az OSGeoLive-ra telepített FeatherPad szövegszerkesztőt fogjuk használni az új HTML fájl létrehozására itt <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
 <ol class="arabic">
-<li><p class="first">Open FeatherPad from the command line with elevated permissions, so you can save the file, using System Tools &gt; QTerminal and then running run the command below:</p>
+<li><p class="first">Nyissa meg a parancssorból a FeatherPad megnövelt jogosultsággal,  így el tudja menteni a fájlt, az alábbi paranccsal:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next paste in the HTML below, and save the file as <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. The file contains links to the ExtJS and OpenLayers JavaScript libraries, and two CSS files used to style ExtJS and OpenLayers components.</p>
+<li><p class="first">Utána másolja be az alábbi HTML-t. és mentse a fájlt mint <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. A fájl linkeket tartalmaz az ExtJS és OpenLayers JavaScript könyvtárakhoz és két CSS fájlhoz, melyeket az ExtJS és OpenLayers komponensek stílusához használjuk.</p>
 <p>Az <code class="docutils literal"><span class="pre">Ext.Loader``osztályt</span> <span class="pre">fogjuk</span> <span class="pre">használni</span> <span class="pre">a</span> <span class="pre">GeoExt</span> <span class="pre">JavaScript</span> <span class="pre">forrás</span> <span class="pre">fájlok</span> <span class="pre">betöltéséhez.</span> <span class="pre">Ezek</span> <span class="pre">mind</span> <span class="pre">az</span> <span class="pre">``src</span></code>&nbsp; mappában vannak a <code class="docutils literal"><span class="pre">/var/www/html/geoext/</span></code> alatt.</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>

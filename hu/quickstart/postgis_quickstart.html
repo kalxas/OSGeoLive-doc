@@ -93,8 +93,8 @@
 <li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">Téradatok importálása az adatbázisba</a></li>
 <li><a class="reference internal" href="#get-to-know-pgadmin-iii" id="id8">Ismerjük meg a pgAdmin III-t</a></li>
 <li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin-iii" id="id9">Egy SQL lekérdezés végrehajtása a pgAdmin III-ból</a></li>
-<li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Get to know Foreign Data Wrappers (FDW)</a></li>
-<li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Connect to a remote OGR data source via ogr_fdw</a></li>
+<li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Foreign Data Wrappers (FDW) megismerése</a></li>
+<li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Csatlakozzon egy távoli OGR adatforráshoz az ogr_fdw-n keresztül</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id12">Kipróbálandó dolgok</a></li>
 <li><a class="reference internal" href="#what-next" id="id13">Mi a következő?</a></li>
 </ul>
@@ -358,66 +358,61 @@
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 768.0px; height: 557.25px;" /></a>
 </div>
 <div class="section" id="get-to-know-foreign-data-wrappers-fdw">
-<h2><a class="toc-backref" href="#id10">Get to know Foreign Data Wrappers (FDW)</a><a class="headerlink" href="#get-to-know-foreign-data-wrappers-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>From you database you can access remote objects like tables from other PostgreSQL databases or connect to remote databases like Oracle, MySQL, MS SQL or CouchDB.
-You also can connect via ODBC, connect to CSV, Geospatial Data and even to twitter.</p>
-<p>You find a list of different FDW at:</p>
+<h2><a class="toc-backref" href="#id10">Foreign Data Wrappers (FDW) megismerése</a><a class="headerlink" href="#get-to-know-foreign-data-wrappers-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az adatbázisából hozzáférhet a távoli objektumokhoz, mint például táblák más PostgreSQL adatbázisokból vagy távoli adatbázishoz csatlakozás, mint Oracle, MySQL, MS SQL vagy CouchDB. Csatlakozhat ODBC-n keresztül, CSV-hez, térinformatikai adatokhoz, sőt még twitterhez is kapcsolódhat.</p>
+<p>Az különböző FDW-k listáját itt találhatja:</p>
 <blockquote>
 <div><a class="reference external" href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers">https://wiki.postgresql.org/wiki/Foreign_data_wrappers</a></div></blockquote>
-<p>Let’s see how it works! The easiest way is to connect to a different PostgreSQL database.</p>
-<p>Here are the steps:</p>
-<p>First load the extension for the Foreign Data Wrapper that you want to use. For a connection to a different PostgreSQL database you need <code class="docutils literal"><span class="pre">postgres_fdw</span></code></p>
+<p>Nézzük meg hogyan dolgozik ez. A legegyszerűbb lehetőség egy másik PostgreSQL adatbázishoz csatlakozás.</p>
+<p>Itt vannak a lépések:</p>
+<p>Először töltse be a bővítményt a használni kívánt Foreign Data Wrapper-hez. Más PostgreSQL adatbázis csatlakozáshoz a <code class="docutils literal"><span class="pre">postgres_fdw</span></code> -re van szüksége.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">postgres_fdw</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Javaslat</p>
-<p class="last">Please note that in pgAdmin III the foreign data wrappers, foreign servers, user mappings and foreign tables are not displayed by default in the tree.
-You have to activate them via menu via <span class="menuselection">File ‣ Options ‣ Browser ‣ Display</span></p>
+<p class="last">Kérjük vegye figyelembe, hogy a apgAdmin III programban a külső adatforrások, az idegen szerverek, felhasználói mappelések és idegen táblák nem jelennek alapértelmezés szerint a fában. A menü segítségével kell bekapcsolnia <span class="menuselection">File ‣ Options ‣ Browser ‣ Display</span></p>
 </div>
-<p>Create a foreign Server that tells you where to find the data source that you want to connect</p>
+<p>Hozzon létre a idegen szervert, mely megmondja hol található az adatforrás, melyhez csatlakozni akar.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
  <span class="n">FOREIGN</span> <span class="n">DATA</span> <span class="n">WRAPPER</span> <span class="n">postgres_fdw</span>
  <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">host</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span> <span class="s1">&#39;5432&#39;</span><span class="p">,</span> <span class="n">dbname</span> <span class="s1">&#39;osm_local&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Define the user that should be used when you connect to the foreign server</p>
+<p>Adja meg a az idegen szerverhez csatlakozásnál használt felhasználót</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">MAPPING</span> <span class="n">FOR</span> <span class="n">user</span>
       <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
       <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">user</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">password</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Now you can create a foreign table.</p>
+<p>Most létre tud hozni egy idegen táblát.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IMPORT</span> <span class="n">FOREIGN</span> <span class="n">SCHEMA</span> <span class="n">public</span>
   <span class="n">LIMIT</span> <span class="n">TO</span> <span class="p">(</span><span class="n">planet_osm_polygon</span><span class="p">,</span> <span class="n">planet_osm_point</span><span class="p">)</span> <span class="o">--</span> <span class="ow">or</span> <span class="n">EXCEPT</span>
   <span class="n">FROM</span> <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
   <span class="n">INTO</span> <span class="n">public</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Find new tables in your database and have a look at the data from a foreign table.</p>
+<p>Nézze meg az új táblákat az adatbázisában és vessen egy pillantás az adatokra egy idegen táblából.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">planet_osm_polygon</span> <span class="n">limit</span> <span class="mi">10</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="connect-to-a-remote-ogr-data-source-via-ogr-fdw">
-<h2><a class="toc-backref" href="#id11">Connect to a remote OGR data source via ogr_fdw</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>The extension <code class="docutils literal"><span class="pre">ogr_fdw</span></code> allows connection too several geodata formats like KML,
-GeoPackage, WFS, GeoJSON, GPX, GML and more.</p>
-<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:
-* Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a>
-* New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></p>
-<p class="rubric">Install the extension <code class="docutils literal"><span class="pre">ogr_fdw</span></code> in your database.</p>
-<p>On the database prompt type:</p>
+<h2><a class="toc-backref" href="#id11">Csatlakozzon egy távoli OGR adatforráshoz az ogr_fdw-n keresztül</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az <code class="docutils literal"><span class="pre">ogr_fdw</span></code> bővítmény lehetővé teszi számos térinformatikai formátumhoz kapcsolódást, mint például KML, GeoPackage, WFS, GeoJSON, GPX, GML és továbbiak.</p>
+<p>Olvasson többet a <code class="docutils literal"><span class="pre">ogr_fdw</span></code>-ről: * Tárház: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a> * Új és javított: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></p>
+<p class="rubric">Telepítse az <code class="docutils literal"><span class="pre">ogr_fdw</span></code> bővítményt az adatbázisába.</p>
+<p>Az adatbázis promptjánál gépelje be:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">ogr_fdw</span><span class="p">;</span>
 </pre></div>
 </div>
-<p class="rubric">Inspect which formats are supported:</p>
-<p>Open a terminal and search for ogr_fdw_info:</p>
+<p class="rubric">Ellenőrizze, mely formátumokat támogatottak:</p>
+<p>Nyisson egy terminál ablakot keresse meg az ogr_fdw_info-t:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">locate</span> <span class="n">ogr_fdw_info</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ogr_fdw_info</span> <span class="o">-</span><span class="n">f</span>
 </pre></div>
 </div>
-<p>Results might look like these:</p>
+<p>Az eredmény így nézhet ki:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Supported</span> <span class="n">Formats</span><span class="p">:</span>
  <span class="o">-&gt;</span> <span class="s2">&quot;OGR_GRASS&quot;</span> <span class="p">(</span><span class="n">readonly</span><span class="p">)</span>
  <span class="o">-&gt;</span> <span class="s2">&quot;PCIDSK&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
@@ -431,30 +426,30 @@ GeoPackage, WFS, GeoJSON, GPX, GML and more.</p>
  <span class="o">....</span> <span class="n">many</span> <span class="n">more</span>
 </pre></div>
 </div>
-<p class="rubric">Create a FDW to a WFS</p>
-<p>Start Geoserver via <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣  Start GeoServer</span></p>
+<p class="rubric">FDW létrehozása WFS-hez</p>
+<p>Indítsa el a GeoServer-t <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span></p>
 <ul class="simple">
-<li>Open GeoServer <a class="reference external" href="http://localhost:8082/geoserver/web/">http://localhost:8082/geoserver/web/</a></li>
-<li>GeoServer WFS GetCapabilities <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</a></li>
+<li>Nyissa meg a GeoServer-t <a class="reference external" href="http://localhost:8082/geoserver/web/">http://localhost:8082/geoserver/web/</a></li>
+<li>GeoServer WFS képességek <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</a></li>
 <li>GeoServer WFS DescribeFeatureType for topp:states
 <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states</a></li>
 <li>GeoServer WFS GetFeature topp:states
 <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states</a></li>
 </ul>
-<p class="rubric">Create a foreign server that refers to the WFS that you want to connect</p>
+<p class="rubric">Hozzon létre egy távoli szervert, mely arra a WFS-re hivatkozik, melyhez csatlakozni akar</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
 <span class="n">FOREIGN</span> <span class="n">DATA</span> <span class="n">WRAPPER</span> <span class="n">ogr_fdw</span>
 <span class="n">OPTIONS</span> <span class="p">(</span> <span class="n">datasource</span> <span class="s1">&#39;WFS:http://localhost:8082/geoserver/ows&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="s1">&#39;WFS&#39;</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p class="rubric">Import all WFS feature_types as foreign tables with one command.</p>
-<p>After the import you will see several new foreign tables in your schema.</p>
+<p class="rubric">Importálja egy paranccsal a WFS elem típusokat mint idegen táblát.</p>
+<p>Az import után több idegen táblát lát a sémájában.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IMPORT</span> <span class="n">FOREIGN</span> <span class="n">SCHEMA</span> <span class="n">ogr_all</span>
 <span class="n">FROM</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
    <span class="n">INTO</span> <span class="n">public</span><span class="p">;</span>
 </pre></div>
 </div>
-<p class="rubric">Inspect the foreign data table <code class="docutils literal"><span class="pre">topp_states</span></code>:</p>
+<p class="rubric">Vizsgálja meg a  <code class="docutils literal"><span class="pre">topp_states</span></code> idegen táblát:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">topp_states</span> <span class="n">WHERE</span> <span class="n">state_name</span> <span class="o">=</span> <span class="s1">&#39;Minnesota&#39;</span><span class="p">;</span>
 </pre></div>
 </div>

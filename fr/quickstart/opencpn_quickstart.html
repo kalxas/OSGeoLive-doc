@@ -84,19 +84,17 @@
 </div>
 <div class="section" id="setting-up-your-charts">
 <h2><a class="toc-backref" href="#id1">Paramétrer vos cartes</a><a class="headerlink" href="#setting-up-your-charts" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Before running OpenCPN on the LiveDVD you should activate the sample data.
-This is a condition of redistributing NOAA’s free nautical charts. The first time you open OpenCPN you are presented with the option to do this automatically.</p>
+<p>Avant d’exécuter OpenCPN sur le LiveDVD, vous devez activer les données de l’échantillon. Il s’agit d’une condition de redistribution des cartes nautiques libres de la NOAA. La première fois que vous ouvrez OpenCPN, vous avez la possibilité de le faire automatiquement.</p>
 <ol class="arabic simple">
-<li>From the Start menu, select <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ OpenCPN</span>.</li>
-<li>Click <span class="guilabel">I agree</span> to the NOAA Nautical Chart Data Agreement.</li>
-<li>Click <span class="guilabel">OK</span> to agree to the OpenCPN license.</li>
+<li>Dans le menu Démarrer, sélectionnez <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ OpenCPN</span>.</li>
+<li>Cliquez sur le bouton <span class="guilabel">I agree</span> du NOAA Nautical Chart Data Agreement.</li>
+<li>Cliquez sur <span class="guilabel">OK</span> pour accepter la licence OpenCPN.</li>
 </ol>
-<p>You can download additional US nautical charts from NOAA at <a class="reference external" href="https://www.charts.noaa.gov/">https://www.charts.noaa.gov/</a></p>
+<p>Vous pouvez télécharger des cartes nautiques américaines supplémentaires de la NOAA à cette adresse: https//www.charts.noaa.gov</p>
 </div>
 <div class="section" id="setting-up-your-gps">
 <h2><a class="toc-backref" href="#id2">Paramétrer votre GPS</a><a class="headerlink" href="#setting-up-your-gps" title="Lien permanent vers ce titre">¶</a></h2>
-<p>If you have a GPS connected you will want to start the gpsd service.
-To do that, open a terminal and run:</p>
+<p>Si vous avez un  GPS connecté vous souhaiterez sans doute démarrer le service gpsd. Pour cela ouvrez un terminal et lancez la commande suivante :</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">gpsd</span>
 </pre></div>
 </div>
@@ -113,14 +111,14 @@ option.</p>
 </div>
 <div class="section" id="things-to-try">
 <h2><a class="toc-backref" href="#id3">Choses à essayer</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Current weather and wave forecast data can be downloaded and draped over your charts using the GRIB plugin. The <a class="reference internal" href="../overview/zygrib_overview.html"><span class="doc">zyGrib software</span></a> (also on this disc) is an easy way to download that.</p>
+<p>La météo courante et les données prévisionnelles de vagues peuvent être téléchargées et drapées par dessus vos cartes à l’aide du plugin GRIB. Le logiciel <a class="reference internal" href="../overview/zygrib_overview.html"><span class="doc">zyGrib</span></a> (aussi sur ce disque) est un moyen facile de faire cela.</p>
 <ol class="arabic simple">
-<li>Click the <span class="guilabel">Options</span> icon on the toolbar. The Options window displays.</li>
-<li>Select the <span class="guilabel">Plugins</span> tab.</li>
-<li>Choose GRIB and then click <span class="guilabel">Enable</span>.</li>
-<li>Click <span class="guilabel">OK</span>. A windsock icon is now displayed on the toolbar.</li>
+<li>Cliquez sur l’icône <span class="guilabel">Options</span> sur la barre d’outils. La fenêtre Options s’affiche.</li>
+<li>Sélectionnez l’onglet <span class="guilabel">Plugins</span>.</li>
+<li>Choisissez GRIB, puis cliquez sur <span class="guilabel">Enable</span>.</li>
+<li>Cliquez sur <span class="guilabel">OK</span>. Une icône en forme de manche à aire est maintenant affichée sur la barre d’outils.</li>
 </ol>
-<p>Run through the <a class="reference internal" href="zygrib_quickstart.html"><span class="doc">zyGrib quickstart</span></a> and load the zyGrib file over your chart.</p>
+<p>Parcourez le <a class="reference internal" href="zygrib_quickstart.html"><span class="doc">guide de démarrage rapide de zyGrib</span></a>  et chargez le fichier zyGrib sur votre carte.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>Si vous sauvegardez le fichier zyGrib dans votre répertoire personnel, naviguez jusqu’au dossier <code class="file docutils literal"><span class="pre">/home</span></code> et sélectionnez le répertoire <code class="docutils literal"><span class="pre">user</span></code>  comme répertoire de données GRIB. Puis clic droit dans le fond du fichier pour afficher les fichiers cachés, incluant le dossier <code class="docutils literal"><span class="pre">.zygrib</span></code> qui contient les fichiers GRIB téléchargés.</p>
@@ -130,10 +128,10 @@ option.</p>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id4">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li>Documentation is available from the Help menu or online at <a class="reference external" href="https://opencpn.org/OpenCPN/info/manuals.html">https://opencpn.org/OpenCPN/info/manuals.html</a></li>
+<li>La documentation est disponible dans le menu Aide ou en ligne à l’adresse <a class="reference external" href="https://opencpn.org/OpenCPN/info/manuals.html">https://opencpn.org/OpenCPN/info/manuals.html</a></li>
 <li><a class="reference external" href="../../opencpn/tips.html">Astuces pour démarrer</a></li>
-<li>Website: <a class="reference external" href="https://www.opencpn.org">https://www.opencpn.org</a></li>
-<li>Support: <a class="reference external" href="https://www.cruisersforum.com/forums/f134">https://www.cruisersforum.com/forums/f134</a></li>
+<li><strong>Site internet</strong>: <a class="reference external" href="https://www.opencpn.org">https://www.opencpn.org</a></li>
+<li><strong>Support</strong> : <a class="reference external" href="https://www.cruisersforum.com/forums/f134">https://www.cruisersforum.com/forums/f134</a></li>
 </ul>
 </div>
 </div>

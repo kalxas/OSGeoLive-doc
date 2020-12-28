@@ -86,11 +86,9 @@
 </div>
 <div class="section" id="adding-a-new-tileset-and-displaying-in-openlayers">
 <h2><a class="toc-backref" href="#id1">Agregar un nuevo conjunto de mosaicos y mostrar en OpenLayers</a><a class="headerlink" href="#adding-a-new-tileset-and-displaying-in-openlayers" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>MapCache is configured using XML files. OSGeoLive includes an example configuration file at <code class="docutils literal"><span class="pre">/usr/local/share/mapcache/mapcache-quickstart.xml</span></code>.
-The example uses the OSGeoLive demo MapServer application of Itasca County in the United States as its source.</p>
+<p>MapCache se configura mediante archivos XML. OSGeoLive incluye un archivo de configuración de ejemplo en  <code class="docutils literal"><span class="pre">/usr/local/share/mapcache/mapcache-quickstart.xml</span></code>. El ejemplo utiliza la aplicación MapServer de demostración OSGeoLive del condado de Itasca en los Estados Unidos como fuente.</p>
 <p>En este inicio rápido configuraremos el almacenamiento en caché de teselas para una capa WMS adicional y mostraremos las teselas en una página HTML simple que contiene un mapa OpenLayers.</p>
-<p>First let’s open the MapCache configuration file in FeatherPad - a text editor. Open FeatherPad from the command line with elevated permissions, so you can save the file,
-using System Tools &gt; QTerminal and then running run the command below:</p>
+<p>Primero, abramos el archivo de configuración de MapCache en FeatherPad, un editor de texto. Abra FeatherPad desde la línea de comando con permisos elevados, para que pueda guardar el archivo, usando Herramientas del Sistema&gt; QTerminal y luego ejecute el siguiente comando:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
 </pre></div>
 </div>
@@ -160,9 +158,7 @@ using System Tools &gt; QTerminal and then running run the command below:</p>
 </div>
 <div class="section" id="adding-new-services">
 <h2><a class="toc-backref" href="#id2">Añadiendo nuevos servicios</a><a class="headerlink" href="#adding-new-services" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You can configure Apache to run as many different MapCache services, each with its own configuration file by editing the
-<code class="docutils literal"><span class="pre">/etc/apache2/conf-enabled/mapcache.conf</span></code> file. As this requires super user permissions you can open it for editing in FeatherPad by
-running the command below:</p>
+<p>Puede configurar Apache para ejecutar tantos servicios MapCache diferentes, cada uno con su propio archivo de configuración editando el archivo <code class="docutils literal"><span class="pre">/etc/apache2/conf-enabled/mapcache.conf</span></code>. Como esto requiere permisos de superusuario, puede abrirlo para editarlo en FeatherPad ejecutando el siguiente comando:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /etc/apache2/conf-enabled/mapcache.conf
 </pre></div>
 </div>

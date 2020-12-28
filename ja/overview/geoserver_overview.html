@@ -78,7 +78,7 @@
 <p>GeoServer は、多様なフォーマットから地図とデータを Web ブラウザやデスクトップ GIS プログラム等の標準的なクライアントに配信する Web サーバです。データは WMS、WFS、WCS、WPS、タイルキャッシュなどの標準に基づくインターフェイス経由で配信されます。GeoServer は、ブラウザベースの管理インターフェイスを持ち、バックエンド側で複数のデータソースへ接続します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver_screenshot.png"><img alt="geoserver screenshot" class="align-right" src="../../_images/geoserver_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
 <dt><strong>様々なデータストアからデータを配信:</strong></dt>
 <dd><ul class="first last simple">
@@ -102,8 +102,7 @@
 </ul>
 </dd>
 <dt><strong>WMS 及び WMTS プロトコルを利用した、安全かつ迅速なデータ配信:</strong></dt>
-<dd>As the data is served up as an image your data is completely safe and secure. Unless they redigitise your data there is no way to steal your data.
-The appearance of each map layer can be controlled using the SLD standard which allows features to be coloured and labeled. By combining these rules with OGC Filters scale dependent styling can be implemented allowing more detail to be added as a user zooms in. Label collision management, grouping and priorities are also implemented.</dd>
+<dd>データはイメージとして提供されるため、データは完全に安全で保護されています。彼らがあなたのデータを再デジタル化しない限り、あなたのデータを盗む方法はありません。各マップ画層の外観は、フィーチャの色付けとラベル付けを可能にするSLD標準を使用してコントロールできます。これらのルールをOGCと組み合わせることで、スケールに依存するスタイル設定を実装できるため、ユーザがズームインしたときに詳細を追加できます。ラベル衝突管理、グループ化、優先順位も実装されています。</dd>
 <dt><strong>WFS プロトコルを利用した、クライアントへの全ベクタデータ送信:</strong></dt>
 <dd>A WFS client can download vector data and use it for mapping, spatial analysis and other operations. Also if authorised the user can modify the data and send it back to the server to update the stored data using the WFS-T protocol.
 The data can be transmitted using GML (compressed) as well as other standard data formats like shapefile and json.</dd>
@@ -114,7 +113,7 @@ The data can be transmitted using GML (compressed) as well as other standard dat
 <dt><strong>タイルキャッシュ</strong></dt>
 <dd><a class="reference external" href="https://www.geowebcache.org">GeoWebCache</a> は GeoServer に統合されていて、 WMS などの様々なソースからタイル化して地図画像をキャッシュします。様々な (WMS-C, WMTS, TMS, Google Maps KML, Virtual Earth などの) サービスインターフェイスを実装し、地図画像配信を加速・最適化します。通常の WMS クライアントで動作するよう、タイルを再結合することも可能です。</dd>
 <dt><strong>Web Processing Service (WPS)</strong></dt>
-<dd><a class="reference internal" href="jts_overview.html"><span class="doc">JTS</span></a> に由来する地理空間アルゴリズムを、 GeoServer の <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> インターフェイスを経由して呼び出すことが可能です。処理を連結することや、 WMS インターフェイスを経由して強力な可視化を行うためにレンダリングの変換を行うことも可能です。</dd>
+<dd><a class="reference internal" href="jts_overview.html"><span class="doc">JTS</span></a> に由来する地理空間アルゴリズムを、 GeoServer の <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> インターフェイスを経由して呼び出すことが可能です。これには、処理を連結することや、 レンダリング変換を使用したWMS インターフェイスによる強力な可視化が含まれます。</dd>
 </dl>
 </div>
 <div class="section" id="implemented-standards">

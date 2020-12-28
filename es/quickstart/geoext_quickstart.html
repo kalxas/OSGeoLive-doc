@@ -85,14 +85,14 @@
 </div>
 <div class="section" id="create-an-html-page">
 <h2><a class="toc-backref" href="#id1">Crear una página HTML</a><a class="headerlink" href="#create-an-html-page" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>In this step we will set-up an empty HTML page which will contain the application. We’ll use the text editor FeatherPad installed on OSGeoLive to create a new HTML file at <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
+<p>En este paso, configuraremos una página HTML vacía que contendrá la aplicación. Usaremos el editor de texto FeatherPad instalado en OSGeoLive para crear un nuevo archivo HTML en  <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
 <ol class="arabic">
-<li><p class="first">Open FeatherPad from the command line with elevated permissions, so you can save the file, using System Tools &gt; QTerminal and then running run the command below:</p>
+<li><p class="first">Abra FeatherPad desde la línea de comando con permisos elevados, para que pueda guardar el archivo, usando Herramientas del Sistema&gt; QTerminal y luego ejecute el siguiente comando:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next paste in the HTML below, and save the file as <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. The file contains links to the ExtJS and OpenLayers JavaScript libraries, and two CSS files used to style ExtJS and OpenLayers components.</p>
+<li><p class="first">A continuación, pegue el HTML a continuación y guarde el archivo como <code class="docutils literal"><span class="pre">`/var/www/html/geoext/demo.html</span></code>. El archivo contiene enlaces a las bibliotecas JavaScript ExtJS y OpenLayers, y dos archivos CSS que se utilizan para diseñar componentes ExtJS y OpenLayers.</p>
 <p>tilizaremos la clase <code class="docutils literal"><span class="pre">Ext.Loader``r</span> <span class="pre">para</span> <span class="pre">cargar</span> <span class="pre">archivos</span> <span class="pre">fuente</span> <span class="pre">GeoExt</span> <span class="pre">JavaScript.</span> <span class="pre">Todos</span> <span class="pre">estos</span> <span class="pre">están</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">carpeta</span> <span class="pre">``src</span></code> en <code class="docutils literal"><span class="pre">/var/www/html/geoext/</span></code> .</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>

@@ -74,21 +74,21 @@
 <div class="section" id="otb-quickstart">
 <h1>Guide de démarrage avec OTB<a class="headerlink" href="#otb-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
 <p>ORFEO Toolbox (OTB) est une bibliothèque de haute performance pour le traitement de l’image ciblée sur la télédétection.</p>
-<p>This Quickstart describes how to:</p>
+<p>Ce guide de démarrage rapide décrit comment :</p>
 <blockquote>
 <div><ul class="simple">
-<li>Get metadata information from an image</li>
+<li>Obtenir des informations de métadonnées d’une image</li>
 <li>Effectuer des opérations mathématiques avec des bandes d’image</li>
 <li>Ouvrir des images raster avec l’application Monteverdi, effectuer la segmentation (mean-shift clustering) et visualisez le résultat</li>
 <li>Effectuer une classification supervisée basée sur l’algorithme Support Vector Machine</li>
 </ul>
 </div></blockquote>
-<p>The OTB applications provide lots of interesting tools which facilitate the manipulation of images. All these tools are available through:</p>
+<p>Les applications d’OTB fournissent beaucoup d’outils intéressants qui facilitent la manipulation des images. Tous ces outils sont disponibles à travers&nbsp;:</p>
 <blockquote>
 <div><ul class="simple">
-<li>CLI (command line interface). All applications can be called from a terminal starting with <cite>otbcli_</cite> plus the application name.</li>
-<li>GUI (a standalone graphical user interface in Qt). The applications can be called from a terminal with the alias <cite>otbgui_</cite> plus the application name. Another option is to use a small launcher (available in the <span class="menuselection">menu ‣ Geospatial ‣ Spatial Tools ‣ OTB Launcher</span>).</li>
-<li>QGIS plugin - available through the processing framework.</li>
+<li>CLI (interface en ligne de commande)&nbsp;: toutes les applications peuvent être appelées depuis un terminal commençant par <cite>otbcli_</cite> suivi du nom de l’application</li>
+<li>GUI (interface d’utilisateur graphique autonome dans Qt)&nbsp;: les demandes peuvent être appelées depuis un terminal avec l’alias <cite>otbgui_</cite>  suivi du nom de l’application. Une autre option consiste à utiliser un petit lanceur (disponible dans le menu-&gt; géospatiales-&gt; outils spatiaux-&gt; OTB Launcher)</li>
+<li>Plugin QGIS - disponible dans la boîte à outils Traitements (Processing).</li>
 </ul>
 </div></blockquote>
 <dl class="docutils">
@@ -101,7 +101,7 @@
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#display-metadata-information-in-an-image" id="id1">Display metadata information in an image</a></li>
+<li><a class="reference internal" href="#display-metadata-information-in-an-image" id="id1">Afficher les informations de métadonnées d’une image</a></li>
 <li><a class="reference internal" href="#calculator-on-image-bands" id="id2">Calculatrice sur bandes d’image</a></li>
 <li><a class="reference internal" href="#pixel-based-classification" id="id3">Classification basée sur les pixels</a></li>
 <li><a class="reference internal" href="#perform-segmentation" id="id4">Effectuer la segmentation</a></li>
@@ -111,22 +111,19 @@
 </ul>
 </div>
 <div class="section" id="display-metadata-information-in-an-image">
-<h2><a class="toc-backref" href="#id1">Display metadata information in an image</a><a class="headerlink" href="#display-metadata-information-in-an-image" title="Lien permanent vers ce titre">¶</a></h2>
-<p>You can get all the metadata information contained in an image with the command : <cite>otbcli_ReadImageInfo</cite>
-The unique parameter is the Input image file name, for example:</p>
+<h2><a class="toc-backref" href="#id1">Afficher les informations de métadonnées d’une image</a><a class="headerlink" href="#display-metadata-information-in-an-image" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez obtenir toutes les informations de métadonnées contenues dans une image avec la commande&nbsp;: <cite>otbcli_ReadImageInfo</cite>. L’unique paramètre est le nom du fichier image d’entrée, par exemple&nbsp;:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_ReadImageInfo</span> <span class="o">-</span><span class="ow">in</span> <span class="n">ortho_2001_t792_1m</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="calculator-on-image-bands">
 <h2><a class="toc-backref" href="#id2">Calculatrice sur bandes d’image</a><a class="headerlink" href="#calculator-on-image-bands" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The <cite>otbcli_otbBandMath</cite> provides an efficient way to perform mathematical operation on image bands.
-The syntax is quite simple. For example to substrate two bands to study the image differences on the images <cite>lsat7_2002_10.tif</cite> and <cite>lsat7_2002_20.tif</cite>, just use the command:</p>
+<p>L’application <cite>otbcli_otbBandMath</cite> fournit un moyen efficace pour effectuer des opérations mathématique sur les bandes de l’image. La syntaxe est assez simple, par exemple soustraire deux bandes pour étudier les différences d’image sur les images <cite>lsat7_2002_10.tif</cite> et <cite>lsat7_2002_20.tif</cite>, utilisez seulement la commande:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_10</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_20</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="n">difference</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;im1b1-im2b1&quot;</span>
 </pre></div>
 </div>
-<p>The application is able to perform complex mathematical operations over images (threshold, logarithmic rescaling, etc).
-This homebrewed digital calculator is also bundled with custom functions allowing you to compute a full expression. For example, as remote sensing images measure physical values, it is possible to extract several indices with physical meaning like the NDVI (Normalized Difference Vegetation Index) for the vegetation. With the calculator you’re able to compute the NDVI on a multispectral sensors images by doing:</p>
+<p>L’application est en mesure d’effectuer des opérations mathématiques complexes sur des images (seuillage, redimensionnement logarithmique, etc). Cette calculatrice numérique «&nbsp;maison&nbsp;»  est également livrée avec des fonctions personnalisées vous permettant de calculer une expression complète. Par exemple, comme les images de télédétection mesurent des grandeurs physiques, il est possible d’extraire plusieurs indices ayant une signification physique comme le NDVI (indice de végétation par différence normalisé) pour la végétation. Avec la calculatrice, vous êtes en mesure de calculer le NDVI sur des images de capteurs multispectraux en faisant:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_30</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_40</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="o">~/</span><span class="n">ndvi</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;ndvi(im1b1,im2b1)&quot;</span>
 </pre></div>
 </div>
@@ -138,16 +135,7 @@ This homebrewed digital calculator is also bundled with custom functions allowin
 </div>
 <div class="section" id="pixel-based-classification">
 <h2><a class="toc-backref" href="#id3">Classification basée sur les pixels</a><a class="headerlink" href="#pixel-based-classification" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The classification in the application framework provides a supervised pixel-wise
-classification chain based on learning from multiple images, and using a
-specified machine learning method like SVM, Bayes, KNN, Random Forests, Artificial
-Neural Network, and others. See the application help of
-<cite>TrainImagesClassifier</cite> for further details about all the available
-classifiers.
-It supports huge images through streaming and multi-threading. The
-classification chain performs a training step based on the intensities of each
-pixel as features. Please note that all the input images must have the same number
-of bands to be comparable.</p>
+<p>La classification dans le cadre de l’application fournit une chaîne de classification supervisée d’un basée sur l’apprentissage de plusieurs images, à l’aide d’un ordinateur spécifié méthode comme SVM, Bayes, KNN, forêts aléatoires, les réseaux de neurones artificiels, d’apprentissage et d’autres. Voir l’aide de l’application de <cite>TrainImagesClassifier</cite>  pour plus de détails sur tous les classificateurs disponibles. Il supporte des images énormes en streaming et multi-threading. La chaîne de classification effectue une étape de formation basée sur l’intensité de chaque pixel comme caractéristiques. Veuillez noter que toutes les images d’entrée doivent avoir le même nombre de bandes pour être comparables.</p>
 <p>Pour découvrir cette application, vous pouvez utiliser la commande&nbsp;:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbgui_TrainImagesClassifier</span>
 </pre></div>
@@ -183,31 +171,30 @@ of bands to be comparable.</p>
 </div>
 <p>En outre, l’application peut fonctionner dans deux modes différents&nbsp;:</p>
 <ul>
-<li><p class="first">Raster mode: allows you to segment a small image and produces a raster where each component of the segmentation is labeled with a unique integer</p>
+<li><p class="first">Mode raster&nbsp;: vous permet de segmenter une petite image et produit une trame où chaque composant de la segmentation est étiqueté avec un entier unique</p>
 </li>
-<li><p class="first">Vector mode: segment larger images and produce a vector file where each segment of the segmentation is represented by a polygon</p>
+<li><p class="first">Mode vecteur&nbsp;: segmenter les images plus grandes et produit un fichier vectoriel où chaque segment de la segmentation est représenté par un polygone</p>
 <img alt="../../_images/otb-meanshift-lsat7.png" src="../../_images/otb-meanshift-lsat7.png" />
 </li>
 </ul>
-<p>OTB also includes a framework to perform tile-wise segmentation of very large images with theoretical guarantees of getting identical results to those without tiling called <a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/recipes/improc.html#large-scale-mean-shift-lsms-segmentation">LSMS</a>.</p>
+<p>OTB inclut également un cadre logiciel pour effectuer une segmentation par tuiles d’images très grandes avec des garanties théoriques d’obtenir des résultats identiques à ceux sans tuilage appelé <a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/recipes/improc.html#large-scale-mean-shift-lsms-segmentation">LSMS</a>.</p>
 </div>
 <div class="section" id="otb-in-qgis">
 <h2><a class="toc-backref" href="#id5">OTB dans QGis</a><a class="headerlink" href="#otb-in-qgis" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The same set of OTB applications can also be used from the <span class="menuselection">Processing ‣ Toolbox</span> menu in QGis. The applications are sorted by tag.</p>
+<p>Le même ensemble d’applications OTB peut aussi être utilisé depuis le menu <span class="menuselection">Processing ‣ Toolbox</span> dans QGis. Les applications sont triées par balise.</p>
 <blockquote>
 <div><img alt="../../_images/otb-processing-qgis.png" src="../../_images/otb-processing-qgis.png" />
 </div></blockquote>
 </div>
 <div class="section" id="developing-with-otb">
 <h2><a class="toc-backref" href="#id6">Développer avec OTB</a><a class="headerlink" href="#developing-with-otb" title="Lien permanent vers ce titre">¶</a></h2>
-<p>If you want to use the OTB library and compile your C++ code inside OSGeoLive,
-you will need to:</p>
+<p>Si vous souhaitez utiliser la bibliothèque OTB et compiler votre code C++ à l’intérieur d’OSGeoLive, vous devrez :</p>
 <ul class="simple">
-<li>Install development package <strong>libotb-dev</strong> and <strong>libqt4-dev</strong> .</li>
-<li>Check that <strong>cmake</strong> is installed.</li>
+<li>Installez le paquet de développement <strong>libotb-dev</strong> et <strong>libqt4-dev</strong> .</li>
+<li>Vérifiez que <strong>cmake</strong> est installé.</li>
 </ul>
-<p>The OTB_DIR location should be found automatically (usually in <em>/usr/lib/x86_64-linux-gnu/cmake/OTB-…</em>). In your CMake configuration, you should link the libraries in the variable OTB_LIBRARIES.</p>
-<p>More information can be found in the Software Guide.</p>
+<p>L’emplacement d’OTB_DIR doit être trouvé automatiquement (généralement dans <em>/usr/lib/x86_64-linux-gnu/cmake/OTB-…</em>). Dans votre configuration CMake, vous devez lier les bibliothèques dans la variable OTB_LIBRARIES.</p>
+<p>Plus d’informations peuvent être trouvées dans le Guide logiciel.</p>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id7">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
