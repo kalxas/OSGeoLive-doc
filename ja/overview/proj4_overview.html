@@ -73,49 +73,37 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="proj-4">
 <h1>Proj.4<a class="headerlink" href="#proj-4" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Proj4 is a library that provides methods to transform between different coordinate
-reference systems. A geographic coordinate reference system allows all points on the
-earth to be described as a set of coordinates (such as latitude, longitude and
-elevation). Different systems are used to represent the tridimensional earth
-on a flat, bidimensional map.</p>
-<p>Proj4 is used in <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, <a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a>, <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>, <a class="reference internal" href="mapnik_overview.html"><span class="doc">Mapnik</span></a>, Thuban, OGDI, TopoCad, OGRCoordinateTransformation and various others.</p>
-<p>Proj4 has been translated from C to <cite>other languages &lt;https://trac.osgeo.org/metacrs/wiki&gt;</cite>.  These sub-projects include:
-These tools include:
-* Proj4js (JavaScript) - used in <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>.
-* CS-Map (C++) - used in MapGuide.
-* GeoTIFF/libgeotiff (C++).
-* Proj4J (Java).
-* <a class="reference external" href="https://spatialreference.org/">SpatialReference.org</a>  - website to retrieve coordinate system definitions (obsolete).</p>
+<p>Proj4は、異なる座標参照システム間で変換するメソッドを提供するライブラリです。地理座標参照システムでは、地球上のすべての点を座標(緯度、経度、高度など)のセットとして記述できます。それぞれのシステムは、平坦な二次元マップ上に三次元地球を表現ししています。</p>
+<p>Proj4は <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, <a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a>, <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>, <a class="reference internal" href="mapnik_overview.html"><span class="doc">Mapnik</span></a>, Thuban, OGDI, TopoCad, OGRCoordinateTransformation 、その他いろいろなところで使われています。</p>
+<p>Proj4は、C から <cite>さまざまな言語 &lt;https://trac.osgeo.org/metacrs/wiki&gt;</cite> に変換されています。これらのサブプロジェクトには、* Proj4js (JavaScript) - used in <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>. * MapGuideでつかわれているCS-Map (C++)。 * GeoTIFF/libgeotiff (C++)。 * Proj4J (Java)。 * <a class="reference external" href="https://spatialreference.org/">SpatialReference.org</a>  - 座標系定義を取得するためのWebサイトです(旧式)</p>
 <a class="reference internal image-reference" href="../../_images/proj4_screenshot.png"><img alt="proj4 screenshot" class="align-right" src="../../_images/proj4_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Provides point transformation from one coordinate reference system to another.</li>
-<li>Includes transformation between datums.</li>
-<li>Large number of projection classes supported.</li>
+<li>ある座標参照システムから別の座標参照システムへの点変換を提供します。</li>
+<li>データ間の変換が含まれます。</li>
+<li>多数の投影クラスがサポートされています。</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Proj4 uses coordinate system definitions defined by the
-<cite>European Petroleum Survey Group (EPSG) &lt;https://www.epsg.org/&gt;</cite>.
-Well Known Text (WKT) format.</p>
+<h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Proj4は、<cite>European Petroleum Survey Group(EPSG)  &lt;https://www.epsg.org/&gt;</cite> によって定義された座標系定義を使用します。Well Known Text(WKT)形式。</p>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
-<div><p><strong>Website:</strong> <a class="reference external" href="https://proj4.org/index.html">https://proj4.org/index.html</a></p>
-<p><strong>Licence:</strong> <a class="reference external" href="https://trac.osgeo.org/proj4j#License">X/MIT style Open Source license</a></p>
-<p><strong>Software Version:</strong> 4.9.2 (stable)</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
-<p><strong>API Interfaces:</strong> C, C++, Python, Java, Ruby</p>
-<p><strong>Support:</strong> <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/proj">https://lists.osgeo.org/mailman/listinfo/proj</a></p>
+<div><p><strong>Webサイト:</strong> <a class="reference external" href="https://proj4.org/index.html">https://proj4.org/index.html</a></p>
+<p><strong>ライセンス:</strong> <a class="reference external" href="https://trac.osgeo.org/proj4j#License">X/MIT style Open Source license</a></p>
+<p><strong>ソフトウェアバージョン:</strong> 4.9.2 (stable)</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>API インターフェイス:</strong> C, C++, Python, Java, Ruby</p>
+<p><strong>サポート:</strong> <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/proj">https://lists.osgeo.org/mailman/listinfo/proj</a></p>
 </div></blockquote>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/proj4_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/proj4_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

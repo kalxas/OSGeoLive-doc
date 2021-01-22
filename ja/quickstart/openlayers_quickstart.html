@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OpenLayers Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>OpenLayersクイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,45 +72,40 @@
   <a class="reference external image-reference" href="https://openlayers.org/"><img alt="../../_images/logo_openlayers.png" class="align-right" src="../../_images/logo_openlayers.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="openlayers-quickstart">
-<h1>OpenLayers Quickstart<a class="headerlink" href="#openlayers-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This Quick Start describes some basic steps required to start working with OpenLayers: creating a basic map, adding raster and vector layers and styling features.</p>
-<p>OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds. It is completely free, Open Source JavaScript, released under the 2-clause BSD License (also known as the FreeBSD).</p>
+<h1>OpenLayersクイックスタート<a class="headerlink" href="#openlayers-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このクイックスタートでは、OpenLayersをはじめて使うときの基本的な手順について説明します。基本的なマップの作成、ラスタレイヤとベクタレイヤの追加、地物のスタイリングです。</p>
+<p>OpenLayersを使用すると、任意のWebページに動的な地図を簡単に配置できます。任意のソースから地図タイル、ベクタデータやマーカーをロードして表示可能です。OpenLayers はすべての種類の地理情報のさらなる利用のために開発されてきました。完全にフリーなオープンソース JavaScript で、2条項 BSD ライセンス (FreeBSD ライセンスとしても知られています) でリリースされています。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#core-concepts" id="id1">Core concepts</a></li>
-<li><a class="reference internal" href="#create-a-basic-map" id="id2">Create a basic map</a></li>
-<li><a class="reference internal" href="#add-raster-layers" id="id3">Add raster layers</a></li>
-<li><a class="reference internal" href="#add-vector-layers" id="id4">Add vector layers</a></li>
-<li><a class="reference internal" href="#apply-style-to-features" id="id5">Apply style to features</a></li>
-<li><a class="reference internal" href="#work-with-events" id="id6">Work with events</a></li>
-<li><a class="reference internal" href="#what-next" id="id7">What next?</a></li>
+<li><a class="reference internal" href="#core-concepts" id="id1">主な概念</a></li>
+<li><a class="reference internal" href="#create-a-basic-map" id="id2">基本マップを作成する</a></li>
+<li><a class="reference internal" href="#add-raster-layers" id="id3">ラスタレイヤ追加する</a></li>
+<li><a class="reference internal" href="#add-vector-layers" id="id4">ベクタレイヤを追加する</a></li>
+<li><a class="reference internal" href="#apply-style-to-features" id="id5">フィーチャにスタイルを適用する</a></li>
+<li><a class="reference internal" href="#work-with-events" id="id6">イベントの操作</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="core-concepts">
-<h2><a class="toc-backref" href="#id1">Core concepts</a><a class="headerlink" href="#core-concepts" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Before we start working with OpenLayers it helps to understand OpenLayers core concepts:</p>
+<h2><a class="toc-backref" href="#id1">主な概念</a><a class="headerlink" href="#core-concepts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenLayersで作業を始める前に、OpenLayersの主な概念を理解しておくとよいでしょう。</p>
 <dl class="docutils">
-<dt><strong>Map</strong></dt>
-<dd>The <em>map</em> is the core component of OpenLayers. For a <em>map</em> to render, a <em>view</em>, one or more <em>layers</em>, and a target container are needed.</dd>
-<dt><strong>View</strong></dt>
-<dd>The <em>view</em> determines how the map is rendered. It is used to set the resolution, the center location, etc. It is like a camera through which we look at the map’s content.</dd>
-<dt><strong>Layers</strong></dt>
-<dd><em>Layers</em> can be added to the map in a stacked order. Layers can be either <em>raster layers</em> (images), or <em>vector layers</em> (points/lines/polygons).</dd>
-<dt><strong>Source</strong></dt>
-<dd>Each layer has a <em>source</em>, which knows how to load the layer content.
-In the case of <em>vector layers</em>, its source reads vector data
-using a <em>format</em> class (for example GeoJSON or KML) and provides the layer
-with a set of <em>features</em>.</dd>
-<dt><strong>Features</strong></dt>
-<dd><em>Features</em> represent real world things and can be rendered using different
-<em>geometries</em> (like point, line or polygon) using a given <em>style</em>, which
-determines its look (line thinkness, fill color, etc).</dd>
+<dt><strong>マップ</strong></dt>
+<dd><em>マップ*はOpenLayersの主要な要素です。*マップ*をレンダリングするには、*ビュー</em>、1つまたは複数の*レイヤ*、およびターゲットコンテナが必要です。</dd>
+<dt><strong>ビュー</strong></dt>
+<dd><em>ビュー</em> はmapのレンダリング方法を決定します。解像度や中心位置などを設定します。これはマップの内容を見るためのカメラのようなものです。</dd>
+<dt><strong>レイヤ</strong></dt>
+<dd><em>レイヤ</em> はスタック順にマップに追加できます。レイヤは、<em>ラスタレイヤ</em> (イメージ)または <em>ベクタレイヤ</em> (点/線分/ポリゴン)のいずれかです。</dd>
+<dt><strong>ソース</strong></dt>
+<dd>各レイヤには、レイヤコンテンツのロード方法を知っている <em>ソース</em> があります。<em>ベクタレイヤ*の場合、そのソースは*フォーマット*クラス(例えばGeoJSONやKML)を使ってベクタデータを読み込み、一連の *フィーチャー</em> をレイヤに提供します。</dd>
+<dt><strong>フィーチャー</strong></dt>
+<dd><em>フィーチャー</em> は現実世界のものを表し、特定の*スタイル*を使用して、さまざまな*ジオメトリ*(点、線、ポリゴンなど)を使用してレンダリングできます。これにより、外観(線の思考、塗り潰し色など)が決まります。</dd>
 </dl>
 </div>
 <div class="section" id="create-a-basic-map">
-<h2><a class="toc-backref" href="#id2">Create a basic map</a><a class="headerlink" href="#create-a-basic-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Create a file in e.g. /home/user/ called basic-map.html , and copy the following content into the file.</p>
+<h2><a class="toc-backref" href="#id2">基本マップを作成する</a><a class="headerlink" href="#create-a-basic-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>/home/user/でbasic-map.htmlという名前のファイルを作成して、次の内容を記入します。</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -157,24 +152,21 @@ determines its look (line thinkness, fill color, etc).</dd>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Now try opening basic-map.html from a web browser using File-&gt;Open File. You should see the following:</p>
+<p>Webブラウザから[ファイル]-&gt;[ファイルを開く]を使用して、basic-map.htmlを開いてみます。次のように表示されるはずです。</p>
 <a class="reference internal image-reference" href="../../_images/openlayers-basic-map.png"><img alt="../../_images/openlayers-basic-map.png" src="../../_images/openlayers-basic-map.png" style="width: 711.0px; height: 620.0px;" /></a>
-<p>Note:</p>
+<p>注意：</p>
 <ul class="simple">
-<li>The code follows the best practice of loading JavaScipt code at the end of the html file.</li>
-<li>An OpenLayers map needs to be attached to a HTML DOM element, so we have created a <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> element identified by the <em>map</em> id.</li>
-<li>Maps are represented by the <code class="docutils literal"><span class="pre">ol.Map</span></code> class. We specify the DOM element to render the map into using the <strong>target</strong> property.</li>
-<li>OpenLayers allows map rendering using two different mechanisms: Canvas and WebGL. The default renderer is <em>canvas</em>.</li>
-<li>A map shows data contained within layers, so we have created a tiled layer, represented by the <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> class, that loads content from the OpenStreetMap project, using the <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> source class.</li>
-<li>Finally, we set the initial position of the <em>camera</em> using the <code class="docutils literal"><span class="pre">ol.View</span></code> class, set the initial zoom level and center location.</li>
+<li>このコードは、JavaSciptコードをhtmlファイルの最後にロードするというベスト・プラクティスに従います。</li>
+<li>OpenLayersマップはHTML DOM要素にアタッチする必要があるため、<em>map</em> idで識別される``&lt;div&gt;`` 要素を作成しました。</li>
+<li>マップは``ol.Map`` クラスで表されます。<strong>target</strong> プロパティーを使用して、マップをレンダリングするDOM要素を指定します。</li>
+<li>OpenLayersでは、キャンバスとWebGLという2つの異なるメカニズムを使用したマップレンダリングが可能です。既定のレンダラーは*canvas*です。</li>
+<li>レイヤ内にマップのデータを表示するため、<code class="docutils literal"><span class="pre">ol.source.OSM</span></code> ソースクラスを使用してOpenStreetMapプロジェクトからコンテンツをロードするようにしたタイルレイヤの <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> クラスを作成しました。</li>
+<li>最後に、<code class="docutils literal"><span class="pre">ol.View</span></code> クラスを使用して <em>camera</em> の初期位置を設定し、初期ズームレベルと中心位置を設定します。</li>
 </ul>
 </div>
 <div class="section" id="add-raster-layers">
-<h2><a class="toc-backref" href="#id3">Add raster layers</a><a class="headerlink" href="#add-raster-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The most used raster layers are the tiled layers, provided by the likes of
-OpenStreetMap, Stamen, Bing, etc. Tiled layers are represented by the
-<code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> class and must use a source that knows how to load tiles from
-a given provider, like <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> or <code class="docutils literal"><span class="pre">ol.source.Stamen</span></code>:</p>
+<h2><a class="toc-backref" href="#id3">ラスタレイヤ追加する</a><a class="headerlink" href="#add-raster-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenStreetMap、Stamen、Bingなどによって提供されるタイルレイヤが、最も使用されるラスタレイヤです。タイルレイヤーは``ol.layer.Tile`` クラスで表され、<code class="docutils literal"><span class="pre">ol.source.OSM</span></code> または``ol.source.Stamen`` のように、特定のプロバイダからタイルをロードする方法を知っているソースを使用する必要があります。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">osm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
   <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
 <span class="p">});</span>
@@ -186,9 +178,9 @@ a given provider, like <code class="docutils literal"><span class="pre">ol.sourc
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>Layers can be added to the map in two ways:</p>
+<p>レイヤは、次の2つの方法でマップに追加できます。</p>
 <ul>
-<li><p class="first">When constructing the <code class="docutils literal"><span class="pre">ol.Map</span></code>, use the <code class="docutils literal"><span class="pre">layers</span></code> property:</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">ol.Map</span></code> を作成する場合は、<code class="docutils literal"><span class="pre">layers</span></code> プロパティを使用します。</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
   <span class="p">...</span>
@@ -199,7 +191,7 @@ a given provider, like <code class="docutils literal"><span class="pre">ol.sourc
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Add them manually with the <code class="docutils literal"><span class="pre">map.addLayer()</span></code> method:</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">map.addLayer()</span></code> メソッドを使って手動で追加します。</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">osm</span><span class="p">);</span>
 <span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">stamen</span><span class="p">);</span>
@@ -210,10 +202,8 @@ a given provider, like <code class="docutils literal"><span class="pre">ol.sourc
 </ul>
 </div>
 <div class="section" id="add-vector-layers">
-<h2><a class="toc-backref" href="#id4">Add vector layers</a><a class="headerlink" href="#add-vector-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Vector layers are represented by the <code class="docutils literal"><span class="pre">ol.layer.Vector</span></code> class and must use a
-source suitable for reading the vector format, like <code class="docutils literal"><span class="pre">ol.source.GeoJSON</span></code>,
-<code class="docutils literal"><span class="pre">ol.source.KML</span></code> or <code class="docutils literal"><span class="pre">ol.source.TopoJSON</span></code>.</p>
+<h2><a class="toc-backref" href="#id4">ベクタレイヤを追加する</a><a class="headerlink" href="#add-vector-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ベクタレイヤは <code class="docutils literal"><span class="pre">ol.layer.Vector</span></code> クラスで表され、<code class="docutils literal"><span class="pre">ol.source.GeoJSON</span></code>、<code class="docutils literal"><span class="pre">ol.source.KML</span></code>、<code class="docutils literal"><span class="pre">ol.source.TopoJSON</span></code> など、ベクタフォーマットの読み込みに適したソースを使用する必要があります。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
   <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;url_to_geojson_file&#39;</span>
@@ -225,11 +215,8 @@ source suitable for reading the vector format, like <code class="docutils litera
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/openlayers-vector.png"><img alt="../../_images/openlayers-vector.png" src="../../_images/openlayers-vector.png" style="width: 518.0px; height: 277.0px;" /></a>
-<p>Note, in the previous code we must change the <code class="docutils literal"><span class="pre">url_to_file</span></code> to point to a
-valid GeoJSON file placed in our server.
-Note that Javascript security will prevent sourcing of datasets from an external URL on a different domain / port (a.k.a. same-origin policy).</p>
-<p>Features can also be created manually. In this case we need to create a geometry
-that represents the feature:</p>
+<p>前のコードでは、サーバに置かれた有効なGeoJSONファイルを指すように``url_to_file``を変更する必要があることに注意してください。Javascriptセキュリティでは、異なるドメイン/ポート上の外部URLからデータセットを取得することができないことに注意してください。(aka. 同一発信元ポリシー)。</p>
+<p>フィーチャーは手動で作成することもできます。この場合、フィーチャーを表すジオメトリを作成する必要があります。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Geometries</span>
 <span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">geom</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span>
     <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">([</span><span class="mf">3</span><span class="p">,</span><span class="mf">50</span><span class="p">],</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">)</span>
@@ -260,10 +247,9 @@ that represents the feature:</p>
 </div>
 </div>
 <div class="section" id="apply-style-to-features">
-<h2><a class="toc-backref" href="#id5">Apply style to features</a><a class="headerlink" href="#apply-style-to-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Features within vector layers can be styled.
-The style is determined by a combination of fill, stroke, text  and image, which are all optional. In addition, a style can be applied to a layer, which determines the style of all contained features, or to an individual feature.</p>
-<p>A style is represented by the <code class="docutils literal"><span class="pre">ol.style.Style</span></code> class which has properties to set the <code class="docutils literal"><span class="pre">fill</span></code>, <code class="docutils literal"><span class="pre">stroke</span></code>, <code class="docutils literal"><span class="pre">text</span></code> and <code class="docutils literal"><span class="pre">image</span></code> to be applied. The next example shows the World’s administrative limits dataset styled to use a green fill and stroke:</p>
+<h2><a class="toc-backref" href="#id5">フィーチャにスタイルを適用する</a><a class="headerlink" href="#apply-style-to-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ベクタレイヤ内のフィーチャにスタイルを設定できます。スタイルは、塗り、線、テキスト、イメージの組み合わせによって決まります。これらはすべて任意の設定項目です。さらに、レイヤにスタイルを適用して、含まれているすべてのフィーチャのスタイルを決定したり、個々のフィーチャにスタイルを適用することもできます。</p>
+<p>スタイルは、<code class="docutils literal"><span class="pre">ol.style.Style</span></code> クラスによって表され、このクラスは、適用される``fill``、<code class="docutils literal"><span class="pre">stroke</span></code>、<code class="docutils literal"><span class="pre">text</span></code> および``image``を設定するプロパティを有する。次の例は、緑の塗りと線を使用するようにスタイル設定された世界の行政区界データセットを示しています。</p>
 <a class="reference internal image-reference" href="../../_images/openlayers-styling.png"><img alt="../../_images/openlayers-styling.png" src="../../_images/openlayers-styling.png" style="width: 555.0px; height: 283.0px;" /></a>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">limitsLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
   <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
@@ -289,15 +275,13 @@ The style is determined by a combination of fill, stroke, text  and image, which
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>In the code, we have loaded a TopoJSON file and styled it through the <code class="docutils literal"><span class="pre">style</span></code> property.
-We have set a <code class="docutils literal"><span class="pre">fill</span></code> and <code class="docutils literal"><span class="pre">stroke</span></code>, required for lines and polygons, and an
-<code class="docutils literal"><span class="pre">image</span></code> (in this case a circle) used for point features.</p>
+<p>このコードでは、TopoJSONファイルをロードし、<code class="docutils literal"><span class="pre">style</span></code> プロパティーを使ってスタイルを設定しています。ラインとポリゴンに必要な``fill`` と``stroke``、およびポイントフィーチャに使用する``image`` (この場合は円)を設定しました。</p>
 </div>
 <div class="section" id="work-with-events">
-<h2><a class="toc-backref" href="#id6">Work with events</a><a class="headerlink" href="#work-with-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Most of the components, like map, layers or controls, trigger events to notify changes. For example we can be notified each time the mouse is moved over the map, or when a feature is added to a vector layer, etc.</p>
-<p>Events can be easily registered on an object with the <code class="docutils literal"><span class="pre">on()</span></code> method and unregistered with <code class="docutils literal"><span class="pre">un()</span></code>.</p>
-<p>The following code registers an event on a map instance, and will be notified each time the pointer is moved. Within the callback function we obtain the pointer coordinates and print in the browser console in two different projections.</p>
+<h2><a class="toc-backref" href="#id6">イベントの操作</a><a class="headerlink" href="#work-with-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ほとんどの(マップ、レイヤ、コントロールなどの)要素は、イベントをトリガして変更を通知します。たとえば、マウスがマップ上を移動するたびに通知されたり、フィーチャがベクタレイヤに追加されるたびに通知されたりします。</p>
+<p>イベントは``on()`` メソッドでオブジェクトに簡単に登録でき、<code class="docutils literal"><span class="pre">un()</span></code> で登録解除できます。</p>
+<p>次のコードでは、マップのインスタンスにイベントを登録し、ポインタが移動するたびに通知されます。コールバック関数内では、ポインタの座標を取得し、ブラウザコンソールに2つの異なる投影法で出力します。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointermove&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">coord3857</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">coordinate</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">coord4326</span> <span class="o">=</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">coord3857</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">);</span>
@@ -308,13 +292,12 @@ We have set a <code class="docutils literal"><span class="pre">fill</span></code
 </div>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id7">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Sometimes the quickest way to work out how OpenLayers works is to look at examples
-and their source code. You can find more OpenLayers information here:</p>
+<h2><a class="toc-backref" href="#id7">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenLayersの動作を理解するための最も簡単な方法は、サンプルとそのソースコードを調べることです。OpenLayersの詳細については、以下を参照してください。</p>
 <ul class="simple">
-<li><a class="reference external" href="../../openlayers/apidoc/">API Docs</a></li>
-<li><a class="reference external" href="../../openlayers/examples/">Examples</a></li>
-<li><a class="reference external" href="https://openlayers.org/">OpenLayers.org Website</a></li>
+<li><a class="reference external" href="../../openlayers/apidoc/">APIドキュメント</a></li>
+<li><a class="reference external" href="../../openlayers/examples/">例</a></li>
+<li><a class="reference external" href="https://openlayers.org/">OpenLayers.org Webサイト</a></li>
 </ul>
 </div>
 </div>

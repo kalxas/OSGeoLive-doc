@@ -75,38 +75,46 @@
 <h1>pgRouting<a class="headerlink" href="#pgrouting" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="gis-tools">
 <h2>Outils SIG<a class="headerlink" href="#gis-tools" title="Lien permanent vers ce titre">¶</a></h2>
-<p>pgRouting étend la base de données géospatiale <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> pour fournir le calcul d’itinéraires et d’autres fonctionnalités d’analyse de réseau.</p>
+<p>pgRouting extends the
+<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>
+geospatial database to provide geospatial routing and other network analysis functionality.</p>
 <p>Les avantages de l’approche par calcul d’itinéraires de la base de données sont:</p>
 <ul class="simple">
-<li>Les données et les attributs peuvent être modifiés par de nombreux clients, comme <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> et <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> via JDBC, ODBC, ou directement en utilisant Pl/pgSQL. Les clients peuvent être des PCs ou bien des appareils mobiles.</li>
+<li>Data and attributes can be modified by many clients, like <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a>
+and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> through JDBC, ODBC, or directly using Pl/pgSQL.
+The clients can either be PCs or mobile devices.</li>
 <li>Les changements de données peuvent être reflétés instantanément via le moteur du calculateur d’itinéraires. Il n’y a pas besoin d’effectuer de pré-calculs.</li>
 <li>Le paramètre «&nbsp;cost&nbsp;» (coût) peut être calculé dynamiquement via SQL et sa valeur peut provenir de plusieurs champs ou tables.</li>
 </ul>
-<p>pgRouting est disponible sous licence GPLv2 et soutenu par une communauté croissante d’individus, d’entreprises et d’organisations.</p>
+<p>pgRouting is available under the GPLv2+ license and is supported by a growing community
+of individuals, businesses and organizations.</p>
 <a class="reference internal image-reference" href="../../_images/pgrouting_screenshot.png"><img alt="pgrouting screenshot" class="align-right" src="../../_images/pgrouting_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
 <h3>Caractéristiques principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
 <p>pgRouting propose des fonctions pour:</p>
 <ul class="simple">
-<li>Plus Court Chemin de tous les couples, algorithme de Johnson</li>
-<li>Plus Court Chemin de tous les couples, algorithme de Floyd-Warshall</li>
-<li>Plus Court Chemin A*</li>
-<li>Plus Court Chemin Dijkstra Bidirectionnel</li>
-<li>Plus Court Chemin A* Bidirectionnel</li>
-<li>Plus Court Chemin Dijkstra</li>
+<li>All Pairs Shortest Path
+* Johnson’s Algorithm
+* Floyd-Warshall Algorithm</li>
+<li>Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
+<li>Bi-directional Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
 <li>Distance de conduite</li>
-<li>K- Plus Court Chemin, Chemins Alternatifs Multiples</li>
-<li>K-Dijkstra, Plus Court Chemin avec relation un à plusieurs</li>
+<li>K-Shortest Path
+* Yen’s algorithm</li>
 <li>Voyageur du commerce</li>
-<li>Plus Court Chemin avec Restriction de Virage (Turn Restriction Shortest Path ou abrégé TRSP)</li>
+<li>And many more</li>
 </ul>
-<p>En apprendre plus sur l’utilisation de pgRouting dans votre application en lisant la <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
+<p>Learn more about pgRouting in the <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
 </div>
 <div class="section" id="details">
 <h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
 <p><strong>Site web:</strong> <a class="reference external" href="https://pgrouting.org/">https://pgrouting.org/</a></p>
 <p><strong>Licence:</strong> GNU General Public License (GPL) version 2</p>
-<p><strong>Version du logiciel:</strong> 2.6.2</p>
+<p><strong>Version du logiciel:</strong> 3.1.0</p>
 <p><strong>Plates-formes supportées:</strong> Linux, Windows, Mac</p>
 <p><strong>Interface de l’API:</strong> SQL</p>
 <p><strong>Support commercial:</strong> <a class="reference external" href="https://pgrouting.org/support.html">https://pgrouting.org/support.html</a></p>

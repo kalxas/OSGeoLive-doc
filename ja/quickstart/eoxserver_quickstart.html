@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>EOxServer Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>EOxServer クイックスタートt &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,40 +71,35 @@
             
   <a class="reference external image-reference" href="https://docs.eoxserver.org/en/stable/"><img alt="../../_images/logo_eoxserver.png" class="align-right" src="../../_images/logo_eoxserver.png" /></a>
 <div class="section" id="eoxserver-quickstart">
-<h1>EOxServer Quickstart<a class="headerlink" href="#eoxserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>EOxServer クイックスタートt<a class="headerlink" href="#eoxserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>EOxServer is a server for presenting big Earth Observation (EO) data
 archives and metadata via Open Standards. It builds upon an Open Source
-stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>, PROJ.4 and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
-<p>This Quick Start describes how to:</p>
+stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>,  <a class="reference internal" href="../overview/proj4_overview.html"><span class="doc">PROJ.4</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
+<p>このクイックスタートでは、次の方法について説明します。</p>
 <ul class="simple">
-<li>Use the Web Client to view, filter, subset, and download EO data</li>
-<li>Use the Admin Client to inspect EO data archives</li>
+<li>Web Clientを使用して、EOデータをビュー、フィルタリング、サブセット、ダウンロード</li>
+<li>管理クライアントを使用してEOデータアーカイブを検査</li>
 </ul>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-eoxserver" id="id1">Start EoxServer</a></li>
-<li><a class="reference internal" href="#work-with-the-web-client" id="id2">Work with the Web Client</a></li>
-<li><a class="reference internal" href="#work-with-the-admin-client" id="id3">Work with the Admin Client</a></li>
-<li><a class="reference internal" href="#what-next" id="id4">What Next?</a></li>
+<li><a class="reference internal" href="#start-eoxserver" id="id1">EoxServerを起動</a></li>
+<li><a class="reference internal" href="#work-with-the-web-client" id="id2">Web Clientの操作</a></li>
+<li><a class="reference internal" href="#work-with-the-admin-client" id="id3">管理クライアントとの連携</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="start-eoxserver">
-<h2><a class="toc-backref" href="#id1">Start EoxServer</a><a class="headerlink" href="#start-eoxserver" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Choose <span class="menuselection">Geospatial ‣ Web Services ‣ EOxServer</span>. This launches a browser showing the demonstration instance available at <a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a></p>
+<h2><a class="toc-backref" href="#id1">EoxServerを起動</a><a class="headerlink" href="#start-eoxserver" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>メニューから <span class="menuselection">Geospatial‣Web Services‣EOxServer</span> を選択します。これによりブラウザが起動し、<a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a> で利用可能なデモインスタンスが表示されます</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_start.png"><img alt="EOxServer demonstration start" src="../../_images/eoxserver_start.png" style="width: 512.0px; height: 384.0px;" /></a>
 </div>
 <div class="section" id="work-with-the-web-client">
-<h2><a class="toc-backref" href="#id2">Work with the Web Client</a><a class="headerlink" href="#work-with-the-web-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Click the <strong>Web Client</strong> link to open the integrated EOxServer client.</p>
-<p>Within this client you can explore the contents of the EOxServer instance. The
-demonstration instance is filled with ENVISAT MERIS scenes.</p>
+<h2><a class="toc-backref" href="#id2">Web Clientの操作</a><a class="headerlink" href="#work-with-the-web-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Web Client</strong> リンクをクリックして、統合されたEOxServerクライアントを開きます。</p>
+<p>このクライアントでは、EOxServerインスタンスの内容を表示できます。デモインスタンスはENVISAT MERISのシーンで構成されています。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient1.png"><img alt="Main view of the EOxServer Web Client" src="../../_images/eoxserver_webclient1.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>The client provides a set of interactions. On the top you can see a menu bar to
-show the Layer Selection and the Tools widgets. The main area is the map widget
-of the client with a set of datasets already displayed.
-On the bottom, you’ll find the timeslider widget, that allows you to explore the
-contents in the temporal dimension.</p>
+<p>クライアントは一連の操作を提供します。上部には、レイヤ選択とツールウィジェットを表示するメニューバーが表示されます。主な領域は、クライアントのマップウィジェットで、一連のデータセットがすでに表示されています。下部にはタイムスライダウィジェットが表示され、時間次元のコンテンツを表示できます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient2.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient2.png" style="width: 512.0px; height: 384.0px;" /></a>
 <p>The Layer Selection widget allows you to enable or disable the visibility and
 configure the rendering of the layers. Also, you can show or hide the
@@ -114,49 +109,36 @@ only reappears once a dataset layer is enabled.
 The Tools widget provides three different tools: the Bounding Box Selection Tool,
 the Selection Management Tool and the Download Tool.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient3.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient3.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>Similar to a map, you can zoom and pan the currently visible time of interest
-and select a time of interest by drawing on the area containing the red dots.
-You can also hover on a dot to see the dataset ID. By clicking on the dot, the
-map automatically zooms to the extent of the dataset.</p>
+<p>マップと同様に、現在表示されている注視点をズームおよびパンしたり、赤い点を含む領域を描画して注視点を選択したりできます。点の上にカーソルを置くと、データセットIDを表示することもできます。点をクリックすると、マップは自動的にデータセットの範囲にズームします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient4.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient4.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>When the Bounding Box Tool is enabled, you can draw a bounding box directly on
-the map. The bounding box is used for querying within the Download Tool.</p>
+<p>境界ボックスツールを有効にすると、境界ボックスを直接地図上に描画できます。境界ボックスは、ダウンロードツール内でクエリに使用されます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient5.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient5.png" style="width: 512.0px; height: 384.0px;" /></a>
 <p>When the Download Tool is enabled, a query to the server is sent. This query
 includes the selected time of interest and bounding box. The results are shown
 in the Download widget, where you can select the format, projection and datasets
 to download.</p>
-<p>This was a quick introduction to the EOxServer Web Client. Please refer to the
-<a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">online documentation</a> for more
-information on this topic.</p>
+<p>これは、EOxServer Web Clientの簡単な説明です。このトピックの詳細については、<a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">オンライン文書</a> を参照してください。</p>
 </div>
 <div class="section" id="work-with-the-admin-client">
-<h2><a class="toc-backref" href="#id3">Work with the Admin Client</a><a class="headerlink" href="#work-with-the-admin-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>From the EOxServer main page, click the <strong>Admin Client</strong> link and login with user <cite>admin</cite> and password <cite>admin</cite>.</p>
+<h2><a class="toc-backref" href="#id3">管理クライアントとの連携</a><a class="headerlink" href="#work-with-the-admin-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>EOxServerのメインページで <strong>Admin Client</strong> リンクをクリックし、ユーザー「admin」とパスワード「admin」でログインします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient1.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient1.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>The <cite>Admin Client</cite> is Djangos standard admin and allows you to configure the
-available data. Please feel free to explore the client. More information can
-be found in the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">operators』 guide</a>.</p>
+<p><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">Admin Client `はDjangos標準の管理者であり、利用可能なデータを設定できます。クライアントを自由にご覧ください。詳細については、`運用者ガイド</a> を参照してください。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient2.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient2.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>For example, you can inspect the dataset series that is loaded by default by
-clicking the 「Dataset Series」 link and then the 「MER_FRS_1P_RGB_reduced」 link.</p>
+<p>たとえば、既定でロードされているデータセットシリーズを検査するには、[データセットシリーズ]リンクをクリックし、[MER_FRS_1P_RGB_reduced]リンクをクリックします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient3.png"><img alt="EOxServer demonstration admin client Dataset Series" src="../../_images/eoxserver_adminclient3.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p>Here you can also see the included datasets. You can exclude single datasets using the 「delete」 checkbox on the right and click on 「Save」.</p>
+<p>ここでは、含まれているデータセットも確認できます。単一のデータセットを除外するには、右側の[削除]チェックボックスをオンにして[保存]をクリックします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient4.png"><img alt="EOxServer demonstration admin client Dataset Series Management" src="../../_images/eoxserver_adminclient4.png" style="width: 512.0px; height: 384.0px;" /></a>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id4">What Next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This is a simple demonstration, but you can do much more with EOxServer. The
-project website contains a lot of resources to help you get started. Here’s
-a few resources to check out next:</p>
+<h2><a class="toc-backref" href="#id4">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これは簡単なデモですが、EOxServerでできることはたくさんあります。プロジェクトのWebサイトには、はじめての人に役立つ資材がたくさん用意されています。次に、いくつかのをいくつか紹介しましょう。</p>
 <ul class="simple">
-<li>See the <a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer Overview</span></a> for more information.</li>
-<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer Operators』 Guide</a>.</li>
-<li>Read the complete <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/index.html">EOxServer Users』 documentation</a>
-starting from the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
-<li>If you are already in the OSGeoLive environment, read the local copy of the <a class="reference external" href="https://localhost/eoxserver-docs/EOxServer_documentation.pdf">EOxServer Users』 local documentation</a></li>
-<li>Ready to use EOxServer? Then join the community on the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">mailing lists</a> to
-exchange ideas, discuss potential software improvements, and ask questions.</li>
+<li>詳細については、<a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServerの概要</span></a> を参照してください。</li>
+<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer 運用者ガイド</a> を読んでください。</li>
+<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServerの基本事項</a> から始まる完全な <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/index.html">EOxServer ユーザーズドキュメント</a> を読んでください。</li>
+<li>すでにOSGeoLive環境にいる場合は、メディアにはいっている`EOxServer Users’ローカルドキュメント &lt;<a class="reference external" href="https://localhost/eoxserver-docs/EOxServer_documentation.pdf">https://localhost/eoxserver-docs/EOxServer_documentation.pdf</a>&gt;`_ をお読みください。</li>
+<li>EOxServerを使用する準備はできていますか?次に、<a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">メーリングリスト</a> のコミュニティに参加して、アイデアを交換したり、ソフトウェアの改善点について話し合ったり、質問したりします。</li>
 </ul>
 </div>
 </div>

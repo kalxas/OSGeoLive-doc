@@ -41,10 +41,10 @@ OSGeoLive
             
     .. revealjs:: Components on OSGeoLive
 
-        * 50+ Open Source Geospatial Applications.
-        * Sample Datasets.
-        * Consistent Overviews & Quickstarts.
-        * Translations.
+        * 50+ Open Source Geospatial Applications
+        * Sample Datasets
+        * Consistent Overviews & Quickstarts
+        * Translations
 
 
         .. rv_note::
@@ -90,20 +90,20 @@ OSGeoLive
             * Which all leads to Architects and Developers discovering, and then incorporating Open Source Geospatial software in their projects.
 
 
-    .. revealjs:: What is new in 13.0</h2>
+    .. revealjs:: What is new in 14.0</h2>
 
-        * Updated to Lubuntu 18.04.3 LTS
+        * Updated to Lubuntu 20.04 LTS
         * Updated core packages based on `DebianGIS <href="https://wiki.debian.org/DebianGis">`__
-        * QGIS 3.4.10, GDAL 2.4.2, PROJ 5.2.0, PostGIS 2.5.2, GRASS 7.6.1, GeoServer 2.15.1, MapServer 7.4.1 and many more...
-        * New projects added: GeoExt 3.1, Actinia 0.2.1, MapCache 1.8.0
-        * Major documentation updates
-        * OSM data for Bucharest
-        * Updated (geo)datascience packages and included many new Jupyter notebooks.
+        * QGIS 3.10.13, GDAL 3.2.1, PROJ 7.2.1, PostGIS 3.1.0, GRASS 7.8.5, GeoServer 2.18.0, MapServer 7.6.1 and many more...
+        * New projects added: GeoStyler, Re3gistry
+        * Download OSGeoLive ISO or VMDK (with even more software) 
+        * Documentation updates
+        * OSM data for Buenos Aires
         * Updated packages contributed back to `UbuntuGIS <href="https://wiki.ubuntu.com/UbuntuGIS">`__
         * Full `changelog <href="https://github.com/OSGeo/OSGeoLive/blob/master/CHANGES.txt">`__
 
         .. rv_note::
-            In OSGeoLive Version 13.0 we've updated our core packages to the latest stable, added 2 new OSGeo Community projects (GeoExt and Actinia), improved our documentation and translations. We've also updated many existing applications and moved to the latest Lubuntu 18.04.2 Long Term Support release.
+            In OSGeoLive Version 14.0 we've updated our core packages to the latest stable, added new projects (GeoStyler, Re3gistry), improved our documentation and translations. We've also updated many existing applications and moved to the latest Lubuntu 20.04 Long Term Support release.
 
 
 
@@ -115,7 +115,7 @@ OSGeoLive
 
         .. image:: ../images/logos/OSGeo_compass_with_text_square.png
             :alt: OSGeo
-            :height: 300
+            :height: 400
             :target: https://www.osgeo.org
 
         .. rv_note::
@@ -777,7 +777,9 @@ OSGeoLive
 
         .. rv_note::
             Note 
-            pgRouting extends the PostGIS database to provide geospatial routing functionality so you can apply queries like finding the shortest path between points from within the database, thus simplifying both routing functionality and maintenance of data.
+            pgRouting extends the PostGIS database to provide geospatial routing functionality
+            so you can apply queries like finding the shortest path between points from within
+            the database, thus simplifying both routing functionality and maintenance of data.
 
 
 
@@ -1165,8 +1167,21 @@ OSGeoLive
 .. revealjs:: 
 
     .. revealjs:: Credits
+    
+        * Developers and project maintainers
+        * Authors and reviewers of the documentation
+        * Translators
+        * https://live.osgeo.org/en/sponsors.html
+        
+        .. rv_note::
+            As you can see listed here, many people have been involved in packaging the Open Source Software for OSGeoLive,
+            and literally thousands of developers have helped build the software we package.
+            Thank you.        
+        
 
-        Project Steering Committee:
+    .. revealjs:: Credits
+
+        Project Steering Committee
 
         * Angelos Tzotsos (Chair)
         * Brian M Hamlin
@@ -1201,14 +1216,11 @@ OSGeoLive
         :title-heading: h2
 
         *  Proof-read, test and correct Quickstarts and Overviews
-
-          * There is a good possibility to get to know cool software!
-
-        *  Translate and improve the documentation
-
-          * Translation is made in `Transifex <https://www.transifex.com/osgeo/osgeolive>`__
-          * Local Chapters can easily get involved here
-          * No technical experience necessary
+        * There is a good possibility to get to know cool software!
+        * Translate and improve the documentation
+        * Translation is made in `Transifex <https://www.transifex.com/osgeo/osgeolive>`__
+        * Local Chapters can easily get involved here
+        * No technical experience necessary
 
 
     .. revealjs:: Sponsors

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>JOSM Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>JOSM クイック スタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,224 +71,155 @@
             
   <a class="reference external image-reference" href="https://josm.openstreetmap.de"><img alt="../../_images/logo_josm.png" class="align-right" src="../../_images/logo_josm.png" /></a>
 <div class="section" id="josm-quickstart">
-<h1>JOSM Quickstart<a class="headerlink" href="#josm-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>JOSM is a feature rich, extensible, offline desktop editor for OpenStreetMap (OSM) data, written in Java.</p>
-<p>It supports loading stand-alone GPX tracks and GPX track data as well as editing existing nodes (points), ways (lines), metadata tags (name/value information) and relations (ordered sequence of points and lines) from the OSM database. GPX tracks, are usually downloaded in advance from a GPS receiver or from other sources.</p>
-<p>This quickstart covers basic usage of the Java OpenStreetMap editor.</p>
+<h1>JOSM クイック スタート<a class="headerlink" href="#josm-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>JOSM は、 Java で記述された OpenStreetMap (OSM) データ用の、機能豊富で、拡張可能な、オフラインのデスクトップエディタです。</p>
+<p>スタンドアロン GPX トラックや GPX トラックデータの読み込みと共に、OSM データベースから既存のノード (点) 、ウェイ (ライン) 、メタデータタグ (名前/値の情報) 、リレーション (点と線の順序付けられたシーケンス) の編集をサポートしています。GPX トラックは、通常、GPS 受信機または他のソースから事前にダウンロードされます。</p>
+<p>このクイックスタートでは、Java OpenStreetMapエディターの基本的な使い方について説明します。</p>
 <div class="contents local topic" id="id1">
 <ul class="simple">
-<li><a class="reference internal" href="#start-josm" id="id2">Start JOSM</a></li>
-<li><a class="reference internal" href="#load-a-sample-ficticious-map" id="id3">Load a sample (ficticious) map</a></li>
-<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigate the map</a><ul>
-<li><a class="reference internal" href="#points-lines-and-shapes" id="id5">Points, lines, and shapes</a></li>
-<li><a class="reference internal" href="#changing-objects" id="id6">Changing objects</a></li>
-<li><a class="reference internal" href="#drawing" id="id7">Drawing</a></li>
-<li><a class="reference internal" href="#add-presets" id="id8">Add presets</a></li>
+<li><a class="reference internal" href="#start-josm" id="id2">JOSM を起動する</a></li>
+<li><a class="reference internal" href="#load-a-sample-ficticious-map" id="id3">サンプル(架空)マップをロードする</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">マップをナビゲートする</a><ul>
+<li><a class="reference internal" href="#points-lines-and-shapes" id="id5">ポイント、ライン、シェイプ</a></li>
+<li><a class="reference internal" href="#changing-objects" id="id6">オブジェクトの編集</a></li>
+<li><a class="reference internal" href="#drawing" id="id7">地図の描画</a></li>
+<li><a class="reference internal" href="#add-presets" id="id8">プリセットの適用</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#draw-your-own-map" id="id9">Draw your own map</a></li>
-<li><a class="reference internal" href="#remove-the-sample-layer" id="id10">Remove the sample layer</a></li>
-<li><a class="reference internal" href="#what-next" id="id11">What next?</a></li>
+<li><a class="reference internal" href="#draw-your-own-map" id="id9">地図を描いてみましょう</a></li>
+<li><a class="reference internal" href="#remove-the-sample-layer" id="id10">サンプル レイヤーを削除する</a></li>
+<li><a class="reference internal" href="#what-next" id="id11">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="start-josm">
-<h2><a class="toc-backref" href="#id2">Start JOSM</a><a class="headerlink" href="#start-josm" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>From the desktop, choose <span class="menuselection">Navigation and Maps ‣ JOSM</span>. When JOSM starts, it will look something like this:</p>
+<h2><a class="toc-backref" href="#id2">JOSM を起動する</a><a class="headerlink" href="#start-josm" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デスクトップから <span class="menuselection">Navigation and Maps‣JOSM</span> を選択します。JOSMが始まると、次のようになります。</p>
 <img alt="JOSM splash page" src="../../_images/josm-splash-page.png" />
 </div>
 <div class="section" id="load-a-sample-ficticious-map">
-<h2><a class="toc-backref" href="#id3">Load a sample (ficticious) map</a><a class="headerlink" href="#load-a-sample-ficticious-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">サンプル(架空)マップをロードする</a><a class="headerlink" href="#load-a-sample-ficticious-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Now let’s open up a sample OSM file which we will use to learn the
-basic ways to draw maps with JOSM. Note that this map is not real, in
-that it is not a real map of a real place, so we will not save it on
-OpenStreetMap.</p>
+<li><p class="first">次に、サンプルのOSMファイルを開きます。このファイルを使用して、JOSMを使用してマップを描画する基本的な方法を学習します。このマップは実際の場所の実際のマップではないため、OpenStreetMapには保存しません。</p>
 </li>
-<li><p class="first">Download the file here: <a class="reference external" href="https://learnosm.org/files/sample.osm">sample.osm</a></p>
+<li><p class="first">ここでファイルをダウンロードしてください： <cite>sample.osm &lt;https://learnosm.org/files/sample.osm&gt;</cite> __</p>
 </li>
-<li><p class="first">Now let’s open the sample map file in JOSM. Click the “Open” button
-in the upper left.</p>
+<li><p class="first">次に、JOSMでサンプルの地図を開きます。JOSMの左上に表示されている」ファイルを開く」ボタンを押してください。</p>
 <img alt="Open file" src="../../_images/josm_open-file.png" />
 </li>
-<li><p class="first">Find the file <strong>sample.osm</strong>. It is probably in your Downloads
-folder, unless you saved it somewhere else.</p>
+<li><p class="first"><strong>sample.osm</strong> ファイルを探します。別の場所に保存していない限り、通常はDownloadsフォルダにあります。</p>
 </li>
-<li><p class="first">Click on it, and then click “Open”. You should now see a sample map that looks like this:</p>
+<li><p class="first">ファイルをクリックして、もう一度」Open」をクリックしてください。サンプルの地図が開き、次のように表示されます。</p>
 <img alt="Sample file" src="../../_images/josm_sample-file.png" />
 </li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You will use these data in order to try various editing techniques.
-<em>You must however never upload these fictitious data to the
-database.</em></p>
+<p class="last">これらのデータを使用して、さまざまな編集方法を試します。<em>ただし、これらの架空のデータをデータベースにアップロードしないでください。</em></p>
 </div>
 </div>
 <div class="section" id="navigate-the-map">
-<h2><a class="toc-backref" href="#id4">Navigate the map</a><a class="headerlink" href="#navigate-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">マップをナビゲートする</a><a class="headerlink" href="#navigate-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul>
-<li><p class="first">To move the map left or right, up or down, hold your right mouse
-button down, and move your mouse.</p>
+<li><p class="first">画面上で右クリックをしたままマウスを動かすと、表示領域を上下左右に移動させることができます。。</p>
 </li>
-<li><p class="first">There are several ways to zoom in and out of the map. If you have a
-mouse, you can use your scroll wheel to zoom in and out. If you are
-using a laptop and don’t have a mouse, you can zoom in and out using
-the scale bar in the upper left of the map window. Drag the bar left
-and right by holding your left mouse down and moving the bar left or
-right with your mouse.</p>
+<li><p class="first">表示領域の拡大/縮小を行うにはいくつかの方法があります。マウスが使える場合は、マウスのスクロールホイールを回転させることで、拡大と縮小が可能です。ラップトップを使用していて、トラックパッドやタッチパッドを使っていてマウスがない場合は、地図の左上に表示されている+と-のボタンをクリックしてください。マウスを左クリックしたままバーを左右に動かすことで、地図の拡大と縮小ができます。</p>
 <img alt="Scale bar" src="../../_images/josm_scale-bar.png" />
 </li>
-<li><p class="first">Look at the sample map. There a few different types of objects here.
-There is a river, a forest, some buildings, several roads, and a
-couple of shops. To select an object, click on it with your left
-mouse button.</p>
+<li><p class="first">サンプルの地図を見てみましょう。種類の違うオブジェクトがいくつか表示されています。表示されているのは、河川が1つ、森林が1つ、そして建物と道路がいくつか、複数の店舗です。オブジェクトを選択するには、対象を左クリックしてください。</p>
 </li>
 </ul>
 <div class="section" id="points-lines-and-shapes">
-<h3><a class="toc-backref" href="#id5">Points, lines, and shapes</a><a class="headerlink" href="#points-lines-and-shapes" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>As you click different objects on the sample map, notice that there are three different types of objects on the map. There are points, lines, and shapes.</p>
+<h3><a class="toc-backref" href="#id5">ポイント、ライン、シェイプ</a><a class="headerlink" href="#points-lines-and-shapes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>地図の上のオブジェクトをいくつかクリックしているうちに、オブジェクトにはポイント、ライン、シェイプの3つの種類があることに気がつくかもしれません。ポイント、ライン、シェイプがあります。</p>
 <ul>
-<li><p class="first">Points are a single location, represented by symbols. On this sample
-map, there are two points, a shoe shop and a supermarket. The shoe
-shop is represented by a shoe symbol, and the market is represented
-by a shopping cart.</p>
+<li><p class="first">ポイントとは単一の地点で、シンボルによって表現されます。このサンプルマップには、靴屋とスーパーマーケットの2つのポイントがあります。靴屋は靴のシンボルで表され、市場はショッピングカートで表されます。</p>
 </li>
-<li><p class="first">There are several lines on the map as well, which represent roads. If
-you look closely you will see that within the lines, there are points
-as well. These points don’t have any symbols or other information
-associated with them, but they help to define where the line is
-located.</p>
+<li><p class="first">その他、地図に描かれているいくつかのラインは道路を表現しています。ラインの細部を表示させると、ラインの中にいくつかのポイントが存在していることがわかります。これらのポイントは特定のシンボルや情報を持っておらず、ラインがどの地点を通過しているのかを指し示しています。</p>
 </li>
-<li><p class="first">Lastly, there are numerous shapes on the sample map, representing
-different places - a forest, a river, a park, and buildings. A shape
-is used to represent an area, like a field or a building. A shape is
-exactly like a line - the only difference is that the line begins at
-the same point where it ends.</p>
+<li><p class="first">最後に、地図の上には多くのシェイプが存在し、森や河川、公園、建物など、それぞれ異なる地点を表現しています。シェイプは基本的に、区域や建物など、なんらかのエリアを表しています。シェイプはラインに非常によく似ていますが、唯一、ラインの始点と終点が1つのポイントになっていることが異なっています。</p>
 <blockquote>
-<div><p>It’s easy to think of a map as containing these three basic types of
-objects - points, lines, and shapes. In OpenStreetMap there is
-special terminology which you will come to learn as you progress. In
-OSM, points are actually called <strong>nodes</strong>, and lines are called
-<strong>ways</strong>. A shape is called a <strong>closed way</strong> because it is just a
-line that ends at the same point where it begins.</p>
+<div><p>地図には基本的に、ポイント・ライン・シェイプという3つのタイプのオブジェクトしかない、とかんがえるととてもシンプルです。これから先、OpenStreetMapについて調べてゆくと、これらを別の単語で表現していることがあります。 ポイントは実際には ノード と呼ばれ、ラインは ウェイ と呼ばれます。シェイプは、データ上では始点と終点が同一の地点にあるだけのウェイなので 閉じたウェイ(closed way) と呼ばれます。</p>
 </div></blockquote>
 </li>
-<li><p class="first">You may notice that when you select an object, a list appears to the
-right of the map in a window called “Properties”. These are known as
-tags. Tags are information that is tied to a point, line or shape
-that describes what it is. We’ll learn more about tags in a later
-chapter. For now all you need to know is that this information helps
-describe whether our object is a forest, a river, a building, or
-something else.</p>
+<li><p class="first">オブジェクトを選択すると、JOSMの画面右側に”プロパティ”と呼ばれるリストが表示されることに気がつくかもしれません。ここに表示される値はタグと呼ばれます。タグとは、ポイントやライン、シェイプに関連付けられた情報で、その地点が何を表しているかを示しています。タグについては、後の章で詳しく説明します。いまのところ、森林や河川、建物などの内容はタグに書かれた情報によって表されている、ということを知っているだけでかまいません。</p>
 </li>
-<li><p class="first">Think about drawing a map by hand, and how you are also drawing
-points, lines, and shapes. What other places are best represented by
-points? Lines? Shapes?</p>
+<li><p class="first">地図を手書きで書くときを思い出してください。ポイントやライン、シェイプをどのように使って描くと、地図がよりわかりやすくなるでしょうか。他にはどんな場所をポイントで表すのが一番いいですか?ライン?シェイプ?</p>
 </li>
 </ul>
 </div>
 <div class="section" id="changing-objects">
-<h3><a class="toc-backref" href="#id6">Changing objects</a><a class="headerlink" href="#changing-objects" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">オブジェクトの編集</a><a class="headerlink" href="#changing-objects" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
-<li>Select the forest on the left side of the map. Be sure to click on
-the line around the forest, not one of the points on the line.</li>
-<li>Now hold your left mouse button down and drag your mouse. You should be able to move the forest to a new location on the map.</li>
-<li>Click on one of the points on the line around the forest. Hold your
-left mouse button down and drag your mouse. You should be able to
-move the point. This is how you can change the shape of an object, or
-move a point.</li>
+<li>地図の左側にある森林を選択してみましょう。森林をあらわしているラインを選択します。ラインの上にあるポイントではないので注意してください。</li>
+<li>選択ができたら、森林を選択した状態でマウスを左クリックし、クリックしたままマウスをドラッグさせてみましょう。地図の中の別の場所へ森林を移動させることができます。</li>
+<li>森林をあらわすラインの中にあるポイントを、どこか1つクリックして選択して下さい。マウスを左クリックした状態で、クリックしたままマウスをドラッグさせてみましょう。ポイントを移動させることができます。オブジェクトの位置を変更したい場合や、オブジェクトの形を変更したい場合はこのようにして行います。</li>
 </ol>
 </div>
 <div class="section" id="drawing">
-<h3><a class="toc-backref" href="#id7">Drawing</a><a class="headerlink" href="#drawing" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">地図の描画</a><a class="headerlink" href="#drawing" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>On the left side of JOSM is a column of buttons. Many of these
-buttons open new windows on the right side that provide more
-information about the map. The most important buttons, however, are
-at the top of these column. These buttons change what you can do with
-your mouse.</li>
-<li>The top buttons in this column are the ones you will use the most.
-They are used for selecting objects and for drawing new ones.</li>
-<li>Until now, you have been using the Select tool, which looks like
-this:</li>
+<li>JOSM画面の左側には、多くのボタンが配置されています。それらのボタンを押すと右側に新しいボックスが表示され、地図に対する情報がより多く表示されます。しかし、それらのボタンのなかで最も重要なのは、列の一番上に表示されているボタンです。これらのボタンは、マウスで実施できる挙動を変更します。</li>
+<li>最も重要なボタンは、このカラムの一番上のほうに配置されています。これらのボタンをクリックすると、オブジェクトの選択や描画を行うことができます。</li>
+<li>ここまでの操作では、”選択”ツールを使用してきています。以下のアイコンです。:</li>
 </ul>
 <img alt="Select tool" src="../../_images/josm_select-tool.png" />
-<p>Before you draw, you need to make sure that nothing is selected.</p>
+<p>描画を行う際には、地図のどのオブジェクトも選択していないことを確認してください。</p>
 <ol class="arabic">
-<li><p class="first">Click in the black space on the map, where it is empty, to make sure
-nothing is selected.</p>
+<li><p class="first">なにもオブジェクトが描かれていない、地図の黒い地点をクリックすることで、なにも選択していない状態にすることができます。</p>
 </li>
-<li><p class="first">Click on the second button, the Draw tool.</p>
+<li><p class="first">2番目のボタン”描画”をクリックしてみましょう。</p>
 <img alt="Draw tool" src="../../_images/josm_draw-tool.png" />
 </li>
-<li><p class="first">Find an empty area on the map, and double-click with your mouse. This
-will draw a single point.</p>
+<li><p class="first">地図の何も書かれていない地点でダブルクリックしてみてください。単一の地点が1つ描画されます。</p>
 </li>
 </ol>
 <ul class="simple">
-<li>To draw a line, single-click with your mouse. Move your mouse and
-click again. Continue until you are happy with your line. To end the
-line, double-click your mouse.</li>
-<li>Draw a shape the same way that you draw a line, but finish the shape
-by double-clicking on the point where you started the line.</li>
+<li>ラインを描画するには、まずどこかでクリックを1回行います。そのままマウスを移動させ、別の場所でもう一度クリックします。ラインの形ができるまで、移動させてクリックを繰り返します。ダブルクリックを行うと、そこでラインの描画は終了となります。</li>
+<li>シェイプを描くには、ラインと同じような操作をした後、ラインを描き始めたポイントでダブルクリックします。</li>
 </ul>
 </div>
 <div class="section" id="add-presets">
-<h3><a class="toc-backref" href="#id8">Add presets</a><a class="headerlink" href="#add-presets" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Now we know how to draw points, lines and shapes, but we still haven’t defined what they represent. We want to be able to say that our points are shops, schools, or something else, and whether our shapes are fields, buildings, or something else.</p>
+<h3><a class="toc-backref" href="#id8">プリセットの適用</a><a class="headerlink" href="#add-presets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ポイント、ライン、シェイプを描画する方法はわかりました。単にポイントを描いただけでは、そのポイントが何を表しているのか不明瞭なままです。ポイントを追加するときには、それが店舗なのか、学校なのか、それとも他の施設なのかを示しましょう。シェイプについても同様で、そこがなにに使われている土地なのか、それとも建物なのか、などを示します。</p>
 <ol class="arabic">
-<li><p class="first">Click on the Select tool, in the column of buttons on the left.</p>
+<li><p class="first">画面左側にあるカラムから、”選択”ツールをクリックしてください。</p>
 <img alt="Select tool" src="../../_images/josm_select-tool.png" />
 </li>
-<li><p class="first">Select one of the objects that you drew with the Draw tool.</p>
+<li><p class="first">描画ツールを選択した状態で、編集したいオブジェクトの一部をクリックしてください。</p>
 </li>
-<li><p class="first">On the top menu, click “Presets” and choose the type of location you would like to define.</p>
+<li><p class="first">トップメニューに表示されている”プリセット”をクリックしてください。より詳細なメニューが表示されますので、地点に対して定義したい種別が表示されるまでマウスを移動させてください。</p>
 </li>
-<li><p class="first">When you choose on a preset, a form will pop up asking you for more
-information. You do not have to fill in every field, but you may wish
-to add some of the important fields, such as the name of the object.</p>
+<li><p class="first">プリセットをクリックすると、詳細な情報入力を促すポップアップが表示されます。すべての項目を入力する必要はありませんが、地点の名称など、いくつかの重要な項目については入力ができるとよいでしょう。</p>
 </li>
-<li><p class="first">When you are finished entering the information, click “Apply Preset”.
-If everything went well, your point, line, or shape should change
-colors or show a symbol. This is because you have defined what it is.</p>
+<li><p class="first">情報の入力が終わったら、”プリセットの適用”をクリックしてください。以上の操作でオブジェクトに対して情報が追加され、ポイントやライン、シェイプの表示色変更、あるいはシンボル表示の変更などが行われます。これで、何であるかの定義をおこなうことができました。</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="section" id="draw-your-own-map">
-<h2><a class="toc-backref" href="#id9">Draw your own map</a><a class="headerlink" href="#draw-your-own-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now let’s draw a map in order to practice the techniques you have learned. You may wish to redraw the map that you drew on paper previously.</p>
+<h2><a class="toc-backref" href="#id9">地図を描いてみましょう</a><a class="headerlink" href="#draw-your-own-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>それでは、ここまでで紹介したテクニックを実践するため、実際に自分自身の地図を描いてみましょう。題材として、あなたが紙の上に描いた地図を取り上げます。</p>
 <ul class="simple">
-<li>Drag the map away from the sample map. Hold the right mouse button
-and drag your mouse, until you have a nice empty area to draw on.</li>
-<li>Use the Draw tool to create points, lines, and shapes. Describe what
-your objects are by selecting from the Presets menu.</li>
-<li>When you are finished, you should have your own map, similar to the
-sample map that we opened in sample.osm.</li>
+<li>サンプルの地図表示が画面外になるよう、表示位置を変更します。マウスを右クリックし、何も書かれていない場所までドラッグして移動します。</li>
+<li>描画ツールを使って、ポイント、ライン、シェイプを描いてみてください。描かれたオブジェクトの内容を示すには、プリセットメニューから適切な内容を選択します。</li>
+<li>自分自身の地図を書き終えたら作業完了です。”sample.osm”で表示されていた地図のように描けたでしょうか？</li>
 </ul>
 </div>
 <div class="section" id="remove-the-sample-layer">
-<h2><a class="toc-backref" href="#id10">Remove the sample layer</a><a class="headerlink" href="#remove-the-sample-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Once you feel comfortable with these basic editing techniques you might
-want to turn your attention to mapping real features.</p>
+<h2><a class="toc-backref" href="#id10">サンプル レイヤーを削除する</a><a class="headerlink" href="#remove-the-sample-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これらの基本的な編集テクニックに慣れてきたら、実際のフィーチャのマッピングにうつるとよいでしょう。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last"><em>It is very important that you first remove the layer with the sample data. These data are fictitious and must not be uploaded to the OpenStreetMap database (newer JOSM releases automatically prevent this).</em></p>
+<p class="last"><em>最初にサンプルデータを含むレイヤーを削除することが非常に重要です。これらのデータは架空のものであり、OpenStreetMapデータベースにアップロードしないでください(新しいJOSMリリースでは自動的にこの問題が回避されます)。</em></p>
 </div>
-<p>In the Layers window on the upper right of the screen select the
-sample.osm layer. Then click on the trash can icon in the lower right
-corner of that window. Alternatively you can choose delete from the
-context menu of the layer.</p>
+<p>画面の右上にあるLayersウィンドウで、sample.osmレイヤを選択します。次に、そのウィンドウの右下隅にあるごみ箱アイコンをクリックします。または、レイヤのコンテキストメニューから[削除]を選択することもできます。</p>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id11">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Try the LearnOSM documentation, from which this quickstart was derived:
-<a class="reference external" href="https://learnosm.org/en/josm/start-josm/">https://learnosm.org/en/josm/start-josm/</a></li>
-<li>In order to continue editing you first need to download real data.
-This is explained in the next chapter:
-<a class="reference external" href="https://learnosm.org/en/josm/more-about-josm/">https://learnosm.org/en/josm/more-about-josm/</a></li>
-<li>Website: <a class="reference external" href="https://josm.openstreetmap.de/">https://josm.openstreetmap.de/</a></li>
+<li>このクイックスタートの元となったLearnOSMドキュメントを試してください： <a class="reference external" href="https://learnosm.org/en/josm/start-josm/">https://learnosm.org/en/josm/start-josm/</a></li>
+<li>編集を続けるには、まず実際のデータをダウンロードする必要があります。これ以降は、次の文書で説明します: <a class="reference external" href="https://learnosm.org/en/josm/more-about-josm/">https://learnosm.org/en/josm/more-about-josm/</a></li>
+<li><strong>Webサイト:</strong> <a class="reference external" href="https://josm.openstreetmap.de/">https://josm.openstreetmap.de/</a></li>
 </ul>
 </div>
 </div>

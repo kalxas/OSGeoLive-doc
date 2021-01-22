@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>istSOS Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>istSOSクイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,41 +72,39 @@
   <a class="reference external image-reference" href="http://istsos.org"><img alt="../../_images/logo_istsos.png" class="align-right" src="../../_images/logo_istsos.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="istsos-quickstart">
-<h1>istSOS Quickstart<a class="headerlink" href="#istsos-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>istSOS is an OGC <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> server implementation written in <a class="reference external" href="https://www.python.org/">Python</a>.
-istSOS allows for managing and dispatch observations from monitoring sensors according to the Sensor Observation Service standard.</p>
-<p>The project provides also a Graphical user Interface that allows for easing the daily operations and a RESTFull Web api for automatizing administration procedures.</p>
-<p>istSOS is released under the GPLv2 licence, and runs on all major platforms
-(Windows, Linux, Mac OS X), even though it has been used in production in linux environment only.</p>
+<h1>istSOSクイックスタート<a class="headerlink" href="#istsos-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>istSOSは、<a class="reference external" href="https://www.python.org/">Python</a>  で記述されたOGC <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> サーバ実装です。istSOSは、Sensor Observation Service標準に従って、モニタリングセンサーからの観測情報を管理し、ディスパッチすることを可能にします。</p>
+<p>このプロジェクトはまた、日常的な操作を容易にするグラフィカル・ユーザー・インターフェースと、管理手順を自動化するためのRESTフル Web apiも提供しています。</p>
+<p>istSOSはGPLv2ライセンスでリリースされ、すべての主要プラットフォーム(Windows、Linux、Mac OS X)で動作します。ただし、これまでLinux環境でのみ使用されていました。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#create-postgis-database" id="id1">Create postgis database</a></li>
-<li><a class="reference internal" href="#set-up-an-istsos-service-instance" id="id2">Set up an istSOS service instance</a></li>
-<li><a class="reference internal" href="#create-a-new-service" id="id3">Create a new service</a></li>
-<li><a class="reference internal" href="#add-a-new-procedure" id="id4">Add a new procedure</a></li>
-<li><a class="reference internal" href="#add-new-observations" id="id5">Add new observations</a></li>
-<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
+<li><a class="reference internal" href="#create-postgis-database" id="id1">postgisデータベースを作成する</a></li>
+<li><a class="reference internal" href="#set-up-an-istsos-service-instance" id="id2">istSOSサービスインスタンスを設定する</a></li>
+<li><a class="reference internal" href="#create-a-new-service" id="id3">新しいサービスを作成する</a></li>
+<li><a class="reference internal" href="#add-a-new-procedure" id="id4">新しいプロシージャを追加する</a></li>
+<li><a class="reference internal" href="#add-new-observations" id="id5">新しい観測情報を追加する</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="create-postgis-database">
-<h2><a class="toc-backref" href="#id1">Create postgis database</a><a class="headerlink" href="#create-postgis-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Open a terminal and execute the following commands:</p>
+<h2><a class="toc-backref" href="#id1">postgisデータベースを作成する</a><a class="headerlink" href="#create-postgis-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>端末を開き、次のコマンドを実行します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">postgres</span> <span class="n">createdb</span> <span class="o">-</span><span class="n">E</span> <span class="n">UTF8</span> <span class="n">istsos</span>
 <span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">postgres</span> <span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">istsos</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;CREATE EXTENSION postgis&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="set-up-an-istsos-service-instance">
-<h2><a class="toc-backref" href="#id2">Set up an istSOS service instance</a><a class="headerlink" href="#set-up-an-istsos-service-instance" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>With istSOS you can organize your sensor data in different instances. Every instance has its own database schema independent from other instances. You can even deploy other databases over your network according to your needs.</p>
-<p>The first steps into istSOS setup is to configure the default configuration options. These options will then be automatically used for your convenience by every new istSOS instance created.</p>
+<h2><a class="toc-backref" href="#id2">istSOSサービスインスタンスを設定する</a><a class="headerlink" href="#set-up-an-istsos-service-instance" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>istSOSを使用すると、センサーデータをさまざまなインスタンスまとめることができます。すべてのインスタンスには、他のインスタンスから独立した独自のデータベーススキーマがあります。必要に応じて、ネットワーク上に他のデータベースを展開することもできます。</p>
+<p>istSOSセットアップの最初のステップは、デフォルトの設定オプションを設定することです。これらのオプションは、新しいistSOSインスタンスが作成されるたびに自動的に使用されます。</p>
 <ol class="arabic">
-<li><p class="first">Click <span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span> to open the Web Admin interface. Alternatively, open a browser and go to <a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a></p>
+<li><p class="first"><span class="menuselection">Geospatial‣Webservices‣istSOS</span> をクリックして、Web Adminインターフェイスを開きます。または、ブラウザを開き、<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a> に移動します。</p>
 </li>
-<li><p class="first">Click the <span class="guilabel">Enter</span> button in the administration page.</p>
+<li><p class="first">管理ページで <span class="guilabel">Enter</span> ボタンをクリックします。</p>
 </li>
-<li><p class="first">Configure your database connection. From the toolbar buttons menu, press the 「Database」 button and fill in the database configuration options:</p>
+<li><p class="first">データベース接続を設定します。ツールバーのボタンメニューから、」Database」ボタンを押し、データベース設定オプションを入力します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="p">:</span> <span class="n">postgres</span>
 <span class="n">password</span><span class="p">:</span> <span class="n">postgres</span>
 <span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
@@ -115,53 +113,53 @@ istSOS allows for managing and dispatch observations from monitoring sensors acc
 </pre></div>
 </div>
 </li>
-<li><p class="first">Press the 「Service provider」 button and fill it using your institutional information.</p>
+<li><p class="first">「Service provider」ボタンを押して、施設情報を使用して入力します。</p>
 </li>
-<li><p class="first">Press the 「Service identification」 button and fill up with custom metadata that describe the service usage.</p>
+<li><p class="first">「Service identification」ボタンを押して、サービスの使用状況を説明するカスタムメタデータを入力します。</p>
 </li>
-<li><p class="first">Press the 「Coordinates system」 button to manage the Coordinate Reference System (CRS).</p>
+<li><p class="first">座標参照系(CRS)を管理するには、」Coordinates system」 ボタンを押します。</p>
 <ul class="simple">
-<li><em>Default EPSG code</em>: this will be the native Coordinate Reference System of your geometries in the database.</li>
-<li><em>Permitted EPSG</em>: here you can configure which other Coordinate Reference Systems your system will support and reproject if requested.</li>
+<li><em>Default EPSG code</em>:これはデータベース内のジオメトリのネイティブの座標参照システムになります。</li>
+<li><em>Permitted EPSG</em>: ここでは、システムがサポートして再投影する他の座標参照系を設定できます。</li>
 </ul>
 </li>
-<li><p class="first">From the toolbar buttons menu, press the 「GetObservation Configuration」 button to set maximum time interval per getObservation request (zero for no limits) and aggregation no-data value.</p>
+<li><p class="first">ツールバーのボタンメニューから、」GetObservation Configuration」ボタンを押して、getObservation要求ごとの最大時間間隔(無制限の場合は0)と集計のno-data値を設定します。</p>
 </li>
-<li><p class="first">Configure your service proxy address. The Proxy URL field is the base URL seen beyond a reverse proxy.</p>
+<li><p class="first">サービスプロキシアドレスを設定します。プロキシURLフィールドは、リバースプロキシ越しで見えるベースのURLをいれます。</p>
 </li>
 </ol>
 </div>
 <div class="section" id="create-a-new-service">
-<h2><a class="toc-backref" href="#id3">Create a new service</a><a class="headerlink" href="#create-a-new-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now that you have configured istSOS, it’s time to create a new service instance.</p>
+<h2><a class="toc-backref" href="#id3">新しいサービスを作成する</a><a class="headerlink" href="#create-a-new-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>istSOSを設定したので、次は新しいサービスインスタンスを作成します。</p>
 <ol class="arabic simple">
-<li>From the toolbar buttons menu press the 「new service」 button and click <span class="guilabel">Next</span>.</li>
-<li>Type <strong>demo</strong> for the Service name.</li>
-<li>In the EPSG field you can set the database native projection. Leave it empty to use the default. Click <span class="guilabel">Next</span>.</li>
-<li>Clicking on the 「Customize database」 box, you are able to change the default database configuration for this new istSOS instance.</li>
-<li>Press <span class="guilabel">Next</span>. The server status panel is displayed. If something’s gone wrong during the creation you will see an alert here.</li>
+<li>ツールバーのボタンメニューから」new service」ボタンを押し、<span class="guilabel">Next</span> をクリックします。</li>
+<li>サービス名に**demo**と入力します。</li>
+<li>EPSGフィールドでは、データベースのネイティブ投影を設定できます。デフォルトを使用する場合は空のままにします。<span class="guilabel">Next</span> をクリックします。</li>
+<li>「Customize database」ボックスをクリックすると、この新しいistSOSインスタンスのデフォルトデータベース設定を変更できます。</li>
+<li><span class="guilabel">Next</span> を押します。サーバステータスパネルが表示されます。作成中に何か問題が発生した場合ここに警告が表示されます。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The istSOS “demo” instance has inherited all the configuration options from the default configuration. If, for any reason you decide to modify them, the changes will affect only this instance.</p>
+<p class="last">istSOSの」demo」インスタンスは、デフォルト設定からすべての設定オプションを継承しています。何らかの理由で変更した場合、変更はこのインスタンスにのみ影響します。</p>
 </div>
 </div>
 <div class="section" id="add-a-new-procedure">
-<h2><a class="toc-backref" href="#id4">Add a new procedure</a><a class="headerlink" href="#add-a-new-procedure" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">新しいプロシージャを追加する</a><a class="headerlink" href="#add-a-new-procedure" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic simple">
-<li>From the “services” drop down button of the admin interface (<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a> ) choose the desired instance.</li>
-<li>From the toolbar buttons menu press the <span class="guilabel">New procedure</span> button.</li>
-<li>Fill in the form using appropriate information.</li>
+<li>管理インターフェイス(<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a>)の」services」ドロップダウンボタンから、目的のインスタンスを選択します。</li>
+<li>ツールバーのボタンメニューから: guilabel:<cite>New procedure</cite> ボタンを押します。</li>
+<li>適切な情報を使用してフォームに入力します。</li>
 </ol>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">Once a procedure is created the outputs (observed properties) cannot be changed.</p>
+<p class="last">プロシージャが作成されると、出力(観測されたプロパティ)は変更できません。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last"><em>Optional parameters:</em> Fill at your own need and willing</p>
+<p class="last"><em>Optional parameters:</em> 必要に応じて自由に入力してください</p>
 </div>
-<p class="rubric"><em>Example</em> (minimal configuration)</p>
+<p class="rubric"><em>例</em> (最小構成)</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="100%" />
@@ -185,32 +183,32 @@ istSOS allows for managing and dispatch observations from monitoring sensors acc
 </tr>
 </tbody>
 </table>
-<p><em>Outputs (confirm the outputs pressing the 「add」 button):</em></p>
+<p><em>出力(「add」ボタンを押して出力を確認):</em></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Observed property: <a class="reference external" href="urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature">urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature</a></td>
+<tr class="row-odd"><td>観測されたプロパティ:<a class="reference external" href="urn:ogc:def:parameter:x-istSOS:1.0:meteo:air:temperature">urn:ogc:def:parameter:x-istSOS:1.0:meteo:air:temperature</a></td>
 </tr>
-<tr class="row-even"><td>Unit of measure: °C</td>
+<tr class="row-even"><td>単位:°C</td>
 </tr>
-<tr class="row-odd"><td>Description (optional): conversion from resistance to temperature</td>
+<tr class="row-odd"><td>説明(オプション): 抵抗値から温度への変換</td>
 </tr>
-<tr class="row-even"><td>quality index check (optional): Between / from -40 to +60</td>
+<tr class="row-even"><td>品質指数チェック(オプション):-40から+60まで</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Register the new sensor (procedure) pressing the 「submit」 button.</p>
+<p class="last">「submit」ボタンを押して、新しいセンサー(プロシージャ)を登録します。</p>
 </div>
 </div>
 <div class="section" id="add-new-observations">
-<h2><a class="toc-backref" href="#id5">Add new observations</a><a class="headerlink" href="#add-new-observations" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First we will create a text file with sensor data, formatted according to 「text/csv, subtype=istSOS」. The file uses a Comma Separated Values (CSV) format. The first line contains header information, including URI names of the observed properties. The following lines contain the data.</p>
+<h2><a class="toc-backref" href="#id5">新しい観測情報を追加する</a><a class="headerlink" href="#add-new-observations" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、」text/csv,subtype=istSOS」に従ってフォーマットされたセンサーデータのテキストファイルを作成します。このファイルはCSV(カンマ区切りテキスト)形式を使用しています。最初の行には、観測されたプロパティのURI名を含むヘッダ情報が含まれます。次の行にデータが含まれています。</p>
 <ol class="arabic">
-<li><p class="first">Open a text editor by selecting <span class="menuselection">Accessories ‣ FeatherPad</span>.</p>
+<li><p class="first"><span class="menuselection">アクセサリ‣FeatherPad</span> を選択して、テキストエディタを開きます。</p>
 </li>
 <li><p class="first">Copy and paste the following text into the text editor window:</p>
 <blockquote>
@@ -234,20 +232,20 @@ istSOS allows for managing and dispatch observations from monitoring sensors acc
 </li>
 <li><p class="first">Open a terminal by selecting <span class="menuselection">System Tools ‣ LXTerminal</span>.</p>
 </li>
-<li><p class="first">In the terminal, enter: 「cd /usr/share/istsos/」 and press ENTER.</p>
+<li><p class="first">端末で:」cd/usr/share/istSOS/」と入力し、ENTERを押します。</p>
 </li>
 <li><p class="first">Write 「python scripts/csv2istsos.py -p T_LUGANO -u <a class="reference external" href="http://localhost/istsos">http://localhost/istsos</a> -s demo -w ~/Desktop」 and press ENTER</p>
 </li>
-<li><p class="first">You should see a message 「Insert observation success: True」</p>
+<li><p class="first">「Insert observation success:True」というメッセージが表示されます。</p>
 </li>
-<li><p class="first">Click <span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span>.</p>
+<li><p class="first"><span class="menuselection">Geospatial‣Webservices‣istSOS</span> をクリックします。</p>
 </li>
-<li><p class="first">Click the <span class="guilabel">Enter</span> button in the administration page</p>
+<li><p class="first">管理ページで <span class="guilabel">Enter</span> ボタンをクリックします</p>
 </li>
-<li><p class="first">Click <span class="menuselection">Data Management ‣ Data Viewer</span>.</p>
+<li><p class="first"><span class="menuselection">Data Management‣Data Viewer</span> をクリックします。</p>
 </li>
 <li><dl class="first docutils">
-<dt>Select the following:</dt>
+<dt>次を選択してください:</dt>
 <dd><ul class="first last simple">
 <li>Service = demo</li>
 <li>Offering = temporary</li>
@@ -256,16 +254,16 @@ istSOS allows for managing and dispatch observations from monitoring sensors acc
 </dd>
 </dl>
 </li>
-<li><p class="first">Click the <span class="guilabel">Add</span> button</p>
+<li><p class="first"><span class="guilabel">Add</span> ボタンをクリックします</p>
 </li>
-<li><p class="first">Click the <span class="guilabel">Plot</span> button and check that the data have been added (watch out at your time zone!)</p>
+<li><p class="first"><span class="guilabel">Plot</span> ボタンをクリックし、データが追加されたことを確認します(タイムゾーンに注意してください)。</p>
 </li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/istsos_viewer.png"><img alt="../../_images/istsos_viewer.png" src="../../_images/istsos_viewer.png" style="width: 512.0px; height: 384.0px;" /></a>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To learn more about istSOS, a starting point is the <a class="reference external" href="http://istsos.org/en/trunk/doc/index.html">istSOS Documentation</a> and the <a class="reference external" href="http://istsos.org/tutorial/">istSOS Tutorial</a>.</p>
+<h2><a class="toc-backref" href="#id6">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>istSOSについてさらに学ぶには、 <a class="reference external" href="http://istsos.org/en/trunk/doc/index.html">istSOS Documentation</a> と <a class="reference external" href="http://istsos.org/tutorial/">istSOS Tutorial</a> を参照してください。</p>
 </div>
 </div>
 

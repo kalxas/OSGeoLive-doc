@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Geomajas Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Guide de démarrage rapide de Geomajas &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,62 +72,58 @@
   <a class="reference external image-reference" href="http://www.geomajas.org"><img alt="../../_images/logo_geomajas.png" class="align-right" src="../../_images/logo_geomajas.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="geomajas-quickstart">
-<h1>Geomajas Quickstart<a class="headerlink" href="#geomajas-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Geomajas itself is an application framework allowing you to build very diverse and advanced web GIS solutions.</p>
-<p>On this OSGeo Live DVD we have included a ready-to-use Geomajas Application. This application features a map, navigation controllers, several data layers, a ribbon toolbar with GIS tools and the Layer Tree.</p>
+<h1>Guide de démarrage rapide de Geomajas<a class="headerlink" href="#geomajas-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Geomajas est en lui-même un cadre de développement d’application vous permettant de construire des solutions SIG web très diversifiées et avancées.</p>
+<p>Sur ce DVD d’OSGeoLive, nous avons inclus une application Geomajas prête à l’emploi. Cette application comprend une carte, des contrôleurs de navigation, plusieurs couches de données, une barre d’outils ruban avec des outils SIG et l’arbre de couche.</p>
 <a class="reference internal image-reference" href="../../_images/geomajas_1024x768_screen1.png"><img alt="An example application using the Geomajas framework" class="align-right" src="../../_images/geomajas_1024x768_screen1.png" style="width: 511.5px; height: 373.0px;" /></a>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-geomajas" id="id1">Start Geomajas</a></li>
-<li><a class="reference internal" href="#navigating-the-map" id="id2">Navigating the map</a></li>
-<li><a class="reference internal" href="#understanding-the-legend" id="id3">Understanding the legend</a></li>
-<li><a class="reference internal" href="#gathering-information" id="id4">Gathering information</a></li>
-<li><a class="reference internal" href="#things-to-try" id="id5">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
+<li><a class="reference internal" href="#start-geomajas" id="id1">Démarrer Geomajas</a></li>
+<li><a class="reference internal" href="#navigating-the-map" id="id2">Navigation dans la carte</a></li>
+<li><a class="reference internal" href="#understanding-the-legend" id="id3">Comprendre la légende</a></li>
+<li><a class="reference internal" href="#gathering-information" id="id4">Collecte d’informations</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id5">Choses à essayer</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">Ensuite ?</a></li>
 </ul>
 </div>
 <div class="section" id="start-geomajas">
-<h2><a class="toc-backref" href="#id1">Start Geomajas</a><a class="headerlink" href="#start-geomajas" title="Lien permanent vers ce titre">¶</a></h2>
-<p>From the Desktop, select <span class="menuselection">Browser Clients ‣ Start Geomajas</span>. Wait for Geomajas to open in a browser window.</p>
-<p>Alternatively, you can then access the application using the following URL: <a class="reference external" href="http://localhost:8080/geomajas/">http://localhost:8080/geomajas/</a>.</p>
+<h2><a class="toc-backref" href="#id1">Démarrer Geomajas</a><a class="headerlink" href="#start-geomajas" title="Lien permanent vers ce titre">¶</a></h2>
+<p>À partir du bureau, sélectionnez <span class="menuselection">Browser Clients ‣ Start Geomajas</span>. Attendez que Geomajas s’ouvre dans une fenêtre de navigateur.</p>
+<p>Alternativement, vous pouvez alors accéder à l’application en utilisant l’URL suivante : <a class="reference external" href="http://localhost:8080/geomajas/">http://localhost:8080/geomajas/</a></p>
 <a class="reference internal image-reference" href="../../_images/geomajas_screenshot.png"><img alt="The default view of the provided Geomajas application" src="../../_images/geomajas_screenshot.png" style="width: 100%;" /></a>
 <div class="admonition tip">
 <p class="first admonition-title">Astuce</p>
-<p class="last">When you’re finished using the application, select <span class="menuselection">Browser Clients ‣ Stop Geomajas</span>.</p>
+<p class="last">Lorsque vous avez terminé d’utiliser l’application, sélectionnez <span class="menuselection">Browser Clients ‣ Stop Geomajas</span>.</p>
 </div>
 </div>
 <div class="section" id="navigating-the-map">
-<h2><a class="toc-backref" href="#id2">Navigating the map</a><a class="headerlink" href="#navigating-the-map" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Navigation dans la carte</a><a class="headerlink" href="#navigating-the-map" title="Lien permanent vers ce titre">¶</a></h2>
 <img alt="The provided control for zooming within the Geomajas application" src="../../_images/geomajas_screenshot_zoom.png" />
-<p>You can drag the map with your mouse so that the desired area is centered on your screen.</p>
-<p>To get a closer look, you can either use the mousewheel to zoom in or use the provided zoom-buttons in the upper left of the application.</p>
-<p>You can also select an area to display by clicking the magnifier icon and selecting the desired area (via rectangular select).</p>
+<p>Vous pouvez faire glisser la carte avec votre souris de sorte que la zone désirée est centrée sur votre écran.</p>
+<p>Pour y regarder de plus près, vous pouvez soit utiliser la roue de souris pour zoomer ou utiliser les boutons de zoom fournis en haut à gauche de l’application.</p>
+<p>Vous pouvez également sélectionner une zone à afficher en cliquant sur l’icône loupe et en sélectionnant la zone désirée (via une sélection rectangulaire).</p>
 </div>
 <div class="section" id="understanding-the-legend">
-<h2><a class="toc-backref" href="#id3">Understanding the legend</a><a class="headerlink" href="#understanding-the-legend" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Comprendre la légende</a><a class="headerlink" href="#understanding-the-legend" title="Lien permanent vers ce titre">¶</a></h2>
 <img alt="Layers can be consulted and toggled from the legend in the Geomajas application" src="../../_images/geomajas_screenshot_legend.png" />
-<p>In the upper right, a toggleable legend box is provided. This legend gives you an overview of all the layers currently loaded into the application, with the option to turn them on or off.
-This also shows more detailed information about each layer regarding icons and colouring.</p>
+<p>En haut à droite, une boîte de légende masquable est fournie. Cette légende vous donne un aperçu de toutes les couches actuellement chargées dans l’application, avec la possibilité de les activer ou de les désactiver. Cela montre également des informations plus détaillées sur chaque couche concernant les icônes et la coloration.</p>
 </div>
 <div class="section" id="gathering-information">
-<h2><a class="toc-backref" href="#id4">Gathering information</a><a class="headerlink" href="#gathering-information" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Geomajas applications have the ability to display a variety of information within the layers.
-Clicking on the map will display the related information if available.
-Click the info icon in the upper left to toggle between basic or more detailed information.</p>
+<h2><a class="toc-backref" href="#id4">Collecte d’informations</a><a class="headerlink" href="#gathering-information" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les applications Geomajas ont la possibilité d’afficher une variété d’informations dans les couches. En cliquant sur la carte affichera les informations connexes disponibles. Cliquez sur l’icône info en haut à gauche pour basculer entre les informations de base ou plus détaillées.</p>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id5">Things to try</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
-<p>If you want to use this sample application to build and customize your own Web GIS solution, visit&nbsp;<a class="reference external" href="http://www.geomajas.org/client-gwt">http://www.geomajas.org/client-gwt</a>.
-The download page always features the latest and greatest sample applications, documentation, tips and tricks to roll-your-own.</p>
+<h2><a class="toc-backref" href="#id5">Choses à essayer</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Si vous souhaitez utiliser cet exemple d’application pour créer et personnaliser votre propre solution SIG Web, visitez`&lt;<a class="reference external" href="http://www.geomajas.org/client-gwt">http://www.geomajas.org/client-gwt</a>&gt;`_. La page de téléchargement présente toujours les exemples les plus récents et les plus grands, la documentation, les trucs et astuces pour votre propre application.</p>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="line-block">
-<div class="line">To continue using the web demo, visit <a class="reference external" href="http://www.geomajas.org/demo">http://www.geomajas.org/demo</a>.</div>
-<div class="line">To continue using the stand-alone application, visit <a class="reference external" href="http://files.geomajas.org/downloads/2.3.0/geomajas-standalone-gwt2.zip">http://files.geomajas.org/downloads/2.3.0/geomajas-standalone-gwt2.zip</a>.</div>
+<div class="line">Pour continuer à utiliser la démo web, visitez <a class="reference external" href="http://www.geomajas.org/demo">http://www.geomajas.org/demo</a>.</div>
+<div class="line">Pour continuer à utiliser l’application autonome, visitez <a class="reference external" href="http://files.geomajas.org/downloads/2.3.0/geomajas-standalone-gwt2.zip">http://files.geomajas.org/downloads/2.3.0/geomajas-standalone-gwt2.zip</a>.</div>
 </div>
-<p>Interested in learning more about Geomajas? The following links provide more information:</p>
+<p>Vous souhaitez en savoir plus sur Geomajas? Les liens suivants fournissent plus d’informations:</p>
 <ul class="simple">
 <li><strong>Geomajas:</strong> <a class="reference external" href="http://www.geomajas.org/">http://www.geomajas.org/</a></li>
 <li><strong>GitHub:</strong> <a class="reference external" href="https://github.com/geomajas/geomajas-gwt2-quickstart-application">https://github.com/geomajas/geomajas-gwt2-quickstart-application</a></li>

@@ -73,90 +73,149 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="pgrouting-quickstart">
 <h1>pgRouting Quickstart<a class="headerlink" href="#pgrouting-quickstart" title="Link a questa intestazione">¶</a></h1>
-<p>pgRouting is an extension that adds routing and other network analysis functionality to <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> databases.</p>
-<p>This Quick Start describes how to enable pgrouting in a PostgreSQL database, load data with osm2pgrouting, and run a basic shortest path query with the sample test data.</p>
+<p>pgRouting is an extension that adds routing and other network analysis functionality
+to <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> databases.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#enabling-pgrouting-in-a-database" id="id1">Enabling pgRouting in a database</a></li>
 <li><a class="reference internal" href="#loading-osm-data-with-osm2pgrouting" id="id2">Loading OSM data with osm2pgrouting</a></li>
-<li><a class="reference internal" href="#running-pgrouting" id="id3">Running pgRouting</a></li>
-<li><a class="reference internal" href="#what-next" id="id4">What next?</a></li>
+<li><a class="reference internal" href="#check-the-imported-data" id="id3">Check the imported data</a></li>
+<li><a class="reference internal" href="#inner-query" id="id4">Inner Query</a></li>
+<li><a class="reference internal" href="#pgr-dijkstra" id="id5">pgr_Dijkstra</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
 </ul>
 </div>
 <div class="section" id="enabling-pgrouting-in-a-database">
 <h2><a class="toc-backref" href="#id1">Enabling pgRouting in a database</a><a class="headerlink" href="#enabling-pgrouting-in-a-database" title="Link a questa intestazione">¶</a></h2>
-<p>In this example we will create a database called <cite>city_routing</cite> and enable pgRouting in the database.</p>
+<p>In this example we will create a database called <cite>city_routing</cite> and enable pgRouting
+in the database.</p>
 <ul class="simple">
-<li>Open a <span class="menuselection">System Tools ‣ LXTerminal</span> window and open up psql: (psql is the commandline tool packaged with PostgreSQL)</li>
+<li>Open a <span class="menuselection">System Tools ‣ QTerminal</span> window and execute the commandline
+tool packaged with PostgreSQL <cite>psql</cite></li>
 </ul>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span>
 </pre></div>
 </div>
-<p>At psql prompt type:</p>
+<p>At the <cite>psql</cite> prompt type:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">city_routing</span><span class="p">;</span>
 \<span class="n">connect</span> <span class="n">city_routing</span><span class="p">;</span>
-<span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">postgis</span><span class="p">;</span>
-<span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">pgrouting</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">pgrouting</span> <span class="n">CASCADE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If you are running PostgreSQL 9.6+, you can skip the postgis line and do <code class="code docutils literal"><span class="pre">CREATE</span> <span class="pre">EXTENSION</span> <span class="pre">pgrouting</span> <span class="pre">CASCADE;</span></code></p>
 <p>You can verify your installation by running this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span>  <span class="o">*</span> <span class="n">FROM</span> <span class="n">pgr_version</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">version</span> <span class="o">|</span>  <span class="n">tag</span>   <span class="o">|</span>   <span class="nb">hash</span>    <span class="o">|</span> <span class="n">branch</span> <span class="o">|</span> <span class="n">boost</span>
-<span class="o">---------+--------+-----------+--------+--------</span>
- <span class="mf">2.3</span><span class="o">.</span><span class="mi">2</span>   <span class="o">|</span> <span class="n">v2</span><span class="o">.</span><span class="mf">3.2</span> <span class="o">|</span> <span class="mi">1</span><span class="n">f2af3c52</span> <span class="o">|</span> <span class="n">master</span> <span class="o">|</span> <span class="mf">1.58</span><span class="o">.</span><span class="mi">0</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pgr_version</span>
+<span class="o">-------------</span>
+ <span class="mf">3.1</span><span class="o">.</span><span class="mi">0</span>
 <span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Your version should be 2.1.0 or higher to use examples in this quickstart.</p>
+<p>Your version should be 3.1.0 or higher</p>
+<p>Exit the database</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="n">q</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="loading-osm-data-with-osm2pgrouting">
 <h2><a class="toc-backref" href="#id2">Loading OSM data with osm2pgrouting</a><a class="headerlink" href="#loading-osm-data-with-osm2pgrouting" title="Link a questa intestazione">¶</a></h2>
-<p>osm2pgrouting is a command-line tool for loading .osm files into pgRouting compatible format.
-Here is how you use osm2pgrouting version 2.1.0+.</p>
-<p>Open a new terminal window to verify the version of osm2pgrouting you have installed. Should read 2.1 or higher.</p>
+<p>osm2pgrouting is a command-line tool for loading <cite>.osm</cite> files into the database
+with a pgRouting compatible format.</p>
+<p>Check the installed version</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">osm2pgrouting</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>Output shows:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">osm2pgrouting</span> <span class="n">Version</span> <span class="mf">2.2</span>
+<p>Output shows</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">osm2pgrouting</span> <span class="n">Version</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">6</span>
 </pre></div>
 </div>
-<p>Now load the data from osm file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span>
-<span class="n">bzcat</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
-<span class="n">osm2pgrouting</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span> <span class="o">-</span><span class="n">h</span> <span class="n">localhost</span> <span class="o">-</span><span class="n">U</span> <span class="n">user</span> <span class="o">-</span><span class="n">d</span> <span class="n">city_routing</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> <span class="o">-</span><span class="n">W</span> <span class="n">user</span> <span class="o">--</span><span class="n">conf</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span>
+<p>Load the data from osm file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzcat</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
+<span class="n">osm2pgrouting</span>
+  <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span> \
+  <span class="o">-</span><span class="n">h</span> <span class="n">localhost</span> \
+  <span class="o">-</span><span class="n">U</span> <span class="n">user</span> \
+  <span class="o">-</span><span class="n">d</span> <span class="n">city_routing</span> \
+  <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> \
+  <span class="o">-</span><span class="n">W</span> <span class="n">user</span> \
+  <span class="o">--</span><span class="n">conf</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span> \
 <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
 </pre></div>
 </div>
 <p>Output should be something like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Export</span> <span class="n">Ways</span> <span class="o">...</span>
-    <span class="n">Processing</span> <span class="mi">45383</span> <span class="n">ways</span><span class="p">:</span>
-<span class="p">[</span><span class="o">*************************************************|</span> <span class="p">]</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>    <span class="n">Ways</span> <span class="n">Processed</span><span class="p">:</span> <span class="mi">45383</span>        <span class="n">Split</span> <span class="n">Ways</span> <span class="n">generated</span><span class="p">:</span> <span class="mi">10483</span> <span class="n">Vertices</span> <span class="n">inserted</span> <span class="mi">9165</span> <span class="n">Inserted</span> <span class="mi">10483</span> <span class="n">split</span> <span class="n">ways</span>
-<span class="n">Creating</span> <span class="n">Foreign</span> <span class="n">Keys</span> <span class="o">...</span>
-<span class="n">Foreign</span> <span class="n">keys</span> <span class="k">for</span> <span class="n">osm_way_classes</span> <span class="n">table</span> <span class="n">created</span>
-<span class="n">Foreign</span> <span class="n">keys</span> <span class="k">for</span> <span class="n">relations_ways</span> <span class="n">table</span> <span class="n">created</span>
-<span class="n">Foreign</span> <span class="n">keys</span> <span class="k">for</span> <span class="n">Ways</span> <span class="n">table</span> <span class="n">created</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Execution</span> <span class="n">starts</span> <span class="n">at</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">38</span> <span class="mi">2021</span>
+
+<span class="o">***************************************************</span>
+           <span class="n">COMMAND</span> <span class="n">LINE</span> <span class="n">CONFIGURATION</span>             <span class="o">*</span>
+<span class="o">***************************************************</span>
+<span class="n">Filename</span> <span class="o">=</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
+<span class="n">Configuration</span> <span class="n">file</span> <span class="o">=</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span>
+<span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">5432</span>
+<span class="n">dbname</span> <span class="o">=</span> <span class="n">city_routing</span>
+<span class="n">username</span> <span class="o">=</span> <span class="n">user</span>
+<span class="n">schema</span><span class="o">=</span>
+<span class="n">prefix</span> <span class="o">=</span>
+<span class="n">suffix</span> <span class="o">=</span>
+<span class="n">Don</span><span class="s1">&#39;t drop tables</span>
+<span class="n">Don</span><span class="s1">&#39;t create indexes</span>
+<span class="n">Don</span><span class="s1">&#39;t add OSM nodes</span>
+<span class="o">***************************************************</span>
+<span class="n">Testing</span> <span class="n">database</span> <span class="n">connection</span><span class="p">:</span> <span class="n">city_routing</span>
+<span class="n">database</span> <span class="n">connection</span> <span class="n">successful</span><span class="p">:</span> <span class="n">city_routing</span>
+<span class="n">Connecting</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span>
+<span class="n">connection</span> <span class="n">success</span>
+
+<span class="n">Creating</span> <span class="n">tables</span><span class="o">...</span>
+<span class="n">TABLE</span><span class="p">:</span> <span class="n">ways_vertices_pgr</span> <span class="n">created</span> <span class="o">...</span> <span class="n">OK</span><span class="o">.</span>
+<span class="n">TABLE</span><span class="p">:</span> <span class="n">ways</span> <span class="n">created</span> <span class="o">...</span> <span class="n">OK</span><span class="o">.</span>
+<span class="n">TABLE</span><span class="p">:</span> <span class="n">pointsofinterest</span> <span class="n">created</span> <span class="o">...</span> <span class="n">OK</span><span class="o">.</span>
+<span class="n">TABLE</span><span class="p">:</span> <span class="n">configuration</span> <span class="n">created</span> <span class="o">...</span> <span class="n">OK</span><span class="o">.</span>
+<span class="n">Opening</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span>
+    <span class="n">Parsing</span> <span class="n">configuration</span>
+
+<span class="n">Exporting</span> <span class="n">configuration</span> <span class="o">...</span>
+  <span class="o">-</span> <span class="n">Done</span>
+<span class="n">Counting</span> <span class="n">lines</span> <span class="o">...</span>
+  <span class="o">-</span> <span class="n">Done</span>
+<span class="n">Opening</span> <span class="n">data</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>        <span class="n">total</span> <span class="n">lines</span><span class="p">:</span> <span class="mi">844044</span>
+    <span class="n">Parsing</span> <span class="n">data</span>
+
+
+<span class="n">End</span> <span class="n">Of</span> <span class="n">file</span>
+
+
+    <span class="n">Finish</span> <span class="n">Parsing</span> <span class="n">data</span>
+
+<span class="n">Adding</span> <span class="n">auxiliary</span> <span class="n">tables</span> <span class="n">to</span> <span class="n">database</span><span class="o">...</span>
+
+<span class="n">Export</span> <span class="n">Ways</span> <span class="o">...</span>
+    <span class="n">Processing</span> <span class="mi">37373</span> <span class="n">ways</span><span class="p">:</span>
+<span class="p">[</span><span class="o">**************************|</span>                        <span class="p">]</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)</span> <span class="n">Total</span> <span class="n">processed</span><span class="p">:</span> <span class="mi">20000</span>       <span class="n">Vertices</span> <span class="n">inserted</span><span class="p">:</span> <span class="mi">8126</span>        <span class="n">Split</span> <span class="n">ways</span> <span class="n">inserted</span> <span class="mi">10253</span>
+<span class="p">[</span><span class="o">**************************************************|</span><span class="p">]</span> <span class="p">(</span><span class="mi">100</span><span class="o">%</span><span class="p">)</span> <span class="n">Total</span> <span class="n">processed</span><span class="p">:</span> <span class="mi">37373</span>      <span class="n">Vertices</span> <span class="n">inserted</span><span class="p">:</span> <span class="mi">1423</span>        <span class="n">Split</span> <span class="n">ways</span> <span class="n">inserted</span> <span class="mi">3385</span>
+
+<span class="n">Creating</span> <span class="n">indexes</span> <span class="o">...</span>
+
+<span class="n">Processing</span> <span class="n">Points</span> <span class="n">of</span> <span class="n">Interest</span> <span class="o">...</span>
 <span class="c1">#########################</span>
-<span class="n">size</span> <span class="n">of</span> <span class="n">streets</span><span class="p">:</span> <span class="mi">45383</span>
+<span class="n">size</span> <span class="n">of</span> <span class="n">streets</span><span class="p">:</span> <span class="mi">37373</span>
+<span class="n">Execution</span> <span class="n">started</span> <span class="n">at</span><span class="p">:</span> <span class="n">Thu</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">38</span> <span class="mi">2021</span>
+<span class="n">Execution</span> <span class="n">ended</span> <span class="n">at</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Jan</span> <span class="mi">21</span> <span class="mi">16</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">42</span> <span class="mi">2021</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mf">4.645</span> <span class="n">Seconds</span><span class="o">.</span>
+<span class="n">User</span> <span class="n">CPU</span> <span class="n">time</span><span class="p">:</span> <span class="o">-&gt;</span> <span class="mf">2.36362</span> <span class="n">seconds</span>
 <span class="c1">#########################</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="running-pgrouting">
-<h2><a class="toc-backref" href="#id3">Running pgRouting</a><a class="headerlink" href="#running-pgrouting" title="Link a questa intestazione">¶</a></h2>
-<ul class="simple">
-<li>Open a <span class="menuselection">System Tools ‣ LXTerminal</span> window and connect to the <code class="docutils literal"><span class="pre">city_routing</span></code> database:</li>
-</ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">postgres</span> <span class="n">city_routing</span>
+<div class="section" id="check-the-imported-data">
+<h2><a class="toc-backref" href="#id3">Check the imported data</a><a class="headerlink" href="#check-the-imported-data" title="Link a questa intestazione">¶</a></h2>
+<p>Connect to the <cite>city_routing</cite> database</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">city_routing</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li>Type <strong class="command">\d</strong> will list you all available tables:</li>
-</ul>
+<p>The <strong class="command">\d</strong> command will list all available tables and sequences</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>                    <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
  <span class="n">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="n">Type</span>   <span class="o">|</span>  <span class="n">Owner</span>
 <span class="o">--------+--------------------------+----------+----------</span>
@@ -178,139 +237,154 @@ Here is how you use osm2pgrouting version 2.1.0+.</p>
 <span class="p">(</span><span class="mi">15</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li>Run the Dijkstra shortest path function assuming undirected travel:</li>
-</ul>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
-        <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
-                <span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
-                        <span class="n">length</span> <span class="k">as</span> <span class="n">cost</span> <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
-                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="n">false</span>
-        <span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>         <span class="n">cost</span>
-<span class="o">-----+------+-------+-----------------------</span>
-   <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span>  <span class="mf">0.000106201177015572</span>
-   <span class="mi">2</span> <span class="o">|</span> <span class="mi">3603</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span>  <span class="mf">0.000171096610136435</span>
-   <span class="mi">3</span> <span class="o">|</span> <span class="mi">8284</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span>  <span class="mf">0.000101401380664492</span>
- <span class="o">...</span> <span class="o">|</span>  <span class="o">...</span> <span class="o">|</span>   <span class="o">...</span> <span class="o">|</span>                 <span class="o">...</span>
-  <span class="mi">37</span> <span class="o">|</span> <span class="mi">3461</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span>   <span class="mf">0.00121559903339768</span>
-  <span class="mi">38</span> <span class="o">|</span> <span class="mi">1761</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span>   <span class="mf">0.00307553090376563</span>
-  <span class="mi">39</span> <span class="o">|</span> <span class="mi">5981</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span>  <span class="mf">0.000158813884783759</span>
-  <span class="mi">40</span> <span class="o">|</span>  <span class="mi">600</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                     <span class="mi">0</span>
-<span class="p">(</span><span class="mi">40</span> <span class="n">rows</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>pgr_dijkstra also supports bigints for nodes and edges, and osm2pgrouting loads the osm_ids as well, so you
-could alternatively use the osm_id instead of the autogenerated source and targets for nodes.
-To look up the corresponding osm_ids for our nodes, we would use this query:</p>
+<p>osm2pgrouting loads the OSM identifiers <cite>osm_id</cite> and it also generates a unique
+identifier for all the data: <cite>id</cite> on the vertices, <cite>gid</cite> on the edges.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="nb">id</span><span class="p">,</span> <span class="n">osm_id</span>
-        <span class="n">FROM</span> <span class="n">ways_vertices_pgr</span> <span class="n">where</span> <span class="nb">id</span> <span class="n">IN</span><span class="p">(</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+<span class="n">FROM</span> <span class="n">ways_vertices_pgr</span>
+<span class="n">WHERE</span> <span class="nb">id</span> <span class="n">IN</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Which outputs:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="nb">id</span>  <span class="o">|</span>   <span class="n">osm_id</span>
-<span class="o">-----+------------</span>
- <span class="mi">100</span> <span class="o">|</span> <span class="mi">1896068597</span>
- <span class="mi">600</span> <span class="o">|</span>   <span class="mi">31369798</span>
+<p>The results are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="nb">id</span>  <span class="o">|</span>  <span class="n">osm_id</span>
+<span class="o">-----+----------</span>
+ <span class="mi">100</span> <span class="o">|</span> <span class="mi">81622364</span>
+ <span class="mi">600</span> <span class="o">|</span> <span class="mi">82708785</span>
 <span class="p">(</span><span class="mi">2</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To do so you would change
-your query to below:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
-<span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
-        <span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span> <span class="n">source_osm</span> <span class="n">AS</span> <span class="n">source</span><span class="p">,</span> <span class="n">target_osm</span> <span class="n">AS</span> <span class="n">target</span><span class="p">,</span>
-                <span class="n">length</span> <span class="k">as</span> <span class="n">cost</span> <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
-        <span class="mi">1896068597</span><span class="p">,</span> <span class="mi">31369798</span><span class="p">,</span> <span class="n">false</span>
+</div>
+<div class="section" id="inner-query">
+<h2><a class="toc-backref" href="#id4">Inner Query</a><a class="headerlink" href="#inner-query" title="Link a questa intestazione">¶</a></h2>
+<p>Most of the pgRouting functions have a parameter that is an SQL statement, it is
+called <strong>inner query</strong></p>
+<p>The inner SQL statement must always have field names <cite>id</cite>, <cite>source</cite>, <cite>target</cite>, and <cite>cost</cite>
+having <cite>reverse_cost</cite> as optional.</p>
+<p>Inner query that use <cite>gid</cite> as identifier of the segments</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
+       <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
+       <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost</span>
+<span class="n">FROM</span> <span class="n">ways</span>
+</pre></div>
+</div>
+<p>Inner query that use <cite>gid</cite> as identifier of the segments and lenght as <cite>cost</cite>
+without the optional <cite>reverse_cost</cite></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
+       <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
+       <span class="n">length</span> <span class="n">AS</span> <span class="n">cost</span>
+<span class="n">FROM</span> <span class="n">ways</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pgr-dijkstra">
+<h2><a class="toc-backref" href="#id5">pgr_Dijkstra</a><a class="headerlink" href="#pgr-dijkstra" title="Link a questa intestazione">¶</a></h2>
+<p>Run the Dijkstra shortest path function based on the time in seconds to traverse
+a segment on an undirected graph, using <cite>id</cite> as the identifier of a vertex</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
+<span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
+  <span class="s1">&#39;SELECT gid as id,</span>
+          <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
+          <span class="n">cost_s</span> <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost_s</span> <span class="n">AS</span> <span class="n">reverse_cost</span>
+  <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
+  <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span>
+  <span class="n">directed</span> <span class="o">=&gt;</span> <span class="n">false</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: the SQL statement must always have field names <cite>id, source, target, and cost</cite>.
-Since we are using fields <cite>source_osm</cite> and <cite>target_osm</cite>, we need to alias them so resulting pgr_dijkstra query columns are named source and target.</p>
+<p>The results are:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>      <span class="n">cost</span>          <span class="o">|</span>       <span class="n">agg_cost</span>
+<span class="o">-----+----------+------+-------+--------------------+--------------------</span>
+   <span class="mi">1</span> <span class="o">|</span>        <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span> <span class="o">|</span>                  <span class="mi">0</span>
+   <span class="mi">2</span> <span class="o">|</span>        <span class="mi">2</span> <span class="o">|</span> <span class="mi">4360</span> <span class="o">|</span>   <span class="mi">152</span> <span class="o">|</span> <span class="mf">2.8524015038110697</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span>
+   <span class="mi">3</span> <span class="o">|</span>        <span class="mi">3</span> <span class="o">|</span>  <span class="mi">101</span> <span class="o">|</span>   <span class="mi">511</span> <span class="o">|</span> <span class="mf">2.4123361340227754</span> <span class="o">|</span>  <span class="mf">11.84650551583574</span>
+   <span class="mi">4</span> <span class="o">|</span>        <span class="mi">4</span> <span class="o">|</span>  <span class="mi">322</span> <span class="o">|</span>   <span class="mi">707</span> <span class="o">|</span>   <span class="mf">3.63955931676029</span> <span class="o">|</span> <span class="mf">14.258841649858514</span>
+   <span class="mi">5</span> <span class="o">|</span>        <span class="mi">5</span> <span class="o">|</span>  <span class="mi">448</span> <span class="o">|</span>   <span class="mi">705</span> <span class="o">|</span> <span class="mf">2.9567136964053367</span> <span class="o">|</span> <span class="mf">17.898400966618805</span>
+   <span class="mi">6</span> <span class="o">|</span>        <span class="mi">6</span> <span class="o">|</span>  <span class="mi">445</span> <span class="o">|</span>   <span class="mi">662</span> <span class="o">|</span>  <span class="mf">4.185190538775397</span> <span class="o">|</span> <span class="mf">20.855114663024143</span>
+   <span class="mi">7</span> <span class="o">|</span>        <span class="mi">7</span> <span class="o">|</span>  <span class="mi">415</span> <span class="o">|</span>   <span class="mi">663</span> <span class="o">|</span> <span class="mf">1.2667248968947813</span> <span class="o">|</span>  <span class="mf">25.04030520179954</span>
+   <span class="mi">8</span> <span class="o">|</span>        <span class="mi">8</span> <span class="o">|</span>  <span class="mi">442</span> <span class="o">|</span>   <span class="mi">699</span> <span class="o">|</span>  <span class="mf">6.371427985640729</span> <span class="o">|</span>  <span class="mf">26.30703009869432</span>
+   <span class="mi">9</span> <span class="o">|</span>        <span class="mi">9</span> <span class="o">|</span>  <span class="mi">593</span> <span class="o">|</span>   <span class="mi">913</span> <span class="o">|</span> <span class="mf">2.5897354220718807</span> <span class="o">|</span>  <span class="mf">32.67845808433505</span>
+  <span class="mi">10</span> <span class="o">|</span>       <span class="mi">10</span> <span class="o">|</span>  <span class="mi">438</span> <span class="o">|</span>   <span class="mi">693</span> <span class="o">|</span> <span class="mf">5.5261229396496585</span> <span class="o">|</span>  <span class="mf">35.26819350640693</span>
+  <span class="mi">11</span> <span class="o">|</span>       <span class="mi">11</span> <span class="o">|</span> <span class="mi">1573</span> <span class="o">|</span>  <span class="mi">2421</span> <span class="o">|</span>  <span class="mf">7.003475952839719</span> <span class="o">|</span>  <span class="mf">40.79431644605659</span>
+  <span class="mi">12</span> <span class="o">|</span>       <span class="mi">12</span> <span class="o">|</span>  <span class="mi">619</span> <span class="o">|</span> <span class="mi">10389</span> <span class="o">|</span> <span class="mf">3.8659203494409344</span> <span class="o">|</span>  <span class="mf">47.79779239889631</span>
+  <span class="mi">13</span> <span class="o">|</span>       <span class="mi">13</span> <span class="o">|</span>  <span class="mi">600</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                  <span class="mi">0</span> <span class="o">|</span>  <span class="mf">51.66371274833725</span>
+<span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">A query that use the OSM identifier becomes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
+<span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
+  <span class="s1">&#39;SELECT gid as id,</span>
+          <span class="n">source_osm</span> <span class="n">AS</span> <span class="n">source</span><span class="p">,</span> <span class="n">target_osm</span> <span class="n">AS</span> <span class="n">target</span><span class="p">,</span>
+          <span class="n">cost_s</span> <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost_s</span> <span class="n">AS</span> <span class="n">reverse_cost</span>
+  <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
+  <span class="mi">81622364</span><span class="p">,</span> <span class="mi">82708785</span><span class="p">,</span>
+  <span class="n">directed</span> <span class="o">=&gt;</span> <span class="n">false</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Because the query is using fields <cite>source_osm</cite> and <cite>target_osm</cite> the query aliases them to have
+the required names <cite>source</cite> and <cite>target</cite>.</p>
 <p>Output is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span>    <span class="n">node</span>    <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>         <span class="n">cost</span>
-<span class="o">-----+------------+-------+-----------------------</span>
-   <span class="mi">1</span> <span class="o">|</span> <span class="mi">1896068597</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span>  <span class="mf">0.000106201177015572</span>
-   <span class="mi">2</span> <span class="o">|</span>  <span class="mi">471372588</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span>  <span class="mf">0.000171096610136435</span>
-   <span class="mi">3</span> <span class="o">|</span>  <span class="mi">471372583</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span>  <span class="mf">0.000101401380664492</span>
-   <span class="p">:</span>
-   <span class="p">:</span>
-  <span class="o">...|</span>  <span class="o">...</span>       <span class="o">|</span>   <span class="o">...</span> <span class="o">|</span>                 <span class="o">...</span>
-  <span class="mi">37</span> <span class="o">|</span> <span class="mi">1370351630</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span>   <span class="mf">0.00121559903339768</span>
-  <span class="mi">38</span> <span class="o">|</span>   <span class="mi">30812815</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span>   <span class="mf">0.00307553090376563</span>
-  <span class="mi">39</span> <span class="o">|</span> <span class="mi">3214028631</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span>  <span class="mf">0.000158813884783759</span>
-  <span class="mi">40</span> <span class="o">|</span>   <span class="mi">31369798</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                     <span class="mi">0</span>
-<span class="p">(</span><span class="mi">40</span> <span class="n">rows</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span>    <span class="n">node</span>    <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>        <span class="n">cost</span>        <span class="o">|</span>      <span class="n">agg_cost</span>
+<span class="o">-----+----------+------------+-------+--------------------+--------------------</span>
+   <span class="mi">1</span> <span class="o">|</span>        <span class="mi">1</span> <span class="o">|</span>   <span class="mi">81622364</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span> <span class="o">|</span>                  <span class="mi">0</span>
+   <span class="mi">2</span> <span class="o">|</span>        <span class="mi">2</span> <span class="o">|</span> <span class="mi">1177972556</span> <span class="o">|</span>   <span class="mi">152</span> <span class="o">|</span> <span class="mf">2.8524015038110697</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span>
+   <span class="mi">3</span> <span class="o">|</span>        <span class="mi">3</span> <span class="o">|</span>   <span class="mi">81622365</span> <span class="o">|</span>   <span class="mi">511</span> <span class="o">|</span> <span class="mf">2.4123361340227754</span> <span class="o">|</span>  <span class="mf">11.84650551583574</span>
+   <span class="mi">4</span> <span class="o">|</span>        <span class="mi">4</span> <span class="o">|</span>   <span class="mi">81917858</span> <span class="o">|</span>   <span class="mi">707</span> <span class="o">|</span>   <span class="mf">3.63955931676029</span> <span class="o">|</span> <span class="mf">14.258841649858514</span>
+   <span class="mi">5</span> <span class="o">|</span>        <span class="mi">5</span> <span class="o">|</span>   <span class="mi">82582021</span> <span class="o">|</span>   <span class="mi">705</span> <span class="o">|</span> <span class="mf">2.9567136964053367</span> <span class="o">|</span> <span class="mf">17.898400966618805</span>
+   <span class="mi">6</span> <span class="o">|</span>        <span class="mi">6</span> <span class="o">|</span>   <span class="mi">82581909</span> <span class="o">|</span>   <span class="mi">662</span> <span class="o">|</span>  <span class="mf">4.185190538775397</span> <span class="o">|</span> <span class="mf">20.855114663024143</span>
+   <span class="mi">7</span> <span class="o">|</span>        <span class="mi">7</span> <span class="o">|</span>   <span class="mi">82571671</span> <span class="o">|</span>   <span class="mi">663</span> <span class="o">|</span> <span class="mf">1.2667248968947813</span> <span class="o">|</span>  <span class="mf">25.04030520179954</span>
+   <span class="mi">8</span> <span class="o">|</span>        <span class="mi">8</span> <span class="o">|</span>   <span class="mi">82581612</span> <span class="o">|</span>   <span class="mi">699</span> <span class="o">|</span>  <span class="mf">6.371427985640729</span> <span class="o">|</span>  <span class="mf">26.30703009869432</span>
+   <span class="mi">9</span> <span class="o">|</span>        <span class="mi">9</span> <span class="o">|</span>   <span class="mi">82708510</span> <span class="o">|</span>   <span class="mi">913</span> <span class="o">|</span> <span class="mf">2.5897354220718807</span> <span class="o">|</span>  <span class="mf">32.67845808433505</span>
+  <span class="mi">10</span> <span class="o">|</span>       <span class="mi">10</span> <span class="o">|</span>   <span class="mi">82580320</span> <span class="o">|</span>   <span class="mi">693</span> <span class="o">|</span> <span class="mf">5.5261229396496585</span> <span class="o">|</span>  <span class="mf">35.26819350640693</span>
+  <span class="mi">11</span> <span class="o">|</span>       <span class="mi">11</span> <span class="o">|</span>   <span class="mi">97825917</span> <span class="o">|</span>  <span class="mi">2421</span> <span class="o">|</span>  <span class="mf">7.003475952839719</span> <span class="o">|</span>  <span class="mf">40.79431644605659</span>
+  <span class="mi">12</span> <span class="o">|</span>       <span class="mi">12</span> <span class="o">|</span>   <span class="mi">82714784</span> <span class="o">|</span> <span class="mi">10389</span> <span class="o">|</span> <span class="mf">3.8659203494409344</span> <span class="o">|</span>  <span class="mf">47.79779239889631</span>
+  <span class="mi">13</span> <span class="o">|</span>       <span class="mi">13</span> <span class="o">|</span>   <span class="mi">82708785</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                  <span class="mi">0</span> <span class="o">|</span>  <span class="mf">51.66371274833725</span>
+<span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Since we are still using autogenerated edge ids, our edge numbers are the same as our previous query,
-but the nodes are the osm node ids.</p>
-<p>The benefit of using the osm_ids instead of the auto-generated ids is that your results will be consistent
-between different databases if they share a common set of osm ids.  Not all pgRouting functions have
-been changed to use bigints, so osm_ids can’t be used with all functions.</p>
-<ul class="simple">
-<li>To output the route geometry, link the result with the road geometries:</li>
-</ul>
+<p>The costs are the same as in the first query</p>
+<p class="rubric">A query to get the geometry of the path</p>
+<p>The results of <cite>pgr_dijkstra</cite> need to be joined with the table ways.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">rpad</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">the_geom</span><span class="p">::</span><span class="n">text</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="s2">&quot;the_geom (truncated)&quot;</span>
-        <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
-                <span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
-                        <span class="n">length</span> <span class="k">as</span> <span class="n">cost</span> <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
-                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="n">false</span>
-        <span class="p">)</span> <span class="n">a</span> <span class="n">INNER</span> <span class="n">JOIN</span> <span class="n">ways</span> <span class="n">b</span> <span class="n">ON</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">edge</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
+<span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
+  <span class="s1">&#39;SELECT gid as id,</span>
+          <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
+          <span class="n">cost_s</span> <span class="n">AS</span> <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost_s</span> <span class="n">AS</span> <span class="n">reverse_cost</span>
+  <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
+  <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span>
+  <span class="n">directed</span> <span class="o">=&gt;</span> <span class="n">false</span>
+<span class="p">)</span> <span class="n">AS</span> <span class="n">q1</span>
+<span class="n">JOIN</span> <span class="n">ways</span> <span class="n">ON</span> <span class="p">(</span><span class="n">edge</span> <span class="o">=</span> <span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>The results, for visual purposes are truncated here, the geometries are much longer
+than shown</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>                     <span class="n">the_geom</span> <span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
 <span class="o">-----+-------+--------------------------------------------------------------</span>
-   <span class="mi">1</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span> <span class="mf">0102000020E61000000200000035</span><span class="n">BEE5A03A641C40BC98C1734A5E4940F4</span>
-   <span class="mi">2</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000</span><span class="n">F4CE577F3A641C402B5CA0EE4D5E494058</span>
-   <span class="mi">3</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span> <span class="mf">0102000020E61000000200000058</span><span class="n">BCA2A53C641C40C3503D88535E4940F5</span>
- <span class="o">...</span> <span class="o">|</span>   <span class="o">...</span> <span class="o">|</span>                                                          <span class="o">...</span>
-  <span class="mi">36</span> <span class="o">|</span>  <span class="mi">6538</span> <span class="o">|</span> <span class="mf">0102000020E6100000020000002999</span><span class="n">F7938C6F1C409DD843FB585D49405C</span>
-  <span class="mi">37</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span> <span class="mf">0102000020E6100000020000005</span><span class="n">CAE7E6C926F1C40E55C2FF2575D494088</span>
-  <span class="mi">38</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span> <span class="mf">0102000020E6100000020000008849</span><span class="n">B89047701C406DF7BC2C375D4940E8</span>
-  <span class="mi">39</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000</span><span class="n">E82E89B322721C40A85890C1E55C494059</span>
-<span class="p">(</span><span class="mi">39</span> <span class="n">rows</span><span class="p">)</span>
+   <span class="mi">1</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span> <span class="mf">0102000020E6100000050000009</span><span class="n">F3825C56C3C4DC0D8367B56884A41C011</span>
+   <span class="mi">2</span> <span class="o">|</span>   <span class="mi">152</span> <span class="o">|</span> <span class="mf">0102000020E610000003000000</span><span class="n">B586F7C19E3C4DC016A0127C784A41C034</span>
+   <span class="mi">3</span> <span class="o">|</span>   <span class="mi">511</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000</span><span class="n">EFF7D566AD3C4DC09C267D6B714A41C04A</span>
+   <span class="mi">4</span> <span class="o">|</span>   <span class="mi">707</span> <span class="o">|</span> <span class="mf">0102000020E6100000060000004</span><span class="n">A247612B63C4DC0FA1F05F4674A41C052</span>
+   <span class="mi">5</span> <span class="o">|</span>   <span class="mi">705</span> <span class="o">|</span> <span class="mf">0102000020E610000003000000964</span><span class="n">E35C4C23C4DC0D81E076F594A41C095</span>
+   <span class="mi">6</span> <span class="o">|</span>   <span class="mi">662</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000504</span><span class="n">FC4C7CC3C4DC00858AB764D4A41C01F</span>
+   <span class="mi">7</span> <span class="o">|</span>   <span class="mi">663</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000408</span><span class="n">C6BD7DF3C4DC013ACBBC3374A41C01F</span>
+   <span class="mi">8</span> <span class="o">|</span>   <span class="mi">699</span> <span class="o">|</span> <span class="mf">0102000020E61000000300000082</span><span class="n">FD7C00F73C4DC0E44FAFEF1E4A41C017</span>
+   <span class="mi">9</span> <span class="o">|</span>   <span class="mi">913</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000650</span><span class="n">D28E5FF3C4DC03D02C985144A41C082</span>
+  <span class="mi">10</span> <span class="o">|</span>   <span class="mi">693</span> <span class="o">|</span> <span class="mf">0102000020E610000002000000</span><span class="n">C761D5C5123D4DC060E05E3EFE4941C065</span>
+  <span class="mi">11</span> <span class="o">|</span>  <span class="mi">2421</span> <span class="o">|</span> <span class="mf">0102000020E610000003000000675</span><span class="n">F1ED72B3D4DC0A45F11B2E24941C05F</span>
+  <span class="mi">12</span> <span class="o">|</span> <span class="mi">10389</span> <span class="o">|</span> <span class="mf">0102000020E6100000020000006</span><span class="n">CA9CD49393D4DC08E548440D34941C067</span>
+<span class="p">(</span><span class="mi">12</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>You can view the routes using a graphical tool</dt>
-<dd>such as <a class="reference internal" href="../overview/openjump_overview.html"><span class="doc">OpenJump</span></a> or
-the <a class="reference internal" href="../overview/qgis_overview.html"><span class="doc">QGIS</span></a> DbManager extension.</dd>
-</dl>
-</li>
-</ul>
-<p>To use the DbManager extension of QGIS open up QGIS then go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.
-Select the SQL Window icon and cut and paste the above pgRouting Query.</p>
-<ul class="simple">
-<li>Run the Dijkstra shortest path function with considering direction.</li>
-</ul>
-<p>In the previous examples, we assumed streets have equal cost in both directions.
-For cases where you have one ways or different speed limits on either lane,
-cost going on one direction of a road, may be different than going the other way.
-For these cases you need to add an additional column to your query <cite>reverse_cost</cite></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
-        <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
-                <span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
-                        <span class="n">cost_s</span> <span class="n">As</span> <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost_s</span> <span class="n">AS</span> <span class="n">reverse_cost</span> <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
-                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="n">true</span>
-        <span class="p">);</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li>With <strong class="command">\q</strong> command leave the PostgreSQL shell.</li>
-</ul>
+<p>With <strong class="command">\q</strong> command leave the PostgreSQL shell.</p>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id4">What next?</a><a class="headerlink" href="#what-next" title="Link a questa intestazione">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
 <li><strong>pgRouting Website</strong> - Visit the project website <a class="reference external" href="https://pgrouting.org">https://pgrouting.org</a> to learn more about pgRouting.</li>
 <li><strong>pgRouting Documentation</strong> - Find the most recent documentation in <a class="reference external" href="https://docs.pgrouting.org">https://docs.pgrouting.org</a>.</li>
 <li><strong>pgRouting Workshop</strong> - The workshop <cite>«FOSS4G routing with pgRouting tools and OpenStreetMap road data»</cite> is available in: <a class="reference external" href="https://workshop.pgrouting.org">https://workshop.pgrouting.org</a>.</li>
-<li><strong>osm2pgRouting loading data</strong> - <a class="reference external" href="https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.1">https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.1</a></li>
-<li><strong>QGIS pgRouting Layer Plugin</strong> - <a class="reference external" href="https://plugins.qgis.org/plugins/pgRoutingLayer/">https://plugins.qgis.org/plugins/pgRoutingLayer/</a> provides GUI for pgRouting functions and interacts with map so you don’t have to write SQL.</li>
+<li><strong>osm2pgRouting loading data</strong> - <a class="reference external" href="https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3">https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3</a></li>
 </ul>
 </div>
 </div>

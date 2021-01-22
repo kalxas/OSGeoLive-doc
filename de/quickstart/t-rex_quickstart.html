@@ -142,14 +142,14 @@ FeatherPad</span>).</li>
 
 <span class="p">[[</span><span class="n">tileset</span><span class="o">.</span><span class="n">layer</span><span class="p">]]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;country&quot;</span>
-<span class="n">geometry_field</span> <span class="o">=</span> <span class="s2">&quot;the_geom&quot;</span>
+<span class="n">geometry_field</span> <span class="o">=</span> <span class="s2">&quot;geom&quot;</span>
 <span class="n">geometry_type</span> <span class="o">=</span> <span class="s2">&quot;MULTIPOLYGON&quot;</span>
 <span class="n">srid</span> <span class="o">=</span> <span class="mi">4326</span>
 <span class="n">buffer_size</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="c1">#make_valid = true</span>
 <span class="n">simplify</span> <span class="o">=</span> <span class="n">false</span>
 <span class="p">[[</span><span class="n">tileset</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">query</span><span class="p">]]</span>
-<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT the_geom, adm0_a3, mapcolor7 FROM ne_10m_admin_0_countries WHERE the_geom &amp;&amp; !bbox!&quot;&quot;&quot;</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;SELECT geom, adm0_a3, mapcolor7 FROM ne_10m_admin_0_countries WHERE the_geom &amp;&amp; !bbox!&quot;&quot;&quot;</span>
 
 <span class="p">[</span><span class="n">cache</span><span class="o">.</span><span class="n">file</span><span class="p">]</span>
 <span class="n">base</span> <span class="o">=</span> <span class="s2">&quot;/home/user/mvtcache&quot;</span>

@@ -74,59 +74,45 @@
 <div class="section" id="otb">
 <h1>OTB<a class="headerlink" href="#otb" title="Link a questa intestazione">¶</a></h1>
 <div class="section" id="image-processing">
-<h2>Image Processing<a class="headerlink" href="#image-processing" title="Link a questa intestazione">¶</a></h2>
-<p>ORFEO Toolbox Library (OTB) is a high performance image processing library. It
-is primarily used for processing large remote sensing images such as those
-gathered by radars, satellites and aerial photography. OTB provides tools for
-optic and radar images (tridimensional aspects, segmentation, classification,
-changes detection, texture analysis, pattern matching, and optic/radar
-complementarities), many of which can be run on limited-resourced laptops.</p>
-<p>OTB is also shipped with a set of extensible ready-to-use tools for classical
-remote sensing tasks and a fully integrated application called Monteverdi, which
-is a fast viewer that allows users to vizualise multiple layers, and call OTB
-processing tools from a menu entry.</p>
-<p>OTB has been funded the French Space Agency (CNES) in the frame of the
-Methodological Part of the ORFEO/Pleiades Accompaniement Program and has been
-actively developed since 2006. It is based on the ITK image processing library
-and is distributed as open source.</p>
+<h2>Processamento d’immagine<a class="headerlink" href="#image-processing" title="Link a questa intestazione">¶</a></h2>
+<p>ORFEO Toolbox Library (OTB) è una libreria ad alte prestazioni per l’elaborazione delle immagini. È prevalentemente utilizzata per l’elaborazione di grandi immagini telerilevate come quelle raccolte da radar, satelliti e fotografie aeree. OTB fornisce strumenti per immagini ottiche e radar (aspetti tridimensionali, segmentazione, classificazione, rilevamento dei cambiamenti, analisi delle tessiture, pattern matching, optic/radar complementarities,).</p>
+<p>OTB è fornito con un’interfaccia utente completamente integrata chiamata Monteverdi che consente agli utenti di selezionare le catene di elaborazione OTB da una serie di menu.</p>
+<p>OTB è stato fondato dall’Agenzia Spaziale Francese (CNES) nel riquadro della Parte metodologica del Programma Accompaniement ORFEO/Pleiades ed è stato attivamente sviluppato dal 2006. Si basa sulla libreria di elaborazione di immagini ITK e viene distribuito come sorgente aperto.</p>
 <a class="reference internal image-reference" href="../../_images/otb_screenshot.png"><img alt="otb screenshot" class="align-right" src="../../_images/otb_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
 <ul class="simple">
-<li>image access: optimized read/write access for most remote sensing raster
-formats (also JPEG2000 formats), meta-data access and visualization;</li>
-<li>orthorectification using DEM, map reprojection and sensor model refinement</li>
-<li>optical and SAR calibration</li>
-<li>image fusion</li>
-<li>filtering: blurring, denoising, enhancement…</li>
-<li>feature extraction: interest points, alignments, lines…</li>
-<li>object detection</li>
-<li>large scale image segmentation: region growing, mean-shift, watershed, level sets…</li>
+<li>accesso alle immagini: accesso ottimizzato in lettura/scrittura per la maggior parte dei formati di immagini telerilevate (incluso Jpeg2000 attraverso OpenJPEG), accesso e visualizzazione dei metadata;</li>
+<li>ortorettificazione utilizzando DEM, riproizione di mappe e miglioramento dei modelli dei sensori</li>
+<li>calibrazione ottica e SAR</li>
+<li>fusione di immagini</li>
+<li>filtraggio: blurring, denoising, enhancement…</li>
+<li>estrazione di elementi: punti d’interesse, allineamenti, linee…</li>
+<li>rilevamento oggetti</li>
+<li>segmentazione d’immagine a larga scala: region growing, mean-shift, watershed, level sets…</li>
 <li>sample selection framework for training</li>
-<li>classification: both supervised and unsupervised algorithms coming from OpenCV
-, Shark, libSVM or custom implementations (K-means, Markov random fields, SVM,
-Random Forest, …)</li>
-<li>regression using machine learning methods from OpenCV (SVM, Random Forest, …)</li>
-<li>object-based image analysis</li>
-<li>geospatial analysis</li>
-<li>stereoscopic reconstruction from optical images</li>
-<li>SAR data analysis : calibration, polarimetry analysis</li>
-<li>change detection.</li>
+<li>classificazione: algoritmi entrambi supervisionati e non supervisionati da OpenCV, Shark, libSVN o implementazioni personalizzate (K-means, campi casuali Markov, SVM, Random Forest, …)</li>
+<li>regressione usado metodi di machine learning fa OpenCV (SVM, Random Forest, …)</li>
+<li>analisi di immagini basata su oggetti</li>
+<li>analisi geospaziale</li>
+<li>ricostruzione stereografica per immagini ottiche</li>
+<li>analisi dati SAR: calibrazione, analisi polarimetrica</li>
+<li>rilevamento dei cambiamenti.</li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="https://www.orfeo-toolbox.org/">https://www.orfeo-toolbox.org/</a></p>
-<p><strong>Licence:</strong> Apache v2.0</p>
-<p><strong>Software Version:</strong> 6.6.1</p>
-<p><strong>Supported Platforms:</strong> Linux, Mac, Windows</p>
-<p><strong>API Interfaces:</strong> C++</p>
-<p><strong>Commercial Support:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="https://www.orfeo-toolbox.org/">https://www.orfeo-toolbox.org/</a></p>
+<p><strong>Licenza:</strong> Apache v2.0</p>
+<p><strong>Versione Software:</strong> 6.6.1</p>
+<p><strong>Piattaforme supportate:</strong> Linux, Mac, Windows</p>
+<p><strong>Interfacce API:</strong> C++</p>
+<p>** Supporto Commerciale:** <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
 </ul>
 </div>
 </div>

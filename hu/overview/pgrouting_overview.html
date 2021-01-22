@@ -27,7 +27,7 @@
     <link rel="search" title="Keresés" href="../search.html" />
     <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
     <link rel="next" title="pgRouting gyorstalpaló" href="../quickstart/pgrouting_quickstart.html" />
-    <link rel="prev" title="Rasdaman Quickstart" href="../quickstart/rasdaman_quickstart.html" />
+    <link rel="prev" title="Rasdaman gyorstalpaló" href="../quickstart/rasdaman_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -75,38 +75,46 @@
 <h1>pgRouting<a class="headerlink" href="#pgrouting" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <div class="section" id="gis-tools">
 <h2>GIS eszközök<a class="headerlink" href="#gis-tools" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>pgRouting kibővíti a <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> térinformatikai adatbázist, hogy útvonalkeresést és más hálózatelemző funkciókat biztosítson.</p>
+<p>pgRouting extends the
+<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>
+geospatial database to provide geospatial routing and other network analysis functionality.</p>
 <p>Az adatbázis alapú útvonalkeresés előnyei:</p>
 <ul class="simple">
-<li>Az adatok és az attribútumok több klienssel módosíthatók, mint például <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> és  <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> továbbá JDBC, ODBC vagy Pl/pgSQL közvetlenül használatával. A kliensek PC-k vagy mobil eszközök lehetnek.</li>
+<li>Data and attributes can be modified by many clients, like <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a>
+and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> through JDBC, ODBC, or directly using Pl/pgSQL.
+The clients can either be PCs or mobile devices.</li>
 <li>Az adatmódosítások azonnal megjelennek az úttervező motoron keresztül. Nincs szükség előkalkulációra.</li>
 <li>A „költség” paramétert dinamikusan számíthatjuk az SQL-el és az értéke több mezőből vagy táblából jöhet.</li>
 </ul>
-<p>pgRouting GPLv2 licenc alatt érhető el és egy egyénekből, cégekből és szervezetekből álló növekvő közösség támogatja.</p>
+<p>pgRouting is available under the GPLv2+ license and is supported by a growing community
+of individuals, businesses and organizations.</p>
 <a class="reference internal image-reference" href="../../_images/pgrouting_screenshot.png"><img alt="pgrouting screenshot" class="align-right" src="../../_images/pgrouting_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
 <h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p>pgRouting funkciókat biztosít ezekhez:</p>
 <ul class="simple">
-<li>Minden pár legrövidebb útvonal, Johnson algoritmus</li>
-<li>Minden pár legrövidebb útvonal, Floyd-Washall algoritmus</li>
-<li>A* legrövidebb útvonal</li>
-<li>Kétirányú Dijkstra legrövidebb útvonal</li>
-<li>Kétirányú A* legrövidebb útvonal</li>
-<li>Legrövidebb útvonal Dijkstra</li>
+<li>All Pairs Shortest Path
+* Johnson’s Algorithm
+* Floyd-Warshall Algorithm</li>
+<li>Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
+<li>Bi-directional Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
 <li>Vezetési távolságok</li>
-<li>K-legrövidebb útvonal, alternatív útvonalak</li>
-<li>K-Dijkstra, egy a többhöz legrövidebb útvonal</li>
+<li>K-Shortest Path
+* Yen’s algorithm</li>
 <li>Utazgató ügynök</li>
-<li>Legrövidebb útvonal fordulási korlátozásokkal (TRSP)</li>
+<li>And many more</li>
 </ul>
-<p>Tudjon meg többet a pgRouting használatáról az alkalmazásában a <a class="reference external" href="http://docs.pgrouting.org">dokumentáció</a> elolvasásával.</p>
+<p>Learn more about pgRouting in the <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
 </div>
 <div class="section" id="details">
 <h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p><strong>Honlap:</strong> <a class="reference external" href="https://pgrouting.org/">https://pgrouting.org/</a></p>
 <p><strong>Licenc:</strong> GNU General Public License (GPL) version 2</p>
-<p><strong>Szoftver verzió:</strong> 2.6.2</p>
+<p><strong>Szoftver verzió:</strong> 3.1.0</p>
 <p><strong>Támogatott platformok:</strong> Linux, Windows, Mac</p>
 <p><strong>API interfészek:</strong> SQL</p>
 <p><strong>Kereskedelmi támogatás:</strong> <a class="reference external" href="https://pgrouting.org/support.html">https://pgrouting.org/support.html</a></p>

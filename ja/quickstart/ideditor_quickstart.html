@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>iD editor Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>iDエディタ クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="JOSM" href="../overview/josm_overview.html" />
-    <link rel="prev" title="iD editor" href="../overview/ideditor_overview.html" />
+    <link rel="prev" title="iDエディタ" href="../overview/ideditor_overview.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -71,39 +71,31 @@
             
   <a class="reference external image-reference" href="https://wiki.openstreetmap.org/wiki/ID"><img alt="../../_images/logo_ideditor.png" class="align-right" src="../../_images/logo_ideditor.png" /></a>
 <div class="section" id="id-editor-quickstart">
-<h1>iD editor Quickstart<a class="headerlink" href="#id-editor-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The iD editor is the de facto, browser-based OpenStreetMap editor. iD is
-fast and easy to use, and allows mapping from various data sources such
-as satellite and aerial imageries, GPS, Field Papers or Mapillary.</p>
-<p>The iD editor is a great way to edit for small and easy changes that
-don’t require the advanced features of JOSM (a more advanced mapping
-editor). This chapter demonstrates the basics of editing with iD.</p>
+<h1>iDエディタ クイックスタート<a class="headerlink" href="#id-editor-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>iDエディタは事実上、ブラウザベースのOpenStreetMapエディタです。iDは高速で使いやすく、衛星や航空画像、GPS、Field Papers、Mapillaryなどのさまざまなデータソースからのマッピングが可能です。</p>
+<p>iDエディタは、JOSM(より高度なマッピングエディタ)の高度な機能を必要としない、小さくて簡単な変更を編集するための優れた方法です。この章では、iDを使用した編集の基本について説明します。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#starting-the-id-editor" id="id1">Starting the iD Editor</a></li>
-<li><a class="reference internal" href="#configuring-the-background-layer" id="id2">Configuring the background layer</a></li>
-<li><a class="reference internal" href="#adding-points" id="id3">Adding points</a></li>
-<li><a class="reference internal" href="#drawing-lines" id="id4">Drawing lines</a></li>
-<li><a class="reference internal" href="#drawing-shapes-polygons" id="id5">Drawing shapes (polygons)</a></li>
-<li><a class="reference internal" href="#drawing-multipolygons" id="id6">Drawing multipolygons</a></li>
-<li><a class="reference internal" href="#saving-your-changes" id="id7">Saving your changes</a></li>
-<li><a class="reference internal" href="#add-additional-information-and-custom-tags" id="id8">Add additional information and custom tags</a></li>
-<li><a class="reference internal" href="#what-next" id="id9">What next?</a></li>
+<li><a class="reference internal" href="#starting-the-id-editor" id="id1">iDエディタを起動する</a></li>
+<li><a class="reference internal" href="#configuring-the-background-layer" id="id2">背景レイヤーの設定</a></li>
+<li><a class="reference internal" href="#adding-points" id="id3">ポイントを追加する</a></li>
+<li><a class="reference internal" href="#drawing-lines" id="id4">線の描画</a></li>
+<li><a class="reference internal" href="#drawing-shapes-polygons" id="id5">シェイプ(ポリゴン)を描画する</a></li>
+<li><a class="reference internal" href="#drawing-multipolygons" id="id6">マルチポリゴンを描画する</a></li>
+<li><a class="reference internal" href="#saving-your-changes" id="id7">変更を保存する</a></li>
+<li><a class="reference internal" href="#add-additional-information-and-custom-tags" id="id8">追加情報とカスタムタグの追加</a></li>
+<li><a class="reference internal" href="#what-next" id="id9">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="starting-the-id-editor">
-<h2><a class="toc-backref" href="#id1">Starting the iD Editor</a><a class="headerlink" href="#starting-the-id-editor" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The iD editor requires an active connection to the Internet.</p>
+<h2><a class="toc-backref" href="#id1">iDエディタを起動する</a><a class="headerlink" href="#starting-the-id-editor" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>iDエディタには、インターネットへのアクティブな接続が必要です。</p>
 <ol class="arabic simple">
-<li>Open your Internet browser, and go to the OpenStreetMap website at
-<a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a>.</li>
-<li><strong>Login</strong> using your OpenStreetMap account.</li>
-<li>Pan and zoom the map to the area that you want to edit. You can pan
-by holding the left mouse button and dragging the map to your desired
-area.</li>
-<li>Click on the small arrow next to <strong>Edit</strong>, then click <strong>Edit with iD
-(in-browser editor)</strong>.</li>
+<li>インターネットブラウザを開き、<a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> のOpenStreetMapのWebサイトにアクセスします。</li>
+<li>OpenStreetMapアカウントを使用して <strong>ログイン</strong> します。</li>
+<li>編集する領域にマップを画面移動およびズームします。マウスの左ボタンを押したままマップを目的の領域にドラッグすると、画面移動できます。</li>
+<li><strong>[編集]</strong> の横の小さな矢印をクリックし、[<strong>iD編集(ブラウザ内エディタ)</strong>]をクリックします。</li>
 </ol>
 <blockquote>
 <div><img alt="../../_images/id-editor_image1.png" src="../../_images/id-editor_image1.png" />
@@ -111,225 +103,166 @@ area.</li>
 </div></blockquote>
 <ul class="simple">
 <li><dl class="first docutils">
-<dt>[1] <strong>Edit Feature Panel:</strong> This panel shows tags from the object</dt>
-<dd>selected on the map. You can add or edit tags from this panel.</dd>
+<dt>[1] <strong>[フィーチャ編集]パネル:</strong> このパネルにはオブジェクトのタグが表示されます</dt>
+<dd>マップ上で選択されています。このパネルからタグを追加または編集できます。</dd>
 </dl>
 </li>
-<li>[2] <strong>Tools:</strong> This panel shows basic editing tools.</li>
-<li>[3] <strong>Map panel:</strong> This panel show various configuration functions.</li>
+<li>[2] <strong>ツール:</strong> このパネルには、基本的な編集ツールが表示されます。</li>
+<li>[3] <strong>Mapパネル:</strong> このパネルには、さまざまな設定機能が表示されます。</li>
 <li><dl class="first docutils">
-<dt>[4] <strong>Information panel:</strong> This panel shows various information, such as</dt>
-<dd>the scale bar and which users have contributed to the area.</dd>
+<dt>[4]** 情報パネル:** このパネルには、次のようなさまざまな情報が表示されます。</dt>
+<dd>スケールバーと、その領域にどのユーザが貢献したかを示します。</dd>
 </dl>
 </li>
 </ul>
 </div>
 <div class="section" id="configuring-the-background-layer">
-<h2><a class="toc-backref" href="#id2">Configuring the background layer</a><a class="headerlink" href="#configuring-the-background-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">背景レイヤーの設定</a><a class="headerlink" href="#configuring-the-background-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Click the <strong>Background settings</strong> button or use the <em>shortcut key</em> <strong>b</strong>.
-<a class="reference internal" href="../../_images/id-editor_image14.png"><img alt="image14" src="../../_images/id-editor_image14.png" style="height: 24px;" /></a></p>
+<li><p class="first"><strong>背景設定</strong> ボタンをクリックするか、<em>ショートカットキー</em> <strong>b</strong> を使用します。<a class="reference internal" href="../../_images/id-editor_image14.png"><img alt="image14" src="../../_images/id-editor_image14.png" style="height: 24px;" /></a></p>
 <p><img alt="image15" src="../../_images/id-editor_image15.png" /></p>
 </li>
-<li><p class="first">To change the <strong>brightness level</strong> click one of these boxes, the levels are 100%, 75%, 50%, and 25%
-<a class="reference internal" href="../../_images/id-editor_image16.png"><img alt="image16" src="../../_images/id-editor_image16.png" style="height: 24px;" /></a></p>
+<li><p class="first"><strong>輝度レベル</strong> を変更するには、これらのボックスの1つをクリックします。レベルは、100%、75%、50%、および25%の|image16|です。</p>
 </li>
-<li><p class="first">You also can <strong>change the background layer</strong> based on your desired tile provider (the default is Bing Aerial Imagery).</p>
+<li><p class="first">また、目的のタイルプロバイダに基づいて** 背景レイヤーを変更する** こともできます(デフォルトはBing Aerial Imagery)。</p>
 </li>
-<li><p class="first">You can add your own map tiles by clicking on <strong>Custom</strong>. For example,   if you want to <strong>add a Field Paper</strong>  [1], click <strong>Custom</strong> then   click on the magnifying glass (search) icon to open the following window:</p>
+<li><p class="first"><strong>Custom</strong> をクリックすると、独自のマップタイルを追加できます。たとえば、<strong>Field Paper [1] を</strong> 追加する場合は、<strong>Custom</strong> をクリックし、虫眼鏡(検索)アイコンをクリックして次のウィンドウを開きます。</p>
 <p><img alt="image17" src="../../_images/id-editor_image17.png" /></p>
 </li>
-<li><p class="first">Enter your <strong>FieldPaper snapshot URL</strong>, which will be something like this:
-<a class="reference external" href="http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715">http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715</a></p>
+<li><p class="first"><strong>FieldPaperのスナップショットURL</strong> を入力します。次のようになります。<a class="reference external" href="http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715">http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715</a></p>
 </li>
-<li><p class="first">To <strong>display GPS tracks from your computer</strong> (GPX format), drag and drop the GPX file into iD editor.</p>
+<li><p class="first"><strong>お使いのコンピュータからGPSトラック</strong> を表示**(GPXフォーマット)するには、GPXファイルをiDエディタにドラッグ&amp;ドロップします。</p>
 </li>
-<li><p class="first">To enable <strong>OpenStreetMap GPS traces</strong> click on the box. In the image below, public GPS traces are shown in various colors, indicating the direction of travel.</p>
+<li><p class="first"><strong>OpenStreetMap GPSトレース</strong> を有効にするには、ボックスをクリックします。下のイメージでは、公共のGPS追跡がさまざまな色で表示され、進行方向を示しています。</p>
 <p><img alt="osm gps traces" src="../../_images/id-editor_gps_public.png" /></p>
 </li>
-<li><p class="first">If there is <a class="reference external" href="/en/josm/aerial-imagery">imagery offset</a>, you can <strong>correct the imagery offset</strong> by clicking <strong>Fix Alignment</strong>.</p>
+<li><p class="first"><a class="reference external" href="/en/josm/aerial-imagery">imagery offset</a> がある場合は、<strong>Fix Alignment</strong> をクリックして <strong>image offset</strong> を修正できます。</p>
 <p><img alt="image18" src="../../_images/id-editor_image18.png" /></p>
 </li>
-<li><p class="first">Click the navigation buttons to move the imagery. Click the reset button to return to the default position. <img alt="image20" src="../../_images/id-editor_image20.png" /></p>
+<li><p class="first">イメージを移動するには、ナビゲーションボタンをクリックします。リセットボタンをクリックすると、デフォルトの位置に戻ります。<img alt="image20" src="../../_images/id-editor_image20.png" /></p>
 </li>
 </ol>
 </div>
 <div class="section" id="adding-points">
-<h2><a class="toc-backref" href="#id3">Adding points</a><a class="headerlink" href="#adding-points" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To add a new point, click on the <strong>Point</strong> button. <a class="reference internal" href="../../_images/id-editor_image3.png"><img alt="image3" src="../../_images/id-editor_image3.png" style="height: 24px;" /></a></p>
+<h2><a class="toc-backref" href="#id3">ポイントを追加する</a><a class="headerlink" href="#adding-points" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しい点を追加するには、[<strong>Point</strong>]ボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image3.png"><img alt="image3" src="../../_images/id-editor_image3.png" style="height: 24px;" /></a></p>
 <ul>
-<li><p class="first">Your mouse cursor will change into plus (+) sign. Now, click on a
-position that you know to mark a location. For example, if you know
-that there is a hospital in your area, click on the position of the
-hospital building.</p>
+<li><p class="first">マウスカーソルがプラス(+)記号に変わります。次に、位置をマークする位置をクリックします。たとえば、地域に病院があることがわかっている場合は、病院の建物の位置をクリックします。</p>
 <p><img alt="image21" src="../../_images/id-editor_image21.png" /></p>
 </li>
-<li><p class="first">Notice that a new point is added. At the same time, the left panel
-will change to show a form where you can select attributes for the
-object. Click <strong>Hospital Grounds</strong> to tag the point as a hospital.</p>
+<li><p class="first">新しい点が追加されます。同時に、左側のパネルが変わり、オブジェクトの属性を選択できるフォームが表示されます。<strong>Hospital Grounds</strong> をクリックして、ポイントに病院のタグを付けます。</p>
 <p><img alt="image22" src="../../_images/id-editor_image22.png" /></p>
 </li>
-<li><p class="first">You can use the forms to fill detail information about your point.
-You can fill hospital name, address, and/or other additional
-information. Note that each feature will have different options,
-depending on what tag you choose from the feature panel.</p>
+<li><p class="first">フォームを使用して、ポイントに関する詳細情報を入力できます。病院の名前、住所、その他の追加情報を入力できます。各フィーチャには、フィーチャパネルから選択したタグに応じて異なるオプションがあることに注意してください。</p>
 </li>
-<li><p class="first">If you make a mistake, such as a wrong location, you can move your
-point to a new location by holding the left mouse button on your
-point and dragging it. Or, if you want to delete your point, click
-the left mouse button on the point, activate the context menu by
-clicking with the right mouse button and then click the button which
-looks like a trashcan. <a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
-<p>A 「point」 created in the iD editor is actually a standalone 「node」
-with a set of 「tags」 on it.</p>
+<li><p class="first">位置を間違えた場合などに、マウスの左ボタンを押したままドラッグすると、ポイントを新しい位置に移動できます。または、ポイントを削除する場合は、ポイント上で左マウスボタンをクリックし、さらに右マウスボタンでクリックしてコンテキストメニューを表示し、ごみ箱のボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+<p>iDエディタで作成される」ポイント」は、実際には」タグ」のセットが付いた独立の」ノード」です。</p>
 </li>
 </ul>
 </div>
 <div class="section" id="drawing-lines">
-<h2><a class="toc-backref" href="#id4">Drawing lines</a><a class="headerlink" href="#drawing-lines" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To add a new line, click on the <strong>Line</strong> button. <a class="reference internal" href="../../_images/id-editor_image4.png"><img alt="image4" src="../../_images/id-editor_image4.png" style="height: 24px;" /></a></p>
+<h2><a class="toc-backref" href="#id4">線の描画</a><a class="headerlink" href="#drawing-lines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいラインを追加するには、<strong>ライン</strong> ボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image4.png"><img alt="image4" src="../../_images/id-editor_image4.png" style="height: 24px;" /></a></p>
 <ul>
-<li><p class="first">Your mouse cursor will change into plus (+) sign. Find a road that
-hasn’t been drawn on the map and trace it. Click once on a point
-where the road segment begins, move your mouse, and click to add
-additional points. Double-click to end the drawing process. Notice
-the panel on the left.</p>
+<li><p class="first">マウスカーソルがプラス(+)記号に変わります。地図に描かれていない道を探して、たどってみましょう。道路セグメントの始点を1回クリックし、マウスを移動してクリックし、点を追加します。図面プロセスを終了するには、ダブルクリックします。左側のパネルに注目してください。</p>
 <p><img alt="image24" src="../../_images/id-editor_image24.png" /></p>
 </li>
-<li><p class="first">Just as with a point, select the appropriate tags for your line.</p>
+<li><p class="first">点の場合と同様に、線分に適切なタグを選択します。</p>
 </li>
-<li><p class="first">You can drag points from the line by clicking your left mouse button
-on a point and dragging it.</p>
+<li><p class="first">ポイント上でマウスの左ボタンをクリックしてドラッグすると、ラインからポイントをドラッグできます。</p>
 </li>
-<li><p class="first">You also can move the whole line by selecting it, and choosing the
-<strong>Move tool</strong>. Then drag the line to a new position. <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+<li><p class="first">ライン全体を移動するには、ラインを選択して <strong>移動ツール</strong> を選択します。次に、ラインを新しい位置にドラッグします。<a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">When you click your left mouse button on an individual point (node)
-on the line and click on the right mouse button to activate the
-context menu, you will see these tools:</p>
+<li><p class="first">ラインの個々のポイント(ノード)上で左マウスボタンをクリックし、さらに右マウスボタンをクリックしてコンテキストメニューを表示すると、次のツールが表示されます。</p>
 </li>
-<li><p class="first">Delete point from line. <a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+<li><p class="first">ラインからポイントを削除します。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Disconnect point from line. <a class="reference internal" href="../../_images/id-editor_image26.png"><img alt="image26" src="../../_images/id-editor_image26.png" style="height: 24px;" /></a></p>
+<li><p class="first">ポイントをラインから切断します。<a class="reference internal" href="../../_images/id-editor_image26.png"><img alt="image26" src="../../_images/id-editor_image26.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Split a line into two lines from the point you’ve selected.
-<a class="reference internal" href="../../_images/id-editor_image27.png"><img alt="image27" src="../../_images/id-editor_image27.png" style="height: 24px;" /></a></p>
+<li><p class="first">選択したポイントから2本のラインに分割します。<a class="reference internal" href="../../_images/id-editor_image27.png"><img alt="image27" src="../../_images/id-editor_image27.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">When you click your left mouse button on a line (but not on a point),
-you will see these tools:</p>
+<li><p class="first">ライン上(ポイント上ではない)でマウスの左ボタンをクリックすると、次のツールが表示されます。</p>
 </li>
-<li><p class="first">Delete line. <a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+<li><p class="first">ラインの削除。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Create a circle from a line (only active if the line is closed)
-<a class="reference internal" href="../../_images/id-editor_image29.png"><img alt="image29" src="../../_images/id-editor_image29.png" style="height: 24px;" /></a></p>
+<li><p class="first">線分から円を作成する(ラインが閉じている場合にのみ有効) <a class="reference internal" href="../../_images/id-editor_image29.png"><img alt="image29" src="../../_images/id-editor_image29.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Move line <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+<li><p class="first">ラインを移動 <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Form a square shape from a line (only active if the line is closed)
-<a class="reference internal" href="../../_images/id-editor_image31.png"><img alt="image31" src="../../_images/id-editor_image31.png" style="height: 24px;" /></a></p>
+<li><p class="first">線分から四角形を作成する(ラインが閉じている場合のみ有効)) <a class="reference internal" href="../../_images/id-editor_image31.png"><img alt="image31" src="../../_images/id-editor_image31.png" style="height: 24px;" /></a></p>
 </li>
-<li><p class="first">Reverse line direction (good for rivers &amp; one-way streets)
-<a class="reference internal" href="../../_images/id-editor_image32.png"><img alt="image32" src="../../_images/id-editor_image32.png" style="height: 24px;" /></a></p>
+<li><p class="first">ラインの方向を逆転 (河川や一方通行の設定に便利) <a class="reference internal" href="../../_images/id-editor_image32.png"><img alt="image32" src="../../_images/id-editor_image32.png" style="height: 24px;" /></a></p>
 </li>
 </ul>
-<p>A 「line」 created in the iD editor is actually a 「way」 with 「tags」 on it.</p>
+<p>iDエディタで作成される 「ライン」は、実際には」タグ」がついた」ウエイ」です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">A special note about <strong>Deleting</strong>: In general you should avoid
-deleting other people’s mapping if it just needs improvement. You
-can delete your own mistakes, but you should try to <em>adjust</em> other
-people’s mapped objects if they need changes. This preserves the
-history of the items in the OSM database and is respectful of fellow
-mappers. If you really feel something should be deleted, consider
-asking the original mapper or one of the OSM email lists about it
-first.</p>
+<p class="last"><strong>削除</strong> に関する特記事項: 一般的に、改善が必要な場合は、他のユーザのマッピングを削除しないようにしてください。自分の間違いを削除することもできますが、変更が必要な場合は、他のユーザのマッピングされたオブジェクトを*調整*してみてください。これにより、OSMデータベース内のアイテムの履歴が保持され、他のマッパーにも配慮されます。削除する必要があると本当に感じている場合は、最初に元のマッパーまたはOSM電子メールリストのいずれかに問い合わせてみてください。</p>
 </div>
 </div>
 <div class="section" id="drawing-shapes-polygons">
-<h2><a class="toc-backref" href="#id5">Drawing shapes (polygons)</a><a class="headerlink" href="#drawing-shapes-polygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To add a new multi-sided shape, click on the <strong>Area</strong> button.</p>
+<h2><a class="toc-backref" href="#id5">シェイプ(ポリゴン)を描画する</a><a class="headerlink" href="#drawing-shapes-polygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しい多辺形状を追加するには、<strong>領域</strong> ボタンをクリックします。</p>
 <blockquote>
 <div><a class="reference internal" href="../../_images/id-editor_image34.png"><img alt="image34" src="../../_images/id-editor_image34.png" style="height: 24px;" /></a></div></blockquote>
 <ul class="simple">
-<li>Your mouse cursor will change into plus (+) sign. Try to trace a
-building using the imagery as a guide.</li>
-<li>You will notice that the color of your shape will change depending on
-the attributes that you assign to it. <img alt="image35" src="../../_images/id-editor_image35.png" /></li>
-<li>The tools that are available when you select a shape and activate the
-context menu with the right mouse button are similar to those when
-you click on a line.</li>
+<li>マウスカーソルがプラス(+)記号に変わります。イメージをガイドとして使用して、建物をトレースしてみます。</li>
+<li>シェイプのカラーは、割り当てるアトリビュートに応じて変化します。<img alt="image35" src="../../_images/id-editor_image35.png" /></li>
+<li>シェイプを選択して右マウスボタンでコンテキストメニューを表示したときに使用できるツールは、ラインをクリックしたときのツールと似ています。</li>
 </ul>
-<p>A 「polygon」 in the iD editor is actually a 「closed way」 with tags on it.</p>
+<p>iDエディタの」ポリゴン」は、実際にはタグが付いた」閉じたウエイ」です。</p>
 </div>
 <div class="section" id="drawing-multipolygons">
-<h2><a class="toc-backref" href="#id6">Drawing multipolygons</a><a class="headerlink" href="#drawing-multipolygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Sometimes you have to draw a polygon which does not only have an outer
-contour but also one or more inner contours. Just think of buildings
-with inner courtyards or lakes with islands. <em>Do not draw all these ways
-in one line</em> so that the inner contours suspend from the outer contour.
-Rather draw these contours separate, attach tags to the outer contour
-only, select all contours and hit <strong>c</strong> in order to combine them into
-what is called a multipolygon.</p>
+<h2><a class="toc-backref" href="#id6">マルチポリゴンを描画する</a><a class="headerlink" href="#drawing-multipolygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>外部輪郭だけでなく、1つまたは複数の内部輪郭を持つポリゴンを描画する必要がある場合があります。中庭のある建物や島のある湖を思い浮かべてください*これらのすべての方法を1本の線で描画しないでください*。内側の輪郭線が外側の輪郭線から一時停止します。むしろ、これらの等高線を別々に描き、外側の等高線のみにタグを付け、すべての等高線を選択して <strong>c</strong> を押し、それらをいわゆるマルチポリゴンに結合します。</p>
 <blockquote>
 <div><img alt="create multipolygon" src="../../_images/id-editor_create_multipolygon.png" />
 </div></blockquote>
-<p>When you select any of the contours of the newly created multipolygon
-you can see on the left to which multipolygons it belongs</p>
+<p>新しく作成したマルチポリゴンのいずれかの輪郭を選択すると、そのマルチポリゴンが属する残りのオブジェクトを確認できます。</p>
 <blockquote>
 <div><img alt="part of multipolygon" src="../../_images/id-editor_part_of_multipolygon.png" />
 </div></blockquote>
 </div>
 <div class="section" id="saving-your-changes">
-<h2><a class="toc-backref" href="#id7">Saving your changes</a><a class="headerlink" href="#saving-your-changes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">変更を保存する</a><a class="headerlink" href="#saving-your-changes" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">When (and if) you want to save your edits to OpenStreetMap, click the
-<strong>Save</strong> button. The panel on the left will show the upload panel.</p>
+<li><p class="first">編集内容をOpenStreetMapに保存する場合は、[<strong>保存</strong>]ボタンをクリックします。左側のパネルにアップロード・パネルが表示されます。</p>
 <p><img alt="image36" src="../../_images/id-editor_image36.png" /></p>
 </li>
-<li><p class="first">Enter a comment about your edits and click <strong>Save</strong>.</p>
+<li><p class="first">編集内容についてのコメントを入力し、<strong>保存</strong> をクリックします。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you have edited the same feature (point, way or area) at the same
-time as another person was editing it, you will receive a warning
-that your edits cannot be uploaded until you have resolved the
-<strong>conflicts</strong> - choose whose edits to accept &amp; upload your changes.
-<em>Resolving conflicts often involves accepting the other persons
-edits, in which case you will probably wish to return to the feature
-in question and edit again (**this time save soon after the edit to
-try to avoid a conflict again!*</em>).*</p>
+<p class="last">他のユーザが編集していたのと同時に同じフィーチャ(点、経路、または領域)を編集した場合は、<strong>衝突**を解決するまで編集をアップロードできないという警告が表示されます。変更を受け入れてアップロードする編集を選択してください。**コンフリクト**を解決するには、多くの場合、他のユーザによる編集を受け入れる必要があります。その場合は、問題のフィーチャーに戻って再度編集することをお勧めします(**今回は編集後すぐに保存して、再度コンフリクトを回避します!</strong>)。*</p>
 </div>
 </div>
 <div class="section" id="add-additional-information-and-custom-tags">
-<h2><a class="toc-backref" href="#id8">Add additional information and custom tags</a><a class="headerlink" href="#add-additional-information-and-custom-tags" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>When you are editing an object, you will see a strip of icons at the
-bottom of the attribute panel. You can add additional information by
-clicking these icons:</p>
+<h2><a class="toc-backref" href="#id8">追加情報とカスタムタグの追加</a><a class="headerlink" href="#add-additional-information-and-custom-tags" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オブジェクトを編集すると、属性パネルの下部にアイコンのストリップが表示されます。次のアイコンをクリックすると、追加情報を追加できます。</p>
 <ul class="simple">
-<li>Add elevation <a class="reference internal" href="../../_images/id-editor_image37.png"><img alt="image37" src="../../_images/id-editor_image37.png" style="height: 24px;" /></a></li>
-<li>Add notes <a class="reference internal" href="../../_images/id-editor_image38.png"><img alt="image38" src="../../_images/id-editor_image38.png" style="height: 24px;" /></a></li>
-<li>Add contacts / phone number <a class="reference internal" href="../../_images/id-editor_image39.png"><img alt="image39" src="../../_images/id-editor_image39.png" style="height: 24px;" /></a></li>
-<li>Add source tag <a class="reference internal" href="../../_images/id-editor_image40.png"><img alt="image40" src="../../_images/id-editor_image40.png" style="height: 24px;" /></a></li>
-<li>Add website <a class="reference internal" href="../../_images/id-editor_image41.png"><img alt="image41" src="../../_images/id-editor_image41.png" style="height: 24px;" /></a></li>
-<li>Add accessibility information <a class="reference internal" href="../../_images/id-editor_image42.png"><img alt="image42" src="../../_images/id-editor_image42.png" style="height: 24px;" /></a></li>
-<li>Add Wikipedia link <a class="reference internal" href="../../_images/id-editor_image43.png"><img alt="image43" src="../../_images/id-editor_image43.png" style="height: 24px;" /></a></li>
+<li>標高の追加 <a class="reference internal" href="../../_images/id-editor_image37.png"><img alt="image37" src="../../_images/id-editor_image37.png" style="height: 24px;" /></a></li>
+<li>ノートの追加 <a class="reference internal" href="../../_images/id-editor_image38.png"><img alt="image38" src="../../_images/id-editor_image38.png" style="height: 24px;" /></a></li>
+<li>連絡先/電話番号の追加 <a class="reference internal" href="../../_images/id-editor_image39.png"><img alt="image39" src="../../_images/id-editor_image39.png" style="height: 24px;" /></a></li>
+<li>sourceタグの追加 <a class="reference internal" href="../../_images/id-editor_image40.png"><img alt="image40" src="../../_images/id-editor_image40.png" style="height: 24px;" /></a></li>
+<li>websiteの追加 <a class="reference internal" href="../../_images/id-editor_image41.png"><img alt="image41" src="../../_images/id-editor_image41.png" style="height: 24px;" /></a></li>
+<li>アクセスのしやすさ情報を追加 <a class="reference internal" href="../../_images/id-editor_image42.png"><img alt="image42" src="../../_images/id-editor_image42.png" style="height: 24px;" /></a></li>
+<li>Wikipediaリンクを追加 <a class="reference internal" href="../../_images/id-editor_image43.png"><img alt="image43" src="../../_images/id-editor_image43.png" style="height: 24px;" /></a></li>
 </ul>
-<p>Or, you can add custom tags by clicking <strong>All tags</strong>. <a class="reference internal" href="../../_images/id-editor_image44.png"><img alt="image44" src="../../_images/id-editor_image44.png" style="height: 24px;" /></a></p>
+<p>または、カスタムタグを <strong>全タグ</strong> をクリックして追加。<a class="reference internal" href="../../_images/id-editor_image44.png"><img alt="image44" src="../../_images/id-editor_image44.png" style="height: 24px;" /></a></p>
 <ul>
-<li><p class="first">This will show all the tags attached to the feature.</p>
+<li><p class="first">これにより、フィーチャにアタッチされているすべてのタグが表示されます。</p>
 <p><img alt="image45" src="../../_images/id-editor_image45.png" /></p>
 </li>
-<li><p class="first">Click the plus sign (+) to add keys and values or click the trash
-icon to delete tags.</p>
+<li><p class="first">プラス記号(+)をクリックしてキーと値を追加するか、ごみ箱アイコンをクリックしてタグを削除します。</p>
 </li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id9">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Try the LearnOSM documentation, from which this quickstart was derived: <a class="reference external" href="https://learnosm.org/en/beginner/id-editor/">https://learnosm.org/en/beginner/id-editor/</a></li>
-<li>Website: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+<li>このクイックスタートが派生したLearnOSMのドキュメントを試してください:<a class="reference external" href="https://learnosm.org/en/beginner">https://learnosm.org/en/beginner</a>/idエディタ/</li>
+<li>Webサイト: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
 </ul>
 </div>
 </div>

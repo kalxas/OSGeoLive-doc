@@ -75,38 +75,46 @@
 <h1>pgRouting<a class="headerlink" href="#pgrouting" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="section" id="gis-tools">
 <h2>Herramientas GIS<a class="headerlink" href="#gis-tools" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>pgRouting extiende la base de datos geoespacial&nbsp; <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> &nbsp;para proporcionar enrutamiento geospatial y otras funcionalidades de análisis de redes.</p>
+<p>pgRouting extends the
+<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>
+geospatial database to provide geospatial routing and other network analysis functionality.</p>
 <p>Ventajas del enfoque de enrutamiento de la base de datos son:</p>
 <ul class="simple">
-<li>Datos y atributos pueden ser modificados por muchos clientes, como <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a>   a través de JDBC, ODBC o directamente usando Pl/pgSQL. Los clientes pueden ser PC o dispositivos móviles.</li>
+<li>Data and attributes can be modified by many clients, like <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a>
+and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> through JDBC, ODBC, or directly using Pl/pgSQL.
+The clients can either be PCs or mobile devices.</li>
 <li>Cambios en los datos pueden ser reflejados instantáneamente a través del motor de enrutamiento. No hay necesidad de precálculo.</li>
 <li>El parámetro de «cost» puede ser calculado dinámicamente a través de SQL y su valor puede venir de varios campos o tablas.</li>
 </ul>
-<p>pgRouting está disponible bajo la licencia GPLv2 y es apoyado por una comunidad creciente de individuos, empresas y organizaciones.</p>
+<p>pgRouting is available under the GPLv2+ license and is supported by a growing community
+of individuals, businesses and organizations.</p>
 <a class="reference internal image-reference" href="../../_images/pgrouting_screenshot.png"><img alt="pgrouting screenshot" class="align-right" src="../../_images/pgrouting_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
 <h3>Características Principales<a class="headerlink" href="#core-features" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>pgRouting proporciona funciones para:</p>
 <ul class="simple">
-<li>Ruta más corta de todos los pares, algoritmo de Johnson</li>
-<li>Ruta más corta de todos los pares, algoritmo de Floyd-Warshall</li>
-<li>Camino más corto A*</li>
-<li>Ruta más corta de Dijkstra bidireccional</li>
-<li>Ruta más corta  A* fidireccional</li>
-<li>Ruta más corta Dijkstra</li>
+<li>All Pairs Shortest Path
+* Johnson’s Algorithm
+* Floyd-Warshall Algorithm</li>
+<li>Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
+<li>Bi-directional Shortest Path
+* A* algorithm
+* Dijkstra algorithm</li>
 <li>Distancia de conducción</li>
-<li>K rutas más cortos, múltiples rutas alternativas</li>
-<li>Dijkstra, ruta más corta de uno a muchos</li>
+<li>K-Shortest Path
+* Yen’s algorithm</li>
 <li>Vendedor viajante</li>
-<li>Ruta más corta de la con restricciones de giros (TRSP)</li>
+<li>And many more</li>
 </ul>
-<p>Aprenda más sobre el uso de pgRouting en su aplicación mediante la lectura de la  <a class="reference external" href="http://docs.pgrouting.org">documentación</a>.</p>
+<p>Learn more about pgRouting in the <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
 </div>
 <div class="section" id="details">
 <h3>Detalles<a class="headerlink" href="#details" title="Enlazar permanentemente con este título">¶</a></h3>
 <p><strong>Sitio web:</strong> <a class="reference external" href="https://pgrouting.org/">https://pgrouting.org/</a></p>
 <p><strong>Licencia:</strong> GNU General Public License (GPL) version 2</p>
-<p><strong>Versión de software:</strong> 2.6.2</p>
+<p><strong>Versión de software:</strong> 3.1.0</p>
 <p><strong>Plataformas compatibles:</strong> GNU/Linux, Mac OSX, MS Windows</p>
 <p><strong>Interfaces API:</strong> SQL</p>
 <p>** Soporte comercial:** https://pgrouting.org/support.html</p>

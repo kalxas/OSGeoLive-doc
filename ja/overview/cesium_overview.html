@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="Cesium Quickstart" href="../quickstart/cesium_quickstart.html" />
+    <link rel="next" title="Cesiumクイックスタート" href="../quickstart/cesium_quickstart.html" />
     <link rel="prev" title="Leaflet Quickstart" href="../quickstart/leaflet_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -75,55 +75,55 @@
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="d-globes-and-2d-maps-in-a-browser">
-<h3>3D Globes and 2D Maps in a Browser<a class="headerlink" href="#d-globes-and-2d-maps-in-a-browser" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Cesium is a JavaScript library for creating 3D globes and 2D maps in a web browser without any plugins. It uses WebGL for hardware-accelerated graphics, and is cross-platform, cross-browser, and tuned for dynamic-data visualization.</p>
+<h3>ブラウザ上の3次元地球儀と2次元地図<a class="headerlink" href="#d-globes-and-2d-maps-in-a-browser" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Cesiumは、プラグインなしでウェブブラウザで3D地球儀と2Dマップを作成するためのJavaScriptライブラリです。ハードウェアで高速化されたグラフィックスにWebGLを使用し、クロスプラットフォーム、クロスブラウザで、動的データの視覚化に合わせて調整されています。</p>
 <a class="reference internal image-reference" href="../../_images/cesium_screenshot.png"><img alt="cesium screenshot" class="align-right" src="../../_images/cesium_screenshot.png" style="width: 500px;" /></a>
 </div>
 </div>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Dynamic Geospatial Visualization:<ul>
-<li>Create data-driven, time-dynamic scenes with <a class="reference external" href="https://github.com/CesiumGS/cesium/wiki/CZML-Guide">CZML</a>.</li>
-<li>Visualize high-resolution worldwide terrain.</li>
-<li>Draw imagery layers using WMS, TMS, OpenStreetMaps, Bing, and Esri standards.</li>
-<li>Draw vector data from GeoJSON and TopoJSON.</li>
-<li>Draw 3D models using COLLADA and glTF.</li>
-<li>Use <a class="reference external" href="https://cesium.com/cesiumjs">plugins</a> to extend Cesium.</li>
+<li>動的な地理空間視覚化:<ul>
+<li><a class="reference external" href="https://github.com/CesiumGS/cesium/wiki/CZML-Guide">CZML</a> を使用して、データ駆動型で時間動的なシーンを作成します。</li>
+<li>世界的な地形を高解像度で可視化します。</li>
+<li>WMS、TMS、OpenStreetMaps、Bing、およびEsri標準を使用して画像レイヤを描画します。</li>
+<li>GeoJSONとTopoJSONからベクタデータを描画します。</li>
+<li>COLLADAとglTFを使用して3Dモデルを描画します。</li>
+<li><a class="reference external" href="https://cesium.com/cesiumjs">プラグイン</a> を使用してCesiumを拡張します。</li>
 </ul>
 </li>
-<li>Built for Performance and Precision:<ul>
-<li>Optimized WebGL with batching and culling efficiently uses hardware-accelerated graphics.</li>
-<li>Draw a wide range of geometries including polylines, polygons, billboards, labels, extrusions, and corridors.</li>
-<li>Use <a class="reference external" href="https://cesium.com/blog/2017/07/12/the-next-generation-of-3d-tiles/">3D Tiles</a> to stream, style and interact with heterogeneous 3D data, including photogrammetry models, 3D buildings, CAD and BIM exterior and interiors, and point clouds.</li>
-<li>Control the camera and create flight paths.</li>
-<li>Use standard widgets to control animation time, select imagery layers, and zoom to a location.</li>
+<li>パフォーマンスと精度を重視した設計:<ul>
+<li>バッチとカリングに最適化されたWebGLにより、ハードウェアで高速化されたグラフィックスを効率的に使用します。</li>
+<li>ポリライン、ポリゴン、ビルボード、ラベル、押し出し、コリドーなど、さまざまなジオメトリを描画します。</li>
+<li><a class="reference external" href="https://cesium.com/blog/2017/07/12/the-next-generation-of-3d-tiles/">3Dタイル</a> を使用して、写真測量モデル、3D建物、CADとBIMの外部と内部、ポイントクラウドなど、異種の3Dデータをストリーミング、スタイル設定、および操作します。</li>
+<li>カメラを制御して飛行経路を作成します。</li>
+<li>標準ウィジェットを使用して、アニメーション時間を制御したり、画像レイヤを選択したり、場所にズームしたりします。</li>
 </ul>
 </li>
-<li>One API, Three Views:<ul>
-<li>Cesium supports a 3D globe, 2D map, and 2.5D Columbus View with the same API.</li>
+<li>1つのAPI、3つのビュー:<ul>
+<li>Cesium は同じAPIで3D地球儀、2Dマップ、2.5Dコロンブスビューをサポートしています。</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>WMS and WMTS</li>
+<li>WMSとWMTS</li>
 </ul>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://cesium.com/">https://cesium.com/</a></p>
-<p><strong>Licence:</strong> Apache 2.0 license</p>
-<p><strong>Software Version:</strong> 1.58</p>
-<p><strong>Supported Platforms:</strong>  Platform independent, depends only on a browser which supports WebGL</p>
-<p><strong>Community Support:</strong> Forum at <a class="reference external" href="https://groups.google.com/forum/?hl=en#!forum/cesium-dev">https://groups.google.com/forum/?hl=en#!forum/cesium-dev</a></p>
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://cesium.com/">https://cesium.com/</a></p>
+<p><strong>ライセンス:</strong> Apache 2.0 license</p>
+<p><strong>ソフトウェアバージョン:</strong> 1.58</p>
+<p><strong>対応プラットフォーム:</strong>  Platform independent, depends only on a browser which supports WebGL</p>
+<p><strong>コミュニティサポート:</strong> Forum at <a class="reference external" href="https://groups.google.com/forum/?hl=en#!forum/cesium-dev">https://groups.google.com/forum/?hl=en#!forum/cesium-dev</a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/cesium_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/cesium_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

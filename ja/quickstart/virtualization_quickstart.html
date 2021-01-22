@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OSGeoLive Quickstart for Running in a Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>仮想マシン内での OSGeoLive 起動クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,8 +26,8 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="Creating an OSGeoLive Bootable USB flash drive" href="usb_quickstart.html" />
-    <link rel="prev" title="Install OSGeoLive to Hard Disk" href="osgeolive_install_quickstart.html" />
+    <link rel="next" title="OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成" href="usb_quickstart.html" />
+    <link rel="prev" title="ハードディスクに OSGeoLive をインストール" href="osgeolive_install_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -70,103 +70,101 @@
           <div class="body" role="main">
             
   <div class="section" id="osgeolive-quickstart-for-running-in-a-virtual-machine">
-<h1>OSGeoLive Quickstart for Running in a Virtual Machine<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This Quick Start describes one way to run OSGeoLive within a VirtualBox virtual machine. For other methods, follow links from the 「See Also」 section below.</p>
+<h1>仮想マシン内での OSGeoLive 起動クイックスタート<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここでは、 OSGeo-Live を VirtualBox の仮想マシン内で動作させる1つの方法について記載します。他の方法については、以下の 「参照」 の章のリンクにしたがってください。</p>
 <div class="section" id="virtual-machine-advantages">
-<h2>Virtual Machine Advantages<a class="headerlink" href="#virtual-machine-advantages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>仮想マシンの利点<a class="headerlink" href="#virtual-machine-advantages" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>The response speed of a VM is much faster than on the DVD, and typically comparable with installing directly on the host machine.</li>
-<li>All configuration changes, software updates, and saved files are permanent, just like on any 「regular」 computer. So:</li>
+<li>VMの応答速度はDVDよりもはるかに速く、通常はホストマシンに直接インストールするのと同等です。</li>
+<li>すべての構成変更、ソフトウェア更新、および保存されたファイルは、「通常の」コンピュータと同様に永続的です。So:</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>You can customize and update the system</li>
-<li>You can save your work within the VM</li>
-<li>You can install additional software</li>
+<li>システムのカスタマイズとアップデートが可能です</li>
+<li>VM 内に作業状態を保存することが可能です</li>
+<li>追加のソフトウェアのインストールが可能です</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>You can backup your virtual machine installation.</li>
+<li>インストールした仮想マシンのバックアップが可能です</li>
 </ul>
 </div>
 <div class="section" id="system-requirements">
-<h2>System Requirements<a class="headerlink" href="#system-requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>動作環境<a class="headerlink" href="#system-requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>RAM: 2 GB at least. The Lubuntu system runs well with 1 GB of RAM, and you’ll need to keep at least the same amount of memory for your host system.
-So a total of 2 GB will be needed for smooth operation. Some applications, like GeoServer, needs the virtual machine to have at least 2GB of RAM. So if possible, consider providing 2 GB or more for your virtual machine.</li>
-<li>Spare Hard Disk Space: The virtual disk file (vmdk) from <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  unzips to almost 10 GB. You’ll also want more space to allow some room to work on the virtual machine. So 20 GB is a good recommendation.</li>
-<li>CPU: Any CPU will do, but a processor which supports 「Virtualization Technology」 will be faster. You can check your computer CPU <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">here</a>.</li>
+<li>RAM:2GB以上Ubuntuシステムは1GBのRAMで正常に動作するので、ホストシステムと少なくとも同じ量のメモリを確保する必要があります。したがって、スムーズな動作には合計2GBが必要です。GeoServerなどの一部のアプリケーションでは、仮想マシンに2GB以上のRAMが必要です。可能であれば、仮想マシンに2GB以上のRAMを用意することを検討してください。</li>
+<li>ハードディスクの空き容量 <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  の仮想ディスクファイル(vmdk)は、ほぼ10GBに解凍されます。また、仮想マシン上で作業できるスペースを確保するために、より多くのスペースが必要になります。したがって、20GBが推奨されます。</li>
+<li>CPU: どのCPUでもかまいませんが、」Virtualization Technology」をサポートの方が高速です。あなたのコンピュータのCPUは`ここ&lt;<a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html</a>&gt;_ で確認できます。</li>
 </ul>
-<p>Most machines produced in the last 4-5 years will meet these requirements.</p>
+<p>この 4〜5 年で製造されたマシンのほとんどは、この要件を満たしています。</p>
 </div>
 <div class="section" id="howto">
-<h2>Howto<a class="headerlink" href="#howto" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Downloads</strong></p>
-<p>Download <a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a>  for your platform, and install the software. On Windows run the installer, or on Ubuntu-like Linux systems do the following:</p>
+<h2>手順<a class="headerlink" href="#howto" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>ダウンロード</strong></p>
+<p><a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a>  をダウンロードし、ソフトウェアをインストールしてください。Windowsでインストーラを実行するか、UbuntuのようなLinuxシステムで次の操作を行います。</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
-<p>In addition download the OSGeo Virtual disk file (vmdk) from <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>.
-Click on the 「Download virtual machine」 button. Then unzip the downloaded file (using <a class="reference external" href="https://www.7-zip.org">7zip</a> ).</p>
-<p><strong>Create a Virtual Machine</strong></p>
-<p>Start the VirtualBox application and click on the New button to create a new VM, and then Next.</p>
+<p>さらに、<a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> からOSGeo仮想ディスクファイル(vmdk)をダウンロードします。「Download virtual machine(仮想マシンのダウンロード)」ボタンをクリックします。次に、ダウンロードしたファイルを解凍します(<a class="reference external" href="https://www.7-zip.org">7zip</a> )。</p>
+<p><strong>仮想マシンの作成</strong></p>
+<p>VirtualBox アプリケーションを起動し、新しい VM を作成するために New ボタンをクリックし、Next をクリックします。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox.png"><img alt="../../_images/virtualbox.png" src="../../_images/virtualbox.png" style="width: 386.5px; height: 291.5px;" /></a>
 </div></blockquote>
-<p>Enter a name such as OSGeoLive, and choose Linux as the 「Operating system」, and Ubuntu as the 「Version」.</p>
+<p>イメージに OSGeo-Live のような名前を付け、」Operating System」 に Linux、」Version」 に Ubuntu を選択します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name.png"><img alt="../../_images/virtualbox_select_name.png" src="../../_images/virtualbox_select_name.png" style="width: 247.79999999999998px; height: 280.0px;" /></a>
 </div></blockquote>
-<p>In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB, like in the screenshot below).</p>
+<p>次の画面で、メモリを1024MBに設定します(下のスクリーンショットのように、ホストコンピュータのメモリが4GBを超える場合はそれ以上)。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_memory.png"><img alt="../../_images/vmdk_memory.png" src="../../_images/vmdk_memory.png" style="width: 228.8px; height: 261.3px;" /></a>
 </div></blockquote>
-<p>Continue to the next screen and choose 「Use an existing virtual hard disk file」. Now click on the button (a folder icon) to browse to where you saved the OSGeoLive vmdk-file. Select this file, press Next and Create.</p>
+<p>次の画面に進み、」既存の仮想ハードディスクファイルを使用する」を選択します。次に、ボタン(フォルダアイコン)をクリックして、OSGeoLive vmdkファイルを保存した場所を参照します。このファイルを選択し、[次へ]と[作成]を押します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
 </div></blockquote>
-<p><strong>Config tips and tweaks</strong></p>
-<p>Once the VM is created, click on the Settings button. In the 「General」 section, go to the Advanced tab, and click to select 「Show at top of screen」 for the Mini toolbar.</p>
+<p><strong>設定のヒントと微調整</strong></p>
+<p>VMが作成されたら、[設定]ボタンをクリックします。[全般]セクションで、[詳細設定]タブに移動し、ミニツールバーの[画面上部に表示]をクリックして選択します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
 </div></blockquote>
-<p>Go to the 「Display」 section and increase video memory to 32 or 64 MB. In some host operating systems, it may be required to 「Enable 3D Acceleration」 for display to work properly.</p>
+<p>「ディスプレイ」セクションに移動し、ビデオメモリを32MBまたは64MBに増やします。一部のホストオペレーティングシステムでは、表示を正しく機能させるために「3Dアクセラレータを有効にする]が必要になる場合があります。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_display.png"><img alt="../../_images/vmdk_display.png" src="../../_images/vmdk_display.png" style="width: 424.45px; height: 282.1px;" /></a>
 </div></blockquote>
-<p>In addition, move to the 「Shared Folders」 section, and click the 「Add folder」 (green + icon on the right) to find a directory on your host computer that you wish to share inside the VM.</p>
+<p>さらに、」Shared Folders」 セクションに移動し、」Add folder」 (右側の緑の 「+」 アイコン) をクリックし、VM 内部で共有したいホストコンピュータのディレクトリを指定します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders.png"><img alt="../../_images/vmdk_shared_folders.png" src="../../_images/vmdk_shared_folders.png" style="width: 423.15000000000003px; height: 280.8px;" /></a>
 </div></blockquote>
-<p>You can choose to make the shared folder read-only, and auto-mounted. Once the 「Folder path」 and 「Folder name」 are defined, click OK, and again OK to finish and close the settings window.</p>
-<p><strong>Running the Virtual Machine</strong></p>
-<p>Now bootup the VM by clicking the Start (green arrow) button.</p>
-<p>When you install the iso on the VM, the username must be set to 「user」</p>
-<p>The user 「user」 is not a member of the 「users」 group on the OSGeoLive virtual machine. This prevents some tools from writing to its data directory and causes some software to fail to start.</p>
-<p>The solution is to fix the vmdk with the following one-time procedure:</p>
+<p>共有フォルダを読み取り専用にし、自動マウントすることもできます。「フォルダパス」と「フォルダ名」を定義したら、[OK]をクリックし、もう一度[OK]をクリックして設定ウィンドウを閉じます。</p>
+<p><strong>仮想マシンの起動</strong></p>
+<p>Start (緑の矢印) ボタンをクリックして、VM を起動しましょう。</p>
+<p>VMにisoをインストールする場合は、ユーザー名を「user」に設定する必要があります。</p>
+<p>ユーザー「user」は、OSGeoLive仮想マシンの「users」グループのメンバーではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
+<p>この問題を解決するには、次の1回限りの手順でvmdkを修正します。</p>
 <ol class="arabic simple">
-<li>Start a terminal.</li>
-<li>Run 「sudo adduser user users」.</li>
-<li>Apply this change by starting a new desktop session: either restart the virtual machine or log out and log back in (username 「user」, password 「user」).</li>
+<li>端末を起動します。</li>
+<li>sudo adduser user usersを実行します。</li>
+<li>この変更を適用するには、新しいデスクトップセッションを開始します。仮想マシンを再起動するか、ログアウトして再度ログインします(ユーザー名「user」、パスワード「user」)。</li>
 </ol>
-<p>Also once the OSGeo system starts, add yourself to the vboxsf group so that the shared folders (defined above) are accessible by running in a terminal window:</p>
+<p>また、OSGeoシステムが起動したら、vboxsfグループに自分自身を追加し、ターミナルウィンドウでを実行して共有フォルダ(上記で定義)にアクセスできるようにします。</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
-<p>In the above example, we defined a Shared Folder path on the host system and named it 「GIS」 in the VM Settings. The shared folder will appear in the file system under /media/sf_GIS/. To mount this folder in the user’s home directory, for example, in a terminal run:</p>
+<p>上の例では、ホストシステム上に共有フォルダパスを定義し、VM設定で「GIS」という名前を付けました。共有フォルダは、ファイルシステムの/media/sf_GIS/の下に表示されます。このフォルダをユーザのホームディレクトリにマウントするには(たとえば、ターミナルで次のように実行します。</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></code></p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></code></p>
-<p>Now files on your host machine in the chosen folder will also be available in the VM in the 「GIS」 folder in user’s home directory.</p>
+<p>これで、ホストマシンで選択したフォルダ内のファイルが、 VM 上のユーザのホームディレクトリ内の 「GIS」 フォルダでも利用可能になりました。</p>
 </div>
 <div class="section" id="see-also">
-<h2>See Also:<a class="headerlink" href="#see-also" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>参照:<a class="headerlink" href="#see-also" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><dl class="first docutils">
-<dt>OSGeo wiki pages:</dt>
-<dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Other ways to create a Virtual Machine</a></dd>
+<dt>OSGeo Wiki ページ:</dt>
+<dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">仮想マシンを作成するその他の方法</a></dd>
 </dl>
 </li>
 <li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a></li>
-<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Install OSGeoLive to Hard Disk</span></a></li>
-<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">Creating an OSGeoLive Bootable USB flash drive</span></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">ハードディスクに OSGeoLive をインストール</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成</span></a></li>
 </ul>
 </div></blockquote>
 </div>

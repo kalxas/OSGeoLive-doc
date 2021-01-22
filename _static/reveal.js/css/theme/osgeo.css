@@ -11,18 +11,18 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #f4faee;
-  background-color: #d0e7b4; }
+  background: #fff;
+  background-color: #fff; }
 
 .reveal {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 30px;
+  font-family: "Miriam Libre","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 34px;
   font-weight: normal;
-  color: #1166ad; }
+  color: #000; }
 
 ::selection {
   color: #fff;
-  background: #49a942;
+  background: red;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -40,8 +40,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #49a942;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #003A40;
+  font-family: "Miriam Libre","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
@@ -53,10 +53,10 @@ body {
   font-size: 2.5em; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.9em; }
 
 .reveal h3 {
-  font-size: 1.3em; }
+  font-size: 1.6em; }
 
 .reveal h4 {
   font-size: 1em; }
@@ -124,8 +124,8 @@ body {
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 10px auto;
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
@@ -142,7 +142,7 @@ body {
   display: block;
   position: relative;
   width: 90%;
-  margin: 20px auto;
+  margin: 10px auto;
   text-align: left;
   font-size: 0.55em;
   font-family: monospace;
@@ -164,6 +164,7 @@ body {
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0; }
+
 
 .reveal table th {
   font-weight: bold; }
@@ -205,29 +206,29 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #49a942;
+  color: #4DB05B;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #f3d7ac;
+  color: #4DB05B;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #49a942; }
+  background: #003A40; }
 
 /*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
+  margin: 10px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 0px solid #eeeeee;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+  border: 0px solid #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
 
 .reveal section img.plain {
   border: 0;
@@ -246,33 +247,33 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #49a942; }
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #4DB05B; }
 
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #49a942; }
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #4DB05B; }
 
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #49a942; }
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #4DB05B; }
 
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #49a942; }
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #4DB05B; }
 
-.reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #49a942; }
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #003A40; }
 
-.reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #49a942; }
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #003A40; }
 
-.reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #49a942; }
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #003A40; }
 
-.reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #49a942; }
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #003A40; }
 
 /*********************************************
  * PROGRESS BAR

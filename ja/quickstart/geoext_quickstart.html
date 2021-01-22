@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GeoExt Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>GeoExt クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,31 +71,29 @@
             
   <a class="reference external image-reference" href="https://geoext.github.io/geoext3"><img alt="../../_images/logo_geoext.png" class="align-right" src="../../_images/logo_geoext.png" /></a>
 <div class="section" id="geoext-quickstart">
-<h1>GeoExt Quickstart<a class="headerlink" href="#geoext-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>GeoExt is a JavaScript library that runs in the browser, it combines and enhances the ExtJS framework and OpenLayers library.
-This quick start details the steps to create a rich web application using GeoExt components in less than 200 lines of code.
-We will be using the installed MapServer web services on OSGeoLive a MapServer to supply map layers to the application. Completing the steps below will result in the demo GeoExt application at <a class="reference external" href="http://localhost/geoext/">http://localhost/geoext/</a>.</p>
+<h1>GeoExt クイックスタート<a class="headerlink" href="#geoext-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>GeoExtはブラウザ上で動作するJavaScriptライブラリであり、ExtJSフレームワークとOpenLayersライブラリを組み合わせて拡張したものです。このクイックスタートでは、200行未満のコードでGeoExtコンポーネントを使用してリッチなWebアプリケーションを作成する手順について詳しく説明します。アプリケーションにマップ・レイヤーを提供するために、OSGeoLiveにインストールされたMapServer WebサービスをMapServerとして使用します。以下のステップを完了すると、<a class="reference external" href="http://localhost/geoext/">http://localhost/geoext/</a> でGeoExtアプリケーションのデモが行われます。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#create-an-html-page" id="id1">Create an HTML page</a></li>
-<li><a class="reference internal" href="#configure-openlayers-objects" id="id2">Configure OpenLayers objects</a></li>
-<li><a class="reference internal" href="#work-with-geoext-components" id="id3">Work with GeoExt components</a></li>
-<li><a class="reference internal" href="#create-a-viewport" id="id4">Create a viewport</a></li>
-<li><a class="reference internal" href="#what-s-next" id="id5">What’s next?</a></li>
+<li><a class="reference internal" href="#create-an-html-page" id="id1">HTMLページを作成する</a></li>
+<li><a class="reference internal" href="#configure-openlayers-objects" id="id2">OpenLayersオブジェクトを設定する</a></li>
+<li><a class="reference internal" href="#work-with-geoext-components" id="id3">GeoExtコンポーネントを操作する</a></li>
+<li><a class="reference internal" href="#create-a-viewport" id="id4">ビューポートを作成する</a></li>
+<li><a class="reference internal" href="#what-s-next" id="id5">次は?</a></li>
 </ul>
 </div>
 <div class="section" id="create-an-html-page">
-<h2><a class="toc-backref" href="#id1">Create an HTML page</a><a class="headerlink" href="#create-an-html-page" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>In this step we will set-up an empty HTML page which will contain the application. We’ll use the text editor FeatherPad installed on OSGeoLive to create a new HTML file at <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
+<h2><a class="toc-backref" href="#id1">HTMLページを作成する</a><a class="headerlink" href="#create-an-html-page" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このステップでは、アプリケーションを含む空のHTMLページを設定します。OSGeoLiveにインストールされているテキストエディタのFeatherPadを使って、<code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code> に新しいHTMLファイルを作成します。</p>
 <ol class="arabic">
-<li><p class="first">Open FeatherPad from the command line with elevated permissions, so you can save the file, using System Tools &gt; QTerminal and then running run the command below:</p>
+<li><p class="first">管理者特権でコマンドラインからFeatherPadを開き、[システムツール]&gt;[QTerminal]を使用してファイルを保存し、次のコマンドを実行して実行できるようにします。</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next paste in the HTML below, and save the file as <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. The file contains links to the ExtJS and OpenLayers JavaScript libraries, and two CSS files used to style ExtJS and OpenLayers components.</p>
-<p>We will use the <code class="docutils literal"><span class="pre">Ext.Loader</span></code> class to load in GeoExt JavaScript source files. These are all in the <code class="docutils literal"><span class="pre">src</span></code> folder in <code class="docutils literal"><span class="pre">/var/www/html/geoext/</span></code>.</p>
+<li><p class="first">次に下のHTMLに貼り付け、ファイルを <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code> として保存します。このファイルには、ExtJSおよびOpenLayers JavaScriptライブラリへのリンクと、ExtJSおよびOpenLayersコンポーネントのスタイル設定に使用される2つのCSSファイルが含まれています。</p>
+<p><code class="docutils literal"><span class="pre">Ext.Loader``クラスを使用して、GeoExtのJavaScriptソースファイルをロードします。これらはすべて</span> <span class="pre">``/var/www/html/geoext/</span></code> の <code class="docutils literal"><span class="pre">src</span></code> フォルダにあります。</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -126,15 +124,14 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 </div>
 </li>
 </ol>
-<p>You should now be able to view an empty HTML page in Firefox at <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a></p>
-<p>All the JavaScript in the following sections should be pasted after the <code class="docutils literal"><span class="pre">//</span> <span class="pre">all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> comment in the
-<code class="docutils literal"><span class="pre">Ext.onReady</span></code> function. Placing code here ensures the JavaScript libraries have been loaded before running any custom JavaScript code.</p>
+<p><a class="reference external" href="http://localhost/geoext/demo">http://localhost/geoext/demo</a>.htmlでFirefoxの空のHTMLページを見ることができるようになりましたね。</p>
+<p>以下のセクションにあるすべてのJavaScriptは、<code class="docutils literal"><span class="pre">Ext.onReady</span></code> 関数の <code class="docutils literal"><span class="pre">//all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> コメントの後に貼り付ける必要があります。ここにコードを配置すると、カスタムJavaScriptコードを実行する前に、JavaScriptライブラリが確実にロードされます。</p>
 </div>
 <div class="section" id="configure-openlayers-objects">
-<h2><a class="toc-backref" href="#id2">Configure OpenLayers objects</a><a class="headerlink" href="#configure-openlayers-objects" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Next we will configure some OpenLayers objects used by the application.</p>
+<h2><a class="toc-backref" href="#id2">OpenLayersオブジェクトを設定する</a><a class="headerlink" href="#configure-openlayers-objects" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、アプリケーションが使用するOpenLayersオブジェクトを設定します。</p>
 <ol class="arabic">
-<li><p class="first">First lets create a map tile layer using OpenStreetMap, and some WMS layers that are available from the MapServer Itasca demo on OSGeoLive.</p>
+<li><p class="first">まず、OpenStreetMapを使用してマップタイル画層を作成し、OSGeoLiveのMapServer Itascaデモで使用できるWMS画層をいくつか作成します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">mapServerUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map&amp;&#39;</span><span class="p">;</span>
 
@@ -169,7 +166,7 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next we are going to add in a WFS vector layer - this is a little more complicated, but follows the same approach of creating a source and then a layer as the previous layers:</p>
+<li><p class="first">次に、WFSベクトルレイヤを追加します。これは少し複雑ですが、前のレイヤと同じ方法でソースとレイヤを作成します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
     <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">(),</span>
     <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">extent</span><span class="p">)</span> <span class="p">{</span>
@@ -188,8 +185,7 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now we are going to create our OpenLayers map object configured with the layers we just created. We will also set the center
-and zoom level of the map, and add in a select interaction so we can select features in our vector layer.</p>
+<li><p class="first">次に、作成した画層で設定されたOpenLayersマップオブジェクトを作成します。また、マップの中心とズームレベルを設定し、ベクタライヤでフィーチャを選択できるように選択インタラクションに追加します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
     <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
         <span class="nx">wmsLayer1</span><span class="p">,</span> <span class="nx">wmsLayer2</span><span class="p">,</span> <span class="nx">wmsLayer3</span><span class="p">,</span> <span class="nx">vectorLayer</span>
@@ -208,10 +204,10 @@ and zoom level of the map, and add in a select interaction so we can select feat
 </ol>
 </div>
 <div class="section" id="work-with-geoext-components">
-<h2><a class="toc-backref" href="#id3">Work with GeoExt components</a><a class="headerlink" href="#work-with-geoext-components" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now the map and layers have been configured we are going to create and configure our GeoExt components.</p>
+<h2><a class="toc-backref" href="#id3">GeoExtコンポーネントを操作する</a><a class="headerlink" href="#work-with-geoext-components" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これで、マップと画層が設定されました。次に、GeoExtコンポーネントを作成して設定します。</p>
 <ol class="arabic">
-<li><p class="first">First of all we will create a <code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code>. This uses the OpenLayers map we created, and will be positioned in the 『center』 region of our application.</p>
+<li><p class="first">まず、<code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code> を作成します。これは、作成したOpenLayersマップを使用し、アプリケーションの``中央``領域に配置されます。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mapComponent</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.Map&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
     <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
@@ -219,10 +215,7 @@ and zoom level of the map, and add in a select interaction so we can select feat
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next we will create a layer tree component. The tree has its own data store - <code class="docutils literal"><span class="pre">GeoExt.data.store.LayersTree</span></code>, which we will fill
-with layers from our OpenLayers map. The store will then be used to populate our tree panel. We will also add in a plugin to the
-tree to allow the map layer order to be changed by dragging and dropping the layers. The <code class="docutils literal"><span class="pre">flex</span></code> property causes the tree panel
-to fill up all available space in its region of the screen.</p>
+<li><p class="first">次に、画層ツリーコンポーネントを作成します。ツリーには独自のデータストア <code class="docutils literal"><span class="pre">GeoExt.data.store.LayersTree`</span> <span class="pre">`があり、OpenLayersマップのレイヤで埋めます。このストアは、ツリー・パネルへの入力に使用されます。また、ツリーにプラグインを追加して、レイヤをドラッグアンドドロップして地図レイヤの順序を変更できるようにします。``flex</span></code> プロパティーを指定すると、ツリー・パネルは画面の領域内の使用可能なスペースをすべて埋めます。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">treeStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.LayersTree&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layerGroup</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getLayerGroup</span><span class="p">()</span>
 <span class="p">});</span>
@@ -240,8 +233,7 @@ to fill up all available space in its region of the screen.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">We are also going to create a grid component to display the attributes of features in our WFS layer.
-Similar to the layer tree store and tree panel, we create a <code class="docutils literal"><span class="pre">GeoExt.data.store.Features</span></code> store and a grid panel.</p>
+<li><p class="first">また、WFSレイヤのフィーチャの属性を表示するグリッドコンポーネントを作成します。レイヤーツリーストアとツリーパネルと同様に、<code class="docutils literal"><span class="pre">GeoExt.data.store.Features</span></code> ストアとグリッドパネルを作成します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">featureStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.Features&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layer</span><span class="o">:</span> <span class="nx">vectorLayer</span><span class="p">,</span>
     <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span>
@@ -269,8 +261,7 @@ Similar to the layer tree store and tree panel, we create a <code class="docutil
 </pre></div>
 </div>
 </li>
-<li><p class="first">Our final GeoExt component is an overview map - <code class="docutils literal"><span class="pre">GeoExt.component.OverviewMap</span></code>.
-We will configure this to display the OpenStreetMap layer we created earlier, and place it in an ExtJS panel.</p>
+<li><p class="first">我々の最後のGeoExtコンポーネントは概観地図-<code class="docutils literal"><span class="pre">GeoExt.componnet.OverviewMap</span></code> である。先ほど作成したOpenStreetMapレイヤーを表示するように設定し、ExtJSパネルに配置します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">overview</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.OverviewMap&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">parentMap</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
     <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="nx">osmLayer</span><span class="p">]</span>
@@ -290,8 +281,8 @@ We will configure this to display the OpenStreetMap layer we created earlier, an
 </ol>
 </div>
 <div class="section" id="create-a-viewport">
-<h2><a class="toc-backref" href="#id4">Create a viewport</a><a class="headerlink" href="#create-a-viewport" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The final step in creating our application is to create a viewport - a container representing the application which will display all the components we created above.</p>
+<h2><a class="toc-backref" href="#id4">ビューポートを作成する</a><a class="headerlink" href="#create-a-viewport" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アプリケーションを作成する最後のステップは、ビューポートを作成することです。ビューポートとは、上記で作成したすべてのコンポーネントを表示するアプリケーションを表すコンテナです。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vp</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.container.Viewport&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;border&#39;</span><span class="p">,</span>
     <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
@@ -311,18 +302,16 @@ We will configure this to display the OpenStreetMap layer we created earlier, an
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>You should now be able to refresh the link <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a> in your browser and see a complete GeoExt application similar to the image below.</p>
+<p>ブラウザでリンクhttp://localhost/geoext/demo.htmlを更新すると、下の画像のような完全なGeoExtアプリケーションが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoext_quickstart.png"><img alt="../../_images/geoext_quickstart.png" src="../../_images/geoext_quickstart.png" style="width: 1521.0px; height: 725.0px;" /></a>
 </div>
 <div class="section" id="what-s-next">
-<h2><a class="toc-backref" href="#id5">What’s next?</a><a class="headerlink" href="#what-s-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">次は?</a><a class="headerlink" href="#what-s-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>The <a class="reference external" href="https://geoext.github.io/geoext3/">GeoExt homepage</a> contains full <a class="reference external" href="https://geoext.github.io/geoext3/v3.1.0/docs">API documentation</a>
-and examples</li>
-<li>A <a class="reference external" href="https://github.com/geoext/geoext3-ws">GeoExt workshop</a> details all the steps for configuring and using
-GeoExt3 in your ExtJS applications</li>
-<li>The <a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc">OpenLayers v4.6.5 API docs</a></li>
-<li>The <a class="reference external" href="https://docs.sencha.com/extjs/6.2.0/">ExtJS 6.2.0 API docs</a></li>
+<li><a class="reference external" href="https://geoext.github.io/geoext3/">GeoExtのホームページ</a> には完全な <a class="reference external" href="https://geoext.github.io/geoext3/v3.1.0/docs">APIドキュメント</a> と例があります。</li>
+<li><a class="reference external" href="https://github.com/geoext/geoext3-ws">GeoExtワークショップ</a> では、ExtJSアプリケーションでGeoExt3を設定および使用するためのすべての手順について詳しく説明しています。</li>
+<li><a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc">OpenLayers v4.6.5 APIド キュメント</a></li>
+<li><a class="reference external" href="https://docs.sencha.com/extjs/6.2.0/">ExtJS 6.2.0 API ドキュメント</a></li>
 </ul>
 </div>
 </div>

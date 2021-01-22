@@ -73,52 +73,44 @@
 <div class="section" id="eoxserver">
 <h1>EOxServer<a class="headerlink" href="#eoxserver" title="Link a questa intestazione">¶</a></h1>
 <div class="section" id="about">
-<h2>About<a class="headerlink" href="#about" title="Link a questa intestazione">¶</a></h2>
-<p>EOxServer is a server for presenting big Earth Observation (EO) data
-archives and metadata via Open Standards.</p>
-<p>Earth Observation data currently supported includes 2D raster data generally
-acquired using sensors on satellites or aircrafts and including information
-about the time of acquisition and the footprint on planet Earth. It is
-typically used to monitor Earth’s natural and built environment.</p>
-<p>EOxServer builds upon an Open Source stack of software which includes
-Python, <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="gdal_overview.html"><span class="doc">GDAL</span></a>, PROJ.4, and a <a class="reference internal" href="spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or
-<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
+<h2>A proposito di<a class="headerlink" href="#about" title="Link a questa intestazione">¶</a></h2>
+<p>EOxServer è un server per visualizzare dati e matadati Earth Observation (EO) attraverso Standard aperti.</p>
+<p>I dati Earth Observation attualmente supportati includono raster 2D generalmente acquisiti usando sensori di satelliti o aerei includendo informazioni sulla data di acquisizione e il footprint del pianeta. È tipicamente usato per monitorare l’ambiente naturale e artificiale</p>
+<p>EOxServer è costruito su uno stack di software Open Source che include Python, <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="gdal_overview.html"><span class="doc">GDAL</span></a>, PROJ.4, e un database <a class="reference internal" href="spatialite_overview.html"><span class="doc">SpatiaLite</span></a> o <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a> .</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_screenshot.png"><img alt="eoxserver screenshot" class="align-right" src="../../_images/eoxserver_screenshot.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h2>
+<h2>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
-<li>View, filter, subset, and download EO data</li>
-<li>Register EO data archives</li>
-<li>Web based and command line administration interface</li>
+<li>Visualizzazione, filtro, subset e scaricamento EO data</li>
+<li>Registrazione di set di dati EO</li>
+<li>Interfaccia di amministrazione sul web e da linea di comando</li>
 <li>Publish data via <a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a><ul>
 <li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a> 1.0, 1.1 and
 2.0 &amp; proposed EO-WCS</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> &amp; EO-WMS</li>
-<li>Proposed extensions to WCS including: GeoTIFF encoding, predefined
-projections (CRSs), scaling, and interpolation.</li>
-<li>Protocols supported are: KVP and XML/POST (used together with SOAP2POST
-Proxy to provide also XML/SOAP)</li>
+<li>Proposta estensione al WCS per includere: codifica GeoTIFF, proiezioni predefinite (CRSs), riscalamento, e interpolazione.</li>
+<li>Protocolli supportati sono KVP, XML/POST (usato insieme con SOAP2POST Proxy per fornire un’interfaccia XML/SOAP)</li>
 </ul>
 </li>
-<li>Publish using the following formats and groupings:<ul>
-<li>2-D EO Coverages derived from gmlcov:RectifiedGridCoverage</li>
-<li>2-D EO Coverages derived from gmlcov:ReferenceableGridCoverage</li>
-<li>Dataset Series as a collection of EO Coverages e.g. in a time series</li>
+<li>Pubblicazione usando i seguenti formati e gruppi:<ul>
+<li>2-D EO Coverages derivato da gmlcov:RectifiedGridCoverage</li>
+<li>2-D EO Coverages derivato da gmlcov:ReferenceableGridCoverage</li>
+<li>Serie di dataset come una collezione di EO Coverages es. in una serie temporale</li>
 <li>Stitched Mosaics of Rectified EO Coverages including contributingFootprint</li>
 </ul>
 </li>
-<li>Coverage formats supported:</li>
+<li>Formati di covarage supportati:</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
 <li>GeoTIFF</li>
-<li>Formats supported by the GDAL library</li>
+<li>Formati supportati dalla libreria GDAL</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h2>
+<h2>Standards implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li>WCS, EO-WCS</li>
@@ -130,18 +122,18 @@ Proxy to provide also XML/SOAP)</li>
 </div></blockquote>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h2>
+<h2>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h2>
 <p><strong>Website:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/stable/">https://docs.eoxserver.org/en/stable/</a></p>
 <p><strong>Licence:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/copyright.html#license">MIT-style license</a></p>
-<p><strong>Software Version:</strong> 1.0.0beta1</p>
-<p><strong>Supported Platforms:</strong> Linux, Windows, Mac</p>
-<p><strong>API Interfaces:</strong> Python</p>
+<p><strong>Versione Software:</strong> 1.0.0beta1</p>
+<p><strong>Piattaforme Supportate:</strong> Linux, Windows, Mac</p>
+<p><strong>Interfacce API:</strong> Python</p>
 <p><strong>Support:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support">https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support</a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h2>
+<h2>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
 </ul>
 </div>
 </div>

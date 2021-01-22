@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="52 North SOS Quickstart" href="../quickstart/52nSOS_quickstart.html" />
-    <link rel="prev" title="istSOS Quickstart" href="../quickstart/istsos_quickstart.html" />
+    <link rel="prev" title="istSOSクイックスタート" href="../quickstart/istsos_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -74,97 +74,58 @@
 <h1>52 North SOS<a class="headerlink" href="#north-sos" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The 52°North <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a>
-supports the interoperable provision of live and archived sensor observation
-data. A sensor could be a water level meter in a stream, a weather station, or
-an air quality monitoring station.</p>
+<p>52°North <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> は、ライブおよびアーカイブされたセンサー観測データの相互運用可能な提供をサポートします。センサーには、河川の水位計、気象ステーション、大気質モニタリングステーションなどがあります。</p>
 <a class="reference internal image-reference" href="../../_images/52nSOS_screenshot.png"><img alt="52nSOS screenshot" class="align-right" src="../../_images/52nSOS_screenshot.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><strong>Browser Client</strong>: The SOS is delivered with a browser based application.
-This provides means for administration and configuration of the service
-instance, as well as sending test requests for SOS operations; appropriate
-sample requests are included.</li>
-<li><strong>Helgoland</strong>: The SOS contains the Helgoland application for  the exploration,
-analysis and visualization of Sensor Web data in various fields of use, e.g.
-hydrology, meteorology, environmental monitoring, traffic management.</li>
-<li><strong>Specifications</strong>: The 52°North SOS implements the current specification version 2.0.0 and the
-previous version 1.0.0 (here no transactional operations). Implemented
-operations for each standard version are listed below.</li>
-<li><strong>INSPIRE Download Service Extension</strong>: Starting with Version 4.2.0, an
-extension is available that allows the SOS to be used as an INSPIRE download
-service. Background information is provided in a <a class="reference external" href="https://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">blog post</a>
-and in the <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">wiki</a> .</li>
-<li><strong>Air Quality Data e-Reporting Extension</strong>: Starting with version 4.3.0, an
-extension is available that provides for the Air Quality Data Flows E1a,
-E1b and E2a compliant data (the instance on OSGeoLive is not configured
-accordingly). The <a class="reference external" href="https://wiki.52north.org/SensorWeb/AqdEReporting#Installation">installation and configuration</a>
-is documented in the 52°North Wiki.</li>
-<li><strong>Sensor Web REST-API</strong>: Starting with Version 4.1.1., a bundle
-version is available, that directly provides the <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorWebClientRESTInterface">RESTful API</a>,
-is available.
-Hence, observation data can be requested in a RESTful way and is returned
-in JSON encoded responses. More details incl. documentation can be found in the
-<a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">SOS webapp</a>.</li>
-<li><strong>INSPIRE Sepcialized Observations</strong>: Support for the INSPIRE Specialized
-Observations defined in Guidelines for the use of <a class="reference external" href="https://inspire.ec.europa.eu/id/document/tg/d2.9-o%26m-swe">Observations &amp; Measurements and
-Sensor Web Enablement-related standards in INSPIRE (D2.9)</a>
-(<a class="reference external" href="https://wiki.52north.org/SensorWeb/InspireSpecialisedObservations">detailed information about the implementation</a>).</li>
-<li><strong>ResultFiltering</strong>: Support for the filtering the observations (GetObservation)
-and data availabiliy information (GetDataAvailability) by the value of the observation.</li>
-<li><strong>Read more</strong>: <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#Features">Details of the implemented functionalities</a>
-can be found in the 52°North Wiki.</li>
-<li>The development of this version of the 52°North SOS was supported by different
-projects, organizations, and persons. More details can be found in the
-<a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS client</a>.</li>
-<li>We would like to thank the Belgian Interregional Environment Agency
-(<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>)
-for providing the demonstration data used in this SOS installation.
-The demo data are published under a
-<a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> License.</li>
+<li><strong>ブラウザクライアント</strong>:SOSはブラウザベースのアプリケーションで提供されます。これにより、サービス・インスタンスの管理と構成、およびSOS操作のテスト要求の送信のための手段が提供されます。適切なサンプル要求が含まれます。</li>
+<li><strong>Helgoland</strong>:SOSには、水文、気象、環境モニタリング、交通管理など、さまざまな使用分野におけるセンサーWebデータの調査、分析、視覚化のためのHelgolandアプリケーションが含まれています。</li>
+<li><strong>仕様</strong>: 52°North SOSは、現在の仕様バージョン2.0.0および以前のバージョン1.0.0を実装します(ここではトランザクション操作はありません)。各標準バージョンに実装されている操作を以下に示します。</li>
+<li><strong>INSPIRE ダウンロードサービス拡張</strong>: バージョン4.2.0以降では、SOSをINSPIREダウンロードサービスとして使用できるように拡張されています。背景情報は、<a class="reference external" href="https://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">ブログポスト</a>  および  <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">Wiki</a> で提供されています。</li>
+<li><strong>Air Quality データ eレポート拡張</strong>: バージョン4.3.0以降では、Air Quality Data Flows E1a、E1b、およびE2a準拠データを提供する拡張機能が使用可能です(OSGeoLiveのインスタンスは適切に設定されていません)。<a class="reference external" href="https://wiki.52north.org/SensorWeb/AqdEReporting#Installation">インストールと設定</a> は 52°North Wiki 内に記載されています。</li>
+<li><strong>センサー Web REST-API</strong>: バージョン4.1.1以降では、バンドルバージョンが使用可能で、 <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorWebClientRESTInterface">RESTful API</a>　が直接使用可能です。したがって、観測データはRESTfulな方法で要求することができ、JSONエンコードされた応答で返されます。詳細については`SOS webapp &lt;<a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">http://localhost:8080/52nSOS/static/doc/api-doc/</a>&gt;`_ 内で文書を確認できます。</li>
+<li><strong>INSPIRE 専門観測</strong>: <a class="reference external" href="https://inspire.ec.europa.eu/id/document/tg/d2.9-o%26m-swe">INSPIREにおける観測と測定及びセンサーWeb対応関連標準規格 (D2.9)</a> ガイドラインで定義されている INSPIRE 専門観測をサポートしています(<a class="reference external" href="https://wiki.52north.org/SensorWeb/InspireSpecialisedObservations">実装についての詳細情報</a>)。</li>
+<li><strong>結果フィルタリング</strong>: 観測データ(GetObservation)とデータ可用性情報(GetDataAvailability)の観測データ値でのフィルタリングをサポートしています。</li>
+<li><strong>詳細</strong>: <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#Features">実装された機能の詳細</a> は 52°North Wiki にあります。</li>
+<li>このバージョンの 52°North SOS の開発は、様々なプロジェクト、組織、メンバーによってサポートされています。詳細については <a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS client</a> を参照してください。</li>
+<li>我々は、このSOSインストールで利用されているデモデータを提供してくれた、ベルギーの地域間環境庁(<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>)に感謝の意を表します。でもデータは、 <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> ライセンスの下で公開されています。</li>
 </ul>
 <div class="section" id="sos-operations">
-<h3>SOS Operations<a class="headerlink" href="#sos-operations" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Queries</strong>:</p>
+<h3>SOS 操作<a class="headerlink" href="#sos-operations" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>クエリ</strong>:</p>
 <ul class="simple">
-<li>GetCapabilities: for requesting a self-description of the service.</li>
-<li>DescribeSensor: for requesting information about the sensor.</li>
-<li>GetFeatureOfInterest / GetFeatureOfInterestTime (from 1.0): for requesting features
-(e.g. sensor/measurement locations).</li>
-<li>GetObservationById / GetObservation: for requesting observations.</li>
-<li>GetResult (from specification version 2.0): for requesting sensor data.</li>
-<li>GetResultTemplate (from specification version 2.0): for requesting a template of the result
-structure that will be returned by a GetResult request.</li>
-<li>GetDataAvailability (from <a class="reference external" href="https://docs.ogc.org/bp/14-004r1/14-004r1.html#38">SOS 2.0 Hydrology Profile - OGC Best Practice</a>): for
-requesting the data availability for certain configurations.</li>
+<li>GetCapabilities: サービスの自己記述を要求します。</li>
+<li>DescribeSensor: センサーに関する情報を要求します。</li>
+<li>GetFeatureOfInterest / GetFeatureOfInterestTime (1.0以降): 機能(センサー/測定位置など)を要求します。</li>
+<li>GetObservationById / GetObservation: 観測データを要求します。</li>
+<li>GetResult (仕様バージョン2.0以降): センサーデータを要求します。</li>
+<li>GetResultTemplate (仕様バージョン2.0以降): GetResult 要求で返される結果データのテンプレートを要求します。</li>
+<li>GetDataAvailability (<a class="reference external" href="https://docs.ogc.org/bp/14-004r1/14-004r1.html#38">SOS 2.0 水文学プロファイル - OGC ベストプラクティス</a>): 特定の構成のデータ可用性を要求します。</li>
 </ul>
-<p><strong>Transactions</strong>:</p>
+<p><strong>トランザクション</strong>:</p>
 <ul class="simple">
-<li>InsertSensor (from specification version 2.0): for inserting metadata of new sensors.</li>
-<li>InsertObservation (from specification version 2.0): for inserting new observations.</li>
-<li>UpdateSensorDescription (from specification version 2.0): for updating the description of a sensor.</li>
-<li>DeleteSensor (from specification version 2.0): for deleting a sensor/procedure and all related
-offerings and observations.</li>
-<li>DeleteObservation (extension for SOS specification 2.0): for deleting an observation.</li>
-<li>InsertResultTemplate (from specification version 2.0): for inserting a result template.</li>
-<li>InsertResult (from specification version 2.0): for inserting results.</li>
-<li>InsertFeatureOfInterest for feature insertion</li>
-<li>DeleteResultTemplate for the deletion of resultTemplates by identifier
-or offering/observedProperty pairs</li>
+<li>InsertSensor (仕様バージョン2.0以降): 新しいセンサーのメタデータを挿入します。</li>
+<li>InsertObservation (仕様バージョン2.0以降): 新しい観測データを挿入します。</li>
+<li>UpdateSensorDescription (仕様バージョン2.0以降): センサーの説明を更新します。</li>
+<li>DeleteSensor (仕様バージョン2.0以降): センサー/プロシージャと全ての関連する提供物と観測データを削除します。</li>
+<li>DeleteObservation (SOS 仕様 2.0の拡張): 観測データを削除します。</li>
+<li>InsertResultTemplate (仕様バージョン2.0以降): 結果テンプレートを挿入します。</li>
+<li>InsertResult (仕様バージョン2.0以降): 結果データを挿入します。</li>
+<li>InsertFeatureOfInterest 地物を挿入します。</li>
+<li>DeleteResultTemplate 識別子または提供サービスID/計測項目ペアにより、結果テンプレートを削除します。</li>
 </ul>
-<p>Within these operations, the following filter operators are possible where
-applicable:</p>
+<p>これらの操作では、該当する場合、以下のフィルタ演算子が利用可能です:</p>
 <ul class="simple">
-<li>Spatial filter: BBOX, using a bounding box.</li>
-<li>Temporal filter: During, with time period.</li>
-<li>Temporal filter: TEquals, with time instant.</li>
+<li>空間フィルタ: BBOX、バウンディングボックスを指定します。</li>
+<li>時間フィルタ: During、期間を指定します。</li>
+<li>時間フィルタ: TEquals、時間を指定します。</li>
 </ul>
 </div>
 </div>
 <div class="section" id="applicable-standards">
-<h2>Applicable Standards<a class="headerlink" href="#applicable-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>適用可能な標準規格<a class="headerlink" href="#applicable-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a></li>
@@ -172,23 +133,23 @@ applicable:</p>
 </ul>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://52north.org/software/software-projects/sos">https://52north.org/software/software-projects/sos</a></p>
-<p><strong>Licence:</strong> GNU General Public License (GPL) version 2</p>
-<p><strong>Software Version:</strong> 4.4.3</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
-<p><strong>Supported Java Versions:</strong> 7+, (bundle version: 8+)</p>
-<p><strong>Supported DBMS:</strong> PostgreSQL (9+) + PostGIS (2+), MariaDB/MySQL (5.6+), Oracle DB (9+), SQL Server 2012</p>
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://52north.org/software/software-projects/sos">https://52north.org/software/software-projects/sos</a></p>
+<p><strong>ライセンス:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>ソフトウェアバージョン:</strong> 4.4.3</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>サポートする Java バージョン:</strong> 7+, (バンドルバージョン: 8+)</p>
+<p><strong>サポートする DBMS:</strong> PostgreSQL (9+) + PostGIS (2+), MariaDB/MySQL (5.6+), Oracle DB (9+), SQL Server 2012</p>
 <p><strong>API:</strong> Java, HTTP + JSON/XML/SOAP/KVP</p>
-<p><strong>Commercial Support:</strong> <a class="reference external" href="https://52north.org/services/">https://52north.org/services/</a></p>
-<p><strong>Community Support:</strong> <a class="reference external" href="https://list.52north.org/mailman/listinfo/sensorweb">https://list.52north.org/mailman/listinfo/sensorweb</a></p>
-<p><strong>Community Website:</strong> <a class="reference external" href="https://52north.org/research/research-labs/sensor-web/">https://52north.org/research/research-labs/sensor-web/</a></p>
-<p><strong>Other 52°North projects on OSGeoLive:</strong> <a class="reference internal" href="52nWPS_overview.html"><span class="doc">WPS</span></a></p>
+<p><strong>商用サポート:</strong> <a class="reference external" href="https://52north.org/services/">https://52north.org/services/</a></p>
+<p><strong>コミュニティサポート:</strong> <a class="reference external" href="https://list.52north.org/mailman/listinfo/sensorweb">https://list.52north.org/mailman/listinfo/sensorweb</a></p>
+<p><strong>コミュニティWebサイト:</strong> <a class="reference external" href="https://52north.org/research/research-labs/sensor-web/">https://52north.org/research/research-labs/sensor-web/</a></p>
+<p><strong>OSGeoLiveでの他の 52°North プロジェクト:</strong> <a class="reference internal" href="52nWPS_overview.html"><span class="doc">WPS</span></a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/52nSOS_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/52nSOS_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

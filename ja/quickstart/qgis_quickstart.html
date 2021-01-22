@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>QGIS Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>QGIS クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,214 +72,189 @@
   <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="qgis-quickstart">
-<h1>QGIS Quickstart<a class="headerlink" href="#qgis-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>QGIS is a user-friendly Desktop GIS client which lets
-you visualize, manage, edit, analyse data and compose printable maps.</p>
+<h1>QGIS クイックスタート<a class="headerlink" href="#qgis-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>QGISはユーザフレンドリなデスクトップGISクライアントで、データの視覚化、管理、編集、分析、印刷可能なマップの作成を行うことができます。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-qgis" id="id1">Start QGIS</a></li>
-<li><a class="reference internal" href="#create-a-project" id="id2">Create a project</a></li>
-<li><a class="reference internal" href="#open-an-existing-project" id="id3">Open an existing project</a></li>
-<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigate the map</a></li>
-<li><a class="reference internal" href="#style-your-layers" id="id5">Style your layers</a></li>
-<li><a class="reference internal" href="#things-to-try" id="id6">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id7">What next?</a></li>
+<li><a class="reference internal" href="#start-qgis" id="id1">スタートQGIS</a></li>
+<li><a class="reference internal" href="#create-a-project" id="id2">プロジェクトを作成する</a></li>
+<li><a class="reference internal" href="#open-an-existing-project" id="id3">既存のプロジェクトを開く</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">マップをナビゲートする</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">レイヤーのスタイルを設定</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id6">試してみること</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="start-qgis">
-<h2><a class="toc-backref" href="#id1">Start QGIS</a><a class="headerlink" href="#start-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">スタートQGIS</a><a class="headerlink" href="#start-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic simple">
-<li>Open the 『Desktop GIS』 folder.</li>
-<li>Double click on the 『QGIS』 icon.</li>
+<li>[デスクトップGIS]フォルダを開きます。</li>
+<li>「QGIS」アイコンをダブルクリックします。</li>
 </ol>
-<p>You will see QGIS launch with an empty project. The various parts of the QGIS Interface are listed below.</p>
+<p>QGISが空プロジェクトで起動します。QGISインターフェイスのさまざまな部分を次に示します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
 </div></blockquote>
 <ul class="simple">
-<li>[1] Menu bar: Access to various QGIS features using a standard hierarchical menu.</li>
-<li>[2] Toolbars: For interaction with the map, layers, attributes and selections.</li>
-<li>[3] Browser Panel: A spatial file browser allowing drag and drop content into the map frame.</li>
-<li>[4] Layer Panel: Controls the map layers, their order, and visibility.</li>
-<li>[5] Status Bar: General information about the map and access to a universal search bar.</li>
+<li>[1]メニューバー:標準の階層メニューを使用して、さまざまなQGIS機能にアクセスできます。</li>
+<li>[2]ツールバー:マップ、画層、属性、および選択を操作します。</li>
+<li>[3]ブラウザパネル:マップフレームにコンテンツをドラッグアンドドロップできる空間ファイルブラウザ。</li>
+<li>[4] レイヤーパネル:マップ画層、画層の順序、表示/非表示をコントロールします。</li>
+<li>[5]ステータスバー:マップに関する一般情報とユニバーサル検索バーへのアクセス。</li>
 </ul>
 </div>
 <div class="section" id="create-a-project">
-<h2><a class="toc-backref" href="#id2">Create a project</a><a class="headerlink" href="#create-a-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To create a new project, choose <span class="menuselection">Project ‣ New</span>.</p>
+<h2><a class="toc-backref" href="#id2">プロジェクトを作成する</a><a class="headerlink" href="#create-a-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいプロジェクトを作成するには、<span class="menuselection">Project‣New</span> を選択します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.1999999999999px; height: 499.09999999999997px;" /></a>
 </div></blockquote>
-<p>Let’s start by adding a vector layer to the map. Layers can be added to QGIS using the browser panel, located on the left of the screen.</p>
+<p>まず、ベクトルレイヤをマップに追加します。レイヤは、画面の左側にあるブラウザパネルを使用してQGISに追加できます。</p>
 <ol class="arabic simple">
-<li>Go the browser panel on the left of the screen.</li>
-<li>Navigate the folder tree to 『home/data/natural_earth2』.</li>
-<li>Select 『ne_10m_admin_0_countries.shp』.</li>
-<li>Drag the layer from the browser panel and drop it in the map frame.</li>
+<li>画面の左側にあるブラウザパネルに移動します。</li>
+<li>フォルダツリーを’home/data/natural_earth2’に移動します。</li>
+<li>『ne_10m_admin_0_countries.shp’を選択します。</li>
+<li>ブラウザパネルから画層をドラッグし、マップフレームにドロップします。</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 </div></blockquote>
-<p>Once the layer has been dragged onto the map frame, you will see a layer showing
-countries.</p>
+<p>レイヤをマップフレームにドラッグすると、レイヤに国が表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
-<p>Now let’s try adding a raster layer to the project.</p>
+<p>次に、プロジェクトにラスタレイヤを追加してみましょう。</p>
 <ol class="arabic simple">
-<li>Go the browser panel on the left of the screen.</li>
-<li>Navigate the folder tree to 『home/data/natural_earth2』.</li>
-<li>Select 『HYP_50M_SR_W.tif』.</li>
-<li>Drag the layer from the browser panel and drop it in the map frame.</li>
+<li>画面の左側にあるブラウザパネルに移動します。</li>
+<li>フォルダツリーを’home/data/natural_earth2’に移動します。</li>
+<li>[HYP_50M_SR_W.tif]を選択します。</li>
+<li>ブラウザパネルから画層をドラッグし、マップフレームにドロップします。</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
-<p>Once the layer has been dragged onto the map frame, you will see a raster layer
-showing land cover and bathymetry.</p>
+<p>レイヤをマップフレームにドラッグすると、土地被覆と水深を示すラスタレイヤが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
-<p>Now that we have added some content to our project we can save this project so that we
-can come back to it at a later time.</p>
+<p>プロジェクトにコンテンツを追加したので、このプロジェクトを保存して、後で再び作業できるようにします。</p>
 <ol class="arabic">
-<li><p class="first">Choose <span class="menuselection">Project ‣ Save</span>.</p>
+<li><p class="first"><span class="menuselection">Project‣Save</span> を選択します。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 </li>
-<li><p class="first">Make the location to save the project 『/home/user/desktop』.</p>
+<li><p class="first">プロジェクトを保存する場所を』/home/user/desktop’にします。</p>
 </li>
-<li><p class="first">Call the project 『My QGIS project』.</p>
+<li><p class="first">このプロジェクトを’My QGIS project’と呼んでください。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
 </li>
-<li><p class="first">Click 『Save』.</p>
+<li><p class="first">[保存]をクリックします。</p>
 </li>
 </ol>
-<p>You will know the project has been saved because there will be a project file on the desktop called 『My QGIS project』 and the top of your project document will no longer read as 『untitled』 but instead will read as 『My QGIS project』.</p>
+<p>プロジェクトが保存されたことがわかります。これは、』My QGIS project’という名前のプロジェクトファイルがデスクトップにあり、プロジェクトドキュメントの一番上が「untitled」ではなく’My QGIS project’になるためです。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_saved_project.png"><img alt="QGIS saved project" src="../../_images/qgis_saved_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 </div>
 <div class="section" id="open-an-existing-project">
-<h2><a class="toc-backref" href="#id3">Open an existing project</a><a class="headerlink" href="#open-an-existing-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A QGIS project saves layers, styles, map extents and settings for use at a later time.
-This information is stored as a QGIS project file and has an extension of 『.qgs』 or 『.qgz』,
-with 『.qgz』 being the default file format in QGIS going into the future.</p>
-<p>Let’s open an existing QGIS project and have a look at how it works.</p>
+<h2><a class="toc-backref" href="#id3">既存のプロジェクトを開く</a><a class="headerlink" href="#open-an-existing-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>QGISプロジェクトは、レイヤ、スタイル、マップ範囲、および設定を保存し、後で使用できるようにします。この情報はQGISのプロジェクトファイルとして保存され、拡張子は「.qgs」または「.qgz」になります。「.qgz」は将来のQGISでの既定のファイル形式です。</p>
+<p>既存のQGISプロジェクトを開いて、その仕組みを見てみましょう。</p>
 <ol class="arabic simple">
-<li>Open QGIS. Note that when QGIS is opened you will be presented with a list of recent projects to chose from. This is a convenient way to open a project you have used recently.</li>
+<li>QGISを開くQGISを開くと、最近選択したプロジェクトのリストが表示されます。これは、最近使用したプロジェクトを開くのに便利な方法です。</li>
 <li>Choose <span class="menuselection">Project ‣ Open</span>.</li>
 <li>Navigate to 『/home/user/qgis-example』.</li>
-<li>Select the project 『QGIS-NaturalEarth-Example.qgs』.</li>
-<li>Click 『Open』.</li>
+<li>プロジェクト’QGIS-NaturalEarth-Example.qgs’を選択します。</li>
+<li>[開く]をクリックします。</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
-<p>This will open a QGIS project with a number of Natural Earth datasets, as shown below.
-This project contains a number of layers in the layers panel and is displaying the spatial
-content in the map frame.</p>
+<p>以下に示すように、Natural Earchデータセットを持つQGISプロジェクトが開かれます。このプロジェクトには、レイヤーパネルに複数のレイヤーが含まれ、マップフレームに空間コンテンツが表示されています。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
-<p>Layers can be turned on or off by clicking the checkbox next to the layer name in the layers panel.
-When a layer is turned on in the layer panel, the map frame will be updated to display the layer.
-A close up of the layer panel is shown below.</p>
+<p>レイヤーパネルでレイヤー名の横にあるチェックボックスをクリックすると、レイヤーの表示/非表示を切り替えることができます。レイヤパネルでレイヤをオンにすると、マップフレームが更新されてレイヤが表示されます。レイヤーパネルの拡大図を以下に示します。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.49999999999997px;" /></a>
-<p>Let’s interact with the layer panel and change the visibility of some map layers.</p>
+<p>レイヤパネルを操作して、マップレイヤの表示/非表示を変更してみましょう。</p>
 <ol class="arabic simple">
-<li>Click the checkbox next to the 『ne_10m_populated_places』 layer to turn it on.</li>
-<li>Click the checkbox next to the 『Water』 layer to turn the layer off.</li>
+<li>『ne_10m_populated_places’レイヤの横にあるチェックボックスをオンにします。</li>
+<li>「Water」レイヤの横にあるチェックボックスをクリックして、レイヤをオフにします。</li>
 </ol>
-<p>Notice how the map frame has been updated to reflect the changes in the layer list.
-We can now see the 『ne_10m_populated_places』 layer as points, but can no longer see the
-rivers and lakes which are within the 『Waters』 layer.</p>
+<p>マップフレームが更新され、レイヤリストの変更が反映されていることに注目してください。現在では、<cite>ne_10m_populated_places</cite> レイヤをポイントとして見ることができますが、<cite>Waters</cite> レイヤ内の河川や湖を見ることはできません。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_layer_visibility.png"><img alt="QGIS result of layer visibility changes" src="../../_images/qgis_layer_visibility.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
-<p>In addition to controlling layer visibility, we can also change the order in which layers
-are drawn in the layer panel. This is done by selecting a layer in the layer panel and dragging
-it up or down the list. The order that the layers appear in the layer list is the order which they
-will draw on in the map frame.</p>
+<p>レイヤの表示/非表示を制御するだけでなく、レイヤパネルに表示されるレイヤーの順序を変更することもできます。これは、[レイヤ]パネルでレイヤを選択し、上または下にドラッグすることで行います。レイヤ一覧に表示されるレイヤの順序は、マップフレームに表示される順序です。</p>
 <ol class="arabic simple">
-<li>Left-Click on the layer 『HYP_50M_SR_W』.</li>
-<li>While holding the mouse button down drag the layer to the top of the list.</li>
+<li>レイヤ’HYP_50M_SR_W`を左クリックします。</li>
+<li>マウスボタンを押したまま、レイヤをリストの一番上にドラッグします。</li>
 </ol>
-<p>Notice how the raster layer is now on top of all other layers in the layer panel. This now renders the
-raster layer on top of all other layers in the map frame.</p>
+<p>ラスタレイヤがレイヤパネルの他のすべてのレイヤーの上に表示されます。これで、ラスタレイヤがマップフレームの他のすべてのレイヤの上にレンダリングされます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
-<p>Try moving the 『HYP_50M_SR_W』 layer to the bottom of the layer list. This would be a more appropriate
-position for a map layer like this.</p>
+<p>『HYP_50M_SR_W’レイヤをレイヤリストの一番下に移動してみてください。これは、このようなマップレイヤに適した位置です。</p>
 </div>
 <div class="section" id="navigate-the-map">
-<h2><a class="toc-backref" href="#id4">Navigate the map</a><a class="headerlink" href="#navigate-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The navigation toolbar allows users to move around the map and change the map extent.</p>
+<h2><a class="toc-backref" href="#id4">マップをナビゲートする</a><a class="headerlink" href="#navigate-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ナビゲーションツールバーを使用すると、マップを移動したり、マップの範囲を変更したりできます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
 <ul class="simple">
-<li>[1] Pan: Allows the map to be dragged (『panned』) to a new location.</li>
-<li>[2] Zoom in: Allows the map extent to be zoomed in.</li>
-<li>[3] Zoom out: Allows the map to be zoomed out.</li>
-<li>[4] Zoom to full extent: Changes the map extent to fit all of the map layers into the map frame.</li>
-<li>[5] Zoom to layer: Changes the map extent to fit the extent of the layer highlighted in the layer panel.</li>
+<li>[1]パン: マップを新しい位置にドラッグ(「パン」)できます。</li>
+<li>[2]ズームイン:マップの範囲をズームインできます。</li>
+<li>[3]ズームアウト:マップのズームアウトを許可します。</li>
+<li>[4]全範囲ズーム: マップの範囲を変更して、すべてのマップレイヤーをマップの枠に合わせます。</li>
+<li>[5]レイヤにズーム: マップパネルで強調表示されているレイヤの範囲に合わせてレイヤの範囲を変更します。</li>
 </ul>
-<p>Let’s try changing the map extent with the zoom-in tool.</p>
+<p>ズームインツールでマップの範囲を変更してみましょう。</p>
 <ol class="arabic simple">
-<li>Select the 『Zoom in』 tool from the navigation toolbar.</li>
-<li>Move the cursor over the map frame.</li>
-<li>Click and hold the left mouse button.</li>
-<li>While still holding the mouse button move the cursor diagonally in any direction. Notice this draws a rectangle which is the area that will be zoomed to.</li>
-<li>Release the mouse button when happy with the area created.</li>
+<li>ナビゲーションツールバーから’ズームイン’ツールを選択します。</li>
+<li>マップの枠の上にカーソルを移動します。</li>
+<li>左マウスボタンを押したままにします。</li>
+<li>マウスボタンを押したまま、任意の方向でカーソルを斜めに移動します。これにより、ズームされる領域である長方形が描画されます。</li>
+<li>領域が作成されたら、マウスボタンを離します。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The process of using the zoom out tool is the same as the zoom-in tool. The result is just the opposite.</p>
+<p class="last">ズームアウトツールを使用するプロセスは、ズームインツールと同じです。結果は正反対です。</p>
 </div>
-<p>Now, let’s look at the zoom to full extent tool. This tool will zoom the map out to an
-extent that will fit in all the layers in the map. To use this tool, click on the
-『Zoom to full extent』 button.</p>
-<p>Finally, try the zoom to layer tool. To use this tool follow these steps:</p>
+<p>次に、全範囲ズームツールを見てみましょう。このツールは、マップのすべてのレイヤーに収まるようにマップをズームアウトします。このツールを使用するには、[全体にズーム]ボタンをクリックします。</p>
+<p>最後に、レイヤズームツールを使用してみます。このツールを使用するには、次の手順に従います。</p>
 <ol class="arabic simple">
-<li>Click on a layer name in the layer panel.</li>
-<li>Click on the 『Zoom to layer』 button.</li>
+<li>レイヤパネルでレイヤの名前をクリックします。</li>
+<li>[レイヤにズーム]ボタンをクリックします。</li>
 </ol>
-<p>The map should zoom to the extent of the selected (『active』) layer.</p>
+<p>マップは選択された(「アクティブ」)レイヤの範囲にズームします。</p>
 </div>
 <div class="section" id="style-your-layers">
-<h2><a class="toc-backref" href="#id5">Style your layers</a><a class="headerlink" href="#style-your-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Layers can be styled in QGIS using the style dock. The style dock is not visible by default, but
-easily accessible via a button at the top of the layer panel as shown below.</p>
+<h2><a class="toc-backref" href="#id5">レイヤーのスタイルを設定</a><a class="headerlink" href="#style-your-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>レイヤーは、スタイルドックを使用してQGISでスタイル設定できます。スタイル枠は既定では表示されていませんが、次に示すように、レイヤパネルの上部にあるボタンから簡単にアクセスできます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
-<p>The above button acts as a toggle so the style dock can be easily hidden from view by clicking the
-same button again. When the style dock is enabled it will appear on the right-hand side of the screen
-ready to style the active layer highlighted in the layer panel.</p>
-<p>With the style dock open, we can modify the appearance of the layer shown at the top of the style dock.</p>
+<p>上記のボタンはトグルとして機能するため、同じボタンをもう一度クリックすると、スタイル枠をビューから簡単に隠すことができます。スタイル枠が有効になると、画面の右側に表示され、レイヤパネルで強調表示されているアクティブなレイヤのスタイルを設定できます。</p>
+<p>スタイル枠を開くと、スタイル枠の最上部に表示されるレイヤの外観を変更できます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_dock_layer.png"><img alt="QGIS style dock layer" src="../../_images/qgis_style_dock_layer.png" style="width: 286.29999999999995px; height: 294.7px;" /></a>
-<p>With the style dock now open, we can modify the colour and the width of the lines in the
-『ne_10m_rivers_lakes_centrelines』 layer. Let’s try modifying the colour first.</p>
+<p>スタイルの枠が開いた状態で、』ne_10m_rivers_lakes_centrelines’レイヤの線の色と幅を変更できます。最初に色を変更してみましょう。</p>
 <ol class="arabic">
-<li><p class="first">Click on the 『Color』 swatch shown below. This will launch a colour palette allowing you to choose a different colour.</p>
+<li><p class="first">下に表示されている[カラー]をクリックします。これにより、異なる色を選択できるカラーパレットが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_dock_color.png"><img alt="QGIS style dock color" src="../../_images/qgis_style_dock_color.png" style="width: 298.2px; height: 225.39999999999998px;" /></a>
 </li>
-<li><p class="first">In the 『Select Color』 palette, move the cross-hair to your preferred colour.</p>
+<li><p class="first">[色選択]パレットで、十字を希望の色に移動します。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_color_palette.png"><img alt="QGIS color palette" src="../../_images/qgis_style_color_palette.png" style="width: 284.2px; height: 224.7px;" /></a>
 </li>
-<li><p class="first">Then click the back arrow to return to the symbol render preview.</p>
+<li><p class="first">次に、戻る矢印をクリックしてシンボルレンダリングプレビューに戻ります。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_back.png"><img alt="QGIS style return" src="../../_images/qgis_style_back.png" style="width: 281.4px; height: 128.1px;" /></a>
 </li>
-<li><p class="first">The symbol preview will be updated with the new colour, and so will the layer in the map frame.</p>
+<li><p class="first">シンボルプレビューが新しい色で更新され、レイヤフレームのマップも更新されます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_result.png"><img alt="QGIS style result" src="../../_images/qgis_style_result.png" style="width: 865.9px; height: 562.8px;" /></a>
 </li>
 </ol>
-<p>In the style dock, we can also modify the size of the map features. To modify the thickness of the
-lines follow these steps:</p>
+<p>スタイル枠では、地物のサイズを変更することもできます。線の太さを変更するには、次の手順に従います:</p>
 <ol class="arabic">
-<li><p class="first">Make sure that the 『ne_10m_rivers_lakes_centrelines』 is selected at the top of the style panel.</p>
+<li><p class="first">スタイルパネルの最上部で「ne_10m_rivers_lakes_centrelines」が選択されていることを確認します。</p>
 </li>
-<li><p class="first">In the style panel enter the value 『0.5』 in the 『width』 input.</p>
+<li><p class="first">スタイルパネルで、入力値「width」に値「0.5」を入力します。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_width.png"><img alt="QGIS style width" src="../../_images/qgis_style_width.png" style="width: 865.9px; height: 562.8px;" /></a>
 </li>
 </ol>
-<p>Notice the line in the symbol preview increase in width, and so do the lines that are in the map frame.</p>
+<p>シンボルプレビューのラインの幅が大きくなり、マップフレームのラインも大きくなります。</p>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id6">Things to try</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">試してみること</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Extend QGIS functionality with <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">Plugins</a>.</li>
-<li>Start manipulating data with the <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">Processing toolbox</a>.</li>
-<li>Use QGIS to view content from a <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">PostGIS database</a>.</li>
-<li>Try publishing your QGIS map to the web using <a class="reference external" href="../overview/qgis_mapserver_overview.html">QGIS Map Server</a>. in the <span class="menuselection">Geospatial ‣ Web Services</span> menu.</li>
+<li><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">プラグイン</a> を使用してQGIS機能を拡張します。</li>
+<li><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">処理ツールボックス</a> を使用してデータの操作してみます。</li>
+<li><a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">PostGISデータベース</a> からコンテンツをビューするのにQGISを使用してみます。</li>
+<li><a class="reference external" href="./overview/qgis_mapserver_overview.html">QGISマップサーバ</a> を使用して、QGISマップをWebに公開してみてください。<span class="menuselection">Geospatial ‣ Web Services</span> メニューにあります。</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id7">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To learn more about QGIS, a good starting point is the <a class="reference external" href="https://www.qgis.org/en/docs/index.html">Documentation page</a> on
-the QGIS homepage and <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS</a> eBook.</p>
+<h2><a class="toc-backref" href="#id7">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>QGISの詳細については、QGISホームページの <a class="reference external" href="https://www.qgis.org/en/docs/index.html">Documentation page</a> と <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">Gentle Introduction to GIS(英語)</a> eBookを参照してください。</p>
 </div>
 </div>
 

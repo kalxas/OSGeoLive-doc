@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="GeoStyler Quickstart" href="../quickstart/geostyler_quickstart.html" />
+    <link rel="next" title="Guide de démarrage rapide de GeoStyler" href="../quickstart/geostyler_quickstart.html" />
     <link rel="prev" title="GeoNode Quickstart" href="../quickstart/geonode_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -73,32 +73,23 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="geostyler">
 <h1>GeoStyler<a class="headerlink" href="#geostyler" title="Lien permanent vers ce titre">¶</a></h1>
-<p>GeoStyler is an Open Source JavaScript library that enables users to style maps with the help of a Graphical User Interface.
-The goal of GeoStyler is a universally applicable GUI that works with any given style format; be it SLD, QML, OpenLayers, etc.</p>
-<p>GeoStyler provides a set of UI Components for map styling. Just like a modular building block system all components can be stacked
-together to create a nice UI for your web applications. To simplify the setup, we also provide some high-level components
-(based on our building blocks) that already do the work for you. These include, among many others, Symbolizer Editors, RuleTables and
-a fully-fledged StyleEditor including filters and scale denominators.</p>
-<p>Furthermore, GeoStyler allows for the translation between multiple styling formats, i.e. SLD, OpenLayers, QGIS, Mapbox. Since we are
-following the concept of micro packages, these translators (we call them parsers) can be used as standalone libraries, without the need to
-include the UI components as a dependency. Currently we have parsers for SLD, QGIS-styles, Mapbox styles and OpenLayers styles. Parsing of
-Mapfiles is in the works. Please take a look at StyleParser Implementations. Since attributively styling geodata is easier when you can look
-at the data to be styled, we can connect to several datasources like WFS, Shapefiles and GeoJSON files. We plan on developing a data reader for
-the Geopackage format.</p>
+<p>GeoStyler est une bibliothèque JavaScript Open Source qui permet aux utilisateurs de styliser des cartes à travers d’une interface graphique. L’objectif de GeoStyler est de fournir une interface universellement applicable qui fonctionne avec n’importe quel format de style donné; que ce soit SLD, QML, OpenLayers, etc.</p>
+<p>GeoStyler fournit un ensemble de composants d’interface utilisateur pour le style de la carte. Tout comme un système modulaire de blocs de construction tous les composants peuvent être empilés ensemble pour créer une interface utilisateur agréable pour vos applications Web. Pour simplifier la configuration, nous fournissons également quelques composants de haut niveau (basés sur nos blocs de construction) qui font déjà le travail pour vous. Il s’agit, entre autres, de Symbolizer Editors, de RuleTables et d’un StyleEditor complet, y compris des filtres et des dénominateurs d’échelle.</p>
+<p>En outre, GeoStyler permet la traduction entre plusieurs formats de style, c’est-à-dire SLD, OpenLayers, QGIS, Mapbox. Puisque nous suivons le concept de micro-packages, ces traducteurs (nous les appelons parseurs) peuvent être utilisés comme bibliothèques autonomes, sans avoir besoin d’inclure les composants de l’interface utilisateur comme une dépendance. Actuellement, nous avons des analyseurs pour SLD, QGIS-styles, styles Mapbox et styles OpenLayers. L’analyse des Mapfiles est en préparation. S’il vous plaît jeter un œil à StyleParser Implementations pour plus de détails. Étant donné que le style des données géospatiales est plus facile lorsque vous pouvez regarder les données à styliser, nous pouvons nous connecter à plusieurs sources de données comme les fichiers WFS, Shapefiles et GeoJSON. Nous prévoyons de développer un lecteur de données pour le format Geopackage.</p>
 <a class="reference internal image-reference" href="../../_images/geostyler_screenshot.png"><img alt="geostyler screenshot" class="align-right" src="../../_images/geostyler_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Fonctionnalités principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li>Generic - not bound to one format only</li>
-<li>Supports common formats (e.g. SLD, QGIS) already out of the box</li>
-<li>Graphical User Interface (GUI) including support for reordering of rules, a mapview, pickers for colors and symbols and a ton more</li>
-<li>Has a GUI - but you are not required to use it</li>
-<li>Extensible - you’re invited to build your own data readers or parsers</li>
-<li>Continues to grow - we are planning new features (like a commandline interface, more parsers etc.) and small improvements</li>
+<li>Générique - non lié à un seul format</li>
+<li>Prend en charge les formats courants (p. ex. SLD, QGIS) dès le démarrage</li>
+<li>L’interface graphique (GUI) comprenant la prise en charge de la réorganisation des règles, une vue de carte, des sélecteurs pour les couleurs et les symboles et beaucoup plus</li>
+<li>A une interface graphique - mais vous n’êtes pas tenu de l’utiliser</li>
+<li>Extensible - vous êtes invité à créer vos propres lecteurs de données ou analyseurs</li>
+<li>Nous continuons de croître - nous planifions de nouvelles fonctionnalités (comme une interface en ligne de commande, plus d’analyseurs, etc.) et de petites améliorations</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Standards implémentés<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.ogc.org/standards/filter">Filter Encoding (FE)</a></li>
 <li>Geographic JSON (GeoJSON)</li>
@@ -109,18 +100,18 @@ the Geopackage format.</p>
 </ul>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://geostyler.org">https://geostyler.org</a></p>
+<h2>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>Site internet :</strong> <a class="reference external" href="https://geostyler.org">https://geostyler.org</a></p>
 <p><strong>Licence:</strong> BSD-2-Clause</p>
-<p><strong>Software Version:</strong> 5.4.0</p>
-<p><strong>API Interfaces:</strong> JavaScript</p>
-<p><strong>Support:</strong> Issues on <a class="reference external" href="https://github.com/geostyler/geostyler">https://github.com/geostyler/geostyler</a></p>
-<p><strong>Developers:</strong> <a class="reference external" href="https://github.com/geostyler/geostyler/graphs/contributors">https://github.com/geostyler/geostyler/graphs/contributors</a></p>
+<p><strong>Version:</strong> 5.4.0</p>
+<p><strong>Interface de l’API:</strong> JavaScript</p>
+<p><strong>Support:</strong> Bugs et suggestions sur <a class="reference external" href="https://github.com/geostyler/geostyler">https://github.com/geostyler/geostyler</a></p>
+<p><strong>Développeurs :</strong> <a class="reference external" href="https://github.com/geostyler/geostyler/graphs/contributors">https://github.com/geostyler/geostyler/graphs/contributors</a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/geostyler_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/geostyler_quickstart.html"><span class="doc">Guide de démarrage rapide</span></a></li>
 </ul>
 </div>
 </div>

@@ -73,45 +73,45 @@
 <div class="section" id="spatialite">
 <h1>SpatiaLite<a class="headerlink" href="#spatialite" title="Link a questa intestazione">¶</a></h1>
 <div class="section" id="spatial-database">
-<h2>Spatial Database<a class="headerlink" href="#spatial-database" title="Link a questa intestazione">¶</a></h2>
-<p>SpatiaLite is an <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> database engine with spatial functions added.</p>
-<p>SQLite is a Database Management System (DBMS) which is simple, robust, easy to use and very lightweight. Each SQLite database is simply a file. You can freely copy it, compress it, and port it between Windows, Linux, MacOs etc.</p>
+<h2>Database spaziale<a class="headerlink" href="#spatial-database" title="Link a questa intestazione">¶</a></h2>
+<p>SpatiaLite è un motore database <a class="reference external" href="https://www.sqlite.org/index.html">SQLite</a> con l’aggiunta di funzioni spaziali.</p>
+<p>SQLite è un sistema di gestione database (DBMS) semplice, robusto, facile da usare e molto leggero. Ogni database SQLite è un semplice file. Potete copiarlo liberamente, comprimerlo e portarlo su Windows, Linux, MacOs ecc.</p>
 <a class="reference internal image-reference" href="../../_images/spatialite_screenshot.png"><img alt="spatialite screenshot" class="align-right" src="../../_images/spatialite_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
-<p>The SpatiaLite extension enables SQLite to support spatial data conformant to OGC specifications.</p>
-<p>Highlights:</p>
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<p>L’estensione SpatiaLite consente a SQLite di supportare dati spaziali in conformità con le specifiche OGC.</p>
+<p>Caratteristiche salienti</p>
 <ul class="simple">
-<li>User friendly GUI</li>
-<li>Standard WKT and WKB formats</li>
-<li>SQL spatial functions such as AsText(), GeomFromText(), Area(), PointN() …</li>
-<li>OpenGis spatial analysis functions provided via GEOS, such as Overlaps(), Touches(), Union(), Buffer() …</li>
-<li>Full Spatial metadata in line with OpenGis specifications</li>
-<li>Numerous Geometry notations - EWKT, GML, KML, and GeoJSON</li>
-<li>Importing and exporting to shapefiles</li>
-<li>Coordinate reprojection via PROJ.4 and EPSG geodetic parameters dataset</li>
-<li>Locale charsets via GNU libiconv</li>
-<li>Spatial Index based on the SQLite’s RTree extension</li>
-<li>Access shapefiles as VIRTUAL TABLEs, enabling standard SQL queries on external shapefiles, without importing or converting them</li>
-<li>Access external CSV/TxtTab files or xls spreadsheets as VIRTUAL TABLEs</li>
+<li>Interfaccia grafica semplice</li>
+<li>Formati standard WKT e WKB</li>
+<li>Funzioni spaziali SQL quali AsText(), GeomFromText(), Area(), PointN() …</li>
+<li>Funzioni spaziali OpenGis tramite GEOS, quali Overlaps(), Touches(), Union(), Buffer() …</li>
+<li>Metadati spaziali completi in conformità alle specifiche OpenGis</li>
+<li>Numerose notazioni per la geometria - EWKT, GML, KML, e GeoJSON</li>
+<li>Importazione ed esportazione di shapefile</li>
+<li>Riproiezione di coordinate tramite PROJ4 e l’insieme di parametri geodetici EPSG</li>
+<li>Set di caratteri locali tramite libiconv GNU</li>
+<li>Indici spaziali basati sull’estensione RTree di SQLite</li>
+<li>Accesso a shapefile come VIRTUAL TABLE, che consente l’esecuzione di query standard SQL su shapefile esterni, senza importarli o convertirli</li>
+<li>Accesso a file esterni CSV/TxtTab o fogli di calcolo xls come VIRTUAL TABLE</li>
 <li>Access XML documents, stored BLOB compressed binary objects, including syntactic «well formed» and XSF schema validation constrained checks. Specific support for ISO-Metadata, SLD/SE styles and SVG graphics.XML documents can be queried using standard XPath syntax.</li>
-<li>Query external WFS servers.</li>
-<li>Parse external DXF files (all versions) and store layers and geometries found.</li>
-<li>Generate and Export DXF files</li>
+<li>Interrogazione di server WFS esterni</li>
+<li>Scansione di DXF esterni (qualsiasi versione) e memorizzazione dei layer e delle geometrie incontrate</li>
+<li>Generazione ed esportazione di file DXF</li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/">http://www.gaia-gis.it/gaia-sins/</a></p>
-<p><strong>Licence:</strong> MPL v1.1 and GPL v3</p>
-<p><strong>Software Version:</strong> 4.3.0</p>
-<p><strong>Supported Platforms:</strong> Linux, Mac, Windows</p>
-<p><strong>API Interfaces:</strong> C</p>
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/">http://www.gaia-gis.it/gaia-sins/</a></p>
+<p><strong>Licenza:</strong> MPL v1.1 e GPL v3</p>
+<p><strong>Versione Software:</strong> 4.3.0</p>
+<p><strong>Piattaforme supportate:</strong> Linux, Mac, Windows</p>
+<p><strong>Interfacce API:</strong> C</p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/spatialite_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/spatialite_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
 </ul>
 </div>
 </div>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Creating an OSGeoLive Bootable USB flash drive &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成 &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="OSGeoLive Quickstart for Running in a Hyper-V Virtual Machine" href="hyperv_quickstart.html" />
-    <link rel="prev" title="OSGeoLive Quickstart for Running in a Virtual Machine" href="virtualization_quickstart.html" />
+    <link rel="prev" title="仮想マシン内での OSGeoLive 起動クイックスタート" href="virtualization_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -70,96 +70,96 @@
           <div class="body" role="main">
             
   <div class="section" id="creating-an-osgeolive-bootable-usb-flash-drive">
-<h1>Creating an OSGeoLive Bootable USB flash drive<a class="headerlink" href="#creating-an-osgeolive-bootable-usb-flash-drive" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This quickstart describes the preferred method for creating a Bootable OSGeoLive USB flash drive. Booting from a flash drive is faster than from a DVD, and the USB drive can be configured to store data between sessions (called persistence).</p>
-<p>We have found that there are a number of quirks and tricks involved in successfully building a USB drive. We have documented what we know, but there are likely more tricks and issues. Look for latest tips here: <a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<h1>OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成<a class="headerlink" href="#creating-an-osgeolive-bootable-usb-flash-drive" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここでは、OSGeoLive のブータブル (起動できる) USB フラッシュドライブを作る方法について記載します。フラッシュドライブからの起動は DVD から起動するよりも速く動作し、フラッシュドライブではセッションを超えてデータを保存することもできます。</p>
+<p>USBドライブを正常に構築するためには、さまざまな工夫が必要です。私たちは知っていることを文書化しましたが、おそらくもっと多くのトリックと問題があります。ここで最新のヒントを探してください: <a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>必要なもの<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>A USB flash drive (at least 4 Gig, 8+ Gig is recommended).</li>
-<li>An OSGeoLive ISO image (downloaded from: <a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a>) or converted from a DVD.</li>
+<li>USB フラッシュドライブ (最低 4 GB、推奨 8 GB 以上)。</li>
+<li>OSGeoLive ISOイメージ(: <a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a> からダウンロード)またはDVDから変換されたもの。</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>For a 4 GB USB flash drive, use osgeolive-mini ISO (without Windows and Mac installers), without persistence.</li>
-<li>For a 8+ GB USB flash drive, use either osgeolive-mini ISO, or osgeolive ISO (with Windows and Mac installers). 8+ GB is recommended if you wish to support persistence.</li>
+<li>4 GB USB フラッシュドライブ用には、osgeolive-mini ISO を使用 (WindowsとMac向けのインストーラーを含まない)、永続性は非サポート。</li>
+<li>8 GB 以上の USB フラッシュドライブ用には、osgeolive-mini ISO か osgeolive ISO のどちらかを使用 (WindowsとMac向けのインストーラーを含む)、永続性をサポートする場合は 8 GB 以上を推奨。</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="creating-bootable-usb-drive-with-dd-under-linux">
-<h2>Creating bootable USB drive with <code class="docutils literal"><span class="pre">dd</span></code> under Linux<a class="headerlink" href="#creating-bootable-usb-drive-with-dd-under-linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ISO images for OSGeoLive 10.5 and later are <em>isohybrid</em> (and for amd64, also support UEFI boot). Under Linux, these images can be written directly to the block device for a USB drive with the <code class="docutils literal"><span class="pre">dd</span></code> command-line utility:</p>
+<h2>Linux 環境でブータブル USB ドライブの作成<a class="headerlink" href="#creating-bootable-usb-drive-with-dd-under-linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OS GeoLive10.5以降のISOイメージは <em>isohybrid</em> です(amd64もサポートUEFIブート)。Linuxでは、<code class="docutils literal"><span class="pre">dd</span></code> コマンドラインユーティリティを使用して、これらのイメージをUSBドライブのブロックデバイスに直接書き込むことができます。</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo dd if=osgeolive-10.5-amd64.iso of=/dev/sdX bs=4M; sync</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">/dev/sdX</span></code> is the block device for the USB drive, where <code class="docutils literal"><span class="pre">X</span></code> might be <code class="docutils literal"><span class="pre">b</span></code> or <code class="docutils literal"><span class="pre">c</span></code>.</li>
-<li>Use <code class="docutils literal"><span class="pre">lsblk</span></code> to list block devices and <code class="docutils literal"><span class="pre">dmesg</span></code> to see kernel messages identifying the USB drive when it is connected.</li>
-<li>The USB drive should not be mounted.</li>
-<li><code class="docutils literal"><span class="pre">sudo</span></code> is not required if the command is run as <code class="docutils literal"><span class="pre">root</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">/dev/sdX</span></code> はUSBドライブのブロックデバイスで、<code class="docutils literal"><span class="pre">X</span></code> は <code class="docutils literal"><span class="pre">b</span></code> または <code class="docutils literal"><span class="pre">c</span></code> かもしれません。</li>
+<li><code class="docutils literal"><span class="pre">lsblk</span></code> を使用してブロックデバイスを一覧表示し、<code class="docutils literal"><span class="pre">dmesg</span></code> を使用して接続時にUSBドライブを識別するカーネルメッセージを表示します。</li>
+<li>USBドライブはマウントされていないようにしてください。</li>
+<li><code class="docutils literal"><span class="pre">sudo</span></code> は、<code class="docutils literal"><span class="pre">root</span></code> としてコマンド実行している場合は必要ありません。</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
-<p class="last">Be certain to select the correct block device as <code class="docutils literal"><span class="pre">dd</span></code> will overwrite it without question, even if it is your primary system drive.</p>
+<p class="last"><code class="docutils literal"><span class="pre">dd</span></code> は、たとえプライマリシステムドライブであっても、問題なく上書きするので、正しいブロックデバイスを選択してください。</p>
 </div>
 </div>
 <div class="section" id="creating-bootable-usb-drive-with-ubuntu-startup-disk-creator">
-<h2>Creating bootable USB drive with Ubuntu Startup Disk Creator<a class="headerlink" href="#creating-bootable-usb-drive-with-ubuntu-startup-disk-creator" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>(This is the recommended process for creating a USB. It is applicable to Ubuntu and Ubuntu variants such as OSGeoLive.)</p>
+<h2>Ubuntu Startup Disk Creatorを使用したブータブルUSBドライブの作成<a class="headerlink" href="#creating-bootable-usb-drive-with-ubuntu-startup-disk-creator" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>(これはUSBを作成するための推奨プロセスです。UbuntuやOSGeoLiveなどのUbuntuバージョンにも適用されます。)</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The version of Ubuntu you are running, needs to be the same or newer than the version of Lubuntu being installed onto your USB.  If installing OSGeoLive 8.0 onto a USB, then you will need to be running Ubuntu 14.04 or newer.</p>
+<p class="last">実行しているUbuntuのバージョンは、USBにインストールされているUbuntuのバージョンと同じか新しい必要があります。OS GeoLive8.0をUSBにインストールする場合は、Ubuntu14.04以降を実行している必要があります。</p>
 </div>
-<p><a class="reference internal" href="../download.html"><span class="doc">Download</span></a> osgeolive or osgeolive-mini to your computer’s hard drive.</p>
-<p>Boot your computer into a recent Ubuntu/Xbuntu distribution. You can do this by running from an OSGeoLive DVD, as explained in <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a>.</p>
-<p>Insert the USB flash drive into your computer.</p>
+<p>osgeoliveまたはosgeolive-miniをコンピュータのハードディスクに <a class="reference internal" href="../download.html"><span class="doc">ダウンロード</span></a> してください。</p>
+<p>最新のUbuntu/Xbuntuディストリビューションでコンピュータを起動します。これは、<a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a> で説明されているように、OSGeoLive DVDから実行すること実行できます。</p>
+<p>USBフラッシュドライブをコンピュータに挿入します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
 </div></blockquote>
-<p>Select <span class="menuselection">System Tools ‣ Startup Disk Creator</span>, or search for <cite>Startup Disk Creator</cite> from the Unity desktop.</p>
+<p><span class="menuselection">System Tools‣Startup Disk Creator</span> を選択するか、デスクトップから`Startup Disk Creator`を検索します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
 </div></blockquote>
-<p>Select the osgeolive or osgeolive-mini ISO Image that you downloaded earlier.</p>
-<p>Select the USB flash drive. If you have extra room you might adjust the slider to create persistent storage space on the USB drive (recommended). In order for this option to be available you will need an 8+ GB USB flash drive.</p>
-<p>Select <span class="guilabel">Make Startup Disk</span></p>
+<p>先ほどダウンロードしたosgeoliveまたはosgeolive-mini ISOイメージを選択します。</p>
+<p>USBフラッシュドライブを選択します。余裕がある場合は、スライダーを調整してUSBドライブに永続的なストレージスペースを作成することをお勧めします(推奨)。このオプションを利用するには、8GB以上のUSBフラッシュドライブが必要です。</p>
+<p><span class="guilabel">Make Startup Disk</span> を選択します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_installing.png"><img alt="../../_images/usb_installing.png" src="../../_images/usb_installing.png" style="width: 302.4px; height: 100.8px;" /></a>
 </div></blockquote>
-<p>Wait 20 minutes or so for the USB flash drive to be created.</p>
+<p>USBフラッシュドライブが作成されるまで20分ほど待ちます。</p>
 </div>
 <div class="section" id="booting-from-the-usb-drive">
-<h2>Booting from the USB drive:<a class="headerlink" href="#booting-from-the-usb-drive" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>USBドライブから起動中:<a class="headerlink" href="#booting-from-the-usb-drive" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic simple">
-<li>Start with the computer off.</li>
-<li>Insert the USB drive into an open USB port.</li>
-<li>Power on the Machine and select to boot from USB:<ul>
-<li>Most computers are not set to boot from a USB drive by default.</li>
-<li>When booting, look for a message indicating a Boot Menu (most commonly you press F12)</li>
-<li>If your computer does not have a boot menu, then boot into your system BIOS. The button to enter BIOS varies by brand and model of computer. If you can’t figure out yours try this website that lists many BIOS hotkeys. <a class="reference external" href="https://www.mydigitallife.net/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/">https://www.mydigitallife.net/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/</a></li>
+<li>コンピュータをオフにして起動します。</li>
+<li>開いているUSBポートにUSBドライブを挿入します。</li>
+<li>マシンの電源を入れ、USBから起動するように選択します。<ul>
+<li>ほとんどのコンピュータは、デフォルトではUSBドライブから起動するように設定されていません。</li>
+<li>起動時に、起動メニューを示すメッセージを探します(通常はF12を押します)</li>
+<li>コンピュータに起動メニューがない場合は、システムBIOSで起動します。BIOSに入るボタンは、コンピュータのブランドとモデルによって異なります。あなたのBIOSがわからない場合は、多くのBIOSホットキーがリストされているこのWebサイトを試してください。<a class="reference external" href="https://www.mydigitallife.net/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/">https://www.mydigitallife.net/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/</a></li>
 </ul>
 </li>
-<li>Select to boot from the USB device.<ul>
-<li>Note, that for some computers you will need to have the USB drive inserted into the computer in order to select it.</li>
-<li>Note also, the USB drive is often listed under hard drives rather than removable devices.</li>
-<li>This <a class="reference external" href="https://www.youtube.com/watch?v=eQBdVO-n6Mg">Video</a> demonstrates booting from USB.</li>
+<li>選択してUSBデバイスから起動します。<ul>
+<li>一部のコンピュータでは、USBドライブをコンピュータに挿入して選択する必要があります。</li>
+<li>また、USBドライブは多くの場合、取り外し可能なデバイスではなくハードドライブに表示されます。</li>
+<li>この`ビデオ&lt;<a class="reference external" href="https://www.youtube.com/watch?v=eQBdVO-n6Mg">https://www.youtube.com/watch?v=eQBdVO-n6Mg</a>&gt;`_は、USBからの起動を示しています。</li>
 </ul>
 </li>
 </ol>
 </div>
 <div class="section" id="run">
-<h2>Run:<a class="headerlink" href="#run" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>実行<a class="headerlink" href="#run" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Run as per: <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a></p>
 </div>
 <div class="section" id="see-also">
-<h2>See Also:<a class="headerlink" href="#see-also" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>参照:<a class="headerlink" href="#see-also" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a></li>
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a></li>
-<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Install OSGeoLive to Hard Disk</span></a></li>
-<li>Alternative USB creation methods and latest tips are collected here: <a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki</a></li>
-<li>Questions can be directed to our email list: <a class="reference external" href="https://lists.osgeo.org/pipermail/osgeolive/">https://lists.osgeo.org/pipermail/osgeolive/</a></li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">仮想マシン内での OSGeoLive 起動クイックスタート</span></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">ハードディスクに OSGeoLive をインストール</span></a></li>
+<li>代替のUSB作成方法と最新のヒントは、次の場所に集められています:<cite>wiki&lt;https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB&gt;</cite> _</li>
+<li>質問は、メイリングリストに送ることができます: <a class="reference external" href="https://lists.osgeo.org/pipermail/osgeolive/">https://lists.osgeo.org/pipermail/osgeolive/</a></li>
 </ul>
 </div></blockquote>
 </div>

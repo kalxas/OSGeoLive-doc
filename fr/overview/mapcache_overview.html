@@ -75,41 +75,38 @@
 <h1>MapCache<a class="headerlink" href="#mapcache" title="Lien permanent vers ce titre">¶</a></h1>
 <div class="section" id="web-service">
 <h2>Web Service<a class="headerlink" href="#web-service" title="Lien permanent vers ce titre">¶</a></h2>
-<p>MapCache is a server that implements tile caching to speed up access to WMS layers. The primary objectives are to be fast and easily deployable,
-while offering the essential features (and more!) expected from a tile caching solution.</p>
-<p>MapCache is part of the MapServer family, but can be configured to cache and serve data from any geospatial server
-that uses WMS. MapCache can be run on Apache as a module or on any web server that supports CGI/FastCGI such as IIS, Nginx, and Jetty.</p>
+<p>MapCache est un serveur qui implémente la mise en cache de tuiles pour accélérer l’accès aux couches WMS. Les principaux objectifs sont d’être rapides et facilement déployables, tout en offrant les fonctionnalités essentielles (et plus!) attendues d’une solution de mise en cache de tuiles.</p>
+<p>MapCache fait partie de la famille MapServer, mais peut être configuré pour mettre en cache et servir des données à partir de n’importe quel serveur géospatial qui utilise WMS. MapCache peut être exécuté sur Apache en tant que module ou sur n’importe quel serveur Web qui prend en charge CGI/FastCGI tel que IIS, Nginx et Jetty.</p>
 <a class="reference internal image-reference" href="../../_images/mapcache_screenshot.png"><img alt="mapcache screenshot" class="align-right" src="../../_images/mapcache_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Fonctionnalités principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li>Allows tile caches to be stored in<ul>
-<li>on disk</li>
-<li>in the cloud using REST (S3, Azure, Google)</li>
-<li>in databases including SQLite, Berkeley DB, Riak</li>
-<li>in Memcache</li>
+<li>Permet de stocker des caches de tuile<ul>
+<li>sur disque</li>
+<li>dans le cloud à l’aide de REST (S3, Azure, Google)</li>
+<li>dans les bases de données, y compris SQLite, Berkeley DB, Riak</li>
+<li>en cache mémoire</li>
 </ul>
 </li>
-<li>Includes a seeder application</li>
-<li>Caching based on dimensions (such as time)</li>
-<li>Allows caching of Mapbox Vector (MVT) and UTFGrid tiles</li>
-<li>Customizable grids</li>
-<li>Allows tiles to be «&nbsp;assembled&nbsp;» together - allowing tiles for different datasets to be
-merged together into a single tile to send to the client</li>
-<li>Includes a seeder application to pre-fill caches from the command line</li>
-<li>Allows requests to be proxied back to a server</li>
-<li>An inbuilt demo interface</li>
+<li>Inclut une application semeur</li>
+<li>Mise en cache basée sur des dimensions (telles que le temps)</li>
+<li>Permet la mise en cache des tuiles Mapbox Vector (MVT) et UTFGrid</li>
+<li>Grilles personnalisables</li>
+<li>Permet d’assembler les tuiles ensemble , ce qui permet de fusionner celles-ci pour différents jeux de données en une seule tuile à envoyer au client</li>
+<li>Inclut une application semeur pour pré-remplir les caches à partir de la ligne de commande</li>
+<li>Permet aux demandes d’être proxifiées vers un serveur</li>
+<li>Une interface de démonstration intégrée</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Standards implémentés<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li>Support of numerous Open Geospatial Consortium  (OGC) standards<ul>
+<li>Support de nombreux standards de l’Open Geospatial Consortium (OGC)<ul>
 <li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a></li>
 </ul>
 </li>
-<li>Additional standards include:<ul>
+<li>Les standards supplémentaires comprennent :<ul>
 <li><a class="reference external" href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">TMS</a></li>
 <li>Google Maps XYZ</li>
 <li>KML SuperOverlays</li>
@@ -118,29 +115,29 @@ merged together into a single tile to send to the client</li>
 </ul>
 </div>
 <div class="section" id="demo">
-<h3>Demo<a class="headerlink" href="#demo" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Démo<a class="headerlink" href="#demo" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://localhost/mapcache/demo/">Default MapCache Demo</a></li>
+<li><a class="reference external" href="http://localhost/mapcache/demo/">Demo de MapCache</a></li>
 </ul>
 </div>
 <div class="section" id="documentation">
 <h3>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://mapserver.org/mapcache/">MapCache Documentation</a></li>
+<li><a class="reference external" href="https://mapserver.org/mapcache/">Documentation de MapCache</a></li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="https://mapserver.org/mapcache">https://mapserver.org/mapcache</a></p>
-<p><strong>Licence:</strong> <a class="reference external" href="https://mapserver.org/copyright.html#license">MIT-style license</a></p>
-<p><strong>Software Version:</strong> 1.8.0</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
+<h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Site internet :</strong> <a class="reference external" href="https://mapserver.org/mapcache">https://mapserver.org/mapcache</a></p>
+<p><strong>Licence:</strong> <a class="reference external" href="https://mapserver.org/copyright.html#license">Licence style MIT</a></p>
+<p><strong>Version:</strong> 1.8.0</p>
+<p><strong>Plates-formes supportées :</strong> Windows, Linux, Mac</p>
 <p><strong>Support:</strong> <a class="reference external" href="https://mapserver.org/community/">https://mapserver.org/community/</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/mapcache_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/mapcache_quickstart.html"><span class="doc">Guide de démarrage rapide</span></a></li>
 </ul>
 </div>
 </div>

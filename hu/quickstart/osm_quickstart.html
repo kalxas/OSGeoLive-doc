@@ -77,22 +77,36 @@
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#programs-that-work-with-osm-data" id="id1">OSM adatokkal dolgozó programok</a><ul>
-<li><a class="reference internal" href="#id" id="id2">iD</a></li>
-<li><a class="reference internal" href="#josm" id="id3">JOSM</a></li>
-<li><a class="reference internal" href="#merkaartor" id="id4">Merkaartor</a></li>
-<li><a class="reference internal" href="#qgis" id="id5">QGIS</a></li>
-<li><a class="reference internal" href="#osmosis" id="id6">Osmosis</a></li>
-<li><a class="reference internal" href="#osm2pgsql" id="id7">osm2pgsql</a></li>
+<li><a class="reference internal" href="#programs-that-work-with-osm-data" id="id4">OSM adatokkal dolgozó programok</a><ul>
+<li><a class="reference internal" href="#id" id="id5">iD</a></li>
+<li><a class="reference internal" href="#josm" id="id6">JOSM</a></li>
+<li><a class="reference internal" href="#qgis" id="id7">QGIS</a></li>
+<li><a class="reference internal" href="#osmosis" id="id8">Osmosis</a></li>
+<li><a class="reference internal" href="#osm2pgsql" id="id9">osm2pgsql</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-next" id="id8">Mi a következő?</a></li>
+<li><a class="reference internal" href="#working-with-osm-data-in-qgis" id="id10">Working with OSM data in QGIS</a><ul>
+<li><a class="reference internal" href="#quickosm" id="id11">QuickOSM</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-osm-as-basemap-in-qgis" id="id12">Using OSM as basemap in QGIS</a><ul>
+<li><a class="reference internal" href="#xyz-tiles" id="id13">XYZ Tiles</a></li>
+<li><a class="reference internal" href="#quickmapservices" id="id14">QuickMapServices</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#start-working-with-osm-data" id="id15">Start working with OSM data</a><ul>
+<li><a class="reference internal" href="#geofabrik" id="id16">Geofabrik</a></li>
+<li><a class="reference internal" href="#overpass-turbo" id="id17">Overpass turbo</a></li>
+<li><a class="reference internal" href="#hot-export-tool" id="id18">HOT Export Tool</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id19">Mi a következő?</a></li>
 </ul>
 </div>
 <div class="section" id="programs-that-work-with-osm-data">
-<h2><a class="toc-backref" href="#id1">OSM adatokkal dolgozó programok</a><a class="headerlink" href="#programs-that-work-with-osm-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">OSM adatokkal dolgozó programok</a><a class="headerlink" href="#programs-that-work-with-osm-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <div class="section" id="id">
-<h3><a class="toc-backref" href="#id2">iD</a><a class="headerlink" href="#id" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">iD</a><a class="headerlink" href="#id" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p><strong>ID</strong> az alapértelmezett on-line szerkesztő az OpenStreetMap-hez (OSM). Az ID gyors és könnyen használható és lehetővé teszi a térképezést különböző forrásokból, mint például a terepi felmérés, műhold és légi felvételek, GPS nyomvonalak vagy utca képek.</p>
 <ul class="simple">
 <li>Kezdőoldal: <a class="reference external" href="https://www.openstreetmap.org/edit">https://www.openstreetmap.org/edit</a></li>
@@ -101,7 +115,7 @@
 </ul>
 </div>
 <div class="section" id="josm">
-<h3><a class="toc-backref" href="#id3">JOSM</a><a class="headerlink" href="#josm" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">JOSM</a><a class="headerlink" href="#josm" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p>A <strong>JOSM</strong> (Java OpenStreetMap Editor) egy Javaban írt profi szerkesztő az OpenStreetMap-hez (OSM). Hatékonyabb és komplexebb mint az ID, használható tömeges szerkesztéshez, off-line módon megbízhatatlan internet kapcsolat esetén. Bővíthető modulokkal, testreszabott beállításokkal és több bővítménnyel.</p>
 <ul class="simple">
 <li>Honlap: <a class="reference external" href="https://josm.openstreetmap.de">https://josm.openstreetmap.de</a></li>
@@ -110,25 +124,17 @@
 <li>JOSM modul gyűjtemény: <a class="reference external" href="https://josm.openstreetmap.de/wiki/Plugins">https://josm.openstreetmap.de/wiki/Plugins</a></li>
 </ul>
 </div>
-<div class="section" id="merkaartor">
-<h3><a class="toc-backref" href="#id4">Merkaartor</a><a class="headerlink" href="#merkaartor" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
-<p>A <strong>Merkaartor</strong> egy térkép szerkesztő az OpenStreetMap-hez, mely a Qt eszközkészletet használja. Egy kicsit felhasználó barátabb mint a JOSM, kicsit kevesebb funkcióval rendelkezik.</p>
-<ul class="simple">
-<li>Honlap: <a class="reference external" href="http://merkaartor.be">http://merkaartor.be</a></li>
-<li>Online súgó: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation">https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation</a></li>
-</ul>
-</div>
 <div class="section" id="qgis">
-<h3><a class="toc-backref" href="#id5">QGIS</a><a class="headerlink" href="#qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">QGIS</a><a class="headerlink" href="#qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p>OpenStreetMap adatok a <strong>QGIS</strong>-be az alap funkciók segítségével mint egy vektor réteg tölthetők be vagy modulokon keresztül mint például a QuickOSM.</p>
 <ul class="simple">
-<li>QuickOSM: <a class="reference external" href="https://plugins.qgis.org/plugins/QuickOSM/">https://plugins.qgis.org/plugins/QuickOSM/</a></li>
+<li>QuickOSM: See the <a class="reference internal" href="#quickosm">QuickOSM</a> section</li>
 <li>Online súgó: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
 <li>Oktatóanyag: <a class="reference external" href="https://learnosm.org/en/osm-data/osm-in-qgis/">https://learnosm.org/en/osm-data/osm-in-qgis/</a></li>
 </ul>
 </div>
 <div class="section" id="osmosis">
-<h3><a class="toc-backref" href="#id6">Osmosis</a><a class="headerlink" href="#osmosis" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Osmosis</a><a class="headerlink" href="#osmosis" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p>Az <strong>Osmosis</strong> egy nagyon jól használható segédprogram sokféle feladat végrehajtásához a nyers OSM adatok szintjén. Ebbe beletartozik az adat import és export adatbázisokba, rendezés, tisztítás és adat dump készítés.</p>
 <ul class="simple">
 <li>Dokumentáció: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osmosis#Usage">https://wiki.openstreetmap.org/wiki/Osmosis#Usage</a></li>
@@ -136,7 +142,7 @@
 </ul>
 </div>
 <div class="section" id="osm2pgsql">
-<h3><a class="toc-backref" href="#id7">osm2pgsql</a><a class="headerlink" href="#osm2pgsql" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id9">osm2pgsql</a><a class="headerlink" href="#osm2pgsql" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
 <p>Az <strong>osm2pgsql</strong> egy segédprogram, mely az OpenStreetMap (.osm) adatokat PostgreSQL (PostGIS) adatbázisba betölthető formátumba konvertálja. Gyakran a Mapnik használatával történő OSM adat megjelenítésre használják, mivel a Mapnik le tudja kérdezni az adatokat PostgreSQL-ből, de nem tud közvetlenül OSM fájlokkal dolgozni.</p>
 <ul class="simple">
 <li>Honlap: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
@@ -144,8 +150,106 @@
 </ul>
 </div>
 </div>
+<div class="section" id="working-with-osm-data-in-qgis">
+<h2><a class="toc-backref" href="#id10">Working with OSM data in QGIS</a><a class="headerlink" href="#working-with-osm-data-in-qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>OSGeoLive comes with OSM data for the city where the global <a class="reference external" href="https://foss4g.org">FOSS4G conference</a> takes place.
+You find the data in the file system at <cite>/usr/local/share/data/osm/</cite> or in the PostgreSQL database <cite>osm_local</cite>.</p>
+<p>Start QGIS and have a look at the data.</p>
+<ol class="arabic simple">
+<li>Open the <cite>Desktop GIS</cite> folder.</li>
+<li>Double click on the <cite>QGIS</cite> icon.</li>
+<li>Go the browser panel on the left of the screen.</li>
+<li>Navigate to <cite>PostGIS</cite> and then to the database <cite>osm_local</cite>. You will find the data in the schema <cite>public</cite>.</li>
+<li>Drag the layers from the <cite>Browser</cite> panel and drop them in the map canvas.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osm_postgis_qgis.jpg"><img alt="../../_images/osm_postgis_qgis.jpg" src="../../_images/osm_postgis_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
+</div></blockquote>
+<p>You find a QGIS introduction in the <a class="reference internal" href="qgis_quickstart.html"><span class="doc">QGIS Quickstart</span></a></p>
+<div class="section" id="quickosm">
+<span id="id2"></span><h3><a class="toc-backref" href="#id11">QuickOSM</a><a class="headerlink" href="#quickosm" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><cite>QuickOSM</cite> allows you to work quickly with OSM data in QGIS thanks to Overpass API.</p>
+<ul class="simple">
+<li>Homepage: <a class="reference external" href="https://github.com/3liz/QuickOSM">https://github.com/3liz/QuickOSM</a></li>
+</ul>
+<ol class="arabic simple">
+<li>You have to enable the Plugin in QGIS. Search for <cite>QuickOSM</cite> from <cite>Plugins –&gt; Manage and Install Plugins</cite> in QGIS</li>
+<li>Open QuickOSM from <cite>Vector –&gt; QuickOSM –&gt; QuickOSM</cite></li>
+<li>Search for all the pubs in the FOSS4G city</li>
+<li>Choose key <cite>amenity</cite>, value <cite>pub</cite>, in <cite>Buenos Aires</cite></li>
+<li>Show the query to see the Overpass query</li>
+<li>Click  <cite>Run query</cite>. The resulting data will be loaded in your QGIS project as temporal data</li>
+<li>You can now save the data via <cite>Export -&gt; Save as….</cite>. Choose i.e. Geopackage and save the data as <cite>buenos_aires_pubs</cite>.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">You also find many OSM Plugins for QGIS. Search for <cite>OSM</cite> in the plugin repository.</p>
+</div>
+</div>
+</div>
+<div class="section" id="using-osm-as-basemap-in-qgis">
+<h2><a class="toc-backref" href="#id12">Using OSM as basemap in QGIS</a><a class="headerlink" href="#using-osm-as-basemap-in-qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<div class="section" id="xyz-tiles">
+<h3><a class="toc-backref" href="#id13">XYZ Tiles</a><a class="headerlink" href="#xyz-tiles" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>By default, QGIS comes with OpenStreetMap basemap layer and is located in the <cite>Browser Panel</cite> under <cite>XYZ Tiles</cite>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osm_xyz_qgis.jpg"><img alt="../../_images/osm_xyz_qgis.jpg" src="../../_images/osm_xyz_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="quickmapservices">
+<h3><a class="toc-backref" href="#id14">QuickMapServices</a><a class="headerlink" href="#quickmapservices" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><cite>QuickMapServices</cite> plugin allows you to easily add various map services as basemaps with one click in QGIS.</p>
+<ul class="simple">
+<li>Homepage: <a class="reference external" href="https://github.com/nextgis/quickmapservices">https://github.com/nextgis/quickmapservices</a></li>
+</ul>
+<ol class="arabic simple">
+<li>You have to enable the Plugin in QGIS. Search for <cite>QuickMapServices</cite> from <cite>Plugins –&gt; Manage and Install Plugins</cite> in QGIS</li>
+<li>Add an OSM basemap from <cite>Web –&gt; QuickMapServices –&gt; OSM</cite></li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osm_quickmapservices_qgis.jpg"><img alt="../../_images/osm_quickmapservices_qgis.jpg" src="../../_images/osm_quickmapservices_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="start-working-with-osm-data">
+<h2><a class="toc-backref" href="#id15">Start working with OSM data</a><a class="headerlink" href="#start-working-with-osm-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>There are several ways to download OpenStreetMap data for your region. You can get the data in several formats.</p>
+<p>You can use the following tools and services to extract OSM data for your area of interest.</p>
+<div class="section" id="geofabrik">
+<h3><a class="toc-backref" href="#id16">Geofabrik</a><a class="headerlink" href="#geofabrik" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><a class="reference external" href="https://download.geofabrik.de/">Geofabrik</a> provides daily worldwide OpenStreetMap data extracts by subregion and country.
+Choose the region or country you are interested in. Data is provided in three formats: <cite>.osm.pbf</cite>, <cite>.shp.zip</cite> and <cite>.osm.bz2</cite>.
+<cite>.osm.pbf</cite> and`.shp.zip` can be opened directly in QGIS.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last"><strong>.osm.bz2</strong> contains raw OSM XML files <cite>.osm</cite>, <a class="reference internal" href="#osm2pgsql">osm2pgsql</a> works well with them, find out more about working with them here <a class="reference external" href="https://wiki.openstreetmap.org/wiki/OSM_XML">https://wiki.openstreetmap.org/wiki/OSM_XML</a></p>
+</div>
+</div>
+<div class="section" id="overpass-turbo">
+<h3><a class="toc-backref" href="#id17">Overpass turbo</a><a class="headerlink" href="#overpass-turbo" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Overpass turbo is a web based data mining tool for OpenStreetMap based on the Overpass-API.</p>
+<p>Have a look at the web client and download all the pubs in the FOSS4G city.</p>
+<ol class="arabic simple">
+<li>Open <a class="reference external" href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a></li>
+<li>Search for all the pubs in the FOSS4G city</li>
+<li>Click on the button <cite>Wizard</cite> and paste the query to the search column <cite>amenity=pub in „Buenos Aires”</cite></li>
+<li>Then click the button <cite>build and run query</cite></li>
+<li>Click <cite>zoom to data</cite> in the map canvas to navigate to your results</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/overpass_turbo.jpg"><img alt="../../_images/overpass_turbo.jpg" src="../../_images/overpass_turbo.jpg" style="width: 941.0px; height: 586.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="hot-export-tool">
+<h3><a class="toc-backref" href="#id18">HOT Export Tool</a><a class="headerlink" href="#hot-export-tool" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>The Humanitarian OpenStreetMap Team (HOT) provides an export tool for OpenStreetMap too.
+To use it you need an OSM account.
+You can download data in several formats and have history for your downloaded data and exports.</p>
+<p>Here is a quickstart: <a class="reference external" href="https://export.hotosm.org/en/v3/learn/quick_start">https://export.hotosm.org/en/v3/learn/quick_start</a></p>
+</div>
+</div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id8">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Tudjon meg többet az OSM-ről a honlapon: <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a></p>
 <p>Támogatás: <a class="reference external" href="https://www.openstreetmap.org/help">https://www.openstreetmap.org/help</a></p>
 </div>

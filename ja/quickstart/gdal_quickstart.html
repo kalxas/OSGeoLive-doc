@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GDAL/OGR Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>GDAL/OGR クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,69 +72,63 @@
   <a class="reference external image-reference" href="https://gdal.org/"><img alt="../../_images/logo_gdal.png" class="align-right" src="../../_images/logo_gdal.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="gdal-ogr-quickstart">
-<h1>GDAL/OGR Quickstart<a class="headerlink" href="#gdal-ogr-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>This Quick Start is divided into two parts: GDAL (raster data) and OGR
-(vector data).</p>
-<p>This Quick Start describes how to:</p>
+<h1>GDAL/OGR クイックスタート<a class="headerlink" href="#gdal-ogr-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このクイックスタートは、GDAL(ラスタデータ)とOGR(ベクタデータ)の2つの部分に分かれています。</p>
+<p>このクイックスタートでは、次の方法について説明します。</p>
 <dl class="docutils">
 <dt>GDAL</dt>
 <dd><ul class="first last simple">
-<li>Explore your image data with gdalinfo</li>
-<li>Format translations with gdal_translate</li>
-<li>Reproject your data with gdalwarp</li>
-<li>Mosaic your data with gdal_warp or gdal_merge.py</li>
-<li>Build a shapefile as a raster tileindex with gdaltindex</li>
+<li>gdalinfoを使用して画像データを表示</li>
+<li>gdal_translateでフォーマット変換</li>
+<li>gdalwarpを使用してデータを再投影</li>
+<li>データをgdal_warpまたはgdal_merge.pyでモザイク化</li>
+<li>シェイプファイルをgdaltindex付きのラスタータイルインデックスとして作成</li>
 </ul>
 </dd>
 <dt>OGR</dt>
 <dd><ul class="first last simple">
-<li>get information about your data with ogrinfo</li>
-<li>use ogr2ogr to transform your data to other formats</li>
+<li>ogrinfoでデータに関する情報を取得する</li>
+<li>ogr2ogrを使用してデータを他の形式に変換</li>
 </ul>
 </dd>
 </dl>
-<p>The only thing you’ll need for this quickstart is a terminal. If you want to
-visualize the results, you can use one of the Desktop GIS Software
-applications on OSGeoLive like <a class="reference internal" href="../overview/qgis_overview.html"><span class="doc">QGIS</span></a>.</p>
+<p>このクイックスタートに必要なのはターミナルだけです。結果を視覚化する場合は、OSGeoLiveのデスクトップGISソフトウェアアプリケーションの1つである <a class="reference internal" href="../overview/qgis_overview.html"><span class="doc">QGIS</span></a> を使用できます。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#get-to-know-gdal" id="id1">Get to know GDAL</a></li>
-<li><a class="reference internal" href="#get-information-about-the-raster-data-with-gdalinfo" id="id2">Get information about the raster data with gdalinfo</a></li>
-<li><a class="reference internal" href="#simple-format-translation" id="id3">Simple format translation</a></li>
-<li><a class="reference internal" href="#translation" id="id4">Translation</a></li>
-<li><a class="reference internal" href="#rescaling" id="id5">Rescaling</a></li>
-<li><a class="reference internal" href="#raster-tileindex-with-gdaltindex" id="id6">Raster tileindex with gdaltindex</a></li>
-<li><a class="reference internal" href="#reprojecting" id="id7">Reprojecting</a></li>
-<li><a class="reference internal" href="#mosaicking" id="id8">Mosaicking</a></li>
-<li><a class="reference internal" href="#get-to-know-ogr" id="id9">Get to know OGR</a></li>
-<li><a class="reference internal" href="#get-information-about-the-vector-data-with-ogrinfo" id="id10">Get information about the vector data with ogrinfo</a></li>
-<li><a class="reference internal" href="#use-ogr2ogr-to-convert-data-between-file-formats" id="id11">Use ogr2ogr to convert data between file formats</a></li>
-<li><a class="reference internal" href="#things-to-try" id="id12">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id13">What next?</a></li>
+<li><a class="reference internal" href="#get-to-know-gdal" id="id1">GDALについて知る</a></li>
+<li><a class="reference internal" href="#get-information-about-the-raster-data-with-gdalinfo" id="id2">gdalinfoでラスタデータの情報を取得</a></li>
+<li><a class="reference internal" href="#simple-format-translation" id="id3">シンプルなフォーマットの翻訳</a></li>
+<li><a class="reference internal" href="#translation" id="id4">変換</a></li>
+<li><a class="reference internal" href="#rescaling" id="id5">再スケーリング</a></li>
+<li><a class="reference internal" href="#raster-tileindex-with-gdaltindex" id="id6">gdaltindex付きラスタータイルインデックス</a></li>
+<li><a class="reference internal" href="#reprojecting" id="id7">再投影</a></li>
+<li><a class="reference internal" href="#mosaicking" id="id8">モザイク</a></li>
+<li><a class="reference internal" href="#get-to-know-ogr" id="id9">OGRについて知る</a></li>
+<li><a class="reference internal" href="#get-information-about-the-vector-data-with-ogrinfo" id="id10">ogrinfoでベクタデータに関する情報を取得する</a></li>
+<li><a class="reference internal" href="#use-ogr2ogr-to-convert-data-between-file-formats" id="id11">ogr2ogrを使用してファイルフォーマット間でデータを変換</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id12">試してみること</a></li>
+<li><a class="reference internal" href="#what-next" id="id13">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="get-to-know-gdal">
-<h2><a class="toc-backref" href="#id1">Get to know GDAL</a><a class="headerlink" href="#get-to-know-gdal" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You will find the demo data at <code class="file docutils literal"><span class="pre">/usr/local/share/data</span></code>. We want to have a
-look at the <a class="reference internal" href="../overview/naturalearth_overview.html"><span class="doc">Natural Earth data</span></a> in this quickstart. We want to work with a
-copy of the data. So the first step is to copy the data to your home
-directory.</p>
+<h2><a class="toc-backref" href="#id1">GDALについて知る</a><a class="headerlink" href="#get-to-know-gdal" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デモデータは <code class="file docutils literal"><span class="pre">/usr/local/share/data</span></code> にあります。このクイックスタートの <a class="reference internal" href="../overview/naturalearth_overview.html"><span class="doc">Natural Earthデータ</span></a> を見てみましょう。データのコピーを操作します。したがって、最初のステップは、データをホームディレクトリにコピーすることです。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span>
 <span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">natural_earth2</span><span class="o">/</span> <span class="o">./</span><span class="n">gdal_natural_earth</span>
 </pre></div>
 </div>
-<p>You will then find a NaturalEarth Raster file and a .tfw World-file at:</p>
+<p>次のNaturalEarth Rasterファイルと.tfw World-fileがあることを確認してください::</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">gdal_natural_earth</span><span class="o">/</span><span class="n">HYP_50M_SR_W</span><span class="o">.*</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">Open the file with a Desktop GIS like QGIS, and have a look.</p>
+<p class="last">QGISのようなデスクトップGISを使用してファイルを開き、確認します。</p>
 </div>
 </div>
 <div class="section" id="get-information-about-the-raster-data-with-gdalinfo">
-<h2><a class="toc-backref" href="#id2">Get information about the raster data with gdalinfo</a><a class="headerlink" href="#get-information-about-the-raster-data-with-gdalinfo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">gdalinfoでラスタデータの情報を取得</a><a class="headerlink" href="#get-information-about-the-raster-data-with-gdalinfo" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span>gdalinfo HYP_50M_SR_W.tif
   Driver: GTiff/GeoTIFF
   Files: HYP_50M_SR_W.tif
@@ -163,67 +157,59 @@ directory.</p>
 </pre></div>
 </div>
 <dl class="docutils">
-<dt>Note:</dt>
+<dt>注意：</dt>
 <dd><ul class="first last simple">
-<li>Driver is 「GTiff/GeoTIFF」</li>
-<li>Size is 10800x5400</li>
-<li>3 Bands of type Byte.</li>
-<li>Coordinates</li>
-<li>no coordinate system</li>
+<li>ドライバーは「GTiff/GeoTIFF」</li>
+<li>サイズは10800x5400です</li>
+<li>バイト型の3バンドです。</li>
+<li>座標</li>
+<li>座標系なし</li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="simple-format-translation">
-<h2><a class="toc-backref" href="#id3">Simple format translation</a><a class="headerlink" href="#simple-format-translation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First get to know your drivers. The <cite>–formats</cite> commandline switch of
-gdal_translate can be used to see a list of available format drivers.</p>
+<h2><a class="toc-backref" href="#id3">シンプルなフォーマットの翻訳</a><a class="headerlink" href="#simple-format-translation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まずドライバーについて知りましょう。gdal_translateの <cite>–formats</cite> コマンドラインスイッチを使用すると、利用可能なフォーマットドライバの一覧を表示できます。</p>
 <dl class="docutils">
-<dt>Each format reports if it is</dt>
+<dt>各フォーマットは、次の場合にレポートします。</dt>
 <dd><ul class="first last simple">
-<li>read only (ro),</li>
-<li>read/write (rw) or</li>
-<li>read/write/update (rw+).</li>
+<li>読み取り専用 (ro) 、</li>
+<li>読み取り/書き込み (rw) または</li>
+<li>読み取り/書き込み/更新 (rw+)。</li>
 </ul>
 </dd>
 </dl>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">--</span><span class="n">formats</span>
 </pre></div>
 </div>
-<p>The <cite>–format</cite> commandline switch can be used to query details about a
-particular driver, including creation options, and permitted data types.</p>
+<p><cite>–format</cite> コマンドラインスイッチを使用すると、特定のドライバについて、作成オプションや許可されたデータ型などを含めて詳細に問い合わせることができます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="o">--</span><span class="nb">format</span> <span class="n">jpeg</span>
 <span class="n">gdal_translate</span> <span class="o">--</span><span class="nb">format</span> <span class="n">png</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="translation">
-<h2><a class="toc-backref" href="#id4">Translation</a><a class="headerlink" href="#translation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Translations are accomplished with the gdal_translate command. The
-default output format is GeoTIFF.  The <cite>-of</cite> flag is used to select an
-output format and the -co flag is used to specify a creation option:</p>
+<h2><a class="toc-backref" href="#id4">変換</a><a class="headerlink" href="#translation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>変換はgdal_translateコマンドで行います。既定の出力形式はGeoTIFFです。<cite>-of</cite> フラグは出力フォーマットの選択に使用され、-coフラグは作成オプションの指定に使用されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">of</span> <span class="n">JPEG</span> <span class="o">-</span><span class="n">co</span> <span class="n">QUALITY</span><span class="o">=</span><span class="mi">40</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">jpg</span>
 </pre></div>
 </div>
-<p>The <cite>-ot</cite> switch can be used to alter the output data type.</p>
+<p><cite>-ot</cite> スイッチを使用して、出力データ型を変更できます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">ot</span> <span class="n">Int16</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span> <span class="n">HYP_50M_SR_W_Int16</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>Use gdalinfo to verify data type.</p>
+<p>gdalinfo を使用してデータ型を検証します。</p>
 </div>
 <div class="section" id="rescaling">
-<h2><a class="toc-backref" href="#id5">Rescaling</a><a class="headerlink" href="#rescaling" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <cite>-outsize</cite> switch can be used to set the size of the output file.</p>
+<h2><a class="toc-backref" href="#id5">再スケーリング</a><a class="headerlink" href="#rescaling" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><cite>-outsize</cite> スイッチを使用して、出力ファイルのサイズを設定できます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">outsize</span> <span class="mi">50</span><span class="o">%</span> <span class="mi">50</span><span class="o">%</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>  <span class="n">HYP_50M_SR_W_small</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>Use gdalinfo to verify the size.</p>
-<p>The <cite>-scale</cite> switch can be used to rescale data. Explicit control of the
-input and output ranges is also available. The gdalinfo <cite>-mm</cite> switch can
-be used to see pixel min/max values.</p>
-<p>Let’s split our image into two with <cite>-srcwin</cite> which makes a copy based on
-pixel/line location (xoff yoff xsize ysize). You also could use <cite>-projwin</cite>
-and define the corners in georeferenced coordinates (ulx uly lrx lry).</p>
+<p>gdalinfoを使用してサイズを検証します。</p>
+<p><cite>-scale</cite> スイッチは、データの再スケールに使用できます。入力および出力範囲の明示的な制御も可能です。gdalinfo <cite>-mm</cite> スイッチを使用して、ピクセルの最小値/最大値を表示できます。</p>
+<p>ピクセル/ラインの位置に基づいてコピーを作成する`-srcwin` を使用して、イメージを2つに分割してみましょう(xoff yoff xsize ysize)。<cite>-projwin</cite> を使用して、地理参照座標(ulx uly lrx lry)でコーナーを定義することもできます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="o">-</span><span class="n">mm</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>
 <span class="n">gdal_translate</span> <span class="o">-</span><span class="n">srcwin</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5400</span> <span class="mi">5400</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>  <span class="n">west</span><span class="o">.</span><span class="n">tif</span>
 <span class="n">gdal_translate</span> <span class="o">-</span><span class="n">srcwin</span> <span class="mi">5400</span> <span class="mi">0</span> <span class="mi">5400</span> <span class="mi">5400</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>  <span class="n">east</span><span class="o">.</span><span class="n">tif</span>
@@ -231,15 +217,12 @@ and define the corners in georeferenced coordinates (ulx uly lrx lry).</p>
 </div>
 </div>
 <div class="section" id="raster-tileindex-with-gdaltindex">
-<h2><a class="toc-backref" href="#id6">Raster tileindex with gdaltindex</a><a class="headerlink" href="#raster-tileindex-with-gdaltindex" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can build a shapefile as a raster tileindex. For every image a
-polygon is generated with the bounds of the extent of the polygon and
-the path to the file.</p>
+<h2><a class="toc-backref" href="#id6">gdaltindex付きラスタータイルインデックス</a><a class="headerlink" href="#raster-tileindex-with-gdaltindex" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>シェイプファイルをラスタタイルインデックスとして作成できます。すべてのイメージに対して、ポリゴンの範囲とファイルへのパスの境界を持つポリゴンが生成されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdaltindex</span> <span class="n">index_natural_earth</span><span class="o">.</span><span class="n">shp</span> <span class="o">*</span><span class="n">st</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>Have a look at your output shapefile with QGIS and ogrinfo (you
-will learn more about ogrinfo later in this tutorial)</p>
+<p>QGISとogrinfoを使用して、出力シェイプファイルを見てみましょう(ogrinfoについては、このチュートリアルの後半で詳しく説明します)。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
@@ -264,58 +247,49 @@ OGRFeature(index_natural_earth):1
 </div>
 </div>
 <div class="section" id="reprojecting">
-<h2><a class="toc-backref" href="#id7">Reprojecting</a><a class="headerlink" href="#reprojecting" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>For this process we assume that HYP_50M_SR_W.tif has been properly
-created with bounds. As we saw before with gdainfo no coordinate system
-was set. So we assign WGS84 as coordinate system to the image in the
-first step.</p>
+<h2><a class="toc-backref" href="#id7">再投影</a><a class="headerlink" href="#reprojecting" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このプロセスでは、HYP_50M_SR_W.tifが境界付きで正しく作成されているものとします。前に見たように、gdainfoには座標系が設定されていませんでした。そこで、最初のステップでWGS84を座標系としてイメージに割り当てます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">a_srs</span> <span class="n">WGS84</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span> <span class="n">HYP_50M_SR_W_4326</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>The gdalwarp command can be used to reproject images. Here we reproject
-the WGS84 geographic image to the Mercator projection:</p>
+<p>gdalwarpコマンドを使用して、イメージを再投影できます。ここでは、WGS84の地理的イメージをメルカトル図法に再投影します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalwarp</span> <span class="o">-</span><span class="n">t_srs</span> <span class="s1">&#39;+proj=merc +datum=WGS84&#39;</span> <span class="n">HYP_50M_SR_W_4326</span><span class="o">.</span><span class="n">tif</span> <span class="n">mercator</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>Use gdalinfo to verify the change and have a look at the image.</p>
+<p>gdalinfoを使用して変更を確認し、イメージを確認します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.20000000000005px;" /></a>
 </div></blockquote>
-<p>Here we reproject to the Ortho projection.</p>
+<p>ここでは、オルソ投影に再投影します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalwarp</span> <span class="o">-</span><span class="n">t_srs</span> <span class="s1">&#39;+proj=ortho +datum=WGS84&#39;</span> <span class="n">HYP_50M_SR_W_4326</span><span class="o">.</span><span class="n">tif</span> <span class="n">ortho</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.40000000000003px; height: 296.8px;" /></a>
-<p>Note how the poles are clipped?  This is because the edges at the pole
-can’t be reprojected gdalwarp does not read all the data.  We can force
-gdalwarp to read a bunch of surplus data around chunks as one way to
-resolve this. Read more about this in the RasterTutorial <a class="reference external" href="https://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">https://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
+<p>極がどのようにクリップされているかご注意ください。これは、極のエッジを再投影できないためです。gdalwarpはすべてのデータを読み取りません。 これを解決する1つの方法として、gdalwarpにチャンク周辺の余剰データを強制的に読み取らせることができます。 詳細については、RasterTutorial <a class="reference external" href="https://trac.osgeo.org/gdal/wiki/UserDocs">https://trac.osgeo.org/gdal/wiki/UserDocs</a>/RasterProcTutorialをご覧ください。</p>
 </div>
 <div class="section" id="mosaicking">
-<h2><a class="toc-backref" href="#id8">Mosaicking</a><a class="headerlink" href="#mosaicking" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>gdal_merge.py is a python script that can be used for simple mosaicking
-tasks. Mosaic the east.tif and west.tif into a single file:</p>
+<h2><a class="toc-backref" href="#id8">モザイク</a><a class="headerlink" href="#mosaicking" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>gdal_merge.pyは、シンプルなモザイク作業に使用できるPythonスクリプトです。east.tifとwest.tifをモザイク化して単一のファイルにします。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_merge</span><span class="o">.</span><span class="n">py</span>  <span class="n">east</span><span class="o">.</span><span class="n">tif</span> <span class="n">west</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">o</span> <span class="n">merged</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>The same task can be accomplished with gdalwarp. gdalwarp has a variety
-of advantages over gdal_merge, but can be slow to merge many files:</p>
+<p>gdalwarpを使用して実行することもできます。gdalwarpはgdal_mergeよりもさまざまな利点がありますが、多くのファイルのマージに時間がかかることがあります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalwarp</span> <span class="n">east</span><span class="o">.</span><span class="n">tif</span> <span class="n">west</span><span class="o">.</span><span class="n">tif</span> <span class="n">warpmerged</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-to-know-ogr">
-<h2><a class="toc-backref" href="#id9">Get to know OGR</a><a class="headerlink" href="#get-to-know-ogr" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">OGRについて知る</a><a class="headerlink" href="#get-to-know-ogr" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">gdal_natural_earth</span><span class="o">/</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">Open the shape file with a Desktop GIS like QGIS, and have a look.</p>
+<p class="last">QGISのようなデスクトップGISを使用してシェイプファイルを開き、確認します。</p>
 </div>
 </div>
 <div class="section" id="get-information-about-the-vector-data-with-ogrinfo">
-<h2><a class="toc-backref" href="#id10">Get information about the vector data with ogrinfo</a><a class="headerlink" href="#get-information-about-the-vector-data-with-ogrinfo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">ogrinfoでベクタデータに関する情報を取得する</a><a class="headerlink" href="#get-information-about-the-vector-data-with-ogrinfo" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span>ogrinfo -ro /home/user/gdal_natural_earth
 INFO: Open of `/home/user/gdal_natural_earth&#39;
       using driver `ESRI Shapefile&#39; successful.
@@ -333,7 +307,7 @@ INFO: Open of `/home/user/gdal_natural_earth&#39;
   12: ne_10m_ocean (3D Polygon)
 </pre></div>
 </div>
-<p>Get a summary about your data with ogrinfo together with <cite>-so</cite>.</p>
+<p>ogrinfoに <cite>-so</cite> を付けて、データの概要を表示します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>ogrinfo -ro -so ne_10m_admin_0_countries.shp ne_10m_admin_0_countries
 INFO: Open of `ne_10m_admin_0_countries.shp&#39;
       using driver `ESRI Shapefile&#39; successful.
@@ -413,11 +387,11 @@ tiny: Real (16.6)
 homepart: Real (16.6)
 </pre></div>
 </div>
-<p>If you run ogrinfo without a parameter you will get a summary about your data and afterwards a section for every dataset.</p>
+<p>パラメーターを指定せずにogrinfoを実行すると、データの概要と、その後のすべてのデータセットのセクションが表示されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ogrinfo</span> <span class="o">-</span><span class="n">ro</span> <span class="n">ne_10m_admin_0_countries</span><span class="o">.</span><span class="n">shp</span> <span class="n">ne_10m_admin_0_countries</span>
 </pre></div>
 </div>
-<p>You can forward the result from ogrinfo to grep to filter and get only the attribute COUNTRY.</p>
+<p>ogrinfoの結果をgrepに転送して、COUNTRY属性だけをフィルタリングして取得できます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ogrinfo</span> <span class="n">ne_10m_admin_0_countries</span><span class="o">.</span><span class="n">shp</span> <span class="n">ne_10m_admin_0_countries</span> <span class="o">|</span> <span class="n">grep</span> <span class="s1">&#39;admin &#39;</span>
 
   <span class="n">admin</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Aruba</span>
@@ -430,42 +404,38 @@ homepart: Real (16.6)
 <span class="n">etc</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>You can convert your data to other formats. Get the list of the
-supported formats with <cite>–formats</cite>.</p>
+<p>データを他の形式に変換できます。対応フォーマットの一覧を <cite>–formats</cite> で取得します。</p>
 </div>
 <div class="section" id="use-ogr2ogr-to-convert-data-between-file-formats">
-<h2><a class="toc-backref" href="#id11">Use ogr2ogr to convert data between file formats</a><a class="headerlink" href="#use-ogr2ogr-to-convert-data-between-file-formats" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can use ogr2ogr to converts simple features data between file
-formats. You can use <cite>–formats</cite> to get the list of the supported formats
-with read/write information.</p>
-<p>Convert the countries to GML.</p>
+<h2><a class="toc-backref" href="#id11">ogr2ogrを使用してファイルフォーマット間でデータを変換</a><a class="headerlink" href="#use-ogr2ogr-to-convert-data-between-file-formats" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ogr2ogrを使用して、ファイルフォーマット間で簡単なフィーチャデータを変換できます。<cite>–formats</cite> を使用して、読み書き可能な情報を持つ対応フォーマットの一覧を取得できます。</p>
+<p>国を GML に変換します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ogr2ogr</span> <span class="o">--</span><span class="n">formats</span>
 <span class="n">ogr2ogr</span> <span class="o">-</span><span class="n">f</span> <span class="n">GML</span> <span class="n">countries</span><span class="o">.</span><span class="n">xml</span> <span class="n">ne_10m_admin_0_countries</span><span class="o">.</span><span class="n">shp</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id12">Things to try</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Here are some additional challenges for you to try:</p>
+<h2><a class="toc-backref" href="#id12">試してみること</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、試すべき追加の課題をいくつか示します。</p>
 <ul class="simple">
-<li>Try gdalwarp or gdal_merge.py to mosaic your data</li>
-<li>Try gdaladdo to build internal overviews</li>
-<li>QGIS uses GDAL/OGR too to suport many formats. It also provides the GdalTools Plugin to process raster data. This plugin integrates the gdal-tools into QGIS.</li>
-<li>Try ogr2ogr to import/export your vector data to other formats like PostGIS. Have a look at the options ogr2ogr provides.</li>
-<li>Try the QGIS plugin OGR-Layer-Konverter.</li>
+<li>データをモザイク化するには、gdalwarpまたはgdal_merge.pyを試してください</li>
+<li>gdaladdoで内部概要を作成</li>
+<li>QGISはGDAL/OGRも使用して、多くの形式をサポートしています。また、ラスタデータを処理するためのGdalToolsプラグインも提供しています。このプラグインはgdal-toolsをQGISに統合します。</li>
+<li>ogr2ogrを使用して、ベクタデータをPostGISなどの他の形式にインポート/エクスポートしてみてください。ogr2ogrが提供するオプションを見てください。</li>
+<li>QGISプラグインOGR-Layer-Konverterを試してみてください。</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id13">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This is only the first step on the road to using GDAL and OGR. There is
-a lot more functionality you can try.</p>
-<p>GDAL Project home</p>
+<h2><a class="toc-backref" href="#id13">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これは、GDALとOGRを使用するための最初のステップにすぎません。他にも多くの機能を試すことができます。</p>
+<p>GDALプロジェクトホーム</p>
 <blockquote>
 <div><a class="reference external" href="https://gdal.org">https://gdal.org</a></div></blockquote>
-<p>GDAL Raster Tutorial</p>
+<p>GDAL ラスターのチュートリアル</p>
 <blockquote>
 <div><a class="reference external" href="https://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">https://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a></div></blockquote>
-<p>GDAL Workshop</p>
+<p>GDALワークショップ</p>
 <blockquote>
 <div><a class="reference external" href="https://download.osgeo.org/gdal/workshop/foss4ge2015/workshop_gdal.html">https://download.osgeo.org/gdal/workshop/foss4ge2015/workshop_gdal.html</a></div></blockquote>
 </div>
