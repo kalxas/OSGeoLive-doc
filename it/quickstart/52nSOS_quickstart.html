@@ -1,0 +1,290 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>52 North SOS Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="52 North WPS" href="../overview/52nWPS_overview.html" />
+    <link rel="prev" title="52 North SOS" href="../overview/52nSOS_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://52north.org/software/software-projects/sos"><img alt="../../_images/logo_52nSOS.png" class="align-right" src="../../_images/logo_52nSOS.png" /></a>
+<div class="section" id="north-sos-quickstart">
+<h1>52 North SOS Quickstart<a class="headerlink" href="#north-sos-quickstart" title="Link a questa intestazione">¶</a></h1>
+<p>The 52°North SOS is a Web service, that enables interoperable access
+to (spatial) observation data and associated metadata.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Query the 52°North SOS Capabilities to determine what queries it supports and which data it offers.</li>
+<li>Query details about an observation from the SOS.</li>
+<li>Use the lightweight visualisation tool «Helgoland» delivered with the SOS to explore the available data.</li>
+<li>Explore the REST API endpoint for client developers.</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#getting-started" id="id1">Getting Started</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id2">Things to try</a></li>
+<li><a class="reference internal" href="#what-next" id="id3">What next?</a></li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2><a class="toc-backref" href="#id1">Getting Started</a><a class="headerlink" href="#getting-started" title="Link a questa intestazione">¶</a></h2>
+<ol class="arabic simple">
+<li>Select <span class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North SOS</span> to start the 52°North SOS.</li>
+</ol>
+<dl class="docutils">
+<dt>This will open the 52°North SOS client welcome page in firefox at</dt>
+<dd><p class="first"><a class="reference external" href="http://localhost:8080/52nSOS/">http://localhost:8080/52nSOS/</a> (see Fig. 1).</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_start.png"><img alt="52°North SOS client welcome page" class="align-center" src="../../_images/52n_sos_start.png" style="width: 716.8px; height: 537.5999999999999px;" /></a>
+<p class="last"><strong>Fig. 1</strong>: 52°North SOS client - welcome page.</p>
+</dd>
+</dl>
+<ol class="arabic" start="2">
+<li><p class="first">Click <span class="guilabel">Client</span> from the top menu bar. Once you know <a class="reference external" href="http://localhost:8080/52nSOS/sos?REQUEST=GetCapabilities&amp;SERVICE=SOS&amp;ACCEPTVERSIONS=2.0.0">the capabilities of an SOS Server</a>,
+(see Fiq. 2) you can craft appropriate queries. This is made easier
+by selecting sample queries. Using the
+information from the capabilities document, you can adjust the available example
+queries.</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_get_capabilities.png"><img alt="52°North SOS client - test client with GetCapabilities request" class="align-center" src="../../_images/52n_sos_get_capabilities.png" style="width: 717.5px; height: 537.5999999999999px;" /></a>
+<p><strong>Fig. 2</strong>: 52°North SOS client - test client with GetCapabilities request.</p>
+</li>
+<li><p class="first">To get the available observation data within the time
+interval from 2018-07-02T23:45:00.000+00:00 to 2018-07-04T23:45:00.000+00:00
+for each time series, insert the following request after selecting
+<span class="menuselection">**service** SOS ‣ **version** 2.0.0 ‣ **binding** SOAP ‣ **operation** GetObservation</span>
+in the <a class="reference external" href="http://localhost:8080/52nSOS/client">test client’s</a> request field:</p>
+</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;env:Envelope</span>
+    <span class="na">xmlns:env=</span><span class="s">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;env:Body&gt;</span>
+        <span class="nt">&lt;sos:GetObservation</span> <span class="na">service=</span><span class="s">&quot;SOS&quot;</span> <span class="na">version=</span><span class="s">&quot;2.0.0&quot;</span>
+            <span class="na">xmlns:sos=</span><span class="s">&quot;http://www.opengis.net/sos/2.0&quot;</span>
+            <span class="na">xmlns:fes=</span><span class="s">&quot;http://www.opengis.net/fes/2.0&quot;</span>
+            <span class="na">xmlns:gml=</span><span class="s">&quot;http://www.opengis.net/gml/3.2&quot;</span>
+            <span class="na">xmlns:swe=</span><span class="s">&quot;http://www.opengis.net/swe/2.0&quot;</span>
+            <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
+            <span class="na">xmlns:swes=</span><span class="s">&quot;http://www.opengis.net/swes/2.0&quot;</span>
+            <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;sos:temporalFilter&gt;</span>
+                <span class="nt">&lt;fes:During&gt;</span>
+                    <span class="nt">&lt;fes:ValueReference&gt;</span>phenomenonTime<span class="nt">&lt;/fes:ValueReference&gt;</span>
+                    <span class="nt">&lt;gml:TimePeriod</span> <span class="na">gml:id=</span><span class="s">&quot;tp_1&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;gml:beginPosition&gt;</span>2018-07-02T23:45:00.000+00:00<span class="nt">&lt;/gml:beginPosition&gt;</span>
+                        <span class="nt">&lt;gml:endPosition&gt;</span>2018-07-04T23:45:00.000+00:00<span class="nt">&lt;/gml:endPosition&gt;</span>
+                    <span class="nt">&lt;/gml:TimePeriod&gt;</span>
+                <span class="nt">&lt;/fes:During&gt;</span>
+            <span class="nt">&lt;/sos:temporalFilter&gt;</span>
+        <span class="nt">&lt;/sos:GetObservation&gt;</span>
+    <span class="nt">&lt;/env:Body&gt;</span>
+<span class="nt">&lt;/env:Envelope&gt;</span>
+</pre></div>
+</div>
+<p><strong>Listing 1:</strong> Request of observations.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id2">Things to try</a><a class="headerlink" href="#things-to-try" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>Try some of the other example queries from the pull down list.</li>
+<li>Try tweaking some of these queries to get different information.</li>
+<li>Try the <a class="reference external" href="http://localhost:8080/52nSOS/admin/index">SOS administrator</a> using
+username <code class="code docutils literal"><span class="pre">user</span></code> and password <code class="code docutils literal"><span class="pre">user</span></code>.</li>
+<li>Try Helgoland - the <a class="reference external" href="http://localhost:8080/52nSOS/static/client/helgoland/#/map">Viewer Client</a> (see Fig. 3).</li>
+<li>Try other sample data by performing the following steps:<ol class="arabic">
+<li>Open the SOS administrator <a class="reference external" href="http://localhost:8080/52nSOS/admin/datasource">database maintenance page</a>.</li>
+<li>Empty the database using the «Clear Datasource» button (this will delete
+the example data. You can restart OSGeoLive to get the data back.).</li>
+<li>Insert dynamically generated sample data by clicking the «Insert
+sample data» button. Please be informed that this operation might take
+some minutes.</li>
+<li>Open <a class="reference external" href="http://localhost:8080/52nSOS/static/client/helgoland/#/map">Helgoland</a>
+again and explore the generated sample data.</li>
+</ol>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/52n_sos_viewclient.png"><img alt="52°North SOS client - JavaScript client with time series data" class="align-center" src="../../_images/52n_sos_viewclient.png" style="width: 716.8px; height: 508.9px;" /></a>
+<p><strong>Fig. 3</strong>: 52°North SOS client - JavaScript client with time series data.</p>
+<ul class="simple">
+<li>Try the <a class="reference external" href="http://localhost:8080/52nSOS/api/">Sensor Web REST API</a> (see Listing 2):</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;services&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Service Provider&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A service provider offers timeseries data.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;stations&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Station&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A station is the place where measurement takes place.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;timeseries&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Timeseries&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;Represents a sequence of data values measured over time.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;categories&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Category&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A category group available timeseries.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;offerings&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Offering&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;procedures&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Procedure&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;phenomena&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Phenomenon&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;platforms&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Platforms&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A sensor platform where observations are made.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;geometries&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Geometries&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A geometry where observations are made or that was observed.&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Listing 2:</strong> Output of Sensor Web REST API endpoint.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id3">What next?</a><a class="headerlink" href="#what-next" title="Link a questa intestazione">¶</a></h2>
+<p>To learn more about the 52°North SOS and/or the 52°North Sensor Web Community,
+potential starting points are:</p>
+<ul class="simple">
+<li>52°North <a class="reference internal" href="../overview/52nSOS_overview.html"><span class="doc">SOS overview</span></a></li>
+<li>52°North Sensor Web mailing list: <a class="reference external" href="mailto:sensorweb&#37;&#52;&#48;52north&#46;org">sensorweb<span>&#64;</span>52north<span>&#46;</span>org</a></li>
+<li>52°North <a class="reference external" href="https://52north.org/research/research-labs/sensor-web/">Sensor Web community</a></li>
+<li>52°North <a class="reference external" href="https://sensorweb.demo.52north.org/sensorwebclient-webapp-stable/">SOS Client</a></li>
+<li>52°North <a class="reference external" href="https://52north.org/software/software-projects/sos">SOS Web site</a></li>
+</ul>
+<p>The development of this version of the 52°North SOS was supported by different
+projects, organizations, and persons. More details can be found in the
+<a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS client</a>.</p>
+<p>We would like to thank the Belgian Interregional Environment Agency
+(<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>)
+for providing the demonstration data used in this SOS installation.
+The demo data are published under a
+<a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> license.</p>
+<p>When the SOS is not available, please check if the tomcat servlet engine is
+running. Use the following commands:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>user@osgeolive:~$ sudo systemctl status tomcat8.service | grep Active
+Active: active (running) since Wed 2017-06-21 12:00:42 UTC; 42min ago  &lt;-- Tomcat is running
+[...]
+Active: inactive (dead)                                                &lt;-- Tomcat not runing, so please start:
+user@osgeolive:~$ sudo systemctl start tomcat8.service
+Active: active (running) since Wed 2017-06-21 12:52:42 UTC; 3s ago     &lt;-- Tomcat is running, now
+</pre></div>
+</div>
+<p><strong>Listing 3:</strong> Tomcat Status and Start (password for sudo: <code class="code docutils literal"><span class="pre">user</span></code>).</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

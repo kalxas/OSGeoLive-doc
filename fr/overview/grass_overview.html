@@ -1,0 +1,131 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GRASS GIS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GRASS GIS Quickstart" href="../quickstart/grass_quickstart.html" />
+    <link rel="prev" title="Guide de démarrage avec QGIS" href="../quickstart/qgis_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://grass.osgeo.org/"><img alt="../../_images/logo_grass.png" class="align-right" src="../../_images/logo_grass.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="grass-gis">
+<h1>GRASS GIS<a class="headerlink" href="#grass-gis" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="fully-featured-gis">
+<h2>SIG complet<a class="headerlink" href="#fully-featured-gis" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le «&nbsp;Geographic Resources Analysis Support System&nbsp;», communément appelé GRASS est un Système d’Information Géographique (SIG) qui propose un puissant moteur de traitement raster, vecteur et traitement géospatial regroupé dans une suite logicielle unique. GRASS intègre des outils pour la modélisation spatiale, la visualisation de rasters et de vecteurs, la gestion et l’analyse de données géospatiales, et le traitement d’images satellites et aériennes. Il est fournit avec un framework temporel pour le traitement avancé de séries temporelles et une API Python pour la programmation géospatiale rapide. Grass a été optimisé pour l’analyse de données géospatiales importante et performante. Il est également capable de produire des représentations graphiques sophistiquées pour l’impression papier. GRASS est aujourd’hui traduit dans de nombreuses langues et supporte un très grand nombre de formats de données.</p>
+<p>GRASS est utilisé dans le monde entier aussi bien pour des usages académiques que commerciaux, et est aussi utilisé par de nombreuses agences gouvernementales et agences pour l’environnement. Ils fonctionnent sur la plupart des systèmes d’exploitation et c’est un logiciel libre proposé sous les termes de la GNU-GPL (General Public License)</p>
+<p>Le logiciel GRASS intègre nativement plus de 400 modules d’analyses. De plus, plus de 100 modules et outils fournis par la communautés sont disponibles gratuitement à partir du dépôt de plugins. Après plus de 30 ans de développements continus, GRASS est à la fois le plus vieux et le plus gros projet SIG libre disponible. Il est facilement scriptable et suffisamment polyvalent pour être utilisé tant pour traiter des données par lots sur ​​des supercalculateurs massivement parallélisés que pour être utilisé sur des SIG de bureau, des PDA ou sur des netbooks</p>
+<a class="reference internal image-reference" href="../../_images/grass_screenshot.png"><img alt="grass screenshot" class="align-right" src="../../_images/grass_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caractéristiques principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li>Vous nommez une fonction, il y a <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/keywords.html">un outil pour ça</a>. dans GRASS.</li>
+<li>Explorez la <a class="reference external" href="https://grass.osgeo.org/learn/gallery/">collection de captures d’écran</a>.</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="https://grass.osgeo.org/">https://grass.osgeo.org/</a></p>
+<p><strong>Licence:</strong> GNU General Public License (GPL) version 2+</p>
+<p><strong>Version du logiciel:</strong> 7.8.5</p>
+<p><strong>Plates-formes supportées :</strong> GNU/Linux, Mac OSX, MS Windows</p>
+<p><strong>Interfaces de l’API :</strong> C, Python, Bourne Shell</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://grass.osgeo.org/about/community/">https://grass.osgeo.org/about/community/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/grass_quickstart.html"><span class="doc">Documentation du guide de démarrage rapide</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pygeoapi gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="PostGIS" href="../overview/postgis_overview.html" />
+    <link rel="prev" title="pygeoapi" href="../overview/pygeoapi_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pygeoapi.io/"><img alt="../../_images/logo_pygeoapi.png" class="align-right" src="../../_images/logo_pygeoapi.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="pygeoapi-quickstart">
+<h1>pygeoapi gyorstalpaló<a class="headerlink" href="#pygeoapi-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A pygeoapi egy eszköz az OGC Open API szolgáltatások gyors webes publikálásához. A (geo)python közösség hatékony nyílt forráskódú könyvtáraira épül.</p>
+<p>Ebben a gyorstalpalóban bemutatjuk a szoftver beállítását, és konkrét esetekben használjuk. Menet közben néhány kapcsolódó szoftverrel is találkozunk, mert a pygeoapi egy olyan termék, melyet általában más komponensekkel használunk egy probléma megoldása során.</p>
+<div class="section" id="prior-knowledge">
+<h2>Előzetes ismeretek<a class="headerlink" href="#prior-knowledge" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>pygeoapi is a Python web application for the spatial domain, so you need to be aware of the concepts of web applications and geospatial aspects such as grid and vector formats, OGC standards and projection systems. Python knowledge is recommended, although you can do without by running the application from OSGeoLive.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configure-and-start-the-service" id="id1">A szolgáltatás konfigurálása és indítása</a></li>
+<li><a class="reference internal" href="#configure-new-service" id="id2">Új szolgáltatás konfigurálása</a></li>
+<li><a class="reference internal" href="#using-a-web-browser-to-query-the-api" id="id3">Web böngésző használata az API lekérdezésre</a></li>
+<li><a class="reference internal" href="#using-oapi-features-in-desktop-gis" id="id4">OAPI- Elemek használata asztali GIS-ben</a></li>
+</ul>
+</div>
+<div class="section" id="configure-and-start-the-service">
+<h3><a class="toc-backref" href="#id1">A szolgáltatás konfigurálása és indítása</a><a class="headerlink" href="#configure-and-start-the-service" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">A Start menüből válassza a menuselection:<cite>Structure –&gt; osgeolive –&gt; appmenupath –&gt; pygeoapi</cite>-t. Az alkalmazás egy honlapot nyit meg a <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> címen</p>
+</li>
+<li><p class="first">navigáljon a felhasználói mappába <code class="docutils literal"><span class="pre">/usr/local/share/pygeoapi</span></code> és keresse meg a <cite>pygeoapi-config.yml`</cite> fájlt. Ez a fájl tartalmazza a szolgáltatás konfigurációját.</p>
+</li>
+<li><p class="first">Nyissa meg a <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">pygeoapi-config.yml</span></code> fájlt.</p>
+</li>
+<li><p class="first">Aktualizáljon néhány paramétert, mint például Title és Author és mentse a fájlt.</p>
+</li>
+<li><p class="first">Indítsa újra a szolgáltatást, például a terminál ablak lezárásával és a szolgáltatás ismételt indításával</p>
+<a class="reference internal image-reference" href="../../_images/pygeoapi_screenshot.png"><img alt="../../_images/pygeoapi_screenshot.png" src="../../_images/pygeoapi_screenshot.png" style="width: 280.0px; height: 138.6px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="configure-new-service">
+<h3><a class="toc-backref" href="#id2">Új szolgáltatás konfigurálása</a><a class="headerlink" href="#configure-new-service" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Most bevetünk egy vektoros adatkészletet a pygeoapi-ban, és elérhetővé tesszük az elemeit mint OGC API - Elemeket. Az OGC API – Elemek az OGC szabványa a vektorelemek webszolgáltatásként való elérhetővé tételére. Az OGC API - Elemek a WFS OpenAPI alternatívája.</p>
+<p>a pygeoapi számos háttérbázist támogat vektorforrásként való használatra, pl. geopackage, PostGIS, Elasticsearch, WFS stb. A GDAL OGR szolgáltatón keresztül szinte korlátlan számú más vektorforrás adható hozzá.</p>
+<p>Interesting datasets to expose as OAPI-Features consist of real world data having multiple attributes and links to other resources.
+OSGeoLive contains a number of datasets we can use. An example is <code class="docutils literal"><span class="pre">/var/www/html/openlayers/examples/data/geojson/countries.geojson</span></code>.
+You can configure it in pygeoapi using the GeoJSON provider.</p>
+<ol class="arabic simple">
+<li>Töltse le a GeoJSON fájlt és helyezze el a tests/data mappába.</li>
+<li>Frissítse a pygeoapi-config.yml-t a <code class="docutils literal"><span class="pre">countries</span></code> új gyűjtemény hozzáadásával a pygeoapi-hoz (szúrja be az alábbi részleteta többi gyűjtemény közé. Figyeljen az egymásba ágyazásra., az egymásba ágyazás fontos a YAML szintaxisban)</li>
+<li>pygeoapi újraindítás</li>
+</ol>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">countries</span><span class="p">:</span>
+   <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">collection</span>
+   <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Countries</span>
+   <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Countries of the world</span>
+   <span class="nt">keywords</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">industry</span>
+   <span class="nt">links</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">text/html</span>
+        <span class="nt">rel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">canonical</span>
+        <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">information</span>
+        <span class="nt">href</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://openlayers.org</span>
+        <span class="nt">hreflang</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">en-US</span>
+   <span class="nt">extents</span><span class="p">:</span>
+      <span class="nt">spatial</span><span class="p">:</span>
+         <span class="nt">bbox</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">-180</span><span class="p p-Indicator">,</span><span class="nv">-90</span><span class="p p-Indicator">,</span><span class="nv">180</span><span class="p p-Indicator">,</span><span class="nv">90</span><span class="p p-Indicator">]</span>
+   <span class="nt">providers</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feature</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GeoJSON</span>
+        <span class="nt">data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/www/html/openlayers/examples/data/geojson/countries.geojson</span>
+        <span class="nt">id_field</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
+</pre></div>
+</div>
+<p>Ellenőrizze az elérhető gyűjteményeket a a böngészőben a <a class="reference external" href="http://localhost:5000/collections/countries">http://localhost:5000/collections/countries</a> címen.</p>
+</div>
+<div class="section" id="using-a-web-browser-to-query-the-api">
+<h3><a class="toc-backref" href="#id3">Web böngésző használata az API lekérdezésre</a><a class="headerlink" href="#using-a-web-browser-to-query-the-api" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Most, hogy a szolgáltatás már elérhető, különböző kliens eszközökkel lekérdezhetjük. A gyűjtemény minden egyes eleme elérhető gyakori formátumokban, mint például HTML, GeoJSON és GML. Kezdéshez használhatjuk a web böngészőt a szolgáltatás áttekintéséhez . A <a class="reference external" href="http://localhost:5000/collections/countries">http://localhost:5000/collections/countries</a>-től ássunk le az egyes elemekig. A szolgáltatás automatikusan észleli (accept header), hogy webböngészőt használunk, és az elemek HTML reprezentációját adja vissza. Vegye észre a jobb felső sarokban az explicit hivatkozásokat az accept header felülbírálására és más elem reprezentáció kérésére (?f=geojson).</p>
+<p>Minden Open Api egy interaktív dokumentációval rendelkezik a <a class="reference external" href="http://localhost:5000/openapi">http://localhost:5000/openapi</a> oldalon.Ezen az interaktív web lapon a szolgáltatáshoz tartozó metódusokról, de webes űrlapokon közvetlenül is kapcsolatba léphez velük.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/openapidoc.png"><img alt="../../_images/openapidoc.png" src="../../_images/openapidoc.png" style="width: 1009.4px; height: 368.2px;" /></a>
+</div></blockquote>
+<p>Az OGC API-kat  <a class="reference external" href="https://w3c.github.io/sdw/bp/#bp-summary">térinformatikai adatok a weben legjobb gyakorlatokat</a> szem előtt tartva fejlesztették. Ezeknek a legjobb gyakorlatoknak egy fontos aspektusa a kereső motor optimalizálás. A pygeoapi néhány crawl optimalizálást ad hozzá az Open API szabványok követelményein felül; A gyűjtemény metaadatait strukturáltan kereshetik a keresőmotorok, azzal a céllal, hogy a gyűjtemények olyan eszközökben legyenek felfedezhetők, mint a Google Adatkészlet-keresés. A strukturált adatok képességeinek értékeléséhez használja a Yandex vagy a Google strukturált adatok tesztelő eszközeit. Másolja az országok gyűjtőoldalának html forrását (vagy egy online pygeoapi példány gyűjtőoldalának URL-jét) egy strukturált adatvizsgálati eszközbe, és értékelje, hogy az eszköz milyen strukturált adatokat képes kinyerni belőle. A keresőmotor ezeket az információkat felhasználja az adatkészlet-indexében.</p>
+</div>
+<div class="section" id="using-oapi-features-in-desktop-gis">
+<h3><a class="toc-backref" href="#id4">OAPI- Elemek használata asztali GIS-ben</a><a class="headerlink" href="#using-oapi-features-in-desktop-gis" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Ebben a gyorstalpalóban a QGIS használjuk a szolgáltatás lekérdezésére, de hasonló munkafolyamatra van lehetőség más GIS eszközökkel, pl. ArcGIS, FME, OpenLayers.</p>
+<p>A QGIS 3.14-től kezdődően vektor rétegként adhat hozzá OAPI-Elemek réteget. Az <code class="docutils literal"><span class="pre">Réteg</span> <span class="pre">hozzáadás</span></code> menüből válassza a <code class="docutils literal"><span class="pre">WFS</span> <span class="pre">/</span> <span class="pre">OAPI</span> <span class="pre">elemek</span> <span class="pre">réteg</span> <span class="pre">hozzáadását</span></code>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis-wfs.png"><img alt="../../_images/qgis-wfs.png" src="../../_images/qgis-wfs.png" style="width: 277.9px; height: 243.6px;" /></a>
+</div></blockquote>
+<p>A megnyíló ablakban hozzon létre egy új kapcsolatot, írja be az URL a szolgáltatáshoz <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>.</p>
+<p>Kattintson az OK-ra és utána <code class="docutils literal"><span class="pre">kapcsolódás</span></code> a szolgáltatáshoz tartozó elérhető gyűjtemények betöltéséhez.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis-layers.png"><img alt="../../_images/qgis-layers.png" src="../../_images/qgis-layers.png" style="width: 280.0px; height: 139.29999999999998px;" /></a>
+</div></blockquote>
+<p>Válassza a <code class="docutils literal"><span class="pre">countries</span></code> gyüjteményt és kattintson az «Add»-ra, hogy a réteget a QGIS térképhez adja.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

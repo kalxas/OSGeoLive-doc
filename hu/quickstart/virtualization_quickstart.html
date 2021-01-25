@@ -1,0 +1,197 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OSGEoLive gyorstalpaló a virtuális gép futtatásához &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="Indítható OSGeoLive USB meghajtó létrehozása" href="usb_quickstart.html" />
+    <link rel="prev" title="OSGeoLive telepítése a merevlemezre" href="osgeolive_install_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="osgeolive-quickstart-for-running-in-a-virtual-machine">
+<h1>OSGEoLive gyorstalpaló a virtuális gép futtatásához<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Ez a gyorstalpaló az OSGeoLive egy futtatási módját írja le a VirtualBox virtuális gépben. Más megoldásokhoz kövesse a linkeket a „Lásd még” szakaszt lentebb.</p>
+<div class="section" id="virtual-machine-advantages">
+<h2>Virtuális gép előnyei<a class="headerlink" href="#virtual-machine-advantages" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>A VM válaszolásideje sokkal gyorsabb mint a DVD-é és jellemzően összehasonlítható a  a közvetlenül a fogadó gépre történő telepítéssel.</li>
+<li>Minden konfiguráció módosítás, szoftver frissítés és mentett fájlok megmaradnak, mint bármely „szokásos” számítógépen. Így:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Testreszabhatja és frissítheti a rendszert</li>
+<li>Elmentheti a munkáját a virtuális gépen</li>
+<li>További szoftvert telepíthet</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Biztonsági mentést készíthet a telepített virtuális gépről.</li>
+</ul>
+</div>
+<div class="section" id="system-requirements">
+<h2>Rendszer követelmények<a class="headerlink" href="#system-requirements" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>RAM: legalább 2GB. A Lubuntu rendszer jól fut 1 GB RAM-mal és legalább ugyanannyi memóriát kell fenntartani a gazda számítógépnek. Szóval összesen 2 GB szükséges a zökkenőmentes működéshez. Néhány alkalmazás számára, mint a GeoServer, legalább 2 GB RAM szükséges a virtuális gépben. Tehát ha lehetséges, fontolja meg, hogy 2 GB-ot vagy többet biztosítson virtuális gépének.</li>
+<li>Szabad merevlemez terület:: a <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról letöltött virtuális lemez fájl (vmdk) kitömörítve majdnem 10 GB. És további területre lesz szüksége a virtuális gépen dolgozáshoz. 20 GB egy megfelelő javasolt méret.</li>
+<li>CPU: bármilyen CPU megfelelő, de a „Virtualizációs technológiát” támogató processzorok gyorsabbak. A számítógépének processzorát <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">itt</a> ellenőrizheti.</li>
+</ul>
+<p>Az elmúlt 4-5 évben készített gépek többsége megfelel a követelményeknek.</p>
+</div>
+<div class="section" id="howto">
+<h2>Hogyan csináljuk<a class="headerlink" href="#howto" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><strong>Letöltések</strong></p>
+<p>Töltse le a <a class="reference external" href="https://www.virtualbox.org/">Virtual Box-ot</a> a platformjához és telepítse a szoftvert.  Windowson futtassa a telepítőt vagy Ubuntu típusú linux rendszereken tegye a következőt:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
+<p>Emellett töltse le az OSGeo virtuális lemez fájlt (vmdk) a  <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról. Kattintson a „Virtuális gép letöltés” gombra. Majd tömörítse ki a letöltött fájl (<a class="reference external" href="https://www.7-zip.org">7zip</a> használatával).</p>
+<p><strong>Virtuális gép létrehozása</strong></p>
+<p>Indítsa el a virtuális gép alkalmazást és kattintson az Új gombra egy új VM létrehozásához, majd nyomja meg a Következő gombot.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox.png"><img alt="../../_images/virtualbox.png" src="../../_images/virtualbox.png" style="width: 386.5px; height: 291.5px;" /></a>
+</div></blockquote>
+<p>Adjon meg egy nevet mint például OSGeoLive és válassza a Linux-ot mint „Operációs rendszer” és Ubuntu legyen a verzió.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name.png"><img alt="../../_images/virtualbox_select_name.png" src="../../_images/virtualbox_select_name.png" style="width: 247.79999999999998px; height: 280.0px;" /></a>
+</div></blockquote>
+<p>A következő lapon állítsa be a memóriát 1024 MB-ra (vagy többre, ha a gazda számítógép több mint 4 GB-tal rendelkezik, mint a képernyő képen).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory.png"><img alt="../../_images/vmdk_memory.png" src="../../_images/vmdk_memory.png" style="width: 228.8px; height: 261.3px;" /></a>
+</div></blockquote>
+<p>Folytassa a következő lappal és válassza a „Use existing hard disk” beállítást. Kattintson a gombra (egy mappa ikon), tallózzon oda, ahova az OSGeoLive vmdk fájlt mentette. Válassza ezt a fájlt, lépjen tovább és „Create”.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
+</div></blockquote>
+<p><strong>Konfiguráció tippek és trükkök</strong></p>
+<p>A VM létrehozása után kattintson a Settings gombra. A „General” szakaszban nyissa meg az Advanced fület, és kattintson a „Show at top of screen” a Mini eszköztárnál.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
+</div></blockquote>
+<p>Menjen a „Display” részhez és növelje a videomemóriát 32 vagy 64 MB-ra. Bizonyos gazda operációs rendszerek esetén szükség lehet az „Enable 3D Acceleration” bekapcsolására a képernyő tökéletes működéséhez.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display.png"><img alt="../../_images/vmdk_display.png" src="../../_images/vmdk_display.png" style="width: 424.45px; height: 282.1px;" /></a>
+</div></blockquote>
+<p>Ezenkívül lépjen a „Shared folders” szakaszra, és kattintson az „Add Folder” (zöld + ikonra a jobb oldalon), hogy megtalálja azt a mappát a gazdagépen, amelyet meg szeretne osztani a VM-en belül.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders.png"><img alt="../../_images/vmdk_shared_folders.png" src="../../_images/vmdk_shared_folders.png" style="width: 423.15000000000003px; height: 280.8px;" /></a>
+</div></blockquote>
+<p>Kiválaszthatja, hogy a megosztott mappa csak olvasható, és automatikusan elérhető (auto-mount) legyen. Miután kitöltötte a „Folder path” és a „Folder name” mezőket, kattintson az OK gombra, majd ismét az OK gombra a beállítások befejezéséhez és az ablak bezárásához.</p>
+<p><strong>Virtuális gép futtatása</strong></p>
+<p>Most töltse be a VM-et a Start (zöld nyíl) gombra kattintva.</p>
+<p>Amikor az ISO-t egy virtuális gépre telepíti, a felhasználó névnek „user”-nek kell lennie</p>
+<p>A „user” felhasználó nem tagja a „users” csoportnak az OSGeoLive virtuális gépen. Ez megakadályozza, hogy néhány eszköz az adatkönyvtárakba írjon és néhány szoftver elindulását megakadályozza.</p>
+<p>A megoldás a VMDK javítása a következő egyszeri eljárással:</p>
+<ol class="arabic simple">
+<li>Indítson egy terminált</li>
+<li>Futtassa „sudo adduser user users”.</li>
+<li>Alkalmazza ezt a módosítást egy új munkamenet indításával: vagy indítsa újra a virtuális gépet vagy jelentkezzen ki és jelentkezzen be (felhasználónév „user”, jelszó „user”).</li>
+</ol>
+<p>Amikor az OSGeoLive rendszer elindul adja magát a vboxf csoporthoz, hogy (a korábban definiált) megosztott mappák elérhetők legyenek, a következő futtatásával egy terminál ablakban:</p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
+<p>A fenti példában egy „GIS” nevű osztott mappának az elérési útját adtuk meg a gazda gépen a VM beállításokban. Az osztott mappa a fájl rendszerben a /media/sf_GIS alatt jelenik meg. A felhasználó bejelentkezési könyvtárába a következő parancsokkal illeszthetjük be:</p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></code></p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></code></p>
+<p>Ezután a gazda gépen a kiválasztott mappában található fájlok elérhetők lesznek a VM-ben a felhasználó bejelentkezési könyvtárában „GIS” névvel.</p>
+</div>
+<div class="section" id="see-also">
+<h2>Lásd még:<a class="headerlink" href="#see-also" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>OSGeo wiki oldalak:</dt>
+<dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Más megoldások a virtuális gép létrehozására</a></dd>
+</dl>
+</li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive gyorstalpaló</span></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">OSGeoLive telepítése a merevlemezre</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">Indítható OSGeoLive USB meghajtó létrehozása</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

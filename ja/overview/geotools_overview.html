@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoTools &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="GEOS" href="geos_overview.html" />
+    <link rel="prev" title="GDAL/OGR クイックスタート" href="../quickstart/gdal_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geotools.org/"><img alt="../../_images/logo_geotools.png" class="align-right" src="../../_images/logo_geotools.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geotools">
+<h1>GeoTools<a class="headerlink" href="#geotools" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>GeoTools は Open Geospatial Consortium (OGC) の標準に準拠した空間データの操作やデータ構造を利用するための、オープンソース (LGPL) の Java ライブラリです。</p>
+<p>GeoTools は Web サービスやコマンドライン、デスクトップアプリケーションなどを含むいくつかのプロジェクトで利用されています。OSGeoLive のアプリケーションで  GeoTools を利用しているものは以下となります: <a class="reference internal" href="52nSOS_overview.html"><span class="doc">52 North SOS</span></a>, <a class="reference internal" href="52nWPS_overview.html"><span class="doc">52 North WPS</span></a>, AtlasStyler, <span class="xref std std-doc">geomajas_overview</span>, Geopublisher, <a class="reference internal" href="geoserver_overview.html"><span class="doc">GeoServer</span></a>, 及び <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a></p>
+<a class="reference internal image-reference" href="../../_images/geotools_screenshot.png"><img alt="geotools screenshot" class="align-right" src="../../_images/geotools_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul>
+<li><p class="first">主要な空間概念とデータ構造のためのインタフェースの定義</p>
+<ul class="simple">
+<li>統合されたジオメトリのサポートは、<a class="reference external" href="https://sourceforge.net/projects/jts-topo-suite/">JTS Topology Suite(JTS)</a> によって提供されます。</li>
+<li>OGC Filter Encoding仕様を使用する属性および空間フィルタ</li>
+</ul>
+</li>
+<li><p class="first">スレッド間、トランザクションサポート、スレッド間のロックをサポートするクリーンなデータアクセスAPI</p>
+<ul class="simple">
+<li>多くのファイル形式および空間データベースのGISデータにアクセスする</li>
+<li>座標参照系と変換サポート</li>
+<li>広範囲のマップ投影を使用する</li>
+<li>空間的および非空間的属性に関してデータをフィルタ処理および分析する</li>
+</ul>
+</li>
+<li><p class="first">ステートレスでメモリの少ないレンダラ。サーバ側の環境で特に便利です。</p>
+<ul class="simple">
+<li>複雑なスタイルを使用してマップを作成および表示する</li>
+</ul>
+</li>
+<li><p class="first">XML Schemaを使用してGMLコンテンツにバインドする強力な*schema assisted*解析テクノロジ</p>
+<ul class="simple">
+<li>構文解析/符号化技術は、GML、Filter、KML、SLD、およびSEを含む多くのOGC標準のバインディングを備えています。</li>
+</ul>
+</li>
+<li><p class="first">GeoToolsプラグイン:ライブラリに追加のフォーマットを追加ができるオープンなプラグインシステム</p>
+<ul class="simple">
+<li>GDALから追加のラスター形式を読み込めるようにするImageIO-EXTプロジェクトのプラグイン</li>
+</ul>
+</li>
+<li><p class="first">GeoTools拡張機能</p>
+<ul class="simple">
+<li>コアライブラリのspatial facilitesを使用して構築された追加機能を提供します。</li>
+</ul>
+<img alt="Extensions built using the GeoTools library" src="../../_images/geotools-extension.png" />
+<ul class="simple">
+<li>拡張機能は、(最短パスを見つけるための)グラフとネットワーキングのサポート、検証、Webマップサーバクライアント、XML構文解析とエンコーディングのバインディング、そしてカラーbrewerを提供します。</li>
+</ul>
+</li>
+<li><p class="first">サポートされていないGeoTools</p>
+<ul class="simple">
+<li>GeoToolsはまた、新しい人材を育成し、実験を促進するために使用されるステージング領域を持つ、より広いコミュニティの一部として動作します。</li>
+<li>注目すべき点は、スイングサポート(geotoolsチュートリアルで使用)、swt、ローカルおよびWebプロセスサポート、追加の記号、追加のデータフォーマット、グリッドの生成、およびISOジオメトリのいくつかの実装です。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="supported-formats">
+<h2>サポートするフォーマット<a class="headerlink" href="#supported-formats" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul>
+<li><p class="first">ラスター形式とデータアクセス:</p>
+<p>arcsde, arcgrid, geotiff, grassraster, gtopo30, image (JPEG, TIFF, GIF, PNG), imageio-ext-gdal, imagemoasaic, imagepyramid, JP2K, matlab.</p>
+</li>
+<li><p class="first">データベース 「jdbc-ng」のサポート:</p>
+<p>db2, h2, mysql, oracle, postgis, spatialite, sqlserver.</p>
+</li>
+<li><p class="first">ベクタフォーマットとデータアクセス:</p>
+<p>app-schema, arcsde, csv, dxf, edigeo, excel, geojson, org, property, shapefile, wfs.</p>
+</li>
+<li><p class="first">XML バインディング:</p>
+<p>次データのために提供されるJavaデータ構造とバインディング: xsd-core (xml simple types), fes, filter, gml2, gml3, kml, ows, sld, wcs, wfs, wms, wps, vpf.</p>
+<p>DOMおよびSAXサプリケーションで利用できる追加のジオメトリ、フィルタ、スタイルのパーサ/エンコーダ。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>多数のオープン地理空間コンソーシアム(OGC)標準のサポート:</p>
+<ul class="simple">
+<li>OGC Style Layer Descriptor/記号データ構造のエンコードとレンダリングエンジン</li>
+<li>Simple Featureサポートを含むOGC General Feature Model</li>
+<li>ラスタ情報表現のOGC Grid Coverage</li>
+<li>OGC  Filterと Common Constraint Language (CQL)</li>
+<li>Web Feature Service(WFS)、Web Map Service(WMS)、およびWeb Process Service(WPS)の試験的サポートのクライアント</li>
+<li>ISO19107ジオメトリ</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://geotools.org/">https://geotools.org/</a></p>
+<p><strong>ライセンス:</strong> LGPL</p>
+<p><strong>対応OS:</strong> Cross Platform Java 8,9,10</p>
+<p><strong>API インターフェイス:</strong> Java</p>
+<p><strong>サポート:</strong> <a class="reference external" href="http://docs.geotools.org/latest/userguide/welcome/support.html">Communication and Support</a></p>
+</div>
+<div class="section" id="geotools-support">
+<h2>GeoTools_サポート<a class="headerlink" href="#geotools-support" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.geotools.org/latest/userguide/tutorial/quickstart/index.html">クイックスタート文書</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

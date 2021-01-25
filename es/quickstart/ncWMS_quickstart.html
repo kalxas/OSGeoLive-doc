@@ -1,0 +1,221 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de ncWMS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="EOxServer" href="../overview/eoxserver_overview.html" />
+    <link rel="prev" title="ncWMS" href="../overview/ncWMS_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://reading-escience-centre.gitbooks.io/ncwms-user-guide/content/"><img alt="../../_images/logo_ncWMS.png" class="align-right" src="../../_images/logo_ncWMS.png" /></a>
+<div class="section" id="ncwms-quickstart">
+<h1>Inicio Rápido de ncWMS<a class="headerlink" href="#ncwms-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>ncWMS es un servicio de mapas web que permite la visualización rápida de datos de archivos NetCDF y otras fuentes de datos ambientales. Esta guía de inicio rápido describe cómo explorar los datos de muestra proporcionados con el cliente web Godiva2. Para configurar y agregar otras fuentes de datos al servidor, consulte la documentación en <a class="reference external" href="https://reading-escience-centre.gitbooks.io/ncwms-user-guide/content/">ncWMS website</a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-ncwms-and-understand-the-workspace" id="id1">Inicie ncWMS y comprenda el espacio de trabajo</a><ul>
+<li><a class="reference internal" href="#navigating-the-map" id="id2">Navegando por el mapa</a></li>
+<li><a class="reference internal" href="#selecting-the-vertical-level" id="id3">Seleccionando el nivel vertical</a></li>
+<li><a class="reference internal" href="#selecting-the-timestep" id="id4">Seleccionando el paso de tiempo</a></li>
+<li><a class="reference internal" href="#finding-the-data-value-at-a-point" id="id5">Encontrar el valor de los datos en un punto</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#change-the-style-of-the-data-display" id="id6">Cambiar el estilo de la visualización de datos</a><ul>
+<li><a class="reference internal" href="#adjusting-the-colour-contrast-range" id="id7">Ajuste del rango de contraste de color</a></li>
+<li><a class="reference internal" href="#locking-the-scale-range" id="id8">Bloqueo del rango de escala</a></li>
+<li><a class="reference internal" href="#changing-the-colour-palette" id="id9">Cambiar la paleta de colores</a></li>
+<li><a class="reference internal" href="#other-parameters" id="id10">Otros parámetros</a></li>
+<li><a class="reference internal" href="#creating-animations" id="id11">Creando animaciones</a></li>
+<li><a class="reference internal" href="#timeseries-plots" id="id12">Gráficos de series de tiempo</a></li>
+<li><a class="reference internal" href="#vertical-sections-and-transects-along-arbitrary-paths" id="id13">Secciones verticales y transectos a lo largo de caminos arbitrarios</a></li>
+<li><a class="reference internal" href="#changing-the-background-map" id="id14">Cambiar el mapa de fondo</a></li>
+<li><a class="reference internal" href="#changing-the-map-projection" id="id15">Cambiar la proyección del mapa</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saving-and-emailing-the-view" id="id16">Guardar y enviar por correo electrónico la vista</a></li>
+<li><a class="reference internal" href="#what-next" id="id17">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="start-ncwms-and-understand-the-workspace">
+<h2><a class="toc-backref" href="#id1">Inicie ncWMS y comprenda el espacio de trabajo</a><a class="headerlink" href="#start-ncwms-and-understand-the-workspace" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Seleccione <span class="menuselection">Geospatial ‣ Servicios Web ‣ ncWMS ‣ Iniciar ncWMS</span>.</p>
+<p>Después de unos momentos, la aplicación se iniciará y abrirá un navegador web en <a class="reference external" href="http://localhost:8080/ncWMS2/Godiva3.html">http://localhost:8080/ncWMS2/Godiva3.html</a></p>
+<a class="reference internal image-reference" href="../../_images/ncWMS-01-start_screen.png"><img alt="../../_images/ncWMS-01-start_screen.png" src="../../_images/ncWMS-01-start_screen.png" style="width: 563.2px; height: 422.40000000000003px;" /></a>
+<ul class="simple">
+<li>Utilice el menú de la izquierda para elegir un conjunto de datos para ver.</li>
+<li>Al hacer click en un conjunto de datos (o en el icono + a la izquierda del mismo) se expandirá el conjunto de datos para mostrar las variables disponibles para trazar.</li>
+<li>Elija una variable haciendo click en ella. Los datos se muestran en el mapa interactivo después de un breve retraso (puede aparecer una barra de progreso que muestra el progreso de la carga de teselas de imagen desde los servidores WMS).</li>
+</ul>
+<div class="section" id="navigating-the-map">
+<h3><a class="toc-backref" href="#id2">Navegando por el mapa</a><a class="headerlink" href="#navigating-the-map" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El mapa interactivo se puede arrastrar con el ratón para navegar. Usando los controles en la parte superior izquierda del mapa puede acercar y alejar. Puede acercar rápidamente a un área determinada manteniendo pulsada la tecla Mayús y arrastrando un rectángulo en el mapa.</p>
+</div>
+<div class="section" id="selecting-the-vertical-level">
+<h3><a class="toc-backref" href="#id3">Seleccionando el nivel vertical</a><a class="headerlink" href="#selecting-the-vertical-level" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si la variable que está viendo tiene una dimensión vertical, podrá seleccionar el nivel vertical usando el cuadro desplegable sobre el mapa.</p>
+</div>
+<div class="section" id="selecting-the-timestep">
+<h3><a class="toc-backref" href="#id4">Seleccionando el paso de tiempo</a><a class="headerlink" href="#selecting-the-timestep" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si la variable mostrada tiene una dimensión de tiempo, aparecerá un control de fecha encima del mapa. Haga click en este control para seleccionar la fecha en la que desea centrarse. Si hay varios pasos de tiempo disponibles para este día, utilice el cuadro desplegable situado encima del mapa para seleccionar la hora.</p>
+</div>
+<div class="section" id="finding-the-data-value-at-a-point">
+<h3><a class="toc-backref" href="#id5">Encontrar el valor de los datos en un punto</a><a class="headerlink" href="#finding-the-data-value-at-a-point" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Una vez que se ha mostrado una variable en el mapa, puede hacer click en el mapa para descubrir el valor de los datos en ese punto. El valor de los datos, junto con la latitud y longitud del punto en el que hizo click, aparecerá en una pequeña ventana emergente en el punto donde hizo click.</p>
+<a class="reference internal image-reference" href="../../_images/ncWMS_screenshot.png"><img alt="../../_images/ncWMS_screenshot.png" src="../../_images/ncWMS_screenshot.png" style="width: 563.2px; height: 422.40000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="change-the-style-of-the-data-display">
+<h2><a class="toc-backref" href="#id6">Cambiar el estilo de la visualización de datos</a><a class="headerlink" href="#change-the-style-of-the-data-display" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="adjusting-the-colour-contrast-range">
+<h3><a class="toc-backref" href="#id7">Ajuste del rango de contraste de color</a><a class="headerlink" href="#adjusting-the-colour-contrast-range" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La primera vez que cargue una variable aparecerá con un rango de escala de color predeterminado. Este rango puede no ser adecuado para la región geográfica y el paso de tiempo que le interesan. Al hacer clic en «auto» (la rueda de color a la derecha de la barra de escala de colores), el rango de escala de color se estirará automáticamente para adaptarse a los datos que se muestran actualmente en el mapa. También puede cambiar manualmente el rango de escala de color editando los valores en la parte superior e inferior de la barra de escala de color.</p>
+</div>
+<div class="section" id="locking-the-scale-range">
+<h3><a class="toc-backref" href="#id8">Bloqueo del rango de escala</a><a class="headerlink" href="#locking-the-scale-range" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>A veces, al comparar dos conjuntos de datos, es posible que desee corregir el rango de la escala de colores para que cuando seleccione una nueva variable, esa variable esté sombreada con exactamente la misma escala de colores. Para hacer esto, haga click en el enlace «bloquear», que es el ícono del candado a la derecha de la barra de escala de colores. El rango de escala de color no se cambiará cuando se cargue una nueva variable y el rango de escala no se pueda editar manualmente. Sin embargo, la paleta de colores y el número de bandas de colores aún se pueden modificar mientras el rango de escala está bloqueado. Haga click en el icono de candado nuevamente para hacer que la escala de color sea editable.</p>
+</div>
+<div class="section" id="changing-the-colour-palette">
+<h3><a class="toc-backref" href="#id9">Cambiar la paleta de colores</a><a class="headerlink" href="#changing-the-colour-palette" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La paleta de colores se puede cambiar haciendo click en la barra de escala de colores. Se mostrará una ventana emergente con las paletas disponibles. Haga click en uno para cargar la nueva paleta. La ventana también contiene un cuadro desplegable para seleccionar el número de bandas de color a utilizar, de 10 (dando un aspecto contorneado) a 250 (suavizado).  Tenga en cuenta que si se cambia el número de bandas de color, tendrá que hacer click en la paleta deseada para realizar el cambio.  Todas las paletas de colores se pueden invertir haciendo clic en el botón «Voltear» en el selector de paletas de colores.</p>
+</div>
+<div class="section" id="other-parameters">
+<h3><a class="toc-backref" href="#id10">Otros parámetros</a><a class="headerlink" href="#other-parameters" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ciertas variables, particularmente los parámetros biológicos, se muestran mejor con una escala de color logarítmica.&nbsp;El espaciado de la escala de color se puede alternar entre lineal y logarítmico utilizando el cuadro desplegable a la derecha de la barra de escala de color.&nbsp;Tenga en cuenta que no puede seleccionar una escala logarítmica si el rango de la escala de color contiene valores negativos o cero.</p>
+</div>
+<div class="section" id="creating-animations">
+<h3><a class="toc-backref" href="#id11">Creando animaciones</a><a class="headerlink" href="#creating-animations" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Haga click en el botón del asistente de animación debajo de la esquina inferior izquierda del mapa.</li>
+<li>Seleccione una hora de inicio y finalización para la animación.</li>
+<li>Elija la granularidad y velocidad de fotogramas para la animación.</li>
+<li>Haga click en «Ir». Tenga en cuenta que la animación puede tardar bastante tiempo en mostrarse.</li>
+<li>Haga clic en el botón «Detener animación» (donde estaba el asistente) para detener la animación y regresar los controles a la normalidad.</li>
+</ol>
+</div>
+<div class="section" id="timeseries-plots">
+<h3><a class="toc-backref" href="#id12">Gráficos de series de tiempo</a><a class="headerlink" href="#timeseries-plots" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La creación de un trazado de serie temporal utiliza un asistente similar al utilizado para crear animaciones. Al buscar el valor de datos en un punto, aparecerá un vínculo para crear un gráfico de series temporales si los datos tienen un eje de tiempo.  Las gráficas de series temporales se abren en una nueva ventana.</p>
+</div>
+<div class="section" id="vertical-sections-and-transects-along-arbitrary-paths">
+<h3><a class="toc-backref" href="#id13">Secciones verticales y transectos a lo largo de caminos arbitrarios</a><a class="headerlink" href="#vertical-sections-and-transects-along-arbitrary-paths" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>En la parte superior del mapa, haga click en el icono que parece una línea que une cuatro puntos.</li>
+<li>Haga click en el mapa para empezar a dibujar una línea.</li>
+<li>Agregue «puntos de ruta» a lo largo de esta línea haciendo un solo click en cada punto.</li>
+<li>Haga doble click para finalizar la línea. Se abre una nueva ventana del navegador que muestra la variación de la variable vista a lo largo de la línea (es decir, un trazado de transección). Si la variable tiene una cota vertical, se mostrará un trazado de sección vertical debajo del trazado de transecto.</li>
+</ol>
+</div>
+<div class="section" id="changing-the-background-map">
+<h3><a class="toc-backref" href="#id14">Cambiar el mapa de fondo</a><a class="headerlink" href="#changing-the-background-map" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hay disponible una selección de mapas de fondo en los que se pueden proyectar datos. Seleccione un mapa de fondo diferente haciendo click en el pequeño signo más en la esquina superior derecha del mapa interactivo.</p>
+</div>
+<div class="section" id="changing-the-map-projection">
+<h3><a class="toc-backref" href="#id15">Cambiar la proyección del mapa</a><a class="headerlink" href="#changing-the-map-projection" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La proyección del mapa se cambia seleccionando un nuevo mapa de fondo como se ha mencionado anteriormente. Si el mapa de fondo está en una proyección diferente, la superposición de datos se volverá a proyectar automáticamente en el nuevo sistema de coordenadas. Godiva3 ofrece la opción de seleccionar un mapa de fondo en la proyección estereográfica polar norte o sur. Puede haber un retraso antes de que el mapa se muestre en la nueva proyección.</p>
+<a class="reference internal image-reference" href="../../_images/ncWMS-04-north_pole.png"><img alt="../../_images/ncWMS-04-north_pole.png" src="../../_images/ncWMS-04-north_pole.png" style="width: 563.2px; height: 422.40000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="saving-and-emailing-the-view">
+<h2><a class="toc-backref" href="#id16">Guardar y enviar por correo electrónico la vista</a><a class="headerlink" href="#saving-and-emailing-the-view" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es posible que desee guardar la vista actual para volver a ella más tarde o compartirla con un colega. El «Permalink» debajo de la esquina inferior derecha del mapa enlaza a una URL completa que vuelve a crear la vista actual.</p>
+<ul class="simple">
+<li>Haga clic con el botón izquierdo en el enlace permanente para abrir una nueva ventana con una vista idéntica.</li>
+<li>Haga click derecho en el enlace permanente y seleccione «Copiar ubicación de enlace» o el equivalente para su navegador web. A continuación, puede pegar el enlace en un informe, sus notas o un correo electrónico.</li>
+<li>Puede hacer click en «Enlace de Correo Electrónico» para iniciar un nuevo mensaje de correo electrónico en su cliente de correo electrónico predeterminado con el link permanente ya incluido en el cuerpo del mensaje.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id17">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Sitio Web: <a class="reference external" href="https://github.com/Reading-eScience-Centre/ncwms">https://github.com/Reading-eScience-Centre/ncwms</a></p>
+<p>Soporte: <a class="reference external" href="https://github.com/Reading-eScience-Centre/ncwms/issues">https://github.com/Reading-eScience-Centre/ncwms/issues</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNetwork gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="pycsw" href="../overview/pycsw_overview.html" />
+    <link rel="prev" title="GeoNetwork" href="../overview/geonetwork_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonetwork-opensource.org"><img alt="../../_images/logo_geonetwork.png" class="align-right" src="../../_images/logo_geonetwork.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonetwork-quickstart">
+<h1>GeoNetwork gyorstalpaló<a class="headerlink" href="#geonetwork-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A GeoNetwork egy katalógus alkalmazás térben elhelyezett források kezelésére. Hatékony metaadat szerkesztőt és kereső funkciókat biztosít továbbá interaktív web térkép megjelenítőt. Mostanában számos téradat infrastruktúra kezdeményezésben használják világszerte.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#prerequisites" id="id1">Előfeltételek</a></li>
+<li><a class="reference internal" href="#access-the-catalog" id="id2">A katalógus elérése</a></li>
+<li><a class="reference internal" href="#sign-in" id="id3">Bejelentkezés</a></li>
+<li><a class="reference internal" href="#load-sample-data" id="id4">Mintaadatok betöltése</a></li>
+<li><a class="reference internal" href="#search-for-spatial-data" id="id5">Téradatok keresése</a></li>
+<li><a class="reference internal" href="#display-results" id="id6">Eredmények megjelenítése</a></li>
+<li><a class="reference internal" href="#add-layers-to-the-map" id="id7">Réteg hozzáadása a térképhez</a></li>
+<li><a class="reference internal" href="#what-next" id="id8">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="prerequisites">
+<h2><a class="toc-backref" href="#id1">Előfeltételek</a><a class="headerlink" href="#prerequisites" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A GeoNetwork-öt közvetlenül elindíthatja az OSGeoLive tart menüjéből és néhány pillanat múlva elérhető lesz a <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a> címen. Nézze meg a <a class="reference external" href="https://geonetwork-opensource.org/manuals/trunk/en/install-guide/index.html">Telepítési útmutatót</a>, ha másik környezetben használná a GeoNetwork-öt.</p>
+<p>Ebben az útmutatóban a <code class="docutils literal"><span class="pre">http://localhost:8880/geonetwork</span></code> URL-t használjuk a katalógusra való hivatkozáshoz, kérjük, helyettesítse egy másik URL-lel, ha ez nem megfelelő az ön rendszerén.</p>
+</div>
+<div class="section" id="access-the-catalog">
+<h2><a class="toc-backref" href="#id2">A katalógus elérése</a><a class="headerlink" href="#access-the-catalog" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az asztalon a Web szolgáltatások mappában (vagy a start menüből) kattinson duplán a <strong>start GeoNetwork</strong>-re. Ez megnyitja a FireFox böngészőt  a <code class="docutils literal"><span class="pre">http://localhost:8880/geonetwork</span></code> URL-el. Erre a dokumentumban végig mint „honlap” hivatkozunk.</p>
+<p>Bármikor visszatérhet a honlapra a katalógus logót kiválasztva a bal-felső sarokban a felső eszközsorban. Az alábbi képernyő képen “My GeoNetwork catalogue” címkével jelöltük meg, de ettől eltérő névvel és logóval rendelkezhet.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_home-page.png"><img alt="../../_images/geonetwork_home-page.png" src="../../_images/geonetwork_home-page.png" style="width: 716.8px; height: 427.7px;" /></a>
+</div>
+</div>
+<div class="section" id="sign-in">
+<h2><a class="toc-backref" href="#id3">Bejelentkezés</a><a class="headerlink" href="#sign-in" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Válassza a <strong>Sign in</strong>-t a honlapon az eszközsor jobb-felső részén a bejelentkező oldal meglátogatásához. Írja be az <code class="docutils literal"><span class="pre">admin</span></code> felhasználó nevet és az <code class="docutils literal"><span class="pre">admin</span></code> jelszót és válassza a kék <em>Sign in*</em> gombot a katalógus kezelőbe belépéshez.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_signin.png"><img alt="../../_images/geonetwork_signin.png" src="../../_images/geonetwork_signin.png" style="width: 539.0px; height: 161.7px;" /></a>
+</div>
+<p>Miután bejelentkezett a felső eszközsor megváltozik további elemek kerülnek bele, egy link az Admin konzolhoz, a bejelentkezett felhasználó neve, link a kijelentkezéshez és egy legördülő lista a felhasználói felület nyelvének megváltoztatásához.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_identified-user.png"><img alt="../../_images/geonetwork_identified-user.png" src="../../_images/geonetwork_identified-user.png" style="width: 347.9px; height: 32.199999999999996px;" /></a>
+</div>
+</div>
+<div class="section" id="load-sample-data">
+<h2><a class="toc-backref" href="#id4">Mintaadatok betöltése</a><a class="headerlink" href="#load-sample-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Válassza az <strong>Admin console</strong>-t a felső eszközsorból a katalógus adminisztratív funkcióinak eléréséhez, utána válassza a <strong>Metadata and templates</strong> menüpontot a mintaadatok és sablonok fül eléréséhez.</p>
+<p>Ez a oldal a katalógusba betöltött összes metaadat szabványt listázza. Az alapértelmezett szabványok a GeoNetworkben a következők:</p>
+<ul class="simple">
+<li>Földrajzi információ - Metaadat (iso19139:2007)</li>
+<li>Földrajzi információ - Metaadat (iso19115-3.2018)</li>
+<li>Dublin Core (csak CSW-hez) (csw-rekord)</li>
+<li>Dublin Core (dublin core)</li>
+<li>Földrajzi információk - A szolgáltatás katalogizálás módszertana (iso9110)</li>
+</ul>
+<p>A gyorstalpaló céljai érdekében válassza a <code class="docutils literal"><span class="pre">Geographic</span> <span class="pre">information</span> <span class="pre">-</span> <span class="pre">Metadata</span> <span class="pre">(iso19139:2007)</span></code>-t és utána válassza az első <strong>Load samples for selected standards</strong> gombot a lista alatt.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_templates.png"><img alt="../../_images/geonetwork_templates.png" src="../../_images/geonetwork_templates.png" style="width: 534.1px; height: 467.59999999999997px;" /></a>
+</div>
+<p><em>Amikor ez a folyamat befejeződik, egy értesítés jelenik az ablak jobb oldalán meg, hogy az „iso19139” sémához 5 rekordot hozzáadtunk.</em></p>
+</div>
+<div class="section" id="search-for-spatial-data">
+<h2><a class="toc-backref" href="#id5">Téradatok keresése</a><a class="headerlink" href="#search-for-spatial-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Térjen vissza a katalógus honlapjára a felső eszköztár bal-felső részén található katalógusnév kiválasztásával. A honlapon megjelennek a betöltött rekordokat ábrázoló ikonok, téma (kék) és erőforrástípus (zöld színben) szerint osztályozva. Az alábbiakban a fülek besorolása a rekordok hozzáadási dátuma (legfrissebb hírek) és népszerűsége (legnépszerűbb) szerint történt.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_screenshot.png"><img alt="../../_images/geonetwork_screenshot.png" src="../../_images/geonetwork_screenshot.png" style="width: 716.8px; height: 532.0px;" /></a>
+</div>
+<p>Válassza a <strong>Search</strong>.öt a felső eszközsorban a Keresés lap eléréséhez</p>
+<p>A keresés oldal különböző keresési módokat biztosít</p>
+<ul class="simple">
+<li>egy szabad szöveges keresőmező, amely gépelés közben javaslatokat ad.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_full-text.png"><img alt="../../_images/geonetwork_full-text.png" src="../../_images/geonetwork_full-text.png" style="width: 415.79999999999995px; height: 43.4px;" /></a>
+</div>
+<ul class="simple">
+<li><em>Search facets</em> vagy szűrök a keresési eredmények szűkítését biztosítják, ilyen például a <em>Type of Resource</em>, <em>Topic</em>, <em>Keywords</em>,</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_facets.png"><img alt="../../_images/geonetwork_facets.png" src="../../_images/geonetwork_facets.png" style="width: 215.6px; height: 248.49999999999997px;" /></a>
+</div>
+<ul class="simple">
+<li>Egy áttekintő térkép, aho legy mezőt rajzolhat az eredmények térbeli szűréséhez (Tipp- ha ezt nem látja, válassza a MAP lehetőséget az oldal jobb alsó sarkában)</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_spatial-filter.png"><img alt="../../_images/geonetwork_spatial-filter.png" src="../../_images/geonetwork_spatial-filter.png" style="width: 169.39999999999998px; height: 162.39999999999998px;" /></a>
+</div>
+<ul class="simple">
+<li>A keresőmezőben lévő függőleges három pontra kattintással elérheti a <strong>advanced search</strong> panelt, és <em>kategória</em>, <em>kulcsszó</em>, <em>kapcsolattartó</em> vagy egy adott időintervallumba eső rekordok alapján kereshet.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_advanced.png"><img alt="../../_images/geonetwork_advanced.png" src="../../_images/geonetwork_advanced.png" style="width: 640.5px; height: 142.79999999999998px;" /></a>
+</div>
+</div>
+<div class="section" id="display-results">
+<h2><a class="toc-backref" href="#id6">Eredmények megjelenítése</a><a class="headerlink" href="#display-results" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A keresési eredmények „kártyákként” jelennek meg, a metaadatok alapján kategóriákba sorolva, a rekord címével, egy miniatűrrel, egy absztrakttal (ha van) és a letöltésekre és egyéb erőforrásokra mutató hivatkozásokkal (ha vannak).</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_a-result.png"><img alt="../../_images/geonetwork_a-result.png" src="../../_images/geonetwork_a-result.png" style="width: 315.7px; height: 177.1px;" /></a>
+</div>
+<p>Válasszon ki egy kártyát, hogy teljes részletes adatokat trtalmazó oldal jelenjen meg a rekordról. Válassza a kék <strong>Back to search</strong> gombot a keresés oldalra visszatéréshez amikor befejezte.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_a-record.png"><img alt="../../_images/geonetwork_a-record.png" src="../../_images/geonetwork_a-record.png" style="width: 716.8px; height: 448.7px;" /></a>
+</div>
+<p>A rekordok jobb-felső sarkában ikonok vannak:</p>
+<ul class="simple">
+<li>A rekord szerkesztése (bejelentkezés után)</li>
+<li>Rekord törlése</li>
+<li>Rekordok kezelése (jogosultságok megtekintése, hozzárendelése, szerkesztése, tulajdonjog átadása más felhasználónak)</li>
+<li>A rekord letöltése többféle formátumban</li>
+<li>Váltás <em>teljes nézetre</em> vagy <em>XML nézetre</em></li>
+</ul>
+<p>A <strong>Full view</strong>-ra váltva részletesebb metaadatokat  láthatunk. Az eredeti nézethez visszatérhet a <strong>Default view</strong> kiválasztásával a listából.</p>
+</div>
+<div class="section" id="add-layers-to-the-map">
+<h2><a class="toc-backref" href="#id7">Réteg hozzáadása a térképhez</a><a class="headerlink" href="#add-layers-to-the-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A <strong>Search</strong> fülön kattintson a <strong>Physiographic Map of North and Central Eurasia (Sample record, please remove!)</strong> kártyára a metaadatok megtekintéséhez. Mozogjon lefelé amíg a <strong>Download and links</strong> rész látható lesz.</p>
+<p>A <strong>Download and links</strong> rész a metaadatokhoz kapcsolódó külső forrásokat mutat, mint például:</p>
+<ul class="simple">
+<li>Egy fájl a letölthető adatokkal,</li>
+<li>További információk mint például egy honlap,</li>
+<li>Egy Web Mapping Service (WMS) vagy Web Feature Service (WFS) link az adatokhoz.</li>
+</ul>
+<p>Keresse meg a <strong>This dataset is published in the view service (WMS) available at http://data.fao.org/maps/wms with layer name GEONETWORK:phy_landf_7386.</strong> címkéjű linket és válassza az <strong>Add to map</strong>-et.</p>
+<p>Ez a lépés átvált a <strong>Map</strong> fülre a katalógusban és egy rövid késleltetés után a WMS réteget hozzáadja a térképhez.</p>
+<p>A térkép használatához szükséges eszközöket két csoportba rendezték a térkép jobb oldalán. A felső csoport így néz ki:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maptools_top.png"><img alt="../../_images/geonetwork_maptools_top.png" src="../../_images/geonetwork_maptools_top.png" style="width: 27.299999999999997px; height: 203.0px;" /></a>
+</div>
+<p>Az eszközök a következők:</p>
+<ul class="simple">
+<li>Új réteg hozzáadása a térképhez. Kereshet a katalógusban, adjon hozzá rétegeket a web szolgáltatásokból vagy KML-ből,</li>
+<li>Létező rétegek kezelése vagy a háttér térkép módosítása (az alapértelmezett az openstreetmap).</li>
+<li>Rétegek szűrése a térképen  (ha konfigurálta).</li>
+<li>A térkép kezelése, alapértelmezett beállítások visszaállítása, új térkép definíció betöltése, aktuális térkép letöltése vagy a térkép konfiguráció mentése rétegként a katalógusba,</li>
+<li>A térkép nyomtatása</li>
+<li>Szinkronizálja a rétegeket a Search fülön lévő kis térképpel,</li>
+<li>Távolságmérés a térképen,</li>
+<li>Szöveg írása a térképre.</li>
+</ul>
+<p>Az eszközök alsó csoportja így néz ki:</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maptools_bottom.png"><img alt="../../_images/geonetwork_maptools_bottom.png" src="../../_images/geonetwork_maptools_bottom.png" style="width: 28.7px; height: 126.69999999999999px;" /></a>
+</div>
+<p>Ezek a következők:</p>
+<ul class="simple">
+<li>Nagyítás a térképben</li>
+<li>Kicsinyítés a térképen</li>
+<li>Nagyítás a kezdeti terjedelemre</li>
+<li>Nagyítson a pozíciójára (ha a böngészőben a hely elérését engedélyezte).</li>
+<li>Fokhálózat (rácsvonalak) hozzáadása a térképéhez.</li>
+</ul>
+<p>Ezen kívül van egy földrajzi kereső eszköz a bal felső sarokban.</p>
+<p>A Rétegek kezelése eszköz használatával válassza ki a fogaskerék szimbólumot a <strong>Physiography of North and Central Eurasia Landform</strong> mellett és válassza a <strong>Zoom to layer</strong>-t.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_manage_layers_cog.png"><img alt="../../_images/geonetwork_manage_layers_cog.png" src="../../_images/geonetwork_manage_layers_cog.png" style="width: 291.9px; height: 272.29999999999995px;" /></a>
+</div>
+<p>A térkép ránagyít ennek a rétegnek a terjedelmére.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_zoom_to_layer.png"><img alt="../../_images/geonetwork_zoom_to_layer.png" src="../../_images/geonetwork_zoom_to_layer.png" style="width: 1302.0px; height: 576.8px;" /></a>
+</div>
+<p>Válassza a <strong>paintbrush</strong> ikont a réteg mellett a jelmagyarázat megtekintéséhez, a megjelenítéshez használt osztályozást mutatja. A párbeszédablakból kiléphet a az <strong>X</strong>-el a jobb-felső sarokban.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_layer_legend.png"><img alt="../../_images/geonetwork_layer_legend.png" src="../../_images/geonetwork_layer_legend.png" style="width: 249.89999999999998px; height: 357.7px;" /></a>
+</div>
+<p>Válasszon ki egy olyan elemet a térképen, amely megfelel a jelmagyarázat egy kategóriájának, például egy vízterületnek. A megfelelő terület azonosításához nagyítsa és mozgassa a térképet. Az elemre kattintva megjelenik egy azonosítás mező a térkép alján, amely a kiválasztott terület részleteit mutatja.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonetwork_maplayer_infoclick.png"><img alt="../../_images/geonetwork_maplayer_infoclick.png" src="../../_images/geonetwork_maplayer_infoclick.png" style="width: 1271.1999999999998px; height: 535.5px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id8">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Látogassa meg  a <a class="reference external" href="https://geonetwork-opensource.org/manuals/trunk/en/user-guide/index.html">Geonetwork felhasználói kézikönyvet</a> és nézze meg a <strong>Describing Information</strong> fejezetet, hogy megtanulja hogyan hozzon létre és szerkesszen metaadat rekordokat.</p>
+<p>Folytassa a következő fejezetek felkeresésével, hogy megtudja, hogyan társíthatja az adatforrásokat a metaadataihoz, hogyan címkézheti meg kulcsszavakkal, és hogyan adhatja hozzá a kategóriákhoz, és hogyan teheti közzé metaadatait a külvilág számára.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

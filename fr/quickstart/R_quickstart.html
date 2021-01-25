@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage avec R &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Mapnik" href="../overview/mapnik_overview.html" />
+    <link rel="prev" title="R" href="../overview/R_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cran.r-project.org"><img alt="../../_images/logo_R.png" class="align-right" src="../../_images/logo_R.png" /></a>
+<div class="section" id="r-quickstart">
+<h1>Guide de démarrage avec R<a class="headerlink" href="#r-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>R est un environnement logiciel libre pour le calcul statistique et la création de graphiques.</p>
+<p>Ce guide de démarrage rapide décrit comment&nbsp;:</p>
+<blockquote>
+<div><ul class="simple">
+<li>utiliser R pour l’arithmétique simple</li>
+<li>charger des données à partir d’un shapefile et les cartographier</li>
+<li>faire une transformation de coordonnées</li>
+<li>tracer quelques points sur une carte</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-r" id="id1">Démarrer R</a></li>
+<li><a class="reference internal" href="#building-data" id="id2">Construire des données</a></li>
+<li><a class="reference internal" href="#loading-map-data" id="id3">Chargement de données géospatiales</a></li>
+<li><a class="reference internal" href="#vignettes" id="id4">Vignettes</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">Ensuite ?</a></li>
+</ul>
+</div>
+<div class="section" id="start-r">
+<h2><a class="toc-backref" href="#id1">Démarrer R</a><a class="headerlink" href="#start-r" title="Lien permanent vers ce titre">¶</a></h2>
+<p>R est essentiellement un programme en ligne de commande, même s’il existe des interfaces graphiques. Vous tapez une ligne de code dans l’invite, appuyez sur Entrée et l’interprète R évalue et affiche le résultat.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Ne craignez pas la ligne de commande - c’est une source de grande puissance. Utilisation des flèches de haut en bas pour rappeler les commandes afin que vous puissiez modifier les erreurs. Appuyez sur CTRL-C si vous êtes coincé et vous devriez obtenir l’invite de retour.</p>
+</div>
+<p>Choisissez  <span class="menuselection">Geospatial ‣ Spatial Tools ‣ R Statistics</span>. Une fenêtre terminale s’ouvre exécutant R.</p>
+<p>Vous pouvez commencer par des calculs simples.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">6</span>
+
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">2.5</span>
+
+<span class="o">&gt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.414214</span>
+
+<span class="o">&gt;</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.155727</span>
+</pre></div>
+</div>
+<p>Une gamme complète de fonctions arithmétiques, trigonométriques et statistiques sont intégrées, et des milliers d’autres sont disponibles à partir de packages dans l’archive <a class="reference external" href="https://cran.r-project.org/">CRAN</a>.</p>
+<p>L’invite principale dans R est <code class="docutils literal"><span class="pre">&gt;</span></code>, mais il y a aussi l’invite de continuation <code class="docutils literal"><span class="pre">+</span></code>, qui apparaît si R s’attend à plus d’entrée pour faire une expression valide. Vous verrez ceci si vous oubliez une parenthèse ou un crochet de fermeture.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sqrt</span><span class="p">(</span>
+<span class="o">+</span> <span class="mi">2</span>
+<span class="o">+</span> <span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.414214</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-data">
+<h2><a class="toc-backref" href="#id2">Construire des données</a><a class="headerlink" href="#building-data" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous vous demandez peut-être ce que le mystérieux «un» dans les crochets carrés fait dans la sortie. Cela vous dit que le résultat est un nombre. R peut stocker des choses dans des vecteurs unidimensionnels, des matrices bidimensionnelles et des tableaux multidimensionnels. Il existe de nombreuses fonctions qui peuvent générer ces choses. Voici une séquence simple:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">seq</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.000000</span> <span class="mf">1.444444</span> <span class="mf">1.888889</span> <span class="mf">2.333333</span> <span class="mf">2.777778</span> <span class="mf">3.222222</span> <span class="mf">3.666667</span> <span class="mf">4.111111</span>
+<span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="mf">4.555556</span> <span class="mf">5.000000</span>
+</pre></div>
+</div>
+<p>Maintenant, vous pouvez voir que le  <code class="docutils literal"><span class="pre">[9]</span></code> nous dit que 4.555 est la neuvième valeur dans le vecteur.</p>
+<p>Si vous construisez une matrice, vous obtenez des étiquettes de ligne et de colonne :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">m</span>
+     <span class="p">[,</span><span class="mi">1</span><span class="p">]</span> <span class="p">[,</span><span class="mi">2</span><span class="p">]</span> <span class="p">[,</span><span class="mi">3</span><span class="p">]</span> <span class="p">[,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,]</span>    <span class="mi">1</span>    <span class="mi">4</span>    <span class="mi">7</span>   <span class="mi">10</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,]</span>    <span class="mi">2</span>    <span class="mi">5</span>    <span class="mi">8</span>   <span class="mi">11</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,]</span>    <span class="mi">3</span>    <span class="mi">6</span>    <span class="mi">9</span>   <span class="mi">12</span>
+</pre></div>
+</div>
+<p>Les éléments de matrices peuvent être extraits à l’aide de parenthèses carrées, avec des indices de ligne et de colonne séparés par des virgules. Laissez un index vide pour obtenir une rangée entière comme vecteur. Utilisez un index vectoriel pour obtenir plusieurs lignes ou colonnes comme matrice plus petite :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">11</span>
+
+<span class="o">&gt;</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="mi">2</span>  <span class="mi">5</span>  <span class="mi">8</span> <span class="mi">11</span>
+
+<span class="o">&gt;</span> <span class="n">m</span><span class="p">[,</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+     <span class="p">[,</span><span class="mi">1</span><span class="p">]</span> <span class="p">[,</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,]</span>    <span class="mi">7</span>   <span class="mi">10</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,]</span>    <span class="mi">8</span>   <span class="mi">11</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,]</span>    <span class="mi">9</span>   <span class="mi">12</span>
+</pre></div>
+</div>
+<p>Les cadres de données sont des structures de données qui reflètent le type de structure trouvée dans un SGBDR comme PostgreSQL ou MySQL. Chaque ligne peut être considérée comme un enregistrement, avec des colonnes étant comme des champs dans une base de données. Comme dans une base de données, chaque champ doit être du même type pour chaque enregistrement.</p>
+<p>À bien des égards, ils fonctionnent comme des matrices, mais vous pouvez également obtenir et définir les colonnes par nom en utilisant notation $:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; d = data.frame(x=1:10, y=1:10, z=runif(10)) # z is 10 random numbers
+&gt; d
+        x  y          z
+    1   1  1 0.44128080
+    2   2  2 0.09394331
+    3   3  3 0.51097462
+    4   4  4 0.82683828
+    5   5  5 0.21826740
+    6   6  6 0.65600533
+    7   7  7 0.59798278
+    8   8  8 0.19003625
+    9   9  9 0.24004866
+    10 10 10 0.35972749
+
+&gt; d$z
+ [1] 0.44128080 0.09394331 0.51097462 0.82683828 0.21826740 0.65600533
+ [7] 0.59798278 0.19003625 0.24004866 0.35972749
+
+&gt; d$big = d$z &gt; 0.6  # d$big is now a boolean true/false value
+&gt; d[1:5,]
+  x y          z   big
+1 1 1 0.44128080 FALSE
+2 2 2 0.09394331 FALSE
+3 3 3 0.51097462 FALSE
+4 4 4 0.82683828  TRUE
+5 5 5 0.21826740 FALSE
+
+&gt; d$name = letters[1:10] # create a new field of characters
+&gt; d[1:5,]
+  x y          z   big name
+  1 1 1 0.44128080 FALSE    a
+  2 2 2 0.09394331 FALSE    b
+  3 3 3 0.51097462 FALSE    c
+  4 4 4 0.82683828  TRUE    d
+  5 5 5 0.21826740 FALSE    e
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-map-data">
+<h2><a class="toc-backref" href="#id3">Chargement de données géospatiales</a><a class="headerlink" href="#loading-map-data" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il existe de nombreux paquets pour la manipulation des données spatiales et des statistiques. Certains sont inclus ici, et certains peuvent être téléchargés à partir du CRAN.</p>
+<p>Ici, nous allons charger deux shapefiles - les frontières du pays et des lieux peuplés à partir des données Natural Earth. Nous utilisons deux modules d’add-on pour obtenir la fonctionnalité spatiale :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>           <span class="c1"># Simple Features manipulation Library</span>
+<span class="o">&gt;</span> <span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>      <span class="c1"># Plotting library</span>
+
+<span class="o">&gt;</span> <span class="n">countries</span> <span class="o">&lt;-</span> <span class="n">st_read</span><span class="p">(</span><span class="n">dsn</span> <span class="o">=</span> <span class="s2">&quot;~/data/natural_earth2/ne_10m_admin_0_countries.shp&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">places</span> <span class="o">&lt;-</span> <span class="n">st_read</span><span class="p">(</span><span class="n">dsn</span> <span class="o">=</span> <span class="s2">&quot;~/data/natural_earth2/ne_10m_populated_places.shp&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_sf</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Cela nous donne une carte simple du monde:</p>
+<img alt="../../_images/r_plot1.png" src="../../_images/r_plot1.png" />
+<p>Lorsqu’un jeu de données OGR est lu dans R de cette façon, nous retrouvons un objet qui se comporte de plusieurs façons comme un cadre de données. Nous pouvons utiliser le champ <code class="docutils literal"><span class="pre">admin</span></code> pour découper les données mondiales et n’obtenir que le Royaume-Uni:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; uk &lt;- countries[countries$admin == &#39;United Kingdom&#39;,]
+&gt; ggplot(uk) + geom_sf()
+</pre></div>
+</div>
+<img alt="../../_images/r_plot2.png" src="../../_images/r_plot2.png" />
+<p>Cela semble un peu écrasé à tous ceux qui vivent ici, puisque nous sommes plus familiers avec un système de coordonnées centrée sur nos latitudes. Actuellement, l’objet n’a pas de système de coordonnées qui lui est assigné.</p>
+<p>Nous avons besoin d’attribuer un CRS à l’objet avant de pouvoir le transformer avec la fonction sf::st-transform du paquet sf. Nous transformons en EPSG:27700 qui est le système de grille pour la Grande Bretagne de l’Ordnance Survey :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ukos</span> <span class="o">&lt;-</span> <span class="n">st_transform</span><span class="p">(</span><span class="n">uk</span><span class="p">,</span><span class="mi">27700</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">ukos</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_sf</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/r_plot2_1.png" src="../../_images/r_plot2_1.png" />
+<p>Cela trace la carte de base des données transformées. Maintenant, nous voulons ajouter quelques points à partir de l’ensemble de données de lieux peuplés. Encore une fois, nous créons un sous-ensemble des points que nous voulons et les transformons dans la grille de référence de l’Ordnance Survey :</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; ukpop &lt;- places[places$SOV0NAME == &#39;United Kingdom&#39;,]
+&gt; ukpop &lt;- st_transform(ukpop,27700)
+</pre></div>
+</div>
+<p>Nous ajoutons ces points à la carte de base, en faisant varier leur taille par la racine carrée de la population (parce que cela rend un symbole avec une zone proportionnelle à la population), définissons la couleur à rouge et le caractère de traçage à un rond plein:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; ggplot() +
+&gt;   geom_sf(data = ukos) +                                                          # add UK shape to the map
+&gt;   geom_sf(data = ukpop,                                                           # add the Populated places
+&gt;           aes(size = ukpop$POP_MAX/100000),                       # fix size of points (by area)
+&gt;           colour = &#39;red&#39;, alpha = 1/5) +                          # set points colour and transparency
+&gt;   coord_sf(crs = 27700, datum= sf::st_crs(27700),         # set a bounding box
+&gt;            xlim = st_bbox(ukos[c(1,3)]),                          # for the map
+&gt;            ylim = st_bbox(ukos[c(2,4)])
+&gt;           ) +
+&gt;   ggtitle(&#39;Uk Population centre sizes&#39;) +                         # set the map title
+&gt;       theme(legend.position = &#39;bottom&#39;) +                         # Legend position
+&gt;           scale_size_area(name = &#39;Population \nin 100K&#39;)  # 0 value means 0 area + legend title
+</pre></div>
+</div>
+<p>et notre image finale apparaît:</p>
+<img alt="../../_images/r_plot3.png" src="../../_images/r_plot3.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Pour quitter R, tapez <code class="docutils literal"><span class="pre">q()</span></code> et en tapez validez avec <code class="docutils literal"><span class="pre">Entrée</span></code>. R vous demandera si vous souhaitez enregistrer votre espace de travail en tant que fichier d’image de données R. Lorsque vous recommencez R à partir d’un répertoire avec un <code class="docutils literal"><span class="pre">.</span> <span class="pre">RData</span></code> fichier, il va restaurer toutes ses données à partir de là.</p>
+</div>
+</div>
+<div class="section" id="vignettes">
+<h2><a class="toc-backref" href="#id4">Vignettes</a><a class="headerlink" href="#vignettes" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans le passé, la documentation pour les paquets R avait tendance à être des pages d’aide laconiquement écrites pour chaque fonction. Maintenant, les auteurs du paquet sont encouragés à écrire une <code class="docutils literal"><span class="pre">vignette</span></code> comme une introduction amicale au paquet. Si vous exécutez la fonction <code class="docutils literal"><span class="pre">vignette()</span></code> sans arguments, vous obtiendrez la liste de ces vignettes sur votre système. Essayez <code class="docutils literal"><span class="pre">vignette(&quot;sf1&quot;)</span></code> pour une introduction légèrement technique au package spatial R <code class="docutils literal"><span class="pre">sf</span></code>.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id5">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour plus d’informations générales sur R, essayez  l”<a class="reference external" href="https://cran.r-project.org/doc/manuals/R-intro.html">introduction à R</a> ou l’une des documentations de la page principale <a class="reference external" href="https://www.r-project.org/">R Project</a>.</p>
+<p>Pour plus d’informations sur les aspects spatiaux de R, le meilleur endroit pour commencer est probablement le <a class="reference external" href="https://cran.r-project.org/web/views/Spatial.html">R Spatial Task View</a></p>
+<p>Vous pouvez également consulter la page <a class="reference external" href="https://www.rspatial.org">R-Spatial</a> .</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

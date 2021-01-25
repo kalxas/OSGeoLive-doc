@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapCache gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="deegree" href="../overview/deegree_overview.html" />
+    <link rel="prev" title="MapCache" href="../overview/mapcache_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapserver.org/mapcache"><img alt="../../_images/logo_mapcache.png" class="align-right" src="../../_images/logo_mapcache.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapcache-quickstart">
+<h1>MapCache gyorstalpaló<a class="headerlink" href="#mapcache-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A MapCache egy csempe szerver, mely meggyorsítja a hozzáférést a WMS réteghez. CGI alkalmazásként futtatható több különböző web szerver alatt vagy mint egy Apache modul. Az OSGEOLive-on a MapCache-t mint Apache modult telepítettük és konfiguráltuk.</p>
+<p>Ez a gyorstalpaló bemutatja hogyan adjunk egy új WMS réteget a MapCache beállításhoz, hogyan jelenítsük a csempe szolgáltatást egy OpenLayers web térképen, és hogyan töltsük fel a gyorstárat a parancssorból.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#adding-a-new-tileset-and-displaying-in-openlayers" id="id1">Új csempekészlet hozzáadása és megjelenítése OpenLayers-ben</a></li>
+<li><a class="reference internal" href="#adding-new-services" id="id2">Új szolgáltatás hozzáadása</a></li>
+<li><a class="reference internal" href="#the-seeder-application" id="id3">A feltöltő alkalmazás</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="adding-a-new-tileset-and-displaying-in-openlayers">
+<h2><a class="toc-backref" href="#id1">Új csempekészlet hozzáadása és megjelenítése OpenLayers-ben</a><a class="headerlink" href="#adding-a-new-tileset-and-displaying-in-openlayers" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A MapCache-t XML fájlok felhasználasával konfigurálták. Az OSGeoLive egy minta konfigurációs fájlt tartalmaz  <code class="docutils literal"><span class="pre">/usr/local/share/mapcache/mapcache-quickstart.xml</span></code>. A példa az OSGeoLive Itasca megyei demó MapServer alkalmazást használja forrásként.</p>
+<p>Ebben a gyorstalpalóban egy további WMS rétegre állítjuk be a csempe gyorstárazást és megjelenítjük a csempéket egy OpenLayers térképet tartalmazó egyszerű HTML oldalon.</p>
+<p>Először nyissa meg a MapCache konfigurációs fájlt a FeatherPad szövegszerkesztőben. A parancssorból megnyitott FeatherPad ellenőrzi a jogosultságokat, elmentheti a fájlt System Tools &gt; QTerminallal majd futtassa az alábbi parancsot:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
+</pre></div>
+</div>
+<p>A következő link: <a class="reference external" href="http://localhost/itasca/?service=wms&amp;request=getcapabilities">http://localhost/itasca/?service=wms&amp;request=getcapabilities</a> megnyitásával Láthatjuk mely rétegek érhetők el a forrás WMS szerverünkben, a MapCachet úgy konfigurálták, hogy az általa nem kezelt kéréseket, például GetCapabilities,  a MapServer-hez továbbítsa az alább bemutatott szabállyal:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;forwarding_rule</span> <span class="na">name=</span><span class="s">&quot;catch all&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;http&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/http&gt;</span>
+<span class="nt">&lt;/forwarding_rule&gt;</span>
+</pre></div>
+</div>
+<p>Az egyik  a WMS Capabilities dokumentumban listázott rétegek közül a <code class="docutils literal"><span class="pre">dlgstln2</span></code> - patakok Itasca megyében.  Hozzáadjuk ezt a MapCache szolgáltatáshoz mint egy új csempe készlet. Először hozzáadunk egy <code class="docutils literal"><span class="pre">&lt;source&gt;</span> <span class="pre">``</span> <span class="pre">blokkot</span> <span class="pre">-</span> <span class="pre">ez</span> <span class="pre">a</span> <span class="pre">konfiguráció</span> <span class="pre">az</span> <span class="pre">adatok</span> <span class="pre">kinyeréséhez</span> <span class="pre">a</span> <span class="pre">WMS</span> <span class="pre">szerverből.</span> <span class="pre">Adja</span> <span class="pre">a</span> <span class="pre">következő</span> <span class="pre">XML</span> <span class="pre">blokkot</span> <span class="pre">a</span> <span class="pre">létező</span> <span class="pre">``mapcache-quickstart.xml``hez</span> <span class="pre">``&lt;source</span> <span class="pre">name=&quot;lake_source&quot;</span> <span class="pre">type=&quot;wms&quot;&gt;...&lt;/source&gt;</span></code> tavakhoz használt blokk után:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;source</span> <span class="na">name=</span><span class="s">&quot;streams_source&quot;</span> <span class="na">type=</span><span class="s">&quot;wms&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;getmap&gt;</span>
+    <span class="nt">&lt;params&gt;</span>
+      <span class="nt">&lt;FORMAT&gt;</span>image/png<span class="nt">&lt;/FORMAT&gt;</span>
+      <span class="nt">&lt;LAYERS&gt;</span>dlgstln2<span class="nt">&lt;/LAYERS&gt;</span>
+      <span class="nt">&lt;MAP&gt;</span>/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map<span class="nt">&lt;/MAP&gt;</span>
+    <span class="nt">&lt;/params&gt;</span>
+  <span class="nt">&lt;/getmap&gt;</span>
+  <span class="nt">&lt;http&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://localhost/cgi-bin/mapserv?<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/http&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+</pre></div>
+</div>
+<p>Az <code class="docutils literal"><span class="pre">&lt;params&gt;</span></code> blokkot használjuk a WMS rétegnév és a képformátum átadására a WMS szerverhez, a MapServer specifikus <code class="docutils literal"><span class="pre">&lt;map&gt;</span></code> paraméterrel. A WMS szerver URL-je a <code class="docutils literal"><span class="pre">&lt;http&gt;</span></code> blokkban van. Az összes konfiguráció fájl elem dokumentációjához nézze meg a <a class="reference external" href="https://mapserver.org/mapcache/config.html">Konfiguráció documentációt</a>.</p>
+<p>Ezután hozzáadunk egy <code class="docutils literal"><span class="pre">&lt;tileset&gt;</span></code> blokkot, mely megadja, hogyan tároljuk a forrást és hogyan szolgáltatjuk csempeként. Helyezze el a következő blokkot a létező <code class="docutils literal"><span class="pre">&lt;tileset</span> <span class="pre">name=&quot;lakes&quot;&gt;...&lt;/tileset&gt;</span></code> blokk után.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;tileset</span> <span class="na">name=</span><span class="s">&quot;streams&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source&gt;</span>streams_source<span class="nt">&lt;/source&gt;</span>
+  <span class="nt">&lt;cache&gt;</span>disk<span class="nt">&lt;/cache&gt;</span>
+  <span class="nt">&lt;grid&gt;</span>GoogleMapsCompatible<span class="nt">&lt;/grid&gt;</span>
+  <span class="nt">&lt;format&gt;</span>PNG<span class="nt">&lt;/format&gt;</span>
+<span class="nt">&lt;/tileset&gt;</span>
+</pre></div>
+</div>
+<p>A rács típust a beépített  <code class="docutils literal"><span class="pre">GoogleMapsCompatible</span></code> rácsra állítjuk, melyet sok web térkép alkalmazás alapértelmezett csempe sémaként használ. A <code class="docutils literal"><span class="pre">name=streams</span></code>-et használja a kliens alkalmazás a csempekészlet eléréséhez. Lemez alapú gyorsítótárat használunk (inkább mint adatbázisban tárolt csempéket vagy felhő környezetet).</p>
+<p>Bármikor a MapCache konfiguráció fájl módosítása után a módosítások érvényesítése érdekében újra be kell tölteni az Apache-t. Ez a parancssorból futtatható a következőképpen:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apachectl -k graceful
+</pre></div>
+</div>
+<p>Most már elérheti a csempét a következő URL-el: <a class="reference external" href="http://localhost/itasca/gmaps/streams&#64;GoogleMapsCompatible/12/987/1433.png">http://localhost/itasca/gmaps/streams&#64;GoogleMapsCompatible/12/987/1433.png</a></p>
+<img alt="../../_images/stream_tile.png" src="../../_images/stream_tile.png" />
+<p>Most adjuk a csempe készletet az OpenLayers térképünkhöz. Nyissa meg a HTML oldalt a következő parancs használatával:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /var/www/html/mapcache-quickstart/index.html
+</pre></div>
+</div>
+<p>Szüntesse meg a komment jeleket az alábbi JavaScript kódban:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="p">,</span><span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">XYZ</span><span class="p">({</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost/itasca/gmaps/streams@GoogleMapsCompatible/{z}/{x}/{y}.png&#39;</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p>Most frissítse azt oldalt <a class="reference external" href="http://localhost/mapcache-quickstart/">http://localhost/mapcache-quickstart/</a> - látnia kell a MapCache által szolgáltatott új patakok réteget.</p>
+<img alt="../../_images/openlayers.png" src="../../_images/openlayers.png" />
+<p>Ahogy böngészi a térképet láthatja a csempe mappákat a <code class="docutils literal"><span class="pre">/var/cache/mapcache</span></code>-ben PGN képekkel feltöltve.</p>
+<img alt="../../_images/tilecache.png" src="../../_images/tilecache.png" />
+<p>A gyorsítótár helyét és típusát a konfiguráció fájlban állíthatjuk be a következő blokkal:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cache</span> <span class="na">name=</span><span class="s">&quot;disk&quot;</span> <span class="na">type=</span><span class="s">&quot;disk&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;base&gt;</span>/var/cache/mapcache<span class="nt">&lt;/base&gt;</span>
+  <span class="nt">&lt;symlink_blank/&gt;</span>
+<span class="nt">&lt;/cache&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-new-services">
+<h2><a class="toc-backref" href="#id2">Új szolgáltatás hozzáadása</a><a class="headerlink" href="#adding-new-services" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Úgy konfigurálhatja az Apache-t, hogy több különböző MapCache szolgáltatást futtasson, mindegyiket a saját konfiguráció fájljával, az <code class="docutils literal"><span class="pre">/etc/apache2/conf-enabled/mapcache.conf</span></code> fájl szerkesztésével. Mivel ez rendszergazda jogosultságot igényel, megnyithatja szerkesztésre a FeatherPad-ben a következő paranccsal:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /etc/apache2/conf-enabled/mapcache.conf
+</pre></div>
+</div>
+<p>Az OSGeoLive két MapCache szolgáltatással rendelkezik, mindegyikhez tartozik egy alias és egy konfigurációs fájl. Az alias a szerveren használandó URL pl. <a class="reference external" href="http://localhost/mapcache">http://localhost/mapcache</a> and <a class="reference external" href="http://localhost/itasca">http://localhost/itasca</a></p>
+<div class="highlight-apache"><div class="highlight"><pre><span></span><span class="nt">&lt;IfModule</span> <span class="s">mapcache_module</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;Directory</span> <span class="s">/path/to/directory</span><span class="nt">&gt;</span>
+      <span class="nb">Order</span> Allow,Deny
+      <span class="nb">Allow</span> from <span class="k">all</span>
+   <span class="nt">&lt;/Directory&gt;</span>
+   <span class="nb">MapCacheAlias</span> <span class="sx">/mapcache</span> <span class="s2">&quot;/usr/share/doc/libapache2-mod-mapcache/examples/mapcache.xml&quot;</span>
+   <span class="nb">MapCacheAlias</span> <span class="sx">/itasca</span> <span class="s2">&quot;/home/user/mapcache.xml&quot;</span>
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>Egy új szolgáltatás hozzáadásához egyszerűen adjon egy új sort a következő formátumban, helyettesítse a WEB_PATH-t és a PATH_TO_CONFIG_FILE-t a megfelelő paraméterekkel:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>MapCacheAlias WEB_PATH &quot;PATH_TO_CONFIG_FILE&quot;
+</pre></div>
+</div>
+<p>Lásd az <a class="reference external" href="https://mapserver.org/mapcache/install.html#apache-module-specific-instructions">Apache modul instrukciókat</a> az Apache modul konfigurálás további részleteiről.</p>
+</div>
+<div class="section" id="the-seeder-application">
+<h2><a class="toc-backref" href="#id3">A feltöltő alkalmazás</a><a class="headerlink" href="#the-seeder-application" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A térkép csempéket dinamikusan hozzuk létre, amikor a web szerver kéri. A lekérdezési idők felgyorsítására egy parancssori alkalmazással csempéket generálhatunk. Ezt az eljárást mint <em>feltöltést</em> ismerjük és a MapCache parancssori alkalmazás a <code class="docutils literal"><span class="pre">mapcache_seed</span></code>.</p>
+<p>Annak biztosítására, hogy a feltöltő alkalmazás által létrehozott csempék elérhetők legyenek a web szerver felhasználó számára a <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">www-data</span></code> részt adjuk a <code class="docutils literal"><span class="pre">mapcache_seed</span></code> alkalmazás futtatása elé.</p>
+<p>Az alábbi példában három paramétert adunk át a <code class="docutils literal"><span class="pre">mapcache_seed</span></code>-nek:</p>
+<ul class="simple">
+<li><em>config</em>: <code class="docutils literal"><span class="pre">/home/user/mapcache/mapcache-quickstart.xml</span></code> - ez az elérési út a MapCache konfigurációs fájlhoz</li>
+<li><em>tileset</em>: <code class="docutils literal"><span class="pre">lakes</span></code> - ez a csempe készlet neve, melyet feltöltünk és a <code class="docutils literal"><span class="pre">mapcache-quickstart.xml</span></code>-ben található</li>
+<li><em>zoom</em>: <code class="docutils literal"><span class="pre">0,5</span></code> - ez a nagyítási szintek tartománya, melyet feltöltünk, a 0-s nagyítási szinttől (a világ terjedelme egyetlen csempében) az 5-ös nagyítási szintig</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo -u www-data mapcache_seed --config /home/user/mapcache/mapcache-quickstart.xml --tileset lakes --zoom <span class="m">0</span>,5
+</pre></div>
+</div>
+<p>További számos más <code class="docutils literal"><span class="pre">mapcache_seed</span></code> paraméterekhez kérjük nézze meg a <a class="reference external" href="https://mapserver.org/mapcache/seed.html">Seeder dokumentációt</a>.</p>
+<img alt="../../_images/seeder.png" src="../../_images/seeder.png" />
+<p>Ha el akar távolítani egy gyorstár mappát, a következő parancsot futtathatja:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rm -r /var/cache/mapcache/lakes
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Olvassa el a <a class="reference external" href="https://mapserver.org/mapcache/index.html">MapCache Dokumentációt</a>.</li>
+<li>Csatlakozzon a MapServer közösséghez, melynek része a MapCache a <a class="reference external" href="https://www.mapserver.org/community/lists.html">levelező listákon</a> az elképzelések megosztásához, a lehetséges fejlesztések megvitatásához és kérdések feltételéhez.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

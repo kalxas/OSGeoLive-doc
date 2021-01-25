@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GRASS GIS gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="gvSIG Desktop" href="../overview/gvsig_overview.html" />
+    <link rel="prev" title="GRASS GIS" href="../overview/grass_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://grass.osgeo.org/"><img alt="../../_images/logo_grass.png" class="align-right" src="../../_images/logo_grass.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="grass-gis-quickstart">
+<h1>GRASS GIS gyorstalpaló<a class="headerlink" href="#grass-gis-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A GRASS GIS egy hatékony GIS, mely lehetővé teszi, hogy térinformatikai adatokat megjelenítsen, kezeljen, elemezzen és szerkesszen.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-grass" id="id1">GRASS indítása</a></li>
+<li><a class="reference internal" href="#display-a-map" id="id2">Egy térkép megjelenítése</a></li>
+<li><a class="reference internal" href="#plot-an-elevation-profile" id="id3">Metszet rajzolás</a></li>
+<li><a class="reference internal" href="#adjust-raster-map-colors" id="id4">Rasztertérkép színeinek beállítása</a></li>
+<li><a class="reference internal" href="#create-a-shaded-relief-map" id="id5">Árnyékolt domborzati térkép létrehozása</a></li>
+<li><a class="reference internal" href="#add-watersheds-and-streams" id="id6">Vízgyűjtők és vízfolyások hozzáadása</a></li>
+<li><a class="reference internal" href="#work-with-vector-modules" id="id7">Munka a vektor modulokkal</a></li>
+<li><a class="reference internal" href="#adjust-vector-map-colors" id="id8">Vektortérkép színeinek beállítása</a></li>
+<li><a class="reference internal" href="#manage-attributes" id="id9">Attribútumok kezelése</a></li>
+<li><a class="reference internal" href="#view-a-3d-visualization" id="id10">Egy 3D megjelenítés megtekintése</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id11">Kipróbálandó dolgok</a><ul>
+<li><a class="reference internal" href="#api" id="id12">API</a></li>
+<li><a class="reference internal" href="#command-line" id="id13">Parancssor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id14">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-grass">
+<h2><a class="toc-backref" href="#id1">GRASS indítása</a><a class="headerlink" href="#start-grass" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Kattintson a GRASS linkre a <span class="menuselection">Geospatial ‣ Desktop GIS</span> menüben</li>
+<li>A „Welcome to GRASS GIS ” ablakban válassza a nc_basic_spm_grass7 adathalmazt a helyhez és a „user1”-et a térképhalmazhoz.</li>
+<li>Kattintson a <span class="guilabel">Start GRASS session</span>-re.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/grass-startup.png"><img alt="screenshot" class="align-right" src="../../_images/grass-startup.png" style="width: 297.0px; height: 300.0px;" /></a>
+<p>Ez elindítja a GRASS-t a <a class="reference external" href="../../grass/wxGUI.html">grafikus felhasználói felülettel (wxPythonban írták)</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">Ha egy netbookon dolgozik nagyon kis felbontással (800x600), akkor a kezdő képernyő egy kicsit széteshet és a  [<em>Start GRASS</em>] gomb a munkaterület és térképhalmaz lista mögé kerül. Amennyiben ez történne önnel, akkor ragadja meg az ablak sarkát és növelje meg egy kicsit a méretét. Előfordulhat, hogy egy kicsit a képernyő felső széle fölé kell mozgatni egy kicsit az ablakot, hogy legyen hely (tartsa nyomva az Alt billentyűt és a bal egérgombbal ragadja meg ablakot a mozgatáshoz).</p>
+</div>
+</div>
+<div class="section" id="display-a-map">
+<h2><a class="toc-backref" href="#id2">Egy térkép megjelenítése</a><a class="headerlink" href="#display-a-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/grass-layerman.png"><img alt="screenshot" class="align-left" src="../../_images/grass-layerman.png" style="width: 384.0px; height: 300.0px;" /></a>
+<ol class="arabic simple">
+<li>Once inside, select for display the raster map layer „<cite>elevation</cite>” from the PERMANENT mapset.</li>
+<li>Menjen a <cite>GIS Layer Manager</cite> ablakba.</li>
+<li>Kattintson a sakktábla eszköztár gombra, melyen „+” van.</li>
+<li>Válassza ki a térkép nevét a „<em>map to be displayed</em>” legördülő listából és kattintson a  <span class="guilabel">Ok</span>-ra.</li>
+<li>Kattintson a „V” betű alakú eszközsor gombra a „+” jellel.</li>
+<li>Válassza a „<cite>roadsmajor</cite>” vektor réteget a PERMANENT térképhalmazból és kattintson az <span class="guilabel">Ok</span>-ra.</li>
+</ol>
+<p>Ha szükséges, kattintson jobb gombbal a raszter térképre és válassza a  „Zoom to selected map(s)” menüpontot.</p>
+<p>Most látnia kellene a térképet.</p>
+</div>
+<div class="section" id="plot-an-elevation-profile">
+<h2><a class="toc-backref" href="#id3">Metszet rajzolás</a><a class="headerlink" href="#plot-an-elevation-profile" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/grass-profile.png"><img alt="screenshot" class="align-right" src="../../_images/grass-profile.png" style="width: 344.0px; height: 199.5px;" /></a>
+<p>Térjen vissza a <cite>GIS Layer Manager</cite> ablakba és kattintással válassza ki az <cite>elevation</cite> rasztertérkép réteget. Majd a <cite>Map Display</cite> ablakban keresse meg a <cite>Map Display</cite> eszközsorban a nagyítás gomboktól jobbra az ikont egy vonalas grafikonnal és sakktáblával. Kattintson rá és válassza <strong>Profile surface map</strong>-ot. A <cite>&#64;PERMANENT</cite> térképhalmazban keres automatikusan. Ha térkép neve nem jelenik meg automatikusan válassza ki az <cite>elevation</cite> térképet és nyomja meg az <span class="guilabel">Ok</span>-t. A <cite>GRASS ProfileAnalysis Tool</cite> ablakban válassza a második gombot balról a metszetvonal megadásához, jelöljön ki néhány pontot a <cite>Map Display</cite> ablakban. Amikor elkészült térjen vissza a metszet ablakba. Kattintson a jobb szélen lévő I/O gombra a metszet ablak lezárásához.</p>
+</div>
+<div class="section" id="adjust-raster-map-colors">
+<h2><a class="toc-backref" href="#id4">Rasztertérkép színeinek beállítása</a><a class="headerlink" href="#adjust-raster-map-colors" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A magasságokat tartalmazó rasztertérkép mellett most egy új rasztertérképet láthat a réteglistában, de ez az ön „user1” munka térképhalmazában lesz. Kikapcsolhatja az  <cite>elevation</cite> réteg láthatóságát a jelölőnégyzetbe kattintással, hogy a két raszter réteg ne fedje egymást. Kattintson a jelölőnégyzetbe, ha az új réteg nem jelenne meg automatikusan. A színek lehet hogy nem felelnek meg önnek, szóval változtassuk meg őket. A fractal DEM legyen kiválasztva a réteglistában, Jobb egérgombbal kattintson a réteg nevére és válassza a „Set color table”-t. Alternatív megoldásként kezelheti a színeket a  <cite>Raster</cite> menüből, válassza a <span class="menuselection">Manage colors ‣ Color tables</span>-t. A «Define» fülön kattintson a „Name of color table” beállításra és válasszon egyet a listából. A „terrain” vagy „srtm” egy jó választás. Végül kattintson a  [<em>Run</em>] gombra és zárja le az <em>r.colors</em> párbeszédablakot. A színek automatikusan frissülnek.</p>
+</div>
+<div class="section" id="create-a-shaded-relief-map">
+<h2><a class="toc-backref" href="#id5">Árnyékolt domborzati térkép létrehozása</a><a class="headerlink" href="#create-a-shaded-relief-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/grass-shadedrelief.png"><img alt="screenshot" class="align-right" src="../../_images/grass-shadedrelief.png" style="width: 338.5px; height: 300.0px;" /></a>
+<p>Next we’ll create a shaded relief map of the <cite>elevation</cite> layer we saw
+earlier. Start by verifying that the <em>computational region</em> is set match
+the raster map of interest, „<cite>elevation</cite>” in the PERMANENT mapset. To
+do this, make sure it is loaded into the layer list of the main <cite>GIS Layer
+Manager</cite> window, right click on its name and select „Set computation region
+from selected map(s)”. If necessary, click on the „<em>Layers</em>” tab
+at the bottom to get back to the layer list.</p>
+<p>A <cite>Raster</cite> menüből válassza <span class="menuselection">Terrain analysis ‣ Compute shaded relief</span> (a Terrain analysis középtájon található a <cite>Raster</cite> menüben), és a modul párbeszédablaka jelenik meg. Az input rétegnek válassza az „elevation” <em>&#64;PERMANENT</em> térképet és a outputnak megadhatja a „shaded_relief” nevet. Ha befejezte kattintson a [<em>Run</em>] gombra. Az új <cite>shaded_relief</cite> <em>&#64;user1</em> térképet megtalálhatja a réteglistában. Kapcsolja ki a többi rétegmegjelenítését, hogy csak az újonnan létrehozott árnyékolt domborzat jelenjen meg.</p>
+</div>
+<div class="section" id="add-watersheds-and-streams">
+<h2><a class="toc-backref" href="#id6">Vízgyűjtők és vízfolyások hozzáadása</a><a class="headerlink" href="#add-watersheds-and-streams" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ismét válassza az <cite>elevation</cite> <em>&#64;PERMANENT</em> térképet. Ha az utolsó lépés óta megváltoztatta a régiót, kattintson jobb gombbal ismét a réteg nevére és kattintson a <span class="menuselection">Set computational region from selected map(s)</span>-re a felbukkanó menüben, hogy a teljes térképet figyelembe vegyük a vízgyűjtő terület számításánál.</p>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">A wxGUI térképablak és annak nagyítása független ettől és nem befolyásolják a számítás határait. Bármikor ellenőrizheti a számítási területet a <span class="menuselection">Settings ‣ Region ‣ Display Region</span> menüponttal, ez alapvetően fontos bármilyen raszter műveletnél. Az eltérő terjedelmű és felbontású rasztertérképeket a rendszer röptében újramintavételezi az aktuális számítási területre.</p>
+</div>
+<p>Ezután a <cite>Raster</cite> menüből válassza a <span class="menuselection">Hydrologic modeling ‣ Watershed analysis</span> menüpontot. Ez az <code class="docutils literal"><span class="pre">r.watershed</span></code> modult nyitja meg. Válassza input rétegnek az <cite>elevation</cite> réteget, ugyanezen az  «Inputs» fülön  állítsa be a  „Minimum size of the exterior watershed basin” <em>threshold</em> értéket 10000 cellára, majd az «Outputs» fülön a „Name for basins raster map” <em>basins</em> opciót állítsa „elev.basins”-ra és a „Name for output stream segments raster map” <em>streams</em> opciót  „elev.streams”-re. Majd kattintson a [<em>Run</em>]-ra.</p>
+<p>Visszatérve a <cite>Layer Manager</cite> ablakba ellenőrizze, hogy a két új raszterréteg megjelent a réteglistában és győződjön meg róla, hogy a vízgyűjtők rétege be van kapcsolva. A vízfolyások réteget kikapcsolhatja most. Ezután kattintson jobb gombbal az „<cite>elev.basins</cite>” rasztertérkép rétegre és válassza a „<cite>Change opacity level</cite>-t”. Állítsa be 50% körüli értékre, ezután a Map Display tartalmát újrarajzolja. Ragadja meg az egyik térkép réteget (például a korábban létrehozott árnyékolt domborzatot) és húzza lentebb a réteglistában, hogy a vízgyűjtők rétege alatt legyen és kapcsolja be a réteget, hogy egy háttérképként jelenjen meg.</p>
+<a class="reference internal image-reference" href="../../_images/grass-watersheds.png"><img alt="screenshot" class="align-left" src="../../_images/grass-watersheds.png" style="width: 352.5px; height: 300.0px;" /></a>
+<p>A  <cite>GIS Layer Manager</cite> ablakban kattintson az  <cite>Add various overlays</cite> gombra, majd az <cite>Add grid layer</cite>-re. A rácsméretre adjon meg 5000-et (térképi egységekben, itt méterben). Ha kész nyomja meg az <span class="guilabel">OK</span>-t. Megváltoztathatja a rácsvonalak és a címkék színét.</p>
+<p>Léptékvonalzó hozzáadásához menjen a <cite>Map Display</cite> ablakba és nyomja meg az „Add map elements” gombot a korábban használt metszet eszköztől jobbra és válassza a „Show/hide scalebar”-t, végül nyomja meg az <span class="guilabel">Ok</span>-t. Egy léptékvonalzó jelenik meg a bal-felső sarokban a térképen. Húzza le a jobb-alsó sarokba.</p>
+<p>Elgondolkozhat azon, hogy ezek a betűkészletek túl egyszerűek. Ezt könnyen megoldhatjuk a  <cite>GIS Layer Manager</cite> menüben, nyissa meg a <span class="menuselection">Settings ‣ Preferences</span>-t és a Map Display fülön kattintson a [<em>Set font</em>] gombra és válasszon egyet (például a DajaVu Sans Bold-ot). és végül [<em>Save</em>] vagy [<em>Save for this session only</em>] a Preferences ablakban. Újra kell rajzolni a térképet, hogy a változások életbe lépjenek, kattintson az első gombra a <cite>Map Display</cite> ablakban az újrarajzoláshoz. A betűk sokkal szebbek most.</p>
+</div>
+<div class="section" id="work-with-vector-modules">
+<h2><a class="toc-backref" href="#id7">Munka a vektor modulokkal</a><a class="headerlink" href="#work-with-vector-modules" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az előző feladatokban csak néhány raszter modult érintettünk. Nem akarjuk, hogy az az elképzelés alakuljon ki, hogy a GRASS GIS csak rasztertérképekhez van - a vektor motor és modulok annyira teljes funkcionalitással bírnak mint a raszteresek. A GRASS GIS egy teljes topológikus vektormotort tart fenn, amely sokféle hatékony elemzést tesz lehetővé.</p>
+<a class="reference internal image-reference" href="../../_images/grass_screenshot.png"><img alt="screenshot" class="align-right" src="../../_images/grass_screenshot.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>A korábban létrehozott vízgyűjtő területekkel folytatjuk, vektor poligonokká konvertáljuk őket. A <cite>Raster</cite> menüben válassza a <span class="menuselection">Map type conversions ‣ Raster to vector</span>-t. Az  megnyíló <cite>r.to.vect</cite> párbeszédablakban válassza  input térképnek az <code class="docutils literal"><span class="pre">elev.basins</span> <span class="pre">&#64;user1</span></code> térképet, adjon meg egy output nevet mint például <code class="docutils literal"><span class="pre">basins_areas</span></code> (a vektor térképek nevének SQL kompatibilisnek kell lennie, így nem minden karakter használható) és módosítsa az „Output feature type” beállítást <cite>area</cite>-ra. Az <cite>Attributes</cite> fülön jelölje meg a raszter értékeket mint kategória számokat (azaz ID-k), mivel ezek megegyeznek a korábban létrehozott vízfolyás szegmensek értékeivel. Végül kattintson a  [<em>Run</em>]-ra. Miután a vektortérkép megjelenik a <cite>Layer Manager</cite> listában, jobb kattintás után módosítsa az átlátszósági szintet 50%-ra.</p>
+</div>
+<div class="section" id="adjust-vector-map-colors">
+<h2><a class="toc-backref" href="#id8">Vektortérkép színeinek beállítása</a><a class="headerlink" href="#adjust-vector-map-colors" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Mint ahogy korábban a rasztertérképpel tettük, meg fogjuk változtatni az új vízgyűjtő medencék vektortérkép színtábláját. Legyen a kiválasztott réteg a réteglistában a <code class="docutils literal"><span class="pre">basins_areas</span></code>, jobb kattintás réteg nevére és válassza a „Set color table”-t. A «Define» fülön kattintson a legördülő listára a „Name of color table” opcióhoz és például válassza a „bcyr”-t (blue-cyan-yellow-red) a listából. Végül kattintson a [<em>Run</em>] gombot és zárja be a <em>v.colors</em> párbeszédablakot. Lehet, hogy újra kel rajzoltatnia a térképet, hogy megjelenjen az átszínezett térkép.</p>
+<a class="reference internal image-reference" href="../../_images/grass-vector-basins.png"><img alt="screenshot" class="align-right" src="../../_images/grass-vector-basins.png" style="width: 352.5px; height: 300.0px;" /></a>
+</div>
+<div class="section" id="manage-attributes">
+<h2><a class="toc-backref" href="#id9">Attribútumok kezelése</a><a class="headerlink" href="#manage-attributes" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A következőkben néhány új attribútumot adunk az új területekhez, az átlagos magasságot minden medencéhez. A Vector menüből válassza a <span class="menuselection">Update attributes ‣ Update area attributes from raster</span> menüpontot. A <code class="docutils literal"><span class="pre">basin_areas</span></code> legyen a vektortérkép és válassza az <code class="docutils literal"><span class="pre">elevation</span></code> rasztertérképet a statisztika számítás alapjának; állítsa be „Column prefix for new attribute columns” értékét <code class="docutils literal"><span class="pre">elev</span></code>-re és kattintson a [<em>Run</em>]-ra; majd zárja le az párbeszédablakot amikor kész. A <cite>Map Display</cite> ablak negyedik ikonjával kérdezheti le az értékeket, miután ellenőrizte, hogy az aktuális térkép a vector-areas legyen, kattintson a vektortérkép területére a térképvásznon.</p>
+<p>Most átszínezheti a területeket az átlagmagasság szerint a <code class="docutils literal"><span class="pre">v.colors</span></code> modul felhasználásával. A Vector menüben válassza a <span class="menuselection">Manage colors ‣ Color tables</span>-t. Input vektortérképnek válassza a <code class="docutils literal"><span class="pre">basin_areas</span></code>-t, „Source value”-ként válassza az <code class="docutils literal"><span class="pre">attr</span></code>-t a <cite>cat`</cite> helyett. Ezután a „Define” fülön válassza az <code class="docutils literal"><span class="pre">elev_average</span></code> attribútumot az értékeket tartalmazó oszlopnak. A színeket a az <cite>elevation</cite> rasztertérképből akarjuk átmásolni, így a „Raster map from which to copy color table” listából válasszuk ki azt.. A [<em>Run</em>]-ra kattintás után frissítenie kell a térkép megjelenítést (első ikon balról) hogy a módosított térképet lássuk.</p>
+<p>Most nézzük meg részletesebben az attribútum táblát és az SQL szerkesztőt. A <cite>Layer Manager</cite>-ben kattintson a tábla ikonra („Show attribute data for selected vector map”), ez a második az alsó sorban. Ez a vektor réteghez kapcsolt adatbázistábla egy nézetét nyitja meg. Egy <em>egyszerű</em> adatbázis lekérdezést készítünk most a kevéssé változatos vízgyűjtő medencék megtalálására. Ahol a  <code class="docutils literal"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">basin_areas</span> <span class="pre">WHERE</span></code> látszik a legördülő listából válassza a <code class="docutils literal"><span class="pre">elev_stddev</span></code>-et a szórás statisztikához, majd válassza a <code class="docutils literal"><span class="pre">&lt;</span></code>-t a reláció jelek listájából és a jobbra lévő szövegmezőbe írja be az <code class="docutils literal"><span class="pre">50</span></code>-et és kattintson az [<em>Apply</em>]-ra. Az ablak alján az információ sorban láthatja a betöltött rekordok számát és a nagy szórás értékeket (std. dev.) tartalmazó eltűntek a megjelenített táblázatból. Jobb gombbal kattintson a táblába és válassza a <code class="docutils literal"><span class="pre">Select</span> <span class="pre">all</span></code>-t. Ismételten kattintson jobb gombbal a táblázatba és most válassza a <code class="docutils literal"><span class="pre">Highlight</span> <span class="pre">selected</span> <span class="pre">features</span></code>-t. A <code class="docutils literal"><span class="pre">Map</span> <span class="pre">Display</span></code> ablakban látnia kell a hordalékkal feltöltött medencéket.</p>
+</div>
+<div class="section" id="view-a-3d-visualization">
+<h2><a class="toc-backref" href="#id10">Egy 3D megjelenítés megtekintése</a><a class="headerlink" href="#view-a-3d-visualization" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/grass-nviz.png"><img alt="screenshot" class="align-right" src="../../_images/grass-nviz.png" style="width: 512.0px; height: 234.5px;" /></a>
+<p>A 3D-s megjelentő csomag elindításához válassza ki a  <cite>elevation</cite> térképet a réteglistából mint  raszteres magasságot, majd válassza a  <cite>Map Display</cite>  ablakban a „3D view”-t (az eszköztár jobb oldali végén). Miután a 3D-s megjelenítési felület betöltődik, több fül látható a 3D nézet vezérlésére. Ezután válassza ki az „Data” fület, és állítsa be a finom felbontást „1” -re (minél kisebb az érték, annál finomabb a felbontás), majd mozgassa a pozicionáló korong és a magasság csúszkát a „View” fülön, hogy különböző nézeteket kapjon.</p>
+<p>Térképek, műholdas vagy légi felvételek a DEM tetejére ráfeszítéséhez, a „Data”fülön a <strong>Surface Attributes</strong> alatt a PERMANENT térképhalmazból a „<cite>landuse</cite>” jó választás. Az új nézet azonnal megjelenik. Mivel a terület viszonylag sík, visszatérhet a „View” füre és növelheti a Z nagyítás („z-Exag”) értékét.</p>
+<p>A 3D nézetben az egyszerű navigáláshoz kapcsoljon át a „Rotate 3D scene”-re a térkép ablak eszköztárában, majd használja az egeret a nézet forgatásához.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id11">Kipróbálandó dolgok</a><a class="headerlink" href="#things-to-try" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Bár nem szerepelt itt, érdemes kísérletezni a Cartographic Composerrel és az objektum-orientált Graphical Modelling Toollal (Pythonba exportálást biztosít); Az indításukra szolgáló ikonokat a Layer Manager ablakban az alsó ikonsorban találja. További részletek a <cite>wxGUI &lt;https://grass.osgeo.org/grass78/manuals/wxGUI.html&gt;</cite> _ súgóoldalakon találhatók.</p>
+<div class="section" id="api">
+<h3><a class="toc-backref" href="#id12">API</a><a class="headerlink" href="#api" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>A wxGUI-t Pythonban írták, ha kedveli y Python programozást sok nagyszerű eszköz és API áll rendelkezésére. A <cite>Layer Manager</cite> ablak alján kattintson a <cite>Python shell</cite> és írja be a <code class="docutils literal"><span class="pre">help(grass.core)</span></code> parancsot, hogy a python GIS alapkönyvtárban rendelkezésre álló számos függvény listáját láthassa. A GIS alapfunkciók mellett  <cite>array</cite> (NumPy), <cite>db</cite> (adatbázi), <cite>raster</cite>, és <cite>vector</cite> könyvtárak érhetők el. A profi felhasználáshoz a <cite>Pythons Ctypes</cite>-ot támogatjuk, lehetővé téve a Python programozók számára a közvetlen hozzáférést a GRASS GIS kiterjedt C könyvtáraihoz. A programozási lehetőségek leírásához nézze meg a kézikönyv oldalakat.</p>
+</div>
+<div class="section" id="command-line">
+<h3><a class="toc-backref" href="#id13">Parancssor</a><a class="headerlink" href="#command-line" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>A GRASS terminál munkafolyamatban próbáljon ki egy GRASS modult a „<code class="docutils literal"><span class="pre">v.clean</span> <span class="pre">--help</span></code>” begépelésével, mely a modul lehetőségek listáját adja. A GRASS parancssor ahol a GIS valódi ereje megmutatkozik. A GRASS-t úgy tervezték, hogy minden parancs összekapcsolható legyen egy szkriptben, nagy, tömeges feldolgozási feladatokhoz. A Bourne burok és a Python népszerű szkript nyelv, a GRASS a szkript készítés könnyebbé tételéhez számos trükköt tartalmaz mindkettőhöz. Ezekkel az eszközökkel kb. öt perc kódolással létrehozhat egy új GRASS modult a hatékony parancsértelmező, GUI és súgó oldal sablon segítségével.</p>
+<p>„<code class="docutils literal"><span class="pre">g.manual</span> <span class="pre">-i</span></code>” egy böngészőt indít el a modul súgó oldallal. Amikor elolvasta zárja be a böngészőt és gépelje be az „exit” parancsot a GRASS terminál promptnál a kilépéshez a GRASS környezetből.</p>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id14">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Látogassa meg a GRASS GIS honlapot  <a class="reference external" href="https://grass.osgeo.org">http://grass.osgeo.org</a></li>
+<li>Látogassa meg a GRASS GIS Wiki súgó oldalt <a class="reference external" href="https://grasswiki.osgeo.org/wiki/Main_Page">https://grasswiki.osgeo.org/wiki/</a></li>
+<li><a class="reference external" href="https://grasswiki.osgeo.org/wiki/GRASS_Help#Getting_Started">Itt</a> több oktatóanyagot és összefoglalót találhat.</li>
+<li>Egy <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/full_index.html">összefoglaló a GRASS modulokhoz</a></li>
+<li>Ha a GRASS-szal érkező 400 GIS modul nem elegendő önnek, akkor vessen egy pillantást a sok hozzáadott bővítményre a <a class="reference external" href="https://grass.osgeo.org/grass78/manuals/addons/">https://grass.osgeo.org/grass78/manuals/addons/</a> oldalon.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

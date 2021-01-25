@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>istSOS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="istSOSクイックスタート" href="../quickstart/istsos_quickstart.html" />
+    <link rel="prev" title="QGIS Server Quickstart" href="../quickstart/qgis_mapserver_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://istsos.org"><img alt="../../_images/logo_istsos.png" class="align-right" src="../../_images/logo_istsos.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="istsos">
+<h1>istSOS<a class="headerlink" href="#istsos" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="data-management-tool">
+<h2>データ管理ツール<a class="headerlink" href="#data-management-tool" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>istSOSはセンサーデータ管理ツールで、オープン地理空間コンソーシアム(OGC) <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> 標準を使用したモニタリング観測の収集、メンテナンス、および公開を可能にします。</p>
+<p>istSOSはSOS1.0.0標準を厳密に実装しており、OGC CITE(Compliance+Interopability Testing+Evaluation)ユニットテストに合格しています。</p>
+<a class="reference internal image-reference" href="../../_images/istsos_screenshot.png"><img alt="istsos screenshot" class="align-right" src="../../_images/istsos_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Sensor Observation Service (SOS)標準に従ってセンサーデータを公開する。</li>
+<li>直感的なWebベースのインターフェイスでセンサーとデータを管理します。</li>
+<li>完全なRESTful APIを使用して、外部クライアントからistSOS機能にアクセスし、インタラクティブなチャートを作成したり、動的な地図にセンサーを表示したり、メンテナンススクリプトを記述したりできます。</li>
+<li>センサーデータが特定の条件を満たした場合、メール、Twitter、その他のソーシャルメディアを通じて通知されます。</li>
+<li>異なるアクセスレベル(管理者、ネットワーク管理者、データマネージャ、訪問者)でのユーザ認証</li>
+<li>通常のステーションに似ているが、そのデータが他のセンサーデータのオンザフライで生成される仮想プロシージャを作成します。</li>
+<li>埋め込み妥当性テストにより、各観測に品質指数を関連付ける。</li>
+<li>シームレスなインターフェイスと先進的な観測計算機によるデータのオンライン編集</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>SOS1.0.0:基本プロファイルとトランザクションプロファイル</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="http://istsos.org">http://istsos.org</a></p>
+<p><strong>ライセンス:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>ソフトウエアバージョン:</strong> 2.4.0</p>
+<p><strong>対応プラットフォーム:</strong> Linux, Unix, Mac, Windows</p>
+<p><strong>API インターフェイス:</strong> Python / wsgi</p>
+<p><strong>サポート:</strong> <a class="reference external" href="https://groups.google.com/forum/#!forum/istsos">https://groups.google.com/forum/#!forum/istsos</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/istsos_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

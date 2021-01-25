@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de pygeoapi &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="PostGIS" href="../overview/postgis_overview.html" />
+    <link rel="prev" title="pygeoapi" href="../overview/pygeoapi_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pygeoapi.io/"><img alt="../../_images/logo_pygeoapi.png" class="align-right" src="../../_images/logo_pygeoapi.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="pygeoapi-quickstart">
+<h1>Inicio Rápido de pygeoapi<a class="headerlink" href="#pygeoapi-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>pygeoapi es una herramienta para publicar rápida y fácilmente los servicios de OGC Open API en la web. Se basa en las potentes bibliotecas de código abierto de la comunidad (geo)python.</p>
+<p>En esta guía de inicio rápido le guiaremos en la configuración del software y lo usaremos para algunos casos específicos. A lo largo del camino vamos a participar con algún software relacionado, porque pygeoapi es un producto que normalmente se combina con otros componentes para cumplir con un caso de negocio.</p>
+<div class="section" id="prior-knowledge">
+<h2>Conocimientos previos<a class="headerlink" href="#prior-knowledge" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>pygeoapi is a Python web application for the spatial domain, so you need to be aware of the concepts of web applications and geospatial aspects such as grid and vector formats, OGC standards and projection systems. Python knowledge is recommended, although you can do without by running the application from OSGeoLive.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configure-and-start-the-service" id="id1">Configure e inicie el servicio</a></li>
+<li><a class="reference internal" href="#configure-new-service" id="id2">Configurar nuevo servicio</a></li>
+<li><a class="reference internal" href="#using-a-web-browser-to-query-the-api" id="id3">Uso de un explorador web para consultar la API</a></li>
+<li><a class="reference internal" href="#using-oapi-features-in-desktop-gis" id="id4">Uso de OAPI-Características en SIG de escritorio</a></li>
+</ul>
+</div>
+<div class="section" id="configure-and-start-the-service">
+<h3><a class="toc-backref" href="#id1">Configure e inicie el servicio</a><a class="headerlink" href="#configure-and-start-the-service" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">En el menú Inicio, seleccione <span class="menuselection">Structure ‣ osgeolive ‣ appmenupath ‣ pygeoapi</span>. La aplicación abrirá una página web en <a class="reference external" href="http://localhost:5000">http://localhost:5000</a></p>
+</li>
+<li><p class="first">vaya a la carpeta de usuario <code class="docutils literal"><span class="pre">/usr/local/share/pygeoapi</span></code> y busque un archivo  <code class="docutils literal"><span class="pre">pygeoapi-config.yml</span></code>. Este archivo contiene la configuración del servicio.</p>
+</li>
+<li><p class="first">Abra el archivo <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">pygeoapi-config.yml</span></code>.</p>
+</li>
+<li><p class="first">Actualice algunos parámetros del archivo, como Título y Autor. Y guarde el archivo.</p>
+</li>
+<li><p class="first">Reinicie el servicio, por ejemplo cerrando el terminal e iniciando el servicio de nuevo</p>
+<a class="reference internal image-reference" href="../../_images/pygeoapi_screenshot.png"><img alt="../../_images/pygeoapi_screenshot.png" src="../../_images/pygeoapi_screenshot.png" style="width: 280.0px; height: 138.6px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="configure-new-service">
+<h3><a class="toc-backref" href="#id2">Configurar nuevo servicio</a><a class="headerlink" href="#configure-new-service" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora implementará un conjunto de datos vectorial en pygeoapi y expondrá sus características como API de OGC - Características. API de OGC: las características son un estándar de OGC para exponer las características vectoriales como un servicio web. API de OGC: las características son la alternativa de OpenAPI para WFS.</p>
+<p>pygeoapi es compatible con una amplia gama de backends para utilizarlos como origen vectorial, por ejemplo, geopaquete, PostGIS, Elasticsearch, WFS, etc. A través del proveedor GDAL OGR se puede añadir un conjunto casi ilimitado de otras fuentes vectoriales.</p>
+<p>Los conjuntos de datos interesantes para exponer como Características-OAPI consisten en datos del mundo real que tienen múltiples atributos y enlaces a otros recursos. OSGeo Live contiene una serie de conjuntos de datos que podemos usar. Un ejemplo es``/var/www/html/openlayers/examples/data/geojson/countries.geojson``. Puede configurarlo en pygeoapi utilizando el proveedor GeoJSON.</p>
+<ol class="arabic simple">
+<li>Descargue el archivo GeoJSON y colóquelo en la carpeta tests/data.</li>
+<li>Actualice pygeoapi-config.yml para agregar <code class="docutils literal"><span class="pre">países</span></code> como una nueva colección a pygeoapi (inserte un fragmento de código a continuación entre las otras colecciones. Tenga en cuenta el anidamiento, el anidamiento es importante en la sintaxis YAML).</li>
+<li>Reiniciar pygeoapi</li>
+</ol>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">countries</span><span class="p">:</span>
+   <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">collection</span>
+   <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Countries</span>
+   <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Countries of the world</span>
+   <span class="nt">keywords</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">industry</span>
+   <span class="nt">links</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">text/html</span>
+        <span class="nt">rel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">canonical</span>
+        <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">information</span>
+        <span class="nt">href</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://openlayers.org</span>
+        <span class="nt">hreflang</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">en-US</span>
+   <span class="nt">extents</span><span class="p">:</span>
+      <span class="nt">spatial</span><span class="p">:</span>
+         <span class="nt">bbox</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">-180</span><span class="p p-Indicator">,</span><span class="nv">-90</span><span class="p p-Indicator">,</span><span class="nv">180</span><span class="p p-Indicator">,</span><span class="nv">90</span><span class="p p-Indicator">]</span>
+   <span class="nt">providers</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">feature</span>
+        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GeoJSON</span>
+        <span class="nt">data</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/www/html/openlayers/examples/data/geojson/countries.geojson</span>
+        <span class="nt">id_field</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
+</pre></div>
+</div>
+<p>Compruebe que la colección está disponible a través de su navegador en <a class="reference external" href="http://localhost:5000/collections/countries">http://localhost:5000/collections/countries</a></p>
+</div>
+<div class="section" id="using-a-web-browser-to-query-the-api">
+<h3><a class="toc-backref" href="#id3">Uso de un explorador web para consultar la API</a><a class="headerlink" href="#using-a-web-browser-to-query-the-api" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Ahora que tenemos el servicio disponible podemos consultarlo usando varias herramientas de cliente. Cada una de las características de la colección está disponible en formatos comunes, como HTML, GeoJSON y GML. Para empezar podemos utilizar un navegador web para navegar por el servicio. Desde <a class="reference external" href="http://localhost:5000/collections/countries">http://localhost:5000/collections/countries</a>, desglose hasta operaciones individuales. El servicio detectará automáticamente (aceptar encabezado) que está utilizando un navegador web y devolverá la representación HTML de las características. Observe en la esquina superior derecha vínculos explícitos para invalidar el encabezado de aceptación y solicitar representaciones específicas de la entidad (?f=geojson).</p>
+<p>Cada API abierta tiene una página de documentación interactiva en <a class="reference external" href="http://localhost:5000/openapi">http://localhost:5000/openapi</a>. En esta página web interactiva se puede leer sobre los diversos métodos en el servicio, pero también interactuar directamente con ellos a través de formularios web.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/openapidoc.png"><img alt="../../_images/openapidoc.png" src="../../_images/openapidoc.png" style="width: 1009.4px; height: 368.2px;" /></a>
+</div></blockquote>
+<p>Las API de OGC se han desarrollado teniendo en cuenta los <a class="reference external" href="https://w3c.github.io/sdw/bp/#bp-summary">datos espaciales en las mejores prácticas web</a>. Un aspecto importante de estas mejores prácticas es la optimización de motores de búsqueda. Pygeoapi agrega algunas optimizaciones de rastreo además de los requisitos de los estándares de API abierta; Los motores de búsqueda pueden rastrear los metadatos de la colección de una manera estructurada, con el objetivo de que las colecciones sean detectables en herramientas como Google Dataset Search. Para evaluar las capacidades de datos estructurados, puede utilizar las herramientas de prueba de datos estructurados de Yandex o Google. Copie la fuente html de la página de recopilación de países (o la URL de una página de recopilación de una instancia de pygeoapi en línea) en una herramienta de prueba de datos estructurados y evalúe qué datos estructurados la herramienta puede extraer de ella. El motor de búsqueda utilizará esa información en su índice de conjuntos de datos.</p>
+</div>
+<div class="section" id="using-oapi-features-in-desktop-gis">
+<h3><a class="toc-backref" href="#id4">Uso de OAPI-Características en SIG de escritorio</a><a class="headerlink" href="#using-oapi-features-in-desktop-gis" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En esta guía de inicio rápido utilizamos QGIS para consultar el servicio, pero es posible un flujo de trabajo similar en otras herramientas SIG, por ejemplo, ArcGIS, FME, OpenLayers.</p>
+<p>A partir de QGIS 3.14 puede agregar una capa OAPI-Features como capa vectorial. En el menú <code class="docutils literal"><span class="pre">añadir</span> <span class="pre">capa</span></code> seleccione <code class="docutils literal"><span class="pre">Agregar</span> <span class="pre">capa</span> <span class="pre">WFS</span> <span class="pre">/</span> <span class="pre">OAPI-Features</span></code>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis-wfs.png"><img alt="../../_images/qgis-wfs.png" src="../../_images/qgis-wfs.png" style="width: 277.9px; height: 243.6px;" /></a>
+</div></blockquote>
+<p>En la ventana que se abre crear una nueva conexión, escriba la url al servicio <a class="reference external" href="http://localhost:5000">http://localhost:5000</a>.</p>
+<p>Haga clic en Aceptar y, a continuación, en <code class="docutils literal"><span class="pre">conectar</span></code> para cargar las colecciones disponibles en el servicio.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis-layers.png"><img alt="../../_images/qgis-layers.png" src="../../_images/qgis-layers.png" style="width: 280.0px; height: 139.29999999999998px;" /></a>
+</div></blockquote>
+<p>Seleccione la colección <code class="docutils literal"><span class="pre">países</span></code> y haga clic en ‘Agregar’ para agregar la capa en el mapa QGIS.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

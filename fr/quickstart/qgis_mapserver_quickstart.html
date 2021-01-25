@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage avec QGIS Server &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="istSOS" href="../overview/istsos_overview.html" />
+    <link rel="prev" title="QGIS Server" href="../overview/qgis_mapserver_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis_mapserver.png" class="align-right" src="../../_images/logo_qgis_mapserver.png" /></a>
+<div class="section" id="qgis-server-quickstart">
+<h1>Guide de démarrage avec QGIS Server<a class="headerlink" href="#qgis-server-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>QGIS Server fournit un service de carte Web (WMS) basé sur les bibliothèques de l’application de bureau QGIS.</p>
+<p>Ce guide décrit comment :</p>
+<blockquote>
+<div><ul class="simple">
+<li>Mettre à jour un projet QGIS existant et l’afficher avec QGIS Server</li>
+<li>Créez un nouveau projet QGIS et ouvrir le flux WMS directement dans un navigateur</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-geoext-viewer" id="id1">Démarrez la visionneuse GeoExt</a></li>
+<li><a class="reference internal" href="#edit-qgis-project" id="id2">Modifier le projet QGIS</a></li>
+<li><a class="reference internal" href="#create-a-new-qgis-project" id="id3">Créez un nouveau projet QGIS</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">Ensuite ?</a></li>
+</ul>
+</div>
+<div class="section" id="start-geoext-viewer">
+<h2><a class="toc-backref" href="#id1">Démarrez la visionneuse GeoExt</a><a class="headerlink" href="#start-geoext-viewer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>OSGeoLive contient un exemple de visionneuse de cartes Web basée sur le framework Javascript GeoExt et de QGIS Server pour l’affichage de la carte.</p>
+<ol class="arabic simple">
+<li>Cliquez sur <span class="menuselection">Geospatial ‣ Web Services ‣ QGIS Server</span>. Vous devriez voir une fenêtre de navigateur avec une visionneuse de carte Web montrant une carte du monde.</li>
+</ol>
+<img alt="../../_images/qgis_mapserver_browser.jpg" src="../../_images/qgis_mapserver_browser.jpg" />
+<p>Vous pouvez également accéder à l’application à l’aide d’un navigateur via <a class="reference external" href="http://localhost/qgis_server">http://localhost/qgis_server</a></p>
+</div>
+<div class="section" id="edit-qgis-project">
+<h2><a class="toc-backref" href="#id2">Modifier le projet QGIS</a><a class="headerlink" href="#edit-qgis-project" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons maintenant changer le style de la carte à l’aide de QGIS.</p>
+<ol class="arabic simple">
+<li>Cliquez sur <span class="menuselection">Geospatial ‣ Desktop GIS ‣ QGIS</span>.</li>
+<li>Choisissez <span class="menuselection">Projet ‣ Ouvrir</span> depuis la barre de menu.</li>
+<li>Sélectionnez <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> et appuyez sur <span class="guilabel">Ouvrir</span>.<ul>
+<li>Vous devriez voir la même carte du monde affichée par QGIS. Nous allons maintenant changer le style des rivières et regarder le résultat dans la visionneuse de cartes web.</li>
+</ul>
+</li>
+<li>Double cliquez sur <code class="file docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines</span></code> dans l’arborescence Couches.</li>
+<li>Modifiez la couleur dans les options de contour pour une tonalité de bleu différente.</li>
+<li>Appuyez sur  <span class="guilabel">OK</span>. Les rivières sont maintenant affichées dans une nouvelle couleur.</li>
+<li>Sauvegarder le projet avec <span class="menuselection">Project ‣ Sauvegarder</span>.</li>
+<li>Réouvrez le navigateur Web.</li>
+<li>Zoomez vers l’avant. Vous verrez maintenant des rivières affichées dans la nouvelle couleur.</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-qgis-project">
+<h2><a class="toc-backref" href="#id3">Créez un nouveau projet QGIS</a><a class="headerlink" href="#create-a-new-qgis-project" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="arabic simple">
+<li>Rouvrir QGIS.</li>
+<li>Choisissez <span class="menuselection">Projet ‣ Nouveau</span>.</li>
+<li>Cliquez <span class="menuselection">Couche ‣ Ajouter une couche ‣ Ajouter une couche vectorielle</span>.</li>
+<li>Accédez au dataset :<a class="reference external" href="file:'/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp">file:”/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</a>”.</li>
+<li>Cliquez sur <span class="guilabel">Open</span>. Vous devriez voir tous les pays du monde.</li>
+<li>Sauvegarder le projet avec <span class="menuselection">Project ‣ Sauvegarder</span>.</li>
+<li>Utilisez le nom du fichier <code class="file docutils literal"><span class="pre">/home/user/world.qgs</span></code> et appuyez sur  <span class="guilabel">Sauvegarder</span>.</li>
+<li>Open the <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/home/user/world.qgz&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=ne_10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a>. You should see all world countries, this time rendered by QGIS Server.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<p>To learn more about QGIS Server, a good starting point is the <a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">QGIS Server Guide</a>.</p>
+<dl class="docutils">
+<dt>Documentation :</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">https://docs.qgis.org/3.10/en/docs/server_manual/</a></li>
+</ul>
+</dd>
+</dl>
+<p>Guide de démarrage rapide pour l’installation sur serveur Debian/Ubuntu :</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="command">apt-get install qgis-mapserver libapache2-mod-fcgid</strong></li>
+<li>-&gt; <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi">http://localhost/cgi-bin/qgis_mapserv.fcgi</a></li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Client Web QGIS :</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/qgis/qgis-web-client">https://github.com/qgis/qgis-web-client</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

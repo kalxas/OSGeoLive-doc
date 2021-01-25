@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenJUMP GIS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="OpenJUMP GIS Quickstart" href="../quickstart/openjump_quickstart.html" />
+    <link rel="prev" title="uDig Quickstart" href="../quickstart/udig_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.openjump.org"><img alt="../../_images/logo_openjump.png" class="align-right" src="../../_images/logo_openjump.png" /></a>
+<div class="section" id="openjump-gis">
+<h1>OpenJUMP GIS<a class="headerlink" href="#openjump-gis" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>デスクトップ GIS<a class="headerlink" href="#desktop-gis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenJUMPは、ユーザが地理データを表示、編集、分析、および確認できる、使いやすく強力なデスクトップGISです。CORE版とPLUS版があり、後者には便利なプラグインがたくさん追加されています。OpenJUMPはGIS機能のデータ編集とラピッドプロトタイピングに優れています。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_screenshot.png"><img alt="openjump screenshot" class="align-right" src="../../_images/openjump_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="features-core-features-and-plugins">
+<h3>機能 (主要機能とプラグイン*)<a class="headerlink" href="#features-core-features-and-plugins" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul>
+<li><p class="first">データフォーマット</p>
+<blockquote>
+<div><ul class="simple">
+<li>読み取り (ファイル): GML, SHP, DXF+, MIF*, CSV+, KML+, OSM* &amp; TIFF, ASCII grid, JPG, PNG, JPEG2000+, MrSID*, ECW+</li>
+<li>読み取り (DB): PostGIS, ArcSDE*, Oracle*, MySQL*, SpatiaLite+, H2 Spatial+, MariaDB+</li>
+<li>読み取り (OGC スタンダード): WKT, WMS, KML+, GeoPackage</li>
+<li>出力: GML, SHP, WKT, DXF+, CSV+, PostGIS &amp; JPG, TIFF, ASCII grid*, SVG+</li>
+<li>注:(*)の付いたフォーマットには追加のプラグインが必要で、(+)の付いたフォーマットはPLUSエディションの一部です。</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">編集と合成</p>
+<blockquote>
+<div><ul class="simple">
+<li>ポイント、ライン、ポリゴン、マルチジオメトリ、ジオメトリコレクション、円の描画(最終的には一つのレイヤーに混在)</li>
+<li>頂点の追加、移動、削除</li>
+<li>ポリゴンの回転、拡大縮小、オートコンプリート</li>
+<li>ポリゴンとラインの切り取り、合成、単純化</li>
+<li>ワーピング、品質保証ツール</li>
+<li>CRS間の座標変換</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">解析とクエリー</p>
+<blockquote>
+<div><ul class="simple">
+<li>空間クエリー関数と属性クエリー関数</li>
+<li>解析:バッファ、和、オーバーレイ、図心、凸包…</li>
+<li>統計:長さ、面積、レイヤーの統計、属性の統計、印刷…</li>
+<li>編集ツール : コンバータ、ノード、ポリゴナイザー、平面グラフ、PLUSエディションでのトポロジの消去、…</li>
+<li>属性転送ツール : 結合、マッチング*</li>
+<li>PLUSエディションに含まれるSEXTANTEラスター解析ツールボックス</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">カスタマイズ</p>
+<blockquote>
+<div><ul class="simple">
+<li>国際化(cz, de, en, es, fi, fr, hu, it, ja, pt, ta, zh)</li>
+<li>BeanShellおよびJava Python/Ythonを介したAPI、スクリプトの提供</li>
+<li>(Java) plugin-system</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>サポートされている OGC スタンダード: GML2, SFS, WMS, KML, SLD, GeoPackage (読み込み);</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>ウェブサイト:</strong> <a class="reference external" href="http://www.openjump.org">http://www.openjump.org</a></p>
+<p><strong>ライセンス:</strong> GPL</p>
+<p><strong>ソフトウェアバージョン:</strong> 1.15.1</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac, Unix</p>
+<p><strong>コミュニティサポート:</strong> <a class="reference external" href="http://www.openjump.org/support.html">http://www.openjump.org/support.html</a></p>
+<p><strong>商用サポート:</strong> <a class="reference external" href="https://ojwiki.soldin.de/index.php?title=Professional_Support_Page">https://ojwiki.soldin.de/index.php?title=Professional_Support_Page</a></p>
+<p><strong>ダウンロードページ:</strong> <a class="reference external" href="https://sourceforge.net/projects/jump-pilot/files/">https://sourceforge.net/projects/jump-pilot/files/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/openjump_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

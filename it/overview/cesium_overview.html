@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cesium &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Cesium Quickstart" href="../quickstart/cesium_quickstart.html" />
+    <link rel="prev" title="Leaflet Quickstart" href="../quickstart/leaflet_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cesium.com/"><img alt="../../_images/logo_cesium.png" class="align-right" src="../../_images/logo_cesium.png" /></a>
+<div class="section" id="cesium">
+<h1>Cesium<a class="headerlink" href="#cesium" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="about">
+<h2>A proposito di<a class="headerlink" href="#about" title="Link a questa intestazione">¶</a></h2>
+<div class="section" id="d-globes-and-2d-maps-in-a-browser">
+<h3>Globi 3D e mappe 2D in un browser<a class="headerlink" href="#d-globes-and-2d-maps-in-a-browser" title="Link a questa intestazione">¶</a></h3>
+<p>Cesium è una libreria JavaScript per creare globi 3D e mappe 2D in un browser web senza nessun plugin. Usa WebGL per l’acceleratore hardware grafico, ed è cross-platform, cross-browser, e sviluppato per la visualizzazione di dati dinamici.</p>
+<a class="reference internal image-reference" href="../../_images/cesium_screenshot.png"><img alt="cesium screenshot" class="align-right" src="../../_images/cesium_screenshot.png" style="width: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="core-features">
+<h2>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>Visualizzazione geospaziale dinamica:<ul>
+<li>Creazione di scene dinamiche basate su dati con <a class="reference external" href="https://github.com/CesiumGS/cesium/wiki/CZML-Guide">CZML</a>.</li>
+<li>Visualizza terreni di tutto il mondo ad alta risoluzione.</li>
+<li>Renderizza layer immagini utilizzando gli standard WMS, TMS, OpenStreetMaps, Bing, e Esri.</li>
+<li>Renderizza dati vettoriali da GeoJSON e TopoJSON.</li>
+<li>Renderizza modelli 3D utilizzando COLLADA e glTF.</li>
+<li>Usate i <a class="reference external" href="https://cesium.com/cesiumjs">plugins</a> per estendere Cesium.</li>
+</ul>
+</li>
+<li>Costruito per Performance e Precisione:<ul>
+<li>Lo WebGL ottimizzato con batching e culling impiega in modo efficiente la grafica con accelerazione hardware.</li>
+<li>Renderizza un vasto range di geometrie incluso linee, poligoni, billboards, etichette, estrusioni, e corridoi.</li>
+<li>Utilizza <a class="reference external" href="https://cesium.com/blog/2017/07/12/the-next-generation-of-3d-tiles/">Tile 3D</a> per trasmettere, assegnare stili e interagire con dati 3D eterogenei, compresi modelli fotogrammetrici, edifici 3D, esterni e interni CAD e BIM e nuvole di punti.</li>
+<li>Controlla la camera e crea percorsi volati.</li>
+<li>Usa widgets standard per controllare il tempo dell’animazione, seleziona i layer, e fare lo zoom ad una località.</li>
+</ul>
+</li>
+<li>Una API, Tre Visualizzazioni:<ul>
+<li>Cesium supporta globi 3D, mappe 2D, e Visualizzazione Columbus 2.5D con le stesse API.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>Standards implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>WMS e WMTS</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h2>
+<p><strong>Sito web:</strong> <a class="reference external" href="https://cesium.com/">https://cesium.com/</a></p>
+<p><strong>Licenza:</strong> Apache 2.0 license</p>
+<p><strong>Versione Software:</strong> 1.76</p>
+<p><strong>Piattaforme Supportate:</strong> Independente dalla piattaforma, dipende solo da un browser che supporta WebGL</p>
+<p><strong>Supporto alla comunità:</strong> Forum su <a class="reference external" href="https://groups.google.com/forum/?hl=en#!forum/cesium-dev">https://groups.google.com/forum/?hl=en#!forum/cesium-dev</a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/cesium_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

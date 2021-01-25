@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GpsPrune &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GpsPrune Quickstart" href="../quickstart/gpsprune_quickstart.html" />
+    <link rel="prev" title="pgRouting Quickstart" href="../quickstart/pgrouting_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://activityworkshop.net/software/gpsprune"><img alt="../../_images/logo_gpsprune.png" class="align-right" src="../../_images/logo_gpsprune.png" /></a>
+<div class="section" id="gpsprune">
+<h1>GpsPrune<a class="headerlink" href="#gpsprune" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="gps-track-editing">
+<h2>GPS Datenverarbeitungssoftware<a class="headerlink" href="#gps-track-editing" title="Link zu dieser Überschrift">¶</a></h2>
+<p><a class="reference external" href="https://activityworkshop.net/software/gpsprune">GpsPrune</a> ist ein Werkzeug für die Visualisierung, das Editieren und das Konvertieren von Koordinatendaten aus GPS Systemen. Es kann dazu verwendet werden, Ausflüge im Voraus zu planen oder auch zur Analyse der per GPS-Empfänger aufgenommenen Tracks verwendet werden.</p>
+<p>GpsPrune verwendet <a class="reference internal" href="osm_dataset_overview.html"><span class="doc">OpenStreetMap</span></a> Karten um aufgenommenen Tracks und Wegpunkte zu zeigen, und stellt eine Reihe von Funktionen zur Verfügung um die Punkte zu editieren, löschen und kombinieren. GpsPrune kann auch Fotos und Audiodateien mit den Koordinaten verbinden anhand von den Zeitstempeln.</p>
+<p>GpsPrune nutzt GPSBabel - sofern verfügbar - um Daten direkt vom GPS-Empfänger zu lesen und kann die bearbeiteten Daten auch wieder zurück an den Empfänger senden.</p>
+<p>GpsPrune läuft sowohl auf Linux als auch auf Mac OSX und Windows, and ist in über zehn
+verschiedenen Sprachen verfügbar.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_screenshot.png"><img alt="gpsprune screenshot" class="align-right" src="../../_images/gpsprune_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Kernfunktionen<a class="headerlink" href="#core-features" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li>Daten aus Textdateien, Gpx-, Kml- oder Kmzdateien laden, oder aus einem GPS-Gerät</li>
+<li>Zeigt die Daten mit zoombaren Karten von OpenStreetMap oder anderen Servern (z.B. HikeBikeMap, Reit- und Wanderkarte etc)</li>
+<li>Höhenprofil oder Geschwindigkeitsprofil Ansicht</li>
+<li>Bearbeitungswerkzeug zum Erzeugen, Ändern, Löschen, Bereich umkehren und Track komprimieren</li>
+<li>Drehbare 3D Ansicht der Daten, oder nach POV-Datei exportieren für 3D-Rendering</li>
+<li>Daten nach Text-, Gpx-, Kml oder Kmzdateien speichern, oder zum GPS-Gerät schicken</li>
+<li>Automatisches Korrelieren von Fotos und Audiodateien anhand von Zeitstempeln</li>
+<li>Erzeugen von Diagrammen wie zum Beispiel Höhe gegen Distanz, oder Geschwindigkeit gegen Zeit</li>
+<li>Entfernungen, Anstiege, Abfahrten, Zeitschätzungen und mehr</li>
+<li>Online-Quellen wie Wikipedia, GPSies, OpenCaching.de und lokale Wettervorhersagen</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Link zu dieser Überschrift">¶</a></h3>
+<p><strong>Webseite:</strong> <a class="reference external" href="https://activityworkshop.net/software/gpsprune">https://activityworkshop.net/software/gpsprune</a></p>
+<p><strong>Lizenz:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Software Version:</strong> 19.2.0</p>
+<p><strong>Unterstützte Plattformen:</strong> GNU/Linux, Mac OSX, Windows</p>
+</div>
+<div class="section" id="quickstart">
+<h3>Schnellstart<a class="headerlink" href="#quickstart" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gpsprune_quickstart.html"><span class="doc">Quickstart Dokumentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

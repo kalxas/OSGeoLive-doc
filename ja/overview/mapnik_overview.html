@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mapnik &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="Mapnik クイックスタート" href="../quickstart/mapnik_quickstart.html" />
+    <link rel="prev" title="R Quickstart" href="../quickstart/R_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapnik.org/"><img alt="../../_images/logo_mapnik.png" class="align-right" src="../../_images/logo_mapnik.png" /></a>
+<div class="section" id="mapnik">
+<h1>Mapnik<a class="headerlink" href="#mapnik" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="cartographic-rendering-engine">
+<h2>地図製作用レンダリングエンジン<a class="headerlink" href="#cartographic-rendering-engine" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Mapnik は美しい地図を描画するツールキットで、高品質なアンチエイリアス処理によるクリーンでソフトなフィーチャの描画、インテリジェントなラベル配置、SVG によるスケーリング可能なシンボル描画が可能です。Open Street Map のメイン地図レイヤ描画エンジンとして、よく知られています。</p>
+<p>Mapnikは通常、インターネット経由でマップを配信するPythonアプリケーションに組み込まれていますが、スケーリングの改善により、最近では高解像度の紙のマップの作成にも使われるようになりました。</p>
+<a class="reference internal image-reference" href="../../_images/mapnik_screenshot.png"><img alt="mapnik screenshot" class="align-right" src="../../_images/mapnik_screenshot.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="core-features">
+<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Mapnik はどのようなウィンドウシステムにも依存することなく、ジオグラフィックオブジェクト（マップ、レイヤ、データソース、フィーチャ、ジオメトリ）のコレクションをサーバー環境に展開することができます。また、マルチスレッド Web アプリケーション開発のためにスレッドセーフで動作することを目的としています。</p>
+<p>高レベルのPythonバインディング(boost.python)は、zope3やdjangoなどをターゲットにして、迅速なアプリケーション開発を促進します。</p>
+<p>Mapnikはクロスプラットフォームです。パッケージはほとんどのLinuxディストリビューションで使用でき、インストーラは一般にMac OS XとWindowsで使用されます。</p>
+</div>
+<div class="section" id="details">
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>Webサイト:*</em> <a class="reference external" href="https://mapnik.org/">https://mapnik.org/</a></p>
+<p><strong>ライセンス:</strong> LGPL (GNU Lesser General Public Licence)</p>
+<p><strong>ソフトウェアバージョン:</strong> 3.0.23</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>API インターフェイス:</strong> C++, Python</p>
+</div>
+<div class="section" id="quickstart">
+<h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapnik_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

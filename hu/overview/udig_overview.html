@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>uDig &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="uDig gyorstalpaló" href="../quickstart/udig_quickstart.html" />
+    <link rel="prev" title="gvSIG Desktop gyorstalpaló" href="../quickstart/gvsig_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://udig.refractions.net/"><img alt="../../_images/logo_udig.png" class="align-right" src="../../_images/logo_udig.png" /></a>
+<div class="section" id="udig">
+<h1>uDig<a class="headerlink" href="#udig" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>Asztali GIS<a class="headerlink" href="#desktop-gis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Felhasználóbarát asztali internet GIS (uDig) egy nyílt forráskódú téradat megjelenítő/szerkesztő, különös tekintettel az OpenGIS internetes GIS szabványaira Internet, a Web Map Server (WMS) és a Web Feature Server (WFS) szabványok .</p>
+<p>A uDig:</p>
+<ul class="simple">
+<li><strong>Felhasználóbarát</strong>, ismerős grafikus felhasználói környezetet biztosít;</li>
+<li><strong>Asztali gépekre</strong> natív módon fut Windows, Max OS/X és Linux rendszereken;</li>
+<li><strong>Internet orientált</strong>, szabványos és de facto térinformatikai webszolgáltatásokból táplálkozik; és,</li>
+<li><strong>GIS kész</strong>, amely biztosítja a keretrendszert , melyre alapozva komplex analitikai képességek építhetők. és fokozatosan bekerülnek ezek a képességek a fő alkalmazásba.</li>
+</ul>
+<p>A fejlesztőknek a uDig egy közös Java platformot biztosít térinformatikai alkalmazások készítéséhez, nyílt forráskódú összetevőkkel. A honlap világos oktatóanyagok sorozatát kínálja, melyek lefedik az egyszerű eszköz készítésétől a saját egyedi alkalmazás kiadásáig terjed skálát.</p>
+<a class="reference internal image-reference" href="../../_images/udig_screenshot.png"><img alt="udig screenshot" class="align-right" src="../../_images/udig_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>Asztali kliens Fogd és vidd integrációval a fájl kezelőhöz és Web böngészőhöz</li>
+<li>Integrálható a meglévő infrastruktúrába: ArcSDE, Oracle, DB2, és továbbiak</li>
+<li>Helyi fájlokkal dolgozik: shape fájl, jpeg, png, tiff és így tovább.</li>
+<li>Együtt dolgozik a modern raszter formátumokkal: ECW, MrSID, JPEG 2000</li>
+<li>Támogatás megfelelő web térkép kiszolgálókhoz  (<a class="reference internal" href="geoserver_overview.html"><span class="doc">GeoServer</span></a>, MapServer testelt)</li>
+<li>Integrált Web tapasztalat egy beágyazott böngészőben, amely felismeri az OGC webes szolgáltatásokat és egyszerűen hozzáadja a linkeket a képernyőn megjelenő térképhez</li>
+<li>A rajzolás Style Layer Description-nal történő vezérlése lehetővé teszi, hogy a térképeit ugyanazokkal a beállításokkal tegye közzé a web térkép szervereken mint a uDig-ben</li>
+<li>Szabványok alapos integrációja, amely lehetővé teszi az alkalmazásoknak, hogy szükség szerint váltsanak a megfelelő szolgáltatások között a megjelenítéshez, interakcióhoz és szerkesztéshez</li>
+<li>Nyomtatás és PDF generálás</li>
+<li>Fejlesztőknek<ul>
+<li>Java alkalmazás, mely a <a class="reference internal" href="geotools_overview.html"><span class="doc">GeoTools</span></a>, JTS Topology Suite (JTS) &lt;<a class="reference external" href="https://sourceforge.net/projects/jts-topo-suite/">https://sourceforge.net/projects/jts-topo-suite/</a>&gt;`_ felhasználásával készül</li>
+<li>Az Eclipse Rich Client Platform által biztosított Ipari erősségű modul rendszer</li>
+<li>Natív vezérlők használata</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>OGC Web Map Server (WMS)</li>
+<li>OGC Web Feature Server (WFS)</li>
+<li>OGC Web Feature Server Transactional (WFS-T)</li>
+<li>OGC Simple Features for SQL (SFQL)</li>
+<li>Web Map Server Cache (WMS-C)</li>
+<li>OGC Style Layer Descriptor (SLD)</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+<p><strong>Licenc:</strong> Dual BSD / EPL (Eclipse Foundation)</p>
+<p><strong>Szoftver verzió:</strong> 2.0.0RC1</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>API interfészek:</strong> GeoTools, ImageIO-Ext, Java Advanced Imaging, Eclipse Rich Client Platform, Eclipse Modelling Framework</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="http://udig.refractions.net/users/">http://udig.refractions.net/users/</a></p>
+<p><strong>Fejlesztők:</strong> <a class="reference external" href="http://udig.refractions.net/developers/">http://udig.refractions.net/developers/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/udig_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

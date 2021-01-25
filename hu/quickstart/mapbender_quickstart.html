@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Mapbender gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GeoExt" href="../overview/geoext_overview.html" />
+    <link rel="prev" title="Mapbender" href="../overview/mapbender_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapbender.org"><img alt="../../_images/logo_mapbender.png" class="align-right" src="../../_images/logo_mapbender.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapbender-quickstart">
+<h1><a class="toc-backref" href="#id1">Mapbender gyorstalpaló</a><a class="headerlink" href="#mapbender-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A Mapbender egy web alapú geoportál keretrendszer téradat infrastruktúra szolgáltatások publikálására, regisztrálására, megtekintésére, navigálásra, monitorozására és biztonságos hozzáférés biztosítására.</p>
+<p>Ez a gyorstalpaló leírja:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Mapbender indítása</li>
+<li>egy alkalmazás létrehozása</li>
+<li>egy Web Map Service (OGC WMS) betöltése</li>
+<li>WMS konfigurálás</li>
+<li>Elemek hozzáadása egy alkalmazásához</li>
+</ul>
+</div></blockquote>
+<p>Ez ahogy egy Mapbender alkalmazás kinéz:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_screenshot.png"><img alt="../../_images/mapbender_screenshot.png" src="../../_images/mapbender_screenshot.png" style="width: 557.1999999999999px; height: 399.7px;" /></a>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#mapbender-quickstart" id="id1">Mapbender gyorstalpaló</a><ul>
+<li><a class="reference internal" href="#start-mapbender" id="id2">Mapbender indítás</a></li>
+<li><a class="reference internal" href="#create-an-individual-application" id="id3">Egyedi alkalmazás létrehozása</a></li>
+<li><a class="reference internal" href="#loading-web-map-services" id="id4">Web térkép szolgáltatások betöltése</a></li>
+<li><a class="reference internal" href="#add-service-to-application" id="id5">Szolgáltatás hozzáadása az alkalmazáshoz</a></li>
+<li><a class="reference internal" href="#configure-your-wms" id="id6">WMS konfigurálása</a></li>
+<li><a class="reference internal" href="#add-elements-to-your-application" id="id7">Elemek hozzáadása az alkalmazásához</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id8">Kipróbálandó dolgok</a></li>
+<li><a class="reference internal" href="#what-next" id="id9">Mi a következő?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="start-mapbender">
+<h2><a class="toc-backref" href="#id2">Mapbender indítás</a><a class="headerlink" href="#start-mapbender" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Válassza a <span class="menuselection">Geospatial ‣ Browser Clients ‣ Mapbender</span>-t a start menüből vagy látogassa meg a <a class="reference external" href="http://localhost/mapbender/app.php">http://localhost/mapbender/app.php</a> oldalt. Az alkalmazás elindításához néhány percre van szükség</p>
+<p>Ha bármilyen nehézség adódik a Mapbender futtatásában, kérjük ellenőrizze, hogy az Apache web szervere és a PostgreSQL adatbázisa fut-e. Vagy ha SQLite adatbázist használ van írási joga a fájlhoz.</p>
+<p>Az üdvözlő lap a nyilvános és bármely felhasználó által használható alkalmazásokat listázza. Az alkalmazások egy képernyő képpel, egy címmel és egy leírással jelennek meg.</p>
+<p>Egy alkalmazást megnyithat a címre, a képernyőképre vagy a start gombra kattintással.</p>
+</li>
+<li><p class="first">Mielőtt adminisztrálni tudna a Mapbenderrel be kell jelentkeznie, hogy hozzáférjen az adminisztrációhoz.</p>
+</li>
+<li><p class="first">Kattintson a Login-ra a jobb felső részen a bejelentkező oldal megnyitásához. Jelentkezzen be a <span class="guilabel">root</span> lfelhasználó névvel és a <span class="guilabel">root</span> jelszóval (Ez az alapértelmezett felhasználó és jelszó, melyet az OSGeoLive-ra telepített Mapbender-hez kap. Kérjük módosítsa a root jelszót, ha éles környezetben akarja futtatni. Kérjük ne törölje a <span class="guilabel">root</span> felhasználót.).</p>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_overview.png"><img alt="../../_images/mapbender3_application_overview.png" src="../../_images/mapbender3_application_overview.png" style="width: 775.5999999999999px; height: 583.0999999999999px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="create-an-individual-application">
+<h2><a class="toc-backref" href="#id3">Egyedi alkalmazás létrehozása</a><a class="headerlink" href="#create-an-individual-application" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Hozzon létre egy új alkalmazást az alap információk megadásával az alkalmazásáról. Ezután a szerkesztő módot használhatja elemek, rétegek és biztonság hozzáadásához.</p>
+<ol class="arabic simple">
+<li>válassza a <span class="menuselection">Applications ‣ New Application</span>-t</li>
+<li>Adjon meg egy címet és leírást az alkalmazásához</li>
+<li>Adjon meg egy URL címet, melyet az alkalmazás megnyitásához használunk az URL-ben, Ez ugyanaz lehet mint a cím</li>
+<li>Töltsön fel egy kép fájlt mint képernyőképet az alkalmazás összefoglalóhoz</li>
+<li>Válasszon egy sablont az alkalmazásához</li>
+<li>Válassza a <strong>Create</strong> gombot az alkalmazás létrehozásához</li>
+</ol>
+<p>Az alkalmazását beállította. Most egy az alkalmazásában megjelenített WMS-re van szüksége.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_create_application.png"><img alt="../../_images/mapbender3_create_application.png" src="../../_images/mapbender3_create_application.png" style="width: 775.5999999999999px; height: 583.0999999999999px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="loading-web-map-services">
+<h2><a class="toc-backref" href="#id4">Web térkép szolgáltatások betöltése</a><a class="headerlink" href="#loading-web-map-services" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Betölthet OGC Web Map Szolgáltatásokat (WMS) az alkalmazásába.</p>
+<p>A WMS egy XML fájlt ad vissza, amikor a getCapabilities dokumentumot kérik. Ez az információt értelmező a Mapbender és minden szükséges szükséges információt megkap  a szolgáltatásról ebből az XML-ből.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">Először ellenőriznie kell a Capabilities dokumentumot a böngészőjében mielőtt megpróbálja betölteni a Mapbender-be.</p>
+</div>
+<ol class="arabic simple">
+<li>Válassza a <span class="menuselection">Services ‣ Add Service</span> menüelemet vagy használja a + gombot.</li>
+<li>Linkeljen a WMS getCapabilities URL-re a szöveg mezőben <span class="menuselection">Serviceurl</span>. Itt van egy példa WMS: WhereGroup OSM WMS <a class="reference external" href="https://osm-demo.wheregroup.com/service?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=getCapabilities">https://osm-demo.wheregroup.com/service?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=getCapabilities</a></li>
+<li>Adja mg  felhasználó nevét és jelszavát, ha a szolgáltatás hitelesítést kér.</li>
+<li>Kattintson a <strong>Load</strong>-ra a szolgáltatás betöltéséhez a tárházba.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_wms_load.png"><img alt="../../_images/mapbender3_wms_load.png" src="../../_images/mapbender3_wms_load.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<p>A szolgáltatás sikeres regisztrációja után a Mapbender egy összefoglalót jelenít meg az adatokról, melyeket a szolgáltatás biztosít.</p>
+</div>
+<div class="section" id="add-service-to-application">
+<h2><a class="toc-backref" href="#id5">Szolgáltatás hozzáadása az alkalmazáshoz</a><a class="headerlink" href="#add-service-to-application" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Egy WMS sikeres feltöltése után a WMS-ét hozzá fogja adni egy alkalmazáshoz.</p>
+<ol class="arabic simple">
+<li>Válassza a <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Edit-Button</span>-t.</li>
+<li>Kattintson a <span class="menuselection">+-gombra</span> egy rétegcsoport hozzáadásához, mely a rétegek egy csoportját reprezentálja (egy lehetséges név main)</li>
+<li>Most réteget adhat hozzá a réteg csoporthoz</li>
+<li>Kattintson a <span class="menuselection">+-gombra</span> az új rétegcsoportjában egy szolgáltatás hozzáadásához.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_add_source_to_application.png"><img alt="../../_images/mapbender3_add_source_to_application.png" src="../../_images/mapbender3_add_source_to_application.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="configure-your-wms">
+<h2><a class="toc-backref" href="#id6">WMS konfigurálása</a><a class="headerlink" href="#configure-your-wms" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Konfigurálhatja a WMS-t az egyedi alkalmazásához. Lehet, hogy nem akarja az összes réteget kínálni vagy módosítani szeretné a rétegek sorrendjét vagy címét vagy az elem infót le akarja tiltani vagy a max méretarányt akarja módosítani.</p>
+<ol class="arabic simple">
+<li>Válassza  <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ edit-Button</span> a szolgáltatás példány konfigurálásához.</li>
+<li>Egy táblázatot lát a szolgáltatás rétegeivel.</li>
+<li>Módosíthatja a rétegek sorrendjét húzással és elngedéssel módosíthatja.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_wms_application_settings.png"><img alt="../../_images/mapbender3_wms_application_settings.png" src="../../_images/mapbender3_wms_application_settings.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div>
+<div class="section" id="add-elements-to-your-application">
+<h2><a class="toc-backref" href="#id7">Elemek hozzáadása az alkalmazásához</a><a class="headerlink" href="#add-elements-to-your-application" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A Mapbender az elemeknek egy halmazát kínálja. Az elemeket hozzáadhatja az alkalmazásához. Különböző régiókkal rendelkezik (Toolbar, Sidepane, Content, Footer), melyekhez elemeket adhat hozzá.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_add_element.png"><img alt="../../_images/mapbender3_application_add_element.png" src="../../_images/mapbender3_application_add_element.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Válassza a <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Button +</span>-t egy összefoglalóhoz a Mapbender3 által biztosított elemekről.</li>
+<li>Válasszon egy elemet a listából.</li>
+<li>Vegye észre, hogy különböző területekkel rendelkezik az alkalmazásában. Győződjön meg róla, hogy az elemet olyan területhez adja aminek értelme van.</li>
+<li>Konfigurálja az elemet. Megjegyzés: amikor egy elemet kiválaszt, például a <strong>térképet</strong> látja, hogy az elemnek attribútumai vannak. Minden elem egyedi tulajdonságokat kínál a konfiguráláshoz.</li>
+<li>Az elem pozícióját húzással és elengedéssel megváltoztathatja</li>
+<li>Vessen egy pillantást az alkalmazására. Nyissa meg az alkalmazását <span class="menuselection">Applications ‣ Applications Overview</span></li>
+</ol>
+<p>Most már elképzelése lehet, milyen egyszerű egy Mapbender alkalmazás megváltoztatása a kód megváltoztatása nélkül.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_elements.png"><img alt="../../_images/mapbender3_application_elements.png" src="../../_images/mapbender3_application_elements.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<p>Részletes információt talál minden elemről a <a class="reference external" href="https://doc.mapbender.org/en/functions.html">Mapbender elem dokumentációban</a>.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id8">Kipróbálandó dolgok</a><a class="headerlink" href="#things-to-try" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>térkép elem hozzáadása az alkalmazás tartalmához</li>
+<li>rétegfa hozzáadása az alkalmazása oldal paneléhez</li>
+<li>jelmagyarázat hozzáadása az alkalmazása oldal paneléhez</li>
+<li>nyomtatás elem hozzáadása a tartalomhoz</li>
+<li>gomb hozzáadása, mely a nyomtatást az alkalmazás fölött nyitja meg</li>
+<li>Navigációs eszköztár hozzáadása a tartalomhoz</li>
+<li>áttekintő térkép hozzáadása a tartalomhoz</li>
+<li>szerzői jog hozzáadása és a szerzői jog szöveg módosítása</li>
+<li>méretarány választó és vetület választó hozzáadása a lábléchez</li>
+</ul>
+<p>Itt van néhány további kipróbálandó kihívás önnek:</p>
+<ol class="arabic simple">
+<li>Próbáljon meg néhány WMS-t betölteni az alkalmazásába. Próbálja megkonfigurálni a WMS-ét.</li>
+<li>Próbáljon egy saját alkalmazást létrehozni.</li>
+<li>Hozzon létre felhasználókat és csoportokat és rendelje egy alkalmazást az új felhasználókhoz/csoportokhoz.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id9">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ez csak az első lépés a Mapbender használatának útján. Sokkal több funkcionalitása van, amit kipróbálhat.</p>
+<ul class="simple">
+<li>Mapbender honlap <a class="reference external" href="https://mapbender.org/">https://mapbender.org/</a></li>
+<li>Oktatóanyagokat találhat a <a class="reference external" href="https://doc.mapbender.org">https://doc.mapbender.org</a> oldalon</li>
+<li>Kibővített oktatóanyagokat találhat a <a class="reference external" href="https://doc.mapbender.org/en/quickstart.html">https://doc.mapbender.org/en/quickstart.html</a> oldalon</li>
+<li>Vegyen részt a projektben <a class="reference external" href="https://mapbender.org/community/">https://mapbender.org/community/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

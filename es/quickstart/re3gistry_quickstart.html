@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de Re3gistry &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="pygeoapi" href="../overview/pygeoapi_overview.html" />
+    <link rel="prev" title="Re3gistry" href="../overview/re3gistry_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://inspire.ec.europa.eu/about-inspire/563"><img alt="../../_images/logo_inspire.png" class="align-right" src="../../_images/logo_inspire.png" /></a>
+<div class="section" id="re3gistry-quickstart">
+<h1>Inicio Rápido de Re3gistry<a class="headerlink" href="#re3gistry-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Re3gistry 2 es una solución reutilizable de código abierto para administrar y compartir «códigos de referencia». Proporciona un punto de acceso central consistente donde las etiquetas y descripciones de los códigos de referencia pueden ser fácilmente exploradas por los seres humanos y recuperadas por las máquinas. Los códigos de referencia se intercambian entre aplicaciones para hacer referencia únicamente a alguna “cosa”. Se pueden utilizar para definir conjuntos de valores permitidos para un campo de datos o para proporcionar una referencia o contexto para los datos que se intercambian. Ejemplos son enumeraciones, vocabularios controlados, taxonomías, tesauros o, simplemente, ‘listas de cosas’.  Re3gistry 2 apoya a las organizaciones en la gestión y actualización de códigos de referencia de forma coherente.</p>
+<p>Esta Guía de Inicio Rápido describe como:</p>
+<ul class="simple">
+<li>Iniciar e instalar Re3gistry con el asistente (solo el primer inicio)</li>
+<li>Administrar datos desde el cliente <code class="docutils literal"><span class="pre">pgAdmin</span></code>.</li>
+</ul>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-the-re3gistry" id="id1">Iniciar Re3gistry</a></li>
+<li><a class="reference internal" href="#introduction-to-the-re3gistry-2" id="id2">Introducción a Re3gistry 2</a></li>
+<li><a class="reference internal" href="#users-roles-and-groups" id="id3">Usuarios, roles y grupos</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="start-the-re3gistry">
+<h2><a class="toc-backref" href="#id1">Iniciar Re3gistry</a><a class="headerlink" href="#start-the-re3gistry" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Elija <em>“Start Re3gistry”</em> en el menú :<span class="menuselection">Geospatial ‣ Web Services ‣ Re3gistry</span>. La aplicación tardará unos minutos en iniciarse. Firefox abre la página de destino <em>Re3gistry</em> (también puedes abrirla manualmente apuntando tu navegador a <a class="reference external" href="http://localhost:8080/re3gistry2">http://localhost:8080/re3gistry2</a>).</p>
+<p>Si se trata del primer inicio, Re3gistry iniciará el asistente de instalación. Este asistente guiará al usuario a la configuración y la primera ejecución de la herramienta.</p>
+<ul class="simple">
+<li>La primera página es sólo una descripción introductoria. Haga clic en «continuar».</li>
+<li>La página «Administrador de registros» le permite definir la cuenta para la administración del sistema (Administrador de registros). Inserte una dirección de correo electrónico válida y una contraseña. A continuación, haga clic en «Guardar y continuar».</li>
+<li>El siguiente paso le permite elegir entre 2 opciones:<ul>
+<li>Instalación: elija esta opción si desea instalar el software Re3gistry por primera vez y crear un registro desde cero.</li>
+<li>Migración: elija esta opción si desea actualizar una instancia de Re3gistry preexistente. Esta opción mantendrá la configuración y el contenido. Tenga en cuenta que esta opción solo funcionará en una instancia existente que se ejecute en Re3gistry versión 1.3.X.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Opción de instalación</strong></p>
+<p>En caso de elegir la opción «Instalación», se solicitará la configuración básica para el nuevo registro.</p>
+<ul class="simple">
+<li>Idiomas del sistema: los idiomas del sistema son los idiomas admitidos y manejados por el Re3gistry 2. Tenga en cuenta que puede seleccionar uno o varios idiomas del sistema.</li>
+<li>Lenguaje maestro: el lenguaje maestro es el utilizado por el Re3gistry 2 para manejar el plurilenguaje. Tenga en cuenta que esto requerirá que todo el contenido esté disponible en el idioma maestro elegido.</li>
+<li>URI base: el URI base formará parte de la dirección URL pública, generalmente debe coincidir con su propio nombre de dominio: <cite>**http://example.com**/registry</cite></li>
+<li>ID local: el ID local formará parte de la dirección URL pública, generalmente la ruta de acceso que sigue al nombre de dominio: <cite>http://example.com/**registry**</cite></li>
+<li>Etiqueta: la etiqueta del registro será el ‘título’ de la instancia de Re3gistry 2. Se mostrará en la página de destino del registro.</li>
+<li>Resumen de contenido: este texto debería describir en breve lo que estaría disponible en su instancia de Re3gistry 2. Se mostrará en la página de destino del registro.</li>
+</ul>
+<p>Después de rellenar toda la información, haga clic en «Guardar y continuar».</p>
+<p>El siguiente paso presentará un resumen de la información insertada. Si todos los campos son correctos, haga clic en «Instalar» para iniciar la instalación. Una vez finalizada la instalación, se redirige al usuario a la página de inicio de sesión.</p>
+<p><strong>Opción de migración</strong></p>
+<p>En caso de elegir la opción «Migración», se solicitan los detalles de la base de datos de la instalación de Re3gistry existente.</p>
+<ul class="simple">
+<li>Rellene los campos solicitados y</li>
+<li>haga clic en el botón «Guardar y continuar». A continuación, obtendrá una página que contiene un resumen de los datos recuperados de la instancia existente de Re3gistry.</li>
+<li>Haga clic en «Instalar» para iniciar la migración. Se mostrará una página de información.</li>
+</ul>
+<p>Ahora puede cerrar el navegador y el sistema le notificará por correo electrónico utilizando la dirección especificada en el paso de definición «Administrador de registros».</p>
+</div>
+<div class="section" id="introduction-to-the-re3gistry-2">
+<h2><a class="toc-backref" href="#id2">Introducción a Re3gistry 2</a><a class="headerlink" href="#introduction-to-the-re3gistry-2" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La interfaz de edición de Re3gistry permite gestionar gráficamente el ciclo de vida completo de los códigos de referencia, como listas de códigos, enumeraciones, vocabularios controlados, taxonomías, tesauros o, simplemente, «listas de cosas». Al elegir el «modo de instalación» del asistente, la primera vez que inicie sesión en el sistema, tendrá un registro vacío. A continuación, puede comenzar a completarlo utilizando las herramientas proporcionadas por la interfaz de edición. Si elige el «modo de migración» del asistente, encontrará los registros importados de la versión anterior de la herramienta.</p>
+<p>Para obtener documentación detallada sobre la interfaz de edición, leer el <a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">manual de usuario</a>.</p>
+</div>
+<div class="section" id="users-roles-and-groups">
+<h2><a class="toc-backref" href="#id3">Usuarios, roles y grupos</a><a class="headerlink" href="#users-roles-and-groups" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El Re3gistry 2 sigue la norma <a class="reference external" href="https://www.iso.org/standard/54721.html">ISO 19135 Standard «Geographic information — Procedures for item registration»</a>.</p>
+<p>Los posibles roles de usuario que gestiona Re3gistry 2 son:</p>
+<ol class="arabic simple">
+<li>Gerente de registro</li>
+<li>Propietario del registro</li>
+<li>Gerente de registro</li>
+<li>Cuerpo de control</li>
+<li>Organizaciones de presentación</li>
+</ol>
+<p>El administrador del registro tiene los privilegios más altos en el sistema. Este rol puede realizar tres tareas diferentes:</p>
+<ul class="simple">
+<li>Realice cualquier acción en los códigos de referencia.<ul>
+<li>Los cambios realizados en los códigos de referencia deben someterse al flujo de trabajo de aprobación obteniendo la aprobación del organismo de control,</li>
+</ul>
+</li>
+<li>Gestionar los elementos estructurales del sistema.</li>
+<li>Cambiar y editar la información relacionada con el registro y los registros,</li>
+<li>Añadir nuevos registros,</li>
+<li>Gestionar los campos del registro, registros, códigos de referencia.<ul>
+<li>Estos cambios estructurales no necesitan tener el flujo de trabajo de aprobación, y</li>
+</ul>
+</li>
+<li>Administrar usuarios y grupos.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta fue sólo una visión muy breve de Re3gistry.  Hay más información en la instalación de demostración y en el espacio en GitHub de Re3gistry.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">Manual de usuario</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/administrator-manual.md">Manual de Administrador</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/developer-manual.md">Manual de desarrollador</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage rapide de Leaflet &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Cesium" href="../overview/cesium_overview.html" />
+    <link rel="prev" title="Leaflet" href="../overview/leaflet_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://leafletjs.com"><img alt="../../_images/logo_leaflet.png" class="align-right" src="../../_images/logo_leaflet.png" /></a>
+<div class="section" id="leaflet-quickstart">
+<h1><a class="toc-backref" href="#id1">Guide de démarrage rapide de Leaflet</a><a class="headerlink" href="#leaflet-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Leaflet est une bibliothèque JavaScript pour la création de cartes intéractives dans navigateur web ou un environnement mobile.  Elle est légère, mais possède toutes les caractéristiques dont la plupart des développeurs ont besoin pour créer des cartes en ligne. Leaflet est conçu avec la simplicité, la performance et la convivialité à l’esprit.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#leaflet-quickstart" id="id1">Guide de démarrage rapide de Leaflet</a><ul>
+<li><a class="reference internal" href="#running" id="id2">Lancement</a></li>
+<li><a class="reference internal" href="#preparing-your-page" id="id3">Préparez votre page</a></li>
+<li><a class="reference internal" href="#setting-up-the-map" id="id4">Mise en place de la carte</a></li>
+<li><a class="reference internal" href="#markers-circles-and-polygons" id="id5">Marqueurs, cercles et polygones</a></li>
+<li><a class="reference internal" href="#working-with-popups" id="id6">Travailler avec les infobulles</a></li>
+<li><a class="reference internal" href="#dealing-with-events" id="id7">Gérer les événements</a></li>
+<li><a class="reference internal" href="#what-next" id="id8">Ensuite ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="running">
+<h2><a class="toc-backref" href="#id2">Lancement</a><a class="headerlink" href="#running" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Avant de suivre ce démarrage rapide, vous devriez démarrer TileStache. Dans OSGeoLive,  Tilestache peut être trouvé sous <strong>Geospatial\Spatial Tools\Start Mapnik &amp; TileStache</strong>. Cela fournira les carreaux de fond qui seront utilisés dans cette démo.</p>
+<p>Voir l’<a class="reference external" href="https://localhost/leaflet-demo.html">exemple</a></p>
+<div class="admonition tip">
+<p class="first admonition-title">Astuce</p>
+<p class="last">Si vous lisez ce guide de démarrage rapide à l’extérieur d’OSGeoLive, vous pouvez préférer lire la démo originale sur&nbsp;: <a class="reference external" href="https://leafletjs.com/examples/quick-start/">https://leafletjs.com/examples/quick-start/</a>, puisque cette démo utilise Tilestache présent dans OSGeoLive.</p>
+</div>
+</div>
+<div class="section" id="preparing-your-page">
+<h2><a class="toc-backref" href="#id3">Préparez votre page</a><a class="headerlink" href="#preparing-your-page" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Avant d’écrire n’importe quel code concernant la carte, vous devez suivre les étapes suivantes de la préparation sur votre page&nbsp;:</p>
+<ul class="simple">
+<li>Inclure les fichiers CSS de Leaflet dans la section <strong>head</strong> de votre document</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/leaflet/leaflet.css&quot;</span> <span class="p">/&gt;</span>
+<span class="c">&lt;!--[if lte IE 8]&gt;</span>
+<span class="c">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/leaflet/leaflet.ie.css&quot; /&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Inclure le fichier JavaScript contenant Leaflet&nbsp;:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/leaflet/leaflet.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Mettez un élément <strong>div</strong> avec un certain <strong>id</strong> où vous souhaitez que votre carte soit&nbsp;:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Assurez-vous que le conteneur de la carte possède une hauteur définie, par exemple en la plaçant dans le CSS&nbsp;:</li>
+</ul>
+<div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">map</span> <span class="p">{</span> <span class="k">height</span><span class="p">:</span> <span class="mi">180</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Vous êtes maintenant prêt pour initialiser la carte et de faire quelque chose avec elle.</p>
+</div>
+<div class="section" id="setting-up-the-map">
+<h2><a class="toc-backref" href="#id4">Mise en place de la carte</a><a class="headerlink" href="#setting-up-the-map" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Nous allons créer une carte de l’Afrique orientale avec une indication de la Conférence FOSS4G de 2018. Tout d’abord, nous allons initialiser la carte et définir son point de vue avec les coordonnées géographiques choisies et un niveau de zoom&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">44.43743</span><span class="p">,</span> <span class="mf">26.104</span><span class="p">],</span> <span class="mf">15</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Par défaut (comme nous n’avons pas passé toutes les options lors de la création de l’instance de carte), toutes les interactions de souris et de touché sur la carte sont activées et il y a des contrôles de zoom et d’attribution.</p>
+<p>Notez que l’appel setView renvoie également l’objet carte - la plupart des méthodes de Leaflet agissent comme ça quand ils ne retournent pas une valeur explicite, qui permet d’utiliser une méthode de chaînage similaire à  jQuery.</p>
+<p>Ensuite, nous allons ajouter une couche de tuiles à notre carte. Dans ce cas, nous utiliserons les images tuilées fournies par TileStache sur le liveDVD. Notez que l’utilisation de fond cartes plus agréables comme OpenStreetMap se traduira par une bien meilleure expérience utilisateur.</p>
+<p>La création d’une couche tuilée implique habituellement de définir le modèle d’URL pour les images tuilées, le texte d’attribution et le niveau de zoom maximal de la couche&nbsp;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://localhost:8012/example/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png,</span><span class="si">{}</span><span class="s1">).addTo(map);</span>
+</pre></div>
+</div>
+<p>Si vous avez accès Internet, vous pouvez utiliser un fond de carte plus agréabl&nbsp;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://</span><span class="si">{s}</span><span class="s1">.tile.openstreetmap.org/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png&#39;</span><span class="p">,{</span><span class="n">maxZoom</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span> <span class="n">attribution</span><span class="p">:</span> <span class="s1">&#39;© &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">addTo</span><span class="p">(</span><span class="nb">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Assurez-vous que tout le code est appelé après l’insertion de la <strong>div</strong> et de <strong>leaflet.js</strong>. Voilà&nbsp;! Vous avez une carte Leaflet fonctionnelle maintenant.</p>
+<p>Il est à noter que Leaflet est indépendant du fournisseur, ce qui signifie qu’il n’est pas imposé un choix particulier de fournisseurs pour les tuiles, et il ne contient même pas une ligne spécifique au fournisseur, donc vous êtes libre d’utiliser d’autres fournisseurs si vous en avez le besoin.</p>
+</div>
+<div class="section" id="markers-circles-and-polygons">
+<h2><a class="toc-backref" href="#id5">Marqueurs, cercles et polygones</a><a class="headerlink" href="#markers-circles-and-polygons" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En plus des couches de tuiles, vous pouvez facilement ajouter d’autres choses à votre carte, y compris des marqueurs, des polylignes, des polygones, des cercles et des infobulles (fenêtres pop-up). Nous allons ajouter un marqueur&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">marker</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">([</span><span class="mf">44.437</span> <span class="p">,</span><span class="mf">26.104</span><span class="p">]).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>L’ajout d’un cercle est identique (sauf qu’il spécifier le rayon en mètres comme deuxième argument), mais vous permet de contrôler à quoi il ressemble en passant des options comme dernier argument lors de la création de l’objet&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circle</span><span class="p">([</span><span class="mf">44.435</span><span class="p">,</span> <span class="mf">26.11</span><span class="p">],</span> <span class="mf">250</span><span class="p">,</span> <span class="p">{</span>
+   <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+   <span class="nx">fillColor</span><span class="o">:</span> <span class="s1">&#39;#f03&#39;</span><span class="p">,</span>
+   <span class="nx">fillOpacity</span><span class="o">:</span> <span class="mf">0.5</span>
+<span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Il est aussi facile d’ajouter un polygone&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">polygon</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">polygon</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">44.433</span><span class="p">,</span> <span class="mf">26.102</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">44.442</span><span class="p">,</span> <span class="mf">26.095</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">44.436</span><span class="p">,</span> <span class="mf">26.093</span><span class="p">]</span>
+<span class="p">]).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="working-with-popups">
+<h2><a class="toc-backref" href="#id6">Travailler avec les infobulles</a><a class="headerlink" href="#working-with-popups" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les fenêtres infobulle sont généralement utilisées lorsque vous souhaitez joindre des informations à un objet particulier sur la carte. Leaflet a un raccourci très pratique pour cela&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">()</span>
+   <span class="p">.</span><span class="nx">setLatLng</span><span class="p">([</span><span class="mf">44.437</span><span class="p">,</span> <span class="mf">26.104</span><span class="p">])</span>
+   <span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;I am a standalone popup.&quot;</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">openOn</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ici nous utilisons <strong>openOn</strong> au lieu de <strong>addTo</strong> car cela gère la fermeture automatique d’une infobulle ouverte préalablement à l’ouverture d’une nouvelle, ce qui est bon pour la facilité d’utilisation.</p>
+</div>
+<div class="section" id="dealing-with-events">
+<h2><a class="toc-backref" href="#id7">Gérer les événements</a><a class="headerlink" href="#dealing-with-events" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Chaque fois que quelque chose se passe dans Leaflet, par exemple quand l’utilisateur clique sur un marqueur ou le zoom de la carte change, l’objet correspondant envoie un événement aucquel vous pouvez abonner  une fonction. Il vous permet de réagir à l’intervention de l’utilisateur&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You clicked the map at &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Chaque objet possède son propre ensemble d’événements - voir la <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> pour plus de détails. Le premier argument de la fonction d’écouteur est un objet <em>event</em> - il contient des informations utiles sur l’événement qui s’est passé. Par exemple, l’événement Clic sur l’objet de la carte (<em>e</em> dans l’exemple ci-dessus) a une propriété latlng  qui est l’emplacement où le clic s’est produit en coordonnées géographiques (latitude longitude).</p>
+<p>Nous allons améliorer notre exemple en utilisant une infobulle au lieu d’une alerte&nbsp;:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nx">popup</span>
+        <span class="p">.</span><span class="nx">setLatLng</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;You clicked the map at &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>
+         <span class="p">.</span><span class="nx">openOn</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Essayez de cliquer sur la carte et vous verrez les coordonnées dans une infobulle. Découvrez l’<a class="reference external" href="https://localhost/leaflet-demo.html">exemple</a> complet</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id8">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Maintenant, vous avez appris des rudiments de Leaflet et pouvez commencer à créer des applications de carte tout de suite&nbsp;! N’oubliez pas de jeter un oeil à la <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> détaillée ou autres <a class="reference external" href="https://leafletjs.com/examples.html">exemples</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

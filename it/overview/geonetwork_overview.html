@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNetwork &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GeoNetwork Quickstart" href="../quickstart/geonetwork_quickstart.html" />
+    <link rel="prev" title="EOxServer Quickstart" href="../quickstart/eoxserver_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonetwork-opensource.org"><img alt="../../_images/logo_geonetwork.png" class="align-right" src="../../_images/logo_geonetwork.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonetwork">
+<h1>GeoNetwork<a class="headerlink" href="#geonetwork" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="metadata-catalog">
+<h2>Catalogo per i metadati<a class="headerlink" href="#metadata-catalog" title="Link a questa intestazione">¶</a></h2>
+<p>GeoNetwork OpenSource è una applicazione di catalogo per la gestione delle risorse spazialmente georiferite. Esso fornisce potenti funzioni per la modifica e la ricerca dei metadati, un visualizzatore di mappe web interattivo integrato, e si basa su standard aperti.</p>
+<a class="reference internal image-reference" href="../../_images/geonetwork_screenshot.png"><img alt="geonetwork screenshot" class="align-right" src="../../_images/geonetwork_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>Accesso alla ricerca immediato a cataloghi geospaziali locali e distribuiti</li>
+<li>Upload e download dei dati, grafici, documentazione, files pdf e ogni altro tipo di contenuto</li>
+<li>Un visualizzatore di mappe web interattivo che combina servizi Web Map da server distribuiti nel mondo</li>
+<li>Le voci aggiornate recentemente sono accessibili come feed RSS e come GeoRSS.</li>
+<li>Editing online dei metadati con un potente sistema template</li>
+<li>Supporto nativo per metadati formattati con ISO19115/ISO19119/ISO19139/ISO19110 e Dublin Core</li>
+<li>Raccolta programmata e sincronizzazione dei metadati tra cataloghi distribuiti (GeoNetwork, CSW, OGC WxS GetCapabilities, WebDav, ArcSDE, Thredds, OGC WFS Features, OAI-PMH)</li>
+<li>controllo di accesso raffinato</li>
+<li>gestione degli utenti e dei gruppi</li>
+<li>interfaccia utente multi-lingua</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Standards implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>OGC Catalogue Service-Web (CSW) 2.0.2 ISO</li>
+<li>Open Archives Initiatives (OAI-PMH)</li>
+<li>OpenSearch-Geo / INSPIRE Atom</li>
+<li>Client for OGC-WMS/WMTS/WFS</li>
+<li>Standards dei matadati:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>ISO19115/ISO19119/ISO19139/ISO19110 e ISO Profiles</li>
+<li>Dublin Core</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="details">
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="https://geonetwork-opensource.org">https://geonetwork-opensource.org</a></p>
+<p><strong>Licenza:</strong> GNU General Public License (GPL) versione 2</p>
+<p><strong>Versione del Software:</strong> 3.2.1</p>
+<p><strong>Piattaforme Supportate:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfacce API:</strong> Java</p>
+<p><strong>Supporto:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">https://www.osgeo.org/service-providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geonetwork_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

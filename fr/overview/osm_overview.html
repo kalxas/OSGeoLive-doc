@@ -1,0 +1,146 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenStreetMap &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Guide de démarrage avec OpenStreetMap" href="../quickstart/osm_quickstart.html" />
+    <link rel="prev" title="Guide de démarrage rapide Marble" href="../quickstart/marble_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.openstreetmap.org/"><img alt="../../_images/logo_osm.png" class="align-right" src="../../_images/logo_osm.png" /></a>
+<div class="section" id="openstreetmap">
+<h1>OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="tools-for-mapping-the-world">
+<h2>Outils pour cartographier le Monde<a class="headerlink" href="#tools-for-mapping-the-world" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://www.openstreetmap.org">OpenStreetMap</a> est un projet visant carrément à créer et fournir des données géographiques libres comme les données routières à n’importe qui les voulant. Le projet a débuté parce que la plupart des cartes que vous croyez actuellement gratuites ont actuellement des restrictions légales ou techniques sur leur utilisation, empêchant les gens de les utiliser de manières créative, productive ou inattendues.</p>
+<p>Un certain nombre de programmes ont été inclus: JOSM, Merkaartor, Osmosis, Osm2pgsql et quelques petits utilitaires en ligne de commande. En plus, des jeux de données exemple récents de la ville hôte du FOSS4G et un certain nombre de plugins JOSM ont été inclus.</p>
+<a class="reference internal image-reference" href="../../_images/osm_screenshot.png"><img alt="osm screenshot" class="align-right" src="../../_images/osm_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caractéristiques principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li>Jeu de données massivement collaboratif global</li>
+<li>Un ensemble d’éditeurs parmi choisir</li>
+<li>Un nombre de rendus à choisir (incluant ceux personnalisés et en ligne)</li>
+<li>Libre d’utilisation</li>
+<li>Intégration très répandue dans des applications géographiques</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></p>
+<p><strong>Licences:</strong></p>
+<ul class="simple">
+<li>Données OpenStreetMap: <a class="reference external" href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a></li>
+<li>JOSM: GNU General Public License (GPL) version 2</li>
+</ul>
+<ul class="simple">
+<li>Collection de plugins JOSM: de la Public Domain à la GPLv3</li>
+<li>Merkaartor: GNU General Public License (GPL) version 2</li>
+</ul>
+<p><strong>Versions des logiciels:</strong></p>
+<ul class="simple">
+<li>JOSM: dernière version snapshot stable (svn r11427)</li>
+<li>Merkaartor: 0.18.2</li>
+<li>Osmosis: 0.44.1</li>
+<li>osm2pgsql: 0.88.1</li>
+</ul>
+<p><strong>Plates-formes supportées:</strong> GNU/Linux, Mac OSX, MS Windows</p>
+<p><strong>Interfaces de l’API (données):</strong> REST (via Xapi), XML</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://www.openstreetmap.org/help">https://www.openstreetmap.org/help</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/osm_quickstart.html"><span class="doc">Documentation du guide de démarrage rapide</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

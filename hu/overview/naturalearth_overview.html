@@ -1,0 +1,137 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Natural Earth &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="Észak Karolina, USA oktatási adatok" href="nc_dataset_overview.html" />
+    <link rel="prev" title="zyGrib gyorstalpaló" href="../quickstart/zygrib_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.naturalearthdata.com/"><img alt="../../_images/logo_naturalearth.png" class="align-right" src="../../_images/logo_naturalearth.png" /></a>
+<div class="section" id="natural-earth">
+<h1>Natural Earth<a class="headerlink" href="#natural-earth" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="map-data">
+<h2>Térkép adat<a class="headerlink" href="#map-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A Natural Earth egy polcról levehető megoldást kínál a térképészeknek, hogy elkészítsék kis méretarányú világukat, regionális és ország térképeket 1:10-, 1:50- és 1:110 milliós méretarányban.  Mindkettő a politikai (adminisztratív) és fizikai (természeti) elemeket tartalmaz, és vektor elemeket tökéletesen igazították a mellékelt raszter adatokhoz.</p>
+<p>A Natural Earth megoldja a térképészek gyakori problémáját: megtalálni a publikálásra alkalmas minőségű, megfelelő részletességű vektor adatokat  az általuk készített kis méretarányú térképekhez.</p>
+<a class="reference internal image-reference" href="../../_images/naturalearth_screenshot.png"><img alt="naturalearth screenshot" class="align-right" src="../../_images/naturalearth_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>A vektor elemek tartalmaznak név és más attribútumokat</li>
+<li>Nagy felületeket feldarabolták a hatékonyabb adat kezelése érdekében, mint például a tenger mélységi adat rétegek.</li>
+<li>A vetület barát vektorok pontosan illeszkednek 180 fokos hosszúságnál. A vonalak elég pontot tartalmaznak a sima görbékhez a kúpvetületeken, de nem olyan sokat, hogy a számítógép feldolgozási sebessége lelassuljon.</li>
+<li>A raszteres adatok szürkeárnyalatos árnyékolt domborzatot és a legutóbbi NASA SRTM Plus magassági adatokból levezetett magassági színezést tartalmaznak és a regisztráláshoz a Natural Eath vektorokhoz igazították.</li>
+<li>Az internetes térkép alkalmazásokhoz optimalizálták, mint például a Google vagy a Yahoo, beépített méretarány attribútumokkal az elemek különböző nagyítási szinteken történő megjelenítésének vezérléséhez.</li>
+</ul>
+</div>
+<div class="section" id="data-sets">
+<h3>Adathalmazok<a class="headerlink" href="#data-sets" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<dl class="docutils">
+<dt>Kulturális vektoradat témák:</dt>
+<dd>Országokat, vitatott területeket, államokat és megyéket (elsőrendű közigazgatási körzetek), és lakott helyeket (városok, települések) tartalmaz. Utakat, vasutakat, lakott területeket, parkokat és védett területeket, a csendes-óceáni ország csoportokat és vízhatár jelzőket.</dd>
+<dt>Fizikai vektoradat témák:</dt>
+<dd>Tengerpart vonalakat, földeket, óceánokat, kisebb szigeteket, zátonyokat, fizikai régiókat, folyókat, tavakat, eljegesedett területeket, Antarktisz jeges parti területeket, magasságot, földrajzi szélesség és hosszúság hálót tartalmaz.</dd>
+<dt>Raszteradat témák:</dt>
+<dd>Szürkeárnyalatos árnyékolt domborzat, magassági színezés, műholdas adatokból származtatott felszínborítás, idealizált világ környezet, óceán fenék, és magasság. Választható tartalom magában foglalja: a felszínborítást, az árnyékolt domborzatot, az óceán vizeket és a csatornákat a tavakkal.</dd>
+</dl>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="https://www.naturalearthdata.com/">https://www.naturalearthdata.com/</a></p>
+<p><strong>Licenc:</strong> nincs, az adat közkincs.</p>
+<p><strong>Adat verzió:</strong> 2.0</p>
+<p><strong>Adatformátum:</strong> SHP és TIF+TFW</p>
+<p><strong>Térbeli koordináta-rendszer:</strong> WGS84.</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.naturalearthdata.com/about">https://www.naturalearthdata.com/about</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

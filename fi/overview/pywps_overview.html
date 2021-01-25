@@ -1,0 +1,150 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PyWPS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Sisällysluettelo" href="../genindex.html" />
+    <link rel="search" title="Etsi" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="PyWPS Quickstart" href="../quickstart/pywps_quickstart.html" />
+    <link rel="prev" title="pycsw Quickstart" href="../quickstart/pycsw_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pywps.org/"><img alt="../../_images/logo_pywps.png" class="align-right" src="../../_images/logo_pywps.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="pywps">
+<h1>PyWPS<a class="headerlink" href="#pywps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-processing-service">
+<h2>Web Processing Service<a class="headerlink" href="#web-processing-service" title="Permalink to this headline">¶</a></h2>
+<p>PyWPS provides web access to custom geospatial operations (referred
+to as Processes) via the <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> standard.</p>
+<p>Processes are written in the Python programming language and can integrate tools such as
+<a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a>, <a class="reference internal" href="R_overview.html"><span class="doc">R</span></a>, <a class="reference internal" href="gdal_overview.html"><span class="doc">GDAL/OGR</span></a>, <a class="reference internal" href="proj_overview.html"><span class="doc">proj</span></a> and other libraries with
+Python bindings.  Source data can be provided with WPS requests or accessed from data on the WPS server.</p>
+<a class="reference internal image-reference" href="../../_images/pywps_screenshot.png"><img alt="pywps screenshot" class="align-right" src="../../_images/pywps_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>small and lightweight</li>
+<li>easy and fast to install and setup</li>
+<li>implemented in pure Python</li>
+<li>integrates seamlessly with the Python ecosystem of packages:<ul>
+<li>GRASS 7</li>
+<li>R</li>
+<li>GDAL/OGR</li>
+<li>Proj</li>
+<li>Numpy</li>
+<li>Shapely</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Permalink to this headline">¶</a></h3>
+<p>OGC Standards:</p>
+<ul class="simple">
+<li>WPS 1.0.0</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="https://pywps.org/">https://pywps.org/</a></p>
+<p><strong>Licence:</strong> GPL</p>
+<p><strong>Software Version:</strong> 4.2.7</p>
+<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
+<p><strong>API Interfaces:</strong> Python</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://pywps.org/community/#professional-support">https://pywps.org/community/#professional-support</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pywps_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

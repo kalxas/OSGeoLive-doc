@@ -1,0 +1,153 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SAGA &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="SAGA Quickstart" href="../quickstart/saga_quickstart.html" />
+    <link rel="prev" title="OpenJUMP GIS Quickstart" href="../quickstart/openjump_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.saga-gis.org"><img alt="../../_images/logo_saga.png" class="align-right" src="../../_images/logo_saga.png" /></a>
+<div class="section" id="saga">
+<h1>SAGA<a class="headerlink" href="#saga" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>Desktop GIS<a class="headerlink" href="#desktop-gis" title="Link a questa intestazione">¶</a></h2>
+<p>SAGA (System for Automated Geoscientific Analyses) è un geographic information system (GIS) open source per l’elaborazione e l’analisi di dati territoriali. Comprende un gran numero di moduli per l’analisi di dati vettoriali (punti, linee e poligoni), tabellari, a griglia e immagini. Fra gli altri, il pacchetto include moduli per la geostatistica, la classificazione di immagini, le proiezioni, la simulazione di processi dinamici (idrologia, evoluzione del paesaggio) e analisi del terreno. Le varie funzioni sono accessibili tramite interfaccia grafica, linea di comando o usanto una API in C++.</p>
+<p>SAGA è stato sviluppato a partire dal 2001, e il nucleo dello sviluppo di SAGA è presso l’istituto di geografia all’università di Amburgo, con contributi da una comunità crescente a livello mondiale.</p>
+<a class="reference internal image-reference" href="../../_images/saga_screenshot.png"><img alt="saga screenshot" class="align-right" src="../../_images/saga_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>Accesso a un gran numero di moduli scientifici tramite interfaccia grafica o linea di comando</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Importazione ed esportazione in vari formati di file</li>
+<li>Riproiezione/ricampionamento di dati</li>
+<li>Manipolazione di dati vettoriali (fusione/intersezione/attributi)</li>
+<li>Manipolazione di nuvole di punti da dati LIDAR</li>
+<li>Dati raster: interpolazione, analisi di costo,…</li>
+<li>Analisi di immagini: filtri, rilevamento dei contorni, analisi cluster, segmentazione</li>
+<li>Analisi di modelli digitali del terreno: generazione di indici geomorfometrici, reti, profili, curve di livello,…</li>
+<li>Geostatistica: moduli per adattamento di variogrammi e kriging</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Interfaccia utente veloce per la gestione e la visualizzazione dei dati</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Visualizzazione 3D</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>API in C++ molto semplice per la creazione di nuovi moduli</li>
+<li>Creazione di script con la linea di comando, binding per Python</li>
+<li>Si può accedere a SAGA dal linguaggio statistico R tramite il modulo RSAGA</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
+<p><strong>Licenza:</strong> LGPL v2.1 (api); GPLv2 (interfaccia grafica e moduli)</p>
+<p><strong>Versione Software:</strong> 7.3.0</p>
+<p><strong>Piattaforme Supportate:</strong> Windows, Linux, FreeBSD</p>
+<p><strong>Interfacce API:</strong> C++, Python, R</p>
+<p><strong>Supporto:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/saga_quickstart.html"><span class="doc">Documentazione introduttiva</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

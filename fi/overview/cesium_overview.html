@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cesium &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Sisällysluettelo" href="../genindex.html" />
+    <link rel="search" title="Etsi" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Cesium Pika-aloitus" href="../quickstart/cesium_quickstart.html" />
+    <link rel="prev" title="Leaflet Quickstart" href="../quickstart/leaflet_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cesium.com/"><img alt="../../_images/logo_cesium.png" class="align-right" src="../../_images/logo_cesium.png" /></a>
+<div class="section" id="cesium">
+<h1>Cesium<a class="headerlink" href="#cesium" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>Ohjelmistosta<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-globes-and-2d-maps-in-a-browser">
+<h3>3D-karttapalloja ja 2D-karttoja selainympäristössä<a class="headerlink" href="#d-globes-and-2d-maps-in-a-browser" title="Permalink to this headline">¶</a></h3>
+<p>Cesium on JavaScript-kirjasto 3D-maapallojen ja 2D-karttojen luomiseen selainympäristössä. Se toimii ilman minkäänlaisia lisäosia, ja se käyttää WebGL-laitteistokiihdytettyä grafiikkaa. Cesium on myös järjestelmä- ja selainohjelmariippumaton ja se toimii hyvin dynaamisten datojen visualisoinnissa.</p>
+<a class="reference internal image-reference" href="../../_images/cesium_screenshot.png"><img alt="cesium screenshot" class="align-right" src="../../_images/cesium_screenshot.png" style="width: 500px;" /></a>
+</div>
+</div>
+<div class="section" id="core-features">
+<h2>Keskeiset ominaisuudet<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Dynaaminen paikkatieto-visualisaatio:<ul>
+<li>Luo datalähtöisiä, aika-dynaamisia visualisointeja <a class="reference external" href="https://github.com/CesiumGS/cesium/wiki/CZML-Guide">CZML</a>.</li>
+<li>Visualisoi korkean resoluution maailmanlaajuista maastokartta .</li>
+<li>Visualisoi kuvastotasoja WMS-, TMS-, OpenStreetMaps-, Bing-ja Esri-standardien avulla.</li>
+<li>Visualisoi vektoridataa GeoJSON- ja TopoJSON-tietoformaattien avulla.</li>
+<li>Visualisoi 3D-malleja käyttämällä COLLADA- ja glTF-formaatteja.</li>
+<li>Käytä <a class="reference external" href="https://cesium.com/cesiumjs">lisäosat</a>  laajentamaan Cesiumin toiminnallisuuksia.</li>
+</ul>
+</li>
+<li>Rakennettu suorituskykyä ja tarkkuutta varten:<ul>
+<li>Optimoitu WebGL, joka hyödyntää tehokkaasti laitteistokiihdytettyä grafiikkaa sarjoittamisen ja muiden tekniikkojen avulla.</li>
+<li>Piirrä laaja valikoima geometrioita, kuten monikulmioita, monikulmioita, mainostauluja, tarroja, ekstrusioita ja käytäviä.</li>
+<li>Käytä <a class="reference external" href="https://cesium.com/blog/2017/07/12/the-next-generation-of-3d-tiles/">3D-karttatiilejä</a> ja suoratoista, tyylittele ja vuorovaikuta erilaisten 3D-karttatiilien kanssa, mukaan lukien fotogrammetria-mallit, 3D-rakennukset, CAD-ja BIM- ulko- ja sisätiloja varten sekä pistepilvet.</li>
+<li>Ohjaa kameraa ja luo lentopolkuja.</li>
+<li>Käytä tavallisia widgetejä ajanhallintaan, valitse kuvastokerroksia ja zoomaa sijainteihin.</li>
+</ul>
+</li>
+<li>Yksi API, kolme näkymää:<ul>
+<li>Cesium tukee 3D-maapallo-, 2D-kartta-, ja 2.5D- Columbus-näkymää samaa APIa hyödyntäen.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>Toteutetut standardit<a class="headerlink" href="#implemented-standards" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>WMS ja WMTS</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Lisätiedot<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p><strong>Verkkosivusto:</strong> <a class="reference external" href="https://cesium.com/">https://cesium.com/</a></p>
+<p><strong>Lisenssi:</strong> Apache 2.0 license</p>
+<p><strong>Ohjelmistoversio:</strong> 1.76</p>
+<p><strong>Tuetut alustat:</strong> Järjestelmäriippumaton; vaatiin vain selaimen, joka tukee WebGL-tekniikkaa</p>
+<p><strong>Yhteisö tuki:</strong> Foorumi osoitteessa <a class="reference external" href="https://groups.google.com/forum/?hl=en#!forum/cesium-dev">https://groups.google.com/forum/?hl=en#!forum/cesium-dev</a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Pika-aloitus<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/cesium_quickstart.html"><span class="doc">Pika-aloituksen dokumentaatio</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

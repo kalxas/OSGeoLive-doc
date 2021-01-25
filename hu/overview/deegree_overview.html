@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>deegree &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="deegree gyorstalpaló" href="../quickstart/deegree_quickstart.html" />
+    <link rel="prev" title="MapCache gyorstalpaló" href="../quickstart/mapcache_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.deegree.org"><img alt="../../_images/logo_deegree.png" class="align-right" src="../../_images/logo_deegree.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="deegree">
+<h1>deegree<a class="headerlink" href="#deegree" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="about">
+<h2>Névjegy<a class="headerlink" href="#about" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>degree térinformatikai web szolgáltatásokat biztosít az <a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a> és az <a class="reference external" href="https://inspire.ec.europa.eu">INSPIRE Network Services</a> specifikációra alapozva. A degree támogatja a következőket:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a>: téradatokból vektor adat szolgáltatás</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a>: téradatokból kirajzolt  térkép szolgáltatása</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a>: előre kirajzolt térképcsempék szolgáltatása</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/cat">Catalogue Service</a>: Téradatok és szolgáltatások keresése</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a>: térinformatikai feldolgozás végrehajtása</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/deegree_screenshot.png"><img alt="deegree screenshot" class="align-right" src="../../_images/deegree_screenshot.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="core-features">
+<h2>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><strong>WFS</strong></p>
+<ul class="simple">
+<li>WFS 1.0.0, 1.1.0 és 2.0.0szabványok implementálása</li>
+<li>Teljes tranzakció kezelés (még gazdag adatmodellekre is)</li>
+<li>KVP, XML és SOAP kérések támogatása</li>
+<li>GML 2/3.0/3.1/3.2 output/input</li>
+<li>GetGmlObject kérések és XLinks támogatás</li>
+<li>Nagy teljesítmény és tökéletes skálázhatóság</li>
+<li>Vetületi transzformáció röptében</li>
+<li>Alulról felfelé tervezték a gazdag adatmodellekhez</li>
+<li>A háttérprogramok támogatják a GML alkalmazási sémák rugalmas illesztését a relációs modellekhez</li>
+<li>ISO 19107-nek megfelelő geometria modell: Komplex geometriák (pl. görbék)</li>
+<li>XPath 1.0-ra alapozott haladó szűrő kifejezések</li>
+<li>Számos háttér rendszert támogat, mint például PostGIS, Oracle Spatial, MSSQL Server, Shape fájlok vagy GML dokumentumok</li>
+</ul>
+<p><strong>WMS</strong></p>
+<ul class="simple">
+<li>WMS 1.1.1 és 1.3.0 szabványok implementálása</li>
+<li>Az SLD/SE 1.0.0 és 1.1.0 verziójú stílusnyelvek széleskörű támogatása</li>
+<li>Nagy teljesítmény és tökéletes skálázhatóság</li>
+<li>Kiváló minőségű kirajzolás</li>
+<li>Méretarány függő stílusok</li>
+<li>Az SE támogatás szükségtelenné tesz egy csomó kereskedelmi bőviményt</li>
+<li>Könnyen konfigurálható HTML és más output formátumok a GetFeatureInfo válaszokhoz</li>
+<li>Stream alapú adatelérést használ, minimális memóriahasználattal</li>
+<li>Szinte teljes mértékben támogatják az SE-ben definiált  raszteres jelrendszert (néhány bővítménnyel)</li>
+<li>Idő/magasság és más dimenziók , teljes támogatása a vektoros és a raszteres adatokra</li>
+<li>Számos háttérprogramot támogat, mint például PostGIS, Oracle Spatial, SHP-fájlok vagy GML  dokumentumok</li>
+<li>Gazdag adatmodelleket közvetlenül meg tud jeleníteni</li>
+</ul>
+<p><strong>WMTS</strong></p>
+<ul class="simple">
+<li>Az alap WMTS szabvány 1.0.0 (KVP) implementálása</li>
+<li>Nagy teljesítmény és tökéletes skálázhatóság</li>
+<li>Különböző háttérprogramok támogatása, mint például GeoTIFF, távoli WMS vagy a hierarchikus csempe képek a fájlrendszerben</li>
+<li>Támogatja a röptében gyorsító tárazást (EHCache használatával)</li>
+<li>Támogatja a GetFeatureInfo kérést a távoli WMS-ektől</li>
+</ul>
+<p><strong>CSW</strong></p>
+<ul class="simple">
+<li>CSW 2.0.2 szabvány implementálása</li>
+<li>Teljesen tranzakciós</li>
+<li>KVP, XML és SOAP kérések támogatása</li>
+<li>Nagy teljesítmény és tökéletes skálázhatóság</li>
+<li>ISO Metadata Application Profile 1.0.0</li>
+<li>A hozzáadható és moduláris adathozzáférés réteg lehetővé teszi, hogy új API-khoz és háttérprogramokhoz támogatást adjunk</li>
+<li>A moduláris ellenőr architektúra lehetővé teszi, hogy a beillesztendő rekordokat ellenőrizzük  különböző kritériumok alapján</li>
+<li>Standard ellenőrzők: séma validálás, azonosító integritás, INSPIRE követelmények</li>
+<li>Kezeli az összes definiált lekérdezhető tulajdonságot (Dublin Core, valamint ISO profil)</li>
+<li>Komplex szűrő kifejezések</li>
+</ul>
+<p><strong>WPS</strong></p>
+<ul class="simple">
+<li>WPS 1.0.0 szabvány implementálása</li>
+<li>KVP, XML és SOAP kérések támogatása</li>
+<li>Beilleszthető folyamat szolgáltató réteg</li>
+<li>Könnyen használható API a Java folyamatok implementálásához</li>
+<li>Támogatja a bemeneti/kimeneti paraméterek összes változatát : szöveges, bbox, összetett (bináris és xml)</li>
+<li>Adatfolyam-hozzáférés komplex bemeneti/kimeneti paraméterekhez</li>
+<li>A hatalmas mennyiségű adat feldolgozása minimális memória használattal</li>
+<li>Támogatja a válasz dokumentumok/kimeneti paraméterek tárolását</li>
+<li>Támogatja az inline és hivatkozással megadott bemeneti paramétereket</li>
+<li>Támogatja a RawDataOutput/ResponseDocument válaszokat</li>
+<li>Támogatja az aszinkron végrehajtása (a folyamat állapot folyamatos lekérdezésével)</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> 1.0.0, 1.1.0 és 2.0.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> 1.1.1 és 1.3.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a> 1.1.0</li>
+<li>OGC Catalogue Service-Web (CSW) 2.0.2</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> 1.0.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a> 2.12, 3.0.1, 3.1.1 és 3.2.1</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><strong>Honlap:</strong> <a class="reference external" href="http://www.deegree.org">http://www.deegree.org</a></p>
+<p><strong>Licenc:</strong> LGPL</p>
+<p><strong>Szoftver verzió:</strong> 3.4.1</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux</p>
+<p><strong>API interfészek:</strong> Java</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://www.deegree.org/community">https://www.deegree.org/community</a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/deegree_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

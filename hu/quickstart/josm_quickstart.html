@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JOSM gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="OpenCPN" href="../overview/opencpn_overview.html" />
+    <link rel="prev" title="JOSM" href="../overview/josm_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://josm.openstreetmap.de"><img alt="../../_images/logo_josm.png" class="align-right" src="../../_images/logo_josm.png" /></a>
+<div class="section" id="josm-quickstart">
+<h1>JOSM gyorstalpaló<a class="headerlink" href="#josm-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>JOSM egy funkció gazdag, bővíthető, offline asztali szerkesztő OpenStreetMap (OSM) adatokhoz,  melyet Javaban írtak</p>
+<p>Támogatja az önálló GPX nyomvonalak és adataik betöltését az OSM adatbázisból, mint ahogy a töréspontokat (pontok), utakat (vonalak) meta adatokat (név/érték információk) és kapcsolatokat (pontok és vonalak rendezett sorozata). A GPX nyomvonalakat általában előzőleg letöltik a GPS vevőről vagy más forrásról.</p>
+<p>Ez a gyorstalpaló a Java OpenStreetMap szerkesztő alapvető használatáról szól.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#start-josm" id="id1">JOSM indítása</a></li>
+<li><a class="reference internal" href="#load-a-sample-ficticious-map" id="id2">Egy (képzeletbeli) minta térkép betöltése</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id3">Navigáció a térképen</a><ul>
+<li><a class="reference internal" href="#points-lines-and-shapes" id="id4">Pontok, vonalak és alakzatok</a></li>
+<li><a class="reference internal" href="#changing-objects" id="id5">Objektumok módosítása</a></li>
+<li><a class="reference internal" href="#drawing" id="id6">Rajzolás</a></li>
+<li><a class="reference internal" href="#add-presets" id="id7">Beállítások hozzáadása</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#draw-your-own-map" id="id8">Saját térkép rajzolása</a></li>
+<li><a class="reference internal" href="#remove-the-sample-layer" id="id9">Távolítsa el a minta réteget</a></li>
+<li><a class="reference internal" href="#what-next" id="id10">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-josm">
+<h2><a class="toc-backref" href="#id1">JOSM indítása</a><a class="headerlink" href="#start-josm" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az asztalról válassza <span class="menuselection">Navigation and Maps ‣ JOSM</span>. Amikor a JOSM elindul valahogy így néz ki:</p>
+<img alt="JOSM splash page" src="../../_images/josm-splash-page.png" />
+</div>
+<div class="section" id="load-a-sample-ficticious-map">
+<h2><a class="toc-backref" href="#id2">Egy (képzeletbeli) minta térkép betöltése</a><a class="headerlink" href="#load-a-sample-ficticious-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Most nyissuk meg egy minta OSM fájlt, melyet a JOSM alap térkép rajzolási módok megtanulására használunk. Vegye figyelembe ez a térkép nem valós, ez nem egy valódi hely valódi térképe, így ezt nem fogjuk az OpenStreetMap-be menteni.</p>
+</li>
+<li><p class="first">Töltse le a fájlt innen: <a class="reference external" href="https://learnosm.org/files/sample.osm">sample.osm</a></p>
+</li>
+<li><p class="first">Most nyissuk meg a minta térkép fájlt a JOSM-ban. Kattintson az „Open” gombra a bal felső sarokban.</p>
+<img alt="Open file" src="../../_images/josm_open-file.png" />
+</li>
+<li><p class="first">Keresse meg a <strong>sample.osm</strong> fájlt. Valószínűleg a letöltések mappájában van, hacsak nem mentette valahová máshová.</p>
+</li>
+<li><p class="first">Kattintson az „Open”-re. Egy minta térképet kell látnia, mely ehhez hasonlóan néz ki:</p>
+<img alt="Sample file" src="../../_images/josm_sample-file.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">Ezeket az adatokat használjuk a különböző szerkesztési technikák kipróbálásához. <em>Nem szabad ezeket a fiktív adatokat az adatbázisba feltöltenie.</em></p>
+</div>
+</div>
+<div class="section" id="navigate-the-map">
+<h2><a class="toc-backref" href="#id3">Navigáció a térképen</a><a class="headerlink" href="#navigate-the-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul>
+<li><p class="first">A térkép balra vagy jobbra, fel vagy le mozgatásához tartsa nyomva a jobb egérgombot és mozgassa az egeret.</p>
+</li>
+<li><p class="first">Több lehetőség van a térkép nagyítására, kicsinyítésére. Ha vagy egy egere, használhatja az egérgörgőt a nagyításra és kicsinyítésre. Ha egy laptopot használ és nincs egere, akkor a térkép ablak bal-felső  részén található léptékvonalzót használhatja. Húzza a vonalzót jobbra és balra a bal egérgomb nyomvatartása mellett.</p>
+<img alt="Scale bar" src="../../_images/josm_scale-bar.png" />
+</li>
+<li><p class="first">Nézzen a minta térképre. Kevés különböző objektum típus van itt. Egy folyó, egy erdő, néhány épület, számos út és pár üzlet. Egy objektum szelektálásához a bal egérgombbal kattintson rá.</p>
+</li>
+</ul>
+<div class="section" id="points-lines-and-shapes">
+<h3><a class="toc-backref" href="#id4">Pontok, vonalak és alakzatok</a><a class="headerlink" href="#points-lines-and-shapes" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Vegye észre, ahogy a különböző objektumokra kattint a minta térképen, három különböző típusú objektum van a térképen. Pontok, vonalak és alakzatok vannak.</p>
+<ul>
+<li><p class="first">A pontok egy szimbólummal reprezentált pozíciók. Ezen a minta térképen két pont van egy cipőbolt és egy áruház. A cipőboltot a cipő szimbólummal jelöltük, az áruházat egy bevásárló  kocsival.</p>
+</li>
+<li><p class="first">Sok vonal is található a térképen, melyek az utakat ábrázolják. Ha közelebbről megtekinti láthatja, hogy a vonalakon pontok is vannak. Ezekhez a pontokhoz nem tartozik szimbólum vagy más  információ, a vonal helyét határozzák meg csupán.</p>
+</li>
+<li><p class="first">Végül számos alakzat van a minta térképen, melyek különböző helyeket reprezentálnak - egy erdőt, egy folyót, egy parkot és épületeket. Az alakzatot egy terület reprezentálására használjuk, mint például egy mező vagy épület. Az alakzatok pontosan olyanok mint a vonalak - az egyetlen különbség, hogy a vonal kezdő és végpontja megegyezik.</p>
+<blockquote>
+<div><p>Könnyen elképzelhető, hogy egy térkép ezt a három objektum típust tartalmazza - pontok,vonalak és alakzatok.Az OpenStreetMap-ben speciális terminológiát használunk, melyet megtanul, ahogy előre haladunk. Az OSM-ben a pontokat <strong>csomópontoknak</strong> és a vonalakat <strong>utaknak</strong> nevezzük. Egy alakzatot <strong>zárt útnak</strong> nevezünk, mert ez egy vonal mely ugyanabban a pontban végződik ahonnan indult.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Megfigyelheti, hogy amikor egy objektumot kiválaszt egy lista jelenik meg a térkép jobb oldalán a “Properties” nevű ablakban. Ezeket mint tegeket ismerjük. A tegek olyan információk,melyeket egy ponthoz, vonalhoz vagy alakzathoz kötöttünk, hogy leírja mi az. Többet tanulunk a tegekről a további fejezetekben. Most csak annyit kell tudnia, hogy ezek az információk segítenek az objektumunk leírásában, hogy egy erdőről, egy folyóról, egy épületről vagy valami másról van szó.</p>
+</li>
+<li><p class="first">Gondoljon egy kézzel rajzolt térképre, hogyan rajzol pontokat, vonalakat és alakzatokat. Milyen más helyeket reprezentálnak legjobban pontok, vonalak, alakzatok?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="changing-objects">
+<h3><a class="toc-backref" href="#id5">Objektumok módosítása</a><a class="headerlink" href="#changing-objects" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ol class="arabic simple">
+<li>Válassza ki az erdőt a térkép bal oldalán. Győződjön meg róla, hogy az erdő körüli vonalra kattint és nem az egyik pontra a vonalon.</li>
+<li>Tartsa nyomva a bal egérgombot és húzza az egeret. El tudja húzni az erdőt egy új helyre a térképen.</li>
+<li>Kattintson az erdőt körülvevő vonal egyik pontjára. Tartsa nyomva a bal egérgombot és húzza az egeret. Mozgatni tudja a pontot. Így tudja módosítani az objektum alakját vagy egy pontot mozgatni.</li>
+</ol>
+</div>
+<div class="section" id="drawing">
+<h3><a class="toc-backref" href="#id6">Rajzolás</a><a class="headerlink" href="#drawing" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>A JOSM jobb oldalán a gombok oszlopa van. Sok ezen gombok közül egy új ablakot nyit meg a jobb oldalon, mely további információt ad a térképről. Legfontosabb gombok azonban az oszlop tetején találhatók. Ezek a gombok megváltoztatják, hogy mit tud csinálni az egérrel.</li>
+<li>A felül lévő gombok azok, melyeket a legtöbbet fog használni. Ezeket az objektumok kiválasztására és újak rajzolására használjuk.</li>
+<li>Idáig a kiválasztás eszközöket használtuk, melyek így néznek ki:</li>
+</ul>
+<img alt="Select tool" src="../../_images/josm_select-tool.png" />
+<p>Mielőtt elkezd rajzolni, győződjön meg arról, hogy semmit sem szelektált.</p>
+<ol class="arabic">
+<li><p class="first">Kattintson a fekete területbe a térképen, ahol nincs semmi, hogy semmi se legyen szelektálva.</p>
+</li>
+<li><p class="first">Kattintson a második ikonra, a Draw eszközre.</p>
+<img alt="Draw tool" src="../../_images/josm_draw-tool.png" />
+</li>
+<li><p class="first">Keressen egy üres terültet a térképen és duplán kattintson az egérrel. Ez egy pontot fog rajzolni.</p>
+</li>
+</ol>
+<ul class="simple">
+<li>Egy vonal rajzolásához kattintson egyszer. Mozgassa az egerét és kattintson ismét. Folytassa amíg elégedett lesz a vonalával.  vonal lezárásához kattintson duplán az egerével.</li>
+<li>Rajzoljon egy alakzatot ugyanúgy ahogy vonalat rajzol, de az alakzat befejezéséhez duplán kattintson a pontra, ahol elkezdte a vonalat.</li>
+</ul>
+</div>
+<div class="section" id="add-presets">
+<h3><a class="toc-backref" href="#id7">Beállítások hozzáadása</a><a class="headerlink" href="#add-presets" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Most már tudjuk hogyan rajzoljunk pontokat, vonalak és alakzatokat, de még nem adtuk meg, hogy mit reprezentálnak. Az akarjuk, hogy megmondhassuk a pontjaink üzletek, iskolák vagy valami más és az alakzataink mezők, épületek vagy valami más.</p>
+<ol class="arabic">
+<li><p class="first">Kattintson a Select eszközre a bal oldali gomb oszlopban.</p>
+<img alt="Select tool" src="../../_images/josm_select-tool.png" />
+</li>
+<li><p class="first">Válassza ki az egyik objektumok amit a rajzeszközzel rajzolt.</p>
+</li>
+<li><p class="first">A felső menüben kattintson a “Presets”-re és válassza ki a hely típust amit definiálni szeretne.</p>
+</li>
+<li><p class="first">Amikor egy beállításra kattint egy űrlap bukkan fel további információkat kérve. Nem kell minden mezőt kitöltenie, de érdemes néhány mezőt felvenni mint például az objektum neve.</p>
+</li>
+<li><p class="first">Amikor befejezte a az adatok bevitelét kattintson az  “Apply Preset”-re. Ha minden jól ment a pont, a vonal vagy alakzat színe megváltozik vagy egy szimbólum jelenik meg. Ez azért történik, mert megadta, hogy mi az.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="draw-your-own-map">
+<h2><a class="toc-backref" href="#id8">Saját térkép rajzolása</a><a class="headerlink" href="#draw-your-own-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Most rajzoljunk egy térképet, hogy gyakoroljuk a technikákat amit eddig tanult. Újra elkészítheti a térképet, melyet az előző lapokon rajzolt.</p>
+<ul class="simple">
+<li>Húzza el a térképet a minta térképből. Tartsa nyomva a jobb egér gombot és húzza az egeret amíg egy üres területet kap a rajzoláshoz.</li>
+<li>Használja a Draw eszközt pontok, vonalak és alakzatok létrehozására. Írja le mik ezek az objektumok, a Preset menüből kiválasztva.</li>
+<li>Amikor befejezte egy saját térképpel rendelkezik, hasonló a minta térképhez, melyet a sample.osm tartalmazott.</li>
+</ul>
+</div>
+<div class="section" id="remove-the-sample-layer">
+<h2><a class="toc-backref" href="#id9">Távolítsa el a minta réteget</a><a class="headerlink" href="#remove-the-sample-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ha már megismerte az alapvető szerkesztési technikákat érdemes lenne a figyelmét a valós elemek térképezésére.</p>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last"><em>Nagyon fontos, hogy először eltávolítsa a réteget a minta adatokkal. Ezek fiktív adatok és nem szabad feltölteni őket az OpenStreetMap adatbázisba (újabb JOSM kiadások automatikusan meggátolják ezt).</em></p>
+</div>
+<p>A Layers ablakban a képernyő jobb felső részén válassza a sample.osm réteget. Majd kattintson a szemétláda ikonra annak az ablaknak jobb alsó sarkában. A réteg helyi menüjéből is kiválaszthatja a törlést alternatív megoldásként.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id10">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Próbálja meg a LearnOSM dokumentációt, melyből ezt a gyorstalpalót készítettük: <a class="reference external" href="https://learnosm.org/en/josm/start-josm/">https://learnosm.org/en/josm/start-josm/</a></li>
+<li>A szerkesztés folytatásához először valós adatokat kell letöltenie. Ezt a következő fejezetben magyarázzuk el: <a class="reference external" href="https://learnosm.org/en/josm/more-about-josm/">https://learnosm.org/en/josm/more-about-josm/</a></li>
+<li>Honlap: <a class="reference external" href="https://josm.openstreetmap.de/">https://josm.openstreetmap.de/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

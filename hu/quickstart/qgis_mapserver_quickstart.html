@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>QGIS Server gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="istSOS" href="../overview/istsos_overview.html" />
+    <link rel="prev" title="QGIS Szerver" href="../overview/qgis_mapserver_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis_mapserver.png" class="align-right" src="../../_images/logo_qgis_mapserver.png" /></a>
+<div class="section" id="qgis-server-quickstart">
+<h1>QGIS Server gyorstalpaló<a class="headerlink" href="#qgis-server-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A QGIS Server egy internetes térkép szolgáltatást (WMS) biztosít a QGIS asztali változat könyvtáraira alapozva.</p>
+<p>Ez a gyorstalpaló leírja:</p>
+<blockquote>
+<div><ul class="simple">
+<li>egy létező QGIS projekt aktualizálását és QGIS Serverrel megjelenítését</li>
+<li>egy új QGIS projekt létrehozását és a WMS közvetlen megnyitását a böngészőből</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-geoext-viewer" id="id1">Indítsa el a GeoExt nézegetőt</a></li>
+<li><a class="reference internal" href="#edit-qgis-project" id="id2">QGIS projekt szerkesztése</a></li>
+<li><a class="reference internal" href="#create-a-new-qgis-project" id="id3">Új QGIS projekt létrehozása</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-geoext-viewer">
+<h2><a class="toc-backref" href="#id1">Indítsa el a GeoExt nézegetőt</a><a class="headerlink" href="#start-geoext-viewer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az OSGeoLive tartalmaz egy webes térkép megjelenítő példát, mely a GeoExt Javascript keretrendszeren alapul és a QGIS Servert használja a a térkép megjelenítésre.</p>
+<ol class="arabic simple">
+<li>Kattinson ide <span class="menuselection">Geospatial ‣ Web Services ‣ QGIS Server</span>. Egy böngésző ablakot kellene látnia egy webes térkép megjelenítővel, mely a világtérképet jeleníti meg.</li>
+</ol>
+<img alt="../../_images/qgis_mapserver_browser.jpg" src="../../_images/qgis_mapserver_browser.jpg" />
+<p>Alternatív megoldásként a böngészőből is elérheti az alkalmazást a <a class="reference external" href="http://localhost/qgis_server">http://localhost/qgis_server</a> címen.</p>
+</div>
+<div class="section" id="edit-qgis-project">
+<h2><a class="toc-backref" href="#id2">QGIS projekt szerkesztése</a><a class="headerlink" href="#edit-qgis-project" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Most megváltoztatjuk a térkép stílusát a QGIS használatával.</p>
+<ol class="arabic simple">
+<li>Kattintson ide <span class="menuselection">Geospatial ‣ Desktop GIS ‣ QGIS</span>.</li>
+<li>Válassza <span class="menuselection">Project ‣ Open…</span>-t a menüből.</li>
+<li>Válassza a <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code>-t nyomja meg az <span class="guilabel">Open</span> gombot.<ul>
+<li>Ugyanazt a világtérképet kell látnia a QGIS-ban. Megváltoztatjuk a folyók stílusát és megnézzük az eredményt a webes térkép megjelenítőben.</li>
+</ul>
+</li>
+<li>A réteg fában kattintson duplán a <cite>ne_10m_rivers_lake_centerlines</cite> elemre.</li>
+<li>Módosítsa a színt a körvonal beállításokban egy másik kék tónusra.</li>
+<li>Nyomja meg az <span class="guilabel">OK</span>-t. A folyók az új színnel jelennek meg.</li>
+<li>Mentse el a projektet <span class="menuselection">Project ‣ Save</span>.</li>
+<li>Nyissa meg újra a böngészőt.</li>
+<li>Nagyítson. Most ugyanazzal az új színnel kirajzolt folyókat fog látni.</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-qgis-project">
+<h2><a class="toc-backref" href="#id3">Új QGIS projekt létrehozása</a><a class="headerlink" href="#create-a-new-qgis-project" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Nyissa meg újra a QGIS-t.</li>
+<li>Válassza a <span class="menuselection">Project ‣ New</span>-t a menüből.</li>
+<li>Kattintson a <span class="menuselection">Layer ‣ Add Layer ‣ Add Vector Layer…</span>-re.</li>
+<li>Tallózzon az adatokhoz <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</span></code>.</li>
+<li>Nyomja meg az <span class="guilabel">Open</span>-t. A világ összes országát kell látnia.</li>
+<li>Mentse el a projektet <span class="menuselection">Project ‣ Save</span>.</li>
+<li>Használja a <code class="file docutils literal"><span class="pre">/home/user/world.qgs</span></code> fájlnevet és nyomja meg a <span class="guilabel">Save</span> gombot.</li>
+<li>Open the <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/home/user/world.qgz&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=ne_10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a>. You should see all world countries, this time rendered by QGIS Server.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>To learn more about QGIS Server, a good starting point is the <a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">QGIS Server Guide</a>.</p>
+<dl class="docutils">
+<dt>Dokumentáció:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">https://docs.qgis.org/3.10/en/docs/server_manual/</a></li>
+</ul>
+</dd>
+</dl>
+<p>Gyorstalpaló a szerver telepítéshez Debian/Ubuntu rendszereken:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="command">apt-get install qgis-mapserver libapache2-mod-fcgid</strong></li>
+<li>-&gt; <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi">http://localhost/cgi-bin/qgis_mapserv.fcgi</a></li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>QGIS Web kliens:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/qgis/qgis-web-client">https://github.com/qgis/qgis-web-client</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoMoose &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="GeoMooseクイックスタート" href="../quickstart/geomoose_quickstart.html" />
+    <link rel="prev" title="GeoExt クイックスタート" href="../quickstart/geoext_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.geomoose.org"><img alt="../../_images/logo_geomoose.png" class="align-right" src="../../_images/logo_geomoose.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geomoose">
+<h1>GeoMoose<a class="headerlink" href="#geomoose" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="web-gis-portal">
+<h2>Web GISポータル<a class="headerlink" href="#web-gis-portal" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>GeoMooseは、分散型地図データを表示するためのブラウザベースのマッピングフレームワークです。これは、郡、市、市のオフィス(GeoMooseの起源)内の空間データと非空間データの管理に特に便利です。MapServerとOpenLayersの機能を拡張して、多くのレイヤを表示および整理するためのドリルダウン識別操作、選択操作、データセット検索などの組み込みサービスを提供します。</p>
+<p>GeoMooseは高速で、一度に何百ものレイヤやサービスを処理することができます。複数の管理人からのデータは、異なるツールと異なるスケジュールで維持することができます。各マップレイヤは、ソースデータだけでなく、パブリッシング、シンボル、テンプレートのための独自の設定ファイルのセットを持っているためです。</p>
+<p>ユーザインターフェイスは簡単に設定でき、モジュールアーキテクチャを使用して追加サービスを追加できます。</p>
+<a class="reference internal image-reference" href="../../_images/geomoose_screenshot.png"><img alt="geomoose screenshot" class="align-right" src="../../_images/geomoose_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>複数の所有者に分散したデータメンテナンス</li>
+<li>マップへのアクセス元:MapServer、Tilecache、ArcGIS REST、WMS、WFS</li>
+<li>データソースの複数のビューを設定します。</li>
+<li>データカタログからの検出とフィルタリング</li>
+<li>ツール:measure,drawing,query,fading,re-order,jump-to zoom,coordinate readings,…</li>
+<li>表示: MapViewer, Side Menu, Navigation, Tabbed User Controls.</li>
+<li>ユーザーインターフェイス、ソースレイヤ、ツール用のXMLベースのMapBook設定ファイル。</li>
+<li>Mapserverとの統合</li>
+<li>モジュラー設計により、非空間システム(資産管理など)との統合が容易になります。</li>
+<li>ほぼ無制限の数のレイヤをパブリッシュする。</li>
+<li>PDF印刷。</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>WMS (client)</li>
+<li>WFS (client)</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://www.geomoose.org">https://www.geomoose.org</a></p>
+<p><strong>ライセンス:</strong> MIT based license. <a class="reference external" href="https://www.geomoose.org/info/license.html">https://www.geomoose.org/info/license.html</a></p>
+<p><strong>ソフトウェアバージョン:</strong> 3.6.2</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>商用サポート:</strong> <a class="reference external" href="https://www.geomoose.org/info/commercial_support.html">https://www.geomoose.org/info/commercial_support.html</a></p>
+<p><strong>コミュニティサポート:</strong> <a class="reference external" href="https://www.geomoose.org/info/mailing_lists.html">https://www.geomoose.org/info/mailing_lists.html</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geomoose_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

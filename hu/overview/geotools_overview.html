@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoTools &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GEOS" href="geos_overview.html" />
+    <link rel="prev" title="GDAL/OGR gyorstalpaló" href="../quickstart/gdal_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geotools.org/"><img alt="../../_images/logo_geotools.png" class="align-right" src="../../_images/logo_geotools.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geotools">
+<h1>GeoTools<a class="headerlink" href="#geotools" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A GeoTools egy nyílt forráskódú (LGPL) Java könyvtár, mely szabványoknak megfelelő eljárásokat biztosít a térinformatikai adatok kezeléséhez és az Open Geospatial Consortium (OGC) specifikációin alapuló adatszerkezeteket használ.</p>
+<p>A GeoTools-t számos projekt használja, többek között web szolgáltatások, parancssori programok és asztali alkalmazások. GeoTools-t használó OSGeo-Live alkalmazások: <a class="reference internal" href="52nSOS_overview.html"><span class="doc">52 North SOS</span></a>, <a class="reference internal" href="52nWPS_overview.html"><span class="doc">52 North WPS</span></a>, AtlasStyler, <span class="xref std std-doc">geomajas_overview</span>, Geopublisher, <a class="reference internal" href="geoserver_overview.html"><span class="doc">GeoServer</span></a>, and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a>.</p>
+<a class="reference internal image-reference" href="../../_images/geotools_screenshot.png"><img alt="geotools screenshot" class="align-right" src="../../_images/geotools_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h2>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul>
+<li><p class="first">Interfészek definíciója a kulcsfontosságú térbeli fogalmakhoz és adatstruktúrákhoz</p>
+<ul class="simple">
+<li>A <a class="reference external" href="https://sourceforge.net/projects/jts-topo-suite/">JTS Topology Suite (JTS)</a> által biztosított integrált geometriai támogatás</li>
+<li>Attribútum és térbeli szűrők az OGC Filter Encoding specifikáció felhasználásával</li>
+</ul>
+</li>
+<li><p class="first">Egy világos adathozzáférési API az elemek eléréséhez, tranzakció támogatás és a szálak közötti zárolás</p>
+<ul class="simple">
+<li>GIS adatok elérése több fájl formátumból és téradatbázisból</li>
+<li>Koordinátarendszer és transzformáció</li>
+<li>Térképi vetületek kiterjedt tartománya használható</li>
+<li>Térbeli és nem térbeli adatok szűrése és elemzése</li>
+</ul>
+</li>
+<li><p class="first">Egy állapotmentes, alacsony memória igényű megjelenítés, ez különösen hasznos a szerver oldali megoldásokban</p>
+<ul class="simple">
+<li>Összetett stílusokat alkalmazó térképek összeállítása és megjelenítése</li>
+</ul>
+</li>
+<li><p class="first">Hatékony <em>sémával segített</em> XML sémát alkalmazó értelmezési technológia a GML tartalomhoz kötéshez</p>
+<ul class="simple">
+<li>Értelmezési és kódolási technológia számos OGC szabványhoz biztosít kötéseket, többek között GML, Filter, KML, SLD és SE.</li>
+</ul>
+</li>
+<li><p class="first">GeoTools modulok: a nyílt modulrendszer lehetővé teszi, hogy további formátumokat kezeljünk a könyvtárral</p>
+<ul class="simple">
+<li>Az ImageIO-EXT projektből származó modul lehetővé teszi, hogy a GeoTools további raszter formátumokat olvasson GDAL-ból</li>
+</ul>
+</li>
+<li><p class="first">GeoTools bővítmények</p>
+<ul class="simple">
+<li>További képességeket biztosít a mag könyvtár funkcióinak felhasználásával.</li>
+</ul>
+<img alt="Extensions built using the GeoTools library" src="../../_images/geotools-extension.png" />
+<ul class="simple">
+<li>Bővítmények biztosítják a gráf és a hálózatkezelést (legrövidebb útvonal keresés), az ellenőrzést, egy klienst a térkép szerverhez, kötéseket az xml értelmezéshez és kódoláshoz és a színkezelést.</li>
+</ul>
+</li>
+<li><p class="first">GeoTools nem hivatalos</p>
+<ul class="simple">
+<li>A GeoTools egy szélesebb közösség számára kísérleti területként is működik, hogy segítse az új tehetségeket és elősegítse a kísérletezést.</li>
+<li>Néhány kiemelés: a swing támogatás (a geotools oktatóanyagokban használják), swt, helyi és web feldolgozás támogatás, további szimbólum rendszer, további adatformátumok, rács generálás és az ISO Geometria néhány megvalósítása.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="supported-formats">
+<h2>Támogatott formátumok<a class="headerlink" href="#supported-formats" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul>
+<li><p class="first">raszter formátumok és adat elérés:</p>
+<p>arcsde, arcgrid, geotiff, grassraster, gtopo30, image (JPEG, TIFF, GIF, PNG), imageio-ext-gdal, imagemoasaic, imagepyramid, JP2K, matlab.</p>
+</li>
+<li><p class="first">Adatbázis „jdbc-ng” támogatás:</p>
+<p>db2, h2, mysql, oracle, postgis, spatialite, sqlserver.</p>
+</li>
+<li><p class="first">Vektor formátumok és adat elérés:</p>
+<p>app-schema, arcsde, csv, dxf, edigeo, excel, geojson, org, property, shapefile, wfs.</p>
+</li>
+<li><p class="first">XML kötések:</p>
+<p>Java adatstruktúrák és kötések a következőkhöz: xsd-core (xml simple types), fes, filter, gml2, gml3, kml, ows, sld, wcs, wfs, wms, wps, vpf.</p>
+<p>További geometria, szűrő és stílus értelmező/kódoló érhető el a DOM és SAX alkalmazásokból.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Számos Open Geospatial Consortium (OGC) szabvány:</p>
+<ul class="simple">
+<li>OGC Style Layer Descriptor / Symbology Encoding adatstruktúrák és megjelenítő motor</li>
+<li>OGC General Feature Model beleértve a Simple Feature támogatást</li>
+<li>A raszter információ OGC Grid Coverage reprezentációja</li>
+<li>OGC Filter és Common Constraint Language (CQL)</li>
+<li>Web Feature Service (WFS), Web Map Service (WMS) kliensek és Web Process Service (WPS) kísérleti támogatás</li>
+<li>ISO 19107 geometria</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://geotools.org/">https://geotools.org/</a></p>
+<p><strong>Licenc:</strong> LGPL</p>
+<p><strong>Támogatott platformok:</strong> Cross Platform Java 8,9,10</p>
+<p><strong>API Interfészek:</strong> Java</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="http://docs.geotools.org/latest/userguide/welcome/support.html">Értesítések és támogatás</a></p>
+</div>
+<div class="section" id="geotools-support">
+<h2>GeoTools_Support<a class="headerlink" href="#geotools-support" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.geotools.org/latest/userguide/tutorial/quickstart/index.html">Gyorstalpaló dokumentáció</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

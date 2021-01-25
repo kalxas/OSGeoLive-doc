@@ -1,0 +1,137 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenCPN &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="OpenCPN gyorstalpaló" href="../quickstart/opencpn_quickstart.html" />
+    <link rel="prev" title="JOSM gyorstalpaló" href="../quickstart/josm_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.opencpn.org"><img alt="../../_images/logo_opencpn.png" class="align-right" src="../../_images/logo_opencpn.png" /></a>
+<div class="section" id="opencpn">
+<h1>OpenCPN<a class="headerlink" href="#opencpn" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="marine-gps-navigation-software">
+<h2>Tengeri GPS navigációs program<a class="headerlink" href="#marine-gps-navigation-software" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>OpenCPN egy ingyenes navigációs szoftver biztosít, mely minden típusú és méretű hajók kormányánál és offline útvonal tervezésnél is használható. Aktív tengerész csoport fejlesztette, valós feltételek mellett használták a program teszteléséhez és finomításokhoz.</p>
+<p>OpenCPN mutatja a hajó jelenlegi helyzetét, a sebességét és az útvonalát pontos navigációs térképeken, a dagállyal és az aktuális előrejelzésekkel együtt. Standard rádió kapcsolatokból kapott információk alapján más hajók pozíciója és iránya is látható.</p>
+<p>Ahogy a hajó halad újabb térképeket választ és jelenít meg a szoftver, a felhasználó által meghatározott felbontásban és részletességgel. A felhasználó továbbá útvonalakat és útpontokat vihet be, amely lehetővé teszi, hogy egy külső robotpilótával kommunikáljon a pontos útvonalkövetéshez.</p>
+<a class="reference internal image-reference" href="../../_images/opencpn_screenshot.png"><img alt="opencpn screenshot" class="align-right" src="../../_images/opencpn_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Az OpenCPN támogatja:</p>
+<ul class="simple">
+<li>BSB raszter, C-MAP (CM93/2) és S-57 ENC vektor grafikonok</li>
+<li>AIS input dekódolás</li>
+<li>NMEA GPS vagy <a class="reference external" href="https://www.berlios.de/software/gpsd/">Gpsd</a> daemon input</li>
+<li>Útpont / robotpilóta navigáció</li>
+<li>Korlátlan útvonal/jelölt pont létrehozás</li>
+<li>Összetett grafikonok</li>
+<li>Nemzetközi nyelv támogatás</li>
+<li>Platform függetlenség</li>
+<li>GRIB időjárás adatok</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://www.opencpn.org">https://www.opencpn.org</a></p>
+<p><strong>Licenc:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Szoftver verzió:</strong> 5.0.0</p>
+<p><strong>Támogatott platformok:</strong> GNU/Linux, Mac OSX, MS Windows</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.cruisersforum.com/forums/f134/">https://www.cruisersforum.com/forums/f134/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/opencpn_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

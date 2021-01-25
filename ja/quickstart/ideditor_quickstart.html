@@ -1,0 +1,294 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iDエディタ クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="JOSM" href="../overview/josm_overview.html" />
+    <link rel="prev" title="iDエディタ" href="../overview/ideditor_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://wiki.openstreetmap.org/wiki/ID"><img alt="../../_images/logo_ideditor.png" class="align-right" src="../../_images/logo_ideditor.png" /></a>
+<div class="section" id="id-editor-quickstart">
+<h1>iDエディタ クイックスタート<a class="headerlink" href="#id-editor-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>iDエディタは事実上、ブラウザベースのOpenStreetMapエディタです。iDは高速で使いやすく、衛星や航空画像、GPS、Field Papers、Mapillaryなどのさまざまなデータソースからのマッピングが可能です。</p>
+<p>iDエディタは、JOSM(より高度なマッピングエディタ)の高度な機能を必要としない、小さくて簡単な変更を編集するための優れた方法です。この章では、iDを使用した編集の基本について説明します。</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#starting-the-id-editor" id="id1">iDエディタを起動する</a></li>
+<li><a class="reference internal" href="#configuring-the-background-layer" id="id2">背景レイヤーの設定</a></li>
+<li><a class="reference internal" href="#adding-points" id="id3">ポイントを追加する</a></li>
+<li><a class="reference internal" href="#drawing-lines" id="id4">線の描画</a></li>
+<li><a class="reference internal" href="#drawing-shapes-polygons" id="id5">シェイプ(ポリゴン)を描画する</a></li>
+<li><a class="reference internal" href="#drawing-multipolygons" id="id6">マルチポリゴンを描画する</a></li>
+<li><a class="reference internal" href="#saving-your-changes" id="id7">変更を保存する</a></li>
+<li><a class="reference internal" href="#add-additional-information-and-custom-tags" id="id8">追加情報とカスタムタグの追加</a></li>
+<li><a class="reference internal" href="#what-next" id="id9">次のステップ</a></li>
+</ul>
+</div>
+<div class="section" id="starting-the-id-editor">
+<h2><a class="toc-backref" href="#id1">iDエディタを起動する</a><a class="headerlink" href="#starting-the-id-editor" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>iDエディタには、インターネットへのアクティブな接続が必要です。</p>
+<ol class="arabic simple">
+<li>インターネットブラウザを開き、<a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> のOpenStreetMapのWebサイトにアクセスします。</li>
+<li>OpenStreetMapアカウントを使用して <strong>ログイン</strong> します。</li>
+<li>編集する領域にマップを画面移動およびズームします。マウスの左ボタンを押したままマップを目的の領域にドラッグすると、画面移動できます。</li>
+<li><strong>[編集]</strong> の横の小さな矢印をクリックし、[<strong>iD編集(ブラウザ内エディタ)</strong>]をクリックします。</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/id-editor_image1.png" src="../../_images/id-editor_image1.png" />
+<img alt="../../_images/id-editor_image2.png" src="../../_images/id-editor_image2.png" />
+</div></blockquote>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>[1] <strong>[フィーチャ編集]パネル:</strong> このパネルにはオブジェクトのタグが表示されます</dt>
+<dd>マップ上で選択されています。このパネルからタグを追加または編集できます。</dd>
+</dl>
+</li>
+<li>[2] <strong>ツール:</strong> このパネルには、基本的な編集ツールが表示されます。</li>
+<li>[3] <strong>Mapパネル:</strong> このパネルには、さまざまな設定機能が表示されます。</li>
+<li><dl class="first docutils">
+<dt>[4]** 情報パネル:** このパネルには、次のようなさまざまな情報が表示されます。</dt>
+<dd>スケールバーと、その領域にどのユーザが貢献したかを示します。</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-the-background-layer">
+<h2><a class="toc-backref" href="#id2">背景レイヤーの設定</a><a class="headerlink" href="#configuring-the-background-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><strong>背景設定</strong> ボタンをクリックするか、<em>ショートカットキー</em> <strong>b</strong> を使用します。<a class="reference internal" href="../../_images/id-editor_image14.png"><img alt="image14" src="../../_images/id-editor_image14.png" style="height: 24px;" /></a></p>
+<p><img alt="image15" src="../../_images/id-editor_image15.png" /></p>
+</li>
+<li><p class="first"><strong>輝度レベル</strong> を変更するには、これらのボックスの1つをクリックします。レベルは、100%、75%、50%、および25%の|image16|です。</p>
+</li>
+<li><p class="first">また、目的のタイルプロバイダに基づいて** 背景レイヤーを変更する** こともできます(デフォルトはBing Aerial Imagery)。</p>
+</li>
+<li><p class="first"><strong>Custom</strong> をクリックすると、独自のマップタイルを追加できます。たとえば、<strong>Field Paper [1] を</strong> 追加する場合は、<strong>Custom</strong> をクリックし、虫眼鏡(検索)アイコンをクリックして次のウィンドウを開きます。</p>
+<p><img alt="image17" src="../../_images/id-editor_image17.png" /></p>
+</li>
+<li><p class="first"><strong>FieldPaperのスナップショットURL</strong> を入力します。次のようになります。<a class="reference external" href="http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715">http://fieldpapers.org/snapshots/cqhmf2v9#18/37.80593/-122.22715</a></p>
+</li>
+<li><p class="first"><strong>お使いのコンピュータからGPSトラック</strong> を表示**(GPXフォーマット)するには、GPXファイルをiDエディタにドラッグ&amp;ドロップします。</p>
+</li>
+<li><p class="first"><strong>OpenStreetMap GPSトレース</strong> を有効にするには、ボックスをクリックします。下のイメージでは、公共のGPS追跡がさまざまな色で表示され、進行方向を示しています。</p>
+<p><img alt="osm gps traces" src="../../_images/id-editor_gps_public.png" /></p>
+</li>
+<li><p class="first"><a class="reference external" href="/en/josm/aerial-imagery">imagery offset</a> がある場合は、<strong>Fix Alignment</strong> をクリックして <strong>image offset</strong> を修正できます。</p>
+<p><img alt="image18" src="../../_images/id-editor_image18.png" /></p>
+</li>
+<li><p class="first">イメージを移動するには、ナビゲーションボタンをクリックします。リセットボタンをクリックすると、デフォルトの位置に戻ります。<img alt="image20" src="../../_images/id-editor_image20.png" /></p>
+</li>
+</ol>
+</div>
+<div class="section" id="adding-points">
+<h2><a class="toc-backref" href="#id3">ポイントを追加する</a><a class="headerlink" href="#adding-points" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しい点を追加するには、[<strong>Point</strong>]ボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image3.png"><img alt="image3" src="../../_images/id-editor_image3.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">マウスカーソルがプラス(+)記号に変わります。次に、位置をマークする位置をクリックします。たとえば、地域に病院があることがわかっている場合は、病院の建物の位置をクリックします。</p>
+<p><img alt="image21" src="../../_images/id-editor_image21.png" /></p>
+</li>
+<li><p class="first">新しい点が追加されます。同時に、左側のパネルが変わり、オブジェクトの属性を選択できるフォームが表示されます。<strong>Hospital Grounds</strong> をクリックして、ポイントに病院のタグを付けます。</p>
+<p><img alt="image22" src="../../_images/id-editor_image22.png" /></p>
+</li>
+<li><p class="first">フォームを使用して、ポイントに関する詳細情報を入力できます。病院の名前、住所、その他の追加情報を入力できます。各フィーチャには、フィーチャパネルから選択したタグに応じて異なるオプションがあることに注意してください。</p>
+</li>
+<li><p class="first">位置を間違えた場合などに、マウスの左ボタンを押したままドラッグすると、ポイントを新しい位置に移動できます。または、ポイントを削除する場合は、ポイント上で左マウスボタンをクリックし、さらに右マウスボタンでクリックしてコンテキストメニューを表示し、ごみ箱のボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+<p>iDエディタで作成される」ポイント」は、実際には」タグ」のセットが付いた独立の」ノード」です。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="drawing-lines">
+<h2><a class="toc-backref" href="#id4">線の描画</a><a class="headerlink" href="#drawing-lines" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しいラインを追加するには、<strong>ライン</strong> ボタンをクリックします。<a class="reference internal" href="../../_images/id-editor_image4.png"><img alt="image4" src="../../_images/id-editor_image4.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">マウスカーソルがプラス(+)記号に変わります。地図に描かれていない道を探して、たどってみましょう。道路セグメントの始点を1回クリックし、マウスを移動してクリックし、点を追加します。図面プロセスを終了するには、ダブルクリックします。左側のパネルに注目してください。</p>
+<p><img alt="image24" src="../../_images/id-editor_image24.png" /></p>
+</li>
+<li><p class="first">点の場合と同様に、線分に適切なタグを選択します。</p>
+</li>
+<li><p class="first">ポイント上でマウスの左ボタンをクリックしてドラッグすると、ラインからポイントをドラッグできます。</p>
+</li>
+<li><p class="first">ライン全体を移動するには、ラインを選択して <strong>移動ツール</strong> を選択します。次に、ラインを新しい位置にドラッグします。<a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">ラインの個々のポイント(ノード)上で左マウスボタンをクリックし、さらに右マウスボタンをクリックしてコンテキストメニューを表示すると、次のツールが表示されます。</p>
+</li>
+<li><p class="first">ラインからポイントを削除します。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">ポイントをラインから切断します。<a class="reference internal" href="../../_images/id-editor_image26.png"><img alt="image26" src="../../_images/id-editor_image26.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">選択したポイントから2本のラインに分割します。<a class="reference internal" href="../../_images/id-editor_image27.png"><img alt="image27" src="../../_images/id-editor_image27.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">ライン上(ポイント上ではない)でマウスの左ボタンをクリックすると、次のツールが表示されます。</p>
+</li>
+<li><p class="first">ラインの削除。<a class="reference internal" href="../../_images/id-editor_image23.png"><img alt="image23" src="../../_images/id-editor_image23.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">線分から円を作成する(ラインが閉じている場合にのみ有効) <a class="reference internal" href="../../_images/id-editor_image29.png"><img alt="image29" src="../../_images/id-editor_image29.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">ラインを移動 <a class="reference internal" href="../../_images/id-editor_image30.png"><img alt="image30" src="../../_images/id-editor_image30.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">線分から四角形を作成する(ラインが閉じている場合のみ有効)) <a class="reference internal" href="../../_images/id-editor_image31.png"><img alt="image31" src="../../_images/id-editor_image31.png" style="height: 24px;" /></a></p>
+</li>
+<li><p class="first">ラインの方向を逆転 (河川や一方通行の設定に便利) <a class="reference internal" href="../../_images/id-editor_image32.png"><img alt="image32" src="../../_images/id-editor_image32.png" style="height: 24px;" /></a></p>
+</li>
+</ul>
+<p>iDエディタで作成される 「ライン」は、実際には」タグ」がついた」ウエイ」です。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><strong>削除</strong> に関する特記事項: 一般的に、改善が必要な場合は、他のユーザのマッピングを削除しないようにしてください。自分の間違いを削除することもできますが、変更が必要な場合は、他のユーザのマッピングされたオブジェクトを*調整*してみてください。これにより、OSMデータベース内のアイテムの履歴が保持され、他のマッパーにも配慮されます。削除する必要があると本当に感じている場合は、最初に元のマッパーまたはOSM電子メールリストのいずれかに問い合わせてみてください。</p>
+</div>
+</div>
+<div class="section" id="drawing-shapes-polygons">
+<h2><a class="toc-backref" href="#id5">シェイプ(ポリゴン)を描画する</a><a class="headerlink" href="#drawing-shapes-polygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>新しい多辺形状を追加するには、<strong>領域</strong> ボタンをクリックします。</p>
+<blockquote>
+<div><a class="reference internal" href="../../_images/id-editor_image34.png"><img alt="image34" src="../../_images/id-editor_image34.png" style="height: 24px;" /></a></div></blockquote>
+<ul class="simple">
+<li>マウスカーソルがプラス(+)記号に変わります。イメージをガイドとして使用して、建物をトレースしてみます。</li>
+<li>シェイプのカラーは、割り当てるアトリビュートに応じて変化します。<img alt="image35" src="../../_images/id-editor_image35.png" /></li>
+<li>シェイプを選択して右マウスボタンでコンテキストメニューを表示したときに使用できるツールは、ラインをクリックしたときのツールと似ています。</li>
+</ul>
+<p>iDエディタの」ポリゴン」は、実際にはタグが付いた」閉じたウエイ」です。</p>
+</div>
+<div class="section" id="drawing-multipolygons">
+<h2><a class="toc-backref" href="#id6">マルチポリゴンを描画する</a><a class="headerlink" href="#drawing-multipolygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>外部輪郭だけでなく、1つまたは複数の内部輪郭を持つポリゴンを描画する必要がある場合があります。中庭のある建物や島のある湖を思い浮かべてください*これらのすべての方法を1本の線で描画しないでください*。内側の輪郭線が外側の輪郭線から一時停止します。むしろ、これらの等高線を別々に描き、外側の等高線のみにタグを付け、すべての等高線を選択して <strong>c</strong> を押し、それらをいわゆるマルチポリゴンに結合します。</p>
+<blockquote>
+<div><img alt="create multipolygon" src="../../_images/id-editor_create_multipolygon.png" />
+</div></blockquote>
+<p>新しく作成したマルチポリゴンのいずれかの輪郭を選択すると、そのマルチポリゴンが属する残りのオブジェクトを確認できます。</p>
+<blockquote>
+<div><img alt="part of multipolygon" src="../../_images/id-editor_part_of_multipolygon.png" />
+</div></blockquote>
+</div>
+<div class="section" id="saving-your-changes">
+<h2><a class="toc-backref" href="#id7">変更を保存する</a><a class="headerlink" href="#saving-your-changes" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">編集内容をOpenStreetMapに保存する場合は、[<strong>保存</strong>]ボタンをクリックします。左側のパネルにアップロード・パネルが表示されます。</p>
+<p><img alt="image36" src="../../_images/id-editor_image36.png" /></p>
+</li>
+<li><p class="first">編集内容についてのコメントを入力し、<strong>保存</strong> をクリックします。</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">他のユーザが編集していたのと同時に同じフィーチャ(点、経路、または領域)を編集した場合は、<strong>衝突**を解決するまで編集をアップロードできないという警告が表示されます。変更を受け入れてアップロードする編集を選択してください。**コンフリクト**を解決するには、多くの場合、他のユーザによる編集を受け入れる必要があります。その場合は、問題のフィーチャーに戻って再度編集することをお勧めします(**今回は編集後すぐに保存して、再度コンフリクトを回避します!</strong>)。*</p>
+</div>
+</div>
+<div class="section" id="add-additional-information-and-custom-tags">
+<h2><a class="toc-backref" href="#id8">追加情報とカスタムタグの追加</a><a class="headerlink" href="#add-additional-information-and-custom-tags" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オブジェクトを編集すると、属性パネルの下部にアイコンのストリップが表示されます。次のアイコンをクリックすると、追加情報を追加できます。</p>
+<ul class="simple">
+<li>標高の追加 <a class="reference internal" href="../../_images/id-editor_image37.png"><img alt="image37" src="../../_images/id-editor_image37.png" style="height: 24px;" /></a></li>
+<li>ノートの追加 <a class="reference internal" href="../../_images/id-editor_image38.png"><img alt="image38" src="../../_images/id-editor_image38.png" style="height: 24px;" /></a></li>
+<li>連絡先/電話番号の追加 <a class="reference internal" href="../../_images/id-editor_image39.png"><img alt="image39" src="../../_images/id-editor_image39.png" style="height: 24px;" /></a></li>
+<li>sourceタグの追加 <a class="reference internal" href="../../_images/id-editor_image40.png"><img alt="image40" src="../../_images/id-editor_image40.png" style="height: 24px;" /></a></li>
+<li>websiteの追加 <a class="reference internal" href="../../_images/id-editor_image41.png"><img alt="image41" src="../../_images/id-editor_image41.png" style="height: 24px;" /></a></li>
+<li>アクセスのしやすさ情報を追加 <a class="reference internal" href="../../_images/id-editor_image42.png"><img alt="image42" src="../../_images/id-editor_image42.png" style="height: 24px;" /></a></li>
+<li>Wikipediaリンクを追加 <a class="reference internal" href="../../_images/id-editor_image43.png"><img alt="image43" src="../../_images/id-editor_image43.png" style="height: 24px;" /></a></li>
+</ul>
+<p>または、カスタムタグを <strong>全タグ</strong> をクリックして追加。<a class="reference internal" href="../../_images/id-editor_image44.png"><img alt="image44" src="../../_images/id-editor_image44.png" style="height: 24px;" /></a></p>
+<ul>
+<li><p class="first">これにより、フィーチャにアタッチされているすべてのタグが表示されます。</p>
+<p><img alt="image45" src="../../_images/id-editor_image45.png" /></p>
+</li>
+<li><p class="first">プラス記号(+)をクリックしてキーと値を追加するか、ごみ箱アイコンをクリックしてタグを削除します。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id9">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li>このクイックスタートが派生したLearnOSMのドキュメントを試してください:<a class="reference external" href="https://learnosm.org/en/beginner">https://learnosm.org/en/beginner</a>/idエディタ/</li>
+<li>Webサイト: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

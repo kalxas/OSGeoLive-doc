@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pycsw &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="pycsw gyorstalpaló" href="../quickstart/pycsw_quickstart.html" />
+    <link rel="prev" title="GeoNetwork gyorstalpaló" href="../quickstart/geonetwork_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pycsw.org/"><img alt="../../_images/logo_pycsw.png" class="align-right" src="../../_images/logo_pycsw.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="pycsw">
+<h1>pycsw<a class="headerlink" href="#pycsw" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="metadata-catalogue">
+<h2>Metaadat katalógus<a class="headerlink" href="#metadata-catalogue" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A pycsw lehetővé teszi a felhasználók számára, hogy közzétégyék az adatleírások (metaadatok) katalógusát szabványon alapuló interfészek és formátumok használatával, így a katalógushoz kapcsolódó kliensek lekérdezhetik és frissíthetik azokat. A pycsw-t egyszerűen beállíthatjuk egy Apache webszerveren (vagy bármilyen WSGI szerveren), és hozzáférhetünk az adatbázisban XML fájként tárolt metaadat-rekordokhoz.</p>
+<p>A metaadat «adatok az adatokról», olyan adatokat tartalmaz mint a létrehozás dátuma, szerző, cím, érdekeltségi kör, stb. és általában XML fájlokban kódolják, a nemzetközi szabványokat követve, mint ISO 19115, ISO 19139 és FGDC CSDGM.</p>
+<p>A pycsw az <a class="reference external" href="https://www.ogc.org/standards/cat">Catalogue Service</a> <a class="reference external" href="https://www.python.org/">Python</a> implementációja . A projekt <a class="reference external" href="https://www.ogc.org/resource/products/details/?pid=1374">OGC Compliant</a> tanúsítvánnyal rendelkezik, és egy <a class="reference external" href="https://demo.pycsw.org/">OGC Reference Implementation</a>. A CSW-szabvány közös interfészeket határoz meg a téradatok, a webes szolgáltatások és a kapcsolódó erőforrások metaadatainak felfedezésére, böngészésére és lekérdezésére.</p>
+<p>a Pywcs nyílt forráskódú, MIT licenc alatt adják ki és fut az összes nagyobb platformon (Windows, Linux, Mac OS X).</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_screenshot.png"><img alt="pycsw screenshot" class="align-right" src="../../_images/pycsw_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>hitelesített OG megfelelőség és OGC referencia implementáció az OGC CSW 2.0.2 ls CSW 3.0.0 szolgáltatásokhoz</li>
+<li>támogatás WMS, WFS, WCS, WPS, WAF,CSW, SOS szolgáltatásokhoz</li>
+<li>INSPIRE Discovery Services 3.0-t implementálja</li>
+<li>Az ISO Metadata Application Profile 1.0.0-t implementálja</li>
+<li>A FGDC CSDGM Application Profile for CSW 2.0-t implementálja</li>
+<li>Implementálja a Search/Retrieval via URL (SRU) protokollt</li>
+<li>Implementálja a Full Text Search képességeket</li>
+<li>Implementálja az OGC OpenSearch Geo/Time bővítményeket</li>
+<li>implementálja az Open Archives Initiative Protocol for Metadata Harvesting-et</li>
+<li>támogatja az ISO, Dublin Core, DIF, FGDC, Atom és GM03 metaadat modelleket</li>
+<li>CGI vagy WSGI telepítés</li>
+<li>Python 2 és 3 kompatibilis</li>
+<li>egyszerű konfigurálás</li>
+<li>tranzakciós képességek (CSW-T)</li>
+<li>rugalmas tárház konfiguráció</li>
+<li>GeoNode kapcsolat</li>
+<li>HHypermap kapcsolat</li>
+<li>Open Data Catalog kapcsolat</li>
+<li>CKAN kapcsolat</li>
+<li>elosztott katalógus keresés</li>
+<li>valós idejű XML séma validáció</li>
+<li>bővíthető modul architektúra</li>
+<li>nagyon könnyűsúlyú (Python + CGI)</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>OGC szabványok:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/cat">Catalogue Service</a>         2.0.2, 3.0.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/filter">Filter Encoding (FE)</a>          1.1.0, 2.0.0</li>
+<li>OWS Common    1.0.0, 2.0.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a>         3.1.1</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/sfs">Simple Feature Access (SFS)</a>         1.2.1</li>
+<li>OGC OpenSearch  1.0</li>
+</ul>
+<p>Metaadat szabványok:</p>
+<ul class="simple">
+<li>Dublin Core   1.1</li>
+<li>SOAP  1.2</li>
+<li>ISO 19115:2003</li>
+<li>ISO 19139:2007</li>
+<li>ISO 19119:2005</li>
+<li>NASA DIF 9.7</li>
+<li>FGDC CSDGM 1998</li>
+<li>GM03  2.1</li>
+<li>SRU   1.1</li>
+<li>OAI-PMH   2.0</li>
+<li>A9 OpenSearch         1.1</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://pycsw.org/">https://pycsw.org/</a></p>
+<p><strong>Licenc:</strong> <a class="reference external" href="https://docs.pycsw.org/en/latest/license.html">MIT</a></p>
+<p><strong>Szoftver verzió:</strong> 2.6.0</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>API interfészek:</strong> Python</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pycsw_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

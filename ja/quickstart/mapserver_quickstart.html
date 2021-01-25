@@ -1,0 +1,324 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapServer クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="MapCache" href="../overview/mapcache_overview.html" />
+    <link rel="prev" title="MapServer" href="../overview/mapserver_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapserver.org"><img alt="../../_images/logo_mapserver.png" class="align-right" src="../../_images/logo_mapserver.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapserver-quickstart">
+<h1>MapServer クイックスタート<a class="headerlink" href="#mapserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>MapServerは、 <a class="reference external" href="https://opensource.org/">オープンソース</a> サーバーベースのアプリケーションであり、<a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a>、<a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a>、<a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a> などの  <a class="reference external" href="https://www.ogc.org/standards">OGC Standards</a> を使用して、インターネットを介して地理的地図の画像やベクタデータを公開できます。</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#configure-mapserver-using-the-mapfile-configuration-file" id="id1">Mapfile設定ファイルを使用してMapServerを設定する</a></li>
+<li><a class="reference internal" href="#render-a-map-image-with-mapserver-using-a-wms-getmap-request" id="id2">WMSの <strong>GetMap</strong> 要求を使用してMapServerで地図イメージをレンダリングする</a></li>
+<li><a class="reference internal" href="#render-a-map-image-with-mapserver-using-the-command-line" id="id3">コマンドラインを使用してMapServerで地図イメージをレンダリングする</a></li>
+<li><a class="reference internal" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" id="id4">新しいレイヤをMapfileに追加して、ローカルシェイプファイルを提供する</a></li>
+<li><a class="reference internal" href="#style-a-layer-using-mapfile-configurations" id="id5">マップファイル設定を使用してレイヤのスタイルを設定する</a></li>
+<li><a class="reference internal" href="#publish-your-data-as-ogc-wms-web-map-service" id="id6">データをOGC WMS(Web Map Service)としてパブリッシュする</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">次のステップ</a></li>
+</ul>
+</div>
+<div class="section" id="configure-mapserver-using-the-mapfile-configuration-file">
+<h2><a class="toc-backref" href="#id1">Mapfile設定ファイルを使用してMapServerを設定する</a><a class="headerlink" href="#configure-mapserver-using-the-mapfile-configuration-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><strong>何がわかる？</strong> ここでは、Mapfileの概要と、MapServerがWMS要求を使用してシェイプファイルをイメージとして処理できるように設定する方法について説明します。</p>
+</div>
+<div class="section" id="what-is-a-mapfile">
+<h3>Mapfileとは<a class="headerlink" href="#what-is-a-mapfile" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="https://mapserver.org/mapfile/index.html">Mapfile</a> は、MapServerが空間データをイメージまたはベクタデータとしてレンダリングするために使用する設定ファイルです。その主な目的は、描画できるレイヤ、必要なデータの読み方、レンダリング方法(色、シンボル、ラベルなど)を定義することです。</p>
+</div>
+<div class="section" id="creating-my-first-mapfile">
+<h3>はじめてMapfileを作成する<a class="headerlink" href="#creating-my-first-mapfile" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">任意のテキストエディタを開きます(例 <span class="menuselection">アクセサリ‣FeatherPad</span>)。</p>
+</li>
+<li><p class="first">「mapserver_quickstart.map」を、ホームディレクトリ: <code class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></code> に作成します。</p>
+<p>次の内容を入力します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MAP</span>
+  <span class="n">NAME</span> <span class="s2">&quot;MAPSERVER_QUICKSTART&quot;</span>
+  <span class="n">EXTENT</span> <span class="o">-</span><span class="mi">137</span> <span class="mi">29</span> <span class="o">-</span><span class="mi">53</span> <span class="mi">88</span>
+  <span class="n">UNITS</span> <span class="n">DD</span>
+  <span class="n">SHAPEPATH</span> <span class="s2">&quot;/home/user/data/natural_earth2/&quot;</span>
+  <span class="n">SIZE</span> <span class="mi">800</span> <span class="mi">600</span>
+
+  <span class="n">IMAGETYPE</span> <span class="n">PNG24</span>
+
+  <span class="n">PROJECTION</span>
+    <span class="s2">&quot;init=epsg:4326&quot;</span>
+  <span class="n">END</span>
+
+  <span class="n">WEB</span>
+    <span class="n">METADATA</span>
+      <span class="n">ows_title</span> <span class="s2">&quot;MapServer Quickstart&quot;</span>
+      <span class="n">ows_enable_request</span> <span class="s2">&quot;*&quot;</span>
+      <span class="n">ows_srs</span> <span class="s2">&quot;EPSG:4326 EPSG:25832 EPSG:25833&quot;</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+
+  <span class="n">LAYER</span>
+    <span class="n">NAME</span> <span class="s2">&quot;Countries&quot;</span>
+    <span class="n">STATUS</span> <span class="n">ON</span>
+    <span class="n">TYPE</span> <span class="n">POLYGON</span>
+    <span class="n">DATA</span> <span class="s2">&quot;ne_10m_admin_0_countries&quot;</span>
+    <span class="n">CLASS</span>
+      <span class="n">STYLE</span>
+        <span class="n">COLOR</span> <span class="mi">246</span> <span class="mi">241</span> <span class="mi">223</span>
+        <span class="n">OUTLINECOLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+      <span class="n">END</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+
+<span class="n">END</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この例では、既にOSGeoLive上の <code class="file docutils literal"><span class="pre">~/data/natural_earth2</span> <span class="pre">`(:file:</span></code>/usr/local/share/data/natural_earth2` へのショートカット)にある自然地球データセットを使用しています。</p>
+</div>
+</li>
+</ol>
+<p>Mapfile内の各オブジェクトは、名前(<strong>MAP</strong> など)で始まり、<strong>END</strong> で終わります。Mapfileは常に <strong>MAP</strong> オブジェクトで始まり、Mapfileが読み取って描画できる <strong>LAYER</strong> オブジェクトのリストを含む必要があります。このMapfileでは、いまのところ1つのレイヤのみが定義されています。</p>
+<p>Mapfileで定義されているオブジェクト(およびプロパティ)をいくつか見てみましょう。</p>
+<blockquote>
+<div><ul class="simple">
+<li>EXTENT:この設定のデフォルトの空間境界ボックスを設定します。</li>
+<li>LAYER: 空間データセットのアクセスプロパティと表示プロパティを定義します。レイヤは後で追加します。</li>
+<li>SHAPEPATH:ファイルベースのデータ(シェイプファイルやTIFFイメージなど)のベースパスを設定します。</li>
+</ul>
+</div></blockquote>
+<p>Mapfileの <strong>LAYER</strong> をよく見ると、このファイルにはたくさんのプロパティーとオブジェクトも含まれていることがわかります。その中には次のようなものがあります</p>
+<blockquote>
+<div><ul class="simple">
+<li>STATUS: レイヤを描画できる(<em>ON</em>)か、描画できない(<em>OFF</em>)か、常に描画する(<em>DEFAULT</em>)かを定義します。</li>
+<li>TYPE: MapServerがデータをイメージとしてレンダリングするときに使用するジオメトリタイプ。このMapfileでは、データは*ポリゴン*として描画されます。</li>
+<li>DATA:このレイヤが使用する空間データファイル(この場合はシェイプファイル)の名前。</li>
+<li>CLASS: レイヤの描画方法(スタイル設定)を決定します。このオブジェクトについては、後で詳しく説明します。</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Mapfileで使用できるオブジェクトとプロパティの完全なリストは、 <a class="reference external" href="https://mapserver.org/mapfile/index.html">MapServerドキュメントページ</a> にあります。</p>
+</div>
+</div>
+</div>
+<div class="section" id="render-a-map-image-with-mapserver-using-a-wms-getmap-request">
+<h2><a class="toc-backref" href="#id2">WMSの <strong>GetMap</strong> 要求を使用してMapServerで地図イメージをレンダリングする</a><a class="headerlink" href="#render-a-map-image-with-mapserver-using-a-wms-getmap-request" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><strong>何を学べますか?</strong> OGC WMS要求を使用して、MapServerを使用してMapfileからレイヤを含むイメージをレンダリングする方法を学習します。</p>
+</div>
+<p>Webブラウザを開き、次のURLを入力します。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>上記はどういう意味ですか?簡単に言うと、これはWMSの** GetMap** 要求であり、「<em>次のMapfileを使用して、イメージサイズ、地理的範囲、投影などのユーザ指定のパラメータに基づいて、指定されたレイヤをpngイメージとしてレンダリングする</em>」ようMapServerに指示します。Mapfileで*STATUS ON*を持つ」<em>&amp;LAYERS=.</em>」プロパティで指定されたすべてのレイヤは、 <em>STATUS DEFAULT</em> を持つすべての画層に加えてレンダリングされます。結果は次のようになります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">要求のすべてのパラメータは、MapServer固有の「<em>?map=/home/user/mapserver_quickstart.map</em>」を除き、WMS固有です。</p>
+</div>
+</div>
+<div class="section" id="render-a-map-image-with-mapserver-using-the-command-line">
+<h2><a class="toc-backref" href="#id3">コマンドラインを使用してMapServerで地図イメージをレンダリングする</a><a class="headerlink" href="#render-a-map-image-with-mapserver-using-the-command-line" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MapServerはウェブアプリケーション向けだが、コマンドラインで画像を生成することもできます。これは、反復マッピングを探している場合やデバッグ中に便利です。</p>
+<p>ターミナルを開き(<span class="menuselection">Applications‣System Tools‣Terminal Emulator</span>)、次のように入力します。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">shp2img</span> <span class="o">-</span><span class="n">m</span> <span class="n">mapserver_quickstart</span><span class="o">.</span><span class="n">map</span> <span class="o">-</span><span class="n">o</span> <span class="n">mymap</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>このコマンドが正常に実行されると、<a class="reference external" href="file:///home/user/mymap">file:///home/user/mymap</a>.pngでレンダリングされたマップを表示できます。</p>
+</div>
+<div class="section" id="add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile">
+<h2><a class="toc-backref" href="#id4">新しいレイヤをMapfileに追加して、ローカルシェイプファイルを提供する</a><a class="headerlink" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><strong>何を学べますか?</strong> 新しいレイヤオブジェクト定義をMapfileに追加する方法を学習します。</p>
+</div>
+<p>次に、新しいレイヤをMapfileに追加します。Mapfileの最後の*END*文の前に、次のレイヤ設定を追加します。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
+  <span class="n">NAME</span> <span class="s2">&quot;Lakes&quot;</span>
+  <span class="n">STATUS</span> <span class="n">ON</span>
+  <span class="n">TYPE</span> <span class="n">POLYGON</span>
+  <span class="n">DATA</span> <span class="s2">&quot;ne_10m_lakes&quot;</span>
+  <span class="n">CLASS</span>
+    <span class="n">STYLE</span>
+      <span class="n">COLOR</span> <span class="mi">153</span> <span class="mi">179</span> <span class="mi">204</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+<p>これで、Mapfileに2つのレイヤ定義が作成されました。ここで追加した新しいオブジェクトの「STATUS」プロパティが「ON」に設定されていることに注意してください。具体的にお願いしないと出せないということですね。</p>
+<p>前述のWMSの <strong>GetMap</strong> 要求を受け取り、レンダリングしたイメージに新しい「Lakes」レイヤを追加します。「LAYERS」プロパティリストに新しいレイヤ名を追加するだけです。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>MapServerによってレンダリングされたイメージは、前のマップに似ていますが、新しいレイヤから湖が追加されています。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="style-a-layer-using-mapfile-configurations">
+<h2><a class="toc-backref" href="#id5">マップファイル設定を使用してレイヤのスタイルを設定する</a><a class="headerlink" href="#style-a-layer-using-mapfile-configurations" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><strong>何を学ベますか?</strong> レイヤ内の要素のスタイル設定の例が、データプロパティの一部に応じて表示されます。</p>
+</div>
+<p>Mapfileでは、LAYERオブジェクトに無限個のCLASSオブジェクトを含めることができます。これらは、空間データファイル(DATA)に含まれる要素のスタイルを設定するために使用されます。たとえば、 <a class="reference external" href="https://gdal.org/ogrinfo.html">ogrinfo</a> などのツールを使用して」ne_10m_lakes」データファイルを詳しく調べると、このファイルに含まれるジオメトリと属性定義がわかります。 これらの属性値は、複数のCLASSオブジェクトを使用してデータセット内の要素を異なる方法で描画する方法として使用できます。</p>
+<p>「ne_10m_lakes」データセットには、湖の大きさに関係すると思われる*ScaleRank*属性がある。これを使って湖を違った形にレンダリングすることができますLAYERオブジェクトでは、現在のオブジェクトの直前に別のCLASSオブジェクトを追加します。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
+  <span class="n">NAME</span> <span class="s2">&quot;Lakes&quot;</span>
+  <span class="n">STATUS</span> <span class="n">ON</span>
+  <span class="n">TYPE</span> <span class="n">POLYGON</span>
+  <span class="n">DATA</span> <span class="s2">&quot;ne_10m_lakes&quot;</span>
+  <span class="n">CLASSITEM</span> <span class="s2">&quot;ScaleRank&quot;</span>
+  <span class="n">CLASS</span>
+    <span class="n">EXPRESSION</span> <span class="o">/</span><span class="mi">0</span><span class="o">|</span><span class="mi">1</span><span class="o">/</span>
+    <span class="n">STYLE</span>
+      <span class="n">COLOR</span> <span class="mi">153</span> <span class="mi">179</span> <span class="mi">204</span>
+      <span class="n">OUTLINECOLOR</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+  <span class="n">CLASS</span>
+    <span class="n">STYLE</span>
+      <span class="n">COLOR</span> <span class="mi">153</span> <span class="mi">179</span> <span class="mi">204</span>
+    <span class="n">END</span>
+  <span class="n">END</span>
+<span class="n">END</span>
+</pre></div>
+</div>
+<p>新しいCLASSオブジェクトは何をしますか?基本的には、MapServerに対して、「0」または「1」に等しい「ScaleRank」プロパティを持つ要素を黒いアウトラインで描画するように指示します。クラスオブジェクトは、描画されるフィーチャごとに常に上から下に読み込まれます。フィーチャがクラスで指定された「EXPRESSION」に一致すると、そのクラスはフィーチャをレンダリングします。フィーチャがクラスと一致しない場合、次のクラスがチェックされます。フィーチャがどのクラスとも一致しない場合、フィーチャはまったくレンダリングされませんが、画層の最後のクラスにEXPRESSIONが含まれていない場合、そのクラスが既定として機能します。LAYERの「CLASSITEM」プロパティは、CLASSオブジェクトで定義された式を評価するときに使用する属性をMapServerに伝えます。</p>
+<p>この新しい追加の結果、地図イメージ内の大きな湖が黒いアウトラインでレンダリングされます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">MapServerの <a class="reference external" href="https://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> の詳細をご覧ください。</p>
+</div>
+</div>
+<div class="section" id="publish-your-data-as-ogc-wms-web-map-service">
+<h2><a class="toc-backref" href="#id6">データをOGC WMS(Web Map Service)としてパブリッシュする</a><a class="headerlink" href="#publish-your-data-as-ogc-wms-web-map-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MapServerは、OGC WMS、WFS、WCSなど、さまざまなOGC標準をサポートしています。OGC WMSを使用すると、データをマップサービスとしてパブリッシュし、QGISのようなデスクトップGISや、OpenLayersやMapbenderのようなWebクライアントでサービスを統合できます。</p>
+<div class="section" id="using-qgis-desktop-to-load-your-ogc-wms">
+<h3>QGISデスクトップを使用したOGC WMSのロード<a class="headerlink" href="#using-qgis-desktop-to-load-your-ogc-wms" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">QGISの起動方法 <span class="menuselection">Geospatial‣Desktop GIS‣QGIS Desktop</span> <span class="menuselection">Layer ‣ Add Layer ‣ Add WMS/WMTS Layer</span> にいく</p>
+</li>
+<li><p class="first">ボタン <strong>New</strong> をクリックし、名前とサービスURLを追加します。</p>
+</li>
+<li><p class="first">設定を保存します。</p>
+<p><a class="reference external" href="http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=GetCapabilities&amp;VERSION=1.3.0">http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=GetCapabilities&amp;VERSION=1.3.0</a></p>
+</li>
+</ol>
+<p>その後、サービスに接続し、サービスの1つまたは複数のレイヤをQGISプロジェクトに追加できます。ID 0のレイヤを選択すると、すべてのレイヤを含むサービス全体を一度にロードできます。</p>
+<a class="reference internal image-reference" href="../../_images/mapserver_load_wms_to_qgis.png"><img alt="../../_images/mapserver_load_wms_to_qgis.png" src="../../_images/mapserver_load_wms_to_qgis.png" style="width: 560.0px; height: 382.2px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id7">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これは簡単な例ですが、できることはたくさんあります。MapServerプロジェクトのWebサイトには、作業を開始に役立つ多くのリソースが用意されています。次に、いくつかのをいくつか紹介しよう。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://mapserver.org/introduction.html#introduction">MapServerの概要</a> を読む</li>
+<li><a class="reference external" href="https://www.mapserver.org/tutorial/index.html">MapServerチュートリアル</a> をご覧ください</li>
+<li><a class="reference external" href="https://www.mapserver.org/ogc/index.html">OGC サポートと構成</a> をチェックして、MapServerのOGC標準（WMS、WFS、SLD、WFS Filter Encoding、WCS、SOSなど）の詳細を確認してください。</li>
+<li>MapServerを使用する準備はできていますか?次に、<cite>メーリングリスト&lt;https://www.mapserver.org/community/lists.html&gt;</cite> _ のコミュニティに参加して、アイデアを交換したり、ソフトウェアの改善点について話し合ったり、質問したりします。</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

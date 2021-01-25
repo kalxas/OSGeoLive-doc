@@ -1,0 +1,161 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenLayers &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="OpenLayers Quickstart" href="../quickstart/openlayers_quickstart.html" />
+    <link rel="prev" title="SAGA Quickstart" href="../quickstart/saga_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://openlayers.org/"><img alt="../../_images/logo_openlayers.png" class="align-right" src="../../_images/logo_openlayers.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="openlayers">
+<h1>OpenLayers<a class="headerlink" href="#openlayers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-high-performance-feature-packed-library-for-all-your-mapping-needs">
+<h2>A high-performance, feature-packed library for all your mapping needs<a class="headerlink" href="#a-high-performance-feature-packed-library-for-all-your-mapping-needs" title="Permalink to this headline">¶</a></h2>
+<p>OpenLayers makes it easy to put a dynamic map in any web page. It can display map tiles, vector data and markers loaded from any source. OpenLayers has been developed to further the use of geographic information of all kinds. It is completely free, Open Source JavaScript, released under the 2-clause BSD License (also known as the FreeBSD).</p>
+<a class="reference internal image-reference" href="../../_images/openlayers_screenshot.png"><img alt="openlayers screenshot" class="align-right" src="../../_images/openlayers_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Layers<ul>
+<li>Raster: WMS/WMTS, OpenStreetMap, Stamen, Bing, other XYZ sources, static images, etc.</li>
+<li>Vector: WFS, KML, GeoJSON, TopoJSON, GPX, GML, and MapBox vector tiles.</li>
+<li>Heatmaps.</li>
+<li>Render vector layers as raster.</li>
+</ul>
+</li>
+<li>Controls and Interactions<ul>
+<li>Overview map, zoom slider, zoom in/out buttons, scale line, rotate map, etc.</li>
+<li>Map pan, zoom and rotation, feature selection, modification, etc.</li>
+</ul>
+</li>
+<li>Styling and customization<ul>
+<li>Powerful styling of features: points, lines, polygons and icons.</li>
+<li>Customize controls look and feel using CSS.</li>
+</ul>
+</li>
+<li>Overlays<ul>
+<li>Render any DOM element at any place on the map.</li>
+<li>Great flexibility to create tooltips and markers.</li>
+<li>Mix the power of HTML5 capabilities with a mapping application.</li>
+</ul>
+</li>
+<li>Events<ul>
+<li>Attach listener functions to map events.</li>
+<li>Create your custom controls or interactions.</li>
+</ul>
+</li>
+<li>Miscellaneous<ul>
+<li>Mobile browser support.</li>
+<li>Raster reprojection.</li>
+<li>Light-weight library. Build customized packages to reduce size.</li>
+<li>Render maps using different technologies: Canvas, WebGL.</li>
+<li>Raster analysis (change hue/saturation).</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="https://openlayers.org/">https://openlayers.org/</a></p>
+<p><strong>License:</strong> 2-clause BSD License (aka FreeBSD License)</p>
+<p><strong>Software Version:</strong> 6.5.0</p>
+<p><strong>API Interface:</strong> JavaScript</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://stackoverflow.com/questions/tagged/openlayers">https://stackoverflow.com/questions/tagged/openlayers</a> (user) and <a class="reference external" href="https://groups.google.com/forum/#!forum/openlayers-dev">https://groups.google.com/forum/#!forum/openlayers-dev</a> (developer)</p>
+</div>
+<div class="section" id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/openlayers_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,285 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de QGIS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GRASS SIG" href="../overview/grass_overview.html" />
+    <link rel="prev" title="QGIS" href="../overview/qgis_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1>Inicio Rápido de QGIS<a class="headerlink" href="#qgis-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>QGIS es un cliente de escritorio SIG fácil de usar que le permite visualizar, administrar, editar, analizar datos y componer mapas imprimibles.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-qgis" id="id1">Iniciar QGIS</a></li>
+<li><a class="reference internal" href="#create-a-project" id="id2">Crear un proyecto</a></li>
+<li><a class="reference internal" href="#open-an-existing-project" id="id3">Abrir un proyecto existente</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">Navegar por el mapa</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">Dale estilo a tus capas</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id6">Cosas para probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="start-qgis">
+<h2><a class="toc-backref" href="#id1">Iniciar QGIS</a><a class="headerlink" href="#start-qgis" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Abra la carpeta “Desktop GIS”.</li>
+<li>Haga doble click en el ícono “QGIS”.</li>
+</ol>
+<p>Verá el lanzamiento de QGIS con un proyecto vacío. Las diversas partes de la interfaz QGIS se enumeran a continuación.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>[1] Barra de menús: Acceso a varias entidades QGIS mediante un menú jerárquico estándar.</li>
+<li>[2] Barras de herramientas: Para la interacción con el mapa, capas, atributos y selecciones.</li>
+<li>[3] Panel del Navegador: Un navegador de archivos espaciales que permite arrastrar y soltar contenido en el marco del mapa.</li>
+<li>[4] Panel de Capas: Controla las capas de mapa, su orden y visibilidad.</li>
+<li>[5] Barra de Estado: Información General sobre el mapa y acceso a una barra de búsqueda universal.</li>
+</ul>
+</div>
+<div class="section" id="create-a-project">
+<h2><a class="toc-backref" href="#id2">Crear un proyecto</a><a class="headerlink" href="#create-a-project" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para crear un nuevo proyecto, elija <span class="menuselection">Proyecto ‣ Nuevo</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.1999999999999px; height: 499.09999999999997px;" /></a>
+</div></blockquote>
+<p>Comencemos agregando una capa vectorial al mapa. Las capas se pueden agregar a QGIS utilizando el panel del navegador, ubicado a la izquierda de la pantalla.</p>
+<ol class="arabic simple">
+<li>Vaya al panel del navegador a la izquierda de la pantalla.</li>
+<li>Navegue por el árbol de carpetas hasta “home/data/natural_earth2”.</li>
+<li>Seleccione “ne_10m_admin_0_countries.shp”.</li>
+<li>Arrastre la capa desde el panel del navegador y suéltela en el marco del mapa.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div></blockquote>
+<p>Una vez que la capa se ha arrastrado al marco del mapa, verá una capa que muestra los países.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
+<p>Ahora vamos a intentar agregar una capa ráster al proyecto.</p>
+<ol class="arabic simple">
+<li>Vaya al panel del navegador a la izquierda de la pantalla.</li>
+<li>Navegue por el árbol de carpetas hasta “home/data/natural_earth2”.</li>
+<li>Seleccione “HYP_50M_SR_W.tif”.</li>
+<li>Arrastre la capa desde el panel del navegador y suéltela en el marco del mapa.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Una vez que la capa se ha arrastrado al marco del mapa, verá una capa ráster que muestra la cobertura del suelo y la batimetría.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Ahora que hemos agregado algún contenido a nuestro proyecto, podemos guardar este proyecto para que podamos volver a él más adelante.</p>
+<ol class="arabic">
+<li><p class="first">Elija <span class="menuselection">Proyecto ‣ Guardar</span>.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</li>
+<li><p class="first">Haga la ubicación para guardar el proyecto “/inicio/usuario/escritorio”.</p>
+</li>
+<li><p class="first">Llame al proyecto “Mi proyecto QGIS”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+</li>
+<li><p class="first">Haga click en <cite>Guardar</cite>.</p>
+</li>
+</ol>
+<p>Sabrá que el proyecto se ha guardado porque habrá un archivo de proyecto en el escritorio llamado “Mi proyecto QGIS” y la parte superior del documento del proyecto ya no se leerá como “sin título” sino que se leerá como “Mi proyecto QGIS”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_saved_project.png"><img alt="QGIS saved project" src="../../_images/qgis_saved_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+</div>
+<div class="section" id="open-an-existing-project">
+<h2><a class="toc-backref" href="#id3">Abrir un proyecto existente</a><a class="headerlink" href="#open-an-existing-project" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un proyecto QGIS guarda capas, estilos, extensiones de mapas y configuraciones para su uso posterior. Esta información se almacena como un archivo de proyecto QGIS y tiene una extensión de “.qgs” or “.qgz”, siendo “.qgz” el formato de archivo predeterminado en QGIS en el futuro.</p>
+<p>Abramos un proyecto QGIS existente y veamos cómo funciona.</p>
+<ol class="arabic simple">
+<li>Abra QGIS. Tenga en cuenta que cuando se abra QGIS se le presentará una lista de proyectos recientes para elegir. Esta es una manera conveniente de abrir un proyecto que ha utilizado recientemente.</li>
+<li>Elija <span class="menuselection">Proyecto ‣ Abrir</span>.</li>
+<li>Vaya a “/inicio/usuario/qgis-example”.</li>
+<li>Seleccione el proyecto “QGIS-NaturalEarth-Example.qgs”.</li>
+<li>Haga click en <cite>Abrir</cite>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
+<p>Esto abrirá un proyecto QGIS con una serie de conjuntos de datos de la Tierra Natural, como se muestra a continuación.&nbsp;Este proyecto contiene varias capas en el panel de capas y muestra el contenido espacial en el marco del mapa.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>Las capas se pueden activar o desactivar haciendo click en la casilla de verificación junto al nombre de la capa en el panel de capas. Cuando se activa una capa en el panel de capas, el marco del mapa se actualizará para mostrar la capa. A continuación se muestra un primer plano del panel de capas.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.49999999999997px;" /></a>
+<p>Interactuemos con el panel de capas y cambiemos la visibilidad de algunas capas del mapa.</p>
+<ol class="arabic simple">
+<li>Haga click en la casilla de verificación junto a la capa “ne_10m_populated_places” para activarla.</li>
+<li>Haga click en la casilla de verificación junto a la capa “Agua” para desactivar la capa.</li>
+</ol>
+<p>Observe cómo se ha actualizado el marco del mapa para reflejar los cambios en la lista de capas.&nbsp;Ahora podemos ver la capa “ne_10m_populated_places” como puntos, pero ya no podemos ver los ríos y lagos que se encuentran dentro de la capa “Aguas”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_visibility.png"><img alt="QGIS result of layer visibility changes" src="../../_images/qgis_layer_visibility.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
+<p>Además de controlar la visibilidad de la capa, también podemos cambiar el orden en que se dibujan las capas en el panel de capas. Esto se hace seleccionando una capa en el panel de capas y arrastrándola hacia arriba o hacia abajo en la lista. El orden en que aparecen las capas en la lista de capas es el orden en el que dibujarán en el marco del mapa.</p>
+<ol class="arabic simple">
+<li>Haga click izquierdo en la capa “HYP_50M_SR_W”.</li>
+<li>Mientras mantiene presionado el botón del mouse, arrastre la capa a la parte superior de la lista.</li>
+</ol>
+<p>Observe cómo la capa ráster está ahora encima de todas las otras capas en el panel de capas.&nbsp;Esto ahora representa la capa ráster encima de todas las otras capas en el marco del mapa.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
+<p>Intente mover la capa “HYP_50M_SR_W” al final de la lista de capas. Esta sería una posición más apropiada para una capa de mapa como esta.</p>
+</div>
+<div class="section" id="navigate-the-map">
+<h2><a class="toc-backref" href="#id4">Navegar por el mapa</a><a class="headerlink" href="#navigate-the-map" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La barra de herramientas de navegación permite a los usuarios moverse por el mapa y cambiar la extensión del mapa.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
+<ul class="simple">
+<li>[1] Panorámica: Permite arrastrar el mapa (“panned”) a una nueva ubicación.</li>
+<li>[2] Acercar: Permite acercar la extensión del mapa.</li>
+<li>[3] Alejar: permite Alejar el mapa.</li>
+<li>[4] Zoom a la extensión completa: Cambia la extensión del mapa para que se ajuste a todas las capas del mapa en el marco del mapa.</li>
+<li>[5] Zoom a capa: Cambia la extensión del mapa para que se ajuste a la extensión de la capa resaltada en el panel de capas.</li>
+</ul>
+<p>Intentemos cambiar la extensión del mapa con la herramienta de zoom.</p>
+<ol class="arabic simple">
+<li>Seleccione la herramienta “Acercar” de la barra de herramientas de navegación.</li>
+<li>Mueva el cursor sobre el marco del mapa.</li>
+<li>Haga click y mantenga presionado el botón izquierdo del mouse.</li>
+<li>Mientras mantiene presionado el botón del mouse, mueva el cursor en diagonal en cualquier dirección. Observe que esto dibuja un rectángulo que es el área que se ampliará.</li>
+<li>Suelte el botón del mouse cuando esté satisfecho con el área creada.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El proceso de usar la herramienta de alejamiento es el mismo que la herramienta de acercar.&nbsp;El resultado es todo lo contrario.</p>
+</div>
+<p>Ahora, echemos un vistazo a la herramienta de zoom en toda su extensión. Esta herramienta alejará el mapa hasta un punto que se ajuste a todas las capas del mapa. Para usar esta herramienta, haga clic en el botón “Zoom a toda su extensión”.</p>
+<p>Finalmente, prueba la herramienta de zoom a capa. Para usar esta herramienta, siga estos pasos:</p>
+<ol class="arabic simple">
+<li>Haga click en el nombre de una capa en el panel de capas.</li>
+<li>Haga click en el botón “Zoom a capa”.</li>
+</ol>
+<p>El mapa debe hacer zoom en la extensión de la capa seleccionada (“activa”).</p>
+</div>
+<div class="section" id="style-your-layers">
+<h2><a class="toc-backref" href="#id5">Dale estilo a tus capas</a><a class="headerlink" href="#style-your-layers" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las capas se pueden diseñar en QGIS utilizando el dock de estilo.&nbsp;La base de estilo no es visible de forma predeterminada, pero se puede acceder fácilmente a través de un botón en la parte superior del panel de capas como se muestra a continuación.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
+<p>El botón anterior actúa como una palanca para que el muelle de estilo se pueda ocultar fácilmente de la vista haciendo click nuevamente en el mismo botón. Cuando el muelle de estilo está habilitado, aparecerá en el lado derecho de la pantalla listo para diseñar la capa activa resaltada en el panel de capas.</p>
+<p>Con el muelle de estilo abierto, podemos modificar la apariencia de la capa que se muestra en la parte superior del muelle de estilo.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_layer.png"><img alt="QGIS style dock layer" src="../../_images/qgis_style_dock_layer.png" style="width: 286.29999999999995px; height: 294.7px;" /></a>
+<p>Con el muelle de estilo ahora abierto, podemos modificar el color y el ancho de las líneas en la capa “ne_10m_rivers_lakes_centrelines”. Intentemos modificar el color primero.</p>
+<ol class="arabic">
+<li><p class="first">Haga click en la muestra “Color” que se muestra a continuación. Esto lanzará una paleta de colores que le permitirá elegir un color diferente.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_color.png"><img alt="QGIS style dock color" src="../../_images/qgis_style_dock_color.png" style="width: 298.2px; height: 225.39999999999998px;" /></a>
+</li>
+<li><p class="first">En la paleta “Seleccionar Color”, mueva la cruz a su color preferido.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_color_palette.png"><img alt="QGIS color palette" src="../../_images/qgis_style_color_palette.png" style="width: 284.2px; height: 224.7px;" /></a>
+</li>
+<li><p class="first">Luego haga click en la flecha hacia atrás para volver a la vista previa de representación del símbolo.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_back.png"><img alt="QGIS style return" src="../../_images/qgis_style_back.png" style="width: 281.4px; height: 128.1px;" /></a>
+</li>
+<li><p class="first">La vista previa del símbolo se actualizará con el nuevo color, y también la capa en el marco del mapa.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_result.png"><img alt="QGIS style result" src="../../_images/qgis_style_result.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>En el muelle de estilo, también podemos modificar el tamaño de las características del mapa. Para modificar el grosor de las líneas, siga estos pasos:</p>
+<ol class="arabic">
+<li><p class="first">Asegúrese de que “ne_10m_rivers_lakes_centrelines” esté seleccionado en la parte superior del panel de estilo.</p>
+</li>
+<li><p class="first">En el panel de estilo, ingrese el valor “0.5” en la entrada “ancho”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_width.png"><img alt="QGIS style width" src="../../_images/qgis_style_width.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Observe que la línea en la vista previa del símbolo aumenta de ancho, y también lo hacen las líneas que están en el marco del mapa.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id6">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Extienda la funcionalidad QGIS con <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">Complementos</a>.</li>
+<li>Comience a manipular datos con la <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">Caja de herramientas de procesamiento</a>.</li>
+<li>Use QGIS para ver el contenido de una <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">Base de datos de PostGIS</a>.</li>
+<li>Try publishing your QGIS map to the web using <a class="reference external" href="../overview/qgis_mapserver_overview.html">QGIS Map Server</a>.  en el menú <span class="menuselection">Geospatial ‣ Web Services</span>.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id7">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para obtener más información acerca de QGIS, un buen punto de partida es  <a class="reference external" href="https://www.qgis.org/en/docs/index.html">Documentation page</a> en la página web QGIS y  <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS</a> eBook.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

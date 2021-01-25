@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapCache &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Inicio rápido de MapCache" href="../quickstart/mapcache_quickstart.html" />
+    <link rel="prev" title="Inicio Rápido de MapServer" href="../quickstart/mapserver_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapserver.org/mapcache"><img alt="../../_images/logo_mapcache.png" class="align-right" src="../../_images/logo_mapcache.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapcache">
+<h1>MapCache<a class="headerlink" href="#mapcache" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="web-service">
+<h2>Servicio Web<a class="headerlink" href="#web-service" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>MapCache es un servidor que implementa el almacenamiento en caché de mosaicos para acelerar el acceso a las capas WMS. Los objetivos principales son ser rápidos y fáciles de implementar, al tiempo que ofrecen las características esenciales (¡y más!) que se esperan de una solución de almacenamiento en caché de teselas.</p>
+<p>MapCache es parte de la familia MapServer, pero se puede configurar para almacenar en caché y servir datos de cualquier servidor geoespacial que use WMS. MapCache se puede ejecutar en Apache como un módulo o en cualquier servidor web que admita CGI/FastCGI como IIS, Nginx y Jetty.</p>
+<a class="reference internal image-reference" href="../../_images/mapcache_screenshot.png"><img alt="mapcache screenshot" class="align-right" src="../../_images/mapcache_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Características Principales<a class="headerlink" href="#core-features" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>Allows tile caches to be stored in<ul>
+<li>en disco</li>
+<li>en la nube usando REST (S3, Azure, Google)</li>
+<li>en bases de datos que incluyen SQLite, Berkeley DB, Riak</li>
+<li>en memoria cache</li>
+</ul>
+</li>
+<li>Incluye una aplicación semillera</li>
+<li>Cache basado en dimensiones (como tiempo)</li>
+<li>Permite el almacenamiento en caché de mosaicos Vector Mapbox (MVT) y UTFGrid</li>
+<li>Cuadrículas personalizables</li>
+<li>Permite que los mosaicos se «ensamblen» juntos, lo que permite combinar mosaicos para diferentes conjuntos de datos en un solo mosaico para enviar al cliente</li>
+<li>Incluye una aplicación de semillera para llenar previamente cachés desde la línea de comando</li>
+<li>Permite que las solicitudes se devuelvan a un servidor</li>
+<li>na interfaz de demostración incorporada</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Estándares  implementados<a class="headerlink" href="#implemented-standards" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li>Apoyo de numerosos estándares del Open Geospatial Consortium (OGC)<ul>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a></li>
+</ul>
+</li>
+<li>Estándares adicionales incluyen:<ul>
+<li><a class="reference external" href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">TMS</a></li>
+<li>Google Maps XYZ</li>
+<li>SuperOverlays KML</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demostración<a class="headerlink" href="#demo" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/mapcache/demo/">Demostración predeterminada de MapCache</a></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentación<a class="headerlink" href="#documentation" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://mapserver.org/mapcache/">Documentación de MapCache</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Detalles<a class="headerlink" href="#details" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Sitio web:</strong> <a class="reference external" href="https://mapserver.org/mapcache">https://mapserver.org/mapcache</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="https://mapserver.org/copyright.html#license">MIT-style license</a></p>
+<p><strong>Versión de software:</strong> 1.10.0</p>
+<p><strong>Plataformas compatibles:</strong> GNU/Linux, Mac OSX, MS Windows</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="https://mapserver.org/community/">https://mapserver.org/community/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guía de Inicio Rápido<a class="headerlink" href="#quickstart" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapcache_quickstart.html"><span class="doc">Documentación de inicio rápido</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

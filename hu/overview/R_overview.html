@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>R &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="R gyorstalpaló" href="../quickstart/R_quickstart.html" />
+    <link rel="prev" title="OTB gyorstalpaló" href="../quickstart/otb_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cran.r-project.org"><img alt="../../_images/logo_R.png" class="align-right" src="../../_images/logo_R.png" /></a>
+<div class="section" id="r">
+<h1>R<a class="headerlink" href="#r" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="statistical-programming">
+<h2>Statisztikai programozás<a class="headerlink" href="#statistical-programming" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az R egy hatékony, széles körben használt szoftver környezet statisztikai számítások és grafika számára, amely kiemelkedő a földrajzi adatok elemzésében és feldolgozásában. Az R-n belüli térinformatikai elemzési képességeket R csomagokban (modulok, amelyek kiterjesztik az R képességeit) találhatjuk meg, melyek nagy számú hagyományos és legkorszerűbb algoritmus hozzáférését biztosítja. Az R és csomagjai képesek pont, vonal, felület, hálózat, rács (stb.) adatok feldolgozására.</p>
+<p>A felhasználók a feladatok széles körét érhetik el, mint például: képosztályozás, statisztikai elemzés a térbeli kapcsolatok és az elem mintázatok kimutatására, valamint továbbiak az alább felsorolt alapfunkciókban. Az R által kínált funkciók kiegészítik és kibővítik a GIS és képfeldolgozó  szoftverek képességeit. A párhuzamos programfutásra szolgáló csomagok alkalmazásával a felhasználók drasztikusan csökkenthetik a számítási időt és növelhetik a kapacitást. Számos csomag biztosítja a kapcsolatot más OSGeo eszközökkel és szoftverekkel. Könnyedén csatlakoztathatja az R-t a GRASS-GIS, a Qgis, a postgreSQL és a postGIS programokhoz.</p>
+<p>Az R alap felhasználói felülete egy parancssor ablak, mely kiváló rugalmasságot és felügyeletet biztosít, de megnöveli a gyakorlott felhasználóvá válás idejét, ha a grafikus felhasználói felülettel (GUI) bíró szoftverekhez hasonlítjuk. Szerencsére az R a honlapján jól dokumentált, ami megkönnyíti a tanulási folyamatot. Gyakran szkripteket használunk a feldolgozási lépések automatizálására, de vannak GUI-k, ezek között a vezető az RStudio (<a class="reference external" href="https://rstudio.com">https://rstudio.com</a>).</p>
+<p>Az R az S programnyelv egy implementációja, jelentős kompatibilitás van az R és az előd S és S-Plus kódok és a modern S kereskedelmi verziója között, TIBCO Spotfire S+. Ez lehetővé teszi, hogy az S kód fusson az R-ben nagyobb kód módosítások nélkül.</p>
+<a class="reference internal image-reference" href="../../_images/R_screenshot.png"><img alt="R screenshot" class="align-right" src="../../_images/R_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>Komplett objektum orientált programnyelv, melyet statisztikához és hasonló intenzíven matematikát használó alkalmazásokhoz terveztek</li>
+<li>Aktuálisan (2017/08/11), a CRAN csomag tárházban 11239 csomag érhetőel.</li>
+<li>A közösség által hozzáadott csomagok százai térbeli statisztikákhoz</li>
+<li>Osztályok a térbeli adatokhoz</li>
+<li>Téradatok olvasása és írása</li>
+<li>Pont minta elemzések</li>
+<li>Geostatisztika</li>
+<li>Térbeli regresszió</li>
+<li>Ekológiai elemzések</li>
+<li>Hatékony raszter feldolgozó algoritmusok</li>
+<li>Távérzékelés</li>
+<li>Bayesian térbeli elemzés</li>
+<li>…</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://cran.r-project.org">https://cran.r-project.org</a></p>
+<p><strong>Licenc:</strong> GPL</p>
+<p><strong>Szoftver verzió:</strong> 3.6.3</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac, Unix</p>
+<p><strong>Közösségi támogatás:</strong> <a class="reference external" href="https://cran.r-project.org/web/views/Spatial.html">https://cran.r-project.org/web/views/Spatial.html</a></p>
+<p><strong>CRAN csomag elérhető:</strong> <a class="reference external" href="https://cran.r-project.org/web/packages/available_packages_by_name.html">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/R_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

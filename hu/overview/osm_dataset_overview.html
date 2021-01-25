@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenStreetMap &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="NetCDF adatkészletek" href="netcdf_dataset_overview.html" />
+    <link rel="prev" title="Észak Karolina, USA oktatási adatok" href="nc_dataset_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.openstreetmap.org/"><img alt="../../_images/logo_osm_dataset.png" class="align-right" src="../../_images/logo_osm_dataset.png" /></a>
+<div class="section" id="openstreetmap">
+<h1>OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="map-data">
+<h2>Térkép adat<a class="headerlink" href="#map-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az OpenStreetMap egy közösségi térkép a világról, mely a térképadatok egyik legrészletesebb forrásává vált. A térkép adatokat több ezer önkéntes hozza létre és tartja karban a világ minden tájáról, hasonlóan a wikipedia-enciklopédia üzemeltetéséhez.</p>
+<p>Az OSM legkiemelkedőbb vonatkozása az online web-csempe interfész a <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> oldalon, de a térképek számos alkalmazásban megjeleníthetők vagy szerkeszthetők mint például <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> , <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>, ArcGIS és dedikált OSM alkalmazások.</p>
+<p>A projekt lényege a mögöttes adatokban van, melyek mindenki számára nyitottak, hogy szerkessze, megtekintse vagy egyedi kinézetű térkép létrehozására. Alapvetően az OSM az adatokra összpontosít, a gazdag térképek egyszerűen ebből származnak.</p>
+<p>Az OSGeoLive disztribúció város méretű kivonatokat tartalmaz az OSM-ből, melyeket példaként használ néhány alkalmazás.</p>
+<a class="reference internal image-reference" href="../../_images/osm_dataset_screenshot.png"><img alt="osm_dataset screenshot" class="align-right" src="../../_images/osm_dataset_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>Vektor elemek névvel és más attribútumokkal címkézettek.</li>
+<li>Adatok helyi alcsoportjai.</li>
+<li>A pontokat és vonalláncokat WGS84 hosszúság-szélesség koordinátákkal tárolja és meta-jellemzők pontokhoz, törtvonalakhoz, területekhez és kapcsolatokhoz.</li>
+<li>Gazdag attribútum címkézés, gyakran sokkal részletesebb mint bármilyen más forrás.</li>
+<li>Globális tárház a helyi tudáshoz.</li>
+</ul>
+</div>
+<div class="section" id="data-sets-included-in-osgeo-live">
+<h3>Az OSGeoLive adatokat tartalmaz belőle<a class="headerlink" href="#data-sets-included-in-osgeo-live" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>feature_city.osm.bz2: Egy nagy kivonat a nagyobb városi területre mint egy BZip2 tömörített XML szövegfájl.</li>
+<li>feature_city_CBD.OSM.bz2: egy kisebb részhalmaz, mely csak a központi üzleti negyedet (CBD) fedi le.</li>
+<li>feature_city_poi.db: „Érdekes pontok” SQLite adatbázisa, egy kivonat a fenti nagyobb város OSM kivonatból. Tartalmazza a kocsmák, benzinkutak, éttermek, szupermarketek, stb. helyét.</li>
+<li>A kiemelt város nevére hivatkozó fájlok a fenti fájlokkal azonos adatokat tartalmaznak.. A gyorstalpalók és az áttekintők generikus fájlneveket használnak, így a példa város minden újabb kiadásnál változhat.</li>
+</ul>
+<p>OSM város adatokat importálták az „osm_local” nevű adatbázisba, az osm2pgsql eszköz felhasználásával. Ebben az adatbázisban használt térbeli hivatkozási rendszer a szélesség-hosszúság, a WGS84 dátumon (EPSG kód 4326), és igény esetén átvetíthető más térbeli referencia rendszerekre (SRS), mint például a Spherical-Mercator. A kisebb CBD kivonatot egy másik PostGIS adatbázisba az úgynevezett „pgrouting”-ba töltötték be.</p>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></p>
+<p><strong>Licenc:</strong> <a class="reference external" href="https://opendatacommons.org/licenses/odbl/">Open Data Commons Open Database License (ODbL)</a></p>
+<p><strong>Adat verzió:</strong> Live database extract</p>
+<p><strong>Adatformátum:</strong> XML</p>
+<p><strong>Térbeli koordináta-rendszer:</strong> hosszúság-szélesség WGS84</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.openstreetmap.org/help">https://www.openstreetmap.org/help</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

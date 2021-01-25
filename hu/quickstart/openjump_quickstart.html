@@ -1,0 +1,179 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenJUMP GIS gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="SAGA" href="../overview/saga_overview.html" />
+    <link rel="prev" title="OpenJUMP GIS" href="../overview/openjump_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.openjump.org"><img alt="../../_images/logo_openjump.png" class="align-right" src="../../_images/logo_openjump.png" /></a>
+<div class="section" id="openjump-gis-quickstart">
+<h1>OpenJUMP GIS gyorstalpaló<a class="headerlink" href="#openjump-gis-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az OpenJUMP egy asztali GIS program vektor adatok egyszerű megjelenítését és szerkesztését teszi lehetővé. A PLUS kiadás a raszter adatok elemzését is támogatja.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-openjump" id="id1">OpenJUMP indítás</a></li>
+<li><a class="reference internal" href="#open-an-esri-shapefile" id="id2">ESRI shape fájl megnyitása</a></li>
+<li><a class="reference internal" href="#style-a-layer" id="id3">Egy réteg stílus beállítása</a></li>
+<li><a class="reference internal" href="#edit-feature-geometries-in-a-layer" id="id4">Térképi elemek geometriájának szerkesztése</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-openjump">
+<h2><a class="toc-backref" href="#id1">OpenJUMP indítás</a><a class="headerlink" href="#start-openjump" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az asztalról válassza <span class="menuselection">Desktop GIS ‣ OpenJUMP</span>.</p>
+<p>Az OPenJUMP felhasználói interfész négy (4) alapkomponensből áll.</p>
+<ul class="simple">
+<li>[1] Az első a felső menüsor a legtöbb funkció eléréséhez.</li>
+<li>[2] A második a fő eszközsor a menüsor alatt. A gombok a legfontosabb megjelenítő és navigációs funkciókhoz biztosít hozzáférést.</li>
+<li>[3] A harmadik a réteg lista bal oldalon, mely az aktív projekthez tartozó rétegek listáját mutatja.</li>
+<li>[4] A negyedik a térkép nézet. Ez az aktuális térkép, ahol az egyes rétegek grafikus megjelenítése található,</li>
+</ul>
+<p>Végül van egy információs sor alul, mely az egér koordinátákat, a feldolgozás állapotát és a memória használatot jeleníti meg. A projekt ablak egy réteg listát és egy réteg nézetet tartalmaz. Az OpenJUMP minden futó példánya több projektet tartalmazhat. Ebben a gyorstalpalóban csak egy ablakkal dolgozunk.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_01.png"><img alt="../../_images/openjump_ss_01.png" src="../../_images/openjump_ss_01.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</div>
+<div class="section" id="open-an-esri-shapefile">
+<h2><a class="toc-backref" href="#id2">ESRI shape fájl megnyitása</a><a class="headerlink" href="#open-an-esri-shapefile" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Az OpenJUMP felső menüsorából válassza a <span class="menuselection">File ‣ Open File</span> menüpontot. Ez egy párbeszédablakot nyit meg, melyben térinformatikai adatokat tartalmazó fájlokat nyithat meg.</li>
+<li>Tallózzon egy ESRI shape fájlhoz. Keressen egy fájlt .shp kiterjesztéssel (pl. <cite>/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</cite> a LiveDVD-n).</li>
+<li>Válassza ki a fájlt és kattintson a <span class="guilabel">Finish</span> gombot a párbeszédablakban. Néhány pillanat múlva látni fogja a shape adatait a térkép nézetben. Egy új  réteget jön létre az adataihoz a réteg listában. A réteg neve megegyezik a shape fájl nevével.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_02.png"><img alt="../../_images/openjump_ss_02.png" src="../../_images/openjump_ss_02.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">Egy másik gyorsabb lehetőség a shape fájl megragadása és rádobása a réteg nézetre.</p>
+</div>
+</div>
+<div class="section" id="style-a-layer">
+<h2><a class="toc-backref" href="#id3">Egy réteg stílus beállítása</a><a class="headerlink" href="#style-a-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>A réteg listában jobb kattintás a réteg nevén. Ez egy felbukkanó menüt jelenít meg.</li>
+<li>Válassza a <span class="menuselection">Style ‣ `Change Styles</span>-t. A stílus módosító ablak öt fület tartalmaz, melyek segítségével módosíthatja a réteg megjelenését a térkép nézetben. Ebbe beletartozik a vonal szín, a kitöltés szín, vonal stílus és vastagság, átlátszóság, címkék hozzáadása és a minimum  és maximális méretarány amiben a réteg megjelenik.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_03.png"><img alt="../../_images/openjump_ss_03.png" src="../../_images/openjump_ss_03.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_04.png"><img alt="../../_images/openjump_ss_04.png" src="../../_images/openjump_ss_04.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</div>
+<div class="section" id="edit-feature-geometries-in-a-layer">
+<h2><a class="toc-backref" href="#id4">Térképi elemek geometriájának szerkesztése</a><a class="headerlink" href="#edit-feature-geometries-in-a-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">A réteg listában jobb kattintás a réteg nevén. Ez egy felbukkanó menüt jelenít meg.</p>
+</li>
+<li><p class="first">Kattintson az „Editable” menüpontra, így egy pipa jelenik meg. Ez egy új lebegő eszközsort jelenít meg a térkép nézet felett a jobb oldalon. Ez az eszközsor a gombok egy halmazát tartalmazza, melyeket a térképi elemek geometriájának szerkesztésére használhat.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_05.png"><img alt="../../_images/openjump_ss_05.png" src="../../_images/openjump_ss_05.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_06.png"><img alt="../../_images/openjump_ss_06.png" src="../../_images/openjump_ss_06.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</li>
+<li><p class="first">Próbáljunk ki egy gyors szerkesztést. Először ki kell választanunk egy geometriát, majd a geometria egy pontját elmozdítjuk. Ehhez először kattintsunk az egér mutatót tartalmazó gombra a szerkesztés eszközsorban (bal-felső sarok).</p>
+</li>
+<li><p class="first">Tegye aktívvá és kattintson egy elemre a Térkép nézetben a kiválasztásához. Ha működött a kiválasztás, akkor az elem színe sárgára változik és sárga négyzetek jelennek (csúcspontnál) meg az elem geometriájának összes töréspontjában.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_07.png"><img alt="../../_images/openjump_ss_07.png" src="../../_images/openjump_ss_07.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</li>
+<li><p class="first">Ezután kattintson a kék keresztet  középen sárga négyzettel tartalmazó gombra, a <span class="guilabel">Move Vertex Tool</span>-ra (az egeret a gombokon tartva a gomb leírását kapjuk). Ha az egeret a térkép nézetbe húzza az egérmutató kis fekete keresztté változik.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_08.png"><img alt="../../_images/openjump_ss_08.png" src="../../_images/openjump_ss_08.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</li>
+<li><p class="first">Használjuk a korábban kiválasztott geometria egy töréspontjának  mozgatására, kattintson egy töréspontra és húzza el azt (hagyja az egérgombot nyomva).</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_09.png"><img alt="../../_images/openjump_ss_09.png" src="../../_images/openjump_ss_09.png" style="width: 563.2px; height: 400.95000000000005px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id5">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ez csak az első lépés az úton az OpenJUMP használatához. Sokkal több anyag maradt, amit felfedezhet.</p>
+<ul class="simple">
+<li>Az OpenJUMP-hoz oktatóanyagokat innen tölthet le: <a class="reference external" href="https://sourceforge.net/projects/jump-pilot/files/Documentation/">https://sourceforge.net/projects/jump-pilot/files/Documentation/</a></li>
+<li>Az OpenJUMP wikit itt olvashatja: <a class="reference external" href="http://ojwiki.soldin.de/index.php?title=Main_Page">http://ojwiki.soldin.de/index.php?title=Main_Page</a></li>
+<li>Gyorsan segítséget kaphat az OpenJUMP felhasználók levelező listáján: <a class="reference external" href="https://groups.google.com/forum/#!forum/openjump-users">https://groups.google.com/forum/#!forum/openjump-users</a></li>
+<li>A legújabb OpenJUMP verzió itt található: <a class="reference external" href="https://sourceforge.net/projects/jump-pilot/files/OpenJUMP/">https://sourceforge.net/projects/jump-pilot/files/OpenJUMP/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

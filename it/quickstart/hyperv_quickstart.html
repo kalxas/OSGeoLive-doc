@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OSGeoLive Quickstart for Running in a Hyper-V Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Command Line Quickstart" href="commandline_quickstart.html" />
+    <link rel="prev" title="Creating an OSGeoLive Bootable USB flash drive" href="usb_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine">
+<h1>OSGeoLive Quickstart for Running in a Hyper-V Virtual Machine<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine" title="Link a questa intestazione">¶</a></h1>
+<p>This Quick Start describes how to run OSGeoLive using Hyper-V, Microsoft’s virtualisation software. For other methods, follow links from the «See Also» section below.
+Hyper-V is available on both Windows Server, and Windows 10 Professional - it is not part of Windows 10 Home.</p>
+<p>The advantages of using a virtual machine are the same as those outlined at <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a>. Unfortunately Virtual Box and Hyper-V
+cannot be run simultaneously. This leaves 2 options - disabling the Hyper-V feature, or configuring a new Hyper-V machine to run OSGeoLive.
+A free tool <a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">hypervswitch</a> can be used to quickly enable and disable Hyper-V - however it still
+requires a reboot each time the setting is changed. The rest of this page documents how to configure OSGeoLive to run on Hyper-V.</p>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Link a questa intestazione">¶</a></h2>
+<p>Hyper-V requirements can be found <a class="reference external" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>.
+This link also provides information on checking if your machine is compatible using the <code class="docutils literal"><span class="pre">systeminfo</span></code> command. In summary the host machine
+needs to have the following hardware requirements:</p>
+<ul class="simple">
+<li>RAM: 4 GB minimum</li>
+<li>64-bit Processor</li>
+</ul>
+</div>
+<div class="section" id="downloads-and-virtual-machine-conversion">
+<h2>Downloads and Virtual Machine Conversion<a class="headerlink" href="#downloads-and-virtual-machine-conversion" title="Link a questa intestazione">¶</a></h2>
+<p>Download the OSGeoLive VirtualBox virtual hard disk (vmdk) by following the links on <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>.
+Once downloaded unzip the downloaded file (using <a class="reference external" href="https://www.7-zip.org">7zip</a> ).</p>
+<p>The virtual machine image format for Hyper-V differs from the VirtualBox download. The file therefore has to be converted from <code class="docutils literal"><span class="pre">vmdk</span></code> to
+<code class="docutils literal"><span class="pre">vhdx</span></code>. There are currently two conversion options available.</p>
+<div class="section" id="starwind-v2v-converter">
+<h3>StarWind V2V Converter<a class="headerlink" href="#starwind-v2v-converter" title="Link a questa intestazione">¶</a></h3>
+<p>Use the <a class="reference external" href="https://www.starwindsoftware.com/starwind-v2v-converter">StarWind V2V Converter</a> program. This has a simple user interface allowing you to select the
+<code class="docutils literal"><span class="pre">osgeo-live-XX.X-vm.vmdk</span></code> file and convert to a <em>Microsoft VHDX</em> image.</p>
+</div>
+<div class="section" id="microsoft-virtual-machine-converter-3-0">
+<h3>Microsoft Virtual Machine Converter 3.0<a class="headerlink" href="#microsoft-virtual-machine-converter-3-0" title="Link a questa intestazione">¶</a></h3>
+<p>The second more complicated option is as follows.</p>
+<ol class="arabic simple">
+<li>Download the <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter 3.0</a> and install.</li>
+<li>Download the DS File Ops Kit and unzip.</li>
+<li>Open PowerShell (with administrator rights)</li>
+<li>Run the following command to get the disk descriptor from the OSGeoLive vmdk. This saves the disk description to the «descriptor1.txt» file.</li>
+</ol>
+<ol class="arabic">
+<li><p class="first">Open this in a text editor (such as Notepad) and comment out the following lines using hashes (this metadata is VirtualBox specific and is not recognised by the converter):</p>
+<div class="highlight-bat"><div class="highlight"><pre><span></span>#ddb.uuid.image=<span class="s2">&quot;0247ca9d-f9aa-4910-9e8c-1c14d83a7749&quot;</span>
+#ddb.uuid.parent=<span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+#ddb.uuid.modification=<span class="s2">&quot;81a1d704-3e4a-443d-a5ca-2fd085ba086a&quot;</span>
+#ddb.uuid.parentmodification=<span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+#ddb.comment=<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run the following command to insert the disk descriptor back into the <code class="docutils literal"><span class="pre">vmdk</span></code> file:</p>
+<div class="highlight-bat"><div class="highlight"><pre><span></span>D<span class="p">:</span><span class="nl">\tools\dsfi.exe</span><span class="c1"> .\osgeo-live-11.0-vm.vmdk 512 1024 descriptor1.txt</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Failing to do the above steps will result in the error <em>«ConvertTo-MvmcVirtualHardDisk : The entry 0247ca9d-f9aa-4910-9e8c-1c14d83a7749 is not a supported
+disk database entry for the descriptor.»</em></p>
+</div>
+</li>
+<li><p class="first">Finally run the conversion process:</p>
+<div class="highlight-bat"><div class="highlight"><pre><span></span>Import-Module <span class="s2">&quot;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&quot;</span>
+<span class="k">cd</span> D:\osgeo-live-11.0-vm
+ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdFormat Vhdx
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="how-to">
+<h2>How-To<a class="headerlink" href="#how-to" title="Link a questa intestazione">¶</a></h2>
+<p>This guide assumes Hyper-V is already installed and enabled - if this is not the case the more typical approach using
+Virtual Box outlined at <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a> can be used.</p>
+<p><strong>Create a Virtual Machine</strong></p>
+<ol class="arabic">
+<li><p class="first">Start the Hyper-V Manager application and under Actions select New &gt; Virtual Machine, and then Next. Then enter an appropriate
+name for the virtual machine.</p>
+<img alt="../../_images/osgeolive_hyperv_install1_start.png" src="../../_images/osgeolive_hyperv_install1_start.png" />
+</li>
+<li><p class="first">Select «Generation 1» from the Specify Generation options.</p>
+<img alt="../../_images/osgeolive_hyperv_install2_generation.png" src="../../_images/osgeolive_hyperv_install2_generation.png" />
+</li>
+<li><p class="first">When assigning memory, you can select «Use Dynamic Memory for this virtual machine».</p>
+</li>
+<li><p class="first">If you require the virtual machine to have Internet access you will need to set this up this up on the «Configure Networking» screen.</p>
+</li>
+<li><p class="first">On the «Connect Virtual Hard Disk», select «Use an existing virtual hard disk» and select the <code class="docutils literal"><span class="pre">.vhdx</span></code> file you unzipped earlier.</p>
+</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/osgeolive_hyperv_install2_harddisk.png" src="../../_images/osgeolive_hyperv_install2_harddisk.png" />
+</div></blockquote>
+<p><strong>Running the Virtual Machine</strong></p>
+<ol class="arabic simple">
+<li>Select the virtual machine from the Virtual Machines list</li>
+<li>Right-click and select «Connect». You will be prompted to start the machine, and a new «Virtual Machine Connection» window will open.</li>
+</ol>
+</div>
+<div class="section" id="see-also">
+<h2>See Also:<a class="headerlink" href="#see-also" title="Link a questa intestazione">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a>.</li>
+<li><dl class="first docutils">
+<dt>OSGeo wiki pages:</dt>
+<dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Other ways to create a Virtual Machine</a></dd>
+</dl>
+</li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive Quickstart</span></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Install OSGeoLive to Hard Disk</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">Creating an OSGeoLive Bootable USB flash drive</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

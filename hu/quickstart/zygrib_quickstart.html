@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>zyGrib gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="Natural Earth" href="../overview/naturalearth_overview.html" />
+    <link rel="prev" title="zyGrib" href="../overview/zygrib_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.zygrib.org"><img alt="../../_images/logo_zygrib.png" class="align-right" src="../../_images/logo_zygrib.png" /></a>
+<div class="section" id="zygrib-quickstart">
+<h1>zyGrib gyorstalpaló<a class="headerlink" href="#zygrib-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A zyGrib egy olyan program, amellyel letöltheti és megjelenítheti az időjárás-előrejelzési adatokat a standard GRIB formátumban.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-zygrib" id="id1">zyGrib indítása</a></li>
+<li><a class="reference internal" href="#download-data" id="id2">Adatletöltés</a></li>
+<li><a class="reference internal" href="#change-views" id="id3">Nézet módosítása</a></li>
+<li><a class="reference internal" href="#create-an-animation" id="id4">Animáció létrehozása</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-zygrib">
+<h2><a class="toc-backref" href="#id1">zyGrib indítása</a><a class="headerlink" href="#start-zygrib" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Az asztalról válassza a <span class="menuselection">Navigation and Maps ‣ zyGrib GRIB file viewer</span>-t.</li>
+<li>Válassza ki az ön által kedvelt nyelvet és kattintson a  <span class="guilabel">OK</span>-ra. A program megnyílik és egy világtérkép jelenik meg.</li>
+<li>Ellenőrizze a kapcsolatot az adatszerverhez. Az eszközsorban a képernyő jobb-felső sarkában kattintson a tápcsatlakozó ikonra. A File Server Status ablak nyílik meg egy pillanat múlva, a kapcsolat állapotát ellenőrizheti.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">Internet kapcsolatra lesz szüksége  a GRIB időjárás előrejelzés adatok letöltéséhez. Többféle forrásból kaphat GRIB adatokat, de a zyGrib készítői egy adatszervert üzemeltetnek a zyGrib kényelmes használatához.</p>
+</div>
+</div>
+<div class="section" id="download-data">
+<h2><a class="toc-backref" href="#id2">Adatletöltés</a><a class="headerlink" href="#download-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Használja az egeret, hogy egy téglalapot húzzon ki a világ ön számára érdekes részén. A Mexikói öböl vagy Afrika déli csücske gyakran szeles.</li>
+<li>A térképére rajzolt téglalap mellett kattintson a téglalapra nagyítás ikonra az eszközsorban (a nagyító egy kis téglalappal)</li>
+<li>Ismét jelöljön ki egy téglalapot bal kattintással és húzással, de most takarja a nagyított térkép nagy részét vagy az egészet.</li>
+<li>Válassza a <span class="menuselection">File ‣ Download GRIB</span>-et és válassza ki a letöltendő elemeket. Ha kétségei vannak fogadja el az alapértelmezettet.</li>
+<li>Amikor készen van kattintson a <code class="docutils literal"><span class="pre">Download</span></code> gombra és mentse a fájlt a lemezre.</li>
+</ol>
+<p>Az alkalmazás egy időjárás térkép jelenít meg az aktuális időpontra beállított idő csúszkával alul. Az egérgörgővel nagyíthat, ha szeretne.</p>
+</div>
+<div class="section" id="change-views">
+<h2><a class="toc-backref" href="#id3">Nézet módosítása</a><a class="headerlink" href="#change-views" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Mozgassa az egeret a térképen, és a bal oldali panelen a pontos  körülmények láthatók.</li>
+<li>Az időt megváltoztathatja az alsó csúszka mozgatásával vagy a legördülő menüből az ablak bal-felső részén.</li>
+<li><code class="docutils literal"><span class="pre">Weather</span> <span class="pre">map</span></code> menüből válasszon egy változót a megjelenítéséhez. Például válassza a <span class="menuselection">Weather map ‣ Cloud cover</span>-t és a nézet megváltozik.</li>
+</ol>
+<p>Ha adatokat töltött le a Mexikói-öbölre, érdekes lehet hogy megtekinthesse a CAPE adatokat. „CAPE” jelentése Konvektív rendelkezésre álló potenciális energia a talajszinten. Ez a légköri instabilitás mértéke, és a magas értékek (1000j J/kg) zivatarok és/vagy tornádók veszélyére utalnak.</p>
+<p>Ha Dél-Afrikára töltött le adatokat, a felhőtakaró még érdekesebb lehet.</p>
+</div>
+<div class="section" id="create-an-animation">
+<h2><a class="toc-backref" href="#id4">Animáció létrehozása</a><a class="headerlink" href="#create-an-animation" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Kattintson a jobb szélső ikonra az eszköztáron (egy űrhajó). Egy új ablak jelenik, és egy animáció jön létre.</li>
+<li>Várjon, amíg először végigfut az idősorozaton. Ha ez megtörtént, akkor visszamegy az idősorozat elejére.</li>
+<li>Lejátszhatja, megállíthatja és visszatekerheti a sorozatot, ahogy tetszik.</li>
+<li>Elmentheti az egyes képkockákat későbbi  AVI, MPEG, vagy animált GIF-be konvertáláshoz <a class="reference external" href="https://grasswiki.osgeo.org/wiki/Movies">más szoftver</a> felhasználásával.</li>
+<li>Ha elkészült, a bezáráshoz kattintson a piros kikapcsoló gombra.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id5">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A <a class="reference internal" href="../overview/opencpn_overview.html"><span class="doc">OpenCPN</span></a> szoftvernek (szintén ezen a lemezen) van egy GRIB overlay modulja, mellyel kipróbálhatja az újonnan letöltött GRIB fájlt. A részleteket a <a class="reference internal" href="opencpn_quickstart.html"><span class="doc">OpenCPN gyorstalpalóban</span></a> találja.</p>
+<ul class="simple">
+<li>Honlap: <a class="reference external" href="https://www.zygrib.org">https://www.zygrib.org</a></li>
+<li>Támogatás: <a class="reference external" href="https://zygrib.org/forum/">https://zygrib.org/forum/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

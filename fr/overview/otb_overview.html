@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OTB &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Guide de démarrage avec OTB" href="../quickstart/otb_quickstart.html" />
+    <link rel="prev" title="Guide de démarrage rapide de GMT" href="../quickstart/gmt_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.orfeo-toolbox.org/"><img alt="../../_images/logo_otb.png" class="align-right" src="../../_images/logo_otb.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="otb">
+<h1>OTB<a class="headerlink" href="#otb" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="image-processing">
+<h2>Traitement d’images<a class="headerlink" href="#image-processing" title="Lien permanent vers ce titre">¶</a></h2>
+<p>ORFEO Toolbox Library (OTB) est une bibliothèque de traitement d’image hautement performante. Elle est prioritairement utilisée pour le traitement d’images tels que celles recueillies par les radars, les satellites et les photographies aériennes. OTB fournit des outils pour les images optiques et radar (aspects tridimensionnels, segmentation, classification, changement de détection, analyse de texture, correspondance de motifs, complémentarités optique/radar), beaucoup d’entre-eux pouvant être exécutés sur des ordinateurs portables avec des ressources limitées.</p>
+<p>OTB est également livré avec un ensemble d’outils extensibles prêts à l’emploi pour les tâches de télédétection classiques et une application entièrement intégrée appelée Monteverdi, qui est un visualisateur rapide qui permet aux utilisateurs de visualiser plusieurs couches et d’appeler les outils de traitement OTB à partir d’une entrée de menu.</p>
+<p>OTB a été réalisée par l’Agence Spatiale Française (CNES) dans le cadre de la partie méthodologique du programme d’accompagnement ORFEO/Pléiades et a été activement développée depuis 2006. Elle s’appuie sur la librairie de traitement d’image médicale ITK et est distribuée en Open Source.</p>
+<a class="reference internal image-reference" href="../../_images/otb_screenshot.png"><img alt="otb screenshot" class="align-right" src="../../_images/otb_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caractéristiques principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li>accès à l’image: accès optimisé en lecture/écriture pour la plupart des formats de d’images raster de télédétection (y compris les formats JPEG2000), accès et visualisation aux métadonnées;</li>
+<li>orthorectification utilisant le DEM, la reprojection de cartes et le raffinement du modèle de capteur</li>
+<li>calibration SAR et optique</li>
+<li>fusion d’image</li>
+<li>filtrage: floutage, débruitage, rehaussement…</li>
+<li>extraction d’objets: points d’intérêt, alignements, lignes…</li>
+<li>détection d’objets</li>
+<li>segmentation d’image à grande échelle: accroissement régional, déplacement-moyen, bassin-versant, ensembles de niveaux…</li>
+<li>framework de sélection d’échantillon pour l’entraînement</li>
+<li>classification: algorithmes à la fois supervisés et non-supervisés provenant d’OpenCV, Shark, libSVM ou d’implémentations personnalisées (K-means, champs aléatoires de Markov, SVM, forêt aléatoire, …)</li>
+<li>régression utilisant des méthodes de “machine learning” de OpenCV (SVM, forêt aléatoire, …)</li>
+<li>analyse d’image orientée-objet</li>
+<li>analyse géospatiale</li>
+<li>reconstuction stéréoscopique à partir d’images optiques</li>
+<li>analyse de données SAR: calibration, analyse de polarimétrie</li>
+<li>changement de détection.</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Site Internet:</strong> <a class="reference external" href="https://www.orfeo-toolbox.org/">https://www.orfeo-toolbox.org/</a></p>
+<p><strong>Licence:</strong> Apache v2.0</p>
+<p><strong>Version du logiciel:</strong> 7.2.0</p>
+<p><strong>Plates-formes supportées:</strong> Linux, Mac, Windows</p>
+<p><strong>Interface de l’API:</strong> C++</p>
+<p><strong>Support commercial :</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><span class="doc">Documentation du guide de démarrage rapide</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

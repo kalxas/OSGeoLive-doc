@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pygeoapi &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="pygeoapi Quickstart" href="../quickstart/pygeoapi_quickstart.html" />
+    <link rel="prev" title="Re3gistry Quickstart" href="../quickstart/re3gistry_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pygeoapi.io/"><img alt="../../_images/logo_pygeoapi.png" class="align-right" src="../../_images/logo_pygeoapi.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="pygeoapi">
+<h1>pygeoapi<a class="headerlink" href="#pygeoapi" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="web-service">
+<h2>Web Service<a class="headerlink" href="#web-service" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://pygeoapi.io">pygeoapi</a> is a <a class="reference external" href="https://www.python.org/">Python</a> server implementation of the OGC API suite of standards. The project emerged as part of the next generation <a class="reference external" href="https://ogcapi.ogc.org">OGC API</a> efforts in 2018 and provides the capability for organizations to deploy a RESTful OGC API endpoint using OpenAPI, GeoJSON, and HTML. pygeoapi is <a class="reference external" href="https://opensource.org">open source</a> and released under an <a class="reference external" href="https://docs.pygeoapi.io/en/latest/license.html">MIT</a> license.</p>
+<a class="reference internal image-reference" href="../../_images/pygeoapi_screenshot.png"><img alt="pygeoapi screenshot" class="align-right" src="../../_images/pygeoapi_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Core Features<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li>out of the box modern OGC API server</li>
+<li>certified OGC Compliant and Reference Implementation for OGC API - Features</li>
+<li>additionally implements OGC API - Coverages, OGC API - Tiles, OGC API - Processes and SpatioTemporal Asset Library</li>
+<li>out of the box data provider plugins for rasterio, GDAL/OGR, Elasticsearch, PostgreSQL/PostGIS</li>
+<li>easy to use OpenAPI / Swagger documentation for developers</li>
+<li>supports JSON, GeoJSON, HTML and CSV output</li>
+<li>supports data filtering by spatial, temporal or attribute queries</li>
+<li>easy to install: install a full implementation via <code class="docutils literal"><span class="pre">pip</span></code> or <code class="docutils literal"><span class="pre">git</span></code></li>
+<li>simple YAML configuration</li>
+<li>easy to deploy: via UbuntuGIS or the official Docker image</li>
+<li>flexible: built on a robust plugin framework to build custom data connections, formats and processes</li>
+<li>supports any Python web framework (included are Flask [default], Starlette)</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Standards are at the core of pygeoapi.  Below is the project’s standards support matrix.</p>
+<ul class="simple">
+<li>Implementing: implements standard (good)</li>
+<li>Compliant: conforms to OGC compliance requirements (great)</li>
+<li>Reference Implementation: provides a reference for the standard (awesome!)</li>
+</ul>
+<table border="1" class="colwidths-given docutils align-left">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Standard</th>
+<th class="head">Support</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://www.ogc.org/standards/ogcapi-features">OGC API - Features</a></td>
+<td>Reference Implementation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-coverages">OGC API - Coverages</a></td>
+<td>Implementing</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-tiles">OGC API - Tiles</a></td>
+<td>Implementing</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-processes">OGC API - Processes</a></td>
+<td>Implementing</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://stacspec.org">SpatioTemporal Asset Catalog</a></td>
+<td>Implementing</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="https://pygeoapi.io/">https://pygeoapi.io/</a></p>
+<p><strong>Licence:</strong> <a class="reference external" href="https://docs.pygeoapi.io/en/latest/license.html">MIT</a></p>
+<p><strong>Software Version:</strong> 0.9.0</p>
+<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
+<p><strong>API Interfaces:</strong> Python</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pygeoapi_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

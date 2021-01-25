@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio rápido de SAGA &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="OpenLayers" href="../overview/openlayers_overview.html" />
+    <link rel="prev" title="SAGA" href="../overview/saga_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.saga-gis.org"><img alt="../../_images/logo_saga.png" class="align-right" src="../../_images/logo_saga.png" /></a>
+<div class="section" id="saga-quickstart">
+<h1>Inicio rápido de SAGA<a class="headerlink" href="#saga-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>SAGA (Sistema para Análisis Geocientíficos Automatizados, siglas en inglés) es un sistema de información geográfica (SIG) de código abierto utilizado para editar y analizar datos espaciales. Este incluye un gran número de módulos para el análisis de datos vectoriales (puntos, líneas y polígonos), tablas, cuadrículas e imágenes. Entre otros, el paquete incluye módulos de geoestadística, clasificación de imágenes, proyecciones, simulación de procesos dinámicos (hidrología, desarrollo del paisaje) y análisis del terreno. Se puede acceder a estas funcionalidades a través de una interfaz gráfica de usuario, la línea de comandos o utilizando la API de C++.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#running" id="id1">Ejecutando</a></li>
+<li><a class="reference internal" href="#opening-data" id="id2">Datos de apertura</a></li>
+<li><a class="reference internal" href="#displaying-data" id="id3">Visualización de datos</a><ul>
+<li><a class="reference internal" href="#creating-a-shaded-relief-map-view" id="id4">Creación de una vista de mapa con relieve sombreado</a></li>
+<li><a class="reference internal" href="#d-visualization" id="id5">Visualización 3D</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-contour-lines" id="id6">Creación de curvas de nivel</a><ul>
+<li><a class="reference internal" href="#check-your-history" id="id7">Revisa tu historial</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saving-data" id="id8">Guardando datos</a></li>
+<li><a class="reference internal" href="#importing-exporting-data" id="id9">Importación/Exportación de datos</a></li>
+<li><a class="reference internal" href="#what-next" id="id10">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="running">
+<h2><a class="toc-backref" href="#id1">Ejecutando</a><a class="headerlink" href="#running" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para ejecutar SAGA GIS en el Live DVD, abra el grupo Desktop GIS en el escritorio y luego clic en el acceso directo de SAGA.</p>
+<p>Al abrir SAGA por primera vez, se le presentan 3 subventanas: el Administrador, las Propiedades del objeto y la Ventana de mensajes. La información en la ventana de propiedades del objeto cambiará dependiendo de su selección en la ventana del Administrador.</p>
+<ol class="arabic simple">
+<li>Puede cerrar cualquiera de las ventanas (Administrador, Propiedades de objeto, Fuentes de datos y Mensajes). Intente cerrar una de las ventanas para obtener más espacio para su mapa. Puede volver a mostrar las ventanas cerradas en el menú <strong>Ventana</strong>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/saga_guioverview.png"><img alt="../../_images/saga_guioverview.png" src="../../_images/saga_guioverview.png" style="width: 523.2px; height: 422.40000000000003px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="opening-data">
+<h2><a class="toc-backref" href="#id2">Datos de apertura</a><a class="headerlink" href="#opening-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Abra la interfaz gráfica de SAGA y cargue la grid <cite>/home/user/data/saga/DGM_30m_Mt.St.Helens_SRTM.grd</cite> a través del menú <strong>File|Grid|Load</strong>.</li>
+<li>Obtendrá un mensaje en la pestaña General de la Ventana de mensajes de éxito o fallo de esta tarea. Deberia ver algo como <cite>Load Grid: DGM_30m_Mt.St.Helens_SRTM.grd…okay</cite>. Una vez cargado el conjunto de datos, aparecerá en la pestaña Datos de la ventana Espacio de trabajo. Se listará en Cuadrículas y el sistema de cuadrículas al que pertenece.</li>
+<li>En este caso, la información del sistema de la cuadrícula se verá como <strong>30;312x 458y; 557970x 5108130y</strong>. El primer número es el tamaño de la celda (30 metros), los siguientes dos números muestran el número de celdas en las direcciones x e y respectivamente, y los últimos dos números son el origen de la cuadrícula.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Los sistemas de cuadrículas de SAGA son referenciados por la esquina inferior izquierda. Esto, y alguna otra información útil sobre el conjunto de datos se muestra si selecciona la pestaña Descripción de la Ventana de propiedades. Una vez que haga clic en la pestaña, verá no sólo información más detallada sobre el sistema de la cuadrícula, sino también el Tipo de valores de la cuadrícula (aquí FLOAT), el Rango de valores, algunas medidas estadísticas y el Tamaño de la memoria.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">También puede cargar datos arrastrándolos y soltándolos en la aplicación. Pruebe esto con uno de los conjuntos de datos en la carpeta <strong>/home/user/data/gdal_natural_earth/</strong>.</p>
+</div>
+</div>
+<div class="section" id="displaying-data">
+<h2><a class="toc-backref" href="#id3">Visualización de datos</a><a class="headerlink" href="#displaying-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para mostrar el conjunto de datos en una vista de mapa:</p>
+<ol class="arabic simple">
+<li>Haz doble click en el conjunto de datos en la pestaña Datos de la ventana del Espacio de Trabajo. Se abrirá una nueva ventana de Mapa con el conjunto de datos desplegado. El lienzo está enmarcado: arriba y a la izquierda se muestran las coordenadas mundiales x- e y-. Abajo y a la derecha, verás reglas en unidades de mapa.</li>
+<li>Intente mover el puntero del mouse sobre el mapa y observe las coordenadas x-, y- y z- que se muestran en la barra inferior de la ventana SAGA GUI. Las coordenadas z- que se muestran corresponden a los valores de elevación del conjunto de datos (tenga en cuenta que los valores que se muestran son siempre los del conjunto de datos seleccionado en la pestaña Datos o Mapas).</li>
+<li>Ahora use las herramientas de navegación para hacer zoom y panear. La herramienta Zoom está seleccionada de forma predeterminada. Un click izquierdo en el mapa se acerca, un clic derecho se aleja. Manteniendo presionado el botón izquierdo del mouse, arrastrándolo a la esquina opuesta y dejando el botón del mouse hacia arriba le permite acercarse a un área de interés.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si amplía mucho y activa Mostrar valores de celda en la pestaña Configuración, verá que se despliegan los valores de celda. Para panear, seleccione la herramienta Paneo y haz click y arrastre para mover el mapa. Eche un vistazo a los otros botones en la barra de herramientas: estos le permiten hacer zoom, por ejemplo, a Extensión completa.</p>
+</div>
+<img alt="../../_images/saga_fullextent.png" src="../../_images/saga_fullextent.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Saga hace zoom muy rápido, si se pierde mientras navega por sus datos, haga click en el botón “Zoom a Extensión Completa” en la barra de herramientas</p>
+</div>
+<div class="section" id="creating-a-shaded-relief-map-view">
+<h3><a class="toc-backref" href="#id4">Creación de una vista de mapa con relieve sombreado</a><a class="headerlink" href="#creating-a-shaded-relief-map-view" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Mejoraremos la visualización del mapa calculando un mapa de relieve sombreado.</p>
+<ol class="arabic simple">
+<li>Cambie a la pestaña Herramientas de la ventana Administrador y haga click en el triángulo a la izquierda de la biblioteca de módulos <strong>Análisis de Terreno - Iluminación, Visibilidad</strong>: aparecerá la lista con los módulos de esta biblioteca.</li>
+<li>Ahora seleccione el módulo Sombreado Analítico y luego seleccione la pestaña Configuración de la ventana Propiedades. Esto mostrará los parámetros del módulo (también eche un vistazo a la pestaña Descripción, que mostrará más información sobre el módulo y sus parámetros).</li>
+<li>Haga click en la columna derecha del parámetro del sistema de Cuadrícula (donde se muestra [no establecido]) y seleccione el sistema de cuadrícula del conjunto de datos de Mt. St. Helens ( 30; 312x 458y; 557970x 5108130y ).</li>
+<li>Luego haga click en la columna derecha del parámetro Elevación y seleccione el conjunto de datos. Haga click en la columna derecha de la opción Método de sombreado y seleccione Estándar. Ahora presione el botón Aplicar y luego el botón Ejecutar. Se calculará un nuevo conjunto de datos que contiene el sombreado.</li>
+<li>Eche un vistazo a la pestaña Datos de la ventana del Espacio de Trabajo: encontrará el conjunto de datos recién creado.</li>
+<li>Haga doble click en el conjunto de datos “Sombreado Analítico” y seleccione Nuevo en el cuadro de diálogo emergente. Esto mostrará el conjunto de datos en una nueva vista de mapa. Después de inspeccionar el conjunto de datos, cierre la ventana de Mapa seleccionando Cerrar en el menú de Ventana.</li>
+<li>Ahora haga doble click en el conjunto de datos de sombreado nuevamente, pero seleccione el Mapa que contiene el conjunto de datos de elevación en el cuadro de diálogo emergente (Agregar capa al mapa seleccionado). Esto colocará el sombreado en la parte superior del conjunto de datos de elevación.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/saga_add_layer.png"><img alt="../../_images/saga_add_layer.png" src="../../_images/saga_add_layer.png" style="width: 226.4px; height: 151.20000000000002px;" /></a>
+<ol class="arabic simple">
+<li>Cambie a la pestaña Mapas de la ventana Administrador. Verá en la pestaña Árbol la entrada de su mapa y los conjuntos de datos de los que está compuesto el mapa. El orden de dibujo es de arriba a abajo. Ahora haga click con el botón derecho en el conjunto de datos “Sombreado Analítico” y seleccione Mover a la Parte Inferior en el menú contextual emergente. Esto cambiará el orden de dibujo, colocando el sombreado debajo del conjunto de datos de elevación (que ahora aparece nuevamente en la vista del mapa).</li>
+<li>Ahora seleccione el conjunto de datos de elevación (haciendo click izquierdo) y eche un vistazo a la pestaña Configuración de la ventana Propiedades. Busque la sección Visualización de los parámetros y haga click en la columna derecha de la opción Transparencia. Ingrese un valor de 30 y presione el botón Aplicar. Ahora verá sus valores de elevación sombreados por relieve.</li>
+</ol>
+<p>Siéntase libre de probar otras configuraciones de Transparencia o incluso probar otros Métodos de Sombreado en el módulo de Sombreado Analítico (en caso de que no cambie el parámetro del conjunto de datos de salida, los cambios se escribirán en la cuadrícula ya creada, es decir, verá los cambios en el mapa ver de inmediato).</p>
+<a class="reference internal image-reference" href="../../_images/saga_withhillshade.png"><img alt="../../_images/saga_withhillshade.png" src="../../_images/saga_withhillshade.png" style="width: 812.0px; height: 591.2px;" /></a>
+</div>
+<div class="section" id="d-visualization">
+<h3><a class="toc-backref" href="#id5">Visualización 3D</a><a class="headerlink" href="#d-visualization" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En el siguiente paso, es posible que desee visualizar su mapa en 3D.</p>
+<ol class="arabic simple">
+<li>Asegúrese de que su ventana de Mapa esté seleccionada y presione el botón Mostrar Vista-3D en la barra de herramientas. En el cuadro de diálogo emergente, seleccione el sistema de cuadrícula que contiene su conjunto de datos de elevación y configure el  Conjunto de datos de Mt. St. Helens como parámetro de Elevación. Una vez que presione el botón Aceptar, aparecerá la vista 3D de su mapa. Mantenga presionado el botón izquierdo del mouse y mueva el mouse para rotar e inclinar el mapa.</li>
+<li>Use la rueda del mouse para acercar/alejar y el botón derecho para desplazar el mapa. También eche un vistazo a la barra de herramientas de la Vista 3D: los botones replican las operaciones del mouse y ofrecen más funciones. Para cerrar la vista 3D, seleccione la opción Cerrar en el menú de Ventana.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/saga_3d.png"><img alt="../../_images/saga_3d.png" src="../../_images/saga_3d.png" style="width: 1019.2px; height: 744.0px;" /></a>
+</div>
+</div>
+<div class="section" id="creating-contour-lines">
+<h2><a class="toc-backref" href="#id6">Creación de curvas de nivel</a><a class="headerlink" href="#creating-contour-lines" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como una breve introducción a las capacidades vectoriales de SAGA, ahora generaremos Líneas de Contorno a partir del modelo de elevación digital.</p>
+<ol class="arabic simple">
+<li>Esto se puede hacer usando las <strong>Formas - Cuadrícula | Líneas de Contorno de la Cuadrícula</strong> si abre la pestaña de herramientas en el administrador, o bien puede abrir el módulo utilizando el menú: <strong>Geoprocesamiento|Formas|Cuadrícula|Vectorización</strong>.</li>
+<li>Elija su sistema de cuadrícula y cuadrícula (esta debe ser la elevación). Puede dejar las opciones como están, pero quizás sea mejor elegir una equidistancia de 50m en lugar de la estándar de 10m.</li>
+<li>Unos segundos después, se ha generado su mapa de contorno y debería encontrarlo nuevamente en la pestaña de datos en el espacio de trabajo. Intente abrir su mapa contorneado en un nuevo mapa. Todas las líneas de contorno ahora tienen el mismo color, lo que no es tan atractivo.</li>
+<li>Si selecciona su conjunto de datos (en el espacio de trabajo, pestaña de datos) y verifica la Configuración en la ventana Propiedades del Objeto, puede encontrar una sección: Pantalla: clasificación de colores. Puede cambiar la clasificación de “Símbolo único” a color graduado. Entonces aún debe ajustar el atributo que se utiliza para este color graduado a la elevación. Presione aplicar, y se le presentarán líneas de contorno coloreadas.</li>
+</ol>
+<div class="section" id="check-your-history">
+<h3><a class="toc-backref" href="#id7">Revisa tu historial</a><a class="headerlink" href="#check-your-history" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Si selecciona un conjunto de datos (por ejemplo, sus líneas de contorno) en la pestaña de datos de la ventana del administrador, puede cambiar la pestaña de propiedades del objeto a “historial” para revisar qué módulo y qué opciones se usaron para crear el conjunto de datos. Esta información también se mantiene cuando guarda sus archivos (en archivos .mshp y .mgrd).</p>
+<a class="reference internal image-reference" href="../../_images/saga_contour_history.png"><img alt="../../_images/saga_contour_history.png" src="../../_images/saga_contour_history.png" style="width: 817.6px; height: 596.8000000000001px;" /></a>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Puede crear una cadena de herramientas a partir de su historial, lo que le permite ejecutar una cadena de módulos nuevamente con opciones fijas. Puede encontrar un tutorial en <a class="reference external" href="https://rohanfisher.wordpress.com/saga-tool-chains/">https://rohanfisher.wordpress.com/saga-tool-chains/</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="saving-data">
+<h2><a class="toc-backref" href="#id8">Guardando datos</a><a class="headerlink" href="#saving-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para guardar el trabajo que ha creado, debe abrir la pestaña de datos en el espacio de trabajo y hacer click con el botón derecho en el archivo que desea guardar. SAGA guardará los archivos de cuadrícula en su propio formato nativo (*.shp) y los archivos shape en el formato de archivo shape estándar de ESRI (*.shp). También es posible guardar el proyecto seleccionando <strong>Archivo|Proyecto|Guardar| Proyecto Como</strong>. Esto guardará todas las vistas del mapa y la configuración de datos, además de ofrecer guardar los archivos de datos.</p>
+</div>
+<div class="section" id="importing-exporting-data">
+<h2><a class="toc-backref" href="#id9">Importación/Exportación de datos</a><a class="headerlink" href="#importing-exporting-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Bajo el capó, SAGA también puede usar la biblioteca GDAL para abrir diferentes formatos ráster y vectoriales. La forma más fácil es usar <strong>Archivo|Cuadrícula|Abrir</strong> para datos ráster y <strong>Archivo|Formas|Abrir</strong> para datos vectoriales. Para rásters, entre otros, se admite geotiff. Tenga en cuenta que también puede arrastrar y soltar archivos en SAGA. Las opciones y módulos más avanzados están presentes en <strong>Geoprocesamiento|Archivo|Cuadrícula</strong> .</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">El formato de cuadrícula SAGA GIS es compatible con GDAL desde la versión 1.7.0. Los archivos de Cuadrícula guardados por SAGA pueden ser abiertos por muchos otros programas usando GDAL. Sin embargo, debe abrir el archivo “*.sdat” y no el archivo “*.sgrd”.</p>
+</div>
+<p>En este ejemplo, utilizaremos los datos de elevación digital (SRTM) de la región alrededor de Barcelona, como se descargarían de la web.</p>
+<p>El archivo de datos que queremos usar es SRTM_u03_n041e002.tif y se puede encontrar en <cite>/home/user/data/raster</cite>  . Puede importar esto utilizando el módulo Importar/Exportar GDAL/OGR, que también se puede encontrar en el <strong>Geoprocesamiento|archivo|ráster de importación</strong>.</p>
+<p>Después de importar este conjunto de datos y abrirlo en una nueva ventana, lo más probable es que se sienta decepcionado: ¡todo se ve gris!&nbsp;Veamos cuál podría ser la causa: algunos píxeles cerca de la costa parecen tener un valor muy pequeño (-32768) (puede verificar el valor de un píxel al verificar el valor Z: en la barra de estado mientras mueve el mouse sobre la cuadrícula )</p>
+<p>Estos píxeles en realidad no tienen datos, por lo que debemos ajustar la configuración de los nodos: en la ventana de propiedades del objeto (después de seleccionar el conjunto de datos en la ventana del espacio de trabajo), establezca el valor máximo sin datos en -32768 y aplique. Después de hacer eso, podemos restablecer nuestra escala de colores para que se ajuste al rango de los datos. Un método fácil es hacer click  derecho en la cuadrícula en el espacio de trabajo y elegir “Clasificación|Establecer Rango al mínimo máximo”.</p>
+<p>¡Ahora está listo para repetir los primeros pasos para crear un mapa sombreado o explorar algunos de los otros módulos de SAGA!</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id10">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede encontrar más documentación en el sitio web de SAGA: * <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a> y específicamente en el archivo de documentación: * <a class="reference external" href="http://www.saga-gis.org/en/about/references.html">http://www.saga-gis.org/en/about/references.html</a> * <a class="reference external" href="https://sourceforge.net/p/saga-gis/wiki/Documentation/">https://sourceforge.net/p/saga-gis/wiki/Documentation/</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

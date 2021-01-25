@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>52 North SOS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="52 North SOS Gyorstalpaló" href="../quickstart/52nSOS_quickstart.html" />
+    <link rel="prev" title="istSOS gyorstalpaló" href="../quickstart/istsos_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://52north.org/software/software-projects/sos"><img alt="../../_images/logo_52nSOS.png" class="align-right" src="../../_images/logo_52nSOS.png" /></a>
+<div class="section" id="north-sos">
+<h1>52 North SOS<a class="headerlink" href="#north-sos" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="about">
+<h2>Névjegy<a class="headerlink" href="#about" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A 52°North <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> támogatja az élő és archive szenzor mérési adatok interoperábilis szolgáltatását. Egy szenzor lehet egy vízszintmérő egy patakban, egy meteorológiai állomáson vagy egy levegőminőség-ellenőrző állomáson.</p>
+<a class="reference internal image-reference" href="../../_images/52nSOS_screenshot.png"><img alt="52nSOS screenshot" class="align-right" src="../../_images/52nSOS_screenshot.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="core-features">
+<h2>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><strong>Böngésző kliens</strong>: Az SOS-t egy böngésző alapú alkalmazással szállítják. Ez biztosítja az eszközöket a szolgáltató példány adminisztrációjához és konfigurálásához, valamint az SOS műveletekre vonatkozó tesztkérelmeket; megfelelő mintakérelmek tartalmaz.</li>
+<li><strong>Helgoland</strong>: Az SOS tartalmaz egy Hegoland alkalmazást, a szensor web adatok feltérképezéséhez, elemzéséhez és megjelenítéséhez a különböző felhasználási területeken, pl. hidrológia, meteorológia, környezet monitoring, forgalomirányítás.</li>
+<li><strong>Specifikációk</strong>: A 52°North SOS implementálja 2.0.0 verzió aktuális specifikációját és az előző 1.0.0 verziót (itt nincsenek tranzakciós műveletek). Az egyes szabványos verziókban implementált műveletek listája található lentebb.</li>
+<li><strong>INSPIRE Download Service Extension</strong>: Starting with Version 4.2.0, an
+extension is available that allows the SOS to be used as an INSPIRE download
+service. Background information is provided in a <a class="reference external" href="https://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">blog post</a>
+and in the <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">wiki</a> .</li>
+<li><strong>Air Quality Data e-Reporting Extension</strong>: A 4.3.0 verziótól kezdődően egy bővítmény érhető el, mely az Air Quality Data Flows E1a, E1b és E2a-nak megfelelő adatokat szolgáltat (az OSGeoLive-on lévő példányt nem konfiguráltuk ennek megfelelően) A <a class="reference external" href="https://wiki.52north.org/SensorWeb/AqdEReporting#Installation">telepítést és a konfigurálást</a> a 52°North Wiki-n dokumentáltuk.</li>
+<li><strong>RESTful API az idősor adatokhoz</strong>: A 4.1.1 verziótól kezdődően, egy becsomagolt változat érhető el, mely közvetlenül szolgáltatja a <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorWebClientRESTInterface">RESTful API-t</a>. Így az idősorokat RESTful módon kérdezhetjük le JSON kódolt kérésekben. További részletek a dokumentációval megtalálható az  <a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">SOS webapp-ban</a>.</li>
+<li><strong>INSPIRE Sepcialized Observations</strong>: Támogatás az INSPIRE speciális észlelésekhez, melyet az  <a class="reference external" href="https://inspire.ec.europa.eu/id/document/tg/d2.9-o%26m-swe">Observations &amp; Measurements and Sensor Web Enablement-related standards in INSPIRE (D2.9)</a>  használatához kpcsolódó iránymutatásokban határoztak meg (<a class="reference external" href="https://wiki.52north.org/SensorWeb/InspireSpecialisedObservations">részletes információ az implementációhoz</a>).</li>
+<li><strong>ResultFiltering</strong>: támogatás az észlelések szűréséhez (GetObservation) és adat elérhetőségi információ (GetDataAvailability) az észlelési adatok értéke alapján.</li>
+<li><strong>Olvasson többet</strong>:<a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#Features">Az implementált funkcionalitás részletek</a>  megtalálhatók az 52°North Wikiben.</li>
+<li>Az 52°North SOS ezen verziójának a fejlesztését különböző projektek, szervezetek és személyek támogatták. További részletek találhatók a  <a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS kliensben</a>.</li>
+<li>Ezúton szeretnénk köszönetet mondani a belga Interregional Environment Agency-nek (<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>) az SOS telepítőben használt bemutató adatok biztosításáért. A demó adatokat a <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>  alatt teszik közzé.</li>
+</ul>
+<div class="section" id="sos-operations">
+<h3>SOS műveletek<a class="headerlink" href="#sos-operations" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Lekérdezések</strong>:</p>
+<ul class="simple">
+<li>GetCapabilities: a szolgáltatás leírás lekérdezéséhez.</li>
+<li>DescribeSensor: információ kérés a szenzorról.</li>
+<li>GetFeatureOfInterest / GetFeatureOfInterestTime (1.0-tól): elemek lekérdezéséhez (pl. szenzor/mérés pozíciója).</li>
+<li>GetObservationById / GetObservation: mérések lekérdezéséhez.</li>
+<li>GetResult (2.0 verzió specifikációjától): a szenzor adatok lekérdezéséhez.</li>
+<li>GetResultTemplate ((2.0 verzió specifikációjától): egy sablon lekérdezésére az eredmény szerkezethez, melyet a GetResult kérés ad vissza.</li>
+<li>GetDataAvailability ( <a class="reference external" href="https://docs.ogc.org/bp/14-004r1/14-004r1.html#38">SOS 2.0 Hidrológiai profil - OGC legobb gyakorlat</a>): adat hozzáférés lekérdezése bizonyos konfigurációkban.</li>
+</ul>
+<p><strong>Tranzakciók</strong>:</p>
+<ul class="simple">
+<li>InsertSensor (2.0 verzió specifikációjától): új szenzorok metaadatainak beillesztéséhez.</li>
+<li>InsertObservation (2.0 verzió specifikációjától): új észlelések beviteléséhez.</li>
+<li>UpdateSensorDescription (2.0 verzió specifikációjától): a szenzor leírás aktualizálásához.</li>
+<li>DeleteSensor (2.0 verzió specifikációjától): szenzor/eljárás és minden kapcsolódó kínálat és észlelés törléséhez.</li>
+<li>DeleteObservation (bővítés az SOS 2.0 specifikációhoz): egy észlelés törléséhez.</li>
+<li>InsertResultTemplate (2.0 verzió specifikációjától): eredmény sablon beszúrásához.</li>
+<li>InsertResult (2.0 verzió specifikációtól): eredmények beszúrásához.</li>
+<li>InsertFeatureOfInterest elemek beszúrásához</li>
+<li>DeleteResultTemplate a resultTemplate-ek vagy kínálat/resultTemplates párok törléséhez</li>
+</ul>
+<p>Ezen műveleteken belül a következő szűrő operátorok használhatók:</p>
+<ul class="simple">
+<li>Térbeli szűrő: BBOX, befoglaló téglalap használatával.</li>
+<li>Idő szűrő: egy időszak alatt.</li>
+<li>Idő szűrő: TEquals, időben</li>
+</ul>
+</div>
+</div>
+<div class="section" id="applicable-standards">
+<h2>Alkalmazható szabványok<a class="headerlink" href="#applicable-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/sensorml">Sensor Model Language (SensorML)</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h2>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://52north.org/software/software-projects/sos">https://52north.org/software/software-projects/sos</a></p>
+<p><strong>Licenc:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Szoftver verzió:</strong> 4.4.3</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>Támogatott Java verziók:</strong> 7+, (bundle version: 8+)</p>
+<p><strong>Támogatott adatbázisok:</strong> PostgreSQL (9+) + PostGIS (2+), MariaDB/MySQL (5.6+), Oracle DB (9+), SQL Server 2012</p>
+<p><strong>API:</strong> Java, HTTP + JSON/XML/SOAP/KVP</p>
+<p><strong>Kereskedelmi támogatás:</strong> <a class="reference external" href="https://52north.org/services/">https://52north.org/services/</a></p>
+<p><strong>Közösségi támogatás:</strong> <a class="reference external" href="https://list.52north.org/mailman/listinfo/sensorweb">https://list.52north.org/mailman/listinfo/sensorweb</a></p>
+<p><strong>Közösségi honlap:</strong> <a class="reference external" href="https://52north.org/research/research-labs/sensor-web/">https://52north.org/research/research-labs/sensor-web/</a></p>
+<p><strong>Más 52°North projektek az OSGeoLive-on:</strong> <a class="reference internal" href="52nWPS_overview.html"><span class="doc">WPS</span></a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/52nSOS_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

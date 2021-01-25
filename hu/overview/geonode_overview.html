@@ -1,0 +1,169 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNode &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GeoNode gyorstalpaló" href="../quickstart/geonode_quickstart.html" />
+    <link rel="prev" title="GeoMoose gyorstalpaló" href="../quickstart/geomoose_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonode.org"><img alt="../../_images/logo_geonode.png" class="align-right" src="../../_images/logo_geonode.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonode">
+<h1>GeoNode<a class="headerlink" href="#geonode" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="geospatial-content-management-system">
+<h2>Térinformatikai tartalomkezelő rendszer<a class="headerlink" href="#geospatial-content-management-system" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p><a class="reference external" href="https://geonode.org">GeoNode</a> egy tartalomkezelő rendszer térinformatikai adatokhoz, mely a térinformatikai adatok létrehozását, megosztását és közös használatát biztosítja. Az adatok különböző formátumokban tölthetők fel, a térképek szerkeszthetők. stílusuk módosítható, és összevonhatók böngésző alapú eszközökkel, a térképek és a meta adatok publikálhatók, kereshetők, értékelések és megjegyzések gyűjthetők a felhasználóktól.</p>
+<p>A GeoNode a következő programokon alapul: GeoServer, GeoExplorer, pycsw, Django és GeoExt.</p>
+<a class="reference internal image-reference" href="../../_images/geonode_screenshot.png"><img alt="geonode screenshot" class="align-right" src="../../_images/geonode_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>Térbeli adatok felfedezése<ul>
+<li>Hatékony térbeli kereső motor</li>
+<li>Egyesített OGC szolgáltatások</li>
+<li>Meta adat katalógus</li>
+</ul>
+</li>
+<li>Téradatok importja és kezelése<ul>
+<li>Raszter, vektor és táblázatos adatok publikálása</li>
+<li>Meta adatok és kapcsolódó dokumentációk kezelése</li>
+<li>Biztonságosan vagy nyilvánosan megosztott adatok</li>
+<li>Verzió követő téradat szerkesztés</li>
+</ul>
+</li>
+<li>Interaktív térképezés<ul>
+<li>GeoExplorer GIS kliens</li>
+<li>Grafikus stílus szerkesztő</li>
+<li>Több réteges interaktív térképek létrehozása</li>
+<li>Térképek megosztása és beágyazása web lapokon</li>
+<li>Térkép nyomtatás PDF-ben</li>
+</ul>
+</li>
+<li>Együttműködés<ul>
+<li>Tekintse át, értékelje és fűzzön megjegyzést az adatokhoz</li>
+<li>Felhasználói csoportok</li>
+<li>Tevékenységek</li>
+<li>Bejelentések és figyelmeztetések</li>
+</ul>
+</li>
+<li>és még továbbiak!</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/cat">Catalogue Service</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/filter">Filter Encoding (FE)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://geonode.org">https://geonode.org</a></p>
+<p><strong>Licenc:</strong> GNU General Public License (GPL) version 2.0</p>
+<p><strong>Szoftver verzió:</strong> 3.1.0</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>API interfészek:</strong> Python (Django)</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">https://www.osgeo.org/service-providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geonode_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

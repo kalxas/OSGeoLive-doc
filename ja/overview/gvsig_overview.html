@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gvSIGデスクトップ &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="gvSIG Desktop Quickstart" href="../quickstart/gvsig_quickstart.html" />
+    <link rel="prev" title="GRASS GIS Quickstart" href="../quickstart/grass_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gvsig.com/es"><img alt="../../_images/logo_gvsig.png" class="align-right" src="../../_images/logo_gvsig.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="gvsig-desktop">
+<h1>gvSIGデスクトップ<a class="headerlink" href="#gvsig-desktop" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>デスクトップ GIS<a class="headerlink" href="#desktop-gis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference external" href="http://www.gvsig.com/es">gvSIG</a> は、地理情報システム(GIS)デスクトップアプリケーションで、複雑な管理と計画の問題を解決するために、参照されているあらゆる種類の地理情報をキャプチャ、保存、処理、分析、および展開するように設計されています。gvSIGは、ユーザフレンドリなインターフェイスと、すべての一般的なベクトル形式とラスター形式にアクセスできることで知られています。これには、地理情報を操作するためのさまざまなツール(クエリー、レイアウト作成、地理処理、ネットワークなど)が用意されており、gvSIGを陸上で作業するユーザにとって理想的なツールに変えることができます。</p>
+<p>gvSIGは次のことで知られています：</p>
+<ul class="simple">
+<li>OGC標準を使用して、ローカル・データとリモート・データの両方を同じビューで統合できます。</li>
+<li>容易に拡張可能であり、継続的なアプリケーションの拡張が可能であるとともに、カスタマイズされたソリューションの開発が可能です。</li>
+<li>20以上の言語(スペイン語、英語、ドイツ語、フランス語、イタリア語など)に対応しています。</li>
+<li>WindowsおよびLinuxで利用できます(オフィシャルではないMac OS Xバージョンもあります)。</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/gvsig_screenshot.png"><img alt="gvsig screenshot" class="align-right" src="../../_images/gvsig_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>データ読み込み、マップナビゲーション、英数字情報などのクエリーマップ情報、距離計測、主題地図学、一般的な凡例タイプを使用した凡例編集、ラベル付け、多くの選択タイプによるフィーチャ選択、統計情報を含むデータテーブル、順序付け、テーブルリレーション、テーブルリンク、レイアウトマネージャ、地理処理ツール、CAD、ラスター処理などの一般的なGISツールを提供します。</li>
+<li>相互運用性:ほとんどの既知のデータフォーマットで動作します。<ul>
+<li>ラスタ : ecw,  ENVI hdr, ERDAS img, (Geo)TIFF, GRASS, NetCDF…</li>
+<li>ベクタ &amp; CAD: shapefile, NetCDF, GML, KML, DGN, DXF, DWG</li>
+<li>データベース: PostGIS, MySQL, Oracle, ArcSDE</li>
+<li>リモート: OGC 標準 (WMS, WMTS, WFS, WCS), OSM, ECWP, ArcIMS</li>
+</ul>
+</li>
+<li>SDI(catalog and gazteer services)内のデータリソースをローカライズするディスカバリサービスのクライアント<ul>
+<li>カタログ: Z3950,SRW,CSW(ISO/19115and ebRim)</li>
+<li>地名索引: ADL, WFS, WFS-G</li>
+</ul>
+</li>
+<li>SEXTANTEライブラリ経由で300以上のジオ・アルゴリズム</li>
+<li>統合された高度なCADツール:<ul>
+<li>ベクタデータ:要素の変更、作成、削除</li>
+<li>コマンドコンソールCADソフトウェアの典型的な要素</li>
+<li>ヘルプ、グリッド、コマンドスタック、複雑な要素選択などのツール</li>
+<li>ポイント、ポリゴン、ライン、楕円などの要素を挿入するツール</li>
+<li>回転、スケール、対称性などを変更するツール.</li>
+</ul>
+</li>
+<li>統合された高度なラスタツール:<ul>
+<li>ジオリファレンスと再投影</li>
+<li>エクスポート,クリッピング</li>
+<li>検索テーブル,ヒストグラム</li>
+<li>フィルタ,ベクタ化</li>
+<li>全体図と関心領域の管理</li>
+</ul>
+</li>
+<li>3Dビュー</li>
+<li>他の機能:<ul>
+<li>スクリプトサポート(ベクタとラスタデータの両方)</li>
+<li>PROJ4による強力な再投影エンジン</li>
+<li>シンボルセットのインポート/エクスポート</li>
+<li>マップシートのコンポーザ</li>
+<li>チャート</li>
+<li>高度なシンボロジーツール</li>
+<li>高度なラベルづけツール</li>
+<li>パブリッシング拡張</li>
+<li>ポータブルビュー</li>
+<li>カスタマイズされたディストリビューション</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>多数のオープン地理空間コンソーシアム(OGC)標準の先進的なクライアントサポート</p>
+<ul class="simple">
+<li>WMS、WMTS、WFS、WCSレイヤのよみこみ</li>
+<li>SLD凡例のエクスポート/インポート</li>
+<li>Web Mac Context (WMC)のエクスポート/インポート</li>
+<li>CSW(ISO/19115and ebRim)でカタログを検索する</li>
+<li>WFS-G勧告を使用した地名表記の検索</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="http://www.gvsig.com/es">http://www.gvsig.com/es</a></p>
+<p><strong>ライセンス:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>ソフトウェアバージョン:</strong> 2.4.0</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux</p>
+<p><strong>サポート:</strong> <a class="reference external" href="http://www.gvsig.com/en/gvsig-association">http://www.gvsig.com/en/gvsig-association</a>, <a class="reference external" href="http://www.gvsig.com/en/community/mailing-lists">http://www.gvsig.com/en/community/mailing-lists</a></p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このプロジェクトはOSGeoLive仮想マシンディスク(VMDK)にのみ含まれています</p>
+</div>
+</div>
+<div class="section" id="quickstart">
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gvsig_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

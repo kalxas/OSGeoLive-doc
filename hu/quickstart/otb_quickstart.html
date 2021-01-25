@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OTB gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="R" href="../overview/R_overview.html" />
+    <link rel="prev" title="OTB" href="../overview/otb_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.orfeo-toolbox.org/"><img alt="../../_images/logo_otb.png" class="align-right" src="../../_images/logo_otb.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="otb-quickstart">
+<h1>OTB gyorstalpaló<a class="headerlink" href="#otb-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az ORFEO Toolbox könyvtár (OTB) egy nagy teljesítményű könyvtár távérzékelési célú képfeldolgozáshoz.</p>
+<p>Ez a gyorstalpaló leírja:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Metaadatok beszerzése egy képből</li>
+<li>Matematikai műveletek a képsávok között</li>
+<li>Raszter képek megnyitása a monteverdi alkalmazással, szegmentáció végrehajtása (mean-shift clustering)&nbsp; és az eredmény megjelenítése</li>
+<li>Ellenőrzött osztályozás végrehajtása a Support Vector Machine algoritmus alapján</li>
+</ul>
+</div></blockquote>
+<p>Az OTB alkalmazások rengeteg érdekes eszközt biztosítanak, melyek megkönnyítik a képek manipulálását. Mindezek az eszközök elérhetők az alábbi módokon:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CLI (parancssori interfész): minden alkalmazás meghívható a terminálból az <cite>otbcli_</cite> plusz az alkalmazás neve paranccsal</li>
+<li>GUI (egy önálló grafikus felhasználói felület Qt-ben). Az alkalmazások hívhatók a terminálból az <cite>otbgui_</cite> aliassal plus az alkalmazás neve. Egy másik lehetőség egy kis indító használata (elérhető  a menüből -&gt; Geospatial -&gt; Spatial Tools -&gt; OTB Launcher)</li>
+<li>QGIS modul: elérhető a feldolgozás keretrendszeren keresztül.</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Ebben a gyorstalpalóban használ mintaadatok itt találhatók:</dt>
+<dd><ul class="first last simple">
+<li>/home/user/data/north_carolina/rast_geotiffs</li>
+</ul>
+</dd>
+</dl>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#display-metadata-information-in-an-image" id="id1">Kép metaadatainak megjelenítése</a></li>
+<li><a class="reference internal" href="#calculator-on-image-bands" id="id2">Számológép a képsávokra</a></li>
+<li><a class="reference internal" href="#pixel-based-classification" id="id3">Pixel alapú osztályozás</a></li>
+<li><a class="reference internal" href="#perform-segmentation" id="id4">Szegmentáció végrehajtása</a></li>
+<li><a class="reference internal" href="#otb-in-qgis" id="id5">OTB a QGIS-ben</a></li>
+<li><a class="reference internal" href="#developing-with-otb" id="id6">Fejlesztés OTB-vel</a></li>
+<li><a class="reference internal" href="#what-next" id="id7">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="display-metadata-information-in-an-image">
+<h2><a class="toc-backref" href="#id1">Kép metaadatainak megjelenítése</a><a class="headerlink" href="#display-metadata-information-in-an-image" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A képben tárolt metaadatokat megkaphatja az <cite>otbcli_ReadImageInfo</cite> paranccsal. Az egyetlen paraméter az input képfájl neve, például:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_ReadImageInfo</span> <span class="o">-</span><span class="ow">in</span> <span class="n">ortho_2001_t792_1m</span><span class="o">.</span><span class="n">tif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="calculator-on-image-bands">
+<h2><a class="toc-backref" href="#id2">Számológép a képsávokra</a><a class="headerlink" href="#calculator-on-image-bands" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az  <cite>otbcli_otbBandMath</cite> egy hatékony megoldást biztosít a képsávokon végrehajtott matematikai műveletekhez. A szintaxis egész egyszerű, például két sáv kivonásához használja a következő parancsot az <cite>lsat7_2002_10.tif</cite> és <cite>lsat7_2002_20.tif`</cite>, képek különbségének kiszámításához:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_10</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_20</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="n">difference</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;im1b1-im2b1&quot;</span>
+</pre></div>
+</div>
+<p>Az alkalmazás képes képeken komplex matematikai műveleteket végrehajtani (küszöbérték, logaritmikus átskálázás stb.). Ezt a digitális számológépet testreszabott függvényeket is tartalmaz kifejezések kiszámítására. Például, mivel a távérzékelt képek fizikai mennyiségeket mérnek, lehetséges fizikai jelentéssel bíró indexek kinyerése, mint  például NDVI (normalizált vegetációs különbség index) a vegetációról. A számológéppel kiszámíthatja az NDVI értékét egy multispektrális szenzor képéből így:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_30</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_40</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="o">~/</span><span class="n">ndvi</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;ndvi(im1b1,im2b1)&quot;</span>
+</pre></div>
+</div>
+<p>Az <cite>lsat7_2002_30.tif</cite>&nbsp; fájl megfelel a LandSat 7 vörös sávjának, a <cite>lsat7_2002_40.tif</cite> pedig a közeli infra-vörösnek.</p>
+<p>Ezután az input és az eredmény képeket megjelenítheti ezzel a paranccsal:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">monteverdi</span> <span class="n">lsat7_2002_30</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_40</span><span class="o">.</span><span class="n">tif</span> <span class="o">~/</span><span class="n">ndvi</span><span class="o">.</span><span class="n">tif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pixel-based-classification">
+<h2><a class="toc-backref" href="#id3">Pixel alapú osztályozás</a><a class="headerlink" href="#pixel-based-classification" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az alkalmazási keretrendszerben található osztályozások egy felügyelt pixel-osztályozási láncot biztosít, mely több képből tanuláson alapszik és egy megadott gépi tanulási algoritmust használ, mint például SVM, Bayes, KNN, Random Forests, Artificial Neural Network és továbbiak. Lásd az  <cite>TrainImagesClassifier</cite> alkalmazás súgóját további részletekért a rendelkezésre álló osztályozásokról. Támogatja a hatalmas képeket a streaming és a multi-threading segítségével. Az osztályozási lánc tanulási lépést hajt végre az egyes pixelek intenzitásának függvényében. Kérjük, vegye figyelembe, hogy az összes bemeneti képben azonos számú sávnak kell lennie ahhoz, hogy összehasonlítható legyen.</p>
+<p>Az alkalmazás felfedezéséhez ezt a parancsot használhatja</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbgui_TrainImagesClassifier</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="perform-segmentation">
+<h2><a class="toc-backref" href="#id4">Szegmentáció végrehajtása</a><a class="headerlink" href="#perform-segmentation" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az OTB <em>Sementation</em> alkalmazás lehetővé teszi, hogy különböző raszter szegmentálást hajtsunk végre különböző algoritmusokkal, akár nagy raszterekre skálázva és vektor output előállításával, melyeket GIS programba importálhat. Az alkalmazásban négy szegmentálási módszer áll rendelkezésre:</p>
+<ul class="simple">
+<li>Mean-Shift</li>
+<li>Vízgyűjtő terület (ITK implementáció)</li>
+<li>Connected-Components</li>
+<li>Morfológiai metszet</li>
+</ul>
+<p>Ezekkel a parancsokkal tesztelheti a szegmentációt:</p>
+<ul class="simple">
+<li>Többsávos Red-Green-Blue-Nir kép létrehozás</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_ConcatenateImages</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_30</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_20</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_10</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_40</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="o">~/</span><span class="n">lsat7_rgbn</span><span class="o">.</span><span class="n">tif</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Szegmentáció</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_Segmentation</span> <span class="o">-</span><span class="ow">in</span> <span class="o">~/</span><span class="n">lsat7_rgbn</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="nb">filter</span> <span class="n">meanshift</span> <span class="o">-</span><span class="n">mode</span> <span class="n">raster</span> <span class="o">-</span><span class="n">mode</span><span class="o">.</span><span class="n">raster</span><span class="o">.</span><span class="n">out</span> <span class="o">~/</span><span class="n">segmentation</span><span class="o">.</span><span class="n">tif</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Színek generálása címkék helyett</li>
+</ul>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_ColorMapping</span> <span class="o">-</span><span class="ow">in</span> <span class="o">~/</span><span class="n">segmentation</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="o">~/</span><span class="n">segmentation_colored</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">method</span> <span class="n">image</span> <span class="o">-</span><span class="n">method</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="ow">in</span> <span class="o">~/</span><span class="n">lsat7_rgbn</span><span class="o">.</span><span class="n">tif</span>
+</pre></div>
+</div>
+<p>Ezen felül a az alkalmazás két különböző módban képes működni:</p>
+<ul>
+<li><p class="first">Raszter mód: egy kis kép szegmentálását teszi lehetővé és egy rasztert hoz létre ahol a szegmentálás minden komponense egy egyedi egész értéket kap</p>
+</li>
+<li><p class="first">Vektor mód: nagyobb képek szegmentálása és vektor fájl létrehozása, ahol a szegmentálás minden elemét felület elemmel reprezentálnak</p>
+<img alt="../../_images/otb-meanshift-lsat7.png" src="../../_images/otb-meanshift-lsat7.png" />
+</li>
+</ul>
+<p>Az OTB magába foglal egy keretrendszert is, <a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/recipes/improc.html#large-scale-mean-shift-lsms-segmentation">LSMS</a> névvel, a nagyon nagy képek csempénként  történő szegmentálását, mely elméletileg ugyanazt az eredményt adja a mint csempék nélküli megoldás.</p>
+</div>
+<div class="section" id="otb-in-qgis">
+<h2><a class="toc-backref" href="#id5">OTB a QGIS-ben</a><a class="headerlink" href="#otb-in-qgis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az OTB alkalmazások ugyanez a készlete használható a QGIS-ben a <span class="menuselection">Processing ‣ Toolbox</span> menüből. Az alkalmazások tegek szerinti sorrendben jelennek meg.</p>
+<blockquote>
+<div><img alt="../../_images/otb-processing-qgis.png" src="../../_images/otb-processing-qgis.png" />
+</div></blockquote>
+</div>
+<div class="section" id="developing-with-otb">
+<h2><a class="toc-backref" href="#id6">Fejlesztés OTB-vel</a><a class="headerlink" href="#developing-with-otb" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ha az OTB könyvtárat akarja használni és a C++ kódját sz OSGeoLive-on belül akarja lefordítani, a következőket kell tennie:</p>
+<ul class="simple">
+<li>Telepítse a fejlesztői csomagokat <strong>libotb-dev</strong> és <strong>libqt4-dev</strong> .</li>
+<li>Ellenőrizze, hogy a <strong>cmake</strong>-t telepítették-e.</li>
+</ul>
+<p>Az OTB_DIR könytárat automatikusan meg kell találni (általában <em>/usr/lib/x86_64-linux-gnu/cmake/OTB-…</em>). A CMake konfigurációjában a könyvtárakat az OTB_LIBRARIES változóhoz kell kapcsolni.</p>
+<p>More information can be found in the Software Guide.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id7">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul>
+<li><p class="first">OTB Software Guide</p>
+<p>A fő információ forrás az OTB Software Guide. Ez egy átfogó kézikönyv, mely körülbelül 600 oldalt tartalmaz, és részletesen ismerteti az OTB telepítéséhez és használatához szükséges lépéseket. Az elérhető osztályok többségét valódi távérzékelési feldolgozások eredményivel részletesen illusztráljuk.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB CookBook</p>
+<p>Egy nem a fejlesztőknek szóló kézikönyv is elérhető az OTB alkalmazásokhoz és Monteverdihez. Ez a kézikönyv az OTB alkalmazások és Monteverdi rövid bemutatásából áll, melyet a szokásos távérzékelési feladatok végrehajtásáról szóló receptek követnek, mindkét eszközzel.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB Oktatóanyagok</p>
+<p>Kövesse az <a class="reference external" href="https://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">oktatóanyagokat</a>, hogy többet tudjon meg az OTB-ről.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB alkalmazások dokumentációja</p>
+<p>Nézze meg az OTB <a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/Applications.html">alkalmazásokról</a> szóló részletes dokumentációt is</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB kurzusok Pieiades képekkel az OTB alkalmazások és Monteverdi használatának megtanulásához</p>
+<p>Kövesse a <a class="reference external" href="https://www.orfeo-toolbox.org/documentation/">kurzusokat</a>, hogy többet megtudjon az OTB-ről (lásd a Tutorials fejezetet).</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

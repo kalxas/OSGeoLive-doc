@@ -1,0 +1,145 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoExt &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="GeoExt gyorstalpaló" href="../quickstart/geoext_quickstart.html" />
+    <link rel="prev" title="Mapbender gyorstalpaló" href="../quickstart/mapbender_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geoext.github.io/geoext3"><img alt="../../_images/logo_geoext.png" class="align-right" src="../../_images/logo_geoext.png" /></a>
+<div class="section" id="geoext">
+<h1>GeoExt<a class="headerlink" href="#geoext" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="a-javascript-toolkit-for-rich-web-mapping-applications">
+<h2>Egy JavaScript eszköztár gazdag web térkép alkalmazásokhoz<a class="headerlink" href="#a-javascript-toolkit-for-rich-web-mapping-applications" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A GeoExt nyílt forráskódú és asztali alkalmazáshoz hasonló, a weben elérhető GIS készítését teszi lehetővé. Ez egy JavaScript keretrendszer, mely kombinálja  az <a class="reference external" href="https://openlayers.org/">OpenLayers</a> GIS funkcionalitását az  <a class="reference external" href="https://www.sencha.com/products/extjs/">ExtJS</a> könyvtár felhasználói felületével, melyet a <a class="reference external" href="https://www.sencha.com/">Sencha</a> szolgáltat.</p>
+<p>Felhasználói felület komponensei tartalmazzák a térkép panelt, a rétegfa panelt, az adattábla rácsot és az áttekintő térképet. A GeoExt komponensek éppen ugyanúgy használhatóak mint                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   bármelyik másik ExtJS komponens és könnyen konfigurálható és kibővíthető. Találhatók alacsony szintű osztályok, melyek lehetővé teszik OpenLayers térképi elemek és rétegek ExtJS adatmodellként és különféle rétegtípusok szeriálizálhatók.</p>
+<p>GeoExt3 kettős licenccel rendelkezik. A választott licenc az ExtJS keretrendszerhez használt licenctől függ. Ha GPL v3 ExtJS keretrendszert használ akkor a GPLv3 alatt használja. Ha Sencha ExtJS kereskedelmi licenccel rendelkezik, akkor joga van BSD licenc alatt használni a GeoExt3-at.</p>
+<a class="reference internal image-reference" href="../../_images/geoext_screenshot.png"><img alt="geoext screenshot" class="align-right" src="../../_images/geoext_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>UI komponensek<ul>
+<li>Térkép panel</li>
+<li>Áttekintő térkép</li>
+<li>Felbukkanó ablakok</li>
+<li>Térképi elem megjelenítő</li>
+<li>Rétegfa, jelmagyarázat és rétegsorrend módosítás húzással</li>
+</ul>
+</li>
+<li>Adatmodellek és adatárak<ul>
+<li>OpenLayers data modell integráció az ExtJS adatmodellel, ExtJS komponensek felhasználásával a térképi elemek rendezése és szűrése</li>
+<li>ExtJS tárolás és modellezés OpenLayers térképi elemekhez és rétegekhez</li>
+</ul>
+</li>
+<li>Egyebek<ul>
+<li>Integráció a <a class="reference external" href="http://mapfish.github.io/mapfish-print-doc/">MapFish nyomtatással</a> és a <a class="reference external" href="https://docs.geoserver.org/latest/en/user/extensions/printing/index.html">GeoServer nyomtatás modullal</a></li>
+<li>Réteg szerializálók (WMS, WMTS, XYZ)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://geoext.github.io/geoext3">https://geoext.github.io/geoext3</a></p>
+<p><strong>Licenc:</strong> GPLv3 or BSD License dependent on ExtJS license - see <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE">License</a> and <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE-FAQ.md">License FAQ</a></p>
+<p><strong>Szoftver verzió:</strong> 3.1.0</p>
+<p><strong>API interfész:</strong> JavaScript</p>
+<p><strong>Támogatás:</strong> Levelezőlista <a class="reference external" href="https://www.geoext.org/cgi-bin/mailman/listinfo/users">https://www.geoext.org/cgi-bin/mailman/listinfo/users</a> és <a class="reference external" href="https://stackoverflow.com/questions/tagged/geoext3">https://stackoverflow.com/questions/tagged/geoext3</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geoext_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

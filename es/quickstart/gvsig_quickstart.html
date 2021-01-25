@@ -1,0 +1,508 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guía de Inicio Rápido de gvSIG Desktop &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="uDig" href="../overview/udig_overview.html" />
+    <link rel="prev" title="gvSIG Desktop" href="../overview/gvsig_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gvsig.com/es"><img alt="../../_images/logo_gvsig.png" class="align-right" src="../../_images/logo_gvsig.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Este proyecto solo se incluye en el disco de máquina virtual OSGeoLive (VMDK)</p>
+</div>
+<div class="section" id="gvsig-desktop-quickstart">
+<h1>Guía de Inicio Rápido de gvSIG Desktop<a class="headerlink" href="#gvsig-desktop-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>gvSIG es un Sistema de Información Geográfica (SIG), es decir, una aplicación de escritorio diseñada para capturar, almacenar, manejar, analizar y desplegar cualquier tipo de información geográfica referenciada con el fin de resolver la compleja gestión y planificación de problemas. gvSIG es conocido por tener una interfaz fácil de usar, haciendo posible el acceso a los formatos más comunes, vectoriales y ráster. Cuenta con una amplia gama de herramientas para trabajar con información geográfica (herramientas de consulta, creación de layout, geoprocesamiento, redes, etc.), que convierte a gvSIG en la herramienta ideal para los usuarios que trabajan en el Reino de la Tierra.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-gvsig-and-create-a-view" id="id3">Iniciar gvSIG y crear una vista</a></li>
+<li><a class="reference internal" href="#define-the-projection-of-your-view" id="id4">Definir la proyección de la vista</a></li>
+<li><a class="reference internal" href="#add-layers-to-the-view" id="id5">Añadir capas a la vista</a></li>
+<li><a class="reference internal" href="#configure-the-view-display" id="id6">Configurar la visualización de la vista</a><ul>
+<li><a class="reference internal" href="#zoom-into-a-region" id="id7">Acercamiento dentro de  una región</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#change-how-the-layers-look" id="id8">Cambiar el aspecto de las capas</a><ul>
+<li><a class="reference internal" href="#make-a-polygon-transparent" id="id9">Hacer transparente un polígono</a></li>
+<li><a class="reference internal" href="#change-the-symbology-of-a-vector-layer" id="id10">Cambiar la simbología de una capa vectorial</a></li>
+<li><a class="reference internal" href="#remove-the-fill-symbol-and-changing-the-border-color" id="id11">Elimine el símbolo de relleno y cambie el color del borde</a></li>
+<li><a class="reference internal" href="#change-the-labelling-of-a-vector-layer" id="id12">Cambiar el etiquetado de una capa vectorial</a></li>
+<li><a class="reference internal" href="#view-the-result" id="id13">Ver el resultado</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-an-overview-or-locator" id="id14">Añadir una visión general o localizador</a></li>
+<li><a class="reference internal" href="#select-towns-within-a-region" id="id15">Seleccionar ciudades dentro de una región</a><ul>
+<li><a class="reference internal" href="#select-the-region" id="id16">Seleccione la región</a></li>
+<li><a class="reference internal" href="#open-the-selection-by-layer-tool" id="id17">Abra la herramienta Selección por capa</a></li>
+<li><a class="reference internal" href="#select-the-towns-contained-within-a-region" id="id18">Seleccione las ciudades contenidas en una región</a></li>
+<li><a class="reference internal" href="#deselect-the-polygon-so-you-can-see-what-has-happened" id="id19">Anule la selección del polígono para que pueda ver lo que ha sucedido</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#export-selected-features-to-a-new-shapefile" id="id20">Exportar funciones seleccionadas a un nuevo archivo  shape.</a><ul>
+<li><a class="reference internal" href="#select-the-output-file-format" id="id21">Seleccione el formato de archivo de salida</a></li>
+<li><a class="reference internal" href="#select-the-output-file-name" id="id22">Seleccione el nombre del archivo de salida</a></li>
+<li><a class="reference internal" href="#reference-system" id="id23">Sistema de Referencia</a></li>
+<li><a class="reference internal" href="#export-options" id="id24">Opciones de exportación</a></li>
+<li><a class="reference internal" href="#id1" id="id25">Ver el resultado</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-a-new-map" id="id26">Crear un nuevo mapa</a><ul>
+<li><a class="reference internal" href="#work-with-the-map" id="id27">Trabajar con el mapa</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#save-your-project-or-exiting-gvsig" id="id28">Guarde su proyecto o salga de gvSIG</a></li>
+<li><a class="reference internal" href="#install-an-add-on" id="id29">Instalar un complemento</a><ul>
+<li><a class="reference internal" href="#open-the-add-ons-manager" id="id30">Abra el administrador de complementos</a></li>
+<li><a class="reference internal" href="#find-an-add-on" id="id31">Encuentra un complemento</a></li>
+<li><a class="reference internal" href="#finish-the-installation" id="id32">Finalizar la instalación</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-an-openstreetmap-layer" id="id33">Añadir una capa OpenStreetMap</a><ul>
+<li><a class="reference internal" href="#id2" id="id34">Ver el resultado</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-a-wmts-layer" id="id35">Añadir una capa WMTS</a><ul>
+<li><a class="reference internal" href="#select-a-server" id="id36">Seleccione un servidor</a></li>
+<li><a class="reference internal" href="#select-one-of-the-available-layers" id="id37">Seleccione una de las capas disponibles</a></li>
+<li><a class="reference internal" href="#select-image-format-and-reference-system" id="id38">Seleccionar formato de imagen y sistema de referencia</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id39">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si la interfaz de usuario de gvSIG no responde, pruebe <code class="kbd docutils literal"><span class="pre">Alt+f</span></code> para abrir el menú Archivo por ejemplo. Interfaz de usuario debe trabajar otra vez, entonces. Este error sólo ocurre en la distribución de gvSIG para OSGeoLive. No aparece en una instalación normal de gvSIG.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Nota para gvSIG versión 2.3.1: para cargar raster archivos el usuario debe tener permiso de escritura en la carpeta donde está el archivo. De lo contrario la aplicación le pedirá una carpeta válida (con permiso de escritura). Puesto que el usuario «usuario» no tiene permiso de escritura en la carpeta «data», será necesario seleccionar, cuando se le preguntó, una carpeta donde el usuario tiene permiso de escritura, como por ejemplo, «/home/user».</p>
+</div>
+<div class="section" id="start-gvsig-and-create-a-view">
+<h2><a class="toc-backref" href="#id3">Iniciar gvSIG y crear una vista</a><a class="headerlink" href="#start-gvsig-and-create-a-view" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Seleccione gvSIG en el menú aplicación,  <span class="menuselection">Geospatial ‣ Desktop GIS ‣ gvSIG</span>. Normalmente, la aplicación demora aproximadamente un minuto en iniciarse.</li>
+<li>gvSIG se abre  predeterminadamente con un archivo de proyecto vacío con el tipo de documento “Ver” seleccionado. Sin embargo, en OSGeoLive, gvSIG ha sido configurado para iniciar con un proyecto predeterminado. Haga click en el botón <span class="guilabel">Nuevo Proyecto</span> o diríjase a <span class="menuselection">Archivo ‣ Nuevo Proyecto</span>.  Cuando se le solicite, usted puede seleccionar <span class="guilabel">Descartar Cambios</span> ya que no usaremos el último proyecto.</li>
+<li>Haga click en el botón <span class="guilabel">Nuevo</span> para crear una vista. Se abrirá automáticamente.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_001_.png"><img alt="../../_images/gvsig_qs_001_.png" src="../../_images/gvsig_qs_001_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="define-the-projection-of-your-view">
+<h2><a class="toc-backref" href="#id4">Definir la proyección de la vista</a><a class="headerlink" href="#define-the-projection-of-your-view" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Seleccione <span class="menuselection">Ver ‣ Propiedades</span>.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_002_.png"><img alt="../../_images/gvsig_qs_002_.png" src="../../_images/gvsig_qs_002_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</li>
+<li><p class="first">Para el <span class="guilabel">Proyección actual</span>, haga click en el botón <span class="guilabel">…</span>. Esto abrirá el cuadro de diálogo <strong>Nuevo CRS</strong>.</p>
+</li>
+<li><p class="first">Usando la lista desplegable para <span class="guilabel">Tipo</span>, seleccione EPSG.</p>
+</li>
+<li><p class="first">Introduzca el código EPSG para el Sistema de Referencia de Coordenadas. En este ejemplo estamos utilizando EPSG=4326, que es la proyección geográfica 2D WGS84. Haga click en el botón  <span class="guilabel">Buscar</span>.  Esto mostrará una lista de los CRS seleccionados en la tabla debajo del campo de búsqueda.</p>
+</li>
+<li><p class="first">Seleccione <span class="guilabel">OK</span> para volver al cuadro de diálogo <strong>Propiedades de Vista</strong>. El código EPSG ahora es 4326 y las unidades de mapa han cambiado a grados.</p>
+</li>
+<li><p class="first">Seleccione <span class="guilabel">OK</span> para volver al  <strong>AdministradorDelProyecto</strong>.</p>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_003_.png"><img alt="../../_images/gvsig_qs_003_.png" src="../../_images/gvsig_qs_003_.png" style="width: 561.5500000000001px; height: 407.55px;" /></a>
+<ul class="simple">
+<li><ol class="first arabic">
+<li>La ventana de vista consta de tres zonas.</li>
+</ol>
+</li>
+<li>(2) The top-left cell contains a list of vector or raster layers being used in
+the view (i.e. Table-of-Contents).</li>
+<li>(3) The bottom-left cell displays the extent of the main view over a selected
+vector file.</li>
+<li>(4) The right cell is the main display area where raster and vector data is
+rendered.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_005_.png"><img alt="../../_images/gvsig_qs_005_.png" src="../../_images/gvsig_qs_005_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="add-layers-to-the-view">
+<h2><a class="toc-backref" href="#id5">Añadir capas a la vista</a><a class="headerlink" href="#add-layers-to-the-view" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Haga click en el ícono <span class="guilabel">Añadir Capa</span> en la barra de herramientas principal para abrir el diálogo de <strong>Añadir Capa</strong> .</li>
+<li>Seleccione el diálogo <span class="guilabel">Añadir</span> in the <strong>Añadir Capa</strong>. De manera predeterminada, la primera pestaña es <span class="guilabel">Archivo</span> por lo que aparecerá el cuadro de diálogo <strong>Abrir</strong>.</li>
+<li>Desplázate hasta el directorio <code class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></code>.</li>
+<li>Seleccione los archivos como se muestra en la imagen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_006_.png"><img alt="../../_images/gvsig_qs_006_.png" src="../../_images/gvsig_qs_006_.png" style="width: 562.6500000000001px; height: 407.00000000000006px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Por defecto se muestran todos los formatos así que podemos seleccionar archivos  al mismo tiempo  al mantener presionadas la teclas <code class="kbd docutils literal"><span class="pre">CTRL</span></code></p>
+</div>
+<ol class="arabic simple">
+<li>Haga click en el botón <span class="guilabel">OK</span> para regresar al diálogo de <strong>Agregar Capa</strong> .</li>
+<li>Haga click en el botón <span class="guilabel">OK</span>  en el diálogo de <strong>Agregar Capa</strong> para volver a la vista.</li>
+</ol>
+</div>
+<div class="section" id="configure-the-view-display">
+<h2><a class="toc-backref" href="#id6">Configurar la visualización de la vista</a><a class="headerlink" href="#configure-the-view-display" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Haga click en el ícono  <span class="guilabel">Maximizar</span> para una mejor visualización de los datos.</li>
+<li>El tamaño de columna de la Tabla de Contenidos puede ajustarse usando el ratón para ayudar a ver los nombres de archivos largos.</li>
+<li>En el caso de que la capa ráster esté en la parte superior, debe moverla manualmente a la parte inferior.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_008_.png"><img alt="../../_images/gvsig_qs_008_.png" src="../../_images/gvsig_qs_008_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+<div class="section" id="zoom-into-a-region">
+<h3><a class="toc-backref" href="#id7">Acercamiento dentro de  una región</a><a class="headerlink" href="#zoom-into-a-region" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>De manera predeterminada, la herramienta <em>Acercamiento</em> está seleccionada en la barra de herramientas principal.</li>
+<li>Utilice el puntero del ratón para dibujar un cuadro delimitador alrededor del Sudeste de Australia. Para ello, seleccione la esquina superior izquierda del cuadro delimitador, manteniendo pulsado el botón izquierdo del ratón y arrastrando la esquina inferior derecha del recuadro sobre el área seleccionada. Suelte el botón izquierdo del ratón una vez que el área aproximado definida.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_009_.png"><img alt="../../_images/gvsig_qs_009_.png" src="../../_images/gvsig_qs_009_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="change-how-the-layers-look">
+<h2><a class="toc-backref" href="#id8">Cambiar el aspecto de las capas</a><a class="headerlink" href="#change-how-the-layers-look" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="make-a-polygon-transparent">
+<h3><a class="toc-backref" href="#id9">Hacer transparente un polígono</a><a class="headerlink" href="#make-a-polygon-transparent" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la capa <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando botón izquierdo del mouse y haga click de nuevo con el botón derecho del mouse.</li>
+<li>Seleccione el submenú <span class="menuselection">Propiedades</span></li>
+<li>El cuadro de diálogo <strong>Propiedades de la Capa</strong> aparecerá.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_010_.png"><img alt="../../_images/gvsig_qs_010_.png" src="../../_images/gvsig_qs_010_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="change-the-symbology-of-a-vector-layer">
+<h3><a class="toc-backref" href="#id10">Cambiar la simbología de una capa vectorial</a><a class="headerlink" href="#change-the-symbology-of-a-vector-layer" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la pestaña  <span class="guilabel">Símbolos</span> en la parte superior del diálogo de  <strong>Propiedades de Capa</strong>.</li>
+<li>Seleccione el botón  <span class="guilabel">Elegir Símbolo</span>  para que aparezca el diálogo de <strong>Selector de Símbolo</strong></li>
+</ol>
+</div>
+<div class="section" id="remove-the-fill-symbol-and-changing-the-border-color">
+<h3><a class="toc-backref" href="#id11">Elimine el símbolo de relleno y cambie el color del borde</a><a class="headerlink" href="#remove-the-fill-symbol-and-changing-the-border-color" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Desactivar la caja <span class="guilabel">Color de Relleno</span>  para que los polígonos sean transparentes.</li>
+<li>Haga click en <span class="guilabel">…</span>  cerca de  <span class="guilabel">Color de Borde:</span>.</li>
+<li>Elegir el blanco como color.</li>
+<li>Haga click en el botón <span class="guilabel">OK</span> para regresar al diálogo del <strong>Selector de Símbolo</strong>.</li>
+<li>Haga click en el botón <span class="guilabel">OK</span>  para regresar al diálogo de <strong>Propiedades de Capa</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_012_.png"><img alt="../../_images/gvsig_qs_012_.png" src="../../_images/gvsig_qs_012_.png" style="width: 562.6500000000001px; height: 408.1px;" /></a>
+</div>
+<div class="section" id="change-the-labelling-of-a-vector-layer">
+<h3><a class="toc-backref" href="#id12">Cambiar el etiquetado de una capa vectorial</a><a class="headerlink" href="#change-the-labelling-of-a-vector-layer" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la pestaña <span class="guilabel">Etiquetado</span> en la parte superior del diálogo de <strong>Propiedades de Capas</strong>.</li>
+<li>Cambiar los atributos de texto que se muestra en la imagen, a continuación, haga click en el botón <span class="guilabel">Aceptar</span>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_013_.png"><img alt="../../_images/gvsig_qs_013_.png" src="../../_images/gvsig_qs_013_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="view-the-result">
+<h3><a class="toc-backref" href="#id13">Ver el resultado</a><a class="headerlink" href="#view-the-result" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenga en cuenta que esta es una vista muy básica que muestra un punto, una línea y un archivo de vector de polígono superpuestas a un archivo ráster. Es tan fácil tener una fotografía aérea o un Modelo Digital del Terreno como fondo de los datos vectoriales, o para mostrar otros datos vectoriales almacenados en diferentes formatos.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_014_.png"><img alt="../../_images/gvsig_qs_014_.png" src="../../_images/gvsig_qs_014_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="add-an-overview-or-locator">
+<h2><a class="toc-backref" href="#id14">Añadir una visión general o localizador</a><a class="headerlink" href="#add-an-overview-or-locator" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Seleccione :menuselection: <cite>Ver–&gt; Configuración del Localizador</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_016_.png"><img alt="../../_images/gvsig_qs_016_.png" src="../../_images/gvsig_qs_016_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+<ol class="arabic simple">
+<li>Haga click en el botón <span class="guilabel">Añadir Capa…</span></li>
+<li>Dentro de la ventana de Añadir capa, haga click en el botón <span class="guilabel">Añadir</span>.</li>
+<li>Seleccione la capa <code class="docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></code>.</li>
+<li>Haga click en el botón  <span class="guilabel">Abrir</span> para volver a la ventana de Añadir Capa.</li>
+<li>Haga click en el botón  <span class="guilabel">OK</span>  y cierre la ventana de Configuración del Localizador.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_017_.png"><img alt="../../_images/gvsig_qs_017_.png" src="../../_images/gvsig_qs_017_.png" style="width: 562.1px; height: 407.00000000000006px;" /></a>
+<p>Ahora podemos saber fácilmente donde se encuentra el punto de vista en el mundo.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_018_.png"><img alt="../../_images/gvsig_qs_018_.png" src="../../_images/gvsig_qs_018_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="select-towns-within-a-region">
+<h2><a class="toc-backref" href="#id15">Seleccionar ciudades dentro de una región</a><a class="headerlink" href="#select-towns-within-a-region" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="select-the-region">
+<h3><a class="toc-backref" href="#id16">Seleccione la región</a><a class="headerlink" href="#select-the-region" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la capa de <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando el botón izquierdo del ratón.</li>
+<li>Seleccione el ícono <span class="guilabel">Seleccionar por punto</span> en la barra de herramientas principal.</li>
+<li>Haga click en el polígono que representa el estado de Nueva Gales del Sur. El polígono se volverá amarillo o de cualquier otro color dependiendo de las preferencias del usuario.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_019_.png"><img alt="../../_images/gvsig_qs_019_.png" src="../../_images/gvsig_qs_019_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="open-the-selection-by-layer-tool">
+<h3><a class="toc-backref" href="#id17">Abra la herramienta Selección por capa</a><a class="headerlink" href="#open-the-selection-by-layer-tool" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la capa  <code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code> con el botón izquierdo del ratón.</li>
+<li>Seleccione <span class="menuselection">Seleccionar ‣ Seleccionar por capa</span> para abrir el diálogo de ** Selección por Capa **</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_020_.png"><img alt="../../_images/gvsig_qs_020_.png" src="../../_images/gvsig_qs_020_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="select-the-towns-contained-within-a-region">
+<h3><a class="toc-backref" href="#id18">Seleccione las ciudades contenidas en una región</a><a class="headerlink" href="#select-the-towns-contained-within-a-region" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Cambiar los primeros criterios de selección utilizando los cuadros desplegables de la parte izquierda del diálogo de <strong>Selección por Capa</strong> diálogo como se muestra en la imagen.</li>
+<li>Cambiar el segundo criterio de selección como se muestra en la imagen.</li>
+<li>Haga click enel botón  <span class="guilabel">Nuevo conjunto</span>  para seleccionar ciudades dentro del polígono seleccionado.</li>
+<li>Seleccione el botón  <span class="guilabel">Cancelar</span> en el diálogo de <strong>Selección por Capa</strong> diálogo para volver a la vista.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_021_.png"><img alt="../../_images/gvsig_qs_021_.png" src="../../_images/gvsig_qs_021_.png" style="width: 301.40000000000003px; height: 90.75000000000001px;" /></a>
+</div>
+<div class="section" id="deselect-the-polygon-so-you-can-see-what-has-happened">
+<h3><a class="toc-backref" href="#id19">Anule la selección del polígono para que pueda ver lo que ha sucedido</a><a class="headerlink" href="#deselect-the-polygon-so-you-can-see-what-has-happened" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la capa de <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando el botón izquierdo del ratón.</li>
+<li>Seleccione el ícono “Borrar selección” en la barra de herramientas principal.</li>
+<li>Ahora puede ver que están seleccionadas sólo aquellas poblaciones dentro de Nueva Gales del Sur.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_022_.png"><img alt="../../_images/gvsig_qs_022_.png" src="../../_images/gvsig_qs_022_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="export-selected-features-to-a-new-shapefile">
+<h2><a class="toc-backref" href="#id20">Exportar funciones seleccionadas a un nuevo archivo  shape.</a><a class="headerlink" href="#export-selected-features-to-a-new-shapefile" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="select-the-output-file-format">
+<h3><a class="toc-backref" href="#id21">Seleccione el formato de archivo de salida</a><a class="headerlink" href="#select-the-output-file-format" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione la capa  <code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code> con el botón izquierdo del ratón.</li>
+<li>Seleccionar <span class="menuselection">Capa ‣ Exportar a…</span> para iniciar la exportación.</li>
+<li>Seleccione <em>Formato Shape</em>.</li>
+<li>Haga click en <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_023_.png"><img alt="../../_images/gvsig_qs_023_.png" src="../../_images/gvsig_qs_023_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="select-the-output-file-name">
+<h3><a class="toc-backref" href="#id22">Seleccione el nombre del archivo de salida</a><a class="headerlink" href="#select-the-output-file-name" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Elija una carpeta y escriba el nombre del archivo.</li>
+<li>Haga click en <em>Abierta</em> y luego <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_024_.png"><img alt="../../_images/gvsig_qs_024_.png" src="../../_images/gvsig_qs_024_.png" style="width: 562.6500000000001px; height: 408.1px;" /></a>
+</div>
+<div class="section" id="reference-system">
+<h3><a class="toc-backref" href="#id23">Sistema de Referencia</a><a class="headerlink" href="#reference-system" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Elija la opción <em>Original (EPSG:4326)</em> para mantener el Sistema de Referencia de la vista.</li>
+<li>Haga click en <em>Siguiente</em>.</li>
+</ol>
+</div>
+<div class="section" id="export-options">
+<h3><a class="toc-backref" href="#id24">Opciones de exportación</a><a class="headerlink" href="#export-options" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Elija la opción <em>CaracterísticasSeleccionadas</em> para exportar sólo las localidades de Nueva Gales del Sur.</li>
+<li>Haga click en <em>Exportar</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_025_.png"><img alt="../../_images/gvsig_qs_025_.png" src="../../_images/gvsig_qs_025_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id25">Ver el resultado</a><a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Se ha añadido la nueva capa a la vista.</li>
+<li>Para comprobar que la exportación era aceptable establece el archivo original como invisible. Se mostrarán solamente las localidades de Nueva Gales del Sur.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_026_.png"><img alt="../../_images/gvsig_qs_026_.png" src="../../_images/gvsig_qs_026_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="create-a-new-map">
+<h2><a class="toc-backref" href="#id26">Crear un nuevo mapa</a><a class="headerlink" href="#create-a-new-map" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Seleccione el tipo de documento <em>Mapa</em> en <strong>Administrador del Proyecto</strong>.</li>
+<li>Haga click en el botón <span class="guilabel">Nuevo</span> para crear un mapa.</li>
+<li>Se muestra una nueva ventana donde puede seleccionar la vista para insertar en el Mapa. Seleccione la única vista que tiene y presione <em>Aceptar</em>.</li>
+<li>El mapa aparecerán con la vista seleccionada.</li>
+</ol>
+<div class="section" id="work-with-the-map">
+<h3><a class="toc-backref" href="#id27">Trabajar con el mapa</a><a class="headerlink" href="#work-with-the-map" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Elementos adicionales como una y una flecha de norte, se pueden añadir al mapa usando los iconos en la barra de herramientas principal o con los submenús del menú  <span class="menuselection">Map</span>.</li>
+<li>El mapa se puede imprimir o exportar a PDF o a Postscript para incorporación en otros trabajos.</li>
+<li>Seleccione el ícono <span class="guilabel">Cerrar Ventana</span> para volver a <strong>Administrador del Proyecto</strong></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_029_.png"><img alt="../../_images/gvsig_qs_029_.png" src="../../_images/gvsig_qs_029_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="save-your-project-or-exiting-gvsig">
+<h2><a class="toc-backref" href="#id28">Guarde su proyecto o salga de gvSIG</a><a class="headerlink" href="#save-your-project-or-exiting-gvsig" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Proyectos pueden guardarse para uso posterio, utilizando la opción en el menú de <span class="menuselection">Archivo ‣ Guardar Como…</span></li>
+<li>Es posible salir de un proyecto o cerrarlo utilizando la opción <span class="menuselection">Archivo‣ salida</span>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_030_.png"><img alt="../../_images/gvsig_qs_030_.png" src="../../_images/gvsig_qs_030_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="install-an-add-on">
+<h2><a class="toc-backref" href="#id29">Instalar un complemento</a><a class="headerlink" href="#install-an-add-on" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="open-the-add-ons-manager">
+<h3><a class="toc-backref" href="#id30">Abra el administrador de complementos</a><a class="headerlink" href="#open-the-add-ons-manager" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione <span class="menuselection">Herramientas‣ Administrador de complementos</span>. Después de un momento, aparecerá lña ventana de <em>Instalar Paquete</em></li>
+<li>Dentro de la ventana de <em>Instalar Paquete</em>, seleccione la opción de ~Instalación desde USB*.</li>
+<li>Elija la URL de repositorio que se muestra en la imagen.</li>
+<li>Haga click en el botón de <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_031_.png"><img alt="../../_images/gvsig_qs_031_.png" src="../../_images/gvsig_qs_031_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+<div class="section" id="find-an-add-on">
+<h3><a class="toc-backref" href="#id31">Encuentra un complemento</a><a class="headerlink" href="#find-an-add-on" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>En el administrador de complementos podemos encontrar bibliotecas de  plugins y símbolos.</li>
+<li>Escriba “Forestry” en el cuadro de texto del <em>Filtro Rápido</em></li>
+<li>Verifique el complemento llamado <em>Symbols: Forestry</em>  (es una biblioteca de símbolos).</li>
+<li>Haga click en <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_032__.png"><img alt="../../_images/gvsig_qs_032__.png" src="../../_images/gvsig_qs_032__.png" style="width: 563.2px; height: 333.85px;" /></a>
+</div>
+<div class="section" id="finish-the-installation">
+<h3><a class="toc-backref" href="#id32">Finalizar la instalación</a><a class="headerlink" href="#finish-the-installation" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Haga click en <em>Iniciar Descraga</em>.</li>
+<li>Luego haga click en <em>Siguiente</em></li>
+<li>Finalmente haga click en <em>Finalizar</em>.</li>
+</ol>
+<p>Aunque el nuevo mensaje indique que es necesario reiniciar, para bibliotecas de símbolos no es necesario. Solo tenemos que reiniciar al instalar plugins.</p>
+</div>
+</div>
+<div class="section" id="add-an-openstreetmap-layer">
+<h2><a class="toc-backref" href="#id33">Añadir una capa OpenStreetMap</a><a class="headerlink" href="#add-an-openstreetmap-layer" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Ahora vamos a añadir cartografía de OpenStreetMap. Dentro de una visión nueva, en EPSG 3857, haga click en el botón <span class="guilabel">Add layer…</span>.</li>
+<li>Elija la pestaña <em>OSM</em>.</li>
+<li>Seleccione “Mapnik” de las capas disponibles.</li>
+<li>Haga click en <em>OK</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_036__.png"><img alt="../../_images/gvsig_qs_036__.png" src="../../_images/gvsig_qs_036__.png" style="width: 562.6500000000001px; height: 405.90000000000003px;" /></a>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id34">Ver el resultado</a><a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se ha añadido una nueva capa a la vista. Haciendo acercamiento sobre una región podríamos ver detalladamente los datos de Open Street Map.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_037_.png"><img alt="../../_images/gvsig_qs_037_.png" src="../../_images/gvsig_qs_037_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_038_.png"><img alt="../../_images/gvsig_qs_038_.png" src="../../_images/gvsig_qs_038_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="add-a-wmts-layer">
+<h2><a class="toc-backref" href="#id35">Añadir una capa WMTS</a><a class="headerlink" href="#add-a-wmts-layer" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>WMTS es una evolución del estándar WMS OGC basado en la gestión de mosaicos.</p>
+<div class="section" id="select-a-server">
+<h3><a class="toc-backref" href="#id36">Seleccione un servidor</a><a class="headerlink" href="#select-a-server" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Dentro de una vista, haga click en el botón  <span class="guilabel">Añadir Capa…</span>.</li>
+<li>Elija la pestaña <em>WMTS</em>.</li>
+<li>Elija la URL que se muestra en la imagen.</li>
+<li>Haga click en <em>Conectar</em>.</li>
+<li>Haga click en <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_039_.png"><img alt="../../_images/gvsig_qs_039_.png" src="../../_images/gvsig_qs_039_.png" style="width: 561.5500000000001px; height: 407.55px;" /></a>
+</div>
+<div class="section" id="select-one-of-the-available-layers">
+<h3><a class="toc-backref" href="#id37">Seleccione una de las capas disponibles</a><a class="headerlink" href="#select-one-of-the-available-layers" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione una de las capas disponibles (por ejemplo, bluemarble)</li>
+<li>Haga click en <em>Añadir</em>.</li>
+<li>Haga click en <em>Siguiente</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_040_.png"><img alt="../../_images/gvsig_qs_040_.png" src="../../_images/gvsig_qs_040_.png" style="width: 291.5px; height: 313.5px;" /></a>
+</div>
+<div class="section" id="select-image-format-and-reference-system">
+<h3><a class="toc-backref" href="#id38">Seleccionar formato de imagen y sistema de referencia</a><a class="headerlink" href="#select-image-format-and-reference-system" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li>Seleccione <em>imagen/jpeg</em> como formato de imagen .</li>
+<li>Seleccione <em>EPSG:4326</em> (observe que la vista debe tener el mismo SRS. Si no entonces cancele, cámbielo y empiece de nuevo).</li>
+<li>Haga click en <em>Aceptar</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_041_.png"><img alt="../../_images/gvsig_qs_041_.png" src="../../_images/gvsig_qs_041_.png" style="width: 275.0px; height: 313.5px;" /></a>
+<p>Se ha añadido una nueva capa a la vista.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_042_.png"><img alt="../../_images/gvsig_qs_042_.png" src="../../_images/gvsig_qs_042_.png" style="width: 563.2px; height: 408.65000000000003px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id39">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://downloads.gvsig.org/download/web/en/build/html/index.html">Manuales de Usuario</a></li>
+<li><a class="reference external" href="http://www.gvsig.com/en/diffusion/educational-material?p_p_id=122_INSTANCE_A9eo37KAqtxs&amp;p_p_lifecycle=0&amp;p_p_state=normal&amp;p_p_mode=view&amp;p_p_col_id=column-2&amp;p_p_col_count=1&amp;p_r_p_564233524_resetCur=true&amp;p_r_p_564233524_categoryId=25973">Cursos y  tutoriales</a></li>
+<li><a class="reference external" href="https://blog.gvsig.org/2017/05/23/learning-gvsig-in-30-minutes/">Aprender gvSIG en 30 minutos</a></li>
+<li><a class="reference external" href="https://blog.gvsig.org/category/languages/english/">Blog de gvSIG</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

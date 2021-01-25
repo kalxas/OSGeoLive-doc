@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>deegreeクイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="ncWMS" href="../overview/ncWMS_overview.html" />
+    <link rel="prev" title="deegree" href="../overview/deegree_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.deegree.org"><img alt="../../_images/logo_deegree.png" class="align-right" src="../../_images/logo_deegree.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="deegree-quickstart">
+<h1>deegreeクイックスタート<a class="headerlink" href="#deegree-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><em>deegree</em> は、空間データインフラストラクチャと地理空間Webのためのオープンソースソフトウェアです。<em>deegree</em> は、他のクライアントが表示するマップ(およびベクタデータ)を提供するJavaアプリケーションです。</p>
+<p>利用可能なコンポーネント:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Web-Services: WFS, WMS, WMTS, CSW, WPS</li>
+</ul>
+</div></blockquote>
+<p><em>deegree3</em> は、deegree Javaフレームワークの新世代であり、GISアプリケーションとOGCサービス実装のためのものです。Webベースの地理空間データインフラストラクチャ(GDI)の構築に使用できます。</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-deegree-3-webservices" id="id1">deegree3 webサービスを開始</a></li>
+<li><a class="reference internal" href="#load-a-workspace" id="id2">作業フォルダを読み込む</a></li>
+<li><a class="reference internal" href="#view-a-map" id="id3">マップビュー</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">次のステップ</a></li>
+</ul>
+</div>
+<div class="section" id="start-deegree-3-webservices">
+<h2><a class="toc-backref" href="#id1">deegree3 webサービスを開始</a><a class="headerlink" href="#start-deegree-3-webservices" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><span class="menuselection">Geospatial‣Web Services‣deegree</span> メニューから* 『deegreeを開始』* を選択します。アプリケーションの起動には少し時間がかかります。</p>
+<p>Firefoxは <em>deegree3サービス コンソール</em> を開きます。(ブラウザでhttp://localhost:8033)を選択して手動で開くこともできます。これは、<em>deegree作業フォルダ</em> の設定ファイルを編集するためのシンプルなWebベースのGUIです。</p>
+</div>
+<div class="section" id="load-a-workspace">
+<h2><a class="toc-backref" href="#id2">作業フォルダを読み込む</a><a class="headerlink" href="#load-a-workspace" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>deegree3</em> はすべての <em>deegree3</em> ベースのウェブサービスに準拠した設定を使用しています。これらの設定は作業フォルダに保存されています。</p>
+<ol class="arabic simple">
+<li>含まれているすぐに使用できるワークスペースを管理するには、左側の*』workspaces』* をクリックします。これで、実行中の <em>deegree</em> インスタンスの作業フォルダ管理が開始されました。現在アクティブな作業フォルダ(一度に1つしかアクティブにできない)、非アクティブなローカルで利用可能なワークスペース、およびインターネット接続がある場合にインポートできるオフラインのワークスペースを確認できます。作業フォルダ</li>
+<li><em>deegree-inspire-workspace</em> の開始を押してください。</li>
+</ol>
+<p>この作業フォルダには、INSPIREビュー・ダウンロードサービスの設定例が含まれています。すべてのAnnex Iデータテーマ用のトランザクションWFS(2.0.0および1.1.0)と、これらのAnnex Iデータテーマの3つのレイヤを提供するWMS(1.3.0および1.1.1)で構成されています。いくつかの調和されたオランダの行政単位、地籍区画、住所が含まれています。この例のWFSはINSPIREダウンロードサービス(直接アクセス)として動作し、有効で統一されたINSPIRE GMLを出力します。さらに、複数のリクエストタイプとクエリをサポートしています。</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">この作業フォルダは、ローカルのファイルから調和されたINSPIRE GMLをロードします。これは、バックエンドとしてPostGIS、Oracle Spatial、Microsoft SQL Serverに簡単に変更できます。</p>
+</div>
+</div>
+<div class="section" id="view-a-map">
+<h2><a class="toc-backref" href="#id3">マップビュー</a><a class="headerlink" href="#view-a-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li><em>『see layers』</em> をクリックして、簡単なマップクライアントを開きます。このサービスは、データとベースマップ(<a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>)を視覚化するように設定されています。</li>
+<li>右側の <strong>+</strong> をクリックすると、レイヤの木が開き、利用可能なすべてのレイヤが表示されます。deegree WMSが提供するINSPIREレイヤは、ここで有効化できます。</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">マップクライアントは、<a class="reference external" href="https://openlayers.org/">OpenLayers</a> に基づいています。マウスの左ボタンを押したままマップを移動し、マップをドラッグできます。ズームは、マウスホイールまたは左側のナビゲーション要素を使用して可能です。</p>
+</div>
+<p>INSPIRE作業フォルダに関する詳細情報と段階的なチュートリアルは、deegree <a class="reference external" href="https://download.deegree.org/documentation/3.4.1/html/lightly.html#example-workspace-1-inspire-network-services">文書</a> にあります。</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これはdeegree3の機能を簡単に紹介したものです。詳細については、デモインストールとdeegree Webサイトを参照してください。</p>
+<blockquote>
+<div><ul class="simple">
+<li>deegreeオンラインデモ-利用可能:<a class="reference external" href="https://www.deegree.org/demo/">https://www.deegree.org/demo/</a></li>
+<li>deegree Webサイト-利用可能:<a class="reference external" href="https://www.deegree.org">https://www.deegree.org</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

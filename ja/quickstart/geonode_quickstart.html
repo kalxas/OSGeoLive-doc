@@ -1,0 +1,320 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoNodeクイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="GeoStyler" href="../overview/geostyler_overview.html" />
+    <link rel="prev" title="GeoNode" href="../overview/geonode_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://geonode.org"><img alt="../../_images/logo_geonode.png" class="align-right" src="../../_images/logo_geonode.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geonode-quickstart">
+<h1>GeoNodeクイックスタート<a class="headerlink" href="#geonode-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>オープンソース地理空間コンテンツ管理システム</p>
+<p>GeoNodeは、地理空間情報システム(GIS)の開発および空間データインフラストラクチャ(SDI)の展開のためのWebベースのアプリケーションおよびプラットフォームです。</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-geonode" id="id1">GeoNodeを起動</a></li>
+<li><a class="reference internal" href="#sign-in-as-a-registered-user" id="id2">登録ユーザーとしてサインイン</a></li>
+<li><a class="reference internal" href="#add-a-new-layer" id="id3">新しいレイヤを追加</a></li>
+<li><a class="reference internal" href="#create-a-new-map" id="id4">新規マップの作成</a></li>
+<li><a class="reference internal" href="#share-your-map" id="id5">あなたのマップを共有</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">次のステップ</a></li>
+</ul>
+</div>
+<div class="section" id="start-geonode">
+<h2><a class="toc-backref" href="#id1">GeoNodeを起動</a><a class="headerlink" href="#start-geonode" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OSGeoLive DVD上でGeoNodeを起動するには、<span class="menuselection">Geospatial‣Browser Clients‣GeoNode‣Start GeoNode</span> を選択する必要があります。しばらくすると、GeoNodeのWebページがhttp://geonodeで自動的に開きます。ページは次のようになります。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_screenshot.png"><img alt="../../_images/geonode_screenshot.png" src="../../_images/geonode_screenshot.png" style="width: 709.8px; height: 452.2px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="sign-in-as-a-registered-user">
+<h2><a class="toc-backref" href="#id2">登録ユーザーとしてサインイン</a><a class="headerlink" href="#sign-in-as-a-registered-user" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>上記のインターフェイスから、既存の空間レイヤとマップをビューおよび変更したり、他のGeoNodeユーザに関する情報を検索したりできます。しかし、ログインしていないと、パブリックレイヤーへの読み取り専用アクセスに制限されます。マップを作成してレイヤを追加するには、最初にサインインする必要があります。</p>
+<p>Webインターフェイスの任意のページから、ページの右上に[<em>サインイン</em>]リンクが表示されます。そのリンクをクリックし、表示されるダイアログでユーザー認証情報を入力します。ユーザー名とパスワードに「admin」と「admin」を使用してみてください。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_signin_quickstart.png"><img alt="../../_images/geonode_signin_quickstart.png" src="../../_images/geonode_signin_quickstart.png" style="width: 422.09999999999997px; height: 218.39999999999998px;" /></a>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="add-a-new-layer">
+<h2><a class="toc-backref" href="#id3">新しいレイヤを追加</a><a class="headerlink" href="#add-a-new-layer" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>レイヤーは、ラスタまたはベクタ空間データソースを表すパブリッシュされたリソースです。レイヤーはメタデータ、評価、コメントに関連付けることもできます。</p>
+<ol class="arabic">
+<li><p class="first">既存のレイヤーを表示するには、ページの最上部にあるナビゲーションバーから[<em>データ</em>]メニューを選択し、[<em>レイヤー</em>]リンクをクリックします。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_menu_data.png"><img alt="../../_images/geonode_menu_data.png" src="../../_images/geonode_menu_data.png" style="width: 344.4px; height: 191.1px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>結果は次のようになります。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_layers_page.png"><img alt="../../_images/geonode_layers_page.png" src="../../_images/geonode_layers_page.png" style="width: 710.5px; height: 450.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">アカウントにレイヤを追加するには、<em>Layers</em> ページの右上にある <em>Upload</em> ボタンをクリックします。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload2.png"><img alt="../../_images/geonode_data_upload2.png" src="../../_images/geonode_data_upload2.png" style="width: 199.5px; height: 109.89999999999999px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>他のページからデータをアップロードする場合は、ナビゲーションバーから[<em>Data</em>]メニューを選択し、[<em>Upload Layers</em>]リンクをクリックします。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_data_upload1.png"><img alt="../../_images/geonode_data_upload1.png" src="../../_images/geonode_data_upload1.png" style="width: 267.4px; height: 186.89999999999998px;" /></a>
+</div>
+</div></blockquote>
+<p>上記の[アップロード]リンクのいずれかをクリックすると、アップロードページが表示されます。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_page.png"><img alt="../../_images/geonode_upload_page.png" src="../../_images/geonode_upload_page.png" style="width: 676.1999999999999px; height: 398.29999999999995px;" /></a>
+</div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">ファイルを追加する方法は2つあります。これは、<em>Drop Files Here</em> 領域の*ドラッグ&amp;ドロップ*を使用するか、<em>Choose Files</em> ボタンを使用して選択できます。<em>shp</em>、<em>prj</em>、<em>dbf</em>、<em>shx</em> ファイルからなる完全なファイルセットをアップロードする必要があることに注意してください。いずれかが欠けていると、アップロード前にGeoNodeから警告が表示されます。</p>
+</li>
+<li><p class="first">次に、[<em>ファイルを選択</em>]ボタンをクリックすると、ファイル選択ウィンドウが表示されます。<code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2</span></code> フォルダに移動し、<code class="file docutils literal"><span class="pre">ne_10m_admin_0_countries</span></code> ファイルをすべて選択します。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_select_files.png"><img alt="../../_images/geonode_upload_select_files.png" src="../../_images/geonode_upload_select_files.png" style="width: 689.5px; height: 419.29999999999995px;" /></a>
+</div>
+</li>
+</ol>
+<p>これで、アップロードするすべてのファイルが表示されます。</p>
+<blockquote>
+<div><blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_files_to_be_uploaded.png"><img alt="../../_images/geonode_files_to_be_uploaded.png" src="../../_images/geonode_files_to_be_uploaded.png" style="width: 199.5px; height: 310.09999999999997px;" /></a>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p>GeoNodeには、レイヤのビュー、編集、管理が可能なユーザを制限する機能があります。ページの右側には*Permission*セクションが表示され、レイヤのアクセスを制限できます。[<em>Who can view and download this data</em>]の下で、[<em>Any registered user</em>]を選択します。これにより、匿名のビューアクセスが無効になります。同じ領域で、[<em>Who can edit this data</em>]の下からユーザー名を選択します。これにより、レイヤのデータを編集できるのはあなただけになります。</p>
+<blockquote class="last">
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_permission.png"><img alt="../../_images/geonode_permission.png" src="../../_images/geonode_permission.png" style="width: 213.5px; height: 299.59999999999997px;" /></a>
+</div>
+</div></blockquote>
+</div>
+</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">データをアップロードするには、下部の <em>Upload</em> ボタンをクリックします。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_bar.png"><img alt="../../_images/geonode_upload_bar.png" src="../../_images/geonode_upload_bar.png" style="width: 438.9px; height: 140.0px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">レイヤのアップロードが完了したら、<em>Layer Info</em> ボタンを使用してレイヤをプレビューするか、<em>Edit Metadata</em> を使用してレイヤメタデータを編集するか、<em>Manage Styles</em> ボタンを使用してGeoServer上のレイヤスタイルを編集できます。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_upload_result.png"><img alt="../../_images/geonode_upload_result.png" src="../../_images/geonode_upload_result.png" style="width: 231.7px; height: 69.3px;" /></a>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><em>Layer Info</em> ボタンを押して、レイヤページを表示</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_new_layer.png"><img alt="../../_images/geonode_new_layer.png" src="../../_images/geonode_new_layer.png" style="width: 542.5px; height: 399.7px;" /></a>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-map">
+<h2><a class="toc-backref" href="#id4">新規マップの作成</a><a class="headerlink" href="#create-a-new-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次のステップは、マップを作成し、新しく作成したレイヤをこのマップに追加することです。</p>
+<ol class="arabic">
+<li><p class="first">[<em>Maps</em>]ツールバーの[<em>Explore Maps</em>]リンクをクリックします。これにより、地図の一覧が表示されます。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_maps_quickstart.png"><img alt="../../_images/geonode_maps_quickstart.png" src="../../_images/geonode_maps_quickstart.png" style="width: 331.09999999999997px; height: 94.5px;" /></a>
+</div>
+</li>
+<li><p class="first">現在、地図はありません。追加するには、<em>Create a New Map</em> ボタンをクリックします。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap2.png"><img alt="../../_images/geonode_createmap2.png" src="../../_images/geonode_createmap2.png" style="width: 673.4px; height: 109.89999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>マップ合成インターフェイスが表示されます。</p>
+<blockquote>
+<div><div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_createmap.png"><img alt="../../_images/geonode_createmap.png" src="../../_images/geonode_createmap.png" style="width: 711.1999999999999px; height: 448.0px;" /></a>
+</div>
+<p>404ポップアップメッセージが表示された場合は無視してください。これは、OSGeoLiveにインストールされていないGeoServerプラグインが存在しないためです。</p>
+<p>このインターフェイスには、ツールバー、レイヤ一覧、マップウィンドウがあります。マップウィンドウには、既定でOpenStreetMapレイヤが表示されます。</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first"><em>New Layers</em> ボタンをクリックし、 <em>Add Layers</em> を選択します。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayerslink.png"><img alt="../../_images/geonode_addlayerslink.png" src="../../_images/geonode_addlayerslink.png" style="width: 84.69999999999999px; height: 141.39999999999998px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>これで、利用可能なすべてのレイヤーが表示されます。この場合、これには前に追加したものが含まれます。</div></blockquote>
+<ol class="arabic" start="4">
+<li><p class="first">最初の項目をクリックし、Ctrlキーを押しながら残りの項目をクリックして、いくつかのレイヤーを選択します。 <em>Add Layers</em> をクリックして、すべてのレイヤをマップに追加します。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_addlayersselect_quickstart.png"><img alt="../../_images/geonode_addlayersselect_quickstart.png" src="../../_images/geonode_addlayersselect_quickstart.png" style="width: 226.1px; height: 375.9px;" /></a>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>レイヤーがマップに追加されます。</div></blockquote>
+<ol class="arabic" start="5">
+<li><p class="first">マップを保存するには、ツールバーの*Map* ボタンをクリックし、 <em>Save Map</em> を選択します。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemaplink.png"><img alt="../../_images/geonode_savemaplink.png" src="../../_images/geonode_savemaplink.png" style="width: 93.8px; height: 63.699999999999996px;" /></a>
+</div>
+</li>
+<li><p class="first">マップのタイトルと要約を入力してください。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_savemapdialog.png"><img alt="../../_images/geonode_savemapdialog.png" src="../../_images/geonode_savemapdialog.png" style="width: 277.9px; height: 239.39999999999998px;" /></a>
+</div>
+</li>
+<li><p class="first"><em>保存</em> をクリックします。ページの右上のリンクが、マップの名前を反映するように変更されていることに注意してください。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapname.png"><img alt="../../_images/geonode_mapname.png" src="../../_images/geonode_mapname.png" style="width: 124.6px; height: 21.7px;" /></a>
+</div>
+<p>このリンクには、マップへのパーマリンクが含まれています。このリンクを新しいウィンドウで開くと、マップは保存された状態で表示されます。</p>
+</li>
+<li><p class="first"><em>Add Layers</em> ボタンの横の <em>Done</em> をクリックして、マップの凡例を表示します。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="share-your-map">
+<h2><a class="toc-backref" href="#id5">あなたのマップを共有</a><a class="headerlink" href="#share-your-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、マップを終了します。</p>
+<ol class="arabic">
+<li><p class="first"><em>USA Population</em> レイヤを右クリックして、 <em>Zoom to layer extend</em> を選択します。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_mapcomposition.png"><img alt="../../_images/geonode_mapcomposition.png" src="../../_images/geonode_mapcomposition.png" style="width: 714.0px; height: 399.0px;" /></a>
+</div>
+</li>
+<li><p class="first">ズームやパンの設定など、必要に応じてマップの構成を最終的に調整します。</p>
+</li>
+<li><p class="first">ツールバーの <em>Map</em> ボタンをクリックし、<em>Publish Map</em> をクリックします。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmaplink.png"><img alt="../../_images/geonode_publishmaplink.png" src="../../_images/geonode_publishmaplink.png" style="width: 87.5px; height: 58.099999999999994px;" /></a>
+</div>
+</li>
+<li><p class="first">前に作成したタイトルと要約が残っているはずです。必要に応じて調整し、 <em>Save</em> をクリックします。</p>
+</li>
+<li><p class="first">新しいダイアログが表示され、このマップをWebページに埋め込む方法がコードスニペットを含めて指示されます。必要に応じてパラメータを調整できます。</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/geonode_publishmap.png"><img alt="../../_images/geonode_publishmap.png" src="../../_images/geonode_publishmap.png" style="width: 263.2px; height: 120.39999999999999px;" /></a>
+</div>
+</li>
+</ol>
+<p>これで、マップを共有できます。</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これで、GeoNodeの可能性について簡単に理解できました。GeoNodeとその機能の詳細については、Webページwww.geonode.orgを参照してください。</p>
+<p>GeoNodeを独自のサーバーにインストールするには、<a class="reference external" href="https://docs.geonode.org/en/master/start/index.html#quick-installation-guide">クイックインストールガイド</a> に従ってください。</p>
+<p>GeoNodeを使用するには、<a class="reference external" href="https://docs.geonode.org/en/master/">documentation</a> が便利です。</p>
+<p>ヘルプが必要な場合や、特定のトピックに関する情報を取得したい場合は、遠慮なくお問い合わせください。<a class="reference external" href="https://webchat.freenode.net/">https://webchat.freenode.net/</a> の #geonode IRCチャネルを使用したり、<a class="reference external" href="https://gitter.im/GeoNode/general">GeoNode Gitterチャネル</a> にアクセスしたり、または私たちの`メーリングリスト &lt;<a class="reference external" href="https://lists.osgeo.org/cgi-bin/mailman/listinfo/geonode-users">https://lists.osgeo.org/cgi-bin/mailman/listinfo/geonode-users</a>&gt;`_ !で質していただけます。問</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GeoServer &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="GeoServer Quickstart" href="../quickstart/geoserver_quickstart.html" />
+    <link rel="prev" title="GeoStyler Quickstart" href="../quickstart/geostyler_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://geoserver.org/"><img alt="../../_images/logo_geoserver.png" class="align-right" src="../../_images/logo_geoserver.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="geoserver">
+<h1>GeoServer<a class="headerlink" href="#geoserver" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="web-service">
+<h2>Servizio Web<a class="headerlink" href="#web-service" title="Link a questa intestazione">¶</a></h2>
+<p>GeoServer è un server web che consente di servire mappe e dati da una varietà di formati verso client standard come browser web e programmi GIS desktop. I dati vengono pubblicati tramite interfacce basate su standard, quali WMS, WFS, WCS, WPS, Tile Caching e altri. GeoServer viene fornito con un’interfaccia di gestione basata su browser e si collega a varie fonti di dati.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver_screenshot.png"><img alt="geoserver screenshot" class="align-right" src="../../_images/geoserver_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Serve dati da una varietà di data store:</strong></dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>Vettoriali</dt>
+<dd><ul class="first last">
+<li>Shapefiles, WFS esterni</li>
+<li>PostGIS, ArcSDE, DB2, Oracle Spatial, MySql, SQL Server</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Raster</dt>
+<dd><ul class="first last">
+<li>GeoTiff, JPG e PNG (con world file), piramidi di immagini, formati GDAL, Image Mosaic, Oracle GeoRaster, NetCDF</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>I dati sono serviti come immagini sicure e snelle usando protocolli WMS e WMTS:</strong></dt>
+<dd>Stante che i dati sono serviti come immagini, i vostri dati sono completamente al sicuro. A meno che qualcuno non ridigitalizzi i dati, non c’è modo di rubarli. L’aspetto di ciascun layer della mappa può essere controllato usando lo standard SLD che consente agli elementi di essere colorati ed etichettati. Combinanto queste regole con i filtri OGC, è possibile implementare stili dipendenti dalla scala, consentendo di avere più dettagli quando un utente aumenta lo zoom. Sono inoltre implementati la gestione di etichette in collisione, il raggruppamento e le priorità.</dd>
+<dt><strong>Utilizzando il protocollo WFS è possibile inviare dati vettoriali completi a un client:</strong></dt>
+<dd>Un client WFS può scaricare dati vettoriali e usarli per la mappatura, l’analisi spaziale e altre operazioni. Inoltre, se autorizzato, un utente può modificare dati e rispedirli al server per aggiornare i dati archiviati usando il protocollo WFS-T. I dati possono essere trasmessi utilizzando il GML (compresso) così come altri formati dati standard quali shapefile e JSON.</dd>
+<dt><strong>I valori dei dati raster possono essere spediti a un client usando il protocollo WCS:</strong></dt>
+<dd>Un client GIS può richiedere gli effettii dati raster per analisi spaziale. Ciò consente a un utente di creare applicazioni che possono modellare il processo descritto dai vostri dati.</dd>
+<dt><strong>Riproiezione al volo:</strong></dt>
+<dd>GeoServer supporta la maggior parte delle proiezioni del database EPSG e può riproiettare su qualsiasi di queste su richiesta, consentendo a client con limitate capacità di riproiezione di passare il carico sul server.</dd>
+<dt><strong>Cache di Tiling</strong></dt>
+<dd><a class="reference external" href="https://www.geowebcache.org">GeoWebCache</a>, che è integrato in GeoServer, crea tile e archivia le immagini delle mappe a partire da una varietà di sorgenti, quali i WMS. Implementa interfacce a vari servizi (quali WMS-C, WMTS, TMS, Google Maps KML, Virtual Earth) al fine di accelerare e ottimizzare l’invio delle mappe. Può inoltre ricombinare le tile per lavorare con client WMS regolari.</dd>
+<dt><strong>Web Processing Service (WPS)</strong></dt>
+<dd>Tramite l’interfaccia <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> di GeoServer è possibile invocare algoritmi geospaziali, compresi quelli da <a class="reference internal" href="jts_overview.html"><span class="doc">JTS</span></a>. Questi comprendono la concatenazione di processi e l’uso di trasformazioni di rendering per creare potenti visualizzazioni tramite l’interfaccia WMS.</dd>
+</dl>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Standard implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h3>
+<p>Supporto di numerosi standard Open Geospatial Consortium (OGC)</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> (client/server)</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> (transazionale)</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/filter">Filter Encoding (FE)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a></li>
+<li><a class="reference external" href="https://www.ogc.org/standards/kml">KML</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h3>
+<p><strong>Sito web:</strong> <a class="reference external" href="http://geoserver.org/">http://geoserver.org/</a></p>
+<p><strong>Licenza:</strong> GNU General Public License (GPL) versione 2</p>
+<p><strong>Versione software:</strong> 2.18.1</p>
+<p><strong>Piattaforme supportate:</strong> Java 8 (Oracle JDK e OpenJDK) su Windows, Linux, e Mac</p>
+<p><strong>Interfacce API:</strong> WMS, WFS, WCS, REST</p>
+<p><strong>Supporto:</strong> <a class="reference external" href="http://geoserver.org/support/">http://geoserver.org/support/</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geoserver_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

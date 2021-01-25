@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PROJ &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="PROJ Quickstart" href="../quickstart/proj_quickstart.html" />
+    <link rel="prev" title="GEOS" href="geos_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://proj.org/"><img alt="../../_images/logo_proj.png" class="align-right" src="../../_images/logo_proj.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="proj">
+<h1>PROJ<a class="headerlink" href="#proj" title="Lien permanent vers ce titre">¶</a></h1>
+<p>PROJ is a library that provides methods to transform between different coordinate
+reference systems. A geographic coordinate reference system allows all points on the
+earth to be described as a set of coordinates (such as latitude, longitude and
+elevation). Different systems are used to represent the tridimensional earth
+on a flat, bidimensional map.</p>
+<p>PROJ is used in <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, <a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a>, <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>, <a class="reference internal" href="mapnik_overview.html"><span class="doc">Mapnik</span></a>, Thuban, OGDI, TopoCad, OGRCoordinateTransformation and various others.</p>
+<p>PROJ has been translated from C to <a class="reference external" href="https://trac.osgeo.org/metacrs/wiki">other languages</a>. These sub-projects include:</p>
+<ul class="simple">
+<li>Proj4js (JavaScript) - used in <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>.</li>
+<li>CS-Map (C++) - used in MapGuide.</li>
+<li>GeoTIFF/libgeotiff (C++).</li>
+<li>Proj4J (Java).</li>
+<li><a class="reference external" href="http://epsg.io/">EPSG.io</a> - website to retrieve coordinate system definitions</li>
+<li><a class="reference external" href="https://spatialreference.org/">SpatialReference.org</a> - website to retrieve coordinate system definitions (obsolete).</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/proj_screenshot.png"><img alt="proj screenshot" class="align-right" src="../../_images/proj_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h2>Core Features<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>Provides point transformation from one coordinate reference system to another.</li>
+<li>Includes transformation between datums.</li>
+<li>Large number of projection classes supported.</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h2>
+<p>PROJ uses coordinate system definitions defined by the
+<a class="reference external" href="https://www.epsg.org/">European Petroleum Survey Group (EPSG)</a>.
+Well Known Text (WKT) format.</p>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>Website:</strong> <a class="reference external" href="https://proj.org/">https://proj.org/</a></p>
+<p><strong>Licence:</strong> <a class="reference external" href="https://proj.org/about.html#license">X/MIT Open Source license</a></p>
+<p><strong>Software Version:</strong> 7.2.1</p>
+<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
+<p><strong>API Interfaces:</strong> C, C++, Python, Java, Ruby</p>
+<p><strong>Support:</strong> <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/proj">https://lists.osgeo.org/mailman/listinfo/proj</a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/proj_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

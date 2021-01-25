@@ -1,0 +1,502 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de PostGIS &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="SpatiaLite" href="../overview/spatialite_overview.html" />
+    <link rel="prev" title="PostGIS" href="../overview/postgis_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="../../_images/logo_postgis.png" class="align-right" src="../../_images/logo_postgis.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="postgis-quickstart">
+<h1>Inicio Rápido de PostGIS<a class="headerlink" href="#postgis-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>PostGIS añade capacidades espaciales a la base de datos relacional de PostgreSQL. Se extiende PostgreSQL almacena, consulta, y manipular datos espaciales. En este inicio rápido usamos “PostgreSQL” al describir las funciones de base de datos general y “PostGIS” al describir la funcionalidad espacial adicional proporcionada por PostGIS.</p>
+<p>Esta Guía de Inicio Rápido describe cómo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Crear y consultar una base de datos espacial desde la línea de comando y <a class="reference internal" href="../overview/qgis_overview.html"><span class="doc">QGIS</span></a> graphical client.</li>
+<li>Administrar datos desde el cliente <code class="docutils literal"><span class="pre">pgAdmin</span></code>.</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#client-server-architecture" id="id1">Arquitectura cliente-servidor</a></li>
+<li><a class="reference internal" href="#creating-a-spatially-enabled-database" id="id2">Creación de una base de datos habilitada espacialmente</a></li>
+<li><a class="reference internal" href="#creating-a-spatial-table-using-sql" id="id3">Creación de una Tabla Espacial mediante SQL</a></li>
+<li><a class="reference internal" href="#simple-queries" id="id4">Consultas simples</a></li>
+<li><a class="reference internal" href="#spatial-queries" id="id5">Consultas espaciales</a></li>
+<li><a class="reference internal" href="#mapping" id="id6">Mapeo</a></li>
+<li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">Importación de datos espaciales a la base de datos</a></li>
+<li><a class="reference internal" href="#get-to-know-pgadmin-iii" id="id8">Conocer pgAdmin III</a></li>
+<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin-iii" id="id9">Ejecución de una consulta SQL desde pgAdmin III</a></li>
+<li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Conozca los Contenedores de Datos Externos (FDW)</a></li>
+<li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Conéctese a una fuente de datos OGR remota a través de ogr_fdw</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id12">Cosas para probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id13">¿Qué sigue?</a></li>
+</ul>
+</div>
+<div class="section" id="client-server-architecture">
+<h2><a class="toc-backref" href="#id1">Arquitectura cliente-servidor</a><a class="headerlink" href="#client-server-architecture" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Como muchas bases de datos, PostgreSQL, funciona como un servidor en un sistema cliente-servidor. El cliente hace una petición al servidor y regresa una respuesta. Se trata de la misma manera que los trabajos de internet - el navegador es un cliente y un servidor web envía la página web. Con PostgreSQL las solicitudes son en el lenguaje SQL y la respuesta es generalmente una tabla de datos de la base de datos.</p>
+<p>No hay nada para detener el servidor en el mismo equipo que el cliente, y esto le permite utilizar PostgreSQL en una sola máquina. El cliente se conecta al servidor mediante la conexión de red interna “loopback” y no es visible a otros equipos a menos que usted configurarlo para serlo.</p>
+</div>
+<div class="section" id="creating-a-spatially-enabled-database">
+<h2><a class="toc-backref" href="#id2">Creación de una base de datos habilitada espacialmente</a><a class="headerlink" href="#creating-a-spatially-enabled-database" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los clientes de línea de comandos se ejecutan desde una ventana de Emulador de Terminal.</p>
+<p>Inicie un Emulador de Terminal (LXTerminal actualmente) desde el menú Aplicaciones de la sección Accesorios. Esto le da un símbolo del sistema del shell de Unix. Tipo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">V</span>
+</pre></div>
+</div>
+<p>y pulsar Enter para ver el número de versión de PostgreSQL.</p>
+<p>Un solo servidor PostgreSQL le permite organizar el trabajo al organizarlo en bases de datos separadas. Cada base de datos es un régimen independiente, con sus propias tablas, vistas, usuarios, etc. Cuando se conecta a un servidor PostgreSQL, debe especificar una base de datos.</p>
+<p>Usted puede obtener una lista de bases de datos en el servidor con el:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>comando. Usted debe ver varias bases de datos utilizadas por algunos de los proyectos en el sistema. Vamos a crear una nueva para este inicio rápido.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">La lista utiliza un localizador estándar de unix - pulsa space para página siguiente, <code class="kbd docutils literal"><span class="pre">b</span></code> para volver, <code class="kbd docutils literal"><span class="pre">q</span></code> para cerrar, h para obtener ayuda.</p>
+</div>
+<p>PostgreSQL nos ofrece un programa de utilidad para la creación de bases de datos,``createdb``.  Necesitamos crear una base de datos antes de agregar las extensiones de PostGIS. Llamaremos a nuestra base de datos <code class="docutils literal"><span class="pre">demo</span></code>. El comando es entonces:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">createdb</span> <span class="n">demo</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Generalmente puede obtener ayuda para las herramientas de línea de comandos mediante la opción``–help`` .</p>
+</div>
+<p>Si ahora ejecuta <code class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></code> debería ver su base de datos <code class="docutils literal"><span class="pre">demo</span></code> en la lista. No hemos añadido la extensión PostGIS todavía, pero en la siguiente sección te explicamos cómo.</p>
+<p>Puede crear bases de datos PostGIS usando el lenguaje SQL. Primero elimine la base de datos que acabamos de crear utilizando el comando <code class="docutils literal"><span class="pre">dropdb</span></code>, luego use el comando <code class="docutils literal"><span class="pre">psql</span></code>  para conseguir un intérprete de comandos SQL:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dropdb</span> <span class="n">demo</span>
+<span class="n">psql</span> <span class="o">-</span><span class="n">d</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Esto conecta a la base de datos de sistema de núcleo llamado  <code class="docutils literal"><span class="pre">postgres</span></code>.  Ahora introduzca el código SQL para crear una nueva base de datos:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE DATABASE demo;</span>
+</pre></div>
+</div>
+<p>Ahora cambie la conexión de la base de datos de <code class="docutils literal"><span class="pre">postgres</span></code> a la nueva base de datos de  <code class="docutils literal"><span class="pre">demo</span></code>. En el futuro usted puede conectarse a él directamente con  <code class="docutils literal"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">demo</span></code>, pero aquí hay una forma clara de cambiar dentro de la línea de comando de `` psql``:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># \c demo</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Presione <code class="kbd docutils literal"><span class="pre">CTRL</span></code> + <code class="kbd docutils literal"><span class="pre">C</span></code> si el indicador psql sigue apareciendo después de presionar regresar. Limpiará su entrada y comenzará de nuevo. Probablemente esté esperando una comilla de cierre, punto y coma o algo así.</p>
+</div>
+<p>Debería ver un mensaje informativo, y el aviso cambiará para mostrar que ahora está conectado a la base de datos `` demo``.</p>
+<p>A continuación, agregar extensión de PostGIS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># create extension postgis;</span>
+</pre></div>
+</div>
+<p>Para verificar que tienes ahora instalado postgis, ejecute la siguiente consulta:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT postgis_version();</span>
+
+           <span class="n">postgis_version</span>
+<span class="o">---------------------------------------</span>
+ <span class="mf">2.3</span> <span class="n">USE_GEOS</span><span class="o">=</span><span class="mi">1</span> <span class="n">USE_PROJ</span><span class="o">=</span><span class="mi">1</span> <span class="n">USE_STATS</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PostGIS instala muchas funciones, una tabla y varias vistas</p>
+<p>Teclee <code class="docutils literal"><span class="pre">\dt</span></code>  para enlistar las tablas en la base de datos. Debería ver algo como esto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># \dt</span>
+             <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
+ <span class="n">Schema</span> <span class="o">|</span>       <span class="n">Name</span>       <span class="o">|</span> <span class="n">Type</span>  <span class="o">|</span> <span class="n">Owner</span>
+<span class="o">--------+------------------+-------+-------</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>  <span class="o">|</span> <span class="n">table</span> <span class="o">|</span> <span class="n">user</span>
+<span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La tabla <code class="docutils literal"><span class="pre">spatial_ref_sys</span></code> es utilizada por PostGIS para convertir entre sistemas de referencia espaciales diferentes. La tabla <code class="docutils literal"><span class="pre">spatial_ref_sys</span></code> almacena la información en los sistemas de referencia espacial válida, y podemos usar algunos SQL para tener un rápido vistazo:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT srid, auth_name, proj4text FROM spatial_ref_sys LIMIT 10;</span>
+
+ <span class="n">srid</span> <span class="o">|</span> <span class="n">auth_name</span> <span class="o">|</span>          <span class="n">proj4text</span>
+<span class="o">------+-----------+--------------------------------------</span>
+ <span class="mi">3819</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">bessel</span> <span class="o">+</span><span class="n">towgs</span><span class="o">...</span>
+ <span class="mi">3821</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">aust_SA</span> <span class="o">+</span><span class="n">no_d</span><span class="o">...</span>
+ <span class="mi">3824</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">GRS80</span> <span class="o">+</span><span class="n">towgs8</span><span class="o">...</span>
+ <span class="mi">3889</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">GRS80</span> <span class="o">+</span><span class="n">towgs8</span><span class="o">...</span>
+ <span class="mi">3906</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">bessel</span> <span class="o">+</span><span class="n">no_de</span><span class="o">...</span>
+ <span class="mi">4001</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">airy</span> <span class="o">+</span><span class="n">no_defs</span><span class="o">...</span>
+ <span class="mi">4002</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">a</span><span class="o">=</span><span class="mf">6377340.189</span> <span class="o">+</span><span class="n">b</span><span class="o">=</span><span class="mf">63.</span><span class="o">..</span>
+ <span class="mi">4003</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">aust_SA</span> <span class="o">+</span><span class="n">no_d</span><span class="o">...</span>
+ <span class="mi">4004</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">bessel</span> <span class="o">+</span><span class="n">no_de</span><span class="o">...</span>
+ <span class="mi">4005</span> <span class="o">|</span> <span class="n">EPSG</span>      <span class="o">|</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">longlat</span> <span class="o">+</span><span class="n">a</span><span class="o">=</span><span class="mf">6377492.018</span> <span class="o">+</span><span class="n">b</span><span class="o">=</span><span class="mf">63.</span><span class="o">..</span>
+<span class="p">(</span><span class="mi">10</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto confirma que tenemos una base de datos habilitada espacialmente.</p>
+<p>Además de esta tabla, encontrarás varias vistas cuando activas postgis en su base de datos.</p>
+<p>Teclee <code class="docutils literal"><span class="pre">\dv</span></code> para enlistar las vistas de la base de datos. Debería ver algo como esto:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># \dv</span>
+                                                                <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
+ <span class="n">Schema</span> <span class="o">|</span>       <span class="n">Name</span>        <span class="o">|</span> <span class="n">Type</span> <span class="o">|</span>  <span class="n">Owner</span>
+<span class="o">--------+-------------------+------+----------</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">geography_columns</span> <span class="o">|</span> <span class="n">view</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>  <span class="o">|</span> <span class="n">view</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">raster_columns</span>    <span class="o">|</span> <span class="n">view</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">raster_overviews</span>  <span class="o">|</span> <span class="n">view</span> <span class="o">|</span> <span class="n">postgres</span>
+<span class="p">(</span><span class="mi">4</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>PostGIS soporta varios tipos de datos espaciales:</p>
+<blockquote>
+<div><p><cite>geometry</cite> - es un tipo de datos que almacena datos como vectores dibujados sobre una superficie plana</p>
+<p><cite>geography</cite>  - es un tipo de datos que almacena datos como vectores dibujados sobre una superficie esferoidal</p>
+<dl class="docutils">
+<dt><cite>raster</cite> - es un tipo de datos que almacena los datos como una matriz n-dimensional que representa cada posición (píxel)</dt>
+<dd>un área de espacio y cada banda (dimensión) tiene un valor para cada espacio de píxeles.</dd>
+</dl>
+</div></blockquote>
+<p>Las vistas  <code class="docutils literal"><span class="pre">geometry_columns</span></code>, <code class="docutils literal"><span class="pre">geography_columns</span></code> y <code class="docutils literal"><span class="pre">raster_columns</span></code>  tienen el trabajo de decirle a PostGIS qué tablas tienen geometría PostGIS, geografía y columnas de ráster.</p>
+<p>Descripciones son mesas de resolución más baja para datos ráster. Las <code class="docutils literal"><span class="pre">raster_overviews</span></code> enlistan dichas tablas y sus columnas de ráster y la tabla para la que es una vista general. Las tablas de vistas generales de ráster se utilizan herramientas como QGIS para proporcionar versiones baja resolución de datos ráster para cargar más rápido.</p>
+<p>El tipo de geometría PostGIS es el primero y aún más popular utilizado por los usuarios de PostGIS. Enfocaremos nuestra atención en ese tipo.</p>
+</div>
+<div class="section" id="creating-a-spatial-table-using-sql">
+<h2><a class="toc-backref" href="#id3">Creación de una Tabla Espacial mediante SQL</a><a class="headerlink" href="#creating-a-spatial-table-using-sql" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora tenemos una base de datos espacial podemos hacer algunas tablas espaciales.</p>
+<p>Primero creamos una tabla de base de datos común para almacenar algunos datos de la ciudad. Esta tabla tiene tres campos - uno para un ID numérico de identificación de la ciudad, una para el nombre de la ciudad y otra para la columna de geometría:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># CREATE TABLE cities ( id int4 primary key, name varchar(50), geom geometry(POINT,4326) );</span>
+</pre></div>
+</div>
+<p>Convencionalmente esta columna de geometría se denomina <code class="docutils literal"><span class="pre">geom</span></code> (la más vieja convención de PostGIS era <code class="docutils literal"><span class="pre">the_geom</span></code>). Esto le indica a PostGIS qué tipo de geometría, tiene cada función  (puntos, líneas, polígonos, etcetera), cuántas dimensiones (en este caso 2, si tuviese 3 o 4 dimensiones utilizaríamos POINTZ, POINTM o POINTZM), y el sistema de referencia espacial. Utilizamos EPSG:4326 coordenadas para nuestras ciudades.</p>
+<p>Ahora si revisas la tabla ciudades usted debería ver la nueva columna y se informó que la tabla no contiene actualmente ninguna fila.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT * from cities;</span>
+ <span class="nb">id</span> <span class="o">|</span> <span class="n">name</span> <span class="o">|</span> <span class="n">geom</span>
+<span class="o">----+------+----------</span>
+<span class="p">(</span><span class="mi">0</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para agregar filas a la tabla que utilizamos algunas sentencias SQL. Para obtener la geometría en la columna de geometría usamos la función PostGIS  <code class="docutils literal"><span class="pre">ST_GeomFromText</span></code> para convertir de un formato de texto que le da las coordenadas y un id de sistema de referencia espacial:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># INSERT INTO cities (id, geom, name) VALUES (1,ST_GeomFromText(&#39;POINT(-0.1257 51.508)&#39;,4326),&#39;London, England&#39;);</span>
+<span class="n">demo</span><span class="o">=</span><span class="c1"># INSERT INTO cities (id, geom, name) VALUES (2,ST_GeomFromText(&#39;POINT(-81.233 42.983)&#39;,4326),&#39;London, Ontario&#39;);</span>
+<span class="n">demo</span><span class="o">=</span><span class="c1"># INSERT INTO cities (id, geom, name) VALUES (3,ST_GeomFromText(&#39;POINT(27.91162491 -33.01529)&#39;,4326),&#39;East London,SA&#39;);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Utilice las teclas de flecha para recordar y editar líneas de comando.</p>
+</div>
+<p>Como se puede ver que muy rápidamente esto es cada vez más tedioso. Por suerte hay otras formas de obtener datos en las tablas PostGIS que son mucho más fáciles. Pero ahora tenemos tres ciudades en nuestra base de datos, y podemos trabajar con eso.</p>
+</div>
+<div class="section" id="simple-queries">
+<h2><a class="toc-backref" href="#id4">Consultas simples</a><a class="headerlink" href="#simple-queries" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Todas las operaciones SQL habituales se pueden aplicar para seleccionar datos de una tabla PostGIS:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT * FROM cities;</span>
+ <span class="nb">id</span> <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span>                      <span class="n">geom</span>
+<span class="o">----+-----------------+----------------------------------------------------</span>
+  <span class="mi">1</span> <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">England</span> <span class="o">|</span> <span class="mf">0101000020E6100000</span><span class="n">BBB88D06F016C0BF1B2FDD2406C14940</span>
+  <span class="mi">2</span> <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">Ontario</span> <span class="o">|</span> <span class="mf">0101000020E6100000</span><span class="n">F4FDD478E94E54C0E7FBA9F1D27D4540</span>
+  <span class="mi">3</span> <span class="o">|</span> <span class="n">East</span> <span class="n">London</span><span class="p">,</span><span class="n">SA</span>  <span class="o">|</span> <span class="mf">0101000020E610000040</span><span class="n">AB064060E93B4059FAD005F58140C0</span>
+<span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto nos da una versión hexadecimal codificada de la coordianates, no muy útiles para los seres humanos.</p>
+<p>Si quieres echar un vistazo a la geometría en formato WKT otra vez, puede utilizar las funciones ST_AsText(geom) o ST_AsEwkt(geom). También se puede utilizar ST_X(geom), ST_Y(geom) para obtener el valor numérico de las coordenadas:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT id, ST_AsText(geom), ST_AsEwkt(geom), ST_X(geom), ST_Y(geom) FROM cities;</span>
+ <span class="nb">id</span> <span class="o">|</span>          <span class="n">st_astext</span>           <span class="o">|</span>               <span class="n">st_asewkt</span>                <span class="o">|</span>    <span class="n">st_x</span>     <span class="o">|</span>   <span class="n">st_y</span>
+<span class="o">----+------------------------------+----------------------------------------+-------------+-----------</span>
+  <span class="mi">1</span> <span class="o">|</span> <span class="n">POINT</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1257</span> <span class="mf">51.508</span><span class="p">)</span>        <span class="o">|</span> <span class="n">SRID</span><span class="o">=</span><span class="mi">4326</span><span class="p">;</span><span class="n">POINT</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1257</span> <span class="mf">51.508</span><span class="p">)</span>        <span class="o">|</span>     <span class="o">-</span><span class="mf">0.1257</span> <span class="o">|</span>    <span class="mf">51.508</span>
+  <span class="mi">2</span> <span class="o">|</span> <span class="n">POINT</span><span class="p">(</span><span class="o">-</span><span class="mf">81.233</span> <span class="mf">42.983</span><span class="p">)</span>        <span class="o">|</span> <span class="n">SRID</span><span class="o">=</span><span class="mi">4326</span><span class="p">;</span><span class="n">POINT</span><span class="p">(</span><span class="o">-</span><span class="mf">81.233</span> <span class="mf">42.983</span><span class="p">)</span>        <span class="o">|</span>     <span class="o">-</span><span class="mf">81.233</span> <span class="o">|</span>    <span class="mf">42.983</span>
+  <span class="mi">3</span> <span class="o">|</span> <span class="n">POINT</span><span class="p">(</span><span class="mf">27.91162491</span> <span class="o">-</span><span class="mf">33.01529</span><span class="p">)</span> <span class="o">|</span> <span class="n">SRID</span><span class="o">=</span><span class="mi">4326</span><span class="p">;</span><span class="n">POINT</span><span class="p">(</span><span class="mf">27.91162491</span> <span class="o">-</span><span class="mf">33.01529</span><span class="p">)</span> <span class="o">|</span> <span class="mf">27.91162491</span> <span class="o">|</span> <span class="o">-</span><span class="mf">33.01529</span>
+<span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="spatial-queries">
+<h2><a class="toc-backref" href="#id5">Consultas espaciales</a><a class="headerlink" href="#spatial-queries" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>PostGIS añade muchas funciones con funcionalidad espacial a PostgreSQL. Ya hemos visto ST_GeomFromText que convierte WKT a la geometría. La mayoría de ellos comienza con ST (de tipo espacial) y se enumeran en una sección de la documentación de PostGIS. Ahora usaremos uno para responder a una pregunta práctica - hasta qué punto son estos tres Londres, en metros, suponiendo que una tierra esférica?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT p1.name,p2.name,ST_DistanceSphere(p1.geom,p2.geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;</span>
+      <span class="n">name</span>       <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span> <span class="n">st_distancesphere</span>
+<span class="o">-----------------+-----------------+--------------------</span>
+ <span class="n">London</span><span class="p">,</span> <span class="n">Ontario</span> <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">England</span> <span class="o">|</span>   <span class="mf">5875766.85191657</span>
+ <span class="n">East</span> <span class="n">London</span><span class="p">,</span><span class="n">SA</span>  <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">England</span> <span class="o">|</span>   <span class="mf">9789646.96784908</span>
+ <span class="n">East</span> <span class="n">London</span><span class="p">,</span><span class="n">SA</span>  <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">Ontario</span> <span class="o">|</span>   <span class="mf">13892160.9525778</span>
+ <span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto nos da la distancia, en metros, entre cada par de ciudades. Observe cómo la parte de “Dónde” en la línea detiene nosotros devolviendo  distancias de una ciudad hacia sí mismo (que serán todas cero) o las distancias inversas a las de la tabla anterior (Londres, Inglaterra a Londres, Ontario es la misma distancia que Londres, Ontario a Londres, Inglaterra). Pruébalo sin la parte de “Dónde” y ver qué pasa.</p>
+<p>También podemos calcular la distancia usando un esferoide usando una diversa función y especificando el nombre de esferoide, eje semi mayor y parámetros aplanar inversos:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT p1.name,p2.name,ST_DistanceSpheroid(</span>
+        <span class="n">p1</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span><span class="n">p2</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="s1">&#39;SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222]&#39;</span>
+        <span class="p">)</span>
+       <span class="n">FROM</span> <span class="n">cities</span> <span class="n">AS</span> <span class="n">p1</span><span class="p">,</span> <span class="n">cities</span> <span class="n">AS</span> <span class="n">p2</span> <span class="n">WHERE</span> <span class="n">p1</span><span class="o">.</span><span class="n">id</span> <span class="o">&gt;</span> <span class="n">p2</span><span class="o">.</span><span class="n">id</span><span class="p">;</span>
+      <span class="n">name</span>       <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span> <span class="n">st_distancespheroid</span>
+<span class="o">-----------------+-----------------+----------------------</span>
+ <span class="n">London</span><span class="p">,</span> <span class="n">Ontario</span> <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">England</span> <span class="o">|</span>     <span class="mf">5892413.63776489</span>
+ <span class="n">East</span> <span class="n">London</span><span class="p">,</span><span class="n">SA</span>  <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">England</span> <span class="o">|</span>     <span class="mf">9756842.65711931</span>
+ <span class="n">East</span> <span class="n">London</span><span class="p">,</span><span class="n">SA</span>  <span class="o">|</span> <span class="n">London</span><span class="p">,</span> <span class="n">Ontario</span> <span class="o">|</span>     <span class="mf">13884149.4140698</span>
+<span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para salir de la línea de comandos de PostgreSQL, introduzca:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="n">q</span>
+</pre></div>
+</div>
+<p>Usted está ahora a la consola del sistema:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>user@osgeolive:~$
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapping">
+<h2><a class="toc-backref" href="#id6">Mapeo</a><a class="headerlink" href="#mapping" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para producir un mapa de datos de PostGIS, necesita a un cliente que puede obtener los datos. La mayoría de los programas de código abierto GIS pueden hacerlo - gvSIG, QGIS, uDig por ejemplo. Ahora te mostramos cómo hacer un mapa de QGIS.</p>
+<p>Iniciar QGIS desde el menú de escritorio SIG y elija  <code class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layers</span></code>  en el menú de capa. Los parámetros para la conexión a los datos de Natural Earth en PostGIS ya están definidos en el menú  desplegable de Conexiones. Puede definir nuevas conexiones con servidores aquí y almacenar los ajustes para una fácil recuperación. Haga click en el menú desplegable de conexiones y escoja la Natural Earth. Presione <code class="docutils literal"><span class="pre">editar</span></code> si usted quiere ver lo que esos parámetros son para  Natural Earth, o sólo presione <code class="docutils literal"><span class="pre">Connect</span></code> para continuar:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 450.0px; height: 378.0px;" /></a>
+<p>Ahora obtendrá una lista de las tablas espaciales en la base de datos:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 450.0px; height: 378.0px;" /></a>
+<p>Elegir la tabla ne_10m_lakes y presione <code class="docutils literal"><span class="pre">Add</span></code> en la parte inferior (no <code class="docutils literal"><span class="pre">Load</span></code> en la parte superior - que carga los parámetros de conexión de base de datos), y se debe cargar en QGIS:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 1146.0px; height: 952.5px;" /></a>
+<p>Ahora debería ver un mapa de los lagos. QGIS no sabe que son los lagos, así que no podría azul les color para usted - utilizar la documentación de QGIS para trabajar la manera de cambiar esto. Haga un acercamiento sobre  un famoso grupo de lagos en Canadá.</p>
+</div>
+<div class="section" id="importing-spatial-data-into-the-database">
+<h2><a class="toc-backref" href="#id7">Importación de datos espaciales a la base de datos</a><a class="headerlink" href="#importing-spatial-data-into-the-database" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La mayoría de las herramientas de escritorio de OSGeo tienen funciones para importar datos espaciales de otros formatos (por ejemplo, ESRI Shape) a la base de datos. Una vez más usaremos QGIS para mostrar esto.</p>
+<p>Importar shapefiles a QGIS puede hacerse mediante el práctico Administrador de Base de Datos de QGIS. Encuentre el manager en el menú. Vaya a <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
+<p>Despliega el ítem de Postgis, luego el ítem de  NaturalEarth. Luego se conectará a la base de datos de Natural Earth. Dejar la contraseña en blanco si le pide. En el ítem público, hay la lista de las capas de la base de datos. Verás la ventana principal del administrador. A la izquierda puede seleccionar tablas de la base de datos y usar las pestañas de la derecha para conocerlas. La pestaña Vista previa le mostrará un pequeño mapa.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 610.5px; height: 428.25px;" /></a>
+<p>Ahora usaremos el administrador de DB para importar un archivo de formas en la base de datos. Usaremos los datos de síndrome de muerte súbita del lactante (SMSL) de Carolina del norte que se incluye en uno de los complementos de paquete de estadísticas R.</p>
+<p>En el menú <code class="docutils literal"><span class="pre">Table</span></code> elija la opción  <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> . Pulse el botón <code class="docutils literal"><span class="pre">...</span></code> y busque el shapefile  <code class="docutils literal"><span class="pre">sids.shp</span></code> en el paquete de <code class="docutils literal"><span class="pre">maptools</span></code> R (ubicado en /usr/local/lib/R/site-library/spData/shapes):</p>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 632.25px; height: 492.0px;" /></a>
+<p>Deja todo lo demás como está y presione <code class="docutils literal"><span class="pre">Load</span></code></p>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 346.5px; height: 400.5px;" /></a>
+<p>Permitir que el Selector de Sistema de Referencia de Coordenadas sea por defecto  (WGS 84 EPSG:4326) y presione <code class="docutils literal"><span class="pre">OK</span></code>. El shapefile se debe importar a PostGIS sin errores. Cierre el administrador de PostGIS y regrese a la ventana principal de QGIS.</p>
+<p>Ahora cargue los datos de SIDS en el mapa utilizando la opción Add PostGIS Layer”. Con un poco de reorganización de las capas y algunos coloreados, usyed debe ser capaz de producir un mapa coroplético de las cuentas de síndrome de muerte súbita (campos sid74 o sid79) en Carolina del norte:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1143.75px; height: 948.0px;" /></a>
+</div>
+<div class="section" id="get-to-know-pgadmin-iii">
+<h2><a class="toc-backref" href="#id8">Conocer pgAdmin III</a><a class="headerlink" href="#get-to-know-pgadmin-iii" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede utilizar el cliente de base de datos gráfica <code class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></code> del menú Bases de Datos para consultar y modificar la base de datos de forma no espacial. Este es el cliente oficial de PostgreSQL.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Tenga en cuenta que hay una nueva versión de pgAdmin llamada pgAdmin4 que se puede instalar a través de apt install pgadmin4</p>
+</div>
+<p>pgAdmin III le permite utilizar SQL para manipular las tablas de datos. Puede encontrar e iniciar pgAdmin III desde la carpeta Bases de Datos, existente en OSGeoLive Desktop.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 511.0px; height: 370.5px;" /></a>
+<p>Aquí, usted tiene la opción de crear una nueva conexión a un servidor PostgreSQL, o se conecta a un servidor existente. En este caso, vamos a conectar al servidor  <code class="docutils literal"><span class="pre">local</span></code> predefinido.</p>
+<p>Después de la conexión establecida, puede ver la lista de las bases de datos ya existentes en el sistema.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 768.75px; height: 556.5px;" /></a>
+<p>La «X» roja en la imagen de la mayoría de las bases de datos, indica que no han sido aún conectado a cualquiera de ellos (está conectado sólo a la base de datos predeterminada <code class="docutils literal"><span class="pre">postgres</span></code>). En este momento eres capaz sólo de ver las bases de datos existentes en el sistema. Puede conectarse haciendo doble click en el nombre de una base de datos. Hágalo para la base de datos natural_earth2.</p>
+<p>Usted puede ver ahora que desapareció la X roja y un «+» apareció a la izquierda. Presionando un árbol va a aparecer, mostrando el contenido de la base de datos.</p>
+<p>Navegar en el subárbol <code class="docutils literal"><span class="pre">esquemas</span></code>, expandirla. Luego ampliar el esquema de <code class="docutils literal"><span class="pre">public</span></code>.  Navegando y ampliando <code class="docutils literal"><span class="pre">Tables</span></code> puedes ver todas las tablas dentro de este esquema.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 768.0px; height: 557.25px;" /></a>
+</div>
+<div class="section" id="executing-a-sql-query-from-pgadmin-iii">
+<h2><a class="toc-backref" href="#id9">Ejecución de una consulta SQL desde pgAdmin III</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin-iii" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>pgAdmin III, ofrece la capacidad de ejecutar consultas a una base de datos relacional.</p>
+<p>Para realizar una consulta en la base de datos, tienes que pulsar el botón <code class="docutils literal"><span class="pre">SQL</span></code> de la barra de herramientas principal (el uno con el amarillo lente de aumento).</p>
+<p>Vamos a encontrar la tasa de SIDS sobre los nacimientos del 1974 para cada ciudad. Además, vamos a ordenar el resultado, en función de la tasa calculada. Para hacer eso, necesitamos realizar la siguiente consulta (enviarla al editor de texto de la Ventana SQL):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">name</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sid74</span><span class="o">/</span><span class="n">bir74</span> <span class="k">as</span> <span class="n">rate</span> <span class="kn">from</span> <span class="nn">sids</span> <span class="n">order</span> <span class="n">by</span> <span class="n">rate</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Luego, debe presionar el botón de flecha verde, apuntando a la derecha (ejecutar consulta).</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 768.0px; height: 557.25px;" /></a>
+</div>
+<div class="section" id="get-to-know-foreign-data-wrappers-fdw">
+<h2><a class="toc-backref" href="#id10">Conozca los Contenedores de Datos Externos (FDW)</a><a class="headerlink" href="#get-to-know-foreign-data-wrappers-fdw" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Desde su base de datos puede acceder a objetos remotos como tablas de otras bases de datos PostgreSQL o conectarse a bases de datos remotas como Oracle, MySQL, MS SQL o CouchDB. También puede conectarse a través de ODBC, conectarse a CSV, datos geoespaciales e incluso a twitter.</p>
+<p>Encontrará una lista de diferentes FDW en:</p>
+<blockquote>
+<div><a class="reference external" href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers">https://wiki.postgresql.org/wiki/Foreign_data_wrappers</a></div></blockquote>
+<p>¡Vamos a ver cómo funciona! La forma más fácil es conectarse a una base de datos PostgreSQL diferente.</p>
+<p>Aquí están los pasos:</p>
+<p>Primero cargue la extensión para el Contenedor de Datos Externos que desea utilizar. Para una conexión a una base de datos PostgreSQL diferente se necesita <code class="docutils literal"><span class="pre">postgres_fdw</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">postgres_fdw</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Tenga en cuenta que en pgAdmin III los contenedores de datos externos, los servidores externos, las asignaciones de usuarios y las tablas externas no se muestran de forma predeterminada en el árbol. Usted tiene que activarlos a través del menú seleccionando <span class="menuselection">Archivo ‣ Opciones ‣ Navegador ‣ Pantalla</span></p>
+</div>
+<p>Cree un Servidor externo que le indique dónde encontrar el origen de datos que desea conectar</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
+ <span class="n">FOREIGN</span> <span class="n">DATA</span> <span class="n">WRAPPER</span> <span class="n">postgres_fdw</span>
+ <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">host</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span> <span class="s1">&#39;5432&#39;</span><span class="p">,</span> <span class="n">dbname</span> <span class="s1">&#39;osm_local&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Defina el usuario que se debe utilizar cuando se conecta al servidor externo</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">MAPPING</span> <span class="n">FOR</span> <span class="n">user</span>
+      <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
+      <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">user</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">password</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ahora puede crear una tabla externa.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IMPORT</span> <span class="n">FOREIGN</span> <span class="n">SCHEMA</span> <span class="n">public</span>
+  <span class="n">LIMIT</span> <span class="n">TO</span> <span class="p">(</span><span class="n">planet_osm_polygon</span><span class="p">,</span> <span class="n">planet_osm_point</span><span class="p">)</span> <span class="o">--</span> <span class="ow">or</span> <span class="n">EXCEPT</span>
+  <span class="n">FROM</span> <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
+  <span class="n">INTO</span> <span class="n">public</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Busque nuevas tablas en la base de datos y eche un vistazo a los datos de una tabla externa.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">planet_osm_polygon</span> <span class="n">limit</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="connect-to-a-remote-ogr-data-source-via-ogr-fdw">
+<h2><a class="toc-backref" href="#id11">Conéctese a una fuente de datos OGR remota a través de ogr_fdw</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La extensión “”ogr_fdw”” permite la conexión de varios formatos de geodatos como KML, GeoPackage, WFS, GeoJSON, GPX, GML y más.</p>
+<p>Leer más sobre <code class="docutils literal"><span class="pre">ogr_fdw</span></code>: * Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a> * Nuevo y mejorado <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></p>
+<p class="rubric">Instale la extensión <code class="docutils literal"><span class="pre">ogr_fdw</span></code> en su base de datos.</p>
+<p>En el tipo de solicitud de base de datos:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">ogr_fdw</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="rubric">Inspeccione qué formatos son compatibles:</p>
+<p>Abra una terminal y busque ogr_fdw_info:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">locate</span> <span class="n">ogr_fdw_info</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ogr_fdw_info</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>Los resultados podrían lucir de esta manera:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Supported</span> <span class="n">Formats</span><span class="p">:</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;OGR_GRASS&quot;</span> <span class="p">(</span><span class="n">readonly</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;PCIDSK&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;netCDF&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;JP2OpenJPEG&quot;</span> <span class="p">(</span><span class="n">readonly</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;PDF&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;MBTiles&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;EEDA&quot;</span> <span class="p">(</span><span class="n">readonly</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;ESRI Shapefile&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">-&gt;</span> <span class="s2">&quot;MapInfo File&quot;</span> <span class="p">(</span><span class="n">read</span><span class="o">/</span><span class="n">write</span><span class="p">)</span>
+ <span class="o">....</span> <span class="n">many</span> <span class="n">more</span>
+</pre></div>
+</div>
+<p class="rubric">Crear un FDW a un WFS</p>
+<p>Inicie Geoserver a través de <span class="menuselection">Geospatial ‣ Servicios Web ‣ GeoServer ‣  Iniciar GeoServer</span></p>
+<ul class="simple">
+<li>Abrir GeoServer <a class="reference external" href="http://localhost:8082/geoserver/web/">http://localhost:8082/geoserver/web/</a></li>
+<li>GeoServer WFS GetCapabilities <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</a></li>
+<li>GeoServer WFS DescribeFeatureType for topp:states
+<a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states</a></li>
+<li>GeoServer WFS GetFeature topp:states
+<a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states</a></li>
+</ul>
+<p class="rubric">Cree un servidor externo que se refiera al WFS que desea conectar</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
+<span class="n">FOREIGN</span> <span class="n">DATA</span> <span class="n">WRAPPER</span> <span class="n">ogr_fdw</span>
+<span class="n">OPTIONS</span> <span class="p">(</span> <span class="n">datasource</span> <span class="s1">&#39;WFS:http://localhost:8082/geoserver/ows&#39;</span><span class="p">,</span> <span class="nb">format</span> <span class="s1">&#39;WFS&#39;</span> <span class="p">);</span>
+</pre></div>
+</div>
+<p class="rubric">Importe todos los feature_types de WFS como tablas externas con un comando.</p>
+<p>Después de la importación, verá varias tablas externas nuevas en el esquema.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">IMPORT</span> <span class="n">FOREIGN</span> <span class="n">SCHEMA</span> <span class="n">ogr_all</span>
+<span class="n">FROM</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
+   <span class="n">INTO</span> <span class="n">public</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="rubric">Inspeccione la tabla de datos externos  <code class="docutils literal"><span class="pre">topp_states</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">topp_states</span> <span class="n">WHERE</span> <span class="n">state_name</span> <span class="o">=</span> <span class="s1">&#39;Minnesota&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id12">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Aquí están algunos retos adicionales para probar:</p>
+<ul class="simple">
+<li>Pruebe algunas otras funciones espaciales como <code class="docutils literal"><span class="pre">st_buffer(geom)</span></code>, <code class="docutils literal"><span class="pre">st_transform(geom,25831)</span></code>, <code class="docutils literal"><span class="pre">st_x(geom)</span></code> - cuya  documentación encontrará completa en <a class="reference external" href="http://postgis.net/documentation/">http://postgis.net/documentation/</a></li>
+<li>Exportar las tablas a shapefiles con “” pgsql2shp”” en la línea de comandos.</li>
+<li>Pruebe <code class="docutils literal"><span class="pre">ogr2ogr</span></code> en la línea de comandos para importar/exportar datos a su  base de datos.</li>
+<li>Intente importar datos con  <code class="docutils literal"><span class="pre">shp2pgsql</span></code> en la línea de comandos a su base de datos.</li>
+<li>Trate de hacer el ruteo de camino utilizando <a class="reference internal" href="../overview/pgrouting_overview.html"><span class="doc">pgRouting</span></a>.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id13">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esto es sólo el primer paso en el camino a la utilización de PostGIS. Hay mucha más funcionalidad que puede probar.</p>
+<ul class="simple">
+<li>PostGIS Proyecto en casa -  <a class="reference external" href="http://postgis.net">http://postgis.net</a></li>
+<li>PostGIS Documentación -  <a class="reference external" href="http://postgis.net/documentation/">http://postgis.net/documentation/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

@@ -1,0 +1,236 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pycsw gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="PyWPS" href="../overview/pywps_overview.html" />
+    <link rel="prev" title="pycsw" href="../overview/pycsw_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pycsw.org/"><img alt="../../_images/logo_pycsw.png" class="align-right" src="../../_images/logo_pycsw.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="pycsw-quickstart">
+<h1>pycsw gyorstalpaló<a class="headerlink" href="#pycsw-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>A pycsw egy <a class="reference external" href="https://www.python.org">Pythonban</a> írt  OGC CSW szerver implementáció. A pycsw lehetővé teszi térbeli metaadatok publikálását és felfedezését. Létező térbeli metaadatok feltárhatók OGC:CSW 2.0.2 vagy OGC:CSW 3.0.0 keresztül.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#run-the-tester-application" id="id2">Teszt alkalmazás futtatása</a></li>
+<li><a class="reference internal" href="#understand-capabilities-and-configuration" id="id3">A képességek és a konfiguráció megértése</a></li>
+<li><a class="reference internal" href="#create-metadata" id="id4">Metaadatok létrehozása</a></li>
+<li><a class="reference internal" href="#load-metadata" id="id5">Metaadatok betöltése</a><ul>
+<li><a class="reference internal" href="#create-a-new-database" id="id6">Új adatbázis létrehozása</a></li>
+<li><a class="reference internal" href="#import-metadata" id="id7">Metaadatok importálása</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-discovery-through-qgis-metasearch-plugin" id="id8">Adatok felfedezése a QGIS MetaSearch modullal</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id9">Kipróbálandó dolgok</a></li>
+<li><a class="reference internal" href="#what-next" id="id10">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="run-the-tester-application">
+<h2><a class="toc-backref" href="#id2">Teszt alkalmazás futtatása</a><a class="headerlink" href="#run-the-tester-application" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Az asztalon menjen a <cite>Web Services –&gt; pycsw</cite>-re vagy nyissa meg a FireFox-ot és navigáljon a <code class="docutils literal"><span class="pre">http://localhost/pycsw/tests/index.html</span></code> oldalra:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_startup.png"><img alt="../../_images/pycsw_tester_startup.png" src="../../_images/pycsw_tester_startup.png" style="width: 481.5px; height: 378.0px;" /></a>
+</li>
+</ol>
+<blockquote>
+<div>Baloldali legördülő listát kiválasztva a felhasználó a felhasználó különböző előre definiált XML-ként kódolt POST kéréseket láthat, melyek elküldhetők a pycsw-nek.</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">Válassza az „apiso/DescribeRecord”-ot és nyomja meg a Send” gombot. Az ISO Application Profile rekord leírása jelenik meg a jobb oldali panelben.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_apiso_record.png"><img alt="../../_images/pycsw_tester_describe_apiso_record.png" src="../../_images/pycsw_tester_describe_apiso_record.png" style="width: 746.25px; height: 408.75px;" /></a>
+</li>
+<li><p class="first">A „GetCapabilities-SOAP” kiválasztása után nyomj meg a „Send” gombot. Egy SOAP kérést küldünk a szerverhez a web szolgáltatási képességek közzétételéhez.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabillities.png"><img alt="../../_images/pycsw_tester_soap_capabillities.png" src="../../_images/pycsw_tester_soap_capabillities.png" style="width: 746.25px; height: 408.0px;" /></a>
+</li>
+<li><p class="first">Adat rekordokat kereshet egy befoglaló téglalap térbeli lekérdezés végrehajtásával,  válassza ki a „GetRecords-filter-bbox”-ot és módosítsa a koordinátákat az XML lekérdezésben.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_getrecords_bbox_filter.png"><img alt="../../_images/pycsw_tester_getrecords_bbox_filter.png" src="../../_images/pycsw_tester_getrecords_bbox_filter.png" style="width: 749.25px; height: 399.0px;" /></a>
+</li>
+</ol>
+<p>Végigmehet az összes elérhető lekérdezésen és a tesztelő alkalmazásból végrehajthat különböző lekérdezéseket.</p>
+</div>
+<div class="section" id="understand-capabilities-and-configuration">
+<h2><a class="toc-backref" href="#id3">A képességek és a konfiguráció megértése</a><a class="headerlink" href="#understand-capabilities-and-configuration" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A pycsw telepítés képességei a  <code class="docutils literal"><span class="pre">http://localhost/pycsw?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></code> oldalon találhatók.  Ha csak a <code class="docutils literal"><span class="pre">http://localhost/pycsw</span></code> linket használja, akkor a CSW 3.0.0, képességek dokumentumát kapja meg, mivel az a legújabb támogatott változat.</p>
+<p>A képességek dokumentumban található web szolgáltatás metaadatok szerkesztéséhez módisíthatja az <cite>/etc/pycsw/default.cfg`</cite> fájlt a <code class="docutils literal"><span class="pre">[metadata:main]</span></code> címke alatt.</p>
+<p>Ha engedélyezni akarja az INSPIRE Discovery Service támogatást, töltse ki a metaadatokat a <code class="docutils literal"><span class="pre">[metadata:inspire]</span></code>&nbsp; címke alatt és állítsa az  <code class="docutils literal"><span class="pre">enabled</span></code>&nbsp; tulajdonságot <code class="docutils literal"><span class="pre">true</span></code>-ra.</p>
+<p>Kérjük nézze meg a pycsw honlapon a <a class="reference external" href="https://pycsw.org/docs/">dokumentációt</a> a teljes funkcionalitás és konfiguráció beállításokhoz.</p>
+</div>
+<div class="section" id="create-metadata">
+<h2><a class="toc-backref" href="#id4">Metaadatok létrehozása</a><a class="headerlink" href="#create-metadata" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A térbeli adatokhoz vagy térbeli webszolgáltatáshoz készült metaadatfájlok a metaadatokra vonatkozó inspire irányelv nyílt forráskódú megvalósításával, az European Open Source Metadata Editor  (EUOSME) segítségével hozhatók létre. Ez az alkalmazás megtalálható a <code class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></code> oldalon. A forráskód a <code class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></code> oldalon.</p>
+<p>Kitöltheti a kötelező metaadat mezőket az alkalmazás fülein végighaladva, mint a név, az adat tulajdonos, kulcsszavak, az adatforrás a weben, földrajzi elhelyezkedés (befoglaló téglalap vagy egy ország neve), stb.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_metadata_input.png"><img alt="../../_images/pycsw_euosme_metadata_input.png" src="../../_images/pycsw_euosme_metadata_input.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>Miután minden elérhető információt megadott nyomja meg a <span class="guilabel">validation</span> gombot az oldal tetején, hogy ellenőrizze a konzisztenciát az INSPIRE direktívával.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_save_metadata.png"><img alt="../../_images/pycsw_euosme_save_metadata.png" src="../../_images/pycsw_euosme_save_metadata.png" style="width: 830.25px; height: 485.25px;" /></a>
+<p>A sikeres ellenőrzés után az XML fájlt elmentheti a helyi lemezre és megnézheti egy szövegszerkesztőben vagy böngészőben.</p>
+</div>
+<div class="section" id="load-metadata">
+<h2><a class="toc-backref" href="#id5">Metaadatok betöltése</a><a class="headerlink" href="#load-metadata" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>pycsw a következő adatbázisokat támogatja:</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL (PostGIS opcionális)</li>
+<li>MySQL</li>
+</ul>
+<p>Az OSGeoLive-ban egy egyszerű SQLite beállítást implementáltunk. Az adatbázis itt található <code class="docutils literal"><span class="pre">/usr/share/pycsw/tests/suites/cite/data/records.db</span></code></p>
+<div class="section" id="create-a-new-database">
+<h3><a class="toc-backref" href="#id6">Új adatbázis létrehozása</a><a class="headerlink" href="#create-a-new-database" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Egy új SQLite adatbázis létrehozásához ezeket kell tennünk:</p>
+<ol class="arabic">
+<li><p class="first">Szerkessze a <code class="docutils literal"><span class="pre">/etc/pycsw/default.cfg</span></code>:</p>
+<p><strong>[repository]</strong></p>
+<ul class="simple">
+<li><em>database*</em>: teljes elérési új a metaadat adatbázishoz, adatbázis URL formátumban (lásd <a class="reference external" href="https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls">https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls</a>)</li>
+<li><strong>table</strong>: a táblázat név a metaadat rekordokhoz (az alapértelmezett <code class="docutils literal"><span class="pre">records</span></code>)</li>
+</ul>
+</li>
+<li><p class="first">Az adatbázis beállítása</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo pycsw-admin -c setup_db -f /etc/pycsw/default.cfg
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Ez létrehozza a szükséges táblákat  és értékeket a tárházhoz.</p>
+<p>A létrehozott adatbázis <a class="reference external" href="https://www.ogc.org/standards/sfs">Simple Feature Access (SFS)</a> megfelelőségű adatbázis és használható bármelyik implementációs szoftverben. Például használja az <a class="reference external" href="https://gdal.org/ogrinfo.html">OGR</a>-el:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ ogrinfo /path/to/records.db
+INFO: Open of <span class="s1">&#39;records.db&#39;</span>
+using driver <span class="s1">&#39;SQLite&#39;</span> successful.
+<span class="m">1</span>: records <span class="o">(</span>Polygon<span class="o">)</span>
+$ ogrinfo -al /path/to/records.db
+<span class="c1"># lots of output</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-metadata">
+<h3><a class="toc-backref" href="#id7">Metaadatok importálása</a><a class="headerlink" href="#import-metadata" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo pycsw-admin -c load_records -f /etc/pycsw/default.cfg -p /path/to/records -r
+</pre></div>
+</div>
+<p>Ez importálja az összes <cite>*.xml`</cite> rekordot a <code class="docutils literal"><span class="pre">/path/to/records</span></code>-ból az új adatbázisba és a tárolót az OGC:CSW 53. táblának megfelelően konfigurálja a lekérdezhető szolgáltatások hirdetéséhez.</p>
+</div>
+</div>
+<div class="section" id="data-discovery-through-qgis-metasearch-plugin">
+<h2><a class="toc-backref" href="#id8">Adatok felfedezése a QGIS MetaSearch modullal</a><a class="headerlink" href="#data-discovery-through-qgis-metasearch-plugin" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ol class="arabic simple">
+<li>Az asztalon válassza a <cite>Desktop GIS –&gt; QGIS</cite>-t a QGIS indításához majd kattintson a <span class="guilabel">MetaSearch</span> gombra (CSW ikon)</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_metasearch_open.png"><img alt="../../_images/pycsw_qgis_metasearch_open.png" src="../../_images/pycsw_qgis_metasearch_open.png" style="width: 501.75px; height: 466.5px;" /></a>
+<ol class="arabic simple" start="2">
+<li>Adja hozzá a pycsw szervert a <span class="guilabel">New</span> gomb megnyomásával és írja be <code class="docutils literal"><span class="pre">http://localhost/pycsw/</span></code></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_metasearch_add.png"><img alt="../../_images/pycsw_qgis_metasearch_add.png" src="../../_images/pycsw_qgis_metasearch_add.png" style="width: 489.75px; height: 432.0px;" /></a>
+<ol class="arabic simple" start="3">
+<li>Adjon hozzá néhány alapértelmezett szervert a <span class="guilabel">Add default servers</span> gombbal és szerezze be a szerver képességeit is a <span class="guilabel">Server info</span> gomb segítségével.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_metasearch_server_info.png"><img alt="../../_images/pycsw_qgis_metasearch_server_info.png" src="../../_images/pycsw_qgis_metasearch_server_info.png" style="width: 490.5px; height: 432.0px;" /></a>
+<ol class="arabic simple" start="4">
+<li>A katalógus használatával hajtson végre egy keresést egy szöveg vagy egy befoglaló téglalap megadásával</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_metasearch_search.png"><img alt="../../_images/pycsw_qgis_metasearch_search.png" src="../../_images/pycsw_qgis_metasearch_search.png" style="width: 490.5px; height: 434.25px;" /></a>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id9">Kipróbálandó dolgok</a><a class="headerlink" href="#things-to-try" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>Próbálja meg a tesztelő alkalmazáson keresztül felfedezni az adatokat, egy megfelelő kérés beállításával pl. tetszőleges szöveges keresés az „imagery” szöveggel az EUOSME által létrehozott xml adatok felfedezéséhez</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_discovery.png"><img alt="../../_images/pycsw_tester_discovery.png" src="../../_images/pycsw_tester_discovery.png" style="width: 786.75px; height: 342.0px;" /></a>
+<ul class="simple">
+<li>Próbálja meg felfedezni a az adatokat a Python <a class="reference external" href="https://geopython.github.io/OWSLib/#csw">OWSLib CSW</a> interfészen keresztül.</li>
+<li>Próbálja meg felfedezni  az adatokat a GeoNode-ból, melyeket szintén tartalmaz az OSGeoLiveés a pycsw-t használja mint az alapértelmezett CSW motor,</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id10">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Forduljon a pywcs honlapon található <a class="reference external" href="https://pycsw.org/docs/">dokumentációhoz</a>  további információkért a pycsw-ről.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

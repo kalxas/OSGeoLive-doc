@@ -1,0 +1,142 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>R &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="R Schnellstart" href="../quickstart/R_quickstart.html" />
+    <link rel="prev" title="OTB Quickstart" href="../quickstart/otb_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cran.r-project.org"><img alt="../../_images/logo_R.png" class="align-right" src="../../_images/logo_R.png" /></a>
+<div class="section" id="r">
+<h1>R<a class="headerlink" href="#r" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="statistical-programming">
+<h2>Statistische Programmierung<a class="headerlink" href="#statistical-programming" title="Link zu dieser Überschrift">¶</a></h2>
+<p>R ist eine leistungsstarke, weit verbreitete Entwicklungsumgebung für statistische Berechnungen und Graphiken, die sich durch Analysemöglichkeiten und Prozessierung räumlicher Daten auszeichnet. Die räumlichen Analysemöglichkeiten von R sind über R Pakete verfügbar (Module, die die Möglichkeiten von R erweitern), die viele herkömmliche und dem neusten Stand folgende Algorithmen unterstützen. Die Bereitstellung über R erfolgt oft bevor die Algorithmen in anderen Open Source oder proprietären Programmen verfügbar sind.</p>
+<p>R und seine Pakete können Punkte, Linien, Polygone und Grids prozessieren. Anwender können auf eine große Anzahl von Funktionalitäten zugreifen: Bildklassifizierung, statistische Analysen zur Schlussfolgerung räumlicher Beziehungen und Muster von Objekten sowie vieles mehr (siehe Liste unten). Die Funktionen, die über R bereitgestellt werden, vervollständigen und erweitern die Möglichkeiten von GIS und Bildprozessierungsprogrammen.</p>
+<p>Mit R wird hauptsächlich auf der Kommandozeile gearbeitet. Dies bietet eine große Flexibilität und Kontrolle, führt aber oft auch zu einer längeren Einarbeitungszeit bis hin zum erfahrenen Gebrauch im Vergleich zu einer graphischen Benutzeroberfläche. Glücklicherweise verfügt R über eine gute Dokumentation auf der Webseite, was den Einstieg erleichtert. Skripte werden oft verwendet, um Prozessierungschritte zu automatisieren. Es gibt andere Open Source Projekte, die graphische Oberflächen für R (<a class="reference external" href="https://rstudio.com">https://rstudio.com</a>) entwickeln.</p>
+<p>R ist eine Implemetierung der S Programmiersprache und es besteht eine signifikante Kompatibilität zwischen R und dem älteren S und S-Plus Code, sowie zwischen R und der modernen kommerziellen Versionen von S, TIBCO Spotfire S+. Diese Kompatibilität ermöglicht es, verschiedene Versionen von S Code als R ohne große Anpassungen laufen zu lassen.</p>
+<a class="reference internal image-reference" href="../../_images/R_screenshot.png"><img alt="R screenshot" class="align-right" src="../../_images/R_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Kernfunktionen<a class="headerlink" href="#core-features" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li>Komplett objektorientierte Programmiersprache, die für Statistiken und ähnliche rechenintensive Anwendungen entwickelt wurde</li>
+<li>Am 11.08.2017 waren im CRAN Repository 11239 Pakete verfügbar.</li>
+<li>Hunderte add-on Pakete für räumliche Statistiken, die von der Community bereitgestellt wurden</li>
+<li>Klassifizierung räumlicher Daten</li>
+<li>Lesen und Schreiben von räumlicher Daten</li>
+<li>Punktmuster Analysen</li>
+<li>Geostatistik</li>
+<li>räumliche Regressionsanalyse</li>
+<li>Ökologische Analysen</li>
+<li>Rasterprozessierungsalgorithmen</li>
+<li>Fernerkundung</li>
+<li>Bayessche Geostatistik</li>
+<li>…</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Link zu dieser Überschrift">¶</a></h3>
+<p><strong>Webseite:</strong> <a class="reference external" href="https://cran.r-project.org">https://cran.r-project.org</a></p>
+<p><strong>Lizenz:</strong> GPL</p>
+<p><strong>Software Version:</strong> 3.6.3</p>
+<p><strong>Unterstützte Plattformen:</strong> Windows, Linux, Mac, Unix</p>
+<p><strong>Community-Unterstützung:</strong> <a class="reference external" href="https://cran.r-project.org/web/views/Spatial.html">https://cran.r-project.org/web/views/Spatial.html</a></p>
+<p><strong>verfügbare CRAN Pakete:</strong> <a class="reference external" href="https://cran.r-project.org/web/packages/available_packages_by_name.html">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Schnellstart<a class="headerlink" href="#quickstart" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/R_quickstart.html"><span class="doc">Quickstart Dokumentation</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

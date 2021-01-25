@@ -1,0 +1,197 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide démarrage rapide de l’OSGeoLive pour l’exécution dans une machine virtuelle &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Créer une clé flash USB OSGeoLive amorçable" href="usb_quickstart.html" />
+    <link rel="prev" title="Installer OSGeoLive sur votre disque dur" href="osgeolive_install_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="osgeolive-quickstart-for-running-in-a-virtual-machine">
+<h1>Guide démarrage rapide de l’OSGeoLive pour l’exécution dans une machine virtuelle<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Ce guide décrit une manière d’exécuter l’OSGeoLive dans une machine virtuelle VirtualBox. Pour les autres méthodes, suivez les liens depuis la section «&nbsp;Voir aussi&nbsp;» plus bas.</p>
+<div class="section" id="virtual-machine-advantages">
+<h2>Avantages des machines virtuelles<a class="headerlink" href="#virtual-machine-advantages" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>La vitesse de réponse d’un VM est beaucoup plus rapide que sur le DVD, et généralement comparable à l’installation directement sur la machine hôte.</li>
+<li>Tous les changements de configuration, les mises à jour logicielles et les fichiers enregistrés sont permanents, tout comme sur n’importe quel ordinateur « physique». ainsi:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Vous pouvez personnaliser et mettre à jour le système</li>
+<li>Vous pouvez sauvegarder votre travail dans la VM</li>
+<li>Vous pouvez installer des logiciels supplémentaires</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Vous pouvez sauvegarder l’installation de votre machine virtuelle.</li>
+</ul>
+</div>
+<div class="section" id="system-requirements">
+<h2>Prérequis système<a class="headerlink" href="#system-requirements" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>RAM: 2 Go au moins. Le système Lubuntu fonctionne bien avec 1 Go de RAM, et vous aurez besoin de garder au moins la même quantité de mémoire pour votre système hôte. Ainsi, un total de 2 Go sera nécessaire pour un bon fonctionnement. Certaines applications, comme GeoServer, ont besoin de la machine virtuelle d’avoir au moins 2 Go de RAM. Donc, si possible, envisagez de fournir 2 Go ou plus pour votre machine virtuelle.</li>
+<li>Espace disque dur de rechange : le fichier disque virtuel (vmdk) de <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  décompressé occupe environ 10 Go. Vous voudrez également plus d’espace pour travailler sur la machine virtuelle plus confortablement. Donc 20 Go est une bonne recommandation.</li>
+<li>Processeur: Tout CPU fera l’affaire, mais un processeur qui supporte la «&nbsp;Technologie de virtualisation&nbsp;» sera plus rapide. Vous pouvez vérifier le CPU de votre ordinateur <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">ici</a></li>
+</ul>
+<p>La plupart des machines produites au cours des 4-5 dernières années répondront à ces besoins.</p>
+</div>
+<div class="section" id="howto">
+<h2>Howto<a class="headerlink" href="#howto" title="Lien permanent vers ce titre">¶</a></h2>
+<p><strong>Téléchargements</strong></p>
+<p>Téléchargez <a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a> pour votre plate-forme et installez le logiciel. Sur Windows exécuter l’installateur, ou sur Ubuntu (et  systèmes Linux similaires) faire ce qui suit:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
+<p>En plus, téléchargez fichier de disque virtuel OSGeo (vmdk) depuis <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> . Cliquez sur le bouton «&nbsp;Téléchargez la machine virtuelle&nbsp;». Ensuite, décompresser le fichier téléchargé (en utilisant <a class="reference external" href="https://www.7-zip.org">7zip</a> ).</p>
+<p><strong>Créer une machine virtuelle</strong></p>
+<p>Démarrez l’application VirtualBox et cliquez sur le bouton «&nbsp;New&nbsp;» pour créer une nouvelle VM, puis sur «&nbsp;Next&nbsp;».</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox.png"><img alt="../../_images/virtualbox.png" src="../../_images/virtualbox.png" style="width: 386.5px; height: 291.5px;" /></a>
+</div></blockquote>
+<p>Entrez un nom tel que OSGeoLive, et choisissez Linux comme «&nbsp;Operating system&nbsp;», et Ubuntu comme «&nbsp;Version&nbsp;».</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name.png"><img alt="../../_images/virtualbox_select_name.png" src="../../_images/virtualbox_select_name.png" style="width: 247.79999999999998px; height: 280.0px;" /></a>
+</div></blockquote>
+<p>Dans l’écran suivant, paramétrez la mémoire à 1024 Mo (ou plus si votre ordinateur hôte dispose de plus de 4 Go, comme dans la capture d’écran ci-dessous).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory.png"><img alt="../../_images/vmdk_memory.png" src="../../_images/vmdk_memory.png" style="width: 228.8px; height: 261.3px;" /></a>
+</div></blockquote>
+<p>Passez à l’écran suivant et choisissez « Utilisez un fichier de disque dur virtuel existant ». Cliquez maintenant sur le bouton (icône d’un dossier) pour parcourir l’endroit où vous avez enregistré le fichier vmdk OSGeoLive. Sélectionnez ce fichier, appuyez sur Suivant et Créez.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
+</div></blockquote>
+<p><strong>Conseils et réglages de configuration</strong></p>
+<p>Une fois la VM créée, cliquez sur le bouton Paramètres. Dans la section «&nbsp;General&nbsp;», allez dans l’onglet «&nbsp;Advanced&nbsp;» et cliquez sur «&nbsp;Show at top of screen&nbsp;» pour avoir la barre d’outils Mini.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
+</div></blockquote>
+<p>Accédez à la section «&nbsp;Affichage&nbsp;» et augmenter la mémoire vidéo à 32 ou 64 Mo. Dans certains systèmes d’exploitation, il peut être nécessaire d”«&nbsp;Activer l’accélération 3D&nbsp;» pour que l’affichage fonctionne correctement.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display.png"><img alt="../../_images/vmdk_display.png" src="../../_images/vmdk_display.png" style="width: 424.45px; height: 282.1px;" /></a>
+</div></blockquote>
+<p>En plus, passez à la section «&nbsp;Répertoires partagés&nbsp;» et cliquez sur «&nbsp;Ajouter un dossier&nbsp;» (icône + verte à droite) pour trouver un répertoire sur votre ordinateur hôte que vous souhaitez partager dans la VM.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders.png"><img alt="../../_images/vmdk_shared_folders.png" src="../../_images/vmdk_shared_folders.png" style="width: 423.15000000000003px; height: 280.8px;" /></a>
+</div></blockquote>
+<p>Vous pouvez choisir de rendre le dossier partagé en lecture seule et monté automatiquement. Une fois que le « chemin d’accès au dossier » et le « nom du dossier » sont définis, cliquez sur OK, puis à nouveau OK pour terminer et fermer la fenêtre de paramétrage.</p>
+<p><strong>Exécuter une machine virtuelle</strong></p>
+<p>Démarrez maintenant la VM en cliquant sur le bouton Démarrer (flèche verte).</p>
+<p>Lorsque vous installez l’iso dans la VM, le nom d’utilisateur doit être réglé sur «&nbsp;user&nbsp;»</p>
+<p>L’utilisateur «&nbsp;user&nbsp;» n’est pas membre du groupe «&nbsp;users&nbsp;» dans la machine virtuelle OSGeoLive. Cela empêche certains outils d’écrire dans le répertoire de données et empêche certains logiciels de démarrer.</p>
+<p>La solution est de réparer le vmdk avec la procédure unique suivante:</p>
+<ol class="arabic simple">
+<li>Démarrer un terminal.</li>
+<li>Exécutez «&nbsp;sudo adduser user users&nbsp;».</li>
+<li>Appliquez cette modification en commençant une nouvelle session de bureau : soit en redémarrant la machine virtuelle, soit vous vous déconnectez et vous reconnectez (nom d’utilisateur «&nbsp;user&nbsp;», mot de passe «&nbsp;user&nbsp;»).</li>
+</ol>
+<p>Aussi une fois que le système OSGeo démarre, ajoutez-vous au groupe vboxsf afin que les dossiers partagés (définis ci-dessus) soient accessibles en cours d’exécution dans avec un terminal :</p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
+<p>Dans l’exemple ci-dessus, nous avons défini un chemin d’accès dossier partagé sur le système hôte et l’avons nommé « GIS» dans les paramètres VM. Le dossier partagé s’affiche dans le système de fichiers sous /media/sf_GIS/. Pour monter ce dossier dans le répertoire d’accueil de l’utilisateur, par exemple, dans une exécution de terminal :</p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></code></p>
+<p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></code></p>
+<p>Maintenant, les fichiers sur votre machine hôte dans le dossier choisi seront également disponibles dans la VM dans le dossier «&nbsp;GIS&nbsp;» du répertoire personnel de l’utilisateur.</p>
+</div>
+<div class="section" id="see-also">
+<h2>Voir Aussi:<a class="headerlink" href="#see-also" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="first docutils">
+<dt>Pages du wiki OSGeo:</dt>
+<dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Autres manières de créer une machine virtuelle</a></dd>
+</dl>
+</li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Guide de démarrage rapide OSGeoLive</span></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Installer OSGeoLive sur votre disque dur</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">Créer une clé flash USB OSGeoLive amorçable</span></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

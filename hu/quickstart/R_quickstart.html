@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>R gyorstalpaló &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="Mapnik" href="../overview/mapnik_overview.html" />
+    <link rel="prev" title="R" href="../overview/R_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://cran.r-project.org"><img alt="../../_images/logo_R.png" class="align-right" src="../../_images/logo_R.png" /></a>
+<div class="section" id="r-quickstart">
+<h1>R gyorstalpaló<a class="headerlink" href="#r-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az R egy szabad szoftver környezet statisztikai számításokhoz és grafikákhoz.</p>
+<p>Ez a gyorstalpaló leírja:</p>
+<blockquote>
+<div><ul class="simple">
+<li>R használata egyszerű számításokhoz</li>
+<li>Adatok betöltése shape fájlból és megjelenítése</li>
+<li>koordináta transzformáció végrehajtása</li>
+<li>pontok megjelenítése a térképen</li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#start-r" id="id1">Indítsa el az R-t</a></li>
+<li><a class="reference internal" href="#building-data" id="id2">Adatok előállítása</a></li>
+<li><a class="reference internal" href="#loading-map-data" id="id3">Térképi adatok betöltése</a></li>
+<li><a class="reference internal" href="#vignettes" id="id4">Matricák</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">Mi a következő?</a></li>
+</ul>
+</div>
+<div class="section" id="start-r">
+<h2><a class="toc-backref" href="#id1">Indítsa el az R-t</a><a class="headerlink" href="#start-r" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az R lényegében egy parancssori program, bár a grafikus felhasználói felületek is  rendelkezésre állnak. Beír egy sornyi kódot a parancssorba, megnyomja a return gombot, és a R interpreter kiértékeli azt, és kiírja az eredményt.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">Ne tartson a parancssortól - nagy lehetőségek forrása. A fel és le nyilakat használva visszahívhatja a korábbi parancsokat, így kijavíthatja a hibákat. Nyomjon CTRL.C-t, ha elakadt és a promptot szeretné visszakapni.</p>
+</div>
+<p>Válassza a menüből <span class="menuselection">Geospatial ‣ Spatial Tools ‣ R Statistics</span>. Az R-t futtató terminálablak jelenik meg.</p>
+<p>Egyszerű aritmetikai számításokkal kezdheti.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">6</span>
+
+<span class="o">&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">2.5</span>
+
+<span class="o">&gt;</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.414214</span>
+
+<span class="o">&gt;</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.155727</span>
+</pre></div>
+</div>
+<p>Az aritmetikai, trigonometriai és statisztikai függvények teljes készletét beépítették és további ezrek érhetők el a <a class="reference external" href="https://cran.r-project.org/">CRAN</a> archívum csomagjaiból.</p>
+<p>Az R-ben a fő prompt a <code class="docutils literal"><span class="pre">&gt;</span></code>, de van egy folytató prompt <code class="docutils literal"><span class="pre">+</span></code>, mely akkor jelenik meg ha az R további inputot vár teljes kifejezéshez. Akkor látja, ha elfelejt megadni egy záró szögletes vagy kerek zárójelet.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sqrt</span><span class="p">(</span>
+<span class="o">+</span> <span class="mi">2</span>
+<span class="o">+</span> <span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.414214</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="building-data">
+<h2><a class="toc-backref" href="#id2">Adatok előállítása</a><a class="headerlink" href="#building-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Lehet, hogy csodálkozik, hogy mit csinálhat a titokzatos «egy» a szögletes zárójelben az outputban. Ez azt jelenti, hogy az eredmény egy szám. Az R képes az adatokat egydimenziós vektorokban, kétdimenziós mátrixokban, és a többdimenziós tömbökben tárolni. Sok olyan függvény van, amely képes ezeket generálni. Íme egy egyszerű sorozat:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">seq</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.000000</span> <span class="mf">1.444444</span> <span class="mf">1.888889</span> <span class="mf">2.333333</span> <span class="mf">2.777778</span> <span class="mf">3.222222</span> <span class="mf">3.666667</span> <span class="mf">4.111111</span>
+<span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="mf">4.555556</span> <span class="mf">5.000000</span>
+</pre></div>
+</div>
+<p>Most láthatja, hogy a <code class="docutils literal"><span class="pre">[9]</span></code> azt jelenti, hogy a 4.555 a kilencedik érték a vektorban.</p>
+<p>Ha mátrixot hoz létre sor és oszlop címkéket kap:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">m</span>
+     <span class="p">[,</span><span class="mi">1</span><span class="p">]</span> <span class="p">[,</span><span class="mi">2</span><span class="p">]</span> <span class="p">[,</span><span class="mi">3</span><span class="p">]</span> <span class="p">[,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,]</span>    <span class="mi">1</span>    <span class="mi">4</span>    <span class="mi">7</span>   <span class="mi">10</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,]</span>    <span class="mi">2</span>    <span class="mi">5</span>    <span class="mi">8</span>   <span class="mi">11</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,]</span>    <span class="mi">3</span>    <span class="mi">6</span>    <span class="mi">9</span>   <span class="mi">12</span>
+</pre></div>
+</div>
+<p>A mátrix elemeinek eléréséhez szögletes zárójelek között, vesszővel elválasztva adjuk meg a sor és oszlop indexeket. Hagyja üresen az egyik indexet a a teljes sor vektorként megkapásához. Használjon egy vektor indexet  több sor vagy oszlop kivételéhez mint egy kisebb mátrix.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">11</span>
+
+<span class="o">&gt;</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">,]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="mi">2</span>  <span class="mi">5</span>  <span class="mi">8</span> <span class="mi">11</span>
+
+<span class="o">&gt;</span> <span class="n">m</span><span class="p">[,</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+     <span class="p">[,</span><span class="mi">1</span><span class="p">]</span> <span class="p">[,</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,]</span>    <span class="mi">7</span>   <span class="mi">10</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,]</span>    <span class="mi">8</span>   <span class="mi">11</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,]</span>    <span class="mi">9</span>   <span class="mi">12</span>
+</pre></div>
+</div>
+<p>Az adatkeretek olyan adatstruktúrák, melyek az RDMS-ekben, mint például Postgres vagy MySQL, található adatstruktúrákat tükrözik. Minden sorra mint egy rekordra gondolhatunk, oszlopokkal mint a mezők az adatbázisban. Mint az adatbázisban, minden mezőnek azonos típusúnak kell lennie minden rekordban.</p>
+<p>Sok szempontból ezek ugyanúgy működnek, mint a mátrixok, de megkaphatja és beállíthatja az oszlopokat név alapján is a $ jelölés használatával:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; d = data.frame(x=1:10, y=1:10, z=runif(10)) # z is 10 random numbers
+&gt; d
+        x  y          z
+    1   1  1 0.44128080
+    2   2  2 0.09394331
+    3   3  3 0.51097462
+    4   4  4 0.82683828
+    5   5  5 0.21826740
+    6   6  6 0.65600533
+    7   7  7 0.59798278
+    8   8  8 0.19003625
+    9   9  9 0.24004866
+    10 10 10 0.35972749
+
+&gt; d$z
+ [1] 0.44128080 0.09394331 0.51097462 0.82683828 0.21826740 0.65600533
+ [7] 0.59798278 0.19003625 0.24004866 0.35972749
+
+&gt; d$big = d$z &gt; 0.6  # d$big is now a boolean true/false value
+&gt; d[1:5,]
+  x y          z   big
+1 1 1 0.44128080 FALSE
+2 2 2 0.09394331 FALSE
+3 3 3 0.51097462 FALSE
+4 4 4 0.82683828  TRUE
+5 5 5 0.21826740 FALSE
+
+&gt; d$name = letters[1:10] # create a new field of characters
+&gt; d[1:5,]
+  x y          z   big name
+  1 1 1 0.44128080 FALSE    a
+  2 2 2 0.09394331 FALSE    b
+  3 3 3 0.51097462 FALSE    c
+  4 4 4 0.82683828  TRUE    d
+  5 5 5 0.21826740 FALSE    e
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-map-data">
+<h2><a class="toc-backref" href="#id3">Térképi adatok betöltése</a><a class="headerlink" href="#loading-map-data" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Sok csomag létezik a téradatok kezelésére és statisztikákra. Néhányat bevettünk ide és néhány letölthető a CRAN-ról.</p>
+<p>Két shape fájlt fogunk betölteni itt - az országhatárok és lakott helyek a Natural Earth adatokból. Két kiegészítő csomagot használunk a térbeli funkcionalitás eléréséhez:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">library</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>           <span class="c1"># Simple Features manipulation Library</span>
+<span class="o">&gt;</span> <span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>      <span class="c1"># Plotting library</span>
+
+<span class="o">&gt;</span> <span class="n">countries</span> <span class="o">&lt;-</span> <span class="n">st_read</span><span class="p">(</span><span class="n">dsn</span> <span class="o">=</span> <span class="s2">&quot;~/data/natural_earth2/ne_10m_admin_0_countries.shp&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">places</span> <span class="o">&lt;-</span> <span class="n">st_read</span><span class="p">(</span><span class="n">dsn</span> <span class="o">=</span> <span class="s2">&quot;~/data/natural_earth2/ne_10m_populated_places.shp&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_sf</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ez egy egyszerű világtérképet ad nekünk:</p>
+<img alt="../../_images/r_plot1.png" src="../../_images/r_plot1.png" />
+<p>Ha egy OGR adathalmazt olvasunk be az R-be, egy olyan objektumot kapunk, amely sok sok szempontból úgy viselkedik, mint egy adatkeret. Az <code class="docutils literal"><span class="pre">admin</span></code> mezőt használhatjuk, hogy a világ adatok részhalmazát kapjuk, csak az Egyesült Királyságot:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; uk &lt;- countries[countries$admin == &#39;United Kingdom&#39;,]
+&gt; ggplot(uk) + geom_sf()
+</pre></div>
+</div>
+<img alt="../../_images/r_plot2.png" src="../../_images/r_plot2.png" />
+<p>Ez egy kicsit lapítottnak tűnik mindenkinek, aki itt lakik, mivel jobban ismerjük azt a koordináta-rendszert, amely a szélességi körünkhöz igazított. Jelenleg nem rendeltünk még az objektumhoz koordináta-rendszert.</p>
+<p>Az objektumhoz hozzá kell rendelnünk egy vetületi rendszert, mielőtt transzformálhatnánk az sf::st_transform függvénnyel az sf csomagból,  Az EPSG:27700-be transzformálunk, mely Nagy-Britannia referencia rendszere:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">ukos</span> <span class="o">&lt;-</span> <span class="n">st_transform</span><span class="p">(</span><span class="n">uk</span><span class="p">,</span><span class="mi">27700</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">ukos</span><span class="p">)</span> <span class="o">+</span> <span class="n">geom_sf</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/r_plot2_1.png" src="../../_images/r_plot2_1.png" />
+<p>Ez kirajzolja a transzformált alaptérképet. Most hozzá akarunk adni néhány pontot a lakott területek adathalmazból.  Ismét egy részhalmazt hozunk létre a kívánt pontokból és Ordanance Survey koordinátákba transzformáljuk:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; ukpop &lt;- places[places$SOV0NAME == &#39;United Kingdom&#39;,]
+&gt; ukpop &lt;- st_transform(ukpop,27700)
+</pre></div>
+</div>
+<p>Ezeket a pontokat hozzáadjuk az alaptérképhez, a méretüket a népesség négyzetgyökére skálázzuk (mert ez a szimbólumot népesség területarányosra állítja), állítsuk a színt pirosra és tömör kitöltésű foltra:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt; ggplot() +
+&gt;   geom_sf(data = ukos) +                                                          # add UK shape to the map
+&gt;   geom_sf(data = ukpop,                                                           # add the Populated places
+&gt;           aes(size = ukpop$POP_MAX/100000),                       # fix size of points (by area)
+&gt;           colour = &#39;red&#39;, alpha = 1/5) +                          # set points colour and transparency
+&gt;   coord_sf(crs = 27700, datum= sf::st_crs(27700),         # set a bounding box
+&gt;            xlim = st_bbox(ukos[c(1,3)]),                          # for the map
+&gt;            ylim = st_bbox(ukos[c(2,4)])
+&gt;           ) +
+&gt;   ggtitle(&#39;Uk Population centre sizes&#39;) +                         # set the map title
+&gt;       theme(legend.position = &#39;bottom&#39;) +                         # Legend position
+&gt;           scale_size_area(name = &#39;Population \nin 100K&#39;)  # 0 value means 0 area + legend title
+</pre></div>
+</div>
+<p>és megjelenik a végső képünk:</p>
+<img alt="../../_images/r_plot3.png" src="../../_images/r_plot3.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Javaslat</p>
+<p class="last">Az R-ből kilépéshez írja be <code class="docutils literal"><span class="pre">q()</span></code> és return. Az R megkérdezi, hogy menteni akarja-e a munkaterületét mint egy R adat-kép fájl. Amikor az R-t olyan könyvtárból indítja, ahol egy <code class="docutils literal"><span class="pre">.RData</span></code> fájl található, visszaállítja abból az adatokat.</p>
+</div>
+</div>
+<div class="section" id="vignettes">
+<h2><a class="toc-backref" href="#id4">Matricák</a><a class="headerlink" href="#vignettes" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Korábban az R csomagok dokumentációja minden függvényhez tömören megírt súgó oldalakra irányult. Most a csomag szerzőit arra bátorítjuk, hogy egy «matricát» írjanak mint a csomag egy barátságos bemutatása. Ha a <code class="docutils literal"><span class="pre">vignette()</span></code> függvényt argumentumok nélkül futtatja a rendszerén található matricák listáját kapja. Próbálja ki a <code class="docutils literal"><span class="pre">vignette(&quot;sf1&quot;)</span></code> parancsot egy technikai bevezetőhöz az R térbeli csomagjához.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id5">Mi a következő?</a><a class="headerlink" href="#what-next" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Általános információkhoz az R-ről próbálja meg a hivatalos <a class="reference external" href="https://cran.r-project.org/doc/manuals/R-intro.html">Introduction to R</a> vagy bármely dokumentációt az  <a class="reference external" href="https://www.r-project.org/">R Project</a> fő oldaláról.</p>
+<p>Az R térbeli vonatkozásairól további információhoz a legjobb kezdőpont valószínűleg az <a class="reference external" href="https://cran.r-project.org/web/views/Spatial.html">R Spatial Task View</a></p>
+<p>Érdemes megnéznie az „R-Spatial &lt;&lt;<a class="reference external" href="https://www.rspatial.org">https://www.rspatial.org</a>&gt; « _ oldalt is.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

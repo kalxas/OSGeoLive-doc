@@ -1,0 +1,176 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pygeoapi &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="pygeoapi gyorstalpaló" href="../quickstart/pygeoapi_quickstart.html" />
+    <link rel="prev" title="Re3gistry Quickstart" href="../quickstart/re3gistry_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://pygeoapi.io/"><img alt="../../_images/logo_pygeoapi.png" class="align-right" src="../../_images/logo_pygeoapi.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
+<div class="section" id="pygeoapi">
+<h1>pygeoapi<a class="headerlink" href="#pygeoapi" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="web-service">
+<h2>Web szolgáltatás<a class="headerlink" href="#web-service" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A <a class="reference external" href="https://pygeoapi.io">pygeoapi</a>  egy <a class="reference external" href="https://www.python.org/">Python</a> szerver implementáció az OGC API szsvány sorozathoz. A projekt a következő generációs <a class="reference external" href="https://ogcapi.ogc.org">OGC API</a> erőfeszítések részeként jelent meg 2018-ban és lehetőséget biztosít a szervezeteknek egy RESTful OGC API végpont felvonultatására OpenAPI, GeoJSON és HTML használatával. A pygeoapi <a class="reference external" href="https://opensource.org">nyílt forráskódú</a> és <a class="reference external" href="https://docs.pygeoapi.io/en/latest/license.html">MIT</a> licenc alatt adják ki.</p>
+<a class="reference internal image-reference" href="../../_images/pygeoapi_screenshot.png"><img alt="pygeoapi screenshot" class="align-right" src="../../_images/pygeoapi_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>kész modern OGC API szerver</li>
+<li>tanúsított OGC-kompatibilis és referenciaimplementáció OGC API-elemekhez</li>
+<li>továbbá implementálja az OGC API - feddvény, OGC API - csempék, OGC API - feldolgozás és a tér-idő eszközök könyvtárat</li>
+<li>kész adatszolgáltató modulok a rasterio-hoz, GDAL/OGR-hez, Elasticsearch-hez, PostgreSQL/PostGIS-hez</li>
+<li>könnyen használható OpenAPI / Swagger dokumentáció fejlesztőknek</li>
+<li>támogatja a JSON, GeoJSON, HTML és CSV outputot</li>
+<li>támogatja a térbeli, időbeli vagy attribútum lekérdezés szerinti adatszűrést</li>
+<li>könnyen telepíthető: telepítse a teljes implementáció``pip`` vagy <code class="docutils literal"><span class="pre">git</span></code> segítségével</li>
+<li>egyszerű YAML konfiguráció</li>
+<li>könnyen bevethető: UbuntuGIS vagy a hivatalos Docker image segítségével</li>
+<li>rugalmas: az egyedi adatkapcsolatok, formátumok és feldolgozások készítéséhez robusztus modul keretrendszerre épül</li>
+<li>bármilyen Python web keretrendszert támogat (beleértve a Flask-et [alapértelmezett], Starlette-t)</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>A szabványok a pygeoapi középpontjában vannak. Lentebb a projekt szabvány támogatási mátrixa van.</p>
+<ul class="simple">
+<li>Implementálás: szabványt valósít meg (jó)</li>
+<li>Megfelelőség: megfelel az OGC megfelelőségi követelményeknek (nagyszerű)</li>
+<li>Referencia implementáció: referenciát biztosít a szabványhoz (fantasztikus!)</li>
+</ul>
+<table border="1" class="colwidths-given docutils align-left">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Szabvány</th>
+<th class="head">Támogatás</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="https://www.ogc.org/standards/ogcapi-features">OGC API - Elemek</a></td>
+<td>Referencia implementáció</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-coverages">OGC API - Feddvények</a></td>
+<td>Implementálja</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-tiles">OGC API - Csempék</a></td>
+<td>Implementálja</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="https://github.com/opengeospatial/ogcapi-processes">OGC API - Feldolgozások</a></td>
+<td>Implementálja</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="https://stacspec.org">tér-idő eszközök katalógus</a></td>
+<td>Implementálja</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="https://pygeoapi.io/">https://pygeoapi.io/</a></p>
+<p><strong>Licenc:</strong> <a class="reference external" href="https://docs.pygeoapi.io/en/latest/license.html">MIT</a></p>
+<p><strong>Szoftver verzió:</strong> 0.9.0</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>API interfészek:</strong> Python</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pygeoapi_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

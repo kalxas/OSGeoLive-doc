@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gvSIG Desktop &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="gvSIG Desktop gyorstalpaló" href="../quickstart/gvsig_quickstart.html" />
+    <link rel="prev" title="GRASS GIS gyorstalpaló" href="../quickstart/grass_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gvsig.com/es"><img alt="../../_images/logo_gvsig.png" class="align-right" src="../../_images/logo_gvsig.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="gvsig-desktop">
+<h1>gvSIG Desktop<a class="headerlink" href="#gvsig-desktop" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>Asztali GIS<a class="headerlink" href="#desktop-gis" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A <a class="reference external" href="http://www.gvsig.com/es">gvSIG</a> egy asztali térinformatikai rendszer (GIS), melyet bármilyen földrajzi adat digitalizálásra, tárolására, kezelésére elemzésére és használatára terveztek, abból a célból, hogy komplex szervezési és tervezési problémákat oldjanak meg. A gvSIG közismert a felhasználó barát felületéről és, hogy képes az összes elterjedt vektoros és raszteres formátumot kezelni. A térinformatikai adatokkal történő munkához az eszközök egy széles tárházát kínálja (lekérdezés, nyomtatási összeállítás, geofeldolgozás, hálózatok, stb.), melyek a gvSIG-et egy ideális eszközzé változtatják a szárazföldi területen dolgozó felhasználók számára.</p>
+<p>A gvSIG ezekről ismert:</p>
+<ul class="simple">
+<li>helyi és OGC szabványokon keresztül távoli adatok integrálása ugyanabba a nézetbe.</li>
+<li>egyszerűen bővíthető, lehetővé teszi a folyamatos alkalmazás fejlesztést, mint ahogy a egyedi megoldások fejlesztését.</li>
+<li>több mint 20 nyelven áll rendelkezésre (spanyol, angol, német, francia, olasz, …).</li>
+<li>használható Windows-on és Linuxon (vannak nem hivatalos Mac OS X verziói is).</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/gvsig_screenshot.png"><img alt="gvsig screenshot" class="align-right" src="../../_images/gvsig_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li>Általános GIS eszközöket biztosít, mint az adatok betöltése, térkép navigáció, térképi adatok lekérdezése mint alfanumerikus adatok, távolságmérés, tematikus kartográfia, jelmagyarázat szerkesztés az elterjed jelmagyarázat  típusok használatával, címkézés, elemek kiválasztása többféle szelekció típussal, adattáblák statisztikával, rendezés, tábla kapcsolatok, tábla összekapcsolások,  lap összeállítás, feldolgozás eszközök, CAD, raszter feldolgozás, stb.</li>
+<li>Interoperábilis: a legtöbb ismert adatformátummal képes dolgozni:<ul>
+<li>raszter : ecw, ENVI hdr, ERDAS img, (Geo)TIFF, GRASS, NetCDF…</li>
+<li>vektor &amp; CAD: shapefile, NetCDF, GML, KML, DGN, DXF, DWG</li>
+<li>adatbázisok: PostGIS, MySQL, Oracle, ArcSDE</li>
+<li>távoli adatok: OGC szabványok (WMS, WMTS, WFS, WCS), OSM, ECWP, ArcIMS</li>
+</ul>
+</li>
+<li>Szolgáltatás felismerő kliens, az SDI (katalógus és gazetter szolgáltatás) adat forrásainak lokalizálására<ul>
+<li>Katalógusok: Z3950, SRW, CSW (ISO/19115 és ebRIM)</li>
+<li>Gazetteers: ADL, WFS, WFS-G</li>
+</ul>
+</li>
+<li>Több mint 300 geoalgoritmus a SEXTANTE könyvtáron keresztül</li>
+<li>Integrált haladó CAD eszközök:<ul>
+<li>vektor adatok: elemek módosítása, létrehozása és törlése</li>
+<li>parancs konzol, a CAD szoftverek tipikus eleme</li>
+<li>eszközök mint súgó, rács, parancs stack, komplex elem szelekció</li>
+<li>eszközök elemek beillesztésére mint pont, felület, vonal, ellipszis, stb.</li>
+<li>eszközök elemek forgatására, átméretezésére, tükrözésére, stb.</li>
+</ul>
+</li>
+<li>Integrált haladó raszter eszközök:<ul>
+<li>georeferálás és vetület váltás</li>
+<li>export, vágás</li>
+<li>look up táblák, hisztogram</li>
+<li>szűrők, vektorizálás</li>
+<li>áttekintők és érdekes területek kezelés</li>
+</ul>
+</li>
+<li>3D nézetek</li>
+<li>További funkciók:<ul>
+<li>Szkript támogatás (vektor és raszter adatokhoz is)</li>
+<li>Hatékony vetület váltás a PROJ4-el</li>
+<li>Szimbólum készletek import/export</li>
+<li>Térkép lap összeállítás</li>
+<li>Grafikonok</li>
+<li>Haladó megjelenítési eszközök</li>
+<li>Haladó címkéző eszközök</li>
+<li>Publikáló bővítmény</li>
+<li>Hordozható nézetek</li>
+<li>Testreszabott disztribúciók</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implementált szabványok<a class="headerlink" href="#implemented-standards" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Számos Open Geospatial Consortium (OGC) szabvány kifinomult kliens támogatása</p>
+<ul class="simple">
+<li>WMS, WMTS, WFS és WCS rétegek betöltése</li>
+<li>SLD jelmagyarázat export/import</li>
+<li>Web térkép kontextus (WMC) export/import</li>
+<li>CSW keresés katalógusokban (ISO/19115 és ebRIM)</li>
+<li>Keresés gazetteers-ben a WFS-G ajánlás alkalmazásával</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Részletek<a class="headerlink" href="#details" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="http://www.gvsig.com/es">http://www.gvsig.com/es</a></p>
+<p><strong>Licenc:</strong> GNU General Public License (GPL) verzió 2</p>
+<p><strong>Szoftver verzió:</strong> 2.4.0</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="http://www.gvsig.com/en/gvsig-association">http://www.gvsig.com/en/gvsig-association</a>, <a class="reference external" href="http://www.gvsig.com/en/community/mailing-lists">http://www.gvsig.com/en/community/mailing-lists</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Megjegyzés</p>
+<p class="last">Ez a projekt csak az OSGeoLive virtuális gépben (VMDK) található meg</p>
+</div>
+</div>
+<div class="section" id="quickstart">
+<h3>Gyorstalpaló<a class="headerlink" href="#quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gvsig_quickstart.html"><span class="doc">Gyorstalpaló dokumentáció</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>
