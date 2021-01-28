@@ -74,51 +74,44 @@
 <h1>EOxServer<a class="headerlink" href="#eoxserver" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>EOxServer is a server for presenting big Earth Observation (EO) data
-archives and metadata via Open Standards.</p>
-<p>Earth Observation data currently supported includes 2D raster data generally
-acquired using sensors on satellites or aircrafts and including information
-about the time of acquisition and the footprint on planet Earth. It is
-typically used to monitor Earth’s natural and built environment.</p>
+<p>EOxServerは、大規模な地球観測(EO)データアーカイブとメタデータをオープンスタンダードで提供するサーバです。</p>
+<p>現在サポートされている地球観測データには、衛星や航空機のセンサを用いて一般的に取得された2Dラスタデータが含まれ、取得時刻や地球上のフットプリントに関する情報が含まれています。一般的には、地球の自然や人工的な環境を監視するために使用されます。</p>
 <p>EOxServer builds upon an Open Source stack of software which includes
 Python, <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="gdal_overview.html"><span class="doc">GDAL</span></a>, PROJ, and a <a class="reference internal" href="spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or
 <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_screenshot.png"><img alt="eoxserver screenshot" class="align-right" src="../../_images/eoxserver_screenshot.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>View, filter, subset, and download EO data</li>
-<li>Register EO data archives</li>
-<li>Web based and command line administration interface</li>
-<li>Publish data via <a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a><ul>
-<li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a> 1.0, 1.1 and
-2.0 &amp; proposed EO-WCS</li>
-<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> &amp; EO-WMS</li>
-<li>Proposed extensions to WCS including: GeoTIFF encoding, predefined
-projections (CRSs), scaling, and interpolation.</li>
-<li>Protocols supported are: KVP and XML/POST (used together with SOAP2POST
-Proxy to provide also XML/SOAP)</li>
+<li>EOデータの表示、フィルタ、サブセット作成、およびダウンロード</li>
+<li>EOデータアーカイブの登録</li>
+<li>Webベースのコマンドライン管理インタフェース</li>
+<li><a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a> 経由でのデータ公開<ul>
+<li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a> 1.0, 1.1 および 2.0 と 提案されている EO-WCS</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> および EO-WMS</li>
+<li>提案されているWCSの拡張: GeoTIFFエンコーディング、定義済み投影法(CRS)、スケーリング、補間。</li>
+<li>サポートされているプロトコル: KVP と XML/POST (SOAP2POST プロキシと一緒に使用して XML/SOAP も提供)</li>
 </ul>
 </li>
-<li>Publish using the following formats and groupings:<ul>
-<li>2-D EO Coverages derived from gmlcov:RectifiedGridCoverage</li>
-<li>2-D EO Coverages derived from gmlcov:ReferenceableGridCoverage</li>
-<li>Dataset Series as a collection of EO Coverages e.g. in a time series</li>
-<li>Stitched Mosaics of Rectified EO Coverages including contributingFootprint</li>
+<li>次の形式とグループ分けを使用したパブリッシュ:<ul>
+<li>gmlcov:RectifiedGridCoverage から派生した2-D EOカバレッジ</li>
+<li>gmlcov:ReferenceableGridCoverage から派生した2-D EOカバレッジ</li>
+<li>時系列などのEOカバレッジのコレクションとしてのデータセットシリーズ</li>
+<li>修正EOカバレッジのステッチ済みモザイク(contributingFootprintを含む)</li>
 </ul>
 </li>
-<li>Coverage formats supported:</li>
+<li>サポートされているカバレッジフォーマット:</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
 <li>GeoTIFF</li>
-<li>Formats supported by the GDAL library</li>
+<li>GDALライブラリでサポートされているフォーマット</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
 <li>WCS, EO-WCS</li>
@@ -130,18 +123,18 @@ Proxy to provide also XML/SOAP)</li>
 </div></blockquote>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/stable/">https://docs.eoxserver.org/en/stable/</a></p>
-<p><strong>Licence:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/copyright.html#license">MIT-style license</a></p>
-<p><strong>Software Version:</strong> 1.0.0RC17</p>
-<p><strong>Supported Platforms:</strong> Linux, Windows, Mac</p>
-<p><strong>API Interfaces:</strong> Python</p>
-<p><strong>Support:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support">https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support</a></p>
+<h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/stable/">https://docs.eoxserver.org/en/stable/</a></p>
+<p><strong>ライセンス:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/copyright.html#license">MIT-style license</a></p>
+<p><strong>ソフトウェアバージョン:</strong> 1.0.0RC17</p>
+<p><strong>対応プラットフォーム:</strong> Linux, Windows, Mac</p>
+<p><strong>API インタフェース:</strong> Python</p>
+<p><strong>サポート:</strong> <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support">https://docs.eoxserver.org/en/latest/users/basics.html#where-can-i-get-support</a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

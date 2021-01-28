@@ -78,19 +78,19 @@
 <a class="reference internal image-reference" href="../../_images/52nSOS_screenshot.png"><img alt="52nSOS screenshot" class="align-right" src="../../_images/52nSOS_screenshot.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="core-features">
-<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><strong>ブラウザクライアント</strong>:SOSはブラウザベースのアプリケーションで提供されます。これにより、サービス・インスタンスの管理と構成、およびSOS操作のテスト要求の送信のための手段が提供されます。適切なサンプル要求が含まれます。</li>
-<li><strong>Helgoland</strong>:SOSには、水文、気象、環境モニタリング、交通管理など、さまざまな使用分野におけるセンサーWebデータの調査、分析、視覚化のためのHelgolandアプリケーションが含まれています。</li>
+<li><strong>ブラウザクライアント</strong>: SOSはブラウザベースのアプリケーションで提供されます。これにより、サービス・インスタンスの管理と構成、およびSOS操作のテスト要求の送信のための手段が提供されます。適切なサンプル要求が含まれます。</li>
+<li><strong>Helgoland</strong>: SOSには、水文、気象、環境モニタリング、交通管理など、さまざまな使用分野におけるセンサーWebデータの調査、分析、視覚化のためのHelgolandアプリケーションが含まれています。</li>
 <li><strong>仕様</strong>: 52°North SOSは、現在の仕様バージョン2.0.0および以前のバージョン1.0.0を実装します(ここではトランザクション操作はありません)。各標準バージョンに実装されている操作を以下に示します。</li>
-<li><strong>INSPIRE ダウンロードサービス拡張</strong>: バージョン4.2.0以降では、SOSをINSPIREダウンロードサービスとして使用できるように拡張されています。背景情報は、<a class="reference external" href="https://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">ブログポスト</a>  および  <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">Wiki</a> で提供されています。</li>
-<li><strong>Air Quality データ eレポート拡張</strong>: バージョン4.3.0以降では、Air Quality Data Flows E1a、E1b、およびE2a準拠データを提供する拡張機能が使用可能です(OSGeoLiveのインスタンスは適切に設定されていません)。<a class="reference external" href="https://wiki.52north.org/SensorWeb/AqdEReporting#Installation">インストールと設定</a> は 52°North Wiki 内に記載されています。</li>
-<li><strong>センサー Web REST-API</strong>: バージョン4.1.1以降では、バンドルバージョンが使用可能で、 <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorWebClientRESTInterface">RESTful API</a>　が直接使用可能です。したがって、観測データはRESTfulな方法で要求することができ、JSONエンコードされた応答で返されます。詳細については`SOS webapp &lt;<a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">http://localhost:8080/52nSOS/static/doc/api-doc/</a>&gt;`_ 内で文書を確認できます。</li>
+<li><strong>INSPIRE ダウンロードサービス拡張</strong>: バージョン4.2.0以降では、SOSをINSPIREダウンロードサービスとして使用できるように拡張されています。背景情報は、 <a class="reference external" href="https://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">ブログポスト</a>  および <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">Wiki</a> で提供されています。</li>
+<li><strong>Air Quality データeレポート拡張</strong>: バージョン4.3.0以降では、Air Quality Data Flows E1a、E1b、およびE2a準拠データを提供する拡張機能が使用可能です(OSGeoLiveのインスタンスは適切に設定されていません)。<a class="reference external" href="https://wiki.52north.org/SensorWeb/AqdEReporting#Installation">インストールと設定</a> は 52°North Wiki 内に記載されています。</li>
+<li><strong>センサー Web REST-API</strong>: バージョン4.1.1以降では、バンドルバージョンが使用可能で、 <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorWebClientRESTInterface">RESTful API</a> が直接使用可能です。したがって、観測データはRESTfulな方法で要求することができ、JSONエンコードされた応答で返されます。詳細については <a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">SOS webapp</a> 内で文書を確認できます。</li>
 <li><strong>INSPIRE 専門観測</strong>: <a class="reference external" href="https://inspire.ec.europa.eu/id/document/tg/d2.9-o%26m-swe">INSPIREにおける観測と測定及びセンサーWeb対応関連標準規格 (D2.9)</a> ガイドラインで定義されている INSPIRE 専門観測をサポートしています(<a class="reference external" href="https://wiki.52north.org/SensorWeb/InspireSpecialisedObservations">実装についての詳細情報</a>)。</li>
 <li><strong>結果フィルタリング</strong>: 観測データ(GetObservation)とデータ可用性情報(GetDataAvailability)の観測データ値でのフィルタリングをサポートしています。</li>
 <li><strong>詳細</strong>: <a class="reference external" href="https://wiki.52north.org/SensorWeb/SensorObservationServiceIVDocumentation#Features">実装された機能の詳細</a> は 52°North Wiki にあります。</li>
-<li>このバージョンの 52°North SOS の開発は、様々なプロジェクト、組織、メンバーによってサポートされています。詳細については <a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS client</a> を参照してください。</li>
-<li>我々は、このSOSインストールで利用されているデモデータを提供してくれた、ベルギーの地域間環境庁(<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>)に感謝の意を表します。でもデータは、 <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> ライセンスの下で公開されています。</li>
+<li>このバージョンの 52°North SOS の開発は、様々なプロジェクト、組織、メンバーによってサポートされています。詳細については <a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS クライアント</a> を参照してください。</li>
+<li>我々は、このSOSインストールで利用されているデモデータを提供してくれた、ベルギーの地域間環境庁(<a class="reference external" href="https://www.irceline.be/en/">IRCEL - CELINE</a>)に感謝の意を表します。デモデータは、 <a class="reference external" href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> ライセンスの下で公開されています。</li>
 </ul>
 <div class="section" id="sos-operations">
 <h3>SOS 操作<a class="headerlink" href="#sos-operations" title="このヘッドラインへのパーマリンク">¶</a></h3>

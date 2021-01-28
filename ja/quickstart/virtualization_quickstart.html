@@ -76,7 +76,7 @@
 <h2>仮想マシンの利点<a class="headerlink" href="#virtual-machine-advantages" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li>VMの応答速度はDVDよりもはるかに速く、通常はホストマシンに直接インストールするのと同等です。</li>
-<li>すべての構成変更、ソフトウェア更新、および保存されたファイルは、「通常の」コンピュータと同様に永続的です。So:</li>
+<li>すべての構成変更、ソフトウェア更新、および保存されたファイルは、 「通常の」 コンピュータと同様に永続的です。そのため:</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -93,24 +93,24 @@
 <h2>動作環境<a class="headerlink" href="#system-requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li>RAM:2GB以上Ubuntuシステムは1GBのRAMで正常に動作するので、ホストシステムと少なくとも同じ量のメモリを確保する必要があります。したがって、スムーズな動作には合計2GBが必要です。GeoServerなどの一部のアプリケーションでは、仮想マシンに2GB以上のRAMが必要です。可能であれば、仮想マシンに2GB以上のRAMを用意することを検討してください。</li>
-<li>ハードディスクの空き容量 <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  の仮想ディスクファイル(vmdk)は、ほぼ10GBに解凍されます。また、仮想マシン上で作業できるスペースを確保するために、より多くのスペースが必要になります。したがって、20GBが推奨されます。</li>
-<li>CPU: どのCPUでもかまいませんが、」Virtualization Technology」をサポートの方が高速です。あなたのコンピュータのCPUは`ここ&lt;<a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html</a>&gt;_ で確認できます。</li>
+<li>ハードディスクの空き容量 <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> の仮想ディスクファイル(vmdk)は、ほぼ10GBに解凍されます。また、仮想マシン上で作業できるスペースを確保するために、より多くのスペースが必要になります。したがって、20GBが推奨されます。</li>
+<li>CPU: どのCPUでもかまいませんが、 「Virtualization Technology」 をサポートの方が高速です。あなたのコンピュータのCPUは <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">ここ</a> で確認できます。</li>
 </ul>
 <p>この 4〜5 年で製造されたマシンのほとんどは、この要件を満たしています。</p>
 </div>
 <div class="section" id="howto">
 <h2>手順<a class="headerlink" href="#howto" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>ダウンロード</strong></p>
-<p><a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a>  をダウンロードし、ソフトウェアをインストールしてください。Windowsでインストーラを実行するか、UbuntuのようなLinuxシステムで次の操作を行います。</p>
+<p><a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a> をダウンロードし、ソフトウェアをインストールしてください。Windowsでインストーラを実行するか、UbuntuのようなLinuxシステムで次の操作を行います。</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
-<p>さらに、<a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> からOSGeo仮想ディスクファイル(vmdk)をダウンロードします。「Download virtual machine(仮想マシンのダウンロード)」ボタンをクリックします。次に、ダウンロードしたファイルを解凍します(<a class="reference external" href="https://www.7-zip.org">7zip</a> )。</p>
+<p>さらに、 <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> からOSGeo仮想ディスクファイル(vmdk)をダウンロードします。」Download virtual machine(仮想マシンのダウンロード)」 ボタンをクリックします。次に、ダウンロードしたファイルを解凍します(<a class="reference external" href="https://www7-zip.org">7zip</a>)。</p>
 <p><strong>仮想マシンの作成</strong></p>
 <p>VirtualBox アプリケーションを起動し、新しい VM を作成するために New ボタンをクリックし、Next をクリックします。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox.png"><img alt="../../_images/virtualbox.png" src="../../_images/virtualbox.png" style="width: 386.5px; height: 291.5px;" /></a>
 </div></blockquote>
-<p>イメージに OSGeo-Live のような名前を付け、」Operating System」 に Linux、」Version」 に Ubuntu を選択します。</p>
+<p>イメージに OSGeoLive のような名前を付け、」オペレーティングシステム」 に Linux、 「バージョン」 に Ubuntu (64-bit) を選択します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name.png"><img alt="../../_images/virtualbox_select_name.png" src="../../_images/virtualbox_select_name.png" style="width: 247.79999999999998px; height: 280.0px;" /></a>
 </div></blockquote>
@@ -118,7 +118,7 @@
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_memory.png"><img alt="../../_images/vmdk_memory.png" src="../../_images/vmdk_memory.png" style="width: 228.8px; height: 261.3px;" /></a>
 </div></blockquote>
-<p>次の画面に進み、」既存の仮想ハードディスクファイルを使用する」を選択します。次に、ボタン(フォルダアイコン)をクリックして、OSGeoLive vmdkファイルを保存した場所を参照します。このファイルを選択し、[次へ]と[作成]を押します。</p>
+<p>次の画面に進み、 「既存の仮想ハードディスクファイルを使用する」 を選択します。次に、ボタン(フォルダアイコン)をクリックして、OSGeoLive vmdkファイルを保存した場所を参照します。このファイルを選択し、[次へ]と[作成]を押します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
 </div></blockquote>
@@ -127,28 +127,28 @@
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
 </div></blockquote>
-<p>「ディスプレイ」セクションに移動し、ビデオメモリを32MBまたは64MBに増やします。一部のホストオペレーティングシステムでは、表示を正しく機能させるために「3Dアクセラレータを有効にする]が必要になる場合があります。</p>
+<p>「ディスプレイ」 セクションに移動し、ビデオメモリを32MBまたは64MBに増やします。一部のホストオペレーティングシステムでは、表示を正しく機能させるために 「3Dアクセラレータを有効にする」 が必要になる場合があります。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_display.png"><img alt="../../_images/vmdk_display.png" src="../../_images/vmdk_display.png" style="width: 424.45px; height: 282.1px;" /></a>
 </div></blockquote>
-<p>さらに、」Shared Folders」 セクションに移動し、」Add folder」 (右側の緑の 「+」 アイコン) をクリックし、VM 内部で共有したいホストコンピュータのディレクトリを指定します。</p>
+<p>さらに、 「共有フォルダー」 セクションに移動し、 「フォルダーを追加」 (右側の緑の 「+」 アイコン) をクリックし、VM 内部で共有したいホストコンピュータのディレクトリを指定します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders.png"><img alt="../../_images/vmdk_shared_folders.png" src="../../_images/vmdk_shared_folders.png" style="width: 423.15000000000003px; height: 280.8px;" /></a>
 </div></blockquote>
-<p>共有フォルダを読み取り専用にし、自動マウントすることもできます。「フォルダパス」と「フォルダ名」を定義したら、[OK]をクリックし、もう一度[OK]をクリックして設定ウィンドウを閉じます。</p>
+<p>共有フォルダを読み取り専用にし、自動マウントすることもできます。 「フォルダパス」 と 「フォルダ名」 を定義したら、[OK]をクリックし、もう一度[OK]をクリックして設定ウィンドウを閉じます。</p>
 <p><strong>仮想マシンの起動</strong></p>
 <p>Start (緑の矢印) ボタンをクリックして、VM を起動しましょう。</p>
-<p>VMにisoをインストールする場合は、ユーザー名を「user」に設定する必要があります。</p>
-<p>ユーザー「user」は、OSGeoLive仮想マシンの「users」グループのメンバーではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
+<p>VMにisoをインストールする場合は、ユーザー名を 「user」 に設定する必要があります。</p>
+<p>ユーザー 「user」 は、OSGeoLive仮想マシンの 「users」 グループのメンバーではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
 <p>この問題を解決するには、次の1回限りの手順でvmdkを修正します。</p>
 <ol class="arabic simple">
 <li>端末を起動します。</li>
 <li>sudo adduser user usersを実行します。</li>
-<li>この変更を適用するには、新しいデスクトップセッションを開始します。仮想マシンを再起動するか、ログアウトして再度ログインします(ユーザー名「user」、パスワード「user」)。</li>
+<li>この変更を適用するには、新しいデスクトップセッションを開始します。仮想マシンを再起動するか、ログアウトして再度ログインします(ユーザー名 「user」、パスワード 「user」)。</li>
 </ol>
 <p>また、OSGeoシステムが起動したら、vboxsfグループに自分自身を追加し、ターミナルウィンドウでを実行して共有フォルダ(上記で定義)にアクセスできるようにします。</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
-<p>上の例では、ホストシステム上に共有フォルダパスを定義し、VM設定で「GIS」という名前を付けました。共有フォルダは、ファイルシステムの/media/sf_GIS/の下に表示されます。このフォルダをユーザのホームディレクトリにマウントするには(たとえば、ターミナルで次のように実行します。</p>
+<p>上の例では、ホストシステム上に共有フォルダパスを定義し、VM設定で 「GIS」 という名前を付けました。共有フォルダは、ファイルシステムの/media/sf_GIS/の下に表示されます。このフォルダをユーザのホームディレクトリにマウントするには(たとえば、ターミナルで次のように実行します。</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></code></p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></code></p>
 <p>これで、ホストマシンで選択したフォルダ内のファイルが、 VM 上のユーザのホームディレクトリ内の 「GIS」 フォルダでも利用可能になりました。</p>

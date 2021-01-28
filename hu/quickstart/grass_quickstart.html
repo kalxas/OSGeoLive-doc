@@ -113,7 +113,7 @@
 <h2><a class="toc-backref" href="#id2">Egy térkép megjelenítése</a><a class="headerlink" href="#display-a-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/grass-layerman.png"><img alt="screenshot" class="align-left" src="../../_images/grass-layerman.png" style="width: 384.0px; height: 300.0px;" /></a>
 <ol class="arabic simple">
-<li>Once inside, select for display the raster map layer „<cite>elevation</cite>” from the PERMANENT mapset.</li>
+<li>Belépés után a megjelenítéshez válasszon egy raszter réteget  mint például az „<cite>elevation</cite>”-t a PERMANENT térképhalmazból.</li>
 <li>Menjen a <cite>GIS Layer Manager</cite> ablakba.</li>
 <li>Kattintson a sakktábla eszköztár gombra, melyen „+” van.</li>
 <li>Válassza ki a térkép nevét a „<em>map to be displayed</em>” legördülő listából és kattintson a  <span class="guilabel">Ok</span>-ra.</li>
@@ -135,13 +135,7 @@
 <div class="section" id="create-a-shaded-relief-map">
 <h2><a class="toc-backref" href="#id5">Árnyékolt domborzati térkép létrehozása</a><a class="headerlink" href="#create-a-shaded-relief-map" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <a class="reference internal image-reference" href="../../_images/grass-shadedrelief.png"><img alt="screenshot" class="align-right" src="../../_images/grass-shadedrelief.png" style="width: 338.5px; height: 300.0px;" /></a>
-<p>Next we’ll create a shaded relief map of the <cite>elevation</cite> layer we saw
-earlier. Start by verifying that the <em>computational region</em> is set match
-the raster map of interest, „<cite>elevation</cite>” in the PERMANENT mapset. To
-do this, make sure it is loaded into the layer list of the main <cite>GIS Layer
-Manager</cite> window, right click on its name and select „Set computation region
-from selected map(s)”. If necessary, click on the „<em>Layers</em>” tab
-at the bottom to get back to the layer list.</p>
+<p>A következőben egy árnyékolt domborzati térképet hozunk létre a korábban látott „elevation” rétegből. Kezdjük  a <em>computational region</em> ellenőrzésével, hogy a PERMANENT térképhalmazból használt „<cite>elevation</cite>” rétegnek megfelelő-e. Ennek megtételéhez győződjön meg, hogy a  <cite>GIS Layer Manager</cite> ablak réteg listájába betöltötte a réteget, jobb gombbal kattintson a rétegnévre és válassza a „Set computation region from selected map(s)”-t.  Ha szükséges kattintson a „<em>Layers</em>” fülre alul, hogy visszatérjen a réteglistához.</p>
 <p>A <cite>Raster</cite> menüből válassza <span class="menuselection">Terrain analysis ‣ Compute shaded relief</span> (a Terrain analysis középtájon található a <cite>Raster</cite> menüben), és a modul párbeszédablaka jelenik meg. Az input rétegnek válassza az „elevation” <em>&#64;PERMANENT</em> térképet és a outputnak megadhatja a „shaded_relief” nevet. Ha befejezte kattintson a [<em>Run</em>] gombra. Az új <cite>shaded_relief</cite> <em>&#64;user1</em> térképet megtalálhatja a réteglistában. Kapcsolja ki a többi rétegmegjelenítését, hogy csak az újonnan létrehozott árnyékolt domborzat jelenjen meg.</p>
 </div>
 <div class="section" id="add-watersheds-and-streams">

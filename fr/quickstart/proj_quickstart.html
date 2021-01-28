@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PROJ Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Guide de démarrage avec PROJ &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,11 +72,8 @@
   <a class="reference external image-reference" href="https://proj.org/"><img alt="../../_images/logo_proj.png" class="align-right" src="../../_images/logo_proj.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="proj-quickstart">
-<h1>PROJ Quickstart<a class="headerlink" href="#proj-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
-<p>PROJ is a standard Unix filter function which converts geographic longitude
-and latitude coordinates into cartesian coordinates (and vice versa), and it is
-a C API for software developers to include coordinate transformation in their
-own software.</p>
+<h1>Guide de démarrage avec PROJ<a class="headerlink" href="#proj-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>PROJ est une fonction Unix standard qui convertit les coordonnées latitude et longitude en coordonnées cartésiennes (et vice versa). C’est aussi une API C destinée aux développeurs pour inclure cette transformation de coordonnées dans leur propre logiciel.</p>
 <div class="contents local topic" id="this-quick-start-describes-how-to-use-these-tools">
 <p class="topic-title">This Quick Start describes how to use these tools :</p>
 <ul class="simple">
@@ -89,24 +86,23 @@ own software.</p>
 <h2><a class="toc-backref" href="#id2">PROJ</a><a class="headerlink" href="#proj" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>What will I learn ?</strong> In this section, you will learn how to use the PROJ tool.</p>
+<p class="last">** Que vais-je apprendre ? ** Dans cette section, vous allez apprendre à utiliser l’outil PROJ.</p>
 </div>
 <div class="section" id="what-is-proj">
-<h3>What is PROJ ?<a class="headerlink" href="#what-is-proj" title="Lien permanent vers ce titre">¶</a></h3>
-<p>PROJ and invproj perform respective forward and inverse transformation of cartographic data to
-or from cartesian data with a wide range of selectable projection functions.</p>
+<h3>Qu’est-ce que PROJ?<a class="headerlink" href="#what-is-proj" title="Lien permanent vers ce titre">¶</a></h3>
+<p>PROJ et invproj effectuent respectivement une transformation des données cartographique et son inverse depuis ou vers des données cartésiennes au travers d’un large panel de projections.</p>
 </div>
 <div class="section" id="proj-synopsis">
-<h3>proj Synopsis<a class="headerlink" href="#proj-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Résumé de proj<a class="headerlink" href="#proj-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="p">[</span> <span class="o">-</span><span class="n">bcCeEfiIlmorsStTvVwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">args</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 <span class="n">invproj</span> <span class="p">[</span> <span class="o">-</span><span class="n">bcCeEfiIlmorsStTwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">args</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>These commands are fully describe in <a class="reference external" href="https://proj.org/apps/proj.html">PROJ documentation</a> for the latest version.</p>
+<p>Ces commandes sont complètement décrites dans leur dernière version dans <a class="reference external" href="https://proj.org/apps/proj.html">proj documentation</a> .</p>
 </div>
 <div class="section" id="proj-example">
-<h3>PROJ Example<a class="headerlink" href="#proj-example" title="Lien permanent vers ce titre">¶</a></h3>
-<p>The following script</p>
+<h3>Exemple de PROJ<a class="headerlink" href="#proj-example" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le script qui suit</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">utm</span>  <span class="o">+</span><span class="n">lon_0</span><span class="o">=</span><span class="mi">112</span><span class="n">w</span>  <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span>
 <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
 <span class="mi">45</span><span class="n">d15</span><span class="s1">&#39;33.1&quot;   111.5W</span>
@@ -115,12 +111,7 @@ or from cartesian data with a wide range of selectable projection functions.</p>
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>will perform UTM forward projection with a stan-
-dard UTM central meridian nearest longitude
-112W. The geographic values of this example are
-equivalent and meant as examples of various
-forms of DMS input. The x-y output data will
-appear as three lines of:</p>
+<p>va effectuer une projection UTM avec un médidien standard central de longitude 112W. Les coordonnées géographiques de cet exemple sont équivalentes et utilisées comme exemple des nombreuses formes d’entrées de coordonnées. Les données x-y de sortie vont apparaître sous la forme de 3 fois la ligne:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">460769.27</span>     <span class="mf">5011648.45</span>
 </pre></div>
 </div>
@@ -130,24 +121,22 @@ appear as three lines of:</p>
 <h2><a class="toc-backref" href="#id3">cs2cs</a><a class="headerlink" href="#cs2cs" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>What will I learn ?</strong> In this section, you will learn how to use the cs2cs tool.</p>
+<p class="last">** Que vais-je apprendre ? ** dans cette section, vous allez apprendre à utiliser l’outil cs2cs.</p>
 </div>
 <div class="section" id="what-is-cs2cs">
-<h3>What is cs2cs ?<a class="headerlink" href="#what-is-cs2cs" title="Lien permanent vers ce titre">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cs2cs</span></code> performs transformation between the source and destination cartographic coordinate system
-on a set of input points. The coordinate system transformation can include translation between
-projected and geographic coordinates as well as the application of datum shifts.</p>
+<h3>Qu’est ce que cs2cs ?<a class="headerlink" href="#what-is-cs2cs" title="Lien permanent vers ce titre">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">cs2cs</span></code> effectue des transformations d’un système de coordonnées géographique source à un système destination sur un ensemble de points. La transformation de système de coordonnées peut inclure des translations entre des coordonnées géographiques ou projetées autant qu’appliquer des translations de systèmes de référence (datums).</p>
 </div>
 <div class="section" id="cs2cs-synopsis">
-<h3>cs2cs Synopsis<a class="headerlink" href="#cs2cs-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Résumé de cs2cs<a class="headerlink" href="#cs2cs-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cs2cs</span> <span class="p">[</span> <span class="o">-</span><span class="n">eEfIlrstvwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">opts</span><span class="p">[</span><span class="o">=</span><span class="n">arg</span><span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">to</span> <span class="p">[</span><span class="o">+</span><span class="n">opts</span><span class="p">[</span><span class="o">=</span><span class="n">arg</span><span class="p">]]</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>These commands are fully describe in <a class="reference external" href="https://proj.org/apps/cs2cs.html">cs2cs documentation</a> for the latest version.</p>
+<p>La dernière version de cette commande est complètement décrite dans  <a class="reference external" href="https://proj.org/apps/cs2cs.html">cs2cs documentation</a> .</p>
 </div>
 <div class="section" id="cs2cs-example">
-<h3>cs2cs Example<a class="headerlink" href="#cs2cs-example" title="Lien permanent vers ce titre">¶</a></h3>
-<p>The following script</p>
+<h3>Exemple de cs2cs<a class="headerlink" href="#cs2cs-example" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le script qui suit</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cs2cs</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">latlong</span> <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">NAD83</span>
       <span class="o">+</span><span class="n">to</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">utm</span> <span class="o">+</span><span class="n">zone</span><span class="o">=</span><span class="mi">10</span>  <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">NAD27</span>
 <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
@@ -157,10 +146,7 @@ projected and geographic coordinates as well as the application of datum shifts.
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>will transform the input NAD83 geographic coordinates into NAD27
-coordinates in the UTM projection with zone 10 selected. The geographic
-values of this example are equivalent and meant as examples of various forms of DMS input.
-The x-y output data will appear as three lines of:</p>
+<p>va transformer les coordonnées géographiques NAD83 en entrée en coordonnées NAD27 dans la zone 10 de la projection UTM. Les coordonnées géographiques de cet exemple sont équivalentes et utilisées comme exemple des nombreuses formes d’entrée de coordonnées. Les données x-y en sortie vont apparaître 3 fois sous la forme:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1402285.99</span>      <span class="mf">5076292.42</span> <span class="mf">0.000</span>
 </pre></div>
 </div>
@@ -170,52 +156,42 @@ The x-y output data will appear as three lines of:</p>
 <h2><a class="toc-backref" href="#id4">geod</a><a class="headerlink" href="#geod" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>What will I learn ?</strong> In this section, you will learn how to use the geod tool.</p>
+<p class="last">** Que vais-je apprendre ? ** Dans cette section, vous allez apprendre à utiliser l’outil geod.</p>
 </div>
 <div class="section" id="what-is-geod">
-<h3>What is geod ?<a class="headerlink" href="#what-is-geod" title="Lien permanent vers ce titre">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">geod</span></code> (direct) and <code class="docutils literal"><span class="pre">invgeod</span></code> (inverse) perform geodesic («&nbsp;Great
-Circle&nbsp;») computations for determining latitude, longitude and
-back azimuth of a terminus point given a initial point latitude,
-longitude, azimuth and distance (direct) or the forward
-and back azimuths and distance between an initial and terminus
-point latitudes and longitudes (inverse). The results are
-accurate to round off for <cite>|f| &lt; 1/50</cite>, where f is flattening.</p>
-<p><code class="docutils literal"><span class="pre">invgeod</span></code> may not be available on all platforms; in this case
-call geod with the -I option.</p>
+<h3>Qu’est-ce que geod ?<a class="headerlink" href="#what-is-geod" title="Lien permanent vers ce titre">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">geod</span></code> (direct) et <code class="docutils literal"><span class="pre">invgeod</span></code> (inverse) effectuent des calculs geodesiques (“Grand cercle”) pour déterminer la latitude, longitude et azimuth d’un point cible à partir d’un point initial formé d’une latitude, longitude, azimuth et distance (sens direct) ou pour déterminer les azimuths avant et arrière et la distance entre les latitudes et longitudes d’un point initial et final (sens inverse). Les résultats sont arrondis tel que <cite>|f| &lt; 1/50</cite>, où f est l’aplanissement.</p>
+<p><code class="docutils literal"><span class="pre">invgeod</span></code> n’est pas nécessairement disponible sur toutes les plateformes; dans ce cas, il est possible d’appeler geod avec l’option -I.</p>
 </div>
 <div class="section" id="geod-synopsis">
-<h3>geod Synopsis<a class="headerlink" href="#geod-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Exemple de geod<a class="headerlink" href="#geod-synopsis" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">geod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=&lt;</span><span class="n">ellipse</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">-</span><span class="n">afFIlptwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">args</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 
 <span class="n">invgeod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=&lt;</span><span class="n">ellipse</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">-</span><span class="n">afFIlptwW</span> <span class="p">[</span> <span class="n">args</span>  <span class="p">]</span>  <span class="p">]</span>  <span class="p">[</span>  <span class="o">+</span><span class="n">args</span>  <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>These commands are fully describe in <a class="reference external" href="https://proj.org/apps/proj.html">PROJ documentation</a> for the latest version.</p>
+<p>Ces commandes sont complètement décrites dans leur dernière version dans <a class="reference external" href="https://proj.org/apps/proj.html">proj documentation</a> .</p>
 </div>
 <div class="section" id="geod-example">
-<h3>geod Example<a class="headerlink" href="#geod-example" title="Lien permanent vers ce titre">¶</a></h3>
-<p>The following script determines the geodesic azimuths and distance in U.S.
-statute miles from Boston, MA, to Portland, OR:</p>
+<h3>Exemple de geod<a class="headerlink" href="#geod-example" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le script suivant détermine les azimuths géodésiques et la distance en miles U.S. de Boston, MA, à Portland, OR:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">geod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span> <span class="o">-</span><span class="n">I</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">mi</span>
 <span class="mi">42</span><span class="n">d15</span><span class="s1">&#39;N 71d07&#39;</span><span class="n">W</span> <span class="mi">45</span><span class="n">d31</span><span class="s1">&#39;N 123d41&#39;</span><span class="n">W</span>
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>which gives the results:</p>
+<p>ce qui donne comme résultats:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">66</span><span class="n">d31</span><span class="s1">&#39;50.141&quot; 75d39&#39;</span><span class="mf">13.083</span><span class="s2">&quot; 2587.504</span>
 </pre></div>
 </div>
-<p>where the first two values are the azimuth from Boston to Portland,
-the back azimuth from Portland to Boston followed by the distance.</p>
-<p>An example of forward geodesic use is to use the Boston loca-
-tion and determine Portland’s location by azimuth and distance:</p>
+<p>où les deux premières valeurs sont l’azimuth de Boston à Portland et l’azimuth arrière de Portland à Boston suivis de la distance.</p>
+<p>Un exemple d’usage de géodésique avant est d’utiliser la position à Boston et de déterminer la position à Portland par son azimuth et sa distance:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">geod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">mi</span>
 <span class="mi">42</span><span class="n">d15</span><span class="s1">&#39;N 71d07&#39;</span><span class="n">W</span> <span class="o">-</span><span class="mi">66</span><span class="n">d31</span><span class="s1">&#39;50.141&quot; 2587.504</span>
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>which gives:</p>
+<p>ce qui donne:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">45</span><span class="n">d31</span><span class="s1">&#39;0.003&quot;N 123d40&#39;</span><span class="mf">59.985</span><span class="s2">&quot;W 75d39&#39;13.094&quot;</span>
 </pre></div>
 </div>
@@ -226,7 +202,7 @@ precision of the Portland location.</p>
 </div>
 </div>
 <div class="section" id="further-reading">
-<h3>Further reading<a class="headerlink" href="#further-reading" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>Pour aller plus loin<a class="headerlink" href="#further-reading" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="arabic simple">
 <li><a class="reference external" href="https://geographiclib.sourceforge.io/">GeographicLib</a></li>
 <li><a class="reference external" href="https://link.springer.com/article/10.1007/s00190-012-0578-z">C. F. F. Karney, Algorithms for Geodesics, J. Geodesy 87, 43-55 (2013)</a>.

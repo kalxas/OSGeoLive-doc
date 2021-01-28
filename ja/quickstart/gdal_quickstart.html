@@ -74,7 +74,7 @@
 <div class="section" id="gdal-ogr-quickstart">
 <h1>GDAL/OGR クイックスタート<a class="headerlink" href="#gdal-ogr-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>このクイックスタートは、GDAL(ラスタデータ)とOGR(ベクタデータ)の2つの部分に分かれています。</p>
-<p>このクイックスタートでは、次の方法について説明します。</p>
+<p>このクイックスタートでは、次の方法について説明します:</p>
 <dl class="docutils">
 <dt>GDAL</dt>
 <dd><ul class="first last simple">
@@ -82,7 +82,7 @@
 <li>gdal_translateでフォーマット変換</li>
 <li>gdalwarpを使用してデータを再投影</li>
 <li>データをgdal_warpまたはgdal_merge.pyでモザイク化</li>
-<li>シェイプファイルをgdaltindex付きのラスタータイルインデックスとして作成</li>
+<li>シェープファイルをgdaltindex付きのラスタータイルインデックスとして作成</li>
 </ul>
 </dd>
 <dt>OGR</dt>
@@ -159,7 +159,7 @@
 <dl class="docutils">
 <dt>注意：</dt>
 <dd><ul class="first last simple">
-<li>ドライバーは「GTiff/GeoTIFF」</li>
+<li>ドライバーは 「GTiff/GeoTIFF」</li>
 <li>サイズは10800x5400です</li>
 <li>バイト型の3バンドです。</li>
 <li>座標</li>
@@ -191,7 +191,7 @@
 </div>
 <div class="section" id="translation">
 <h2><a class="toc-backref" href="#id4">変換</a><a class="headerlink" href="#translation" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>変換はgdal_translateコマンドで行います。既定の出力形式はGeoTIFFです。<cite>-of</cite> フラグは出力フォーマットの選択に使用され、-coフラグは作成オプションの指定に使用されます。</p>
+<p>変換はgdal_translateコマンドで行います。既定の出力形式はGeoTIFFです。<cite>-of</cite> フラグは出力フォーマットの選択に使用され、-co フラグは作成オプションの指定に使用されます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdal_translate</span> <span class="o">-</span><span class="n">of</span> <span class="n">JPEG</span> <span class="o">-</span><span class="n">co</span> <span class="n">QUALITY</span><span class="o">=</span><span class="mi">40</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">jpg</span>
 </pre></div>
 </div>
@@ -209,7 +209,7 @@
 </div>
 <p>gdalinfoを使用してサイズを検証します。</p>
 <p><cite>-scale</cite> スイッチは、データの再スケールに使用できます。入力および出力範囲の明示的な制御も可能です。gdalinfo <cite>-mm</cite> スイッチを使用して、ピクセルの最小値/最大値を表示できます。</p>
-<p>ピクセル/ラインの位置に基づいてコピーを作成する`-srcwin` を使用して、イメージを2つに分割してみましょう(xoff yoff xsize ysize)。<cite>-projwin</cite> を使用して、地理参照座標(ulx uly lrx lry)でコーナーを定義することもできます。</p>
+<p>ピクセル/ラインの位置に基づいてコピーを作成する <cite>-srcwin</cite> を使用して、イメージを2つに分割してみましょう(xoff yoff xsize ysize)。<cite>-projwin</cite> を使用して、地理参照座標(ulx uly lrx lry)でコーナーを定義することもできます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdalinfo</span> <span class="o">-</span><span class="n">mm</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>
 <span class="n">gdal_translate</span> <span class="o">-</span><span class="n">srcwin</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">5400</span> <span class="mi">5400</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>  <span class="n">west</span><span class="o">.</span><span class="n">tif</span>
 <span class="n">gdal_translate</span> <span class="o">-</span><span class="n">srcwin</span> <span class="mi">5400</span> <span class="mi">0</span> <span class="mi">5400</span> <span class="mi">5400</span> <span class="n">HYP_50M_SR_W</span><span class="o">.</span><span class="n">tif</span>  <span class="n">east</span><span class="o">.</span><span class="n">tif</span>
@@ -218,11 +218,11 @@
 </div>
 <div class="section" id="raster-tileindex-with-gdaltindex">
 <h2><a class="toc-backref" href="#id6">gdaltindex付きラスタータイルインデックス</a><a class="headerlink" href="#raster-tileindex-with-gdaltindex" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>シェイプファイルをラスタタイルインデックスとして作成できます。すべてのイメージに対して、ポリゴンの範囲とファイルへのパスの境界を持つポリゴンが生成されます。</p>
+<p>シェープファイルをラスタタイルインデックスとして作成できます。すべてのイメージに対して、ポリゴンの範囲とファイルへのパスの境界を持つポリゴンが生成されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gdaltindex</span> <span class="n">index_natural_earth</span><span class="o">.</span><span class="n">shp</span> <span class="o">*</span><span class="n">st</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
-<p>QGISとogrinfoを使用して、出力シェイプファイルを見てみましょう(ogrinfoについては、このチュートリアルの後半で詳しく説明します)。</p>
+<p>QGISとogrinfoを使用して、出力シェープファイルを見てみましょう(ogrinfoについては、このチュートリアルの後半で詳しく説明します)。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
@@ -285,7 +285,7 @@ OGRFeature(index_natural_earth):1
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">QGISのようなデスクトップGISを使用してシェイプファイルを開き、確認します。</p>
+<p class="last">QGISのようなデスクトップGISを使用してシェープファイルを開き、確認します。</p>
 </div>
 </div>
 <div class="section" id="get-information-about-the-vector-data-with-ogrinfo">

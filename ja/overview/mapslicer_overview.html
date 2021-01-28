@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapSlicer &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="copyright" title="著作権" href="../copyright.html" />
+    <link rel="next" title="MapSlicer Quickstart" href="../quickstart/mapslicer_quickstart.html" />
+    <link rel="prev" title="Mapnik クイックスタート" href="../quickstart/mapnik_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapproxy.org/"><img alt="../../_images/logo_mapslicer.png" class="align-right" src="../../_images/logo_mapslicer.png" /></a>
+<div class="section" id="mapslicer">
+<h1>MapSlicer<a class="headerlink" href="#mapslicer" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="proxy-wms-tile-services">
+<h2>Proxy WMS &amp; タイル サービス<a class="headerlink" href="#proxy-wms-tile-services" title="このヘッドラインへのパーマリンク">¶</a></h2>
+</div>
+<div class="section" id="map-publishing">
+<h2>マップ・パブリッシング<a class="headerlink" href="#map-publishing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Mapスライサーは、ラスター・マップ・パブリッシングのためのマップ・タイルを作成するためのデスクトップ・アプリケーションです。Geodata は、 Google マップや地球と互換性のあるタイルに変換されて、直接ウェブサーバやクラウドストレージ (Amazon S3など) へアップロードされることで、公開できるようになります。</p>
+<p>サーバー・サイドでの大規模な構成変更は必要ありません。単純なファイルのホスティングはとても簡単です。強力なブラウザ機能により、パンやズーム、マーカーやベクタデータのオーバーレイなどの動的な操作が可能です。</p>
+<p>アプリケーションは、 OpenLayers や Google マップ API をベースにしたシンプルなビューアーをすぐに生成し、簡単にカスタマイズできる。</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer_screenshot.png"><img alt="mapslicer screenshot" class="align-right" src="../../_images/mapslicer_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>既知の Javascript API サポート: OpenLayers、 Google マップ API</li>
+<li>追加のサーバー・ソフトウェアのインストールは不要です</li>
+<li>ほとんどあらゆる場所でホスティング : Amazon S3 などのクラウド・ストレージ、または FTP アクセスによる安価の 「無制限の」 Web ホスティング</li>
+<li>商用レイヤ (Google、 Bing、 Yahoo! ) または OpenStreetMap を使用した簡単なマッシュアップ</li>
+<li>OSGEO TMS (タイル・マップ・サービス仕様) に従います。</li>
+<li>さまざまなフォーマットでラスターデータを処理する機能 : TIFF/GeoTIFF、 MrSID、 ECW、 JPEG2000、エルダス HFA、 NOAA BSB、 JPEG など。</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://mapproxy.org/">https://mapproxy.org/</a></p>
+<p><strong>ライセンス:</strong> New BSD License</p>
+<p><strong>ソースコード:</strong> <a class="reference external" href="https://github.com/geopython/mapslicer">https://github.com/geopython/mapslicer</a></p>
+<p><strong>ソフトウェアバージョン:</strong> 1.0rc2</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+</div>
+<div class="section" id="quickstart">
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapslicer_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

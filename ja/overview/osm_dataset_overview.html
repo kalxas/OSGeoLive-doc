@@ -26,8 +26,8 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="NetCDF Data Set" href="netcdf_dataset_overview.html" />
-    <link rel="prev" title="North Carolina USA Educational dataset" href="nc_dataset_overview.html" />
+    <link rel="next" title="NetCDF データセット" href="netcdf_dataset_overview.html" />
+    <link rel="prev" title="ノースカロライナ USA 教育データ・セット" href="nc_dataset_overview.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -75,7 +75,7 @@
 <div class="section" id="map-data">
 <h2>地図データ<a class="headerlink" href="#map-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>OpenStreetMapは、世界のクラウドソースによる地図で、利用可能なローカルスケールでの地図データうち最も詳細なソースの一つになりました。ソースの地図データは、Wikipediaの百科事典の維持と同様のプロセスで、世界中の数千人のボランティアによって作成・維持されています。</p>
-<p>OSMを最も目にする光景は、 <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> のオンライン上でのウェブタイルによるインターフェイスです。しかしマップは、 <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> や <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>, ArcGIS および 専用の OSM アプリケーションなどの、多くのアプリケーションで閲覧、インポート、編集が可能です。</p>
+<p>OSMを最も目にする光景は、 <a class="reference external" href="https://www.openstreetmap.org">https://www.openstreetmap.org</a> のオンライン上でのウェブタイルによるインタフェースです。しかしマップは、 <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> や <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>, ArcGIS および 専用の OSM アプリケーションなどの、多くのアプリケーションで閲覧、インポート、編集が可能です。</p>
 <p>プロジェクトの中心はデータの基礎になることで、すべての人がカスタム描画された地図の編集、閲覧、作成が可能となるようオープンに保たれています。基本的にOSMの焦点はデータにあり、リッチな地図は、これから単純に溢れたものとなります。</p>
 <p>OSGeoLive のディストリビューションには、いくつかのアプリケーションで例に使用されているOSMデータの都市サイズに抽出されたデータが含まれています。</p>
 <a class="reference internal image-reference" href="../../_images/osm_dataset_screenshot.png"><img alt="osm_dataset screenshot" class="align-right" src="../../_images/osm_dataset_screenshot.png" style="width: 500px;" /></a>
@@ -97,7 +97,7 @@
 <li>feature_city_poi.db: 上記の大都市OSMデータから、POIノードのデータをSqlite DBに格納したもの。パブや居酒屋、ガソリンスタンド、レストランやスーパーマーケットなどが含まれています。</li>
 <li>対象都市名を参照するファイルには、上記のファイルと同じデータが含まれています。クイックスタートと概要では一般的なファイル名を使用するため、新しいリリースごとに都市の例を変更できます。</li>
 </ul>
-<p>OSM機能の都市データは、osm2pgsqlツールを使用して「osm_local」という名前のPostGISデータベースにインポートされています。このデータベースに使用される空間参照システムは、WGS84データム(EPSGコード4326)を使用した緯度-経度順であり、必要に応じて、Spherical-Mercatorなどの他の空間参照システム(SRS)に再投影できます。小さなCBD抽出物は、「pgrouting」と呼ばれる別のPostGISデータベースにロードされます。</p>
+<p>OSM機能の都市データは、osm2pgsqlツールを使用して 「osm_local」 という名前のPostGISデータベースにインポートされています。このデータベースに使用される空間参照システムは、WGS84データム(EPSGコード4326)を使用した緯度-経度順であり、必要に応じて、Spherical-Mercatorなどの他の空間参照システム(SRS)に再投影できます。小さなCBD抽出物は、 「pgrouting」 と呼ばれる別のPostGISデータベースにロードされます。</p>
 </div>
 <div class="section" id="details">
 <h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>

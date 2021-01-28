@@ -78,50 +78,50 @@
 <a class="reference internal" href="52nSOS_overview.html"><span class="doc">52 North SOS</span></a>, <a class="reference internal" href="52nWPS_overview.html"><span class="doc">52 North WPS</span></a>, AtlasStyler, Geomajas, Geopublisher, <a class="reference internal" href="geoserver_overview.html"><span class="doc">GeoServer</span></a>, and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a>.</p>
 <a class="reference internal image-reference" href="../../_images/geotools_screenshot.png"><img alt="geotools screenshot" class="align-right" src="../../_images/geotools_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul>
 <li><p class="first">主要な空間概念とデータ構造のためのインタフェースの定義</p>
 <ul class="simple">
-<li>統合されたジオメトリのサポートは、<a class="reference external" href="https://sourceforge.net/projects/jts-topo-suite/">JTS Topology Suite(JTS)</a> によって提供されます。</li>
-<li>OGC Filter Encoding仕様を使用する属性および空間フィルタ</li>
+<li><a class="reference external" href="https://sourceforge.net/projects/jts-topo-suite/">JTS Topology Suite (JTS)</a> による、統合されたジオメトリのサポート</li>
+<li>OGC Filter Encoding 仕様を利用した、属性および空間フィルタ</li>
 </ul>
 </li>
-<li><p class="first">スレッド間、トランザクションサポート、スレッド間のロックをサポートするクリーンなデータアクセスAPI</p>
+<li><p class="first">地物へのアクセス、トランザクション、スレッド間のロックをサポートする、クリーンなデータアクセスAPI</p>
 <ul class="simple">
-<li>多くのファイル形式および空間データベースのGISデータにアクセスする</li>
-<li>座標参照系と変換サポート</li>
-<li>広範囲のマップ投影を使用する</li>
-<li>空間的および非空間的属性に関してデータをフィルタ処理および分析する</li>
+<li>多くのファイルフォーマットや空間データベースのGISデータへのアクセス</li>
+<li>座標参照系と座標変換のサポート</li>
+<li>広範囲の地図投影法との連携</li>
+<li>空間的および非空間的属性の観点からの、データのフィルタと分析</li>
 </ul>
 </li>
-<li><p class="first">ステートレスでメモリの少ないレンダラ。サーバ側の環境で特に便利です。</p>
+<li><p class="first">ステートレスで低メモリのレンダラは、特にサーバ側の環境で便利です。</p>
 <ul class="simple">
-<li>複雑なスタイルを使用してマップを作成および表示する</li>
+<li>複雑なスタイルを使用して地図の構成と表示できます</li>
 </ul>
 </li>
-<li><p class="first">XML Schemaを使用してGMLコンテンツにバインドする強力な*schema assisted*解析テクノロジ</p>
+<li><p class="first">GML コンテンツにバインドするための XML Schema を利用した強力な <em>スキーマ支援の</em> 構文解析技術</p>
 <ul class="simple">
-<li>構文解析/符号化技術は、GML、Filter、KML、SLD、およびSEを含む多くのOGC標準のバインディングを備えています。</li>
+<li>構文解析/符号化技術は、GML、Filter、KML、SLD、および SE を含む多くの OGC 標準のバインディングを備えています。</li>
 </ul>
 </li>
-<li><p class="first">GeoToolsプラグイン:ライブラリに追加のフォーマットを追加ができるオープンなプラグインシステム</p>
+<li><p class="first">GeoTools プラグイン: ライブラリに追加のフォーマットを設定できる、オープンなプラグインシステム</p>
 <ul class="simple">
-<li>GDALから追加のラスター形式を読み込めるようにするImageIO-EXTプロジェクトのプラグイン</li>
+<li>ImageIO-EXTプロジェクトのプラグインは、GeoTools で GDAL 経由で追加のラスタフォーマットを読み込めるようにしています。</li>
 </ul>
 </li>
-<li><p class="first">GeoTools拡張機能</p>
+<li><p class="first">GeoTools 拡張機能</p>
 <ul class="simple">
-<li>コアライブラリのspatial facilitesを使用して構築された追加機能を提供します。</li>
+<li>コアライブラリの空間機能を使用して構築された追加機能を提供します。</li>
 </ul>
 <img alt="Extensions built using the GeoTools library" src="../../_images/geotools-extension.png" />
 <ul class="simple">
-<li>拡張機能は、(最短パスを見つけるための)グラフとネットワーキングのサポート、検証、Webマップサーバクライアント、XML構文解析とエンコーディングのバインディング、そしてカラーbrewerを提供します。</li>
+<li>拡張機能は、(最短パスを見つけるための)グラフとネットワーキングのサポート、検証、Webマップサーバクライアント、XML構文解析とエンコーディングのバインディング、そして Color Brewer を提供します。</li>
 </ul>
 </li>
-<li><p class="first">サポートされていないGeoTools</p>
+<li><p class="first">GeoTools 未サポート機能</p>
 <ul class="simple">
-<li>GeoToolsはまた、新しい人材を育成し、実験を促進するために使用されるステージング領域を持つ、より広いコミュニティの一部として動作します。</li>
-<li>注目すべき点は、スイングサポート(geotoolsチュートリアルで使用)、swt、ローカルおよびWebプロセスサポート、追加の記号、追加のデータフォーマット、グリッドの生成、およびISOジオメトリのいくつかの実装です。</li>
+<li>GeoTools はまた、新しい人材の育成や実験の促進に使用されるステージング領域を持つ、より広いコミュニティの一部としても運営されています。</li>
+<li>注目すべき点は、Swing サポート (geotoolsチュートリアルで使用)、SWT、ローカルおよびWebプロセスサポート、追加のシンボロジー、追加のデータフォーマット、グリッドの生成、および ISO ジオメトリのいくつかの実装です。</li>
 </ul>
 </li>
 </ul>
@@ -129,43 +129,43 @@
 <div class="section" id="supported-formats">
 <h2>サポートするフォーマット<a class="headerlink" href="#supported-formats" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul>
-<li><p class="first">ラスター形式とデータアクセス:</p>
+<li><p class="first">ラスタフォーマットとデータアクセス:</p>
 <p>arcsde, arcgrid, geotiff, grassraster, gtopo30, image (JPEG, TIFF, GIF, PNG), imageio-ext-gdal, imagemoasaic, imagepyramid, JP2K, matlab.</p>
 </li>
-<li><p class="first">データベース 「jdbc-ng」のサポート:</p>
+<li><p class="first">データベース 「jdbc-ng」 サポート:</p>
 <p>db2, h2, mysql, oracle, postgis, spatialite, sqlserver.</p>
 </li>
 <li><p class="first">ベクタフォーマットとデータアクセス:</p>
 <p>app-schema, arcsde, csv, dxf, edigeo, excel, geojson, org, property, shapefile, wfs.</p>
 </li>
 <li><p class="first">XML バインディング:</p>
-<p>次データのために提供されるJavaデータ構造とバインディング: xsd-core (xml simple types), fes, filter, gml2, gml3, kml, ows, sld, wcs, wfs, wms, wps, vpf.</p>
-<p>DOMおよびSAXサプリケーションで利用できる追加のジオメトリ、フィルタ、スタイルのパーサ/エンコーダ。</p>
+<p>Javaデータ構造とバインディングによって次の形式が利用できます: xsd-core (xml simple types), fes, filter, gml2, gml3, kml, ows, sld, wcs, wfs, wms, wps, vpf.</p>
+<p>DOM および SAX アプリケーションで利用できる、追加のジオメトリ、フィルタ、スタイルのパーサ/エンコーダ。</p>
 </li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
 <h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>多数のオープン地理空間コンソーシアム(OGC)標準のサポート:</p>
+<p>多くの Open Geospatial Consortium (OGC) 標準をサポート:</p>
 <ul class="simple">
-<li>OGC Style Layer Descriptor/記号データ構造のエンコードとレンダリングエンジン</li>
-<li>Simple Featureサポートを含むOGC General Feature Model</li>
-<li>ラスタ情報表現のOGC Grid Coverage</li>
-<li>OGC  Filterと Common Constraint Language (CQL)</li>
-<li>Web Feature Service(WFS)、Web Map Service(WMS)、およびWeb Process Service(WPS)の試験的サポートのクライアント</li>
-<li>ISO19107ジオメトリ</li>
+<li>OGC Style Layer Descriptor / Symbology Encoding データ構造とレンダリングエンジン</li>
+<li>Simple Feature サポートを含む OGC General Feature Model</li>
+<li>ラスタ情報表現の OGC Grid Coverage</li>
+<li>OGC Filterと Common Constraint Language (CQL)</li>
+<li>Web Feature Service (WFS)、Web Map Service (WMS) のクライアントと、Web Process Service (WPS) の試験的なサポート</li>
+<li>ISO 19107 ジオメトリ</li>
 </ul>
 </div>
 <div class="section" id="details">
 <h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>Webサイト:</strong> <a class="reference external" href="https://geotools.org/">https://geotools.org/</a></p>
 <p><strong>ライセンス:</strong> LGPL</p>
-<p><strong>対応OS:</strong> Cross Platform Java 8,9,10</p>
-<p><strong>API インターフェイス:</strong> Java</p>
-<p><strong>サポート:</strong> <a class="reference external" href="http://docs.geotools.org/latest/userguide/welcome/support.html">Communication and Support</a></p>
+<p><strong>対応プラットフォーム:</strong> クロスプラットフォーム Java 8,9,10</p>
+<p><strong>API インタフェース:</strong> Java</p>
+<p><strong>サポート:</strong> <a class="reference external" href="http://docs.geotools.org/latest/userguide/welcome/support.html">コミュニケーションとサポート</a></p>
 </div>
 <div class="section" id="geotools-support">
-<h2>GeoTools_サポート<a class="headerlink" href="#geotools-support" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>GeoTools サポート<a class="headerlink" href="#geotools-support" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.geotools.org/latest/userguide/tutorial/quickstart/index.html">クイックスタート文書</a></li>
 </ul>

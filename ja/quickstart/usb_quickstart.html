@@ -77,7 +77,7 @@
 <h2>必要なもの<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li>USB フラッシュドライブ (最低 4 GB、推奨 8 GB 以上)。</li>
-<li>OSGeoLive ISOイメージ(: <a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a> からダウンロード)またはDVDから変換されたもの。</li>
+<li>OSGeoLive ISOイメージ(<a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a> からダウンロード)またはDVDから変換されたもの。</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -87,16 +87,16 @@
 </div></blockquote>
 </div>
 <div class="section" id="creating-bootable-usb-drive-with-dd-under-linux">
-<h2>Linux 環境でブータブル USB ドライブの作成<a class="headerlink" href="#creating-bootable-usb-drive-with-dd-under-linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>OS GeoLive10.5以降のISOイメージは <em>isohybrid</em> です(amd64もサポートUEFIブート)。Linuxでは、<code class="docutils literal"><span class="pre">dd</span></code> コマンドラインユーティリティを使用して、これらのイメージをUSBドライブのブロックデバイスに直接書き込むことができます。</p>
+<h2>Linux 環境で <code class="docutils literal"><span class="pre">dd</span></code> でブータブル USB ドライブの作成<a class="headerlink" href="#creating-bootable-usb-drive-with-dd-under-linux" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OS GeoLive10.5以降のISOイメージは <em>isohybrid</em> です(amd64もサポートUEFIブート)。Linuxでは、 <code class="docutils literal"><span class="pre">dd</span></code> コマンドラインユーティリティを使用して、これらのイメージをUSBドライブのブロックデバイスに直接書き込むことができます。</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo dd if=osgeolive-10.5-amd64.iso of=/dev/sdX bs=4M; sync</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">/dev/sdX</span></code> はUSBドライブのブロックデバイスで、<code class="docutils literal"><span class="pre">X</span></code> は <code class="docutils literal"><span class="pre">b</span></code> または <code class="docutils literal"><span class="pre">c</span></code> かもしれません。</li>
-<li><code class="docutils literal"><span class="pre">lsblk</span></code> を使用してブロックデバイスを一覧表示し、<code class="docutils literal"><span class="pre">dmesg</span></code> を使用して接続時にUSBドライブを識別するカーネルメッセージを表示します。</li>
+<li><code class="docutils literal"><span class="pre">/dev/sdX</span></code> はUSBドライブのブロックデバイスで、 <code class="docutils literal"><span class="pre">X</span></code> は <code class="docutils literal"><span class="pre">b</span></code> または <code class="docutils literal"><span class="pre">c</span></code> かもしれません。</li>
+<li><code class="docutils literal"><span class="pre">lsblk</span></code> を使用してブロックデバイスを一覧表示し、 <code class="docutils literal"><span class="pre">dmesg</span></code> を使用して接続時にUSBドライブを識別するカーネルメッセージを表示します。</li>
 <li>USBドライブはマウントされていないようにしてください。</li>
-<li><code class="docutils literal"><span class="pre">sudo</span></code> は、<code class="docutils literal"><span class="pre">root</span></code> としてコマンド実行している場合は必要ありません。</li>
+<li><code class="docutils literal"><span class="pre">sudo</span></code> は、 <code class="docutils literal"><span class="pre">root</span></code> としてコマンド実行している場合は必要ありません。</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
@@ -111,12 +111,12 @@
 <p class="last">実行しているUbuntuのバージョンは、USBにインストールされているUbuntuのバージョンと同じか新しい必要があります。OS GeoLive8.0をUSBにインストールする場合は、Ubuntu14.04以降を実行している必要があります。</p>
 </div>
 <p>osgeoliveまたはosgeolive-miniをコンピュータのハードディスクに <a class="reference internal" href="../download.html"><span class="doc">ダウンロード</span></a> してください。</p>
-<p>最新のUbuntu/Xbuntuディストリビューションでコンピュータを起動します。これは、<a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a> で説明されているように、OSGeoLive DVDから実行すること実行できます。</p>
+<p>最新のUbuntu/Xbuntuディストリビューションでコンピュータを起動します。これは、 <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a> で説明されているように、OSGeoLive DVDから実行すること実行できます。</p>
 <p>USBフラッシュドライブをコンピュータに挿入します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
 </div></blockquote>
-<p><span class="menuselection">System Tools‣Startup Disk Creator</span> を選択するか、デスクトップから`Startup Disk Creator`を検索します。</p>
+<p><span class="menuselection">System Tools ‣ Startup Disk Creator</span> を選択するか、デスクトップから <cite>Startup Disk Creator</cite> を検索します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
 </div></blockquote>
@@ -142,7 +142,7 @@
 <li>選択してUSBデバイスから起動します。<ul>
 <li>一部のコンピュータでは、USBドライブをコンピュータに挿入して選択する必要があります。</li>
 <li>また、USBドライブは多くの場合、取り外し可能なデバイスではなくハードドライブに表示されます。</li>
-<li>この`ビデオ&lt;<a class="reference external" href="https://www.youtube.com/watch?v=eQBdVO-n6Mg">https://www.youtube.com/watch?v=eQBdVO-n6Mg</a>&gt;`_は、USBからの起動を示しています。</li>
+<li>この <a class="reference external" href="https://www.youtube.com/watch?v=eQBdVO-n6Mg">ビデオ</a> は、USBからの起動を示しています。</li>
 </ul>
 </li>
 </ol>
@@ -158,8 +158,8 @@
 <li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive クイックスタート</span></a></li>
 <li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">仮想マシン内での OSGeoLive 起動クイックスタート</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">ハードディスクに OSGeoLive をインストール</span></a></li>
-<li>代替のUSB作成方法と最新のヒントは、次の場所に集められています:<cite>wiki&lt;https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB&gt;</cite> _</li>
-<li>質問は、メイリングリストに送ることができます: <a class="reference external" href="https://lists.osgeo.org/pipermail/osgeolive/">https://lists.osgeo.org/pipermail/osgeolive/</a></li>
+<li>代替のUSB作成方法と最新のヒントは、次の場所に集められています: <a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki</a></li>
+<li>質問は、メーリングリストに送ることができます: <a class="reference external" href="https://lists.osgeo.org/pipermail/osgeolive/">https://lists.osgeo.org/pipermail/osgeolive/</a></li>
 </ul>
 </div></blockquote>
 </div>

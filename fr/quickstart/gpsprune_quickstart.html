@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GpsPrune Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Guide de démarrage avec GpsPrune &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,26 +71,26 @@
             
   <a class="reference external image-reference" href="https://activityworkshop.net/software/gpsprune"><img alt="../../_images/logo_gpsprune.png" class="align-right" src="../../_images/logo_gpsprune.png" /></a>
 <div class="section" id="gpsprune-quickstart">
-<h1><a class="toc-backref" href="#id1">GpsPrune Quickstart</a><a class="headerlink" href="#gpsprune-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
-<p>GpsPrune is a java application for viewing and editing coordinate data.  It can be used for preparing data for GPS devices and for analyzing the data recorded by them.</p>
-<p>In this Quick Start, we will load and view a data file included on this live image, and access some online information to supplement it.  It will be useful therefore if you have some kind of internet connection for this demonstration.</p>
+<h1><a class="toc-backref" href="#id1">Guide de démarrage avec GpsPrune</a><a class="headerlink" href="#gpsprune-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>GpsPrune est une application java pour la visualisation et l’édition des données de coordonnées.  Il peut être utilisé pour la préparation des données pour les appareils GPS et pour l’analyse des données enregistrées par eux.</p>
+<p>Dans ce guide de démarrage rapide, nous allons charger et afficher un fichier de données inclus sur cette image ISO et accéder à certaines informations en ligne pour le compléter.  Il sera donc utile que vous ayez une  connexion Internet pour cette démonstration.</p>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#gpsprune-quickstart" id="id1">GpsPrune Quickstart</a><ul>
-<li><a class="reference internal" href="#start-gpsprune" id="id2">Start GpsPrune</a><ul>
-<li><a class="reference internal" href="#customizing-the-display" id="id3">Customizing the display</a></li>
+<li><a class="reference internal" href="#gpsprune-quickstart" id="id1">Guide de démarrage avec GpsPrune</a><ul>
+<li><a class="reference internal" href="#start-gpsprune" id="id2">Démarrer GpsPrune</a><ul>
+<li><a class="reference internal" href="#customizing-the-display" id="id3">Personnalisation de l’affichage</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-functions" id="id4">Advanced Functions</a><ul>
+<li><a class="reference internal" href="#advanced-functions" id="id4">Fonctions avancées</a><ul>
 <li><a class="reference internal" href="#wikipedia" id="id5">Wikipedia</a></li>
 <li><a class="reference internal" href="#gpsies" id="id6">Gpsies</a></li>
-<li><a class="reference internal" href="#measuring-distances" id="id7">Measuring distances</a></li>
+<li><a class="reference internal" href="#measuring-distances" id="id7">Mesure des distances</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#things-to-try" id="id8">Things to Try</a><ul>
-<li><a class="reference internal" href="#using-gpsprune-on-other-systems" id="id9">Using GpsPrune on other systems</a></li>
-<li><a class="reference internal" href="#further-reading" id="id10">Further reading</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id8">Choses à essayer</a><ul>
+<li><a class="reference internal" href="#using-gpsprune-on-other-systems" id="id9">Utilisation de GpsPrune sur d’autres systèmes</a></li>
+<li><a class="reference internal" href="#further-reading" id="id10">Pour aller plus loin</a></li>
 </ul>
 </li>
 </ul>
@@ -98,77 +98,74 @@
 </ul>
 </div>
 <div class="section" id="start-gpsprune">
-<h2><a class="toc-backref" href="#id2">Start GpsPrune</a><a class="headerlink" href="#start-gpsprune" title="Lien permanent vers ce titre">¶</a></h2>
-<p>From the Start menu, choose <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ GpsPrune</span>.  This will then give you the empty window shown below.</p>
+<h2><a class="toc-backref" href="#id2">Démarrer GpsPrune</a><a class="headerlink" href="#start-gpsprune" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Dans le menu Démarrer, choisissez:menuselection:<cite>Geospatial –&gt; Navigation and Maps –&gt; GpsPrune</cite>. Cela vous donnera alors la fenêtre vide montrée ci-dessous.</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_emptywindow.png"><img alt="../../_images/gpsprune_emptywindow.png" src="../../_images/gpsprune_emptywindow.png" style="width: 471.35px; height: 325.05px;" /></a>
-<p>We will now load a file by using the menu command <span class="menuselection">File ‣ Open file</span> and selecting the file to load.  This can be a GPX file, a KML or KMZ file, or even a comma-separated or tab-separated file if you have one.  A suitable GPX file containing a couple of tracks can be found on the disc at <code class="file docutils literal"><span class="pre">~/data/vector/gpx/test_trk2.gpx</span></code> so we will load this one.</p>
+<p>Nous allons maintenant charger un fichier en utilisant la commande de menu  <span class="menuselection">File ‣ Open file</span>  et en sélectionnant le fichier à charger.  Il peut s’agir d’un fichier GPX, d’un fichier KML ou KMZ, ou même d’un fichier CSV ou TSV si vous en avez un.  Un fichier GPX approprié contenant quelques pistes peut être trouvé sur le disque à <code class="file docutils literal"><span class="pre">~/data/vector/gpx/test_trk2.gpx</span></code>  donc nous allons charger celui-ci.</p>
 <img alt="../../_images/gpsprune_trackselect.png" src="../../_images/gpsprune_trackselect.png" />
-<p>Because this file contains two tracks, we are offered the choice of which one(s) to load.  We choose just the first one and press OK.</p>
-<p>Now you should see the track marked in blue against a white background.  If this track had any waypoints (which it doesn’t), then they would be shown too, marked with their names.  Below the main map display is an altitude chart, which shows the profile of the track
-if it contains altitudes.</p>
+<p>Étant donné que ce fichier contient deux traces, on nous offre le choix de laquelle (s) charger.  Nous choisissons juste le premier et appuyons sur OK.</p>
+<p>Maintenant, vous devriez voir la trace marquée en bleu sur un fond blanc.  Si cette trace avait des points de passage (ce qui n’est pas le cas), alors ils seraient montrés aussi, marqués de leurs noms.  Au-dessous de l’affichage de la carte principale se trouve un graphique d’altitude, qui montre le profil de la trace si elle contient des altitudes.</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_test_trk2.png"><img alt="../../_images/gpsprune_test_trk2.png" src="../../_images/gpsprune_test_trk2.png" style="width: 523.6px; height: 371.8px;" /></a>
-<p>Now, assuming you have a network connection, you can activate the map by clicking the globe
-icon at the top of the main map display, or with the menu option <span class="menuselection">View ‣ Show Map</span>.</p>
+<p>Maintenant, en supposant que vous avez une connexion réseau, vous pouvez activer la carte en cliquant sur l’icône globe en haut de l’affichage de la carte principale, ou avec l’option menu <span class="menuselection">View ‣ Show Map</span>.</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_mapnik.png"><img alt="../../_images/gpsprune_mapnik.png" src="../../_images/gpsprune_mapnik.png" style="width: 523.6px; height: 371.8px;" /></a>
-<p>You can drag the map around with the mouse, and zoom in and out with the mousewheel or by double-clicking.  Dragging with the right mouse button defines a rectangle to zoom to, and the right-click menu offers further options.  Clicking on a point will show the details including altitude and timestamp if available.  You can also click on the altitude profile to select the corresponding point.</p>
+<p>Vous pouvez faire glisser la carte avec la souris, et zoomer avec la roue de souris ou en double cliquant.  Cliquer-glisser avec le bouton de la souris droite définit un rectangle pour zoomer, et le menu du clic droit offre d’autres options. Cliquer sur un point affichera les détails, y compris l’altitude et l’horodatage si disponible.  Vous pouvez également cliquer sur le profil d’altitude pour sélectionner le point correspondant.</p>
 <div class="section" id="customizing-the-display">
-<h3><a class="toc-backref" href="#id3">Customizing the display</a><a class="headerlink" href="#customizing-the-display" title="Lien permanent vers ce titre">¶</a></h3>
-<p>You can change the map with the menu option <span class="menuselection">Settings ‣ Set map background</span>.
-Let’s have a look at an alternative map source by selecting the fifth one, «&nbsp;Hikebikemap&nbsp;».  This uses the maps from hikebikemap.org to show additional information useful for hiking and cycling such as contour lines and cycle routes.</p>
+<h3><a class="toc-backref" href="#id3">Personnalisation de l’affichage</a><a class="headerlink" href="#customizing-the-display" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Vous pouvez modifier la carte avec l’option menu : <span class="menuselection">Settings ‣ Set map background</span>. Jetons un coup d’oeil à une source de carte alternative en sélectionnant le cinquième, «&nbsp;Hikebikemap&nbsp;».  Cela utilise les cartes d’hikebikemap.org pour montrer des informations supplémentaires utiles pour la randonnée et le vélo tels que les lignes de contour et les pistes cyclables.</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_hikebikemap.png"><img alt="../../_images/gpsprune_hikebikemap.png" src="../../_images/gpsprune_hikebikemap.png" style="width: 523.6px; height: 371.8px;" /></a>
 </div>
 </div>
 <div class="section" id="advanced-functions">
-<h2><a class="toc-backref" href="#id4">Advanced Functions</a><a class="headerlink" href="#advanced-functions" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Now that we can load and view files from the included file system, let’s see if we can supplement this with some online information as well, using some more advanced functions.</p>
+<h2><a class="toc-backref" href="#id4">Fonctions avancées</a><a class="headerlink" href="#advanced-functions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Maintenant que nous pouvons charger et afficher des fichiers à partir du système de fichiers inclus, nous allons voir si nous pouvons compléter cela avec quelques informations en ligne ainsi, en utilisant des fonctions plus avancées.</p>
 <div class="section" id="wikipedia">
 <h3><a class="toc-backref" href="#id5">Wikipedia</a><a class="headerlink" href="#wikipedia" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Now let’s find out some more information about where this track is.  We can do this by selecting a point, and then choosing the menu option <span class="menuselection">Online ‣ Get nearby Wikipedia articles</span>.  This shows a list of articles whose coordinates are nearest to the selected point.  Clicking one of these entries in the list will show more information in the box below.</p>
+<p>Maintenant, nous allons trouver plus d’informations sur l’endroit où cette piste est.  Nous pouvons le faire en sélectionnant un point, puis en choisissant l’option menu  <span class="menuselection">Online ‣ Get nearby Wikipedia articles</span>.  Cela montre une liste d’articles dont les coordonnées sont les plus proches du point sélectionné.  En cliquant sur l’une de ces entrées dans la liste affichera plus d’informations dans la boîte ci-dessous.</p>
 <img alt="../../_images/gpsprune_wikipedialist.png" src="../../_images/gpsprune_wikipedialist.png" />
-<p>You can then use the button <cite>Load</cite> to load that point into GpsPrune, or <cite>Show webpage</cite> to load the Wikipedia page in a browser.</p>
+<p>Vous pouvez ensuite utiliser le bouton <cite>Load</cite>  pour charger ce point dans GpsPrune, ou <cite>Show webpage</cite> pour charger la page Wikipedia dans un navigateur.</p>
 </div>
 <div class="section" id="gpsies">
 <h3><a class="toc-backref" href="#id6">Gpsies</a><a class="headerlink" href="#gpsies" title="Lien permanent vers ce titre">¶</a></h3>
-<p>We can also use an online service to download another track from the same area.  We can use the menu command <span class="menuselection">Online ‣ Get Gpsies tracks</span> to search for tracks on the website gpsies.com.  Again, we get a list of matching entries, and we can select one to view the description.</p>
+<p>Nous pouvons également utiliser un service en ligne pour télécharger une autre piste à partir de la même zone.  Nous pouvons utiliser la commande de menu <span class="menuselection">Online ‣ Get Gpsies tracks</span> pour rechercher des traces sur le site gpsies.com.  Encore une fois, nous obtenons une liste d’entrées correspondantes, et nous pouvons en sélectionner une pour afficher la description.</p>
 <img alt="../../_images/gpsprune_gpsieslist.png" src="../../_images/gpsprune_gpsieslist.png" />
-<p>Click the <cite>Load</cite> button to load the track, and select to append this track to the data we’ve already got.  Now we can see both tracks in the same view.</p>
+<p>Cliquez sur le bouton <cite>Load</cite>  pour charger la trace, et sélectionnez pour annexer cette trace aux données que nous avons déjà.  Maintenant, nous pouvons voir les deux traces dans la même vue.</p>
 </div>
 <div class="section" id="measuring-distances">
-<h3><a class="toc-backref" href="#id7">Measuring distances</a><a class="headerlink" href="#measuring-distances" title="Lien permanent vers ce titre">¶</a></h3>
-<p>To find out how long the climb is, we will select just the part of the track which contains the climb, and then we will be able to view the properties of this selected range, such as the distance, climb and descent.</p>
+<h3><a class="toc-backref" href="#id7">Mesure des distances</a><a class="headerlink" href="#measuring-distances" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour savoir combien de temps la montée durera, nous sélectionnerons seulement la partie de la trace qui contient la montée, puis nous serons en mesure de voir les propriétés de cette plage sélectionnée, telles que la distance, la montée et la descente.</p>
 <ol class="arabic simple">
-<li>Click on the point at the start of the climb, just north of Dunedin, to select it.</li>
-<li>Select <span class="menuselection">Range ‣ Set range start</span> to make this point the start of the selection.</li>
-<li>Select a point at the top of the climb by clicking on the highest point of the altitude profile.</li>
-<li>Select <span class="menuselection">Range ‣ Set range end</span> to finish the selection.</li>
-<li>You can now see in the «&nbsp;Range details&nbsp;» section that this part of the track is 8.55 km long, climbs 346 m and descends just 10 m.</li>
+<li>Cliquez sur le point au début de la montée, juste au nord de Dunedin, pour le sélectionner.</li>
+<li>Sélectionnez <span class="menuselection">Range ‣ Set range start</span> pour faire de ce point le début de la sélection.</li>
+<li>Sélectionnez un point en haut de la montée en cliquant sur le point le plus élevé du profil d’altitude.</li>
+<li>Sélectionnez <span class="menuselection">Range ‣ Set range end</span> pour terminer la sélection.</li>
+<li>Vous pouvez maintenant voir dans la section «&nbsp;Range details&nbsp;» que cette partie de la piste est de 8,55 km de long, grimpe de 346 m et descend seulement 10 m.</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/gpsprune_rangedetails.png"><img alt="../../_images/gpsprune_rangedetails.png" src="../../_images/gpsprune_rangedetails.png" style="width: 523.6px; height: 371.8px;" /></a>
 </div>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id8">Things to Try</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Choses à essayer</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>Select a point in the track and delete it with <span class="menuselection">Point ‣ Delete point</span></li>
-<li>Draw your own track with <cite>Create series of points</cite> from the right-click menu and measure the total distance</li>
-<li>Export an image of your track with <span class="menuselection">File ‣ Export image</span></li>
-<li>If you have your own track files in any of the formats gpx, kml, kmz or csv, load one of these into GpsPrune and view it using one of the available maps</li>
+<li>Sélectionnez un point dans la trace et supprimez-le avec <span class="menuselection">Point ‣ Delete point</span></li>
+<li>Dessinez votre propre piste avec <cite>Create series of points</cite> à partir du menu clic droit et mesurer la distance totale</li>
+<li>Exportez une image de votre trace avec <span class="menuselection">File ‣ Export image</span></li>
+<li>Si vous avez vos propres fichiers de trace dans l’un des formats gpx, kml, kmz ou csv, chargez-en un dans GpsPrune et visualisez-le à l’aide de l’une des cartes disponibles</li>
 </ul>
 </div></blockquote>
 <div class="section" id="using-gpsprune-on-other-systems">
-<h3><a class="toc-backref" href="#id9">Using GpsPrune on other systems</a><a class="headerlink" href="#using-gpsprune-on-other-systems" title="Lien permanent vers ce titre">¶</a></h3>
-<p>After trying out GpsPrune on this live image, you may want to use it on another system, whether it’s another Linux system or Mac OSX or Windows.  Some linux distributions include GpsPrune in their normal software libraries (just search for «&nbsp;Prune&nbsp;» or «&nbsp;GpsPrune&nbsp;»), or you can just download the latest copy from the home page.</p>
-<p>It doesn’t need to be installed, but it does need a java runtime to be installed, version 1.5 or higher.  You can extend GpsPrune’s functionalities by installing other free software, such as <em>GPSBabel</em>, <em>Gnuplot</em>, <em>Exiftool</em> and <em>Java3d</em>.</p>
-<p>Once you’ve installed GpsPrune on your permanent system, you can save your settings with the menu option <span class="menuselection">Settings ‣ Save settings</span>.  Then they will be remembered for the next time you run GpsPrune.  However, note that when using this live system, all files that you save in the regular file system are lost when you shut down the computer.</p>
-<p>You can also save the downloaded map tiles to disk by selecting the menu option <span class="menuselection">Settings ‣ Save maps to disk</span> and selecting a directory in which to save the images.  This helps to speed up the display as it doesn’t have to download the images again.</p>
+<h3><a class="toc-backref" href="#id9">Utilisation de GpsPrune sur d’autres systèmes</a><a class="headerlink" href="#using-gpsprune-on-other-systems" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Après avoir essayé GpsPrune sur cette image en direct, vous pouvez l’utiliser sur un autre système, qu’il s’agisse d’un autre système Linux ou Mac OSX ou Windows.  Certaines distributions linux incluent GpsPrune dans leurs bibliothèques logicielles normales (il suffit de rechercher «&nbsp;Prune&nbsp;» ou «&nbsp;GpsPrune&nbsp;»), ou vous pouvez simplement télécharger la dernière copie de la page d’accueil.</p>
+<p>GpdPrune n’a pas besoin d’être installé, mais il a besoin d’un temps d’exécution java pour être installé, version 1.5 ou plus.  Vous pouvez étendre les fonctionnalités de GpsPrune en installant d’autres logiciels libres, tels que <em>GPSBabel</em>, <em>Gnuplot</em>, <em>Exiftool</em> et <em>Java3d</em>.</p>
+<p>Une fois que vous avez installé GpsPrune sur votre système permanent, vous pouvez enregistrer vos paramètres avec l’option de menu <span class="menuselection">Settings ‣ Save settings</span>.  Ensuite, ils seront rappelés pour la prochaine fois que vous exécutez GpsPrune.  Toutefois, notez que lors de l’utilisation de le LiveDVD, tous les fichiers que vous enregistrez dans le système de fichiers courant sont perdus lorsque vous  coupez l’ordinateur.</p>
+<p>Vous pouvez également enregistrer les vignettes de carte téléchargées sur disque en sélectionnant l’option dans le menu <span class="menuselection">Settings ‣ Save maps to disk</span> et sélectionner un répertoire dans lequel enregistrer les images.  Cela permet d’accélérer l’affichage car il n’a pas à télécharger les images à nouveau.</p>
 </div>
 <div class="section" id="further-reading">
-<h3><a class="toc-backref" href="#id10">Further reading</a><a class="headerlink" href="#further-reading" title="Lien permanent vers ce titre">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Pour aller plus loin</a><a class="headerlink" href="#further-reading" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
-<li>GpsPrune home page: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/">https://activityworkshop.net/software/gpsprune/</a></li>
-<li>Screenshots: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/screenshots.html">https://activityworkshop.net/software/gpsprune/screenshots.html</a></li>
-<li>How-tos and instructions: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/how-tos.html">https://activityworkshop.net/software/gpsprune/how-tos.html</a></li>
+<li>Page d’accueil de GpsPrune : <a class="reference external" href="https://activityworkshop.net/software/gpsprune/">https://activityworkshop.net/software/gpsprune/</a></li>
+<li>Captures d’écran: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/screenshots.html">https://activityworkshop.net/software/gpsprune/screenshots.html</a></li>
+<li>Tutotriels et instructions: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/how-tos.html">https://activityworkshop.net/software/gpsprune/how-tos.html</a></li>
 </ul>
 </div>
 </div>

@@ -75,7 +75,7 @@
 <p>EOxServer is a server for presenting big Earth Observation (EO) data
 archives and metadata via Open Standards. It builds upon an Open Source
 stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>,  <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
-<p>このクイックスタートでは、次の方法について説明します。</p>
+<p>このクイックスタートでは、次の方法について説明します:</p>
 <ul class="simple">
 <li>Web Clientを使用して、EOデータをビュー、フィルタリング、サブセット、ダウンロード</li>
 <li>管理クライアントを使用してEOデータアーカイブを検査</li>
@@ -91,7 +91,7 @@ stack of software which includes Python, <a class="reference internal" href="../
 </div>
 <div class="section" id="start-eoxserver">
 <h2><a class="toc-backref" href="#id1">EoxServerを起動</a><a class="headerlink" href="#start-eoxserver" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>メニューから <span class="menuselection">Geospatial‣Web Services‣EOxServer</span> を選択します。これによりブラウザが起動し、<a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a> で利用可能なデモインスタンスが表示されます</p>
+<p>メニューから <span class="menuselection">Geospatial ‣ Web Services ‣ EOxServer</span> を選択します。これによりブラウザが起動し、 <a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a> で利用可能なデモインスタンスが表示されます</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_start.png"><img alt="EOxServer demonstration start" src="../../_images/eoxserver_start.png" style="width: 512.0px; height: 384.0px;" /></a>
 </div>
 <div class="section" id="work-with-the-web-client">
@@ -117,13 +117,15 @@ the Selection Management Tool and the Download Tool.</p>
 includes the selected time of interest and bounding box. The results are shown
 in the Download widget, where you can select the format, projection and datasets
 to download.</p>
-<p>これは、EOxServer Web Clientの簡単な説明です。このトピックの詳細については、<a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">オンライン文書</a> を参照してください。</p>
+<p>これは、EOxServer Web Clientの簡単な説明です。このトピックの詳細については、 <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">オンライン文書</a> を参照してください。</p>
 </div>
 <div class="section" id="work-with-the-admin-client">
 <h2><a class="toc-backref" href="#id3">管理クライアントとの連携</a><a class="headerlink" href="#work-with-the-admin-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>EOxServerのメインページで <strong>Admin Client</strong> リンクをクリックし、ユーザー「admin」とパスワード「admin」でログインします。</p>
+<p>EOxServerのメインページで <strong>Admin Client</strong> リンクをクリックし、ユーザー <cite>admin</cite> とパスワード <cite>admin</cite> でログインします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient1.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient1.png" style="width: 512.0px; height: 384.0px;" /></a>
-<p><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">Admin Client `はDjangos標準の管理者であり、利用可能なデータを設定できます。クライアントを自由にご覧ください。詳細については、`運用者ガイド</a> を参照してください。</p>
+<p>The <cite>Admin Client</cite> is Djangos standard admin and allows you to configure the
+available data. Please feel free to explore the client. More information can
+be found in the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">operators』 guide</a>.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient2.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient2.png" style="width: 512.0px; height: 384.0px;" /></a>
 <p>たとえば、既定でロードされているデータセットシリーズを検査するには、[データセットシリーズ]リンクをクリックし、[MER_FRS_1P_RGB_reduced]リンクをクリックします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient3.png"><img alt="EOxServer demonstration admin client Dataset Series" src="../../_images/eoxserver_adminclient3.png" style="width: 512.0px; height: 384.0px;" /></a>
@@ -134,11 +136,12 @@ to download.</p>
 <h2><a class="toc-backref" href="#id4">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これは簡単なデモですが、EOxServerでできることはたくさんあります。プロジェクトのWebサイトには、はじめての人に役立つ資材がたくさん用意されています。次に、いくつかのをいくつか紹介しましょう。</p>
 <ul class="simple">
-<li>詳細については、<a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServerの概要</span></a> を参照してください。</li>
-<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer 運用者ガイド</a> を読んでください。</li>
-<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServerの基本事項</a> から始まる完全な <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/index.html">EOxServer ユーザーズドキュメント</a> を読んでください。</li>
-<li>すでにOSGeoLive環境にいる場合は、メディアにはいっている`EOxServer Users’ローカルドキュメント &lt;<a class="reference external" href="https://localhost/eoxserver-docs/EOxServer_documentation.pdf">https://localhost/eoxserver-docs/EOxServer_documentation.pdf</a>&gt;`_ をお読みください。</li>
-<li>EOxServerを使用する準備はできていますか?次に、<a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">メーリングリスト</a> のコミュニティに参加して、アイデアを交換したり、ソフトウェアの改善点について話し合ったり、質問したりします。</li>
+<li>詳細については、 <a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer Overview</span></a> を参照してください。</li>
+<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer Operators』 Guide</a>.</li>
+<li>Read the complete <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/index.html">EOxServer Users』 documentation</a>
+starting from the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
+<li>すでにOSGeoLive環境にいる場合は、メディアにはいっている <a class="reference external" href="https://localhost/eoxserver-docs/EOxServer_documentation.pdf">EOxServer Users』 local documentation</a> をお読みください。</li>
+<li>EOxServerを使用する準備はできていますか?次に、 <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">メーリングリスト</a> のコミュニティに参加して、アイデアを交換したり、ソフトウェアの改善点について話し合ったり、質問したりします。</li>
 </ul>
 </div>
 </div>

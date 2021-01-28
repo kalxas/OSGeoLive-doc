@@ -75,9 +75,9 @@
 <h1>deegree<a class="headerlink" href="#deegree" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="about">
 <h2>About<a class="headerlink" href="#about" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>deegreeは、OGCと「INSPIRE Network Services&lt;<a class="reference external" href="https://inspire.ec.europa.eu">https://inspire.ec.europa.eu</a>&gt;」仕様に基づいた地理空間ウェブサービスを提供している。deegreeは以下をサポートしている。</p>
+<p>deegreeは、 <a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a> と <a class="reference external" href="https://inspire.ec.europa.eu">INSPIRE Network Services</a> 仕様に基づいた地理空間ウェブサービスを提供しています。deegreeは以下をサポートしています。</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a>: 空間データからベクトルデータを提供</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a>: 空間データからベクタデータを提供</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a>: 空間データからレンダリングされたマップを提供します。</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a>: 事前にレンダリングされたマップタイルを提供</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/cat">Catalogue Service</a>: 地理空間データセットおよびサービスの検索を実行します。</li>
@@ -86,21 +86,21 @@
 <a class="reference internal image-reference" href="../../_images/deegree_screenshot.png"><img alt="deegree screenshot" class="align-right" src="../../_images/deegree_screenshot.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="core-features">
-<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>WFS</strong></p>
 <ul class="simple">
 <li>WFS標準1.0.0、1.1.0、および2.0.0を実装</li>
-<li>完全なトランザクション(リッチ・データ・モデルの場合も含む)</li>
+<li>完全なトランザクション(リッチデータモデルの場合も含む)</li>
 <li>KVP、XML、およびSOAP要求をサポート</li>
-<li>GM L2/3.0/3.1/3.2出力/入力</li>
+<li>GML 2/3.0/3.1/3.2 出力/入力</li>
 <li>GetGmlObjectリクエストとXLinksのサポート</li>
 <li>高いパフォーマンスと優れた拡張性</li>
 <li>オンザフライ座標変換</li>
-<li>ボトムアップのリッチ・データ・モデル向けに設計</li>
+<li>ボトムアップのリッチデータモデル向けに設計</li>
 <li>バックエンドは、GMLアプリケーションスキーマのリレーショナルモデルへの柔軟なマッピングをサポートします。</li>
-<li>ISO19107準拠形状モデル:複雑な形状(例:非線形曲線)</li>
-<li>XPath1.0に基づく高度なフィルタ式のサポート</li>
-<li>PostGIS、Oracle Spatial、MS SQL Server、Shapefiles、GMLインスタンスドキュメントなどの多数のバックエンドをサポート</li>
+<li>ISO 19107準拠のジオメトリモデル: 複雑なジオメトリ (例: 非線形曲線)</li>
+<li>XPath 1.0に基づく高度なフィルタ式のサポート</li>
+<li>PostGIS、Oracle Spatial、MS SQL Server、シェープファイル、GMLインスタンスドキュメントなどの多数のバックエンドをサポート</li>
 </ul>
 <p><strong>WMS</strong></p>
 <ul class="simple">
@@ -115,7 +115,7 @@
 <li>SEで定義されているラスターシンボルのほぼ完全なサポート(拡張機能あり)</li>
 <li>フィーチャデータとラスターデータの両方で、TIME/ELEVATIONおよびその他の寸法が完全にサポートされます。</li>
 <li>PostGIS、Oracle Spatial、Shapefiles、GMLインスタンスドキュメントなどの多数のバックエンドをサポート</li>
-<li>リッチ・データ・モデルを直接レンダリングできる</li>
+<li>リッチデータモデルを直接レンダリングできる</li>
 </ul>
 <p><strong>WMTS</strong></p>
 <ul class="simple">
@@ -142,26 +142,26 @@
 <ul class="simple">
 <li>WPS標準1.0.0を実装</li>
 <li>KVP、XML、およびSOAP要求をサポート</li>
-<li>プラガブル・プロセス・プロバイダ層</li>
+<li>プラグ可能なプロセスプロバイダレイヤ</li>
 <li>Javaプロセスを実装するための使いやすいAPI</li>
 <li>入力/出力パラメータのすべてのバリエーション(literal、bbox、complex(binaryおよびxml))をサポート</li>
 <li>複雑な入出力パラメータへのストリーミングアクセス</li>
 <li>最小限のメモリ使用量で大量のデータを処理</li>
-<li>Supports storing of response documents/output parameters</li>
-<li>Supports input parameters given inline and by reference</li>
-<li>Supports RawDataOutput/ResponseDocument responses</li>
-<li>Supports asynchronous execution (with polling of process status)</li>
+<li>レスポンス文書/出力パラメータの保存をサポート</li>
+<li>インラインと参照で指定されたパラメータをサポート</li>
+<li>RawDataOutput/ResponseDocument 応答のサポート</li>
+<li>非同期実行をサポート(プロセスステータスをポーリング)</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
 <h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> 1.0.0, 1.1.0 and 2.0.0</li>
-<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> 1.1.1 and 1.3.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> 1.0.0, 1.1.0 および 2.0.0</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> 1.1.1 および 1.3.0</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a> 1.1.0</li>
 <li>OGC Catalogue Service-Web (CSW) 2.0.2</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> 1.0.0</li>
-<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a> 2.12, 3.0.1, 3.1.1 and 3.2.1</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/gml">Geography Markup Language (GML)</a> 2.12, 3.0.1, 3.1.1 および 3.2.1</li>
 </ul>
 </div>
 <div class="section" id="details">
@@ -170,7 +170,7 @@
 <p><strong>ライセンス:</strong> LGPL</p>
 <p><strong>ソフトウェアバージョン:</strong> 3.4.1</p>
 <p><strong>対応プラットフォーム:</strong> Windows, Linux</p>
-<p><strong>API インターフェイス:</strong> Java</p>
+<p><strong>API インタフェース:</strong> Java</p>
 <p><strong>サポート:</strong> <a class="reference external" href="https://www.deegree.org/community">https://www.deegree.org/community</a></p>
 </div>
 <div class="section" id="quickstart">

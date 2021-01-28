@@ -73,8 +73,8 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="geoserver-quickstart">
 <h1>GeoServer クイック スタート<a class="headerlink" href="#geoserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>GeoServerは、他のクライアント(Webブラウザなど)が描画するマップ(およびデータ)を提供するJavaアプリケーションです。GeoServer は、ブラウザベースの管理インターフェイスを持ち、バックエンド側で複数のデータソースへ接続します。</p>
-<p>このクイックスタートでは、次の方法について説明します。</p>
+<p>GeoServerは、他のクライアント(Webブラウザなど)が描画するマップ(およびデータ)を提供するJavaアプリケーションです。GeoServer は、ブラウザベースの管理インタフェースを持ち、バックエンド側で複数のデータソースへ接続します。</p>
+<p>このクイックスタートでは、次の方法について説明します:</p>
 <blockquote>
 <div><ul class="simple">
 <li>GeoServerにベクターとラスターデータソースを追加する</li>
@@ -107,16 +107,16 @@
 <div class="section" id="start-geoserver">
 <h2><a class="toc-backref" href="#id1">Geoserverを起動する</a><a class="headerlink" href="#start-geoserver" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">スタートメニューから、<span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> を選択します。アプリケーションの起動には少し時間がかかり、<a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a> でWebページが開きます。</p>
+<li><p class="first">スタートメニューから、 <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> を選択します。アプリケーションの起動には少し時間がかかり、<a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a> でWebページが開きます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-login.png"><img alt="../../_images/geoserver-login.png" src="../../_images/geoserver-login.png" style="width: 562.0999999999999px; height: 289.79999999999995px;" /></a>
 </li>
-<li><p class="first">ユーザー名 <strong>admin</strong> とパスワード <strong>geoserver</strong> を使用してログインします。これで、<em>admin page</em> が表示されます。</p>
+<li><p class="first">ユーザー名 <strong>admin</strong> とパスワード <strong>geoserver</strong> を使用してログインします。これで、 <em>admin page</em> が表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-welcome.png"><img alt="../../_images/geoserver-welcome.png" src="../../_images/geoserver-welcome.png" style="width: 556.5px; height: 350.0px;" /></a>
 </li>
 <li><p class="first">左側のメニューの <em>Data</em> セクションの一番上にある <strong>Layer Preview</strong> リンクをクリックすると、サーバーにロードされているレイヤのプレビューが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-layerpreview.png"><img alt="../../_images/geoserver-layerpreview.png" src="../../_images/geoserver-layerpreview.png" style="width: 784.6999999999999px; height: 458.49999999999994px;" /></a>
 </li>
-<li><p class="first">ページの下部までスクロールし、<strong>tiger-ny</strong> 行の <strong>OpenLayers</strong> リンクをクリックします。これにより、新しいウィンドウが開き、サンプルデータのプレビューが表示されます。</p>
+<li><p class="first">ページの下部までスクロールし、 <strong>tiger-ny</strong> 行の <strong>OpenLayers</strong> リンクをクリックします。これにより、新しいウィンドウが開き、サンプルデータのプレビューが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-preview.png"><img alt="../../_images/geoserver-preview.png" src="../../_images/geoserver-preview.png" style="width: 260.4px; height: 398.29999999999995px;" /></a>
 </li>
 <li><p class="first">マップを拡大するには、次の 3 つの方法があります。</p>
@@ -124,7 +124,7 @@
 <div><ul class="simple">
 <li>左側のズームバーをクリックすると、クリックするほど拡大して表示されます。</li>
 <li>マウスのスクロールホイールを使用すると(ある場合)、上へスクロールするとズームインし、下へスクロールするとズームアウトします。</li>
-<li><code class="kbd docutils literal"><span class="pre">shiftキー</span></code> -を押しながらマップ上のボックスをドラッグすると、選択されたボックスにズームします(または画面に収まる程度にズームします)。</li>
+<li><code class="kbd docutils literal"><span class="pre">shiftキー</span></code> - を押しながらマップ上のボックスをドラッグすると、選択されたボックスにズームします(または画面に収まる程度にズームします)。</li>
 </ul>
 </div></blockquote>
 </li>
@@ -139,7 +139,7 @@
 </div>
 <p>この例では、OSGeoLiveに含まれている <a class="reference internal" href="../overview/naturalearth_overview.html"><span class="doc">Natural Earthデータセット</span></a> (<code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></code>)を使用します。</p>
 <ol class="arabic">
-<li><p class="first">データ用のストアを作成する必要があります。GeoServer 管理ページから:guilabel:<cite>Stores</cite> に移動します。</p>
+<li><p class="first">データ用のストアを作成する必要があります。GeoServer 管理ページから <span class="guilabel">Stores</span> に移動します。</p>
 </li>
 <li><p class="first"><span class="guilabel">Add new Store</span> をクリックします。次のページが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-newstore.png"><img alt="The New Store page" class="align-center" src="../../_images/geoserver-newstore.png" style="width: 793.8px; height: 457.09999999999997px;" /></a>
@@ -147,52 +147,52 @@
 <li><p class="first"><span class="guilabel">Directory of spatial files</span> を選択します。次のように表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-new-vector.png"><img alt="Filling in the New Store page" class="align-center" src="../../_images/geoserver-new-vector.png" style="width: 805.6999999999999px; height: 457.09999999999997px;" /></a>
 </li>
-<li><p class="first">データストアの名前(<em>Natural Earth</em> など)を入力し、データセットのURL(この場合は:file:<cite>/usr/local/share/data/natural_earth2/</cite>)を入力します。データが他の場所にある場合は、ブラウズボタンを使用してディレクトリを検索できます。</p>
+<li><p class="first">データストアの名前(<em>Natural Earth</em> など)を入力し、データセットのURL(この場合は <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></code>)を入力します。データが他の場所にある場合は、ブラウズボタンを使用してディレクトリを検索できます。</p>
 </li>
 <li><p class="first"><span class="guilabel">保存</span> を押します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-naturalearth.png"><img alt="The Natural Earth Datastore" class="align-center" src="../../_images/geoserver-naturalearth.png" style="width: 536.1999999999999px; height: 303.79999999999995px;" /></a>
 </li>
-<li><p class="first">いずれかのレイヤーの横にある <span class="guilabel">公開</span> を押して、データの追加を完了します。これにより、<em>レイヤ</em> ページに移動します。</p>
+<li><p class="first">いずれかのレイヤーの横にある <span class="guilabel">公開</span> を押して、データの追加を完了します。これにより、 <em>レイヤ</em> ページに移動します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-publish.png"><img alt="The layer publishing page" class="align-center" src="../../_images/geoserver-publish.png" style="width: 532.6999999999999px; height: 1051.3999999999999px;" /></a>
-<p>ページをスクロールすると、GeoServer が多くのフィールドにデータ挿入していることがわかります。 <span class="guilabel">Coordinate Reference System</span> に到達すると、 <em>Native SRS</em> の下にUNKNOWNと表示されていることがわかります。次のボックス (<em>declared SRS</em>) に入力して、GeoServer がデータの場所を確実に認識できるようにする必要があります。</p>
+<p>ページをスクロールすると、 GeoServer が多くのフィールドにデータ挿入していることがわかります。<span class="guilabel">Coordinate Reference System</span> に到達すると、 <em>Native SRS</em> の下に UNKNOWN と表示されていることがわかります。次のボックス(<em>declared SRS</em>)に入力して、 GeoServer がデータの場所を確実に認識できるようにする必要があります。</p>
 </li>
-<li><p class="first">ボックスにepsg:4326と入力するか、 <a class="reference external" href="http://prj2epsg.org/search">http://prj2epsg.org/search</a> に移動して、次のリンクをクリックすると表示される文字列を貼り付けます 「不明」に。</p>
+<li><p class="first">ボックスにepsg:4326と入力するか、 <a class="reference external" href="http://prj2epsg.org/search">http://prj2epsg.org/search</a> に移動して、 「UNKNOWN」 の隣のリンクをクリックすると表示される文字列を貼り付けます。</p>
 </li>
-<li><p class="first"><span class="guilabel">Compute from data</span> と:guilabel:<cite>Compute from native bounds</cite> をクリックして、境界ボックス内のデータ表示します。</p>
+<li><p class="first"><span class="guilabel">Compute from data</span> と <span class="guilabel">Compute from native bounds</span> をクリックして、境界ボックス内のデータ表示します。</p>
 </li>
-<li><p class="first">最後に:guilabel:<cite>保存</cite> をクリックて、最初のレイヤを公開しました。</p>
+<li><p class="first">最後に <span class="guilabel">保存</span> をクリックて、最初のレイヤを公開しました。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">レイヤのプレビューは既定のスタイルを使用しているため、あまり見栄えがしなくても心配ありません。次のセクションでは、より良いスタイルの作成について説明します。</p>
 </div>
-<p>ディレクトリ内の他のレイヤーについても、レイヤーページの:guilabel:<cite>Add a new resource</cite> ボタンを使用して同じ手順を実行できます。ドロップダウンボックスからNatural Earthストアを選択するだけで、ストアのページに戻ります。</p>
+<p>ディレクトリ内の他のレイヤーについても、レイヤーページの <span class="guilabel">Add a new resource</span> ボタンを使用して同じ手順を実行できます。ドロップダウンボックスからNatural Earthストアを選択するだけで、ストアのページに戻ります。</p>
 </div>
 <div class="section" id="styling-data">
 <h2><a class="toc-backref" href="#id3">データをスタイリング</a><a class="headerlink" href="#styling-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>マップレイヤへのデータセットのスタイリングにおいて、 GeoServer は <a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a> と呼ばれるOGC標準を使用しています。これらは、データにさまざまな図案化を適用するために使用されるルールを記述するXMLファイルとして表されます。</p>
-<p>はじめに、で陸地と海洋のデータセットのスタイルを設定しましょう。SLDファイルは簡単なテキストエディタで作成できますが、グラフィカルエディタの方がよい場合もあります。ここにはいくつかのオプションがありますが、uDig ではシェイプファイルを直接開き、GUIを使用して簡単なスタイルを適用できます。また、必要に応じてXMLを変更するための簡単なエディタも提供しています。</p>
+<p>はじめに、で陸地と海洋のデータセットのスタイルを設定しましょう。SLDファイルは簡単なテキストエディタで作成できますが、グラフィカルエディタの方がよい場合もあります。ここにはいくつかのオプションがありますが、 uDig ではシェープファイルを直接開き、GUIを使用して簡単なスタイルを適用できます。また、必要に応じてXMLを変更するための簡単なエディタも提供しています。</p>
 <div class="section" id="using-ug-to-create-simple-styles">
 <h3><a class="toc-backref" href="#id4">uDig を使用したシンプルなスタイルの作成</a><a class="headerlink" href="#using-ug-to-create-simple-styles" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">uDig の使用方法に関するその他の詳細については、<a class="reference internal" href="udig_quickstart.html"><span class="doc">uDigクイックスタート</span></a> を参照してください。</p>
+<p class="last">uDig の使用方法に関するその他の詳細については、 <a class="reference internal" href="udig_quickstart.html"><span class="doc">uDigクイックスタート</span></a> を参照してください。</p>
 </div>
 <ol class="arabic">
-<li><p class="first">uDig を開き、シェイプファイルを追加します(左上隅のデータ追加ボタンを使用)。</p>
+<li><p class="first">uDig を開き、シェープファイルを追加します(左上隅のデータ追加ボタンを使用)。</p>
 </li>
 <li><p class="first">ne_10m_landテーブルとne_10m_oceanテーブルをマップウィンドウにドラッグします。uDig は自動的にスタイルを適用します(データが見えるようになります)。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-udig_startup.png"><img alt="Default Styling in uDig" class="align-center" src="../../_images/geoserver-udig_startup.png" style="width: 773.5px; height: 357.7px;" /></a>
 </li>
 <li><p class="first"><a class="reference internal" href="#layer-list"><span class="std std-ref">レイヤリスト</span></a> でスタイルボタン(アーティストのパレットのように見えます)を選択します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-layer-chooser.png" id="layer-list"><img alt="The Layer list window" class="align-center" id="layer-list" src="../../_images/geoserver-layer-chooser.png" style="width: 177.79999999999998px; height: 167.29999999999998px;" /></a>
-<p>これにより、<a class="reference internal" href="#style-pane"><span class="std std-ref">スタイルペイン</span></a> が開きます。</p>
+<p>これにより、 <a class="reference internal" href="#style-pane"><span class="std std-ref">スタイルペイン</span></a> が開きます。</p>
 </li>
 <li><p class="first">シンプルなウィンドウでは、塗りつぶしタブの色付きのボックスをクリックし、表示されるカラーピッカーから選択することで、海洋に適した青を簡単に選択できます。また、塗りつぶしの不透明度を100%に上げて、カラーの見栄えを良くすることもできます。境界線の色に同じ青を選択して、一致させます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-style-pane.png" id="style-pane"><img alt="The Style Pane" class="align-center" id="style-pane" src="../../_images/geoserver-style-pane.png" style="width: 680.4px; height: 501.9px;" /></a>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">OK</span></code> をクリックすると、uDig が変更を表示します。</p>
+<li><p class="first"><code class="docutils literal"><span class="pre">OK</span></code> をクリックすると、 uDig が変更を表示します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-blue-ocean.png"><img alt="Blue Oceans" class="align-center" src="../../_images/geoserver-blue-ocean.png" style="width: 770.6999999999999px; height: 394.79999999999995px;" /></a>
 </li>
 <li><p class="first">上記の手順を繰り返して、土地のレイヤの色を変更します。<code class="docutils literal"><span class="pre">define</span> <span class="pre">custom</span> <span class="pre">colors</span></code> セクションを使用して、好みの色を作成できます。</p>
@@ -207,22 +207,22 @@
 <p>次に、これらのスタイルを GeoServer に転送する必要があります。</p>
 <ol class="arabic simple">
 <li>スタイルウィンドウにはエクスポートボタンがあり、スタイルを定義するSLDファイルを保存できます。</li>
-<li>保存後、再度 GeoServer 管理ページに移動して、<code class="docutils literal"><span class="pre">Styles</span></code> (<code class="docutils literal"><span class="pre">Data</span></code> セクションの下部)を選択できます。</li>
+<li>保存後、再度 GeoServer 管理ページに移動して、 <code class="docutils literal"><span class="pre">Styles</span></code> (<code class="docutils literal"><span class="pre">Data</span></code> セクションの下部)を選択できます。</li>
 <li><code class="docutils literal"><span class="pre">新規スタイル追加</span></code> リンクを選択します。このページの下部には、ファイルアップロードボックスと参照ボタンがあります。</li>
 <li>[参照ボタン] をクリックして、保存したファイルを検索します。</li>
 <li>アップロードリンク(参照ボタンの横)をクリックすると、ファイルの内容がエディタに表示されます。</li>
 <li>妥当性検査ボタンをクリックすると、強調表示されたラインにエラーが表示されますが、エラーを無視しても安全です(または、何もしないラインを削除してもかまいません)。</li>
-<li>ページの下部にある:guilabel:<cite>Submit</cite> を押します。</li>
+<li>ページの下部にある <span class="guilabel">Submit</span> を押します。</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/geoserver-add-style.png"><img alt="Adding a Style to GeoServer" class="align-center" src="../../_images/geoserver-add-style.png" style="width: 765.0999999999999px; height: 455.7px;" /></a>
 </div>
 <div class="section" id="adding-the-style-to-the-layer">
 <h3><a class="toc-backref" href="#id6">レイヤにスタイルを追加</a><a class="headerlink" href="#adding-the-style-to-the-layer" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic simple">
-<li>GeoServer ウィンドウの左側にあるメニューの:guilabel:<cite>レイヤ</cite> リンクをクリックします。</li>
-<li>レイヤ(例:<em>ne_10m_land</em>)をクリックし、<span class="guilabel">Publishing</span> タブを選択します。</li>
+<li>GeoServer ウィンドウの左側にあるメニューの <span class="guilabel">レイヤ</span> リンクをクリックします。</li>
+<li>レイヤ(例: <em>ne_10m_land</em>)をクリックし、 <span class="guilabel">Publishing</span> タブを選択します。</li>
 <li><span class="guilabel">Default Style</span> ボックスを前のセクションでアップロードしたスタイルの名前に変更します。</li>
-<li>次に、<span class="guilabel">保存</span> をクリックし、レイヤプレビューページに移動して、外観が良いことを確認します。</li>
+<li>次に、 <span class="guilabel">保存</span> をクリックし、レイヤプレビューページに移動して、外観が良いことを確認します。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -232,7 +232,7 @@
 </div>
 <div class="section" id="clients-for-wms-layers">
 <h2><a class="toc-backref" href="#id7">WMSレイヤーのクライアント</a><a class="headerlink" href="#clients-for-wms-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>GeoServer から提供されているWMSレイヤは、このOSGeoLiveディストリビューションのさまざまなクライアントで使用できます。次のものがあります。</p>
+<p>GeoServer から提供されている <a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> レイヤは、このOSGeoLiveディストリビューションのさまざまなクライアントで使用できます。次のものがあります。</p>
 <ul class="simple">
 <li><a class="reference internal" href="../overview/udig_overview.html"><span class="doc">uDig</span></a></li>
 <li><a class="reference internal" href="../overview/openlayers_overview.html"><span class="doc">OpenLayers</span></a></li>
@@ -249,16 +249,16 @@
 </li>
 <li><p class="first">管理者としてログインします。</p>
 </li>
-<li><p class="first"><span class="guilabel">ストア追加</span> をクリックし、次に:guilabel:<cite>NetCDF</cite> をクリックします。</p>
+<li><p class="first"><span class="guilabel">ストア追加</span> をクリックし、次に <span class="guilabel">NetCDF</span> をクリックします。</p>
 </li>
-<li><p class="first">[Data Source Name]の値(今回は「netcdf」)と、NetCDF URLを入力します。次のサンプルファイルを利用可能:</p>
+<li><p class="first">[Data Source Name]の値(今回は 「netcdf」)と、NetCDF URLを入力します。次のサンプルファイルを利用可能:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">netcdf</span><span class="o">/</span><span class="n">polyphemus_20120401</span><span class="o">.</span><span class="n">nc</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">「保存」と」O3」レイヤを」公開」 を押してください。</p>
+<li><p class="first">「保存」 と 「O3」 レイヤを 「公開」 を押してください。</p>
 </li>
-<li><p class="first">「Data」タブの一番下までスクロールダウンし、もう一度」保存」を押します。</p>
+<li><p class="first">「Data」 タブの一番下までスクロールダウンし、もう一度 「保存」 を押します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/geoserver-netcdf-store.png"><img alt="Adding a NetCDF store" class="align-center" src="../../_images/geoserver-netcdf-store.png" style="width: 680.0px; height: 473.0px;" /></a>
 </div></blockquote>
@@ -268,11 +268,11 @@
 <div class="section" id="preview-the-netcdf-layer">
 <h3><a class="toc-backref" href="#id10">NetCDFレイヤをプレビュー</a><a class="headerlink" href="#preview-the-netcdf-layer" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">左側のメニューから」レイヤプレビュー」を選択</p>
+<li><p class="first">左側のメニューから 「レイヤプレビュー」 を選択</p>
 </li>
-<li><p class="first">下へスクロールして」cite: O3」の項目を探し、」OpenLayers」リンクをクリックしてレイヤのプレビューを表示します。</p>
+<li><p class="first">下へスクロールして 「cite: O3」 の項目を探し、 「OpenLayers」 リンクをクリックしてレイヤのプレビューを表示します。</p>
 </li>
-<li><p class="first">点をクリックすると、「オゾン濃度」の値がマップの下部のテーブルに表示されます。</p>
+<li><p class="first">点をクリックすると、 「オゾン濃度」 の値がマップの下部のテーブルに表示されます。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/geoserver-netcdf-preview.png"><img alt="OpenLayers preview of a NetCDF layer" class="align-center" src="../../_images/geoserver-netcdf-preview.png" style="width: 781.0px; height: 564.0px;" /></a>
 </div></blockquote>
@@ -280,7 +280,7 @@
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">このGeoServerインスタンスは、<code class="docutils literal"><span class="pre">NETCDF_DATA_DIR</span></code> Javaシステムプロパティを使用して設定されており、読み取り専用ディレクトリにNetCDFファイルを公開できます。</p>
+<p class="last">このGeoServerインスタンスは、 <code class="docutils literal"><span class="pre">NETCDF_DATA_DIR</span></code> Javaシステムプロパティを使用して設定されており、読み取り専用ディレクトリにNetCDFファイルを公開できます。</p>
 </div>
 </div>
 </div>

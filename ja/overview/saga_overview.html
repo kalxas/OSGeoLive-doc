@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="SAGA Quickstart" href="../quickstart/saga_quickstart.html" />
-    <link rel="prev" title="OpenJUMP GIS Quickstart" href="../quickstart/openjump_quickstart.html" />
+    <link rel="prev" title="OpenJUMP GISクイックスタート" href="../quickstart/openjump_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -73,63 +73,54 @@
 <div class="section" id="saga">
 <h1>SAGA<a class="headerlink" href="#saga" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="desktop-gis">
-<h2>Desktop GIS<a class="headerlink" href="#desktop-gis" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>SAGA (System for Automated Geoscientific Analyses) is an
-open source geographic information system (GIS) used for editing and analysing
-spatial data. It includes a large number of modules for the analysis of
-vector (point, line and polygon), table, grid and image data. Among
-others the package includes modules for geostatistics, image
-classification, projections, simulation of dynamic processes (hydrology,
-landscape development) and terrain analysis. The functionality can be
-accessed through a GUI, the command line or by using the C++ API.</p>
-<p>SAGA has been in development since 2001, and the centre of SAGA development is
-located in the Institute of Geography at the University of Hamburg, with
-contributions from the growing world wide community.</p>
+<h2>デスクトップ GIS<a class="headerlink" href="#desktop-gis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SAGA (System for Automated Geoscientific Analyses) は,空間データの編集と解析に使用されるオープンソースの地理情報システム(GIS)である。これはベクトル(点,線,多角形),表,格子,画像データの解析のための多数のモジュールを含みます。このパッケージには、地球統計学、画像分類、投影、動的プロセスのシミュレーション(水文学、景観開発)、地形解析などのモジュールが含まれています。この機能には、GUI、コマンドライン、またはC++APIを使用してアクセスできます。</p>
+<p>SAGAは2001年から開発を行われており、SAGAの開発の中心はハンブルク大学の地理学研究所にあり、世界中のコミュニティからの貢献を受けています。</p>
 <a class="reference internal image-reference" href="../../_images/saga_screenshot.png"><img alt="saga screenshot" class="align-right" src="../../_images/saga_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>Access to a large number of scientific modules via the Graphical User Interface or the command line</li>
+<li>グラフィカル・ユーザー・インタフェース(GUI)またはコマンドライン(CLI)を使用し多数の科学モジュールへのアクセス</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>Import/Export to different file formats</li>
-<li>Reprojection/Resampling of data</li>
-<li>Manipulation of vector data (merging/intersection/attributes)</li>
-<li>Manipulation of point clouds from lidar data</li>
-<li>Raster data: interpolation, cost analysis, …</li>
-<li>Image analysis: filters, edge detection, cluster analysis, segmentation</li>
-<li>Digital Terrain Analysis: generate geomorphometric indexes, channel networks, profiles, contour lines, …</li>
-<li>Geostatistics: modules for variogram fitting and kriging</li>
+<li>異なるファイル形式への読み込み/書き出し</li>
+<li>データの再投影/再サンプリング</li>
+<li>ベクタデータの操作(マージ/交差/属性)</li>
+<li>lidar データからの点群の操作</li>
+<li>ラスタデータ: 補間、コスト分析 …</li>
+<li>イメージ分析: フィルタ、エッジ検出、クラスター分析、セグメンテーション</li>
+<li>ディジタル地形分析: 形状の索引、チャネル・ネットワーク、プロファイル、輪郭線などの生成…</li>
+<li>地球統計学: バリオグラムのフィッティングおよびクリギング用モジュール</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>Fast user interface for managing and visualising data</li>
+<li>データを管理および視覚化するための高速ユーザー・インタフェース</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>3D visualisation</li>
+<li>3D 可視化</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>Straightforward C++ API for creating new modules</li>
-<li>Scripting through command line, bindings for Python</li>
-<li>SAGA can be accessed from the R statistical language through the RSAGA module</li>
+<li>新規モジュールを作成するための 直感的な C++ API</li>
+<li>コマンドライン実行スクリプト、 Python バインディング</li>
+<li>SAGA は RSAGA モジュールを通じて R 統計言語からもアクセス可能</li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
-<p><strong>Licence:</strong> LGPL v2.1 (api); GPLv2 (GUI and modules)</p>
-<p><strong>Software Version:</strong> 7.3.0</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, FreeBSD</p>
-<p><strong>API Interfaces:</strong> C++, Python, R</p>
-<p><strong>Support:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
+<p><strong>ライセンス:</strong> LGPL v2.1 (api); GPLv2 (GUI and modules)</p>
+<p><strong>ソフトウェアバージョン:</strong> 7.3.0</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, FreeBSD</p>
+<p><strong>API インタフェース:</strong> C++, Python, R</p>
+<p><strong>サポート:</strong> <a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/saga_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/saga_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

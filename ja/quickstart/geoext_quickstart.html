@@ -93,7 +93,7 @@
 </div>
 </li>
 <li><p class="first">次に下のHTMLに貼り付け、ファイルを <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code> として保存します。このファイルには、ExtJSおよびOpenLayers JavaScriptライブラリへのリンクと、ExtJSおよびOpenLayersコンポーネントのスタイル設定に使用される2つのCSSファイルが含まれています。</p>
-<p><code class="docutils literal"><span class="pre">Ext.Loader``クラスを使用して、GeoExtのJavaScriptソースファイルをロードします。これらはすべて</span> <span class="pre">``/var/www/html/geoext/</span></code> の <code class="docutils literal"><span class="pre">src</span></code> フォルダにあります。</p>
+<p><code class="docutils literal"><span class="pre">Ext.Loader</span></code> クラスを使用して、GeoExtのJavaScriptソースファイルをロードします。これらはすべて <code class="docutils literal"><span class="pre">/var/www/html/geoext/</span></code> の <code class="docutils literal"><span class="pre">src</span></code> フォルダにあります。</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -124,8 +124,8 @@
 </div>
 </li>
 </ol>
-<p><a class="reference external" href="http://localhost/geoext/demo">http://localhost/geoext/demo</a>.htmlでFirefoxの空のHTMLページを見ることができるようになりましたね。</p>
-<p>以下のセクションにあるすべてのJavaScriptは、<code class="docutils literal"><span class="pre">Ext.onReady</span></code> 関数の <code class="docutils literal"><span class="pre">//all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> コメントの後に貼り付ける必要があります。ここにコードを配置すると、カスタムJavaScriptコードを実行する前に、JavaScriptライブラリが確実にロードされます。</p>
+<p><a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a> でFirefoxの空のHTMLページを見ることができるようになりましたね。</p>
+<p>以下のセクションにあるすべてのJavaScriptは、<code class="docutils literal"><span class="pre">Ext.onReady</span></code> 関数の <code class="docutils literal"><span class="pre">//</span> <span class="pre">all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> コメントの後に貼り付ける必要があります。ここにコードを配置すると、カスタムJavaScriptコードを実行する前に、JavaScriptライブラリが確実にロードされます。</p>
 </div>
 <div class="section" id="configure-openlayers-objects">
 <h2><a class="toc-backref" href="#id2">OpenLayersオブジェクトを設定する</a><a class="headerlink" href="#configure-openlayers-objects" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -207,7 +207,7 @@
 <h2><a class="toc-backref" href="#id3">GeoExtコンポーネントを操作する</a><a class="headerlink" href="#work-with-geoext-components" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これで、マップと画層が設定されました。次に、GeoExtコンポーネントを作成して設定します。</p>
 <ol class="arabic">
-<li><p class="first">まず、<code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code> を作成します。これは、作成したOpenLayersマップを使用し、アプリケーションの``中央``領域に配置されます。</p>
+<li><p class="first">まず、 <code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code> を作成します。これは、作成したOpenLayersマップを使用し、アプリケーションの 『中央』 領域に配置されます。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mapComponent</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.Map&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
     <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
@@ -215,7 +215,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">次に、画層ツリーコンポーネントを作成します。ツリーには独自のデータストア <code class="docutils literal"><span class="pre">GeoExt.data.store.LayersTree`</span> <span class="pre">`があり、OpenLayersマップのレイヤで埋めます。このストアは、ツリー・パネルへの入力に使用されます。また、ツリーにプラグインを追加して、レイヤをドラッグアンドドロップして地図レイヤの順序を変更できるようにします。``flex</span></code> プロパティーを指定すると、ツリー・パネルは画面の領域内の使用可能なスペースをすべて埋めます。</p>
+<li><p class="first">次に、画層ツリーコンポーネントを作成します。ツリーには独自のデータストア <code class="docutils literal"><span class="pre">GeoExt.data.store.LayersTree</span></code> があり、OpenLayersマップのレイヤで埋めます。このストアは、ツリー・パネルへの入力に使用されます。また、ツリーにプラグインを追加して、レイヤをドラッグアンドドロップして地図レイヤの順序を変更できるようにします。<code class="docutils literal"><span class="pre">flex</span></code> プロパティーを指定すると、ツリー・パネルは画面の領域内の使用可能なスペースをすべて埋めます。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">treeStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.LayersTree&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layerGroup</span><span class="o">:</span> <span class="nx">map</span><span class="p">.</span><span class="nx">getLayerGroup</span><span class="p">()</span>
 <span class="p">});</span>
@@ -233,7 +233,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">また、WFSレイヤのフィーチャの属性を表示するグリッドコンポーネントを作成します。レイヤーツリーストアとツリーパネルと同様に、<code class="docutils literal"><span class="pre">GeoExt.data.store.Features</span></code> ストアとグリッドパネルを作成します。</p>
+<li><p class="first">また、WFSレイヤのフィーチャの属性を表示するグリッドコンポーネントを作成します。レイヤーツリーストアとツリーパネルと同様に、 <code class="docutils literal"><span class="pre">GeoExt.data.store.Features</span></code> ストアとグリッドパネルを作成します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">featureStore</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.data.store.Features&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layer</span><span class="o">:</span> <span class="nx">vectorLayer</span><span class="p">,</span>
     <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span>
@@ -261,7 +261,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">我々の最後のGeoExtコンポーネントは概観地図-<code class="docutils literal"><span class="pre">GeoExt.componnet.OverviewMap</span></code> である。先ほど作成したOpenStreetMapレイヤーを表示するように設定し、ExtJSパネルに配置します。</p>
+<li><p class="first">我々の最後のGeoExtコンポーネントは概観地図- <code class="docutils literal"><span class="pre">GeoExt.componnet.OverviewMap</span></code> である。先ほど作成したOpenStreetMapレイヤーを表示するように設定し、ExtJSパネルに配置します。</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">overview</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.OverviewMap&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">parentMap</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
     <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="nx">osmLayer</span><span class="p">]</span>
@@ -302,15 +302,15 @@
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>ブラウザでリンクhttp://localhost/geoext/demo.htmlを更新すると、下の画像のような完全なGeoExtアプリケーションが表示されます。</p>
+<p>ブラウザでリンク <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a> を更新すると、下の画像のような完全なGeoExtアプリケーションが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoext_quickstart.png"><img alt="../../_images/geoext_quickstart.png" src="../../_images/geoext_quickstart.png" style="width: 1521.0px; height: 725.0px;" /></a>
 </div>
 <div class="section" id="what-s-next">
 <h2><a class="toc-backref" href="#id5">次は?</a><a class="headerlink" href="#what-s-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://geoext.github.io/geoext3/">GeoExtのホームページ</a> には完全な <a class="reference external" href="https://geoext.github.io/geoext3/v3.1.0/docs">APIドキュメント</a> と例があります。</li>
-<li><a class="reference external" href="https://github.com/geoext/geoext3-ws">GeoExtワークショップ</a> では、ExtJSアプリケーションでGeoExt3を設定および使用するためのすべての手順について詳しく説明しています。</li>
-<li><a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc">OpenLayers v4.6.5 APIド キュメント</a></li>
+<li><a class="reference external" href="https://github.com/geoext/GeoExt3-ws">GeoExtワークショップ</a> では、ExtJSアプリケーションでGeoExt3を設定および使用するためのすべての手順について詳しく説明しています。</li>
+<li><a class="reference external" href="https://openlayers.org/en/v4.6.5/apidoc">OpenLayers v4.6.5 APIドキュメント</a></li>
 <li><a class="reference external" href="https://docs.sencha.com/extjs/6.2.0/">ExtJS 6.2.0 API ドキュメント</a></li>
 </ul>
 </div>

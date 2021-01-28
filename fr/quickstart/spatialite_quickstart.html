@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SpatiaLite Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Guide de démarrage avec SpatiaLite &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,46 +71,43 @@
             
   <a class="reference external image-reference" href="http://www.gaia-gis.it/gaia-sins/"><img alt="../../_images/logo_spatialite.png" class="align-right" src="../../_images/logo_spatialite.png" /></a>
 <div class="section" id="spatialite-quickstart">
-<h1>SpatiaLite Quickstart<a class="headerlink" href="#spatialite-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
-<p>SpatiaLite is an SQLite database engine with spatial functions added.</p>
-<p>SQLite is a Database Management System (DBMS) which is simple, robust, easy to use and very lightweight. Each SQLite database is simply a file. You can freely copy it, compress it, and port it between Windows, Linux, MacOs etc.</p>
-<p>This Quick Start describes how to open a spatialite database from both GUI applications and the command line. Some sample SQL queries are shown.</p>
+<h1>Guide de démarrage avec SpatiaLite<a class="headerlink" href="#spatialite-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>SpatiaLite est un moteur de base de données SQLite avec des fonctions spatiales ajoutées.</p>
+<p>SQLite est un système de gestion de base de données (SGBD) qui est simple, robuste, facile à utiliser et très léger. Chaque base de données SQLite est simplement un fichier. Vous pouvez librement le copier, le compresser, et l’échanger entre Windows, Linux, MacOs etc.</p>
+<p>Ce guide de démarrage rapide décrit comment ouvrir une base de données spatialite à partir d’applications et de la ligne de commande. Certains exemples de requêtes SQL sont affichés.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-spatialite-and-load-a-database" id="id1">Start Spatialite and load a database</a></li>
-<li><a class="reference internal" href="#run-an-sql-query" id="id2">Run an SQL query</a></li>
-<li><a class="reference internal" href="#run-spatialite-from-the-command-line" id="id3">Run spatialite from the command line</a></li>
-<li><a class="reference internal" href="#create-a-new-spatialite-database-and-load-a-shapefile" id="id4">Create a new spatialite database and load a shapefile</a></li>
-<li><a class="reference internal" href="#things-to-try" id="id5">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id6">What next?</a></li>
+<li><a class="reference internal" href="#start-spatialite-and-load-a-database" id="id1">Démarrer spatialite et charger une base de données</a></li>
+<li><a class="reference internal" href="#run-an-sql-query" id="id2">Exécuter une requête SQL</a></li>
+<li><a class="reference internal" href="#run-spatialite-from-the-command-line" id="id3">Exécuter la spatialite à partir de la ligne de commande</a></li>
+<li><a class="reference internal" href="#create-a-new-spatialite-database-and-load-a-shapefile" id="id4">Créer une nouvelle base de données spatialite et charger un shapefile</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id5">Choses à essayer</a></li>
+<li><a class="reference internal" href="#what-next" id="id6">Ensuite ?</a></li>
 </ul>
 </div>
 <div class="section" id="start-spatialite-and-load-a-database">
-<h2><a class="toc-backref" href="#id1">Start Spatialite and load a database</a><a class="headerlink" href="#start-spatialite-and-load-a-database" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Spatialite-gui provides a visual interface for viewing and maintaining a
-spatialite database. You can easily see the structure of the tables and data
-contents using point and click functions, many of which construct
-common SQL queries, or craft your own SQL queries.</p>
+<h2><a class="toc-backref" href="#id1">Démarrer spatialite et charger une base de données</a><a class="headerlink" href="#start-spatialite-and-load-a-database" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Spatialite-gui fournit une interface visuelle pour la visualisation et la maintenance d’une base de données spatialite. Vous pouvez facilement voir la structure des tables et du contenu des données à l’aide de fonctions point et clic, dont beaucoup construisent des requêtes SQL communes, ou créez vos propres requêtes SQL.</p>
 <ol class="arabic">
-<li><p class="first">Open the Spatialite GUI by selecting <span class="menuselection">Geospatial-&gt;Databases-&gt;Spatialite GUI</span>.</p>
+<li><p class="first">Ouvrez l’interface graphique spatialite en sélectionnant <span class="menuselection">Geospatial-&gt;Databases-&gt;Spatialite GUI</span>.</p>
 </li>
-<li><p class="first">Select <span class="menuselection">File-&gt;Connecting an existing SQLite DB</span></p>
+<li><p class="first">Sélectionnez <span class="menuselection">File-&gt;Connecting an existing SQLite DB</span></p>
 </li>
-<li><p class="first">Browse to the <code class="file docutils literal"><span class="pre">/home/user/data/spatialite</span></code> directory and choose <code class="file docutils literal"><span class="pre">trento.sqlite</span></code>.</p>
+<li><p class="first">Parcourez le répertoire <code class="file docutils literal"><span class="pre">/home/user/data/spatialite</span></code> et choisissez <code class="file docutils literal"><span class="pre">trento.sqlite</span></code>.</p>
 <a class="reference internal image-reference" href="../../_images/spatialite-gui-trento.png"><img alt="../../_images/spatialite-gui-trento.png" src="../../_images/spatialite-gui-trento.png" style="width: 560.0px; height: 433.29999999999995px;" /></a>
 </li>
-<li><p class="first">Right click on the MunicipalHallsView table and select «&nbsp;Show Columns&nbsp;»</p>
+<li><p class="first">Cliquez à droite sur la table MunicipalHallsView et sélectionnez «&nbsp;Show Columns&nbsp;»</p>
 <a class="reference internal image-reference" href="../../_images/spatialite-gui-columns.png"><img alt="../../_images/spatialite-gui-columns.png" src="../../_images/spatialite-gui-columns.png" style="width: 560.0px; height: 433.29999999999995px;" /></a>
 </li>
-<li><p class="first">You will notice the display broken into 3 areas:</p>
+<li><p class="first">Vous remarquerez l’affichage divisé en 3 zones :</p>
 <ul class="simple">
-<li>The left panel displays the database hierarchy, such as a list of tables, and columns within the table. Right click on elements of the left panel to select from a list of common database actions.</li>
-<li>The top right panel shows SQL for the action selected. You can enter your own customised SQL into this panel.</li>
-<li>The bottom right panel shows the results of the SQL query.</li>
+<li>Le panneau gauche affiche la hiérarchie de base de données, comme une liste de tables et de colonnes dans la table. Cliquez à droite sur les éléments du panneau gauche pour sélectionner à partir d’une liste d’actions de base de données courantes.</li>
+<li>Le panneau en haut à droite affiche SQL pour l’action sélectionnée. Vous pouvez entrer votre propre SQL personnalisé dans ce panneau.</li>
+<li>Le panneau en bas à droite affiche les résultats de la requête SQL.</li>
 </ul>
 </li>
-<li><p class="first">Right Click on the MunicipalHalls table and select «&nbsp;Edit table rows&nbsp;». Notice the SQL query which has been created for you in the top right pane, and results in the bottom right.:</p>
+<li><p class="first">Cliquez à droite sur la table MunicipalHalls et sélectionnez&nbsp;»Edit table rows&nbsp;». Remarquez que la requête SQL a été créée pour vous dans le volet supérieur droit, et les résultats sont en bas à droite.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">ROWID</span><span class="p">,</span> <span class="s2">&quot;PK_UID&quot;</span><span class="p">,</span> <span class="s2">&quot;AREA&quot;</span><span class="p">,</span> <span class="s2">&quot;PERIMETER&quot;</span><span class="p">,</span> <span class="s2">&quot;COMU&quot;</span><span class="p">,</span> <span class="s2">&quot;Geometry&quot;</span>
     <span class="n">FROM</span> <span class="s2">&quot;MunicipalHalls&quot;</span>
     <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">ROWID</span>
@@ -120,31 +117,31 @@ common SQL queries, or craft your own SQL queries.</p>
 </ol>
 </div>
 <div class="section" id="run-an-sql-query">
-<h2><a class="toc-backref" href="#id2">Run an SQL query</a><a class="headerlink" href="#run-an-sql-query" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Exécuter une requête SQL</a><a class="headerlink" href="#run-an-sql-query" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Now let’s try tweaking this SQL statement to get NOME and (Lat,Long) for only the NOME_PROV fields include «&nbsp;BRESCIA&nbsp;», this time using the MunicipalHallsView.  In the upper right SQL pane type:</p>
+<li><p class="first">Maintenant, essayons de peaufiner cette instruction SQL pour obtenir NOME et (Lat,Long) pour seulement les entités dont le champ NOME_PROV contient «&nbsp;BRESCIA&nbsp;», cette fois en utilisant la table MunicipalHallsView.  Dans le type de volet SQL supérieur droit</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">NOME</span><span class="p">,</span> <span class="n">X</span><span class="p">(</span><span class="n">Geometry</span><span class="p">)</span> <span class="n">AS</span> <span class="n">Longitude</span><span class="p">,</span> <span class="n">Y</span><span class="p">(</span><span class="n">Geometry</span><span class="p">)</span> <span class="n">AS</span> <span class="n">Latitude</span>
     <span class="n">FROM</span> <span class="s2">&quot;MunicipalHallsView&quot;</span>
     <span class="n">WHERE</span> <span class="n">NOME_PROV</span> <span class="n">LIKE</span> <span class="s2">&quot;BRESCIA&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Click the «&nbsp;Execute SQL&nbsp;» button at the right, and see the results in the bottom right pane.</p>
+<li><p class="first">Cliquez sur le bouton «&nbsp;Execute SQL&nbsp;» à droite, et voir les résultats dans le volet inférieur droit.</p>
 <a class="reference internal image-reference" href="../../_images/spatialite-gui-select.png"><img alt="../../_images/spatialite-gui-select.png" src="../../_images/spatialite-gui-select.png" style="width: 560.0px; height: 433.29999999999995px;" /></a>
 </li>
 </ol>
 </div>
 <div class="section" id="run-spatialite-from-the-command-line">
-<h2><a class="toc-backref" href="#id3">Run spatialite from the command line</a><a class="headerlink" href="#run-spatialite-from-the-command-line" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Users needing to script or automate queries will learn the advantages of working with a spatialite database from the command line interface. In this example, we will load a shapefile, and search for schools which are near highway 42.</p>
+<h2><a class="toc-backref" href="#id3">Exécuter la spatialite à partir de la ligne de commande</a><a class="headerlink" href="#run-spatialite-from-the-command-line" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les utilisateurs qui ont besoin de scripter ou d’automatiser des requêtes apprendront les avantages de travailler avec une base de données spatialite à partir de l’interface de la ligne de commande. Dans cet exemple, nous allons charger un shapefile, et la recherche d’écoles qui sont près de l’autoroute 42.</p>
 <ol class="arabic">
-<li><p class="first">Before working from the command line, we need to open a terminal window: <span class="menuselection">System Tools -&gt; LXTerminal</span>.</p>
+<li><p class="first">Avant de travailler à partir de la ligne de commande, nous devons ouvrir une fenêtre terminale : <span class="menuselection">System Tools -&gt; LXTerminal</span>.</p>
 </li>
-<li><p class="first">In the terminal open a sample database with <strong>spatialite</strong> by typing:</p>
+<li><p class="first">Dans le terminal ouvrir une base de données d’exemple avec <strong>spatialite</strong> en tapant:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spatialite</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">spatialite</span><span class="o">/</span><span class="n">trento</span><span class="o">.</span><span class="n">sqlite</span>
 </pre></div>
 </div>
-<p>Helpful commands from the command line:</p>
+<p>Commandes utiles de la ligne de commande:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">help</span>
 <span class="o">.</span><span class="n">tables</span>
 <span class="o">.</span><span class="n">quit</span>
@@ -154,9 +151,9 @@ common SQL queries, or craft your own SQL queries.</p>
 </ol>
 </div>
 <div class="section" id="create-a-new-spatialite-database-and-load-a-shapefile">
-<h2><a class="toc-backref" href="#id4">Create a new spatialite database and load a shapefile</a><a class="headerlink" href="#create-a-new-spatialite-database-and-load-a-shapefile" title="Lien permanent vers ce titre">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Créer une nouvelle base de données spatialite et charger un shapefile</a><a class="headerlink" href="#create-a-new-spatialite-database-and-load-a-shapefile" title="Lien permanent vers ce titre">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Let’s create a new, empty spatialite database, and load two shapefiles from the north_carolina dataset:</p>
+<li><p class="first">Créons une nouvelle base de données spatialite vide et chargeons deux shapefiles à partir du jeu de données north_carolina :</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>user@osgeo-6:~$ spatialite test.sqlite
 SpatiaLite version ..: 3.1.0-RC2      Supported Extensions:
      - &#39;VirtualShape&#39;        [direct Shapefile access]
@@ -178,9 +175,9 @@ spatialite&gt; .loadshp data/north_carolina/shape/schools_wake schools utf-8 335
 spatialite&gt; .loadshp data/north_carolina/shape/roadsmajor roads utf-8 3358
 </pre></div>
 </div>
-<p>Note the format of the .loadshp command: first the shapefile without the .shp extension, then the name of the new spatialite table, next the character encoding, and finally the EPSG code of the shapefile’s CRS.</p>
+<p>Notez le format de la commande .loadshp : d’abord le shapefile sans l’extension .shp, puis le nom de la nouvelle table spatialite, ensuite l’encodage des caractères, et enfin le code EPSG du CRS du shapefile.</p>
 </li>
-<li><p class="first">Now we’ll query for schools near to highway 42.:</p>
+<li><p class="first">Maintenant, nous allons interroger pour les écoles près de l’autoroute 42.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spatialite</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">s</span><span class="o">.</span><span class="n">NAMESHORT</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRNUMBER</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRROOT</span>
      <span class="o">...&gt;</span> <span class="n">FROM</span> <span class="n">schools</span> <span class="n">AS</span> <span class="n">s</span><span class="p">,</span> <span class="n">roads</span> <span class="n">AS</span> <span class="n">r</span>
      <span class="o">...&gt;</span> <span class="n">WHERE</span> <span class="n">r</span><span class="o">.</span><span class="n">ROAD_NAME</span> <span class="o">=</span> <span class="s2">&quot;NC-42&quot;</span> <span class="n">AND</span>
@@ -192,7 +189,7 @@ spatialite&gt; .loadshp data/north_carolina/shape/roadsmajor roads utf-8 3358
 </pre></div>
 </div>
 </li>
-<li><p class="first">Finally, we output the query to a «&nbsp;comma separated values&nbsp;» text file «&nbsp;schools_rt42.txt&nbsp;» with the following commands:</p>
+<li><p class="first">Enfin, nous extrayons le résultat de la requête vers un fichier texte&nbsp;»comma separated values (CSV)&nbsp;» «&nbsp;schools_rt42.txt&nbsp;» avec les commandes suivantes:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spatialite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">mode</span> <span class="n">csv</span>
 <span class="n">spatialite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">output</span> <span class="s2">&quot;schools_rt42.txt&quot;</span>
 <span class="n">spatialite</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">s</span><span class="o">.</span><span class="n">NAMESHORT</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRNUMBER</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRROOT</span>
@@ -206,17 +203,17 @@ spatialite&gt; .loadshp data/north_carolina/shape/roadsmajor roads utf-8 3358
 </ol>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id5">Things to try</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Here are some additional challenges for you to try:</p>
+<h2><a class="toc-backref" href="#id5">Choses à essayer</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voici quelques défis supplémentaires que vous pouvez relever :</p>
 <ul class="simple">
-<li>Inspect geometries with spatialite-gui</li>
-<li>Open and edit SpatiaLite layers in QGIS</li>
+<li>Inspecter les géométries avec spatialite-gui</li>
+<li>Ouvrez et modifiez les couches SpatiaLite dans QGIS</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id6">What next?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
-<p>To learn more about SpatiaLite, a starting point is the <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite project page</a>.</p>
-<p>Be sure to visit the tutorial <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite cookbook</a></p>
+<h2><a class="toc-backref" href="#id6">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour en savoir plus sur SpatiaLite, un point de départ est la <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">page du projet SpatiaLite</a>.</p>
+<p>N’oubliez pas de visiter le tutoriel <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite cookbook</a></p>
 </div>
 </div>
 

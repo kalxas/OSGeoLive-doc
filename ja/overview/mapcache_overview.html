@@ -74,42 +74,39 @@
 <div class="section" id="mapcache">
 <h1>MapCache<a class="headerlink" href="#mapcache" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="web-service">
-<h2>Web Service<a class="headerlink" href="#web-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>MapCache is a server that implements tile caching to speed up access to WMS layers. The primary objectives are to be fast and easily deployable,
-while offering the essential features (and more!) expected from a tile caching solution.</p>
-<p>MapCache is part of the MapServer family, but can be configured to cache and serve data from any geospatial server
-that uses WMS. MapCache can be run on Apache as a module or on any web server that supports CGI/FastCGI such as IIS, Nginx, and Jetty.</p>
+<h2>Web サービス<a class="headerlink" href="#web-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MapCache は、 WMS レイヤへのアクセスを高速化するタイルのキャッシュを実装しているサーバーです。第一の目標は、タイルキャッシュに期待される主要機能 (およびそれ以上!) を提供しつつ、迅速かつ容易にデプロイできることです。</p>
+<p>MapCache は MapServer ファミリーの一部ですが、 WMSを使用するすべての地理空間サーバーのデータをキャッシュできます。MapCache は Apache  httpdのモジュールとして利用できるほか、IIS、 Nginx、 Jetty などの CGI/FastCGI をサポートする任意の Web サーバーでも実行できます。</p>
 <a class="reference internal image-reference" href="../../_images/mapcache_screenshot.png"><img alt="mapcache screenshot" class="align-right" src="../../_images/mapcache_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>Allows tile caches to be stored in<ul>
-<li>on disk</li>
-<li>in the cloud using REST (S3, Azure, Google)</li>
-<li>in databases including SQLite, Berkeley DB, Riak</li>
-<li>in Memcache</li>
+<li>タイル・キャッシュを<ul>
+<li>ディスクに格納できます。</li>
+<li>REST (S3, Azure, Google)を使ってクラウドに格納できます。</li>
+<li>SQLite, Berkeley DB, Riakといったデータベースに格納できます。</li>
+<li>Memcacheへ格納できます。</li>
 </ul>
 </li>
-<li>Includes a seeder application</li>
-<li>Caching based on dimensions (such as time)</li>
-<li>Allows caching of Mapbox Vector (MVT) and UTFGrid tiles</li>
-<li>Customizable grids</li>
-<li>Allows tiles to be 「assembled」 together - allowing tiles for different datasets to be
-merged together into a single tile to send to the client</li>
-<li>Includes a seeder application to pre-fill caches from the command line</li>
-<li>Allows requests to be proxied back to a server</li>
-<li>An inbuilt demo interface</li>
+<li>シーダー・アプリケーションを内蔵</li>
+<li>(時間など)次元にもとづくキャッシュ</li>
+<li>Mapbox Vector (MVT)や UTFGrid タイルのキャッシュをサポート</li>
+<li>カスタマイズ可能なグリッド</li>
+<li>タイルを一緒に 「くみこんで」、異なるデータ・セットのタイルを 1 つのタイルにまぜこみして、クライアントに送信できます。</li>
+<li>コマンドラインからキャッシュを事前に蓄積するシーダーアプリケーションが含まれています。</li>
+<li>要求がサーバーにプロキシー処理されることを許可します</li>
+<li>組み込みデモ・インタフェースがあります</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>Support of numerous Open Geospatial Consortium  (OGC) standards<ul>
+<li>多数の Open Geospatial Consortium  (OGC) 標準規格のサポート<ul>
 <li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a></li>
 </ul>
 </li>
-<li>Additional standards include:<ul>
+<li>その他の標準には:<ul>
 <li><a class="reference external" href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">TMS</a></li>
 <li>Google Maps XYZ</li>
 <li>KML SuperOverlays</li>
@@ -118,29 +115,29 @@ merged together into a single tile to send to the client</li>
 </ul>
 </div>
 <div class="section" id="demo">
-<h3>Demo<a class="headerlink" href="#demo" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>デモ<a class="headerlink" href="#demo" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://localhost/mapcache/demo/">Default MapCache Demo</a></li>
+<li><a class="reference external" href="http://localhost/mapcache/demo/">既定の MapCache デモ</a></li>
 </ul>
 </div>
 <div class="section" id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>ドキュメント<a class="headerlink" href="#documentation" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://mapserver.org/mapcache/">MapCache Documentation</a></li>
+<li><a class="reference external" href="https://mapserver.org/mapcache/">MapCache 文書</a></li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="https://mapserver.org/mapcache">https://mapserver.org/mapcache</a></p>
-<p><strong>Licence:</strong> <a class="reference external" href="https://mapserver.org/copyright.html#license">MIT-style license</a></p>
-<p><strong>Software Version:</strong> 1.10.0</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
-<p><strong>Support:</strong> <a class="reference external" href="https://mapserver.org/community/">https://mapserver.org/community/</a></p>
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://mapserver.org/mapcache">https://mapserver.org/mapcache</a></p>
+<p><strong>ライセンス:</strong> <a class="reference external" href="https://mapserver.org/copyright.html#license">MIT-style license</a></p>
+<p><strong>ソフトウェアバージョン:</strong> 1.10.0</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>サポート:</strong> <a class="reference external" href="https://mapserver.org/community/">https://mapserver.org/community/</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/mapcache_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/mapcache_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

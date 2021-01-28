@@ -73,54 +73,46 @@
 <div class="section" id="geoext">
 <h1>GeoExt<a class="headerlink" href="#geoext" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="a-javascript-toolkit-for-rich-web-mapping-applications">
-<h2>A JavaScript Toolkit for Rich Web Mapping Applications<a class="headerlink" href="#a-javascript-toolkit-for-rich-web-mapping-applications" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>GeoExt is Open Source and enables building desktop-like GIS applications through the web. It is a JavaScript framework that combines the GIS functionality of
-<a class="reference external" href="https://openlayers.org/">OpenLayers</a> with the user interface of the <a class="reference external" href="https://www.sencha.com/products/extjs/">ExtJS</a> library provided by <a class="reference external" href="https://www.sencha.com">Sencha</a>.</p>
-<p>User interface components include a map panel, layer tree panel, feature grid, and an overview map. GeoExt components can be used just like any other ExtJS component
-and can be easily configured and extended. Lower level classes are also available allowing OpenLayers features and layers to be used as ExtJS data models, and for various
-map layer types to be serialized.</p>
-<p>GeoExt3 is dual licensed. The license you choose depends on the license of the framework ExtJS you use with it.
-If you are using the GPL v3 version of the ExtJS framework you will use it under GPLv3. If you own a Sencha ExtJS Commercial License, you
-have the right to use GeoExt3 under the BSD License.</p>
+<h2>リッチWebマッピングアプリケーションのためのJavaScriptツールキット<a class="headerlink" href="#a-javascript-toolkit-for-rich-web-mapping-applications" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>GeoExtはオープンソースで、Web経由でデスクトップアプリケーションのようなGISアプリケーションが構築できます。これは、  <a class="reference external" href="https://openlayers.org/">OpenLayers</a> のGIS機能と、<a class="reference external" href="https://www.sencha.com">Sencha</a> によって提供される  <a class="reference external" href="https://www.sencha.com/products/extjs/">ExtJS</a>  ライブラリのユーザインタフェースを組み合わせたJavaScriptフレームワークです。</p>
+<p>ユーザーインタフェースコンポーネントには、マップパネル、レイヤツリーパネル、地物グリッド、および全体図マップがあります。GeoExtコンポーネントは、他のExtJSコンポーネントと同様に使用でき、簡単に設定と拡張ができます。下位レベルのクラスも利用可能で、OpenLayersの地物とレイヤをExtJSデータモデルとして使用したり、さまざまなマップレイヤタイプをシリアライズしたりすることができます。</p>
+<p>GeoExt3はデュアルライセンスです。選択するライセンスは、使用するフレームワークExtJSのライセンスによって異なります。GPL v3バージョンのExtJSフレームワークを使用している場合は、GPLv3の下で使用します。Sencha ExtJS商用ライセンスを所有している場合、BSDライセンスの下でGeoExt3を使用する権利があります。</p>
 <a class="reference internal image-reference" href="../../_images/geoext_screenshot.png"><img alt="geoext screenshot" class="align-right" src="../../_images/geoext_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>UI Components<ul>
-<li>Map panel</li>
-<li>Overview map</li>
-<li>Pop-ups</li>
-<li>Feature renderer</li>
-<li>Layer Tree, legends, and drag-and-drop layer ordering</li>
+<li>UIコンポーネント<ul>
+<li>マップパネル</li>
+<li>マップ全体図</li>
+<li>ポップアップ</li>
+<li>地物レンダラー</li>
+<li>レイヤツリー、凡例、ドラッグアンドドロップによるレイヤ順序管理</li>
 </ul>
 </li>
-<li>Data Models and Stores<ul>
-<li>Integration of the OpenLayers data model with the ExtJS data model enabling sorting and filtering of features
-using ExtJS components</li>
-<li>ExtJS stores and models for OpenLayers features and layers</li>
+<li>データモデルとデータストア<ul>
+<li>OpenLayersデータモデルとExtJSデータモデルの統合により、ExtJSコンポーネントを使用した地物の並べ替えとフィルタリングが可能</li>
+<li>OpenLayersの地物とレイヤのためのExtJSストアとモデル</li>
 </ul>
 </li>
-<li>Miscellaneous<ul>
-<li>Integration with <a class="reference external" href="http://mapfish.github.io/mapfish-print-doc/">MapFish Print</a> and
-<a class="reference external" href="https://docs.geoserver.org/latest/en/user/extensions/printing/index.html">GeoServer Printing Module</a></li>
-<li>Layer Serializers (WMS, WMTS, XYZ)</li>
+<li>その他<ul>
+<li><a class="reference external" href="http://mapfish.github.io/mapfish-print-doc/">MapFish Print</a> および <a class="reference external" href="https://docs.geoserver.org/latest/en/user/extensions/printing/index.html">GeoServer Printing Module</a> との統合</li>
+<li>レイヤシリアライザー(WMS, WMTS, XYZ)</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="https://geoext.github.io/geoext3">https://geoext.github.io/geoext3</a></p>
-<p><strong>License:</strong> GPLv3 or BSD License dependent on ExtJS license - see <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE">License</a>
-and <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE-FAQ.md">License FAQ</a></p>
-<p><strong>Software Version:</strong> 3.1.0</p>
-<p><strong>API Interface:</strong> JavaScript</p>
-<p><strong>Support:</strong> Mailing list <a class="reference external" href="https://www.geoext.org/cgi-bin/mailman/listinfo/users">https://www.geoext.org/cgi-bin/mailman/listinfo/users</a> and <a class="reference external" href="https://stackoverflow.com/questions/tagged/geoext3">https://stackoverflow.com/questions/tagged/geoext3</a></p>
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://geoext.github.io/geoext3">https://geoext.github.io/geoext3</a></p>
+<p><strong>ライセンス:</strong> GPLv3 もしくは BSD ライセンス、ExtJS ライセンスに依存 - <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE">ライセンス</a> および <a class="reference external" href="https://github.com/geoext/geoext3/blob/master/LICENSE-FAQ.md">ライセンス FAQ</a> を参照</p>
+<p><strong>ソフトウェアバージョン:</strong> 3.1.0</p>
+<p><strong>API インタフェース:</strong> JavaScript</p>
+<p><strong>サポート:</strong> メーリングリスト <a class="reference external" href="https://www.geoext.org/cgi-bin/mailman/listinfo/users">https://www.geoext.org/cgi-bin/mailman/listinfo/users</a> および <a class="reference external" href="https://stackoverflow.com/questions/tagged/geoext3">https://stackoverflow.com/questions/tagged/geoext3</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/geoext_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/geoext_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

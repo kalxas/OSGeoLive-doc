@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Zoo Project &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Zoo プロジェクト &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,70 +72,54 @@
   <a class="reference external image-reference" href="http://zoo-project.org/"><img alt="../../_images/logo_zoo-project.png" class="align-right" src="../../_images/logo_zoo-project.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_incubation.png" class="align-right" src="../../_images/OSGeo_incubation.png" /></a>
 <div class="section" id="zoo-project">
-<h1>Zoo Project<a class="headerlink" href="#zoo-project" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1>Zoo プロジェクト<a class="headerlink" href="#zoo-project" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="wps-server">
 <h2>WPS Server<a class="headerlink" href="#wps-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ZOO-Project provides a developer friendly Web Processing Service (WPS) framework for creating and chaining Web Processing Services.
-A WPS provides web access to functions which run spatial algorithms.
-ZOO-Project supports many programming languages and comes with three demo applications. The first uses the simple
-spatialtools services based on the <a class="reference internal" href="geos_overview.html"><span class="doc">GEOS</span></a> and <a class="reference internal" href="gdal_overview.html"><span class="doc">OGR</span></a> libraries, the second showcase Voronoi and Delaunay triangulation (from the CGAL library) and the third present how to interract with OTB applications runninng as WPS services.</p>
-<p>The three demontration applications are available from the ZOO-Project demo landing page presented bellow.</p>
-<p>ZOO is made of three parts:</p>
-<p><em>ZOO Kernel</em> : A powerful server-side C Kernel which makes it possible to
-manage and chain Web services coded in different programming languages.</p>
-<p><em>ZOO Services</em> : A growing suite of example Web services based on various
-Open Source libraries.</p>
-<p><em>ZOO API</em> : A server-side JavaScript API able to call and chain the ZOO
-Services, which makes the development and chaining processes easier.</p>
-<p>ZOO is based on a 『WPS Service Kernel』 which constitutes the ZOO’s core
-system (aka ZOO Kernel). The latter is able to load dynamic libraries and
-to handle them as on-demand Web services. The ZOO Kernel is written in C
-language, but supports several common programming languages in order to
-connect to numerous libraries and above all to simplify the Web service
-end-developer’s job.</p>
-<p>A ZOO service is a link composed of a metadata file (.zcfg) and the code
-for the corresponding implementation. The metadata file describes all the
-available functions which can be called using a WPS Exec Request, as well
-as the desired input/output. Services contain the algorithms and
-functions, and can now be implemented in C/C++, Fortran, Java, Python, PHP, Ruby, C#
-and JavaScript.</p>
+<p>ZOO プロジェクトは、 Web Processing Service を作成・連結するための、開発者向けの Web Processing Service (WPS) フレームワークを提供します。WPSは空間アルゴリズムを実行する機能へのWebアクセスを提供します。ZOO プロジェクトは多くのプログラミング言語をサポートし、3つのデモアプリケーションが用意されています。第1に、 <a class="reference internal" href="geos_overview.html"><span class="doc">GEOS</span></a> および <a class="reference internal" href="gdal_overview.html"><span class="doc">OGR</span></a> ライブラリをベースとしたシンプルな空間ツールサービスを使用します。第2に、ボロノイとドロネーの三角分割(CGALライブラリから)を紹介します。第3に、WPSサービスとして動作するOTBアプリケーションとの相互運用方法を紹介します。</p>
+<p>3つのデモアプリケーションは、以下に示す ZOO プロジェクトのデモランディングページから利用できます。</p>
+<p>ZOO は3つのパーツで構成されています:</p>
+<p><em>ZOO カーネル</em> : 異なるプログラミング言語でコーディングされたWebサービスの管理と連結を可能にする、強力なサーバーサイドのCカーネル。</p>
+<p><em>ZOO サービス</em> : さまざまなオープンソースライブラリに基づいた、発展中のサンプルWebサービスのスイート。</p>
+<p><em>ZOO API</em> : プロセスの開発と連結をより簡単にする、ZOO サービスの呼び出し・連結が可能なサーバサイドのJavaScript API。</p>
+<p>ZOO は、ZOO のコアシステムを構成している 『WPS サービスカーネル』 (別名ZOO カーネル)に基づいています。ZOO カーネルは、動的ライブラリをロードして、オンデマンドのWebサービスとして処理することができます。ZOO カーネルはC言語で書かれていますが、数多くのライブラリに接続するために、いくつかの一般的なプログラミング言語をサポートし、上記のすべてのWebサービスのエンド開発者の仕事を簡素化します。</p>
+<p>ZOO サービスは、メタデータファイル(.zcfg)と対応する実装のコードで構成されるリンクです。メタデータファイルには、WPS Exec リクエストを使用して呼び出すことができるすべての利用可能な機能と、必要な入出力が記述されています。サービスにはアルゴリズムと機能が含まれていて、現在は、C/C++、Fortran、Java、Python、PHP、Ruby、C#、および JavaScript で実装することができます。</p>
 <a class="reference internal image-reference" href="../../_images/zoo-project_screenshot.png"><img alt="zoo-project screenshot" class="align-right" src="../../_images/zoo-project_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>Multi language WPS server</li>
-<li>Simple Web Service creation and deployment procedure</li>
-<li>Simple WPS chaining with ZOO API</li>
+<li>マルチ開発言語 WPS サーバ</li>
+<li>シンプルなWebサービスの作成と導入手順</li>
+<li>ZOO API によるシンプルな WPS 連結</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li>OGC WPS 1.0.0</li>
 <li>OGC WPS 2.0.0</li>
 </ul>
 </div>
 <div class="section" id="demo">
-<h3>Demo<a class="headerlink" href="#demo" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>デモ<a class="headerlink" href="#demo" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://localhost/zoo-demo/ogr-example.html">Demo using Services Provider based GEOS and OGR libraries</a></li>
-<li><a class="reference external" href="http://localhost/zoo-demo/cgal.html">Demo using Services Provider based CGAL library</a></li>
-<li><a class="reference external" href="http://localhost/zoo-demo/otb-example.html">Demo using OTB Applications as WPS Services</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/ogr-example.html">GEOS と OGR ライブラリをベースとしたサービスプロパイダのデモ</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/cgal.html">CGAL ライブラリをベースとしたサービスプロバイダのデモ</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/otb-example.html">WPS サービスとしての OTB アプリケーションのデモ</a></li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="http://zoo-project.org/">http://zoo-project.org/</a></p>
-<p><strong>Licence:</strong> MIT x/11</p>
-<p><strong>Software Version:</strong> 1.8.0</p>
-<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
-<p><strong>Programing language support:</strong> C, Python, Java, PHP, Fortran, Javascript, C#, Ruby</p>
-<p><strong>Support:</strong> <a class="reference external" href="http://zoo-project.org/">http://zoo-project.org/</a></p>
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="http://zoo-project.org/">http://zoo-project.org/</a></p>
+<p><strong>ライセンス:</strong> MIT x/11</p>
+<p><strong>ソフトウェアバージョン:</strong> 1.8.0</p>
+<p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
+<p><strong>プログラム言語サポート:</strong> C, Python, Java, PHP, Fortran, Javascript, C#, Ruby</p>
+<p><strong>サポート:</strong> <a class="reference external" href="http://zoo-project.org/">http://zoo-project.org/</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/zoo-project_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/zoo-project_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

@@ -74,59 +74,45 @@
 <div class="section" id="otb">
 <h1>OTB<a class="headerlink" href="#otb" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="image-processing">
-<h2>Image Processing<a class="headerlink" href="#image-processing" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>ORFEO Toolbox Library (OTB) is a high performance image processing library. It
-is primarily used for processing large remote sensing images such as those
-gathered by radars, satellites and aerial photography. OTB provides tools for
-optic and radar images (tridimensional aspects, segmentation, classification,
-changes detection, texture analysis, pattern matching, and optic/radar
-complementarities), many of which can be run on limited-resourced laptops.</p>
-<p>OTB is also shipped with a set of extensible ready-to-use tools for classical
-remote sensing tasks and a fully integrated application called Monteverdi, which
-is a fast viewer that allows users to vizualise multiple layers, and call OTB
-processing tools from a menu entry.</p>
-<p>OTB has been funded the French Space Agency (CNES) in the frame of the
-Methodological Part of the ORFEO/Pleiades Accompaniement Program and has been
-actively developed since 2006. It is based on the ITK image processing library
-and is distributed as open source.</p>
+<h2>イメージ処理<a class="headerlink" href="#image-processing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ORFEO Toolbox Library (OTB ) は、高性能イメージ処理ライブラリーです。主にレーダー、人工衛星、航空写真などの大きなリモートセンシング画像を処理するのに使われます。OTB は、光学およびレーダーのイメージ (三次元の側面、セグメンテーション、分類、変更検出、テクスチャー分析、パターン・マッチング、および光学/レーダーの補完性 ) を提供するツールを提供しており、これらの多くは性能が限定的なノートPCでも実行できます。</p>
+<p>OTB には同梱アプリケーションとともに配布されています。それは、リモートセンシング用の拡張可能な従来型のツールと 、複数のレイヤを可視化させたりメニュー項目から OTB の処理ツールを呼び出せる高速なビューアであるMonteverdiという完全に統合されたアプリケーションです。</p>
+<p>OTB は、ORFEO/Pleiades付属プログラムの メソドロジカル・パートの枠組みにもとづき、フランス宇宙機関 (CNES) の資金提供をうけて、 2006年から活発に開発されている。これは、 ITK イメージ処理ライブラリーに基づいており、オープンソースとして配布されます。</p>
 <a class="reference internal image-reference" href="../../_images/otb_screenshot.png"><img alt="otb screenshot" class="align-right" src="../../_images/otb_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>Core Features<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>image access: optimized read/write access for most remote sensing raster
-formats (also JPEG2000 formats), meta-data access and visualization;</li>
-<li>orthorectification using DEM, map reprojection and sensor model refinement</li>
-<li>optical and SAR calibration</li>
-<li>image fusion</li>
-<li>filtering: blurring, denoising, enhancement…</li>
-<li>feature extraction: interest points, alignments, lines…</li>
-<li>object detection</li>
-<li>large scale image segmentation: region growing, mean-shift, watershed, level sets…</li>
-<li>sample selection framework for training</li>
-<li>classification: both supervised and unsupervised algorithms coming from OpenCV
-, Shark, libSVM or custom implementations (K-means, Markov random fields, SVM,
-Random Forest, …)</li>
-<li>regression using machine learning methods from OpenCV (SVM, Random Forest, …)</li>
-<li>object-based image analysis</li>
-<li>geospatial analysis</li>
-<li>stereoscopic reconstruction from optical images</li>
-<li>SAR data analysis : calibration, polarimetry analysis</li>
-<li>change detection.</li>
+<li>画像アクセス:  ほとんどのリモートセンシングラスターフォーマット ( JPEG2000 形式を含む)、メタデータアクセス、および視覚化のための最適化された読み取り/書き込みアクセス</li>
+<li>DEM、地図の再投影、およびセンサーモデルの改良によるオルソ化</li>
+<li>光学式および SAR 調整</li>
+<li>画像融合</li>
+<li>フィルタリング: ぼかし、ノイズ除去、強調…</li>
+<li>フィーチャー抽出:  POI、整列、線分…</li>
+<li>オブジェクト抽出</li>
+<li>大規模画像セグメンテーション: 領域拡張、平均シフト、水位、レベルセット…</li>
+<li>トレーニング用のサンプル選択フレームワーク</li>
+<li>種別: OpenCV 、 Shark、 libSVM 、またはカスタム・インプリメンテーション ( K - 平均、マルコフ・ランダム・フィールド、 SVM、ランダム・フォレスト、 …) からくる、教師ありアルゴリズムと教師なしアルゴリズムの両方。</li>
+<li>OpenCV (SVM、ランダム・フォレスト、 …) から機械学習メソッドを使用した回帰</li>
+<li>オブジェクト・ベースのイメージ分析</li>
+<li>地理空間分析</li>
+<li>光学画像からの立体構造の復元</li>
+<li>SAR データ分析 : 較正、偏光分析</li>
+<li>変更の検出。</li>
 </ul>
 </div>
 <div class="section" id="details">
-<h3>Details<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><strong>Website:</strong> <a class="reference external" href="https://www.orfeo-toolbox.org/">https://www.orfeo-toolbox.org/</a></p>
-<p><strong>Licence:</strong> Apache v2.0</p>
-<p><strong>Software Version:</strong> 7.2.0</p>
-<p><strong>Supported Platforms:</strong> Linux, Mac, Windows</p>
-<p><strong>API Interfaces:</strong> C++</p>
-<p><strong>Commercial Support:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
+<h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://www.orfeo-toolbox.org/">https://www.orfeo-toolbox.org/</a></p>
+<p><strong>ライセンスLicence:</strong> Apache v2.0</p>
+<p><strong>ソフトウェアバージョン:</strong> 6.6.1</p>
+<p><strong>対応プラットフォーム:</strong> Linux, Mac, Windows</p>
+<p><strong>API インタフェース:</strong> C++</p>
+<p><strong>商用サポート:</strong> <a class="reference external" href="https://www.osgeo.org/service-providers">OSGeo service providers</a></p>
 </div>
 <div class="section" id="quickstart">
-<h3>Quickstart<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

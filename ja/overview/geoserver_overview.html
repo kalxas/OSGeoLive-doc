@@ -75,10 +75,10 @@
 <h1>GeoServer<a class="headerlink" href="#geoserver" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="web-service">
 <h2>Web サービス<a class="headerlink" href="#web-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>GeoServer は、多様なフォーマットから地図とデータを Web ブラウザやデスクトップ GIS プログラム等の標準的なクライアントに配信する Web サーバです。データは WMS、WFS、WCS、WPS、タイルキャッシュなどの標準に基づくインターフェイス経由で配信されます。GeoServer は、ブラウザベースの管理インターフェイスを持ち、バックエンド側で複数のデータソースへ接続します。</p>
+<p>GeoServer は、多様なフォーマットから地図とデータを Web ブラウザやデスクトップ GIS プログラム等の標準的なクライアントに配信する Web サーバです。データは WMS、WFS、WCS、WPS、タイルキャッシュなどの標準に基づくインタフェース経由で配信されます。GeoServer は、ブラウザベースの管理インタフェースを持ち、バックエンド側で複数のデータソースへ接続します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver_screenshot.png"><img alt="geoserver screenshot" class="align-right" src="../../_images/geoserver_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="docutils">
 <dt><strong>様々なデータストアからデータを配信:</strong></dt>
 <dd><ul class="first last simple">
@@ -94,7 +94,7 @@
 <li><dl class="first docutils">
 <dt>ラスタ</dt>
 <dd><ul class="first last">
-<li>GeoTiff, JPG 及び PNG (ワールドファイル付き), image pyramid, GDAL formats, Image Mosaic, Oracle GeoRaster, NetCDF</li>
+<li>GeoTiff, JPG 及び PNG (ワールドファイル付き), イメージピラミッド, GDALフォーマット, イメージモザイク, Oracle GeoRaster, NetCDF</li>
 </ul>
 </dd>
 </dl>
@@ -104,23 +104,22 @@
 <dt><strong>WMS 及び WMTS プロトコルを利用した、安全かつ迅速なデータ配信:</strong></dt>
 <dd>データはイメージとして提供されるため、データは完全に安全で保護されています。彼らがあなたのデータを再デジタル化しない限り、あなたのデータを盗む方法はありません。各マップ画層の外観は、フィーチャの色付けとラベル付けを可能にするSLD標準を使用してコントロールできます。これらのルールをOGCと組み合わせることで、スケールに依存するスタイル設定を実装できるため、ユーザがズームインしたときに詳細を追加できます。ラベル衝突管理、グループ化、優先順位も実装されています。</dd>
 <dt><strong>WFS プロトコルを利用した、クライアントへの全ベクタデータ送信:</strong></dt>
-<dd>A WFS client can download vector data and use it for mapping, spatial analysis and other operations. Also if authorised the user can modify the data and send it back to the server to update the stored data using the WFS-T protocol.
-The data can be transmitted using GML (compressed) as well as other standard data formats like shapefile and json.</dd>
+<dd>WFS クライアントは、ベクタデータをダウンロードして地図表示や空間解析等の用途に使用できます。さらに WFS-T プロトコルを利用して、認証されたユーザがサーバのデータを編集、アップロードすることで更新できます。シェープファイルや JSON のような標準規格同様に、データは圧縮した GML で送受信を行います。</dd>
 <dt><strong>WCS プロトコルを利用した、クライアントへのラスタデータ値送信:</strong></dt>
-<dd>A GIS client can request the actual raster data for use in spatial analysis. This allows a user to create applications which can model the process described by your data.</dd>
+<dd>GISクライアントはラスタの実データを要求して空間解析に使うことができます。この機能を使うと、あなたのデータで記述したプロセスをベースに、ユーザーが活用することができます。</dd>
 <dt><strong>オンザフライ投影変換:</strong></dt>
-<dd>GeoServer は EPSG データベースの主な投影法をサポートしており、オンデマンドでそれらの投影法への再投影ができます。クライアント側で再投影を制限され手いる場合にはサーバ側でその処理を行うこともできます。</dd>
+<dd>GeoServer は EPSG データベースの主な投影法をサポートしており、オンデマンドでそれらの投影法への再投影ができます。クライアント側で再投影を制限されている場合にはサーバ側でその処理を行うこともできます。</dd>
 <dt><strong>タイルキャッシュ</strong></dt>
-<dd><a class="reference external" href="https://www.geowebcache.org">GeoWebCache</a> は GeoServer に統合されていて、 WMS などの様々なソースからタイル化して地図画像をキャッシュします。様々な (WMS-C, WMTS, TMS, Google Maps KML, Virtual Earth などの) サービスインターフェイスを実装し、地図画像配信を加速・最適化します。通常の WMS クライアントで動作するよう、タイルを再結合することも可能です。</dd>
+<dd><a class="reference external" href="https://www.geowebcache.org">GeoWebCache</a> は GeoServer に統合されていて、 WMS などの様々なソースからタイル化して地図画像をキャッシュします。様々な (WMS-C, WMTS, TMS, Google Maps KML, Virtual Earth などの) サービスインタフェースを実装し、地図画像配信を加速・最適化します。通常の WMS クライアントで動作するよう、タイルを再結合することも可能です。</dd>
 <dt><strong>Web Processing Service (WPS)</strong></dt>
-<dd><a class="reference internal" href="jts_overview.html"><span class="doc">JTS</span></a> に由来する地理空間アルゴリズムを、 GeoServer の <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> インターフェイスを経由して呼び出すことが可能です。これには、処理を連結することや、 レンダリング変換を使用したWMS インターフェイスによる強力な可視化が含まれます。</dd>
+<dd><a class="reference internal" href="jts_overview.html"><span class="doc">JTS</span></a> に由来する地理空間アルゴリズムを、 GeoServer の <a class="reference external" href="https://www.ogc.org/standards/wps">Web Processing Service (WPS)</a> インタフェースを経由して呼び出すことが可能です。これには、処理を連結することや、 レンダリング変換を使用したWMS インタフェースによる強力な可視化が含まれます。</dd>
 </dl>
 </div>
 <div class="section" id="implemented-standards">
 <h3>準拠している標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>多くの Open Geospatial Consortium (OGC) 標準をサポートしています:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> (クライアントサーバー)</li>
+<li><a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> (クライアント/サーバ)</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wmts">OpenGIS Web Map Tile ServiceW (WMTS)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> (トランザクション)</li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a></li>
@@ -136,7 +135,7 @@ The data can be transmitted using GML (compressed) as well as other standard dat
 <p><strong>ライセンス:</strong> GNU General Public License (GPL) version 2</p>
 <p><strong>ソフトウェアバージョン:</strong> 2.18.1</p>
 <p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac 上の Java 8 (Oracle JDK 及び OpenJDK)</p>
-<p><strong>API インターフェイス:</strong> WMS, WFS, WCS, REST</p>
+<p><strong>API インタフェース:</strong> WMS, WFS, WCS, REST</p>
 <p><strong>サポート:</strong> <a class="reference external" href="http://geoserver.org/support/">http://geoserver.org/support/</a></p>
 </div>
 <div class="section" id="quickstart">

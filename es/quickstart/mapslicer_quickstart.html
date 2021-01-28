@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de MapSlicer &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Jupyter Notebook" href="../overview/jupyter_overview.html" />
+    <link rel="prev" title="MapSlicer" href="../overview/mapslicer_overview.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://mapproxy.org/"><img alt="../../_images/logo_mapslicer.png" class="align-right" src="../../_images/logo_mapslicer.png" /></a>
+<div class="section" id="mapslicer-quickstart">
+<h1>Inicio Rápido de MapSlicer<a class="headerlink" href="#mapslicer-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p><a class="reference external" href="https://wiki.osgeo.org/wiki/MapSlicer">MapSlicer</a> proporciona una forma sencilla de crear un conjunto de teselas de cualquier imagen de mapa georeferenciado. Las teselas pueden entonces presentarse como superposición de mapa georeferenciado en un servidor web. Se adecúa a las especificaciones  de  <a class="reference external" href="https://www.osgeo.org/">Open Source Geospatial Foundation’s  (OSGeo’s)</a> <a class="reference external" href="https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">Tile Map Service (TMS)</a></p>
+<ul class="simple">
+<li><strong>Opciones de entrada</strong>: Cuañquier archivo de imagen georreferenciada, como TIFF, JPEG  de ArcGIS, QGIS.</li>
+<li><strong>Opciones de Salida</strong>: Un conjunto de directorios con teselas imágenes que se pueden copiar a un servidor web para su presentación como una superposición georeferenciada.</li>
+<li><strong>Fuerzas</strong>: MapSlicer es un software  de código abierto, simple, libre, con un asistente fácil, que se describe a continuación, para guiar a través de las opciones.</li>
+</ul>
+<p>MapSlicer aprovecha el hecho de que <a class="reference external" href="http://maps.google.com/">Google Maps</a>, <a class="reference external" href="https://www.bing.com/maps">Microsoft Bing</a>, <a class="reference external" href="https://maps.yahoo.com/">Yahoo Maps</a>, y otros proveedores de mapas en línea, incluido &lt;<a class="reference external" href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a>&gt;`__ usan el mismo perfil de proyección y mosaico y, por lo tanto, los mosaicos son compatibles. MapSlicer prepara teselas utilizando esta especificación como una forma fácil y rápida de preparar un mapa georreferenciado en una página web de mashup.</p>
+<div class="section" id="start-mapslicer">
+<h2>Iniciar MapSlicer<a class="headerlink" href="#start-mapslicer" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Iniciar MapSlicer en el menú Geoespacial, bajo el submenú Herramientas Espaciales.</p>
+</li>
+<li><p class="first">Seleccionar  <strong>Tile Profile</strong>. Elegir <em>Image Based Tiles (raster)</em> para publicación estándar en web. Click <em>Continue</em>.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer1.jpg"><img alt="../../_images/mapslicer1.jpg" class="align-center" src="../../_images/mapslicer1.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Elegir el <strong>Source Data Files</strong>. Examine para seleccionar la imagen ráster que desea como tesela. También es posible seleccionar un color NODATA que aparecerá como transparente en la imagen resultante. Haga click en*Continuar*.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer2.jpg"><img alt="../../_images/mapslicer2.jpg" class="align-center" src="../../_images/mapslicer2.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Especificar la <strong>Sistema de Referencia Espacial / Sistema de Coordenadas</strong> de la imagen. Especificar el número de identificación de la base de datos de la EPSG. Haga click en <em>Continuar</em>.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer3.jpg"><img alt="../../_images/mapslicer3.jpg" class="align-center" src="../../_images/mapslicer3.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Especifique detalles sobre el <strong>Tile Pyramid</strong>. La configuración predeterminada para los niveles de zoom y el formato de archivo suele ser la mejor. Haga click en  <em>Continuar</em>.Detalles</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer4.jpg"><img alt="../../_images/mapslicer4.jpg" class="align-center" src="../../_images/mapslicer4.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Especificar detalles sobre la <strong>Carpeta de destino y Direcciones / URLs</strong> para el conjunto de mosaicos. Si no los conoce, podrá agregarlos en los archivos predetermionados de <em>googlemaps.html</em> y <em>openlayers.html</em>  después de generar el mosaico. Haga click en <em>Continuar</em>.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer5.jpg"><img alt="../../_images/mapslicer5.jpg" class="align-center" src="../../_images/mapslicer5.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Marque los <strong>Visores que deberían generarse</strong>. De forma predeterminada, se genera un archivo <em>openlayers.html</em>. Haga click en <em>Continuar</em>.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer6.jpg"><img alt="../../_images/mapslicer6.jpg" class="align-center" src="../../_images/mapslicer6.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Especifique los <strong>Detalles para generar Visores</strong>, como el título, aviso de copyright y las claves de API. Si no los conoce, se pueden agregar en los archivos predeterminados de <em>googlemaps.html / openlayers.html</em> tras generación del mosaico. Haga click en <em>Continuar</em>.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer7.jpg"><img alt="../../_images/mapslicer7.jpg" class="align-center" src="../../_images/mapslicer7.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Haga click en <strong>Render</strong> para comenzar a representar la imagen.</p>
+<a class="reference internal image-reference" href="../../_images/mapslicer8.jpg"><img alt="../../_images/mapslicer8.jpg" class="align-center" src="../../_images/mapslicer8.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</li>
+<li><p class="first">Cuando termine, MapSlicer proporciona un vínculo al conjunto de mosaicos terminado.</p>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapslicer9.jpg"><img alt="../../_images/mapslicer9.jpg" class="align-center" src="../../_images/mapslicer9.jpg" style="width: 553.0px; height: 430.5px;" /></a>
+</div></blockquote>
+<ol class="arabic simple" start="11">
+<li>Abra los archivos <em>openlayers.html</em> en un explorador web para ver el conjunto de mosaicos como una superposición en el mapa en línea vivo. Para presentar esto en la web, copiar el conjunto de mosaicos entero y todos sus subdirectorios en un servidor web y editar los archivos googlemaps.html o openlayers.html según sea necesario.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapslicer10.jpg"><img alt="../../_images/mapslicer10.jpg" class="align-center" src="../../_images/mapslicer10.jpg" style="width: 530.6px; height: 478.09999999999997px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="using-gdal2tiles-to-create-a-mbtiles-database">
+<h2>Utilizar gdal2tiles para crear una base de datos de MBTiles<a class="headerlink" href="#using-gdal2tiles-to-create-a-mbtiles-database" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>MapSlicer es esencialmente una interfaz GUI al script de <cite>gdal2tiles.py</cite>. Una versión actualizada de <cite>gdal2tiles.py</cite> también está presente en el disco Live. Los árboles de mosaicos resultantes creados por este software se pueden usar con el programa <cite>mb-util</cite> para crear una base de datos mbtiles, para usar con software de teléfonos inteligentes como` Geopaparazzi &lt;<a class="reference external" href="https://www.geopaparazzi.org/">https://www.geopaparazzi.org/</a>&gt;`_.</p>
+<p>Para crear una base de datos MBTiles SQLite del árbol de mosaico recién creado, abra un terminal, entonces</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">data</span><span class="o">/</span><span class="n">raster</span><span class="o">/</span><span class="n">bluemarble</span><span class="o">.</span><span class="n">tif</span> <span class="o">.</span>
+<span class="n">mapslicer</span>    <span class="c1"># (select /home/user/bluemarble.tif for input, JPEG as format)</span>
+<span class="n">mb</span><span class="o">-</span><span class="n">util</span> <span class="o">--</span><span class="n">scheme</span><span class="o">=</span><span class="n">tms</span> <span class="o">--</span><span class="n">image_format</span><span class="o">=</span><span class="n">jpg</span> <span class="n">bluemarble</span> <span class="n">bluemarble</span><span class="o">.</span><span class="n">mbtiles</span>
+<span class="n">qgis</span> <span class="n">bluemarble</span><span class="o">.</span><span class="n">mbtiles</span>
+</pre></div>
+</div>
+<p>Para mayor información sobre la ejecución de estas herramientas, ver  <cite>gdal2tiles.py –help</cite> y <cite>mb-util –help</cite></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>
