@@ -104,7 +104,7 @@ tool packaged with PostgreSQL <cite>psql</cite></li>
 </pre></div>
 </div>
 <p>You can verify your installation by running this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span>  <span class="o">*</span> <span class="n">FROM</span> <span class="n">pgr_version</span><span class="p">();</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">pgr_version</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pgr_version</span>
@@ -133,14 +133,14 @@ with a pgRouting compatible format.</p>
 </div>
 <p>Load the data from osm file:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzcat</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
-<span class="n">osm2pgrouting</span>
+<span class="n">osm2pgrouting</span> \
   <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span> \
   <span class="o">-</span><span class="n">h</span> <span class="n">localhost</span> \
   <span class="o">-</span><span class="n">U</span> <span class="n">user</span> \
   <span class="o">-</span><span class="n">d</span> <span class="n">city_routing</span> \
   <span class="o">-</span><span class="n">p</span> <span class="mi">5432</span> \
   <span class="o">-</span><span class="n">W</span> <span class="n">user</span> \
-  <span class="o">--</span><span class="n">conf</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span> \
+  <span class="o">--</span><span class="n">conf</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osm2pgrouting</span><span class="o">/</span><span class="n">mapconfig_for_cars</span><span class="o">.</span><span class="n">xml</span>
 <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
 </pre></div>
 </div>
@@ -216,25 +216,21 @@ with a pgRouting compatible format.</p>
 </pre></div>
 </div>
 <p>The <strong class="command">\d</strong> command will list all available tables and sequences</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>                    <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
- <span class="n">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="n">Type</span>   <span class="o">|</span>  <span class="n">Owner</span>
-<span class="o">--------+--------------------------+----------+----------</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">geography_columns</span>        <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>         <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">osm_nodes</span>                <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">osm_nodes_node_id_seq</span>    <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">osm_relations</span>            <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">osm_way_classes</span>          <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">osm_way_types</span>            <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">raster_columns</span>           <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">raster_overviews</span>         <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">relations_ways</span>           <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>          <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">ways</span>                     <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">ways_gid_seq</span>             <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr</span>        <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">postgres</span>
- <span class="n">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
-<span class="p">(</span><span class="mi">15</span> <span class="n">rows</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span>                  <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
+ <span class="n">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="n">Type</span>   <span class="o">|</span> <span class="n">Owner</span>
+<span class="o">--------+--------------------------+----------+-------</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">configuration</span>            <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">configuration_id_seq</span>     <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">geography_columns</span>        <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>         <span class="o">|</span> <span class="n">view</span>     <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">pointsofinterest</span>         <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">pointsofinterest_pid_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>          <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">ways</span>                     <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">ways_gid_seq</span>             <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr</span>        <span class="o">|</span> <span class="n">table</span>    <span class="o">|</span> <span class="n">user</span>
+ <span class="n">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">user</span>
+<span class="p">(</span><span class="mi">11</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>osm2pgrouting loads the OSM identifiers <cite>osm_id</cite> and it also generates a unique
@@ -353,8 +349,8 @@ the required names <cite>source</cite> and <cite>target</cite>.</p>
   <span class="n">FROM</span> <span class="n">ways</span><span class="s1">&#39;,</span>
   <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span>
   <span class="n">directed</span> <span class="o">=&gt;</span> <span class="n">false</span>
-<span class="p">)</span> <span class="n">AS</span> <span class="n">q1</span>
-<span class="n">JOIN</span> <span class="n">ways</span> <span class="n">ON</span> <span class="p">(</span><span class="n">edge</span> <span class="o">=</span> <span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
+<span class="p">)</span> <span class="n">AS</span> <span class="n">a</span>
+<span class="n">JOIN</span> <span class="n">ways</span> <span class="n">AS</span> <span class="n">b</span> <span class="n">ON</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">edge</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The results, for visual purposes are truncated here, the geometries are much longer
