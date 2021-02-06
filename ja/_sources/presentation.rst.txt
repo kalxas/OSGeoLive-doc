@@ -873,13 +873,13 @@ OSGeoLive
         :title-heading: h3
   
 
-            =================== ================== =============== ================
-            =================== ================== =============== ================
-              |gmt_logo|         |otb_logo|         |R_logo|        |mapnik_logo|
-              GMT                OTB                R               Mapnik       
-              |mapslicer_logo|   |jupyter_logo|          
-              MapSlicer          Jupyter Notebook        
-            =================== ================== =============== ================
+            =================== =============== =============== ================
+            =================== =============== =============== ================
+              |gmt_logo|         |otb_logo|      |R_logo|        |mapnik_logo|
+              GMT                OTB             R               Mapnik       
+              |jupyter_logo|              
+              Jupyter Notebook            
+            =================== =============== =============== ================
 
 
 
@@ -937,19 +937,6 @@ OSGeoLive
         .. rv_note::
             Note 
             Mapnik is a toolkit for rendering beautiful maps, with clean, soft edges for features provided by quality anti-aliasing graphics, also intelligent label placement, and scalable, SVG symbolisation. Most famously, mapnik is used to render the Open Street Map layers.
-
-
-
-
-    .. revealjs:: MapSlicer
-        :title-heading: h3
-  
-        .. image:: ../images/projects/mapslicer/mapslicer_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            MapSlicer provides a desktop interface for creating tiles, which can then be stored on the local filesystem or published via direct upload to any webserver or cloud storage. Browser viewing is provided by OpenLayers and Google Maps and can be easily customized.
 
 
 
@@ -1296,7 +1283,6 @@ OSGeoLive
 .. |otb_logo| image:: ../images/projects/otb/logo_otb.png
 .. |R_logo| image:: ../images/projects/R/logo_R.png
 .. |mapnik_logo| image:: ../images/projects/mapnik/logo_mapnik.png
-.. |mapslicer_logo| image:: ../images/projects/mapslicer/logo_mapslicer.png
 .. |jupyter_logo| image:: ../images/projects/jupyter/logo_jupyter.png
 .. |zygrib_logo| image:: ../images/projects/zygrib/logo_zygrib.png
 .. |naturalearth_logo| image:: ../images/projects/naturalearth/logo_naturalearth.png
