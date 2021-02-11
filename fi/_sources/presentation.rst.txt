@@ -169,13 +169,13 @@ OSGeoLive
         :title-heading: h3
   
 
-            ================== ============== =============== ================
-            ================== ============== =============== ================
-              |qgis_logo|       |grass_logo|   |gvsig_logo|    |udig_logo|  
-              QGIS              GRASS GIS      gvSIG Desktop   uDig         
-              |openjump_logo|   |saga_logo|         
-              OpenJUMP GIS      SAGA                
-            ================== ============== =============== ================
+            =============== =============== =============== ==================
+            =============== =============== =============== ==================
+              |grass_logo|   |gvsig_logo|    |qgis_logo|     |openjump_logo|
+              GRASS GIS      gvSIG Desktop   QGIS            OpenJUMP GIS   
+              |saga_logo|    |udig_logo|            
+              SAGA           uDig                   
+            =============== =============== =============== ==================
 
 
 
@@ -185,20 +185,6 @@ OSGeoLive
             These applications cover the traditional GIS uses cases of viewing,
             editing and analysing geospatial data.
     
-
-    .. revealjs:: QGIS
-        :title-heading: h3
-  
-        .. image:: ../images/projects/qgis/qgis_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Quantum GIS, or QGIS, is a very popular user-friendly GIS client which allows you to visualize, manage, edit, analyse data, and compose printable maps. It supports numerous vector, raster and database formats, and boasts many free toolboxes, including a user-friendly interface to many of the advanced GRASS analysis modules.
-        
-
-
-
 
     .. revealjs:: GRASS GIS
         :title-heading: h3
@@ -232,15 +218,15 @@ OSGeoLive
 
 
 
-    .. revealjs:: uDig
+    .. revealjs:: QGIS
         :title-heading: h3
   
-        .. image:: ../images/projects/udig/udig_screenshot.png
+        .. image:: ../images/projects/qgis/qgis_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            uDig is a java-based spatial data viewer and editor, which is based upon the geotools library and powerful Eclipse development environment, making uDig a common choice for developers wishing to integrate mapping into java based applications.
+            Quantum GIS, or QGIS, is a very popular user-friendly GIS client which allows you to visualize, manage, edit, analyse data, and compose printable maps. It supports numerous vector, raster and database formats, and boasts many free toolboxes, including a user-friendly interface to many of the advanced GRASS analysis modules.
         
 
 
@@ -275,19 +261,33 @@ OSGeoLive
 
 
 
+    .. revealjs:: uDig
+        :title-heading: h3
+  
+        .. image:: ../images/projects/udig/udig_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            uDig is a java-based spatial data viewer and editor, which is based upon the geotools library and powerful Eclipse development environment, making uDig a common choice for developers wishing to integrate mapping into java based applications.
+        
+
+
+
+
 .. revealjs::
     
     .. revealjs:: Browser Facing GIS
         :title-heading: h3
   
 
-            ==================== ================= ================ ===================
-            ==================== ================= ================ ===================
-              |openlayers_logo|   |leaflet_logo|    |cesium_logo|    |mapbender_logo|
-              OpenLayers          Leaflet           Cesium           Mapbender       
-              |geoext_logo|       |geomoose_logo|   |geonode_logo|   |geostyler_logo|
-              GeoExt              GeoMoose          GeoNode          GeoStyler       
-            ==================== ================= ================ ===================
+            =================== ================ ================== ====================
+            =================== ================ ================== ====================
+              |geomoose_logo|    |geonode_logo|   |mapbender_logo|   |openlayers_logo|
+              GeoMoose           GeoNode          Mapbender          OpenLayers       
+              |geostyler_logo|   |cesium_logo|    |geoext_logo|      |leaflet_logo|   
+              GeoStyler          Cesium           GeoExt             Leaflet          
+            =================== ================ ================== ====================
 
 
 
@@ -297,77 +297,6 @@ OSGeoLive
             and increasingly being used to deliver a wide range of tools
             and functions previously only available in desktop applications.
     
-
-    .. revealjs:: OpenLayers
-        :title-heading: h3
-  
-        .. image:: ../images/projects/openlayers/openlayers_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            OpenLayers provides an extensive set of browser-based mapping tools and widgets, similar to Google Maps. All functionality runs inside the web browser, which makes OpenLayers easy to install, without any server-side dependencies.
-
-
-
-
-    .. revealjs:: Leaflet
-        :title-heading: h3
-  
-        .. image:: ../images/projects/leaflet/leaflet_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Leaflet is a light weight JavaScript library for browser based application, designed to work across a wide range of browsers and mobile platforms.
-            It is designed with simplicity, performance and usability in mind.
-        
-
-
-
-
-    .. revealjs:: Cesium
-        :title-heading: h3
-  
-        .. image:: ../images/projects/cesium/cesium_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Cesium is a JavaScript library for creating 3D globes and 2D maps in a web browser without any plugins. It uses WebGL for hardware-accelerated graphics, and is cross-platform, cross-browser, and tuned for dynamic-data visualization.
-        
-
-
-
-
-    .. revealjs:: Mapbender
-        :title-heading: h3
-  
-        .. image:: ../images/projects/mapbender/mapbender_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Mapbender is a web-based geoportal framework to publish, register, view, navigate, monitor and grant secure access to spatial data infrastructure services.
-            Mapbender allows users to create customised browser clients from a wide range of widgets with minimal programming. Widgets integrate with server functionality to provide advanced functionality like security proxying, digitizing, auto snapping and more.
-            The Mapbender client side is based on JavaScript and jQuery widgets. The server side is implemented in PHP and PostGIS.
-
-
-
-
-    .. revealjs:: GeoExt
-        :title-heading: h3
-  
-        .. image:: ../images/projects/geoext/geoext_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            GeoExt is Open Source and enables building desktop-like GIS applications through the web. It is a JavaScript framework that combines the GIS functionality of 
-            OpenLayers with the user interface of the ExtJS library provided by Sencha.  
-
-
-
 
     .. revealjs:: GeoMoose
         :title-heading: h3
@@ -395,6 +324,34 @@ OSGeoLive
 
 
 
+    .. revealjs:: Mapbender
+        :title-heading: h3
+  
+        .. image:: ../images/projects/mapbender/mapbender_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            Mapbender is a web-based geoportal framework to publish, register, view, navigate, monitor and grant secure access to spatial data infrastructure services.
+            Mapbender allows users to create customised browser clients from a wide range of widgets with minimal programming. Widgets integrate with server functionality to provide advanced functionality like security proxying, digitizing, auto snapping and more.
+            The Mapbender client side is based on JavaScript and jQuery widgets. The server side is implemented in PHP and PostGIS.
+
+
+
+
+    .. revealjs:: OpenLayers
+        :title-heading: h3
+  
+        .. image:: ../images/projects/openlayers/openlayers_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            OpenLayers provides an extensive set of browser-based mapping tools and widgets, similar to Google Maps. All functionality runs inside the web browser, which makes OpenLayers easy to install, without any server-side dependencies.
+
+
+
+
     .. revealjs:: GeoStyler
         :title-heading: h3
   
@@ -408,25 +365,68 @@ OSGeoLive
 
 
 
+    .. revealjs:: Cesium
+        :title-heading: h3
+  
+        .. image:: ../images/projects/cesium/cesium_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            Cesium is a JavaScript library for creating 3D globes and 2D maps in a web browser without any plugins. It uses WebGL for hardware-accelerated graphics, and is cross-platform, cross-browser, and tuned for dynamic-data visualization.
+        
+
+
+
+
+    .. revealjs:: GeoExt
+        :title-heading: h3
+  
+        .. image:: ../images/projects/geoext/geoext_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            GeoExt is Open Source and enables building desktop-like GIS applications through the web. It is a JavaScript framework that combines the GIS functionality of 
+            OpenLayers with the user interface of the ExtJS library provided by Sencha.  
+
+
+
+
+    .. revealjs:: Leaflet
+        :title-heading: h3
+  
+        .. image:: ../images/projects/leaflet/leaflet_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            Leaflet is a light weight JavaScript library for browser based application, designed to work across a wide range of browsers and mobile platforms.
+            It is designed with simplicity, performance and usability in mind.
+        
+
+
+
+
 .. revealjs::
     
     .. revealjs:: Web Services
         :title-heading: h3
   
 
-            =================== ================== ======================= =================
-            =================== ================== ======================= =================
-              |geoserver_logo|   |mapserver_logo|   |mapcache_logo|         |deegree_logo|
-              GeoServer          MapServer          MapCache                deegree       
-              |ncWMS_logo|       |eoxserver_logo|   |geonetwork_logo|       |pycsw_logo|  
-              ncWMS              EOxServer          GeoNetwork              pycsw         
-              |pywps_logo|       |mapproxy_logo|    |qgis_mapserver_logo|   |istsos_logo| 
-              PyWPS              MapProxy           QGIS Server             istSOS        
-              |52nSOS_logo|      |52nWPS_logo|      |zoo-project_logo|      |t-rex_logo|  
-              52 North SOS       52 North WPS       Zoo Project             t-rex         
-              |actinia_logo|     |re3gistry_logo|   |pygeoapi_logo|           
-              actinia            Re3gistry          pygeoapi                  
-            =================== ================== ======================= =================
+            =================== =================== ======================= ===================
+            =================== =================== ======================= ===================
+              |deegree_logo|     |geonetwork_logo|   |geoserver_logo|        |mapcache_logo| 
+              deegree            GeoNetwork          GeoServer               MapCache        
+              |mapserver_logo|   |pycsw_logo|        |pywps_logo|            |istsos_logo|   
+              MapServer          pycsw               PyWPS                   istSOS          
+              |mapproxy_logo|    |pygeoapi_logo|     |zoo-project_logo|      |actinia_logo|  
+              MapProxy           pygeoapi            Zoo Project             actinia         
+              |eoxserver_logo|   |ncWMS_logo|        |qgis_mapserver_logo|   |re3gistry_logo|
+              EOxServer          ncWMS               QGIS Server             Re3gistry       
+              |t-rex_logo|       |52nSOS_logo|       |52nWPS_logo|               
+              t-rex              52 North SOS        52 North WPS                
+            =================== =================== ======================= ===================
 
 
 
@@ -439,6 +439,33 @@ OSGeoLive
             Web Feature Services for vector data and Catalog Services for the Web for Metadata.
     
 
+    .. revealjs:: deegree
+        :title-heading: h3
+  
+        .. image:: ../images/projects/deegree/deegree_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            deegree is another robust application which has claimed the title of supporting the most comprehensive set of OGC Web Services in free and open source software, ranging from a transactional Web Feature Service to three-dimensional data display in a Web Terrain Service and many more!
+
+
+
+
+    .. revealjs:: GeoNetwork
+        :title-heading: h3
+  
+        .. image:: ../images/projects/geonetwork/geonetwork_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            GeoNetwork provides a catalogue, which is used to create, maintain and and search metadata about specific datasets.
+            Metadata is "data about data", storing such things as creation-date, author, title, area-of-interest, and so on. Metadata is usually encoded as XML files, following international standards.
+
+
+
+
     .. revealjs:: GeoServer
         :title-heading: h3
   
@@ -449,19 +476,6 @@ OSGeoLive
             Note 
             GeoServer is one of the more popular Web Service applications, providing Web Map Service, Web Feature Services, Web Coverage Services, Web Processing Services, Tile Caching and more.
             GeoServer comes with a nice browser-based management interface and connects to multiple data sources at the back end.
-
-
-
-
-    .. revealjs:: MapServer
-        :title-heading: h3
-  
-        .. image:: ../images/projects/mapserver/mapserver_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Mapserver is one of the earliest Open Source Web Map Services. The codebase is very mature and it retains a large development community. It serves data through Web Map Service images, Web Feature Service vectors, a Web Coverage Service and Sensor Observation Services. It connects to a wide range of databases and data stores. It is written in C and has connections for a number of other languages.
 
 
 
@@ -480,55 +494,15 @@ OSGeoLive
 
 
 
-    .. revealjs:: deegree
+    .. revealjs:: MapServer
         :title-heading: h3
   
-        .. image:: ../images/projects/deegree/deegree_screenshot.png
+        .. image:: ../images/projects/mapserver/mapserver_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            deegree is another robust application which has claimed the title of supporting the most comprehensive set of OGC Web Services in free and open source software, ranging from a transactional Web Feature Service to three-dimensional data display in a Web Terrain Service and many more!
-
-
-
-
-    .. revealjs:: ncWMS
-        :title-heading: h3
-  
-        .. image:: ../images/projects/ncWMS/ncWMS_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            ncWMS publishes multi-dimensional data, such as environmental and weather data, as an OGC compliant Web Map Service.
-
-
-
-
-    .. revealjs:: EOxServer
-        :title-heading: h3
-  
-        .. image:: ../images/projects/eoxserver/eoxserver_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            EOxServer is a system for accessing large amounts of satellite and earth observation data, and selecting subsets in space and time.
-
-
-
-
-    .. revealjs:: GeoNetwork
-        :title-heading: h3
-  
-        .. image:: ../images/projects/geonetwork/geonetwork_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            GeoNetwork provides a catalogue, which is used to create, maintain and and search metadata about specific datasets.
-            Metadata is "data about data", storing such things as creation-date, author, title, area-of-interest, and so on. Metadata is usually encoded as XML files, following international standards.
+            Mapserver is one of the earliest Open Source Web Map Services. The codebase is very mature and it retains a large development community. It serves data through Web Map Service images, Web Feature Service vectors, a Web Coverage Service and Sensor Observation Services. It connects to a wide range of databases and data stores. It is written in C and has connections for a number of other languages.
 
 
 
@@ -557,6 +531,19 @@ OSGeoLive
 
 
 
+    .. revealjs:: istSOS
+        :title-heading: h3
+  
+        .. image:: ../images/projects/istsos/istsos_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            istSOS is sensor data management tool that allows collection, maintenance and publishing of monitoring observations using the Open Geospatial Consortium (OGC) Sensor Observation Service (SOS) standard.
+
+
+
+
     .. revealjs:: MapProxy
         :title-heading: h3
   
@@ -566,6 +553,74 @@ OSGeoLive
         .. rv_note::
             Note 
             Like the GeoWebCache tiling functionality in GeoServer, MapProxy tiles maps from map services, and stores them in a local cache for fast access.
+
+
+
+
+    .. revealjs:: pygeoapi
+        :title-heading: h3
+  
+        .. image:: ../images/projects/pygeoapi/pygeoapi_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            pygeoapi is a Python server implementation of the OGC API suite of standards. The project emerged as part of the next generation OGC API efforts in 2018 and provides the capability for organizations to deploy a RESTful OGC API endpoint using OpenAPI, GeoJSON, and HTML. pygeoapi is open source and released under an MIT license. pygeoapi is reference implementation of OGC API Features.
+
+
+
+
+    .. revealjs:: Zoo Project
+        :title-heading: h3
+  
+        .. image:: ../images/projects/zoo-project/zoo-project_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            The ZOO Project provides a developer-friendly Web Processing Service framework for creating and chaining Web Processing Services. A Web Processing Service provides web access to functions which run spatial algorithms. Zoo Project supports many programming languages and comes with C and Python examples.
+
+
+
+
+    .. revealjs:: actinia
+        :title-heading: h3
+  
+        .. image:: ../images/projects/actinia/actinia_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            Actinia is an open source REST API for scalable, distributed, high performance
+            processing of geographical data that uses GRASS GIS for computational tasks.
+            Actinia provides a REST API to process satellite images, time series of 
+            satellite images, raster and vector data.
+
+
+
+
+    .. revealjs:: EOxServer
+        :title-heading: h3
+  
+        .. image:: ../images/projects/eoxserver/eoxserver_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            EOxServer is a system for accessing large amounts of satellite and earth observation data, and selecting subsets in space and time.
+
+
+
+
+    .. revealjs:: ncWMS
+        :title-heading: h3
+  
+        .. image:: ../images/projects/ncWMS/ncWMS_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            ncWMS publishes multi-dimensional data, such as environmental and weather data, as an OGC compliant Web Map Service.
 
 
 
@@ -583,15 +638,30 @@ OSGeoLive
 
 
 
-    .. revealjs:: istSOS
+    .. revealjs:: Re3gistry
         :title-heading: h3
   
-        .. image:: ../images/projects/istsos/istsos_screenshot.png
+        .. image:: ../images/projects/re3gistry/re3gistry_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            istSOS is sensor data management tool that allows collection, maintenance and publishing of monitoring observations using the Open Geospatial Consortium (OGC) Sensor Observation Service (SOS) standard.
+            The Re3gistry provides a consistent central access point where labels and
+            descriptions for reference codes can be easily browsed by humans and
+            retrieved by machines.
+
+
+
+
+    .. revealjs:: t-rex
+        :title-heading: h3
+  
+        .. image:: ../images/projects/t-rex/t-rex_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            t-rex is a vector tile server specialized on publishing MVT tiles from your own data..
 
 
 
@@ -622,87 +692,17 @@ OSGeoLive
 
 
 
-    .. revealjs:: Zoo Project
-        :title-heading: h3
-  
-        .. image:: ../images/projects/zoo-project/zoo-project_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            The ZOO Project provides a developer-friendly Web Processing Service framework for creating and chaining Web Processing Services. A Web Processing Service provides web access to functions which run spatial algorithms. Zoo Project supports many programming languages and comes with C and Python examples.
-
-
-
-
-    .. revealjs:: t-rex
-        :title-heading: h3
-  
-        .. image:: ../images/projects/t-rex/t-rex_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            t-rex is a vector tile server specialized on publishing MVT tiles from your own data..
-
-
-
-
-    .. revealjs:: actinia
-        :title-heading: h3
-  
-        .. image:: ../images/projects/actinia/actinia_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Actinia is an open source REST API for scalable, distributed, high performance
-            processing of geographical data that uses GRASS GIS for computational tasks.
-            Actinia provides a REST API to process satellite images, time series of 
-            satellite images, raster and vector data.
-
-
-
-
-    .. revealjs:: Re3gistry
-        :title-heading: h3
-  
-        .. image:: ../images/projects/re3gistry/re3gistry_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            The Re3gistry provides a consistent central access point where labels and
-            descriptions for reference codes can be easily browsed by humans and
-            retrieved by machines.
-
-
-
-
-    .. revealjs:: pygeoapi
-        :title-heading: h3
-  
-        .. image:: ../images/projects/pygeoapi/pygeoapi_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            pygeoapi is a Python server implementation of the OGC API suite of standards. The project emerged as part of the next generation OGC API efforts in 2018 and provides the capability for organizations to deploy a RESTful OGC API endpoint using OpenAPI, GeoJSON, and HTML. pygeoapi is open source and released under an MIT license. pygeoapi is reference implementation of OGC API Features.
-
-
-
-
 .. revealjs::
     
     .. revealjs:: Data Stores
         :title-heading: h3
   
 
-            ================= =================== ================= ===================
-            ================= =================== ================= ===================
-              |postgis_logo|   |spatialite_logo|   |rasdaman_logo|   |pgrouting_logo|
-              PostGIS          SpatiaLite          Rasdaman          pgRouting       
-            ================= =================== ================= ===================
+            ================= ================== ================= ====================
+            ================= ================== ================= ====================
+              |postgis_logo|   |pgrouting_logo|   |rasdaman_logo|   |spatialite_logo|
+              PostGIS          pgRouting          Rasdaman          SpatiaLite       
+            ================= ================== ================= ====================
 
 
 
@@ -726,16 +726,17 @@ OSGeoLive
 
 
 
-    .. revealjs:: SpatiaLite
+    .. revealjs:: pgRouting
         :title-heading: h3
   
-        .. image:: ../images/projects/spatialite/spatialite_screenshot.png
+        .. image:: ../images/projects/pgrouting/pgrouting_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            SpatiaLite adds spatial functionality to the popular SQLite database. 
-            SQLite is a self-contained, zero-administration, relational database, which can be pre-built into applications without needing a database server.  Each SQLite data store is kept in one file, which can easily be copied between platforms and around the internet without complication.
+            pgRouting extends the PostGIS database to provide geospatial routing functionality
+            so you can apply queries like finding the shortest path between points from within
+            the database, thus simplifying both routing functionality and maintenance of data.
 
 
 
@@ -754,17 +755,16 @@ OSGeoLive
 
 
 
-    .. revealjs:: pgRouting
+    .. revealjs:: SpatiaLite
         :title-heading: h3
   
-        .. image:: ../images/projects/pgrouting/pgrouting_screenshot.png
+        .. image:: ../images/projects/spatialite/spatialite_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            pgRouting extends the PostGIS database to provide geospatial routing functionality
-            so you can apply queries like finding the shortest path between points from within
-            the database, thus simplifying both routing functionality and maintenance of data.
+            SpatiaLite adds spatial functionality to the popular SQLite database. 
+            SQLite is a self-contained, zero-administration, relational database, which can be pre-built into applications without needing a database server.  Each SQLite data store is kept in one file, which can easily be copied between platforms and around the internet without complication.
 
 
 
@@ -775,32 +775,19 @@ OSGeoLive
         :title-heading: h3
   
 
-            ================== ================ =============== ==================
-            ================== ================ =============== ==================
-              |gpsprune_logo|   |marble_logo|    |osm_logo|      |ideditor_logo|
-              GpsPrune          Marble           OpenStreetMap   iD editor      
-              |josm_logo|       |opencpn_logo|          
-              JOSM              OpenCPN                 
-            ================== ================ =============== ==================
+            ================= ================= =============== ==================
+            ================= ================= =============== ==================
+              |marble_logo|    |ideditor_logo|   |josm_logo|     |gpsprune_logo|
+              Marble           iD editor         JOSM            GpsPrune       
+              |opencpn_logo|   |osm_logo|               
+              OpenCPN          OpenStreetMap            
+            ================= ================= =============== ==================
 
 
 
         .. rv_note::
             The next category we will look at is Navigation and Maps.
     
-
-    .. revealjs:: GpsPrune
-        :title-heading: h3
-  
-        .. image:: ../images/projects/gpsprune/gpsprune_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            GpsPrune is a tool for viewing, editing and converting coordinate data from GPS systems. It can be used for planning future trips and for analyzing recorded data afterwards. It uses OpenStreetMap imagery to show recorded tracks and waypoints, and provides a variety of tools to let you edit, crop and prune the data points. It also has functions for showing the data in three dimensions, and combining the points with photos, audio files and online information.
-
-
-
 
     .. revealjs:: Marble
         :title-heading: h3
@@ -812,17 +799,6 @@ OSGeoLive
             Note 
             Marble is a spinning Globe and World Atlas similar to Google Earth. It was developed as part of the KDE project. You can view various map layers, pan and zoom, look up roads and Wikipedia descriptions of places, measure distances and more.
 
-
-
-
-    .. revealjs:: OpenStreetMap
-        :title-heading: h3
-  
-        .. image:: ../images/projects/osm/osm_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
 
 
 
@@ -853,6 +829,19 @@ OSGeoLive
 
 
 
+    .. revealjs:: GpsPrune
+        :title-heading: h3
+  
+        .. image:: ../images/projects/gpsprune/gpsprune_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            GpsPrune is a tool for viewing, editing and converting coordinate data from GPS systems. It can be used for planning future trips and for analyzing recorded data afterwards. It uses OpenStreetMap imagery to show recorded tracks and waypoints, and provides a variety of tools to let you edit, crop and prune the data points. It also has functions for showing the data in three dimensions, and combining the points with photos, audio files and online information.
+
+
+
+
     .. revealjs:: OpenCPN
         :title-heading: h3
   
@@ -867,25 +856,49 @@ OSGeoLive
 
 
 
+    .. revealjs:: OpenStreetMap
+        :title-heading: h3
+  
+        .. image:: ../images/projects/osm/osm_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+
+
+
 .. revealjs::
     
     .. revealjs:: Spatial Tools
         :title-heading: h3
   
 
-            =================== =============== =============== ================
-            =================== =============== =============== ================
-              |gmt_logo|         |otb_logo|      |R_logo|        |mapnik_logo|
-              GMT                OTB             R               Mapnik       
-              |jupyter_logo|              
-              Jupyter Notebook            
-            =================== =============== =============== ================
+            ============= =============== ================== ================
+            ============= =============== ================== ================
+              |otb_logo|   |gmt_logo|      |jupyter_logo|     |mapnik_logo|
+              OTB          GMT             Jupyter Notebook   Mapnik       
+              |R_logo|                 
+              R                        
+            ============= =============== ================== ================
 
 
 
         .. rv_note::
             The next category we have grouped together are Spatial Tools.
     
+
+    .. revealjs:: OTB
+        :title-heading: h3
+  
+        .. image:: ../images/projects/otb/otb_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            ORFEO Toolbox is a high performance image processing library, funded by the French Space Agency. It is primarily used for processing remote sensing images such as those gathered by radars, satellites and aerial photography. It provides tools for the future optic and radar images such as tridimensional aspects, changes detection, texture analysis, and pattern matching.
+
+
+
 
     .. revealjs:: GMT
         :title-heading: h3
@@ -900,15 +913,28 @@ OSGeoLive
 
 
 
-    .. revealjs:: OTB
+    .. revealjs:: Jupyter Notebook
         :title-heading: h3
   
-        .. image:: ../images/projects/otb/otb_screenshot.png
+        .. image:: ../images/projects/jupyter/jupyter_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            ORFEO Toolbox is a high performance image processing library, funded by the French Space Agency. It is primarily used for processing remote sensing images such as those gathered by radars, satellites and aerial photography. It provides tools for the future optic and radar images such as tridimensional aspects, changes detection, texture analysis, and pattern matching.
+            Jupyter notebooks contain a list of input and output cells which allow you to embed rich media into a document. They are a bit like a spreadsheet in that each cell can contain code or a formula, and a bit like a web page in that authors can create presentations using structured text along with embedded rich media. Input cells can include geospatial functions from other applications, such as gdal, R, and many others.
+
+
+
+
+    .. revealjs:: Mapnik
+        :title-heading: h3
+  
+        .. image:: ../images/projects/mapnik/mapnik_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            Mapnik is a toolkit for rendering beautiful maps, with clean, soft edges for features provided by quality anti-aliasing graphics, also intelligent label placement, and scalable, SVG symbolisation. Most famously, mapnik is used to render the Open Street Map layers.
 
 
 
@@ -928,54 +954,28 @@ OSGeoLive
 
 
 
-    .. revealjs:: Mapnik
-        :title-heading: h3
-  
-        .. image:: ../images/projects/mapnik/mapnik_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Mapnik is a toolkit for rendering beautiful maps, with clean, soft edges for features provided by quality anti-aliasing graphics, also intelligent label placement, and scalable, SVG symbolisation. Most famously, mapnik is used to render the Open Street Map layers.
-
-
-
-
-    .. revealjs:: Jupyter Notebook
-        :title-heading: h3
-  
-        .. image:: ../images/projects/jupyter/jupyter_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            Jupyter notebooks contain a list of input and output cells which allow you to embed rich media into a document. They are a bit like a spreadsheet in that each cell can contain code or a formula, and a bit like a web page in that authors can create presentations using structured text along with embedded rich media. Input cells can include geospatial functions from other applications, such as gdal, R, and many others.
-
-
-
-
 .. revealjs::
     
     .. revealjs:: Domain Specific GIS
         :title-heading: h3
   
-           |zygrib_logo|
-           zyGrib
+           |xygrib_logo|
+           XyGrib
 
 
         .. rv_note::
             In this section, we have grouped applications targeted at a specific domain.
     
 
-    .. revealjs:: zyGrib
+    .. revealjs:: XyGrib
         :title-heading: h3
   
-        .. image:: ../images/projects/zygrib/zygrib_screenshot.png
+        .. image:: ../images/projects/xygrib/xygrib_screenshot.png
             :height: 600
 
         .. rv_note::
             Note 
-            zyGrib is a program to download and visualize weather forecast data from GRIB data sources, the standard format for storing meteorological forecast and historical data. Among other things, it supports playing forecast animations, plotting wind, pressure, temperature, humidity, rain, snow, cloud cover, dew point, and high altitude pressure data.
+            XyGrib is a program to download and visualize weather forecast data from GRIB data sources, the standard format for storing meteorological forecast and historical data. Among other things, it supports playing forecast animations, plotting wind, pressure, temperature, humidity, rain, snow, cloud cover, dew point, and high altitude pressure data. XyGrib is the continuation of the zyGrib software package with a new team of volunteers.
 
 
 
@@ -986,11 +986,11 @@ OSGeoLive
         :title-heading: h3
   
 
-            ====================== ======================================== ==================== ========================
-            ====================== ======================================== ==================== ========================
-              |naturalearth_logo|   |nc_dataset_logo|                        |osm_dataset_logo|   |netcdf_dataset_logo|
-              Natural Earth         North Carolina USA Educational dataset   OpenStreetMap        NetCDF Data Set      
-            ====================== ======================================== ==================== ========================
+            ====================== ======================================== ======================= =====================
+            ====================== ======================================== ======================= =====================
+              |naturalearth_logo|   |nc_dataset_logo|                        |netcdf_dataset_logo|   |osm_dataset_logo|
+              Natural Earth         North Carolina USA Educational dataset   NetCDF Data Set         OpenStreetMap     
+            ====================== ======================================== ======================= =====================
 
 
 
@@ -1025,6 +1025,19 @@ OSGeoLive
 
 
 
+    .. revealjs:: NetCDF Data Set
+        :title-heading: h3
+  
+        .. image:: ../images/projects/netcdf_dataset/netcdf_dataset_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            A NetCDF dataset is provided, which includes annual maximum daily temperature, and annual maximum consecutive five-day precipitation, both historical and predicted from 1850 to 2100.
+
+
+
+
     .. revealjs:: OpenStreetMap
         :title-heading: h3
   
@@ -1039,32 +1052,19 @@ OSGeoLive
 
 
 
-    .. revealjs:: NetCDF Data Set
-        :title-heading: h3
-  
-        .. image:: ../images/projects/netcdf_dataset/netcdf_dataset_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            A NetCDF dataset is provided, which includes annual maximum daily temperature, and annual maximum consecutive five-day precipitation, both historical and predicted from 1850 to 2100.
-
-
-
-
 .. revealjs::
     
     .. revealjs:: Geospatial Libraries
         :title-heading: h3
   
 
-            ============== ================= =============== ================
-            ============== ================= =============== ================
-              |gdal_logo|   |geotools_logo|   |geos_logo|     |proj_logo|  
-              GDAL/OGR      GeoTools          GEOS            PROJ         
+            ============== =============== ================= ================
+            ============== =============== ================= ================
+              |gdal_logo|   |geos_logo|     |geotools_logo|   |proj_logo|  
+              GDAL/OGR      GEOS            GeoTools          PROJ         
               |jts_logo|               
               JTS                      
-            ============== ================= =============== ================
+            ============== =============== ================= ================
 
 
 
@@ -1084,19 +1084,6 @@ OSGeoLive
 
 
 
-    .. revealjs:: GeoTools
-        :title-heading: h3
-  
-        .. image:: ../images/projects/geotools/geotools_screenshot.png
-            :height: 600
-
-        .. rv_note::
-            Note 
-            GeoTools is used by most Java based Geospatial applications. It provides standards based geospatial data structures, connectors to numerous data stores, data manipulation and rendering functionality.
-
-
-
-
     .. revealjs:: GEOS
         :title-heading: h3
   
@@ -1106,6 +1093,19 @@ OSGeoLive
         .. rv_note::
             Note 
             GEOS provides a port of JTS to C and C++. There are also bindings to Python and other languages.
+
+
+
+
+    .. revealjs:: GeoTools
+        :title-heading: h3
+  
+        .. image:: ../images/projects/geotools/geotools_screenshot.png
+            :height: 600
+
+        .. rv_note::
+            Note 
+            GeoTools is used by most Java based Geospatial applications. It provides standards based geospatial data structures, connectors to numerous data stores, data manipulation and rendering functionality.
 
 
 
@@ -1236,62 +1236,62 @@ OSGeoLive
 
 
 
-.. |qgis_logo| image:: ../images/projects/qgis/logo_qgis.png
 .. |grass_logo| image:: ../images/projects/grass/logo_grass.png
 .. |gvsig_logo| image:: ../images/projects/gvsig/logo_gvsig.png
-.. |udig_logo| image:: ../images/projects/udig/logo_udig.png
+.. |qgis_logo| image:: ../images/projects/qgis/logo_qgis.png
 .. |openjump_logo| image:: ../images/projects/openjump/logo_openjump.png
 .. |saga_logo| image:: ../images/projects/saga/logo_saga.png
-.. |openlayers_logo| image:: ../images/projects/openlayers/logo_openlayers.png
-.. |leaflet_logo| image:: ../images/projects/leaflet/logo_leaflet.png
-.. |cesium_logo| image:: ../images/projects/cesium/logo_cesium.png
-.. |mapbender_logo| image:: ../images/projects/mapbender/logo_mapbender.png
-.. |geoext_logo| image:: ../images/projects/geoext/logo_geoext.png
+.. |udig_logo| image:: ../images/projects/udig/logo_udig.png
 .. |geomoose_logo| image:: ../images/projects/geomoose/logo_geomoose.png
 .. |geonode_logo| image:: ../images/projects/geonode/logo_geonode.png
+.. |mapbender_logo| image:: ../images/projects/mapbender/logo_mapbender.png
+.. |openlayers_logo| image:: ../images/projects/openlayers/logo_openlayers.png
 .. |geostyler_logo| image:: ../images/projects/geostyler/logo_geostyler.png
-.. |geoserver_logo| image:: ../images/projects/geoserver/logo_geoserver.png
-.. |mapserver_logo| image:: ../images/projects/mapserver/logo_mapserver.png
-.. |mapcache_logo| image:: ../images/projects/mapcache/logo_mapcache.png
+.. |cesium_logo| image:: ../images/projects/cesium/logo_cesium.png
+.. |geoext_logo| image:: ../images/projects/geoext/logo_geoext.png
+.. |leaflet_logo| image:: ../images/projects/leaflet/logo_leaflet.png
 .. |deegree_logo| image:: ../images/projects/deegree/logo_deegree.png
-.. |ncWMS_logo| image:: ../images/projects/ncWMS/logo_ncWMS.png
-.. |eoxserver_logo| image:: ../images/projects/eoxserver/logo_eoxserver.png
 .. |geonetwork_logo| image:: ../images/projects/geonetwork/logo_geonetwork.png
+.. |geoserver_logo| image:: ../images/projects/geoserver/logo_geoserver.png
+.. |mapcache_logo| image:: ../images/projects/mapcache/logo_mapcache.png
+.. |mapserver_logo| image:: ../images/projects/mapserver/logo_mapserver.png
 .. |pycsw_logo| image:: ../images/projects/pycsw/logo_pycsw.png
 .. |pywps_logo| image:: ../images/projects/pywps/logo_pywps.png
-.. |mapproxy_logo| image:: ../images/projects/mapproxy/logo_mapproxy.png
-.. |qgis_mapserver_logo| image:: ../images/projects/qgis_mapserver/logo_qgis_mapserver.png
 .. |istsos_logo| image:: ../images/projects/istsos/logo_istsos.png
+.. |mapproxy_logo| image:: ../images/projects/mapproxy/logo_mapproxy.png
+.. |pygeoapi_logo| image:: ../images/projects/pygeoapi/logo_pygeoapi.png
+.. |zoo-project_logo| image:: ../images/projects/zoo-project/logo_zoo-project.png
+.. |actinia_logo| image:: ../images/projects/actinia/logo_actinia.png
+.. |eoxserver_logo| image:: ../images/projects/eoxserver/logo_eoxserver.png
+.. |ncWMS_logo| image:: ../images/projects/ncWMS/logo_ncWMS.png
+.. |qgis_mapserver_logo| image:: ../images/projects/qgis_mapserver/logo_qgis_mapserver.png
+.. |re3gistry_logo| image:: ../images/projects/re3gistry/logo_re3gistry.png
+.. |t-rex_logo| image:: ../images/projects/t-rex/logo_t-rex.png
 .. |52nSOS_logo| image:: ../images/projects/52nSOS/logo_52nSOS.png
 .. |52nWPS_logo| image:: ../images/projects/52nWPS/logo_52nWPS.png
-.. |zoo-project_logo| image:: ../images/projects/zoo-project/logo_zoo-project.png
-.. |t-rex_logo| image:: ../images/projects/t-rex/logo_t-rex.png
-.. |actinia_logo| image:: ../images/projects/actinia/logo_actinia.png
-.. |re3gistry_logo| image:: ../images/projects/re3gistry/logo_re3gistry.png
-.. |pygeoapi_logo| image:: ../images/projects/pygeoapi/logo_pygeoapi.png
 .. |postgis_logo| image:: ../images/projects/postgis/logo_postgis.png
-.. |spatialite_logo| image:: ../images/projects/spatialite/logo_spatialite.png
-.. |rasdaman_logo| image:: ../images/projects/rasdaman/logo_rasdaman.png
 .. |pgrouting_logo| image:: ../images/projects/pgrouting/logo_pgrouting.png
-.. |gpsprune_logo| image:: ../images/projects/gpsprune/logo_gpsprune.png
+.. |rasdaman_logo| image:: ../images/projects/rasdaman/logo_rasdaman.png
+.. |spatialite_logo| image:: ../images/projects/spatialite/logo_spatialite.png
 .. |marble_logo| image:: ../images/projects/marble/logo_marble.png
-.. |osm_logo| image:: ../images/projects/osm/logo_osm.png
 .. |ideditor_logo| image:: ../images/projects/ideditor/logo_ideditor.png
 .. |josm_logo| image:: ../images/projects/josm/logo_josm.png
+.. |gpsprune_logo| image:: ../images/projects/gpsprune/logo_gpsprune.png
 .. |opencpn_logo| image:: ../images/projects/opencpn/logo_opencpn.png
-.. |gmt_logo| image:: ../images/projects/gmt/logo_gmt.png
+.. |osm_logo| image:: ../images/projects/osm/logo_osm.png
 .. |otb_logo| image:: ../images/projects/otb/logo_otb.png
-.. |R_logo| image:: ../images/projects/R/logo_R.png
-.. |mapnik_logo| image:: ../images/projects/mapnik/logo_mapnik.png
+.. |gmt_logo| image:: ../images/projects/gmt/logo_gmt.png
 .. |jupyter_logo| image:: ../images/projects/jupyter/logo_jupyter.png
-.. |zygrib_logo| image:: ../images/projects/zygrib/logo_zygrib.png
+.. |mapnik_logo| image:: ../images/projects/mapnik/logo_mapnik.png
+.. |R_logo| image:: ../images/projects/R/logo_R.png
+.. |xygrib_logo| image:: ../images/projects/xygrib/logo_xygrib.png
 .. |naturalearth_logo| image:: ../images/projects/naturalearth/logo_naturalearth.png
 .. |nc_dataset_logo| image:: ../images/projects/nc_dataset/logo_nc_dataset.png
-.. |osm_dataset_logo| image:: ../images/projects/osm_dataset/logo_osm_dataset.png
 .. |netcdf_dataset_logo| image:: ../images/projects/netcdf_dataset/logo_netcdf_dataset.png
+.. |osm_dataset_logo| image:: ../images/projects/osm_dataset/logo_osm_dataset.png
 .. |gdal_logo| image:: ../images/projects/gdal/logo_gdal.png
-.. |geotools_logo| image:: ../images/projects/geotools/logo_geotools.png
 .. |geos_logo| image:: ../images/projects/geos/logo_geos.png
+.. |geotools_logo| image:: ../images/projects/geotools/logo_geotools.png
 .. |proj_logo| image:: ../images/projects/proj/logo_proj.png
 .. |jts_logo| image:: ../images/projects/jts/logo_jts.png
 
