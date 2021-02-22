@@ -73,42 +73,33 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="mapserver-quickstart">
 <h1>MapServer Quickstart<a class="headerlink" href="#mapserver-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
-<p>MapServer is an <a class="reference external" href="https://opensource.org/">Open Source</a> server based
-application that allows you to publish geographic map images and vector data
-through the internet using <a class="reference external" href="https://www.ogc.org/standards">OGC Standards</a>
-such as <a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a>, <a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> and <a class="reference external" href="https://www.ogc.org/standards/wcs">Web Coverage Service (WCS)</a>.</p>
+<p>MapServer ist eine serverbasierte  Open Source-Anwendung, mit der &lt;https: opensource.org/=““&gt;Sie Kartenbilder und Vektordaten über das Internet mithilfe | OGCS| wie | WMS|, | WFS| und | WCS| veröffentlichen können.&lt;/https:&gt;</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#configure-mapserver-using-the-mapfile-configuration-file" id="id1">Configure MapServer using the Mapfile configuration file</a></li>
+<li><a class="reference internal" href="#configure-mapserver-using-the-mapfile-configuration-file" id="id1">Konfigurieren von MapServer mithilfe der Mapfile-Konfigurationsdatei</a></li>
 <li><a class="reference internal" href="#render-a-map-image-with-mapserver-using-a-wms-getmap-request" id="id2">Darstellen einer Karte mit MapServer mittels eines WMS <strong>GetMap</strong> Requests</a></li>
 <li><a class="reference internal" href="#render-a-map-image-with-mapserver-using-the-command-line" id="id3">Erzeugen eines Kartenbildes über die Kommandozeile</a></li>
-<li><a class="reference internal" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" id="id4">Add a new layer to the Mapfile to serve a local Shapefile</a></li>
-<li><a class="reference internal" href="#style-a-layer-using-mapfile-configurations" id="id5">Style a layer using Mapfile configurations</a></li>
+<li><a class="reference internal" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" id="id4">Einen neuen Layer in dem Mapfile ergänzen, um eine Shapedatei darzustellen</a></li>
+<li><a class="reference internal" href="#style-a-layer-using-mapfile-configurations" id="id5">Darstellung eines Layers über die Mapfile-Konfigurationen anpassen</a></li>
 <li><a class="reference internal" href="#publish-your-data-as-ogc-wms-web-map-service" id="id6">Veröffentlichen Ihrer Daten als OGC WMS (Web Map Service)</a></li>
 <li><a class="reference internal" href="#what-next" id="id7">Was kommt als Nächstes?</a></li>
 </ul>
 </div>
 <div class="section" id="configure-mapserver-using-the-mapfile-configuration-file">
-<h2><a class="toc-backref" href="#id1">Configure MapServer using the Mapfile configuration file</a><a class="headerlink" href="#configure-mapserver-using-the-mapfile-configuration-file" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Konfigurieren von MapServer mithilfe der Mapfile-Konfigurationsdatei</a><a class="headerlink" href="#configure-mapserver-using-the-mapfile-configuration-file" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last"><strong>What will I learn ?</strong> In this section, you will learn what a
-Mapfile is and how to configure it to allow MapServer to serve a shapefile
-as images using WMS requests.</p>
+<p class="last"><strong>Was lerne ich?</strong>  In diesem Abschnitt erfahren Sie, was ein Mapfile ist und wie es so konfiguriert wird, dass MapServer ein Shape-Datei als Bild ausgeben kann und dabei dem WMS Standard folgt.</p>
 </div>
 <div class="section" id="what-is-a-mapfile">
-<h3>What is a Mapfile ?<a class="headerlink" href="#what-is-a-mapfile" title="Link zu dieser Überschrift">¶</a></h3>
-<p>The <a class="reference external" href="https://mapserver.org/mapfile/index.html">Mapfile</a> is the
-configuration file that MapServer uses to render geospatial data as images
-or vector data. Its main purpose is to define the layers it can draw, how to
-read necessary data, and how to render it (e.g. color, symbol, label, etc…).</p>
+<h3>Was ist ein Mapfile ?<a class="headerlink" href="#what-is-a-mapfile" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Das &lt;https: mapserver.org/mapfile/index.html=““&gt;‘Mapfile’_ ist die Konfigurationsdatei, die MapServer verwendet, um Geodaten als Bilder oder Vektordaten zu rendern. Im Mapfile werden Ebenen definiert, die gezeichnet werden können, es erfolgt ein Verweis auf die Daten und die Zeichenvorschrift wird definiert (z. B. Farbe, Symbol, Etikett usw.).&lt;/https:&gt;</p>
 </div>
 <div class="section" id="creating-my-first-mapfile">
-<h3>Creating my first Mapfile<a class="headerlink" href="#creating-my-first-mapfile" title="Link zu dieser Überschrift">¶</a></h3>
+<h3>Erstellen meines erstes Mapfiles<a class="headerlink" href="#creating-my-first-mapfile" title="Link zu dieser Überschrift">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Open any text editor (e.g. <span class="menuselection">Applications ‣ Accessories ‣
-FeatherPad</span>).</p>
+<li><p class="first">Öffnen Sie einen beliebigen Texteditor (z.B. :menuselection:‘Applications –&gt; Zubehör –&gt; FeatherPad‘).</p>
 </li>
 <li><p class="first">Erstellen Sie eine Datei „mapserver_quickstart.map“ in Ihrem Home Verzeichnis: <code class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></code></p>
 <p>Fügen Sie folgenden Text ein:</p>
@@ -155,12 +146,8 @@ FeatherPad</span>).</p>
 </div>
 </li>
 </ol>
-<p>Each object in a Mapfile starts with its name (for example <strong>MAP</strong>) and ends
-with an <strong>END</strong>.  A Mapfile always starts with the <strong>MAP</strong> object and should
-contain a list of <strong>LAYER</strong> objects the Mapfile can read and draw. In our
-Mapfile, we currently have only one layer defined.</p>
-<p>Let’s take a look at some of the objects (and properties) defined in our
-Mapfile:</p>
+<p>Jedes Objekt in der Mapdatei beginnt mit seinem Namen (z.B. <strong>MAP</strong>) und endet mit einem <strong>END</strong>. Eine Mapdatei beginnt immer mit dem Objekt <strong>MAP</strong> und sollte eine Liste von <strong>LAYER</strong> Objekten enthalten, die MapServer lesen und zeichnen kann. In unserer Mapdatei haben wir nur einen Layer definiert.</p>
+<p>Werfen wir einen Blick auf einige der Objekte (und Eigenschaften), die in unserem Mapfile definiert sind:</p>
 <blockquote>
 <div><ul class="simple">
 <li>EXTENT : definiert die BoundingBox für diese Konfiguration.</li>
@@ -168,21 +155,18 @@ Mapfile:</p>
 <li>SHAPEPATH : definiert einen Basispfad für Datei-basierte Daten (z.B. Shapedateien oder TIFF-Dateien).</li>
 </ul>
 </div></blockquote>
-<p>If we look closer at the <strong>LAYER</strong> in our Mapfile, we’ll see that it
-contains a bunch of properties and objects too. Among them are:</p>
+<p>Wenn wir genauer auf das Objekt <strong>LAYER</strong> schauen, sehen wir, dass es eine Reihe von Objekten und Eigenschaften enthält.</p>
 <blockquote>
 <div><ul class="simple">
 <li>STATUS : ob die Karte gezeichnet (<em>ON</em>), nicht gezeichnet (<em>OFF</em>) oder immer gezeichet werden soll (<em>DEFAULT</em>).</li>
-<li>TYPE: the geometry type that MapServer should use when rendering the data
-as an image. In our Mapfile, the data will be drawn as <em>polygons</em>.</li>
+<li>TYPE: Der Geometrietyp, den MapServer beim Rendern der Daten als Bild verwenden soll. In unserer Mapfile werden die Daten als <em>polygons</em> gezeichnet.</li>
 <li>DATA : der Name der Datei, in diesem Fall eine Shapedatei.</li>
 <li>CLASS : legt fest, wie eine Karte gezeichnet werden soll (styling). Wir gehen darauf später noch genauer ein.</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last">A complete list of the available objects and properties a Mapfile can have
-can be found in the <a class="reference external" href="https://mapserver.org/mapfile/index.html">MapServer documentation page</a>.</p>
+<p class="last">Eine vollständige Liste der verfügbaren Objekte und Eigenschaften, über die ein Mapfile verfügen kann, finden Sie auf der ‚MapServer-Dokumentationsseite &lt;https: mapserver.org/mapfile/index.html=““&gt;‘_.&lt;/https:&gt;</p>
 </div>
 </div>
 </div>
@@ -190,21 +174,13 @@ can be found in the <a class="reference external" href="https://mapserver.org/ma
 <h2><a class="toc-backref" href="#id2">Darstellen einer Karte mit MapServer mittels eines WMS <strong>GetMap</strong> Requests</a><a class="headerlink" href="#render-a-map-image-with-mapserver-using-a-wms-getmap-request" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last"><strong>What will I learn ?</strong> You will learn how to use to render an image with
-layers from a Mapfile with MapServer using an OGC WMS request.</p>
+<p class="last"><strong>Was werden wir lernen ?</strong> Sie werden lernen, wie mit Hilfe eines OGC WMS Request über MapServer ein Bild von Layern einer Mapdatei angefordert werden kann.</p>
 </div>
 <p>Öffnen Sie den Webbrowser mit folgender URL:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
 </pre></div>
 </div>
-<p>What does the above mean?  If we put it in simple words, it’s a <a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a>
-<strong>GetMap</strong>
-request that tells MapServer to „<em>use the following Mapfile to render the
-specified layers as a png image based on some user-supplied parameters such
-as image size, geographical extent, projection, etc.</em>“.  All layers
-specified in the „<em>&amp;LAYERS=…</em>“ property having <em>STATUS ON</em> in the Mapfile
-will be rendered in addition to all layers with <em>STATUS DEFAULT</em>. The
-result looks like the following:</p>
+<p>Was bedeutet dieser Aufruf? Einfach gesagt, es ist ein <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> <strong>GetMap</strong>-Request, der MapServer sagt, dass er die angegebene Mapdatei verwenden soll, um bestimmte Layer als PNG Bild mit festgelegten Eigenschaften wie Bildgröße, Ausdehnung, Projektion, etc.* darzustellen. Alle Layer im „<em>&amp;LAYERS=…</em>“-Bereich, die <em>STATUS ON</em> oder <em>STATUS DEFAULT</em> in der Mapdatei haben, werden nun dargestellt. Das Ergebnis sieht wie folgt aus:</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
@@ -223,14 +199,12 @@ result looks like the following:</p>
 <p>Wenn dieser Aufruf erfolgreich ausgeführt wird, finden Sie unter <a class="reference external" href="file:///home/user/mymap.png">file:///home/user/mymap.png</a> ein generiertes Kartenbild.</p>
 </div>
 <div class="section" id="add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile">
-<h2><a class="toc-backref" href="#id4">Add a new layer to the Mapfile to serve a local Shapefile</a><a class="headerlink" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Einen neuen Layer in dem Mapfile ergänzen, um eine Shapedatei darzustellen</a><a class="headerlink" href="#add-a-new-layer-to-the-mapfile-to-serve-a-local-shapefile" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last"><strong>What will I learn ?</strong> You will learn how to add a new layer object
-definition to your Mapfile.</p>
+<p class="last"><strong>Was werden wir lernen ?</strong> Sie werden lernen, wie neue Layer-Objekte in einer Mapdatei definiert werden.</p>
 </div>
-<p>We will now add a new layer to our Mapfile. Before the last <em>END</em> statement
-in the Mapfile, add the following layer configuration:</p>
+<p>Wir ergänzen jetzt einen weiteren Layer zu unserer Mapdatei. Vor dem letzten <em>END</em> in der Datei, fügen wir folgende Layer-Konfiguration hinzu:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
   <span class="n">NAME</span> <span class="s2">&quot;Lakes&quot;</span>
   <span class="n">STATUS</span> <span class="n">ON</span>
@@ -244,9 +218,7 @@ in the Mapfile, add the following layer configuration:</p>
 <span class="n">END</span>
 </pre></div>
 </div>
-<p>Now we have 2 layer definitions in our Mapfile. Note that the new one we
-just added has the „STATUS“ property set to „ON“. That means that unless we
-specifically request it, it won’t be rendered.</p>
+<p>Nun haben wir 2 Layer-Definitionen in unserer Mapdatei. Der neue Layer hat die „STATUS ON“ Eigenschaft. Das heißt, solange wir ihn nicht explizit anfragen, wird er nicht dargestellt.</p>
 <p>Nehmen wir nun unseren vorherigen WMS <strong>GetMap</strong> Request und ergänzen den neuen Layer „Lakes“ zu dem erzeugten Bild. Dazu müssen wir einfach nur den neuen layer Namen zur „LAYERS“-Liste hinzufügen:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
 </pre></div>
@@ -257,18 +229,12 @@ specifically request it, it won’t be rendered.</p>
 </div></blockquote>
 </div>
 <div class="section" id="style-a-layer-using-mapfile-configurations">
-<h2><a class="toc-backref" href="#id5">Style a layer using Mapfile configurations</a><a class="headerlink" href="#style-a-layer-using-mapfile-configurations" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Darstellung eines Layers über die Mapfile-Konfigurationen anpassen</a><a class="headerlink" href="#style-a-layer-using-mapfile-configurations" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
 <p class="last"><strong>Was werden wir lernen ?</strong> Sie sehen ein Beispiel für die Darstellungselemente eines Layers in Abhängigkeit von seinen Eigenschaften.</p>
 </div>
-<p>In a Mapfile, a LAYER object can contain an infinite number of CLASS
-objects. These are used to style the elements contained in the spatial data
-file (DATA). For example, if we look closer at our „ne_10m_lakes“ data file
-using a tool such as <a class="reference external" href="https://gdal.org/ogrinfo.html">ogrinfo</a>, we’ll
-see the geometry and attribute definitions it contains. These attribute
-values can be used as a way to draw the elements inside a dataset
-differently using multiple CLASS objects.</p>
+<p>In einer Mapdatei kann ein Layer-Objekt eine zahlreiche CLASS-Objekten enthalten. Diese werden verwendet, um die Darstellung von Elementen eines Layers (DATA) zu definieren. Zum Beispiel, wenn wir uns die „10m_lakes“ Datei mit einem Werkzeug wie <cite>ogrinfo &lt;http://www.gdal.org/ogrinfo.html&gt;</cite> anzeigen lassen _, sehen wir die Geometrie und Attribut-Definitionen der Objekte. Diese Attributwerte können verwendet werden, um die Objekte innerhalb eines Datensatzes mit mehreren unterschiedlichen CLASS-Objekten unterschiedlich darzustellen.</p>
 <p>In unserem „ne_10m_lakes“-Datensatz haben wir ein Attribut <em>ScaleRank</em>, das mit der Größe der Seen zusammenhängt. Wir können dies nutzen, um die Seen unterschiedlich darzustellen. Im LAYER-Objekt fügen wir ein weiteres CLASS-Objekt kurz vor unserem aktuellen hinzu:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LAYER</span>
   <span class="n">NAME</span> <span class="s2">&quot;Lakes&quot;</span>
@@ -298,7 +264,7 @@ differently using multiple CLASS objects.</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last">Learn more about <a class="reference external" href="https://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> in MapServer.</p>
+<p class="last">Lernen Sie mehr über <a class="reference external" href="http://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> im MapServer.</p>
 </div>
 </div>
 <div class="section" id="publish-your-data-as-ogc-wms-web-map-service">
@@ -307,11 +273,11 @@ differently using multiple CLASS objects.</p>
 <div class="section" id="using-qgis-desktop-to-load-your-ogc-wms">
 <h3>Verwenden von QGIS Desktop zum Laden Ihres OGC WMS<a class="headerlink" href="#using-qgis-desktop-to-load-your-ogc-wms" title="Link zu dieser Überschrift">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Start QGIS via <span class="menuselection">Geospatial ‣ Desktop GIS ‣ QGIS Desktop</span>. Go to <span class="menuselection">Layer ‣ Add Layer ‣ Add WMS/WMTS Layer</span>.</p>
+<li><p class="first">Starten Sie QGIS über :menuselection:‘Geospatial –&gt; Desktop GIS –&gt; QGIS Desktop‘. Gehen Sie zu :menuselection:‘Layer –&gt; Layer hinzufügen –&gt; WMS/WMTS Layer hinzufügen…‘.</p>
 </li>
-<li><p class="first">Click button <strong>New</strong> and add a name and your Service URL</p>
+<li><p class="first">Klicken Sie auf die Schaltfläche <strong>Neu</strong>, fügen Sie einen Namen und Ihre Service-URL hinzu und speichern Sie Ihre Einstellungen:</p>
 </li>
-<li><p class="first">Save your settings:</p>
+<li><p class="first">Speichern Sie Ihren neuen Benutzer.</p>
 <p><a class="reference external" href="http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=GetCapabilities&amp;VERSION=1.3.0">http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=GetCapabilities&amp;VERSION=1.3.0</a></p>
 </li>
 </ol>
@@ -323,13 +289,10 @@ differently using multiple CLASS objects.</p>
 <h2><a class="toc-backref" href="#id7">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Dies ist ein einfaches Beispiel und Sie können noch viel, viel mehr machen. Die MapServer Projekt Webseite enthält zahlreiche Hilfen, um Ihnen einen einfachen Einstieg zu ermöglichen. Hier sind ein paar Tipps, wo sie als nächstes nachschauen können:</p>
 <ul class="simple">
-<li>Read the <a class="reference external" href="https://mapserver.org/introduction.html#introduction">Introduction to MapServer</a>.</li>
-<li>Have a look at the <a class="reference external" href="https://www.mapserver.org/tutorial/index.html">MapServer Tutorial</a> which contains more Mapfile
-examples.</li>
-<li>Check the <a class="reference external" href="https://www.mapserver.org/ogc/index.html">OGC Support and Configuration</a> to learn more about OGC
-standards in MapServer (WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS, etc.).</li>
-<li>Ready to use MapServer? Then join the community on the <a class="reference external" href="https://www.mapserver.org/community/lists.html">Mailing Lists</a> to exchange ideas, discuss
-potential software improvements and ask questions.</li>
+<li>Lesen Sie die <a class="reference external" href="http://mapserver.org/introduction.html#introduction">Introduction to MapServer</a>.</li>
+<li>Schauen Sie sich das <a class="reference external" href="http://www.mapserver.org/tutorial/index.html">MapServer Tutorial</a> an, es enthält weitere Mapdatei-Beispiele.</li>
+<li>Lesen Sie über <a class="reference external" href="http://www.mapserver.org/ogc/index.html">OGC Support and Configuration</a> um mehr über OGC Standards im MapServer (WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS, etc.) zu lernen.</li>
+<li>Bereit, mit dem MapServer zu arbeiten ? Dann tragen Sie sich in die <a class="reference external" href="http://www.mapserver.org/community/lists.html">Mailing Listen</a> der Community ein, um Ideen auszutauschen, Verbesserungen zu diskutieren und Fragen zu stellen.</li>
 </ul>
 </div>
 </div>

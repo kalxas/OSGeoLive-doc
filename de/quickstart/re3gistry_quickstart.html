@@ -72,139 +72,94 @@
   <a class="reference external image-reference" href="https://inspire.ec.europa.eu/about-inspire/563"><img alt="../../_images/logo_inspire.png" class="align-right" src="../../_images/logo_inspire.png" /></a>
 <div class="section" id="re3gistry-quickstart">
 <h1>Re3gistry Quickstart<a class="headerlink" href="#re3gistry-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
-<p>The Re3gistry 2 is a reusable open source solution for managing and sharing
-„reference codes“. It provides a consistent central access point where labels
-and descriptions for reference codes can be easily browsed by humans and
-retrieved by machines.  Reference codes are exchanged between applications to
-uniquely reference some ‘thing’. They can be used to define sets of permissible
-values for a data field or to provide a reference or context for the data being
-exchanged. Examples are enumerations, controlled vocabularies, taxonomies,
-thesauri or, simply, ‘lists of things’.  The Re3gistry 2 supports organisations
-in managing and updating reference codes in a consistent way.</p>
-<p>This Quick Start describes how to:</p>
+<p>Die Re3gistry 2 ist eine wiederverwendbare Open-Source-Lösung zum Verwalten und Freigeben von „Referenzcodes“. Das Programm bietet einen konsistenten zentralen Zugangspunkt, über den Schlagworte und Beschreibungen für Referenzcodes leicht von Menschen durchsucht und von Maschinen abgerufen werden können.  Referenzcodes werden zwischen Anwendungen ausgetauscht, um auf einige „Dinge“ zu verweisen. Sie können verwendet werden, um Sätze zulässiger Werte für ein Datenfeld zu definieren oder um einen Verweis oder Kontext für die ausgetauschten Daten bereitzustellen. Beispiele sind Aufzählungen, kontrollierte Vokabeln, Taxonomien, Thesauri oder einfach „Listen von Dingen“. Die Re3gistry 2 unterstützt Organisationen bei der konsistenten Verwaltung und Aktualisierung von Referenzcodes.</p>
+<p>Dieser Quickstart beschreibt, wie Sie:</p>
 <ul class="simple">
-<li>Start and install the Re3gistry using the wizard (first start only)</li>
-<li>Manage data from the <code class="docutils literal"><span class="pre">pgAdmin</span></code> client.</li>
+<li>Starten und Installieren der Re3gistry mit dem Assistenten (nur erster Start)</li>
+<li>Das Datenmanagement über den grafische Datenbank-Client <code class="docutils literal"><span class="pre">pgAdmin</span></code>.</li>
 </ul>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-the-re3gistry" id="id1">Start the Re3gistry</a></li>
-<li><a class="reference internal" href="#introduction-to-the-re3gistry-2" id="id2">Introduction to the Re3gistry 2</a></li>
-<li><a class="reference internal" href="#users-roles-and-groups" id="id3">Users, roles and groups</a></li>
-<li><a class="reference internal" href="#what-next" id="id4">What next?</a></li>
+<li><a class="reference internal" href="#start-the-re3gistry" id="id1">Starten Sie die Re3gistry</a></li>
+<li><a class="reference internal" href="#introduction-to-the-re3gistry-2" id="id2">Einführung in die Re3gistry 2</a></li>
+<li><a class="reference internal" href="#users-roles-and-groups" id="id3">Benutzer, Rollen und Gruppen</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">Was kommt als Nächstes?</a></li>
 </ul>
 </div>
 <div class="section" id="start-the-re3gistry">
-<h2><a class="toc-backref" href="#id1">Start the Re3gistry</a><a class="headerlink" href="#start-the-re3gistry" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Choose <em>‚Start Re3gistry‘</em> from the <span class="menuselection">Geospatial ‣ Web Services
-‣ Re3gistry</span> menu.  The application will take a few moments to start up.
-Firefox opens the <em>Re3gistry landing page</em> (you can also open this manually by
-pointing your browser to <a class="reference external" href="http://localhost:8080/re3gistry2">http://localhost:8080/re3gistry2</a>).</p>
-<p>If this is the first start, the Re3gistry will launch the installation wizard.
-This wizard will guide the user to the setup and first run of the tool.</p>
+<h2><a class="toc-backref" href="#id1">Starten Sie die Re3gistry</a><a class="headerlink" href="#start-the-re3gistry" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wählen Sie <em>‚Re3gistry starten‘</em> aus dem Menü :menuselection:‘Geospatial –&gt; Web Services –&gt; Re3gistry‘.  Die Anwendung wird einige Augenblicke dauern, um zu starten. Firefox öffnet die <em>Re3gistry-Zielseite</em> (Sie können diese auch manuell öffnen, indem Sie Ihren Browser auf <a class="reference external" href="http://localhost:8080/re3gistry2">http://localhost:8080/re3gistry2</a> zeigen).</p>
+<p>Wenn dies der erste Start ist, startet der Re3gistry-Assistent den Installationsassistenten. Dieser Assistent führt den Benutzer zum Setup und zur ersten Ausführung des Programms.</p>
 <ul class="simple">
-<li>The first page is just an introductory description. Click on „continue“.</li>
-<li>The „Registry manager“ page allows you to define the account for the system
-administration (Registry manager). Insert a valid e-mail address and a
-password. Then click on „Save and continue“.</li>
-<li>The next step allows you to choose between 2 options:<ul>
-<li>Installation: choose this option if you want to
-install the Re3gistry software for the first time and to create a registry
-from scratch.</li>
-<li>Migration: choose this option if you want to upgrade a pre-existing
-Re3gistry instance. This option will keep your settings and content. Note
-that this option will only work on an existing instance running on Re3gistry
-version 1.3.X.</li>
+<li>Die erste Seite ist nur eine einführende Beschreibung. Klicken Sie auf „Weiter“.</li>
+<li>Auf der Seite „Registrierungsmanager“ können Sie das Konto für die Systemadministration (Registry Manager) definieren. Geben Sie eine gültige E-Mail-Adresse und ein Kennwort ein. Klicken Sie dann auf „Speichern und fortfahren“.</li>
+<li>Im nächsten Schritt können Sie zwischen zwei Optionen wählen:<ul>
+<li>Installation: Wählen Sie diese Option, wenn Sie die Re3gistry-Software zum ersten Mal installieren und eine Registrierung von Grund auf neu erstellen möchten.</li>
+<li>Migration: Wählen Sie diese Option, wenn Sie eine bereits vorhandene Re3gistry-Instanz aktualisieren möchten. Mit dieser Option bleiben Ihre Einstellungen und Inhalte erhalten. Beachten Sie, dass diese Option nur auf einer vorhandenen Instanz funktioniert, die auf Re3gistry Version 1.3.X ausgeführt wird.</li>
 </ul>
 </li>
 </ul>
-<p><strong>Installation option</strong></p>
-<p>In case the „Installation“ option is chosen, the basic configuration for the new
-registry will be requested.</p>
+<p><strong>Installationsoption</strong></p>
+<p>Falls die Option „Installation“ gewählt wird, wird die Grundkonfiguration für die neue Registrierung angefordert.</p>
 <ul class="simple">
-<li>System languages: the system languages are the languages supported and handled
-by the Re3gistry 2. Note that you can select one or more system languages.</li>
-<li>Master language: the master language is the one used by the Re3gistry 2 to
-handle multilingualism. Note that this will require all content to be
-available in the chosen master language.</li>
-<li>Base URI: the base URI will be part of the public URL, generally this should
-match with your own domain name: <cite>**http://example.com**/registry</cite></li>
-<li>Local ID: the local ID will be part of the public URL, generally the path
-following the domain name: <cite>http://example.com/**registry**</cite></li>
-<li>Label: the label of the registry will be the ‘title’ of the Re3gistry 2
-instance. It will be shown in the registry’s landing page.</li>
-<li>Content summary: this text should shortly describe what would be available
-under your Re3gistry 2 instance. It will be shown in the registry’s landing
-page.</li>
+<li>Systemsprachen: Die Systemsprachen sind die Sprachen, die von der Re3gistry 2 unterstützt und verarbeitet werden. Beachten Sie, dass Sie eine oder mehrere Systemsprachen auswählen können.</li>
+<li>Mastersprache: Die Hauptsprache ist diejenige, die von der Re3gistry 2 für die Mehrsprachigkeit verwendet wird. Beachten Sie, dass dies voraussetzt, dass alle Inhalte in der gewählten Hauptsprache verfügbar sind.</li>
+<li>Base-URI: Der Base-URI ist Teil der öffentlichen URL, im Allgemeinen sollte diese mit ihrem eigenen Domänennamen übereinstimmen: ‚<strong>http://example.com</strong>/registry‘</li>
+<li>Local ID: Die local ID ist Teil der öffentlichen URL, im Allgemeinen der Pfad, der dem Domänennamen folgt: ‚<a class="reference external" href="http://example.com/">http://example.com/</a><strong>registry</strong>‘</li>
+<li>Label: Bezeichnung der Registrierung ist der ‚Titel‘ der Re3gistry 2-Instanz. Sie wird auf der Zielseite der Registrierung angezeigt.</li>
+<li>Inhaltszusammenfassung: Dieser Text sollte in Kürze beschreiben, was unter Ihrer Re3gistry 2-Instanz verfügbar wäre. Sie wird auf der Zielseite der Registrierung angezeigt.</li>
 </ul>
-<p>After filling all the information, click on „Save and continue“.</p>
-<p>The next step will present a summary of the information inserted. If all the
-fields are correct, click on „Install“ to begin the installation.  Once the
-installation is finished, the user is redirected to the login page.</p>
-<p><strong>Migration option</strong></p>
-<p>In case the „Migration“ option is chosen, the details of the database from the
-existing Re3gistry installation are requested.</p>
+<p>Nachdem Sie alle Informationen gefüllt haben, klicken Sie auf „Speichern und fortfahren“.</p>
+<p>Im nächsten Schritt wird eine Zusammenfassung der eingefügten Informationen angezeigt. Wenn alle Felder korrekt sind, klicken Sie auf „Installieren“, um mit der Installation zu beginnen.  Sobald die Installation abgeschlossen ist, wird der Benutzer zur Anmeldeseite umgeleitet.</p>
+<p><strong>Migrationsoption</strong></p>
+<p>Falls die Option „Migration“ gewählt wird, werden die Details der Datenbank aus der vorhandenen Re3gistry-Installation angefordert.</p>
 <ul class="simple">
-<li>Fill the requested fields and</li>
-<li>click the „Save and continue“ button. You will then get a page containing a
-summary of the data retrieved from the existing instance of the Re3gistry.</li>
-<li>Click on „Install“ to begin the migration. An information page will be shown.</li>
+<li>Füllen Sie die angeforderten Felder aus und</li>
+<li>klicken Sie auf die Schaltfläche „Speichern und fortfahren“. Sie erhalten dann eine Seite mit einer Zusammenfassung der Daten, die von der vorhandenen Instanz des Re3gistry abgerufen wurden.</li>
+<li>Klicken Sie auf „Installieren“, um die Migration zu starten. Eine Informationsseite wird angezeigt.</li>
 </ul>
-<p>Now you can close the browser and the system will notify you via e-mail using
-the address specified in the „Registry manager“ definition step.</p>
+<p>Jetzt können Sie den Browser schließen und das System benachrichtigt Sie per E-Mail unter der im Definitionsschritt „Registrierungsmanager“ angegebenen Adresse.</p>
 </div>
 <div class="section" id="introduction-to-the-re3gistry-2">
-<h2><a class="toc-backref" href="#id2">Introduction to the Re3gistry 2</a><a class="headerlink" href="#introduction-to-the-re3gistry-2" title="Link zu dieser Überschrift">¶</a></h2>
-<p>The Re3gistry editing interface allows to graphically manage the complete
-life-cycle of reference codes, such as code lists, enumerations, controlled
-vocabularies, taxonomies, thesauri or, simply, ‚lists of things‘.  If you choose
-the „installation mode“ from the wizard, the first time you log in to the
-system, you will have an empty registry. You can then start populating it using
-the tools provided by the editing interface.  If you choose the „migration mode“
-from the wizard, you will find the registers imported from the older version of
-the tool.</p>
-<p>For detailed documentation on the editing interface, please read the <a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">user
-manual</a>.</p>
+<h2><a class="toc-backref" href="#id2">Einführung in die Re3gistry 2</a><a class="headerlink" href="#introduction-to-the-re3gistry-2" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Re3gistry-Bearbeitungsschnittstelle ermöglicht die grafische Verwaltung des gesamten Lebenszyklus von Referenzcodes, wie Codelisten, Enumerationen, kontrollierten Vokabeln, Taxonomien, Thesauri oder einfach „Listen von Dingen“.  Wenn Sie im Assistenten den „Installationsmodus“ auswählen, haben Sie bei der ersten Anmeldung am System eine leere Registrierung. Sie können dann mit dem Auffüllen beginnen, indem Sie die von der Bearbeitungsoberfläche bereitgestellten Werkzeuge verwenden. Wenn Sie im Assistenten den „Migrationsmodus“ auswählen, finden Sie die Register, die aus der älteren Version des Programms importiert wurden.</p>
+<p>Eine ausführliche Dokumentation zur Bearbeitungsoberfläche finden Sie im  <a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">Benutzerhandbuch</a>.</p>
 </div>
 <div class="section" id="users-roles-and-groups">
-<h2><a class="toc-backref" href="#id3">Users, roles and groups</a><a class="headerlink" href="#users-roles-and-groups" title="Link zu dieser Überschrift">¶</a></h2>
-<p>The Re3gistry 2 follows the <a class="reference external" href="https://www.iso.org/standard/54721.html">ISO 19135 Standard „Geographic information —
-Procedures for item registration“</a>.</p>
-<p>The possible user roles that the Re3gistry 2 manages are:</p>
+<h2><a class="toc-backref" href="#id3">Benutzer, Rollen und Gruppen</a><a class="headerlink" href="#users-roles-and-groups" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Re3gistry 2 folgt dem ISO 19135 Standard <a class="reference external" href="https://www.iso.org/standard/54721.html">Geographische Informationen — Verfahren für die Artikelregistrierung</a>.</p>
+<p>Die möglichen Benutzerrollen, die von Re3gistry 2 verwaltet werden, sind:</p>
 <ol class="arabic simple">
-<li>Registry manager</li>
-<li>Register owner</li>
-<li>Register manager</li>
-<li>Control body</li>
-<li>Submitting organisations</li>
+<li>Registrierungsmanager</li>
+<li>Registrieren Sie den Besitzer</li>
+<li>Registrieren Sie den Manager</li>
+<li>Kontrollorgan</li>
+<li>Einreichende Stelle</li>
 </ol>
-<p>The registry manager has the highest privileges in the system. This role can
-perform three different tasks:</p>
+<p>Der Registrierungs-Manager verfügt über die höchsten Berechtigungen im System. Diese Rolle kann drei verschiedene Aufgaben ausführen:</p>
 <ul class="simple">
-<li>Make any action on the reference codes.<ul>
-<li>The changes done to the reference codes need to undergo the approval
-workflow by obtaining the approval from the control body,</li>
+<li>Ausführen aller Aktionen für die Referenzcodes.<ul>
+<li>Die Änderungen an den Referenzcodes müssen dem Genehmigungsworkflow unterzogen werden, indem die Genehmigung von der Kontrollstelle einholen.</li>
 </ul>
 </li>
-<li>Manage the structural elements of the system.</li>
-<li>Change and edit information related to the registry and the registers,</li>
-<li>Add new registers,</li>
-<li>Manage the fields of the registry, registers, reference codes.<ul>
-<li>These structural changes do not need to have the approval workflow, and</li>
+<li>Verwalten Sie die Strukturelemente des Systems.</li>
+<li>Ändern und Bearbeiten von Informationen im Zusammenhang mit der Registrierung und den Registern,</li>
+<li>Neue Register hinzufügen,</li>
+<li>Verwalten der Felder der Registrierung, Register, Referenzcodes.<ul>
+<li>Diese strukturellen Änderungen müssen nicht über den Genehmigungsworkflow verfügen, und</li>
 </ul>
 </li>
-<li>Manage both users and groups.</li>
+<li>Verwalten Sie sowohl Benutzer als auch Gruppen.</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id4">What next?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
-<p>This was just a very brief overview of the Re3gistry.  There is more information
-in the demo installation and on the Re3gistry GitHub space.</p>
+<h2><a class="toc-backref" href="#id4">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dies war nur ein sehr kurzer Überblick über die Re3gistry.  Weitere Informationen finden Sie in der Demoinstallation und im GitHub-Bereich von Re3gistry.</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">User manual</a></li>
-<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/administrator-manual.md">Administrator manual</a></li>
-<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/developer-manual.md">Developer manual</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/user-manual.md">Benutzerhandbuch</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/administrator-manual.md">Administratorhandbuch</a></li>
+<li><a class="reference external" href="https://github.com/ec-jrc/re3gistry/blob/master/documentation/developer-manual.md">Entwicklerhandbuch</a></li>
 </ul>
 </div>
 </div>

@@ -76,23 +76,23 @@
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#create-an-html-page" id="id1">Create an HTML page</a></li>
-<li><a class="reference internal" href="#configure-openlayers-objects" id="id2">Configure OpenLayers objects</a></li>
-<li><a class="reference internal" href="#work-with-geoext-components" id="id3">Work with GeoExt components</a></li>
-<li><a class="reference internal" href="#create-a-viewport" id="id4">Create a viewport</a></li>
+<li><a class="reference internal" href="#create-an-html-page" id="id1">Erstellen einer HTML-Seite</a></li>
+<li><a class="reference internal" href="#configure-openlayers-objects" id="id2">Konfigurieren von OpenLayers-Objekten</a></li>
+<li><a class="reference internal" href="#work-with-geoext-components" id="id3">Arbeiten mit GeoExt-Komponenten</a></li>
+<li><a class="reference internal" href="#create-a-viewport" id="id4">Erstellen einer Ansicht</a></li>
 <li><a class="reference internal" href="#what-s-next" id="id5">Was kommt als Nächstes?</a></li>
 </ul>
 </div>
 <div class="section" id="create-an-html-page">
-<h2><a class="toc-backref" href="#id1">Create an HTML page</a><a class="headerlink" href="#create-an-html-page" title="Link zu dieser Überschrift">¶</a></h2>
-<p>In this step we will set-up an empty HTML page which will contain the application. We’ll use the text editor FeatherPad installed on OSGeoLive to create a new HTML file at <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code></p>
+<h2><a class="toc-backref" href="#id1">Erstellen einer HTML-Seite</a><a class="headerlink" href="#create-an-html-page" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesem Schritt richten wir eine leere HTML-Seite ein, die die Anwendung enthält. Wir verwenden den auf OSGeoLive installierten Texteditor FeatherPad, um eine neue HTML-Datei unter ‚‘/var/www/html/geoext/demo.html‘‘ zu erstellen.</p>
 <ol class="arabic">
-<li><p class="first">Open FeatherPad from the command line with elevated permissions, so you can save the file, using System Tools &gt; QTerminal and then running run the command below:</p>
+<li><p class="first">Öffnen Sie FeatherPad über die Befehlszeile mit erhöhten Berechtigungen, so dass Sie die Datei mit System Tools &gt; QTerminal speichern und dann den folgenden Befehl ausführen können:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
 </pre></div>
 </div>
 </li>
-<li><p class="first">Next paste in the HTML below, and save the file as <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. The file contains links to the ExtJS and OpenLayers JavaScript libraries, and two CSS files used to style ExtJS and OpenLayers components.</p>
+<li><p class="first">Fügen Sie den folgenden HTML-Code ein und speichern Sie die Datei als  <code class="docutils literal"><span class="pre">/var/www/html/geoext/demo.html</span></code>. Dieser enthält Links zu den JavaScript-Bibliotheken ExtJS und OpenLayers sowie zwei CSS-Dateien, die zum Formatieren von ExtJS- und OpenLayers-Komponenten verwendet werden.</p>
 <p>Wir verwenden die Klasse ‚‘Ext.Loader‘‘, um in GeoExt JavaScript-Quelldateien zu laden. Diese befinden sich alle im Ordner ‚‘src‘‘ in ‚‘/var/www/html/geoext/‘‘.</p>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -124,15 +124,14 @@
 </div>
 </li>
 </ol>
-<p>You should now be able to view an empty HTML page in Firefox at <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a></p>
-<p>All the JavaScript in the following sections should be pasted after the <code class="docutils literal"><span class="pre">//</span> <span class="pre">all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> comment in the
-<code class="docutils literal"><span class="pre">Ext.onReady</span></code> function. Placing code here ensures the JavaScript libraries have been loaded before running any custom JavaScript code.</p>
+<p>Sie sollten nun eine leere HTML-Seite im Firefox unter <a class="reference external" href="http://localhost/geoext/demo.html">http://localhost/geoext/demo.html</a> aufrufen können.</p>
+<p>Der gesamte JavaScript-Code der folgenden Sektion sollte nach dem folgenden Kommentar <code class="docutils literal"><span class="pre">//</span> <span class="pre">all</span> <span class="pre">JavaScript</span> <span class="pre">application</span> <span class="pre">code</span> <span class="pre">should</span> <span class="pre">go</span> <span class="pre">here</span></code> eingefügt werden. An dieser Stelle wird gewährleistet, dass die JavaScript-Bibliotheken geladen wurden, bevor benutzerdefinierter JavaScript-Code ausgeführt wird.</p>
 </div>
 <div class="section" id="configure-openlayers-objects">
-<h2><a class="toc-backref" href="#id2">Configure OpenLayers objects</a><a class="headerlink" href="#configure-openlayers-objects" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Next we will configure some OpenLayers objects used by the application.</p>
+<h2><a class="toc-backref" href="#id2">Konfigurieren von OpenLayers-Objekten</a><a class="headerlink" href="#configure-openlayers-objects" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Als Nächstes konfigurieren wir einige OpenLayers-Objekte, die von der Anwendung verwendet werden.</p>
 <ol class="arabic">
-<li><p class="first">First lets create a map tile layer using OpenStreetMap, and some WMS layers that are available from the MapServer Itasca demo on OSGeoLive.</p>
+<li><p class="first">Zunächst können Sie einen Kartenkachel-Layer mit OpenStreetMap und einige WMS-Layer erstellen, die über die MapServer Itasca-Demo auf OSGeoLive zur Verfügung stehen.</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">mapServerUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map&amp;&#39;</span><span class="p">;</span>
 
@@ -205,10 +204,10 @@
 </ol>
 </div>
 <div class="section" id="work-with-geoext-components">
-<h2><a class="toc-backref" href="#id3">Work with GeoExt components</a><a class="headerlink" href="#work-with-geoext-components" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Now the map and layers have been configured we are going to create and configure our GeoExt components.</p>
+<h2><a class="toc-backref" href="#id3">Arbeiten mit GeoExt-Komponenten</a><a class="headerlink" href="#work-with-geoext-components" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Jetzt sind die Karte und die Layer konfiguriert, wir werden nun unsere GeoExt-Komponenten erstellen und konfigurieren.</p>
 <ol class="arabic">
-<li><p class="first">First of all we will create a <code class="docutils literal"><span class="pre">GeoExt.component.Map</span></code>. This uses the OpenLayers map we created, and will be positioned in the ‚center‘ region of our application.</p>
+<li><p class="first">Zuallererst erstellen wir eine ‚‘GeoExt.component.Map‘‘. Diese verwendet die OpenLayers-Karte, die wir erstellt haben, und wird im Bereich „center“ unserer Anwendung positioniert</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">mapComponent</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;GeoExt.component.Map&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">map</span><span class="o">:</span> <span class="nx">map</span><span class="p">,</span>
     <span class="nx">region</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
@@ -282,7 +281,7 @@
 </ol>
 </div>
 <div class="section" id="create-a-viewport">
-<h2><a class="toc-backref" href="#id4">Create a viewport</a><a class="headerlink" href="#create-a-viewport" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Erstellen einer Ansicht</a><a class="headerlink" href="#create-a-viewport" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der letzte Schritt beim Erstellen unserer Anwendung besteht darin, ein Ansichtsfenster zu erstellen - einen Container, der die Anwendung darstellt, der alle oben erstellten Komponenten anzeigt.</p>
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vp</span> <span class="o">=</span> <span class="nx">Ext</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;Ext.container.Viewport&#39;</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">layout</span><span class="o">:</span> <span class="s1">&#39;border&#39;</span><span class="p">,</span>

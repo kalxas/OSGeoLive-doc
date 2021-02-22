@@ -76,15 +76,15 @@
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#mapnik-python" id="id1">Mapnik &amp; Python</a></li>
-<li><a class="reference internal" href="#mapnik-mapproxy" id="id2">Mapnik &amp; MapProxy</a></li>
+<li><a class="reference internal" href="#mapnik-python" id="id1">Mapnik と Python</a></li>
+<li><a class="reference internal" href="#mapnik-mapproxy" id="id2">Mapnik と MapProxy</a></li>
 <li><a class="reference internal" href="#what-next" id="id3">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="mapnik-python">
-<h2><a class="toc-backref" href="#id1">Mapnik &amp; Python</a><a class="headerlink" href="#mapnik-python" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Mapnik と Python</a><a class="headerlink" href="#mapnik-python" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Mapnikとそのpythonバインディングがインストールされ、このマシンでのスクリプト作成に使用できるようになります。</p>
-<p>Creating maps in python is easy with Mapnik. Open a terminal window and type <cite>python3</cite> on the command line to enter a python interpreter. Then try this:</p>
+<p>Mapnikを使えば、Pythonでマップを簡単に作成できます。ターミナルウィンドウを開き、コマンドラインに <cite>python3</cite> と入力して、pythonインタプリタを起動します。次の操作を試してください:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">::</span>
 </pre></div>
 </div>
@@ -98,20 +98,19 @@ mapnik.render_to_file(m,』world_population.png』)
 os.system(『xdg-open world_population.png』)</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The above code depends on having an XML stylesheet that Mapnik can read (world_population.xml), defining the layers
-to read data from and the styles to apply to those layers.</p>
+<p class="last">上記のコードは、Mapnikが読み取れるXMLスタイルシートを用意し、データを読み込むレイヤーと、それらのレイヤーに適用するスタイルを定義することで実現しています。</p>
 </div>
 </div>
 <div class="section" id="mapnik-mapproxy">
-<h2><a class="toc-backref" href="#id2">Mapnik &amp; MapProxy</a><a class="headerlink" href="#mapnik-mapproxy" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A basic demo application is available which demonstrates using Mapnik with MapProxy</p>
-<p>The demo uses the world_population.xml from the Mapnik demo.</p>
+<h2><a class="toc-backref" href="#id2">Mapnik と MapProxy</a><a class="headerlink" href="#mapnik-mapproxy" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>MapProxyでMapnikを使用する基本的なデモアプリケーションが利用可能です。</p>
+<p>このデモでは、Mapnikデモのworld_population.xmlを使用します。</p>
 <ol class="arabic simple">
-<li>Click <span class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</span>. The server starts in a terminal window (which stays open and outputs basic debugging information).</li>
-<li>Open the MapProxy demo application <a class="reference external" href="http://0.0.0.0:8011/demo/">http://0.0.0.0:8011/demo/</a></li>
-<li>You find the world population demo by Mapnik as a WMS layer and also the world population in combination with a the GeoServer layer topp:states (make sure GeoServer is running)</li>
-<li>You can use the MapProxy WMS in other applications for example in QGIS or in Mapbender (<a class="reference external" href="http://localhost/mapbender/application/mapbender_user">http://localhost/mapbender/application/mapbender_user</a>).</li>
-<li>Observe the output in the server terminal window.</li>
+<li><span class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</span> をクリックします。サーバはターミナルウィンドウで起動します(ターミナルウィンドウは開いたままになり、基本的なデバッグ情報を出力します)。</li>
+<li>MapProxyデモアプリケーションを <a class="reference external" href="http://0.0.0.0:8011/demo/">http://0.0.0.0:8011/demo/</a> で開きます</li>
+<li>WMSレイヤとしてのMapnikによる世界人口のデモと、GeoServerレイヤトップ:states(GeoServerが動作していることを確認)との組み合わせによる世界人口のデモをご覧ください。</li>
+<li>MapProxy WMSは、QGISやMapbender(<a class="reference external" href="http://localhost/mapbender/application/mapbender_user">http://localhost/mapbender/application/mapbender_user</a>)などの他のアプリケーションで使用できます。</li>
+<li>サーバターミナルウィンドウの出力を確認します。</li>
 </ol>
 </div>
 <div class="section" id="what-next">
@@ -119,7 +118,7 @@ to read data from and the styles to apply to those layers.</p>
 <ul class="simple">
 <li>チュートリアルに従ってMapnikについて学んでください: <a class="reference external" href="https://github.com/mapnik/mapnik/wiki/MapnikTutorials">https://github.com/mapnik/mapnik/wiki/MapnikTutorials</a></li>
 <li>最新のOSGeoLiveディストリビューションに含まれている次のディレクトリのファイルを見てください。<a class="reference external" href="file:///usr/local/share/mapnik/">file:///usr/local/share/mapnik/</a></li>
-<li>Visit the Mapnik website: <a class="reference external" href="https://mapnik.org">https://mapnik.org</a></li>
+<li>Mapnik Webサイトを訪問してください: <a class="reference external" href="https://mapnik.org">https://mapnik.org</a></li>
 </ul>
 </div>
 </div>

@@ -75,40 +75,28 @@
 <h1>pgRouting<a class="headerlink" href="#pgrouting" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="section" id="gis-tools">
 <h2>GIS ツール<a class="headerlink" href="#gis-tools" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>pgRouting extends the
-<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>
-geospatial database to provide geospatial routing and other network analysis functionality.</p>
+<p>pgRouting は地理空間における経路探索や他のネットワーク解析機能を提供するために <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> 地理空間データベースを拡張します。</p>
 <p>データベース上で経路探索を行う方法の利点には、以下のようなものがあります:</p>
 <ul class="simple">
-<li>Data and attributes can be modified by many clients, like <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a>
-and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> through JDBC, ODBC, or directly using Pl/pgSQL.
-The clients can either be PCs or mobile devices.</li>
+<li>データや属性を、多くのクライアント、例えば <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> や <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> から、JDBC や ODBC、もしくは 直接 PL/pgSQL を発行することで、変更することが可能です。クライアントは PC やモバイル端末でもかまいません。</li>
 <li>データの変更は、経路探索エンジン経由ですぐに反映させることが可能です。事前の計算処理は必要ありません。</li>
 <li>「コスト」 パラメータは SQL 経由で動的に計算可能で、複数の列やテーブルからの値を使用することも可能です。</li>
 </ul>
-<p>pgRouting is available under the GPLv2+ license and is supported by a growing community
-of individuals, businesses and organizations.</p>
+<p>pgRouting は GPLv2+ ライセンスで提供され、個人、企業及び団体からなる、成長中のコミュニティによってサポートされています。</p>
 <a class="reference internal image-reference" href="../../_images/pgrouting_screenshot.png"><img alt="pgrouting screenshot" class="align-right" src="../../_images/pgrouting_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h3>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>pgRouting は以下の機能を提供します:</p>
 <ul class="simple">
-<li>All Pairs Shortest Path
-* Johnson’s Algorithm
-* Floyd-Warshall Algorithm</li>
-<li>Shortest Path
-* A* algorithm
-* Dijkstra algorithm</li>
-<li>Bi-directional Shortest Path
-* A* algorithm
-* Dijkstra algorithm</li>
+<li>全点対間最短経路探索 * ジョンソンのアルゴリズム * ワーシャル-フロイド法</li>
+<li>最短経路探索 * A* アルゴリズム * ダイクストラ法</li>
+<li>双方向最短経路探索 * A* アルゴリズム * ダイクストラ法</li>
 <li>到達圏探索</li>
-<li>K-Shortest Path
-* Yen’s algorithm</li>
+<li>K-最短経路探索 * Yen のアルゴリズム</li>
 <li>巡回セールスマン問題</li>
-<li>And many more</li>
+<li>その他多数</li>
 </ul>
-<p>Learn more about pgRouting in the <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
+<p>pgRouting についてもっと知りたい場合は <a class="reference external" href="http://docs.pgrouting.org">ドキュメント</a> を参照してください。</p>
 </div>
 <div class="section" id="details">
 <h3>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -116,7 +104,7 @@ of individuals, businesses and organizations.</p>
 <p><strong>ライセンス:</strong> GNU General Public License (GPL) version 2</p>
 <p><strong>ソフトウェアバージョン:</strong> 3.1.0</p>
 <p><strong>対応プラットフォーム:</strong> Linux, Windows, Mac</p>
-<p><strong>API インターフェイス:</strong> SQL</p>
+<p><strong>API インタフェース:</strong> SQL</p>
 <p><strong>商用サポート:</strong> <a class="reference external" href="https://pgrouting.org/support.html">https://pgrouting.org/support.html</a></p>
 </div>
 <div class="section" id="quickstart">

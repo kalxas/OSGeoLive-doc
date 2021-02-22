@@ -73,15 +73,14 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="pgrouting-quickstart">
 <h1>pgRouting クイックスタート<a class="headerlink" href="#pgrouting-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>pgRouting is an extension that adds routing and other network analysis functionality
-to <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> databases.</p>
+<p>pgRouting は、経路探索と他のネットワーク解析機能を <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> データベースに追加する拡張機能です。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#enabling-pgrouting-in-a-database" id="id1">データベース内で pgRouting を有効化</a></li>
 <li><a class="reference internal" href="#loading-osm-data-with-osm2pgrouting" id="id2">osm2pgrouting での OSM データの読み込み</a></li>
-<li><a class="reference internal" href="#check-the-imported-data" id="id3">Check the imported data</a></li>
-<li><a class="reference internal" href="#inner-query" id="id4">Inner Query</a></li>
+<li><a class="reference internal" href="#check-the-imported-data" id="id3">インポートしたデータをチェックします</a></li>
+<li><a class="reference internal" href="#inner-query" id="id4">内部クエリ</a></li>
 <li><a class="reference internal" href="#pgr-dijkstra" id="id5">pgr_Dijkstra</a></li>
 <li><a class="reference internal" href="#what-next" id="id6">次のステップ</a></li>
 </ul>
@@ -90,13 +89,12 @@ to <a class="reference internal" href="../overview/postgis_overview.html"><span 
 <h2><a class="toc-backref" href="#id1">データベース内で pgRouting を有効化</a><a class="headerlink" href="#enabling-pgrouting-in-a-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このサンプルでは、 <cite>city_routing</cite> というデータベースを作成し、そのデータベースで pgRouting を有効化します。</p>
 <ul class="simple">
-<li>Open a <span class="menuselection">System Tools ‣ QTerminal</span> window and execute the commandline
-tool packaged with PostgreSQL <cite>psql</cite></li>
+<li><span class="menuselection">システムツール ‣ QTerminal</span> ウィンドウを開き、PostgreSQL の <cite>psql</cite> コマンドラインツールを実行します。</li>
 </ul>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span>
 </pre></div>
 </div>
-<p>At the <cite>psql</cite> prompt type:</p>
+<p><cite>psql</cite> プロンプトで次のように入力します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">city_routing</span><span class="p">;</span>
 \<span class="n">connect</span> <span class="n">city_routing</span><span class="p">;</span>
 <span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">pgrouting</span> <span class="n">CASCADE</span><span class="p">;</span>
@@ -112,25 +110,24 @@ tool packaged with PostgreSQL <cite>psql</cite></li>
 <span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Your version should be 3.1.0 or higher</p>
-<p>Exit the database</p>
+<p>バージョンは 3.1.0 かそれ以上である必要があります。</p>
+<p>データベースから抜けます</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="n">q</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-osm-data-with-osm2pgrouting">
 <h2><a class="toc-backref" href="#id2">osm2pgrouting での OSM データの読み込み</a><a class="headerlink" href="#loading-osm-data-with-osm2pgrouting" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>osm2pgrouting is a command-line tool for loading <cite>.osm</cite> files into the database
-with a pgRouting compatible format.</p>
-<p>Check the installed version</p>
+<p>osm2pgrouting は、pgRouting互換形式でデータベースに <cite>.osm</cite> ファイルをロードするためのコマンドラインツールです。</p>
+<p>インストールされているバージョンを確認します</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">osm2pgrouting</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>Output shows</p>
+<p>出力が表示されます</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">osm2pgrouting</span> <span class="n">Version</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">6</span>
 </pre></div>
 </div>
-<p>Load the data from osm file:</p>
+<p>osmファイルからデータをロードします:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzcat</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
 <span class="n">osm2pgrouting</span> \
   <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span> \
@@ -209,12 +206,12 @@ with a pgRouting compatible format.</p>
 </div>
 </div>
 <div class="section" id="check-the-imported-data">
-<h2><a class="toc-backref" href="#id3">Check the imported data</a><a class="headerlink" href="#check-the-imported-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Connect to the <cite>city_routing</cite> database</p>
+<h2><a class="toc-backref" href="#id3">インポートしたデータをチェックします</a><a class="headerlink" href="#check-the-imported-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><cite>city_routing</cite> データベースに接続します</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">city_routing</span>
 </pre></div>
 </div>
-<p>The <strong class="command">\d</strong> command will list all available tables and sequences</p>
+<p><strong class="command">\d</strong> コマンドは利用可能なすべてのテーブルとシーケンスをリストしますwill list</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>                  <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
  <span class="n">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="n">Type</span>   <span class="o">|</span> <span class="n">Owner</span>
 <span class="o">--------+--------------------------+----------+-------</span>
@@ -232,14 +229,13 @@ with a pgRouting compatible format.</p>
 <span class="p">(</span><span class="mi">11</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>osm2pgrouting loads the OSM identifiers <cite>osm_id</cite> and it also generates a unique
-identifier for all the data: <cite>id</cite> on the vertices, <cite>gid</cite> on the edges.</p>
+<p>osm2pgrouting は OSM 識別子 <cite>osm_id</cite> をロードし、すべてのデータに対して一意の識別子を生成します: 頂点に対しては <cite>id</cite>、エッジに対しては <cite>gid</cite> となります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="nb">id</span><span class="p">,</span> <span class="n">osm_id</span>
 <span class="n">FROM</span> <span class="n">ways_vertices_pgr</span>
 <span class="n">WHERE</span> <span class="nb">id</span> <span class="n">IN</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The results are:</p>
+<p>結果は次のとおりです:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="nb">id</span>  <span class="o">|</span>  <span class="n">osm_id</span>
 <span class="o">-----+----------</span>
  <span class="mi">100</span> <span class="o">|</span> <span class="mi">81622364</span>
@@ -249,20 +245,17 @@ identifier for all the data: <cite>id</cite> on the vertices, <cite>gid</cite> o
 </div>
 </div>
 <div class="section" id="inner-query">
-<h2><a class="toc-backref" href="#id4">Inner Query</a><a class="headerlink" href="#inner-query" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Most of the pgRouting functions have a parameter that is an SQL statement, it is
-called <strong>inner query</strong></p>
-<p>The inner SQL statement must always have field names <cite>id</cite>, <cite>source</cite>, <cite>target</cite>, and <cite>cost</cite>
-having <cite>reverse_cost</cite> as optional.</p>
-<p>Inner query that use <cite>gid</cite> as identifier of the segments</p>
+<h2><a class="toc-backref" href="#id4">内部クエリ</a><a class="headerlink" href="#inner-query" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ほとんどの pgRouting 関数には SQL ステートメントであるパラメータがあり、これは <strong>内部クエリ</strong> と呼ばれます。</p>
+<p>内部 SQL ステートメントは常にフィールド名 <cite>id</cite>、<cite>source</cite>、<cite>target</cite> および <cite>cost</cite> を持たなければならず、<cite>reverse_cost</cite> はオプションとして扱われます。</p>
+<p>セグメントの識別子として <cite>gid</cite> を使用する内部クエリ</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
        <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
        <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost</span>
 <span class="n">FROM</span> <span class="n">ways</span>
 </pre></div>
 </div>
-<p>Inner query that use <cite>gid</cite> as identifier of the segments and lenght as <cite>cost</cite>
-without the optional <cite>reverse_cost</cite></p>
+<p>セグメントの識別子として <cite>gid</cite>、長さを <cite>cost</cite> として使用する、オプションの <cite>reverse_cost</cite> なしの内部クエリ</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
        <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
        <span class="n">length</span> <span class="n">AS</span> <span class="n">cost</span>
@@ -272,8 +265,7 @@ without the optional <cite>reverse_cost</cite></p>
 </div>
 <div class="section" id="pgr-dijkstra">
 <h2><a class="toc-backref" href="#id5">pgr_Dijkstra</a><a class="headerlink" href="#pgr-dijkstra" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Run the Dijkstra shortest path function based on the time in seconds to traverse
-a segment on an undirected graph, using <cite>id</cite> as the identifier of a vertex</p>
+<p>ダイクストラ法による最短経路探索関数を、無向グラフ上のセグメントを横断する時間(秒)に基づき、頂点の識別子として <cite>id</cite> を使用して実行します</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -285,7 +277,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>The results are:</p>
+<p>結果は次のとおりです:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>      <span class="n">cost</span>          <span class="o">|</span>       <span class="n">agg_cost</span>
 <span class="o">-----+----------+------+-------+--------------------+--------------------</span>
    <span class="mi">1</span> <span class="o">|</span>        <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span> <span class="o">|</span>                  <span class="mi">0</span>
@@ -304,7 +296,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">A query that use the OSM identifier becomes:</p>
+<p class="rubric">OSM 識別子を使用するクエリは次のようになります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -316,8 +308,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Because the query is using fields <cite>source_osm</cite> and <cite>target_osm</cite> the query aliases them to have
-the required names <cite>source</cite> and <cite>target</cite>.</p>
+<p>クエリはフィールド <cite>source_osm</cite> と <cite>target_osm</cite> を使用しているので、クエリは <cite>source</cite> と <cite>target</cite> という必要な名前となるよう、別名を付けます。</p>
 <p>出力は:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span>    <span class="n">node</span>    <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>        <span class="n">cost</span>        <span class="o">|</span>      <span class="n">agg_cost</span>
 <span class="o">-----+----------+------------+-------+--------------------+--------------------</span>
@@ -337,9 +328,9 @@ the required names <cite>source</cite> and <cite>target</cite>.</p>
 <span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The costs are the same as in the first query</p>
-<p class="rubric">A query to get the geometry of the path</p>
-<p>The results of <cite>pgr_dijkstra</cite> need to be joined with the table ways.</p>
+<p>コストは最初のクエリと同じです</p>
+<p class="rubric">経路のジオメトリを取得するクエリ</p>
+<p><cite>pgr_dijkstra</cite> の結果は、ways テーブルに結合する必要があります。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">rpad</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">the_geom</span><span class="p">::</span><span class="n">text</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="s2">&quot;the_geom (truncated)&quot;</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -352,8 +343,7 @@ the required names <cite>source</cite> and <cite>target</cite>.</p>
 <span class="n">JOIN</span> <span class="n">ways</span> <span class="n">AS</span> <span class="n">b</span> <span class="n">ON</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">edge</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The results, for visual purposes are truncated here, the geometries are much longer
-than shown</p>
+<p>結果は、ここでは表示のために切り捨てられています。ジオメトリは表示よりもはるかに長くなっています</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>                     <span class="n">the_geom</span> <span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
 <span class="o">-----+-------+--------------------------------------------------------------</span>
    <span class="mi">1</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span> <span class="mf">0102000020E6100000050000009</span><span class="n">F3825C56C3C4DC0D8367B56884A41C011</span>
@@ -376,10 +366,10 @@ than shown</p>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id6">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><strong>pgRouting Webサイト</strong> - pgRouting についてもっと知りたいときは、Webサイト <a class="reference external" href="https://pgrouting.org">https://pgrouting.org</a> を訪問してください。</li>
-<li><strong>pgRoutingドキュメント</strong>- <a class="reference external" href="https://docs.pgrouting.org">https://docs.pgrouting.org</a> で最新のドキュメントを検索してください。</li>
-<li><strong>pgRouting Workshop</strong>-ワークショップ <cite>「pgRouting toolsとOpenStreetMap道路データを使用したFOSS4Gルーティング」</cite> は: <a class="reference external" href="https://workshop.pgrouting.org">https://workshop.pgrouting.org</a> で利用可能です。</li>
-<li><strong>osm2pgRouting loading data</strong> - <a class="reference external" href="https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3">https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3</a></li>
+<li><strong>pgRouting Webサイト</strong> - pgRouting の詳細については、プロジェクトのWebサイト <a class="reference external" href="https://pgrouting.org">https://pgrouting.org</a> を参照してください。</li>
+<li><strong>pgRouting ドキュメント</strong> - <a class="reference external" href="https://docs.pgrouting.org">https://docs.pgrouting.org</a> で最新のドキュメントを参照してください。</li>
+<li><strong>pgRouting ワークショップ</strong> - ワークショップ <cite>「pgRouting tools と OpenStreetMap 道路データを使用した FOSS4G ルーティング」</cite> は <a class="reference external" href="https://workshop.pgrouting.org">https://workshop.pgrouting.org</a> で利用可能です。</li>
+<li><strong>osm2pgRouting によるデータの読み込み</strong> - <a class="reference external" href="https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3">https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.3</a></li>
 </ul>
 </div>
 </div>

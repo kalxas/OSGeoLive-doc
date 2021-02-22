@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>QGIS Server Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>QGIS サーバ クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,12 +71,12 @@
             
   <a class="reference external image-reference" href="https://www.qgis.org/en/site/"><img alt="../../_images/logo_qgis_mapserver.png" class="align-right" src="../../_images/logo_qgis_mapserver.png" /></a>
 <div class="section" id="qgis-server-quickstart">
-<h1>QGIS Server Quickstart<a class="headerlink" href="#qgis-server-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>QGISサーバは、GIS(QGIS)デスクトップアプリケーションと同じライブラリを使用して、Webマップサービス(WMS)を提供します。</p>
+<h1>QGIS サーバ クイックスタート<a class="headerlink" href="#qgis-server-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>QGIS サーバは、QGIS デスクトップアプリケーションと同じライブラリを使用して、Webマップサービス(WMS)を提供します。</p>
 <p>このクイックスタートでは、次の方法について説明します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>既存のQGISプロジェクトを開いて、QGISサーバでレンダリングしましょう。</li>
+<li>既存の QGIS プロジェクトを開いて、QGIS サーバでレンダリングしましょう。</li>
 <li>新規 QGIS プロジェクトを作成し、WMS をブラウザで直接開きます。</li>
 </ul>
 </div></blockquote>
@@ -85,53 +85,53 @@
 <ul class="simple">
 <li><a class="reference internal" href="#start-geoext-viewer" id="id1">GeoExt ビューアを起動する</a></li>
 <li><a class="reference internal" href="#edit-qgis-project" id="id2">QGISプロジェクトの編集</a></li>
-<li><a class="reference internal" href="#create-a-new-qgis-project" id="id3">新規QGISプロジェクトの作成</a></li>
+<li><a class="reference internal" href="#create-a-new-qgis-project" id="id3">新規 QGIS プロジェクトの作成</a></li>
 <li><a class="reference internal" href="#what-next" id="id4">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="start-geoext-viewer">
 <h2><a class="toc-backref" href="#id1">GeoExt ビューアを起動する</a><a class="headerlink" href="#start-geoext-viewer" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>OSGeoLiveには、GeoExt javascriptフレームワークにもとづくサンプル地図ビューアが収録されていますので、QGIS サーバをつかって地図をレンダリングしましょう。</p>
+<p>OSGeoLive には、GeoExt Javascript フレームワークにもとづくサンプル地図ビューアが収録されていますので、QGIS サーバをつかって地図をレンダリングしましょう。</p>
 <ol class="arabic simple">
-<li>Click <span class="menuselection">Geospatial ‣ Web Services ‣ QGIS Server</span>. You should see a browser window with a web map viewer showing a world map.</li>
+<li><span class="menuselection">Geospatial ‣ Web Services ‣ QGIS Server</span> をクリックします。ブラウザウィンドウに、世界のマップを表示するWebマップビューアが表示されます。</li>
 </ol>
 <img alt="../../_images/qgis_mapserver_browser.jpg" src="../../_images/qgis_mapserver_browser.jpg" />
 <p>あるいは、次のURLを使用してアプリケーションにアクセスすることもできます。 <a class="reference external" href="http://localhost/qgis_server">http://localhost/qgis_server</a></p>
 </div>
 <div class="section" id="edit-qgis-project">
 <h2><a class="toc-backref" href="#id2">QGISプロジェクトの編集</a><a class="headerlink" href="#edit-qgis-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>さて、これでQGISで地図スタイルを変更できるようになりました。</p>
+<p>さて、これで QGIS で地図スタイルを変更できるようになりました。</p>
 <ol class="arabic simple">
-<li>Click <span class="menuselection">Geospatial ‣ Desktop GIS ‣ QGIS</span>.</li>
+<li><span class="menuselection">Geospatial ‣ Desktop GIS ‣ QGIS</span> をクリックします。</li>
 <li>メニューバーから、 <span class="menuselection">Project ‣ Open</span> を選択します。</li>
-<li>Select <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> and press <span class="guilabel">Open</span>.<ul>
-<li>QGISでレンダリングされた同じ地図が表示されるはずです。さて、河川のスタイルを変更してwebマップビューアで確認してみましょう。</li>
+<li><code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> を選択して、 <span class="guilabel">Open</span> をクリックします。<ul>
+<li>QGIS でレンダリングされた同じ地図が表示されるはずです。さて、河川のスタイルを変更してWebマップビューアで確認してみましょう。</li>
 </ul>
 </li>
 <li>レイヤツリーから、 <code class="file docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines</span></code> をダブルクリックします。</li>
 <li>アウトラインオプションで、異なる青色へ変更してみましょう。</li>
-<li>Press <span class="guilabel">OK</span>. Rivers are now rendered in a new color.</li>
+<li><span class="guilabel">OK</span> をクリックします。河川が新しい色にレンダリングされました。</li>
 <li><span class="menuselection">Project ‣ Save</span> を選択して、プロジェクトを保存します。</li>
-<li>webブラウザをもういちど開きます。</li>
+<li>Webブラウザをもういちど開きます。</li>
 <li>拡大ズームします。河川が同じ色でレンダリングされていることがわかるはずです。</li>
 </ol>
 </div>
 <div class="section" id="create-a-new-qgis-project">
-<h2><a class="toc-backref" href="#id3">新規QGISプロジェクトの作成</a><a class="headerlink" href="#create-a-new-qgis-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">新規 QGIS プロジェクトの作成</a><a class="headerlink" href="#create-a-new-qgis-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic simple">
-<li>QGISをもう一度開きます。</li>
+<li>QGIS をもう一度開きます。</li>
 <li><span class="menuselection">Project ‣ New</span> を選択します。</li>
 <li><span class="menuselection">Layer ‣ Add Layer ‣ Add Vector Layer</span> をクリックします。</li>
 <li>データセット <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</span></code> をさがします。</li>
-<li>Press <span class="guilabel">Open</span>. You should see all world countries.</li>
+<li><span class="guilabel">Open</span> をクリックします。世界の国々のマップが表示されました。</li>
 <li><span class="menuselection">Project ‣ Save</span> を選択して、プロジェクトを保存します。</li>
 <li>ファイル名 <code class="file docutils literal"><span class="pre">/home/user/world.qgs</span></code> をつけて、 <span class="guilabel">Save</span> をクリックします。</li>
-<li>Open the <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/home/user/world.qgz&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=ne_10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a>. You should see all world countries, this time rendered by QGIS Server.</li>
+<li><a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/home/user/world.qgz&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=ne_10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a> を開きます。QGIS サーバでレンダリングされた世界地図が表示されるはずです。</li>
 </ol>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id4">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>To learn more about QGIS Server, a good starting point is the <a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">QGIS Server Guide</a>.</p>
+<p>QGIS サーバの詳細については、<a class="reference external" href="https://docs.qgis.org/3.10/en/docs/server_manual/">QGIS Server Guide</a> を参照してください。</p>
 <dl class="docutils">
 <dt>ドキュメント</dt>
 <dd><ul class="first last simple">
@@ -139,7 +139,7 @@
 </ul>
 </dd>
 </dl>
-<p>Debian/Ubuntuでのサーバ導入については:</p>
+<p>Debian/Ubuntu でのサーバ導入については:</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong class="command">apt-get install qgis-mapserver libapache2-mod-fcgid</strong></li>

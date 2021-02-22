@@ -27,7 +27,7 @@
     <link rel="search" title="Keresés" href="../search.html" />
     <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
     <link rel="next" title="OSGeoLive 14.0 Tartalom" href="../overview/overview.html" />
-    <link rel="prev" title="OSGEoLive gyorstalpaló a Hyper-V virtuális gépen futtatáshoz" href="hyperv_quickstart.html" />
+    <link rel="prev" title="OSGeoLive gyorstalpaló a Hyper-V virtuális gépen futtatáshoz" href="hyperv_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -71,7 +71,7 @@
             
   <div class="section" id="command-line-quickstart">
 <h1>Parancssori gyorstalpaló<a class="headerlink" href="#command-line-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
-<p>Amikor GNU/Linux operációs rendszerrel dolgozik mint például az OSGeoLive, Ubuntu, stb., jó ha tudjuk hogyan dolgozzunk a parancssorban.</p>
+<p>Amikor GNU/Linux operációs rendszerrel dolgozunkk mint például az OSGeoLive, Ubuntu, stb., jó ha tudjuk hogyan dolgozzunk a parancssorban.</p>
 <p>Ne aggódjon. Nem nehéz megtanulni, és rá fog jönni, hogy szórakoztató és nagyon hatékony.</p>
 <p>Ebben a gyorstalpalóban néhány alapparancsot tanulunk meg.</p>
 <p>A következő parancsok a terminál emulátor ablakban futnak.</p>
@@ -90,8 +90,8 @@
 <li><a class="reference internal" href="#services" id="id9">Szolgáltatások</a></li>
 <li><a class="reference internal" href="#how-to-edit-files" id="id10">Hogyan szerkesszünk fájlokat</a></li>
 <li><a class="reference internal" href="#owner-and-access-rights" id="id11">Tulajdonos és hozzáférési jogosultságok</a></li>
-<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12">Change the owner with <cite>chown</cite></a></li>
-<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13">Change access rights with <cite>chmod</cite></a></li>
+<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12">Tulajdon módosítás <cite>chown</cite>-nal</a></li>
+<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13">Hozzáférési jog módosítás <cite>chmod</cite>-dal</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id14">Kipróbálandó dolgok</a></li>
 <li><a class="reference internal" href="#what-next" id="id15">Mi a következő?</a></li>
 </ul>
@@ -126,11 +126,10 @@ pwd: pwd [-LP]
 <div class="section" id="how-to-navigate-in-the-file-system">
 <h2><a class="toc-backref" href="#id2">Hogyan navigálhatunk a fájlrendszerben?</a><a class="headerlink" href="#how-to-navigate-in-the-file-system" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Először meg kell ismernie, hogyan szervezik a fájlrendszert Linux alatt. A fájlrendszert egy fába rendezik. A «/» néven ismert gyökérkönyvtárral kezdődik. Minden fájl és könyvtár a gyökérkönyvtár («/») alatt található.</p>
-<p>Az aktuális felhasználó „<cite>user</cite>”, és a kezdőkönyvtára a «/home/user» helyen található. Bármikor, amikor megnyit egy terminál ablakot az a kezdőkönyvtárban indul (lásd pwd).</p>
+<p>Az aktuális felhasználó „<cite>user</cite>”, és a kezdőkönyvtára a <cite>/home/user</cite> helyen található. Bármikor, amikor megnyit egy terminál ablakot az a kezdőkönyvtárban indul (lásd pwd).</p>
 <p>A fájlrendszerben könnyen navigálhat a cd paranccsal.</p>
-<p>cd / a gyökérkönyvtárba visz cd /home/user a kezdőkönyvtárába visz ugyanaz mint a cd ~</p>
-<p><cite>cd ..</cite> moves you one directory to the top,
-<cite>cd</cite> user goes from your current location to the home directory of user. This is not the same as <cite>/user</cite></p>
+<p><cite>cd /</cite> a gyökérkönyvtárba visz <cite>cd /home/user</cite> a kezdőkönyvtárába visz ugyanaz mint a <cite>cd ~</cite></p>
+<p><cite>cd ..</cite> egy könyvtárral feljebb lép <cite>cd ` az aktuális helyről a felhasználó kezdőkönyvtárába megy. Ez nem ugyanaz mint a `/user</cite></p>
 <div class="admonition tip">
 <p class="first admonition-title">Javaslat</p>
 <p class="last">Használja a gépelés közben a tab billentyűt az útvonal automatikus kiegészítésére.</p>
@@ -158,7 +157,7 @@ pwd: pwd [-LP]
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Javaslat</p>
-<p class="last">You can pipe the information from a command to a file i.e. the command history. <cite>history</cite> displays the command history. With the following command it can be saved in a file.</p>
+<p class="last">A parancsból származó adatokat átirányíthatja egy fájlba, például az előző parancsokat. A <cite>history</cite> megjeleníti az előző parancsokat. A következő paranccsal ez egy fájlba menthető.</p>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">&gt;</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -185,7 +184,7 @@ pwd: pwd [-LP]
 </div>
 <div class="section" id="copy-files-and-directories">
 <h2><a class="toc-backref" href="#id6">Fájlok és könyvtárak másolása</a><a class="headerlink" href="#copy-files-and-directories" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Fájlokat másolhat az egyik helyről egy másikba.</p>
+<p>Fájlokat másolhat az egyik könyvtárból egy másikba.</p>
 <p>Fájl egy új fájlba másolása</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="n">hello_again</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -201,9 +200,7 @@ pwd: pwd [-LP]
 </div>
 <div class="section" id="who-is-sudo">
 <h2><a class="toc-backref" href="#id7">Ki az a sudo?</a><a class="headerlink" href="#who-is-sudo" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>With <cite>sudo</cite> you can do things that you are normally not allowed to.
-<cite>sudo</cite> runs commands with the rights of the superuser also known as root
-With <cite>sudo</cite> you can i.e. install more software, administrate services, change access rights and more fun. You will see the use of <cite>sudo</cite> in some of the following commands.</p>
+<p>A <cite>sudo</cite> segítségével olyan dolgokat csinálhat, melyek normál esetben nem engedélyezettek önnek. A <cite>sudo</cite> a rendszergazda, más néven root jogaival futtatja a parancsot. A <cite>sudo</cite>-val például további szoftvereket telepíthet, szolgáltatásokat adminisztrálhat, hozzáférési jogokat módosíthatja és még másokat. Néhány következő parancsban a <cite>sudo</cite> használatát láthatja.</p>
 </div>
 <div class="section" id="search-and-install-programs">
 <h2><a class="toc-backref" href="#id8">Programok keresése és telepítése</a><a class="headerlink" href="#search-and-install-programs" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
@@ -236,19 +233,19 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <div class="section" id="how-to-edit-files">
 <h2><a class="toc-backref" href="#id10">Hogyan szerkesszünk fájlokat</a><a class="headerlink" href="#how-to-edit-files" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Fájlokat szerkeszthetünk a terminál ablakban vagy megnyithatjuk őket egy külső programmal mint a Geany.</p>
-<p>In the terminal window you can use the <cite>vim</cite> editor (Vi IMproved). <cite>vim</cite> is very powerful and has many options.</p>
+<p>A terminál ablakban használhatja a <cite>vim</cite> (Vi IMproved) szerkesztőt. <cite>vim</cite>  nagyon hatékony és sok opcióval rendelkezik.</p>
 <p>Lásd még</p>
 <ul class="simple">
 <li><a class="reference external" href="https://help.ubuntu.com/community/VimHowto">https://help.ubuntu.com/community/VimHowto</a></li>
 <li><a class="reference external" href="https://vim.rtorr.com/lang/en_en">https://vim.rtorr.com/lang/en_en</a></li>
 </ul>
-<p>Open a file with <cite>vim</cite>:</p>
+<p>Egy fájl megnyitása <cite>vim</cite>-el:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>press <cite>i</cite> to switch to the input mode</li>
-<li><cite>ESC</cite> leaves the input mode</li>
+<li>nyomjon <cite>i</cite>-t az input módra váltáshoz</li>
+<li><cite>ESC</cite> kilépés az input módból</li>
 <li><cite>w</cite> módosításai mentése</li>
 <li><cite>:wq</cite> módosításai mentése és a fájl lezárása</li>
 <li><cite>q</cite> fájl lezárása</li>
@@ -257,9 +254,9 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 </div>
 <div class="section" id="owner-and-access-rights">
 <h2><a class="toc-backref" href="#id11">Tulajdonos és hozzáférési jogosultságok</a><a class="headerlink" href="#owner-and-access-rights" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>A hozzáférési jogok határozzák meg, hogy egy <cite>user</cite> vagy <cite>group</cite> vagy <cite>others</cite> hozzáférhetnek-e egy fájlhoz, és hogy milyen hozzáférésük van. Lehet <cite>read</cite> (olvasás), <cite>write</cite> (írás) vagy <cite>excecute</cite> (végrehajtás) hozzáférés.</p>
+<p>A hozzáférési jogok határozzák meg, hogy egy <cite>user</cite> (felhasználó) vagy <cite>group</cite> (csoport) vagy <cite>others</cite> (mindenki más) hozzáférhetnek-e egy fájlhoz, és hogy milyen hozzáférésük van. Lehet <cite>read</cite> (olvasás), <cite>write</cite> (írás) vagy <cite>excecute</cite> (végrehajtás) hozzáférés.</p>
 <p>A könyvtárakhoz vagy fájlokhoz tartozik egy tulajdonos és egy csoport. Alapértelmezés szerint a fájl/könyvtár létrehozója a tulajdonos. Ez a beállítás megváltoztatható. Megtanuljuk ezt a következő fejezetben.</p>
-<p>You can show the owner and group via <cite>ls -l</cite></p>
+<p>Megjelenítheti a tulajdonost és a csoportot az <cite>ls -l</cite> segítségével.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">user</span> <span class="n">user</span> <span class="mi">122</span> <span class="n">Dec</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">11</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
@@ -269,18 +266,18 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <li>az első karakter <cite>-</cite> fájloknál és <cite>d</cite> könyvtáraknál</li>
 <li><cite>user</cite> nevű a tulajdonos és a csoprot</li>
 </ul>
-<p>Access rights are listed at the beginning of the row:</p>
+<p>A hozzáférési jogok a sor elején vannak:</p>
 <ul class="simple">
-<li><cite>r</cite> read</li>
-<li><cite>w</cite> write</li>
-<li><cite>x</cite> execute</li>
+<li><cite>r</cite> olvasás</li>
+<li><cite>w</cite> írás</li>
+<li><cite>x</cite> végrehajtás</li>
 <li>első 3 karakter a tulajdonosra</li>
 <li>a következő 3 karakter a csoportra</li>
 <li>az utolsó 3 karakter a többiekre vonatkozik</li>
 </ul>
 </div>
 <div class="section" id="change-the-owner-with-chown">
-<h2><a class="toc-backref" href="#id12">Change the owner with <cite>chown</cite></a><a class="headerlink" href="#change-the-owner-with-chown" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Tulajdon módosítás <cite>chown</cite>-nal</a><a class="headerlink" href="#change-the-owner-with-chown" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">user</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
@@ -290,7 +287,7 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 </ul>
 </div>
 <div class="section" id="change-access-rights-with-chmod">
-<h2><a class="toc-backref" href="#id13">Change access rights with <cite>chmod</cite></a><a class="headerlink" href="#change-access-rights-with-chmod" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Hozzáférési jog módosítás <cite>chmod</cite>-dal</a><a class="headerlink" href="#change-access-rights-with-chmod" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
@@ -312,8 +309,8 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <li>4 olvasás</li>
 <li>2 írás</li>
 <li>1 végrehajtás</li>
-<li>660 - owner and group are allowed to read and write, other have no rights</li>
-<li>744 - owner can do everything, group and others can only read</li>
+<li>660 - tulajdonos és a csoport olvashatja és írhatja, a többieknek nincs semmi joga</li>
+<li>744 - tulajdonos mindent csinálhat, a csoport és a többiek csak olvashatják</li>
 </ul>
 <p>vagy használja így</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="n">u</span><span class="o">+</span><span class="n">rwx</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
@@ -324,7 +321,7 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <li>g = csoport</li>
 <li>o = többiek</li>
 <li>a = mindenki</li>
-<li>+/- jog: r = olvasás / w / írás / x = végrehajtás</li>
+<li>+/- jog: r = olvasás / w = írás / x = végrehajtás</li>
 </ul>
 </div>
 <div class="section" id="things-to-try">
@@ -333,10 +330,10 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <ul class="simple">
 <li>grep - minta keresés szövegben</li>
 <li>history | grep cd</li>
-<li>rm - remove a file</li>
-<li>rmdir - remove an empty directory</li>
-<li>mv - rename/move</li>
-<li>head - show the beginning of a file</li>
+<li>rm - fájl törlés</li>
+<li>rmdir - üres könyvtár törlése</li>
+<li>mv - átnevezés/átmozgatás</li>
+<li>head - fájl első sorainak megjelenítése</li>
 <li>tail - fájl utolsó sorainak megjelenítése</li>
 <li>find - fájl keresés a könyvtár hierarchiában</li>
 <li>locate - fájlok keresése név szerint</li>

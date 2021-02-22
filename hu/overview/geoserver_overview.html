@@ -75,7 +75,7 @@
 <h1>GeoServer<a class="headerlink" href="#geoserver" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <div class="section" id="web-service">
 <h2>Web szolgáltatás<a class="headerlink" href="#web-service" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>A GeoServer egy web szerver, mely  lehetővé teszi önnek, hogy különböző formátumú térképeket és adatokat szolgáltasson szabványos klienseknek mint például web böngészők és asztali GIS programok. Az adatokat szabványokon alapuló interfészeken keresztül publokálja, mint például WMS, WFS, WCS, WPS, Tile Cache és továbbiak. A GeoServer böngésző alapú kezelő felülettel érkezik és több adatforráshoz kapcsolódik a szerver oldalon.</p>
+<p>A GeoServer egy web szerver, mely  lehetővé teszi önnek, hogy különböző formátumú térképeket és adatokat szolgáltasson szabványos klienseknek mint például web böngészők és asztali GIS programok. Az adatokat szabványokon alapuló interfészeken keresztül publikálja, mint például WMS, WFS, WCS, WPS, Tile Cache és továbbiak. A GeoServer böngésző alapú kezelő felülettel érkezik és több adatforráshoz kapcsolódik a szerver oldalon.</p>
 <a class="reference internal image-reference" href="../../_images/geoserver_screenshot.png"><img alt="geoserver screenshot" class="align-right" src="../../_images/geoserver_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
 <h3>Alapfunkciók<a class="headerlink" href="#core-features" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
@@ -101,8 +101,8 @@
 </li>
 </ul>
 </dd>
-<dt><strong>Az adatokat biztonságos és gyors képekként szolgáltatja WMS és WMTS protokolok használatával:</strong></dt>
-<dd>Mivel az adatokat képként szolgáltatjuk, az adatai teljes biztonságban vannak. Hacsak nem digitalizálják újra  nincs lehetőség az adatainak ellopására. Az egyes térkép rétegek megjelenését SLD szabvány felhasználásával vezérelhető, mely lehetővé teszi az elemek színezését és címkézését.Az OGC szűrőkkel kombinálva ezeket a szabályokat, méretarány függő stílusokat implementálhatunk, lehető téve, hogy több részlet jelenjen meg ahogy a felhasználó nagyít. Címke ütközést, csoportosítást és prioritást is implementálták.</dd>
+<dt><strong>Az adatokat biztonságosan és gyorsan képként szolgáltatja WMS és WMTS protokollok használatával:</strong></dt>
+<dd>Mivel az adatokat képként szolgáltatjuk, az adatai teljes biztonságban vannak. Hacsak nem digitalizálják újra  nincs lehetőség az adatainak ellopására. Az egyes térképi rétegek megjelenése SLD szabvány felhasználásával vezérelhető, mely lehetővé teszi az elemek színezését és címkézését. Ezeket a szabályokat az OGC szűrőkkel kombinálva , méretarány függő stílusokat implementálhatunk, lehető téve, hogy több részlet jelenjen meg ahogy a felhasználó nagyít. Címke ütközést, csoportosítást és prioritást is implementálták.</dd>
 <dt><strong>Vektor adatok küldhetők a kliensnek a WFS protokoll használatával:</strong></dt>
 <dd>WFS kliens vektor adatokat tud letölteni és térkép megjelenítéshez, térinformatikai elemzéshez és más műveletekhez használja azok. Ha engedélyezett a felhasználó módosíthatja is az adatokat, és  a WFS-T protokoll segítségével visszaküldi a kiszolgálónak, hogy frissítse a tárolt adatok. Az adatok GML (tömörített) valamint más szabványos formátumokban mint például shape fájl és json  továbbíthatók.</dd>
 <dt><strong>Raszter adatok a WCS protokoll felhasználásával küldhetők a kliensnek:</strong></dt>

@@ -75,19 +75,14 @@
 <h1>pgRouting<a class="headerlink" href="#pgrouting" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="gis-tools">
 <h2>GIS Tools<a class="headerlink" href="#gis-tools" title="Link zu dieser Überschrift">¶</a></h2>
-<p>pgRouting extends the
-<a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a>
-geospatial database to provide geospatial routing and other network analysis functionality.</p>
+<p>pgRouting erweitert eine <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> Geo-Datenbank um Funktionen für “Kürzeste-Wege” Berechnung (Routing) und andere netzorientierte Algorithmen.</p>
 <p>Vorteile des Datenbank-Routing Konzepts sind:</p>
 <ul class="simple">
-<li>Data and attributes can be modified by many clients, like <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a>
-and <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a> through JDBC, ODBC, or directly using Pl/pgSQL.
-The clients can either be PCs or mobile devices.</li>
+<li>Daten und Attribute können mittels JDBC, ODBC oder direkt durch Pl/pgSQL von zahlreichen Anwendungen modifiziert werden, wie etwa von <a class="reference internal" href="qgis_overview.html"><span class="doc">QGIS</span></a> und <a class="reference internal" href="udig_overview.html"><span class="doc">uDig</span></a>. Solche Anwendungen können sowohl auf PCs als auch auf mobilen Geräten laufen.</li>
 <li>Änderungen an den Daten wirken sich unmittelbar auf das Routingergebnis aus. Es besteht keine Notwendigkeit, Daten vorzuberechnen.</li>
 <li>Der “Kosten” Parameter kann dynamisch mittels SQL berechnet werden und aus verschiedenen Attributen aus unterschiedlichen Tabellen zusammengesetzt sein.</li>
 </ul>
-<p>pgRouting is available under the GPLv2+ license and is supported by a growing community
-of individuals, businesses and organizations.</p>
+<p>pgRouting steht unter GPLv2 Lizens und wird von einer wachsenden Zahl von Nutzern, Organisationen und Unternehmen unterstützt.</p>
 <a class="reference internal image-reference" href="../../_images/pgrouting_screenshot.png"><img alt="pgrouting screenshot" class="align-right" src="../../_images/pgrouting_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
 <h3>Kernfunktionen<a class="headerlink" href="#core-features" title="Link zu dieser Überschrift">¶</a></h3>
@@ -96,19 +91,16 @@ of individuals, businesses and organizations.</p>
 <li>All Pairs Shortest Path
 * Johnson’s Algorithm
 * Floyd-Warshall Algorithm</li>
-<li>Shortest Path
-* A* algorithm
-* Dijkstra algorithm</li>
+<li>Shortest Path * A* Algorithmus * Dijkstra Algorithmus</li>
 <li>Bi-directional Shortest Path
 * A* algorithm
 * Dijkstra algorithm</li>
 <li>Einzugsbereichberechnung (Isolinien)</li>
-<li>K-Shortest Path
-* Yen’s algorithm</li>
+<li>K-Shortest Path * Yen’s Algorithmus</li>
 <li>Problem des Handlungsreisenden (Traveling Salesperson Problem, TSP)</li>
-<li>And many more</li>
+<li>Und vieles mehr</li>
 </ul>
-<p>Learn more about pgRouting in the <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
+<p>Weitere Details zu pgRouting finden sich in der <a class="reference external" href="http://docs.pgrouting.org">documentation</a>.</p>
 </div>
 <div class="section" id="details">
 <h3>Details<a class="headerlink" href="#details" title="Link zu dieser Überschrift">¶</a></h3>

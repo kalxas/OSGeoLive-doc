@@ -135,7 +135,7 @@
 <h2><a class="toc-backref" href="#id3">コマンドラインからspatialiteを実行する</a><a class="headerlink" href="#run-spatialite-from-the-command-line" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>スクリプトを使用したりクエリを自動化したりする必要があるユーザは、コマンドラインインタフェースからspatialiteデータベースを操作する利点を学習します。この例では、シェープファイルをロードし、highway 42の近くにある学校を検索します。</p>
 <ol class="arabic">
-<li><p class="first">Before working from the command line, we need to open a terminal window: <span class="menuselection">System Tools -&gt; LXTerminal</span>.</p>
+<li><p class="first">コマンドラインから作業する前に、ターミナルウィンドウ: <span class="menuselection">System Tools -&gt; LXTerminal</span> を開いてください。</p>
 </li>
 <li><p class="first">ターミナルで、次のように入力して <strong>spatialite</strong> でサンプルデータベースを開きます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spatialite</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">spatialite</span><span class="o">/</span><span class="n">trento</span><span class="o">.</span><span class="n">sqlite</span>
@@ -189,7 +189,7 @@ spatialite&gt; .loadshp data/north_carolina/shape/roadsmajor roads utf-8 3358
 </pre></div>
 </div>
 </li>
-<li><p class="first">最後に、次のコマンドを使用して、クエリを」comma separated values」テキストファイル」schools_rt42.txt」に出力します:</p>
+<li><p class="first">最後に、次のコマンドを使用して、クエリを 「カンマ区切り」 のテキストファイル 「schools_rt42.txt」 に出力します:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">spatialite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">mode</span> <span class="n">csv</span>
 <span class="n">spatialite</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">output</span> <span class="s2">&quot;schools_rt42.txt&quot;</span>
 <span class="n">spatialite</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">s</span><span class="o">.</span><span class="n">NAMESHORT</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRNUMBER</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">ADDRROOT</span>

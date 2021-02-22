@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OSGEoLive gyorstalpaló a virtuális gép futtatásához &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>OSGeoLive gyorstalpaló a virtuális gép futtatásához &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -70,12 +70,12 @@
           <div class="body" role="main">
             
   <div class="section" id="osgeolive-quickstart-for-running-in-a-virtual-machine">
-<h1>OSGEoLive gyorstalpaló a virtuális gép futtatásához<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<h1>OSGeoLive gyorstalpaló a virtuális gép futtatásához<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-virtual-machine" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <p>Ez a gyorstalpaló az OSGeoLive egy futtatási módját írja le a VirtualBox virtuális gépben. Más megoldásokhoz kövesse a linkeket a „Lásd még” szakaszt lentebb.</p>
 <div class="section" id="virtual-machine-advantages">
 <h2>Virtuális gép előnyei<a class="headerlink" href="#virtual-machine-advantages" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <ul class="simple">
-<li>A VM válaszolásideje sokkal gyorsabb mint a DVD-é és jellemzően összehasonlítható a  a közvetlenül a fogadó gépre történő telepítéssel.</li>
+<li>A VM válaszideje sokkal gyorsabb mint a DVD-é és jellemzően összehasonlítható a közvetlenül a fogadó gépre történő telepítéssel.</li>
 <li>Minden konfiguráció módosítás, szoftver frissítés és mentett fájlok megmaradnak, mint bármely „szokásos” számítógépen. Így:</li>
 </ul>
 <blockquote>
@@ -93,7 +93,7 @@
 <h2>Rendszer követelmények<a class="headerlink" href="#system-requirements" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <ul class="simple">
 <li>RAM: legalább 2GB. A Lubuntu rendszer jól fut 1 GB RAM-mal és legalább ugyanannyi memóriát kell fenntartani a gazda számítógépnek. Szóval összesen 2 GB szükséges a zökkenőmentes működéshez. Néhány alkalmazás számára, mint a GeoServer, legalább 2 GB RAM szükséges a virtuális gépben. Tehát ha lehetséges, fontolja meg, hogy 2 GB-ot vagy többet biztosítson virtuális gépének.</li>
-<li>Szabad merevlemez terület:: a <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról letöltött virtuális lemez fájl (vmdk) kitömörítve majdnem 10 GB. És további területre lesz szüksége a virtuális gépen dolgozáshoz. 20 GB egy megfelelő javasolt méret.</li>
+<li>Szabad merevlemez terület:: a <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról letöltött virtuális lemez fájl (vmdk) kitömörítve majdnem 10 GB. És további területre lesz szüksége a munkához a virtuális gépen. 20 GB egy megfelelő javasolt méret.</li>
 <li>CPU: bármilyen CPU megfelelő, de a „Virtualizációs technológiát” támogató processzorok gyorsabbak. A számítógépének processzorát <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">itt</a> ellenőrizheti.</li>
 </ul>
 <p>Az elmúlt 4-5 évben készített gépek többsége megfelel a követelményeknek.</p>
@@ -104,9 +104,9 @@
 <p>Töltse le a <a class="reference external" href="https://www.virtualbox.org/">Virtual Box-ot</a> a platformjához és telepítse a szoftvert.  Windowson futtassa a telepítőt vagy Ubuntu típusú linux rendszereken tegye a következőt:</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
-<p>Emellett töltse le az OSGeo virtuális lemez fájlt (vmdk) a  <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról. Kattintson a „Virtuális gép letöltés” gombra. Majd tömörítse ki a letöltött fájl (<a class="reference external" href="https://www.7-zip.org">7zip</a> használatával).</p>
+<p>Emellett töltse le az OSGeo virtuális lemez fájlt (vmdk) a  <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> oldalról. Kattintson a „Virtuális gép letöltés” gombra. Majd tömörítse ki a letöltött fájlt (<a class="reference external" href="https://www.7-zip.org">7zip</a> használatával).</p>
 <p><strong>Virtuális gép létrehozása</strong></p>
-<p>Indítsa el a virtuális gép alkalmazást és kattintson az Új gombra egy új VM létrehozásához, majd nyomja meg a Következő gombot.</p>
+<p>Indítsa el a virtuális gép alkalmazást és kattintson az Új (New) gombra egy új VM létrehozásához, majd nyomja meg a Következő (Next) gombot.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox.png"><img alt="../../_images/virtualbox.png" src="../../_images/virtualbox.png" style="width: 386.5px; height: 291.5px;" /></a>
 </div></blockquote>
@@ -123,7 +123,7 @@
 <div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
 </div></blockquote>
 <p><strong>Konfiguráció tippek és trükkök</strong></p>
-<p>A VM létrehozása után kattintson a Settings gombra. A „General” szakaszban nyissa meg az Advanced fület, és kattintson a „Show at top of screen” a Mini eszköztárnál.</p>
+<p>A VM létrehozása után kattintson a Settings gombra. A „General” szakaszban nyissa meg az Advanced fület, és kattintson a „Show at top of screen”-re a Mini eszköztárnál.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
 </div></blockquote>
@@ -138,6 +138,9 @@
 <p>Kiválaszthatja, hogy a megosztott mappa csak olvasható, és automatikusan elérhető (auto-mount) legyen. Miután kitöltötte a „Folder path” és a „Folder name” mezőket, kattintson az OK gombra, majd ismét az OK gombra a beállítások befejezéséhez és az ablak bezárásához.</p>
 <p><strong>Virtuális gép futtatása</strong></p>
 <p>Most töltse be a VM-et a Start (zöld nyíl) gombra kattintva.</p>
+<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
 <p>Amikor az ISO-t egy virtuális gépre telepíti, a felhasználó névnek „user”-nek kell lennie</p>
 <p>A „user” felhasználó nem tagja a „users” csoportnak az OSGeoLive virtuális gépen. Ez megakadályozza, hogy néhány eszköz az adatkönyvtárakba írjon és néhány szoftver elindulását megakadályozza.</p>
 <p>A megoldás a VMDK javítása a következő egyszeri eljárással:</p>

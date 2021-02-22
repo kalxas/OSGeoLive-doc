@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Command Line Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>コマンドライン クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="OSGeoLive 14.0 コンテンツ" href="../overview/overview.html" />
-    <link rel="prev" title="OSGeoLive Quickstart for Running in a Hyper-V Virtual Machine" href="hyperv_quickstart.html" />
+    <link rel="prev" title="Hyper-V 仮想マシン内での OSGeoLive 起動クイックスタート" href="hyperv_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -70,42 +70,42 @@
           <div class="body" role="main">
             
   <div class="section" id="command-line-quickstart">
-<h1>Command Line Quickstart<a class="headerlink" href="#command-line-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>When you work with GNU/Linux Operating Systems such as OSGeoLive, Ubuntu, etc., it is good to know how to work on the command line.</p>
-<p>Don’t worry. It is not difficult to learn and you will discover that it is fun and very powerful.</p>
-<p>In this quickstart you will learn some basic commands.</p>
-<p>The following commands run from within a Terminal Emulator window.</p>
-<p>Start a Terminal Emulator (<cite>QTerminal</cite> currently) from the <cite>Applications</cite> menu in the <cite>System Tools</cite> section. This gives you a Unix shell command prompt.</p>
+<h1>コマンドライン クイックスタート<a class="headerlink" href="#command-line-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>OSGeoLiveやUbuntuなどのGNU/Linuxオペレーティングシステムを使用している場合は、コマンドラインでの操作方法を知っておくことをお勧めします。</p>
+<p>心配しないでください。学習することは難しくありません。そして、それが楽しくてとても強力であることがわかるでしょう。</p>
+<p>このクイックスタートでは、いくつかの基本的なコマンドについて学習します。</p>
+<p>次のコマンドは、ターミナルエミュレータウィンドウから実行します。</p>
+<p><cite>アプリケーション</cite> メニューの <cite>システムツール</cite>  から、ターミナルエミュレータ (現在は <cite>QTerminal</cite> )を起動します。これにより、Unixシェルのコマンドプロンプトが表示されます。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#where-am-i" id="id1">Where am I?</a></li>
-<li><a class="reference internal" href="#how-to-navigate-in-the-file-system" id="id2">How to navigate in the file system?</a></li>
-<li><a class="reference internal" href="#create-a-directory" id="id3">Create a directory</a></li>
-<li><a class="reference internal" href="#how-to-create-a-new-file" id="id4">How to create a new file</a></li>
-<li><a class="reference internal" href="#show-me-what-is-in-a-directory" id="id5">Show me what is in a directory</a></li>
-<li><a class="reference internal" href="#copy-files-and-directories" id="id6">Copy files and directories</a></li>
-<li><a class="reference internal" href="#who-is-sudo" id="id7">Who is sudo?</a></li>
-<li><a class="reference internal" href="#search-and-install-programs" id="id8">Search and install programs</a></li>
-<li><a class="reference internal" href="#services" id="id9">Services</a></li>
-<li><a class="reference internal" href="#how-to-edit-files" id="id10">How to edit files</a></li>
-<li><a class="reference internal" href="#owner-and-access-rights" id="id11">Owner and access rights</a></li>
-<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12">Change the owner with <cite>chown</cite></a></li>
-<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13">Change access rights with <cite>chmod</cite></a></li>
-<li><a class="reference internal" href="#things-to-try" id="id14">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id15">What next?</a></li>
+<li><a class="reference internal" href="#where-am-i" id="id1">ここはどこですか?</a></li>
+<li><a class="reference internal" href="#how-to-navigate-in-the-file-system" id="id2">ファイルシステム内での操作方法</a></li>
+<li><a class="reference internal" href="#create-a-directory" id="id3">ディレクトリを作成</a></li>
+<li><a class="reference internal" href="#how-to-create-a-new-file" id="id4">新しいファイルを作成する方法</a></li>
+<li><a class="reference internal" href="#show-me-what-is-in-a-directory" id="id5">ディレクトリの内容を表示する</a></li>
+<li><a class="reference internal" href="#copy-files-and-directories" id="id6">ファイルとディレクトリーのコピー</a></li>
+<li><a class="reference internal" href="#who-is-sudo" id="id7">sudoとは?</a></li>
+<li><a class="reference internal" href="#search-and-install-programs" id="id8">検索とプログラムのインストール</a></li>
+<li><a class="reference internal" href="#services" id="id9">サービス</a></li>
+<li><a class="reference internal" href="#how-to-edit-files" id="id10">ファイルの編集方法</a></li>
+<li><a class="reference internal" href="#owner-and-access-rights" id="id11">ファイル所有者とアクセス権</a></li>
+<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12"><cite>chown</cite> で所有者を変更する</a></li>
+<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13"><cite>chmod</cite> でアクセス権を変更する</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id14">試してみること</a></li>
+<li><a class="reference internal" href="#what-next" id="id15">次のステップ</a></li>
 </ul>
 </div>
 <div class="section" id="where-am-i">
-<h2><a class="toc-backref" href="#id1">Where am I?</a><a class="headerlink" href="#where-am-i" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><cite>pwd</cite> shows the path of your current location.</p>
+<h2><a class="toc-backref" href="#id1">ここはどこですか?</a><a class="headerlink" href="#where-am-i" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><cite>pwd</cite> は現在の場所のパスを表示します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">You can ask all commands for help and get information on how they can be used and find out about additional options.</p>
+<p class="last">すべてのコマンドには、ヘルプを求めたり、それらの使用方法や追加オプションについての情報を得たりできるコマンドオプションがあります。</p>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span>pwd --help
 pwd: pwd [-LP]
@@ -124,24 +124,20 @@ pwd: pwd [-LP]
 </div>
 </div>
 <div class="section" id="how-to-navigate-in-the-file-system">
-<h2><a class="toc-backref" href="#id2">How to navigate in the file system?</a><a class="headerlink" href="#how-to-navigate-in-the-file-system" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>First you should get to know how the file system under Linux is organized. The file system is organized in a tree. It starts with the <cite>/</cite> known as root directory. All files and directories are under the root directory (<cite>/</cite>).</p>
-<p>The current user is 「<cite>user</cite>」 and has a home directory located at <cite>/home/user</cite>. Anytime you open a terminal window it will start in your home directory (see pwd).</p>
-<p>You can easily navigate in the file system with the command cd.</p>
-<p>cd / navigated to the root directory
-cd /home/user goes to your home directory
-same as
-cd ~</p>
-<p><cite>cd ..</cite> moves you one directory to the top,
-<cite>cd</cite> user goes from your current location to the home directory of user. This is not the same as <cite>/user</cite></p>
+<h2><a class="toc-backref" href="#id2">ファイルシステム内での操作方法</a><a class="headerlink" href="#how-to-navigate-in-the-file-system" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず、Linuxのファイルシステムがどのように構成されているかを知っておく必要があります。ファイルシステムは樹木(ツリー)状に構成されています。ルートディレクトリと呼ばれる <cite>/</cite> で始まります。すべてのファイルとディレクトリは、ルートディレクトリ( <cite>/</cite> )の下にあります。</p>
+<p>現在のユーザーは「 <cite>user</cite> 」で、 <cite>/home/user</cite> にホームディレクトリがあります。ターミナルウィンドウを開くと、ホームディレクトリから開きます(pwdを参照)。</p>
+<p>cdコマンドを使用すると、ファイルシステム内を簡単に移動できます。</p>
+<p>cd / では、ルートディレクトリに移動します。 cd  /home/user  は、cd ~ と同じで、ホームディレクトリに移動します。</p>
+<p><cite>cd ..</cite> はディレクトリを一つ上に移動します。 <cite>cd</cite> では、現在の場所からユーザーのホームディレクトリに移動します。これは <cite>/user</cite> と同じではありません</p>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">Use the tab key to autocomplete the path while you are typing.</p>
+<p class="last">入力中にTabキーを使用すれば、パスを自動補完入力します。</p>
 </div>
 </div>
 <div class="section" id="create-a-directory">
-<h2><a class="toc-backref" href="#id3">Create a directory</a><a class="headerlink" href="#create-a-directory" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You have write access in your user-directory. You can create files and directories there. Next we will create a directory for some command line tests.</p>
+<h2><a class="toc-backref" href="#id3">ディレクトリを作成</a><a class="headerlink" href="#create-a-directory" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>あなたディレクトリに書き込み権限があります。ファイルやディレクトリを作成できます。次に、コマンドラインテスト用のディレクトリを作成します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
 <span class="n">mkdir</span> <span class="n">demo</span> <span class="o">-</span> <span class="n">creates</span> <span class="n">the</span> <span class="n">directory</span> <span class="n">demo</span>
 <span class="n">cd</span> <span class="n">demo</span>
@@ -149,33 +145,33 @@ cd ~</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">You have a command history. You can navigate in the history with the arrow up and down key.</p>
+<p class="last">コマンド履歴があります。矢印の上下キーで履歴内を移動できます。</p>
 </div>
 </div>
 <div class="section" id="how-to-create-a-new-file">
-<h2><a class="toc-backref" href="#id4">How to create a new file</a><a class="headerlink" href="#how-to-create-a-new-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><cite>touch</cite> creates a new empty file.</p>
+<h2><a class="toc-backref" href="#id4">新しいファイルを作成する方法</a><a class="headerlink" href="#how-to-create-a-new-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><cite>touch</cite> をつかうと、新しい空のファイルを作成します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">demo</span>
 <span class="n">touch</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">You can pipe the information from a command to a file i.e. the command history. <cite>history</cite> displays the command history. With the following command it can be saved in a file.</p>
+<p class="last">パイプを使用して、コマンドからファイルに情報を渡すことができます。たとえば、コマンド履歴です。<cite>history</cite> では、コマンドの履歴を表示します。次のコマンドを使用すると、ファイルに保存できます。</p>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">&gt;</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="show-me-what-is-in-a-directory">
-<h2><a class="toc-backref" href="#id5">Show me what is in a directory</a><a class="headerlink" href="#show-me-what-is-in-a-directory" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You would like to know more about the content of a directory. <cite>ls</cite> is the program that gives you a lot of information.</p>
+<h2><a class="toc-backref" href="#id5">ディレクトリの内容を表示する</a><a class="headerlink" href="#show-me-what-is-in-a-directory" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ディレクトリの内容について詳しく知りたいです。<cite>ls</cite> は多くの情報を提供するプログラムです。</p>
 <ul class="simple">
-<li><cite>ls</cite> lists all files and directories</li>
-<li><cite>ls -l</cite> shows a more detailed list of the files/directories with time, user access rights</li>
-<li><cite>ls -a</cite> also shows hidden files</li>
-<li><cite>ls -al</cite> you can combine the different options</li>
-<li><cite>ls -1</cite> shows only the file names</li>
+<li><cite>ls</cite> はすべてのファイルとディレクトリをリストします</li>
+<li><cite>ls -l</cite> を使うと、時間、ユーザーのアクセス権限などの、ファイル/ディレクトリの詳細なリストを表示します。</li>
+<li><cite>ls -a</cite> は隠しファイルも表示します</li>
+<li><cite>ls -al</cite> 他のオプションとくみあわせることもできます。</li>
+<li><cite>ls -1</cite> は、ファイル名だけ表示します。</li>
 </ul>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">demo</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
@@ -187,47 +183,45 @@ cd ~</p>
 </div>
 </div>
 <div class="section" id="copy-files-and-directories">
-<h2><a class="toc-backref" href="#id6">Copy files and directories</a><a class="headerlink" href="#copy-files-and-directories" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can copy files from one location to another.</p>
-<p>Copy a file to a new file</p>
+<h2><a class="toc-backref" href="#id6">ファイルとディレクトリーのコピー</a><a class="headerlink" href="#copy-files-and-directories" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ファイルを一方の場所から他へコピーすることができます。</p>
+<p>ファイルをあたらしいファイルへコピー</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="n">hello_again</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>Copy a file to another directory</p>
+<p>ファイルを他のディレクトリにコピー</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Copy a whole directory to a new location (-R recursive)</p>
+<p>ディレクトリ全体をあたらしい場所へコピー (-R 再帰的にたどる)</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span> <span class="o">/</span><span class="n">tmp</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="who-is-sudo">
-<h2><a class="toc-backref" href="#id7">Who is sudo?</a><a class="headerlink" href="#who-is-sudo" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>With <cite>sudo</cite> you can do things that you are normally not allowed to.
-<cite>sudo</cite> runs commands with the rights of the superuser also known as root
-With <cite>sudo</cite> you can i.e. install more software, administrate services, change access rights and more fun. You will see the use of <cite>sudo</cite> in some of the following commands.</p>
+<h2><a class="toc-backref" href="#id7">sudoとは?</a><a class="headerlink" href="#who-is-sudo" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><cite>sudo</cite> を使って、通常は実行できないコマンドを実行できるようにします。<cite>sudo</cite> は、コマンドを通常 root ユーザとして知られるスーパーユーザーの権限で実行します。 <cite>sudo</cite> をつかうと、ソフトウエアを導入するとか、サービスの管理をするとか、アクセス権限を変更するとか、いろいろ可能です。次のコマンドは、 <cite>sudo</cite> の用例です。</p>
 </div>
 <div class="section" id="search-and-install-programs">
-<h2><a class="toc-backref" href="#id8">Search and install programs</a><a class="headerlink" href="#search-and-install-programs" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Show information about programs.</p>
+<h2><a class="toc-backref" href="#id8">検索とプログラムのインストール</a><a class="headerlink" href="#search-and-install-programs" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>プログラムの情報を表示</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">show</span> <span class="n">postgis</span>
 </pre></div>
 </div>
-<p>Search for programs</p>
+<p>プログラムを検索する</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">search</span> <span class="n">postgis</span>
 </pre></div>
 </div>
-<p>Install programs</p>
+<p>プログラムをインストールする</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">sl</span>
 </pre></div>
 </div>
-<p>You will love the program <cite>sl</cite>. Run the new program with <cite>sl</cite> see also <cite>apt show sl</cite>.</p>
+<p><cite>sl</cite> プログラムを気にいるとおもいますよ。<cite>sl</cite> で新しいプログラムを実行してください。<cite>apt show sl</cite> も参照してください。</p>
 </div>
 <div class="section" id="services">
-<h2><a class="toc-backref" href="#id9">Services</a><a class="headerlink" href="#services" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Some programms run as services like PostgreSQL, tomcat or Apache Webserver. You can start or stop the services.</p>
-<p>Restart your Apache Service</p>
+<h2><a class="toc-backref" href="#id9">サービス</a><a class="headerlink" href="#services" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>PostgreSQL、TomcatやApache webサーバのように一部のプログラムはサービスとして実行されています。サービスを開始、停止できます。</p>
+<p>Apacheサービスを再開できます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">apache2</span> <span class="n">restart</span>
 
 <span class="n">sudo</span> <span class="n">service</span> <span class="n">apache2</span> <span class="o">--</span><span class="n">help</span>
@@ -237,69 +231,69 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 </div>
 </div>
 <div class="section" id="how-to-edit-files">
-<h2><a class="toc-backref" href="#id10">How to edit files</a><a class="headerlink" href="#how-to-edit-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can either edit files in the terminal or open them with an external program like Geany.</p>
-<p>In the terminal window you can use the <cite>vim</cite> editor (Vi IMproved). <cite>vim</cite> is very powerful and has many options.</p>
-<p>See also</p>
+<h2><a class="toc-backref" href="#id10">ファイルの編集方法</a><a class="headerlink" href="#how-to-edit-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ターミナルでファイルを編集することもできますし、Geanyのような外部プログラムで開くこともできます。</p>
+<p>ターミナルウインドウで、 <cite>vim</cite> エディタ (Vi IMproved)を利用できます。<cite>vim</cite> はパワフルで、様々な機能があります。</p>
+<p>参照</p>
 <ul class="simple">
 <li><a class="reference external" href="https://help.ubuntu.com/community/VimHowto">https://help.ubuntu.com/community/VimHowto</a></li>
 <li><a class="reference external" href="https://vim.rtorr.com/lang/en_en">https://vim.rtorr.com/lang/en_en</a></li>
 </ul>
-<p>Open a file with <cite>vim</cite>:</p>
+<p><cite>vim</cite> でファイルを開く:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>press <cite>i</cite> to switch to the input mode</li>
-<li><cite>ESC</cite> leaves the input mode</li>
-<li><cite>:w</cite> saves your changes</li>
-<li><cite>:wq</cite> saves your changes and closes the file</li>
-<li><cite>:q</cite> closes the file</li>
-<li><cite>:q!</cite> closes the file without saving</li>
+<li><cite>i</cite> キーをおして、入力モードへ変更する</li>
+<li><cite>ESC</cite> キーで、入力モードからぬける</li>
+<li><cite>:w</cite> は、変更点を保存する</li>
+<li><cite>:wq</cite> は、変更点を保存し、ファイルをとじる</li>
+<li><cite>:q</cite> ファイルを閉じる</li>
+<li><cite>:q!</cite> は、保存することなしに、ファイルを閉じる</li>
 </ul>
 </div>
 <div class="section" id="owner-and-access-rights">
-<h2><a class="toc-backref" href="#id11">Owner and access rights</a><a class="headerlink" href="#owner-and-access-rights" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Access rights define whether a <cite>user</cite> or <cite>group</cite> or <cite>others</cite> have access to a file and what sort of access is given. You can have <cite>read</cite>, <cite>write</cite> or <cite>excecute</cite> access.</p>
-<p>Directories or files have an owner and a group definition. By default the creator of a file/directory is the owner. But this definition can be changed. You will learn this in the next section.</p>
-<p>You can show the owner and group via <cite>ls -l</cite></p>
+<h2><a class="toc-backref" href="#id11">ファイル所有者とアクセス権</a><a class="headerlink" href="#owner-and-access-rights" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アクセス権は、 <cite>ユーザ</cite> または <cite>グループ</cite> または <cite>他者</cite> がファイルにアクセスできるかどうか、およびどのようなアクセスが与えられるかを定義します。<cite>読み込み</cite> <cite>書き込み</cite> <cite>実行</cite> のアクセス権があります。</p>
+<p>ディレクトリまたはファイルには、所有者とグループ定義があります。デフォルトで、ファイルやディレクトリの作成者が所有者になります。しかし、この変更は変更できます。次の章でまなんでいきましょう。</p>
+<p>所有者と所有グループを  <cite>ls -l</cite> で見ることができます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">user</span> <span class="n">user</span> <span class="mi">122</span> <span class="n">Dec</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">11</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>the initial character can be <cite>-</cite> for a file or <cite>d</cite> for directory</li>
-<li><cite>user</cite> is defined as the owner and the group</li>
+<li>最初の文字が <cite>-</cite> のときはファイル、 <cite>d</cite> のときはディレクトリです。</li>
+<li><cite>user</cite> は、所有者とグループで定義されます</li>
 </ul>
-<p>Access rights are listed at the beginning of the row:</p>
+<p>アクセス権は、各行の最初に表示されます。</p>
 <ul class="simple">
-<li><cite>r</cite> read</li>
-<li><cite>w</cite> write</li>
-<li><cite>x</cite> execute</li>
-<li>first 3 letters for the owner</li>
-<li>then next 3 letters for the group</li>
-<li>followed by the last 3 letters for others</li>
+<li><cite>r</cite> 読み込み</li>
+<li><cite>w</cite> 書き込み</li>
+<li><cite>x</cite> 実行</li>
+<li>最初の3文字は、所有者のアクセス権です。</li>
+<li>つぎの3文字は、グループのアクセス権です</li>
+<li>続く3文字は、他者のアクセス権になります。</li>
 </ul>
 </div>
 <div class="section" id="change-the-owner-with-chown">
-<h2><a class="toc-backref" href="#id12">Change the owner with <cite>chown</cite></a><a class="headerlink" href="#change-the-owner-with-chown" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id12"><cite>chown</cite> で所有者を変更する</a><a class="headerlink" href="#change-the-owner-with-chown" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">user</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>first pass the user then the group - like <cite>user:www-data</cite></li>
-<li><cite>-R</cite> recursive</li>
+<li><cite>user:www-data</cite> のように前半がユーザで、後半がグループを指定します。</li>
+<li><cite>-R</cite> 再帰的</li>
 </ul>
 </div>
 <div class="section" id="change-access-rights-with-chmod">
-<h2><a class="toc-backref" href="#id13">Change access rights with <cite>chmod</cite></a><a class="headerlink" href="#change-access-rights-with-chmod" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id13"><cite>chmod</cite> でアクセス権を変更する</a><a class="headerlink" href="#change-access-rights-with-chmod" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>777 everyone can do everything</li>
-<li><cite>-R</cite> recursive</li>
+<li>777 を指定すると、だれでもなんでもできます。</li>
+<li><cite>-R</cite> 再帰的</li>
 <li><ol class="first arabic">
 <li>number: owner (u)</li>
 </ol>
@@ -312,13 +306,13 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 <li>number: other (o)</li>
 </ol>
 </li>
-<li>4 read</li>
-<li>2 write</li>
-<li>1 execute</li>
-<li>660 - owner and group are allowed to read and write, other have no rights</li>
-<li>744 - owner can do everything, group and others can only read</li>
+<li>4 読み込み</li>
+<li>2 書き込み</li>
+<li>1 実行</li>
+<li>660 - 所有者とグループは、読み書きできますが、他人には一切のアクセス権がありません。</li>
+<li>744 - 所有者はすべてのことができ、グループと他人は読み込みのみできます。</li>
 </ul>
-<p>or use it like this</p>
+<p>あるいは次のように指定できます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="n">u</span><span class="o">+</span><span class="n">rwx</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
@@ -331,23 +325,23 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 </ul>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id14">Things to try</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Here are other commands you may try.</p>
+<h2><a class="toc-backref" href="#id14">試してみること</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>試してみるコマンドが他にもあります。</p>
 <ul class="simple">
-<li>grep - search for a pattern in a text</li>
+<li>grep - テキストのなかから、パターンを検索します。</li>
 <li>history | grep cd</li>
-<li>rm - remove a file</li>
-<li>rmdir - remove an empty directory</li>
-<li>mv - rename/move</li>
-<li>head - show the beginning of a file</li>
-<li>tail - show the end of a file</li>
-<li>find - search for files in a directory hierarchy</li>
-<li>locate - find files by name</li>
+<li>rm - ファイルを削除</li>
+<li>rmdir - 空になったディレクトリを削除</li>
+<li>mv - 名前変更または移動</li>
+<li>head - ファイルの冒頭を表示</li>
+<li>tail - ファイルの末尾を表示</li>
+<li>find - ディレクトリをたどって、ファイルを検索します</li>
+<li>locate - 名前でファイルを検索</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id15">What next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You have learned some important commands and information to work with the command line. Hopefully you have discovered how powerful the command line is.</p>
+<h2><a class="toc-backref" href="#id15">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ここまでで、重要なコマンドとその利用方法について学習してきました。コマンドラインがいかにパワフルか理解できたでしょう。</p>
 <ul class="simple">
 <li><a class="reference external" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">https://ubuntu.com/tutorials/command-line-for-beginners#1-overview</a></li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/Category:Standard_Unix_programs">https://en.wikipedia.org/wiki/Category:Standard_Unix_programs</a></li>

@@ -73,10 +73,7 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="proj-quickstart">
 <h1>PROJ Quickstart<a class="headerlink" href="#proj-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
-<p>PROJ is a standard Unix filter function which converts geographic longitude
-and latitude coordinates into cartesian coordinates (and vice versa), and it is
-a C API for software developers to include coordinate transformation in their
-own software.</p>
+<p>PROJ ist eine Standard-Unix-Filterfunktion, die geographische Längen- und Breitengradkoordinaten in kartesische Koordinaten umwandelt (und umgekehrt), und es ist zudem eine C-API für Softwareentwickler, die Koordinatentransformation in ihre eigene Software einbauen wollen.</p>
 <div class="contents local topic" id="this-quick-start-describes-how-to-use-these-tools">
 <p class="topic-title">This Quick Start describes how to use these tools :</p>
 <ul class="simple">
@@ -89,12 +86,11 @@ own software.</p>
 <h2><a class="toc-backref" href="#id2">PROJ</a><a class="headerlink" href="#proj" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last"><strong>What will I learn ?</strong> In this section, you will learn how to use the PROJ tool.</p>
+<p class="last"><strong>Was werde ich lernen ?</strong> In diesem Abschnitt erfahren Sie, wie das PROJ-Tool verwendet werden kann.</p>
 </div>
 <div class="section" id="what-is-proj">
-<h3>What is PROJ ?<a class="headerlink" href="#what-is-proj" title="Link zu dieser Überschrift">¶</a></h3>
-<p>PROJ and invproj perform respective forward and inverse transformation of cartographic data to
-or from cartesian data with a wide range of selectable projection functions.</p>
+<h3>Was ist PROJ?<a class="headerlink" href="#what-is-proj" title="Link zu dieser Überschrift">¶</a></h3>
+<p>PROJ und invproj führen die jeweilige Vorwärts- und Inverse Transformation von räumlichen Daten in oder aus kartesischen Daten mit einer Vielzahl auswählbarer Projektionsfunktionen durch.</p>
 </div>
 <div class="section" id="proj-synopsis">
 <h3>proj Synopsis<a class="headerlink" href="#proj-synopsis" title="Link zu dieser Überschrift">¶</a></h3>
@@ -102,10 +98,10 @@ or from cartesian data with a wide range of selectable projection functions.</p>
 <span class="n">invproj</span> <span class="p">[</span> <span class="o">-</span><span class="n">bcCeEfiIlmorsStTwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">args</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>These commands are fully describe in <a class="reference external" href="https://proj.org/apps/proj.html">PROJ documentation</a> for the latest version.</p>
+<p>Diese Befehle werden in der ‚PROJ-Dokumentation &lt;<a class="reference external" href="https://proj.org/apps/proj.html">https://proj.org/apps/proj.html</a>&gt;`_  für die neueste Version vollständig beschrieben</p>
 </div>
 <div class="section" id="proj-example">
-<h3>PROJ Example<a class="headerlink" href="#proj-example" title="Link zu dieser Überschrift">¶</a></h3>
+<h3>PROJ Beispiel<a class="headerlink" href="#proj-example" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Das folgende Skript</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">utm</span>  <span class="o">+</span><span class="n">lon_0</span><span class="o">=</span><span class="mi">112</span><span class="n">w</span>  <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span>
 <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
@@ -115,12 +111,7 @@ or from cartesian data with a wide range of selectable projection functions.</p>
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>will perform UTM forward projection with a stan-
-dard UTM central meridian nearest longitude
-112W. The geographic values of this example are
-equivalent and meant as examples of various
-forms of DMS input. The x-y output data will
-appear as three lines of:</p>
+<p>führt eine UTM-Vorwärtsprojektion mit einem standard UTM-Zentralmeridian am nächsten Längengrad 112W durch.  Die geographischen Werte dieses Beispiels sind äquivalent und als Beispiele für verschiedene Formen der DMS-Eingabe gedacht.  Die x-y-Ausgabedaten werden in drei Zeilen angezeigt:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">460769.27</span>     <span class="mf">5011648.45</span>
 </pre></div>
 </div>
@@ -134,9 +125,7 @@ appear as three lines of:</p>
 </div>
 <div class="section" id="what-is-cs2cs">
 <h3>Was ist cs2cs?<a class="headerlink" href="#what-is-cs2cs" title="Link zu dieser Überschrift">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">cs2cs</span></code> performs transformation between the source and destination cartographic coordinate system
-on a set of input points. The coordinate system transformation can include translation between
-projected and geographic coordinates as well as the application of datum shifts.</p>
+<p>‚‘cs2cs‘‘ führt die Transformation zwischen dem kartographischen Quell- und Zielkoordinatensystem auf einer Reihe von Eingabepunkten durch.  Die Transformation des Koordinatensystems kann die Übersetzung zwischen projizierten und geographischen Koordinaten sowie die Anwendung von Datumsverschiebungen umfassen.</p>
 </div>
 <div class="section" id="cs2cs-synopsis">
 <h3>cs2cs Synopsis<a class="headerlink" href="#cs2cs-synopsis" title="Link zu dieser Überschrift">¶</a></h3>
@@ -157,10 +146,7 @@ projected and geographic coordinates as well as the application of datum shifts.
 <span class="n">EOF</span>
 </pre></div>
 </div>
-<p>will transform the input NAD83 geographic coordinates into NAD27
-coordinates in the UTM projection with zone 10 selected. The geographic
-values of this example are equivalent and meant as examples of various forms of DMS input.
-The x-y output data will appear as three lines of:</p>
+<p>transformiert die Eingabe-NAD83-Geographischen Koordinaten in NAD27-Koordinaten in der UTM-Projektion mit ausgewählter Zone 10.  Die geographischen Werte dieses Beispiels sind äquivalent und als Beispiele für verschiedene Formen der DMS-Eingabe gedacht. Die x-y-Ausgabedaten werden in drei Zeilen angezeigt:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">1402285.99</span>      <span class="mf">5076292.42</span> <span class="mf">0.000</span>
 </pre></div>
 </div>
@@ -174,15 +160,8 @@ The x-y output data will appear as three lines of:</p>
 </div>
 <div class="section" id="what-is-geod">
 <h3>Was ist geod?<a class="headerlink" href="#what-is-geod" title="Link zu dieser Überschrift">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">geod</span></code> (direct) and <code class="docutils literal"><span class="pre">invgeod</span></code> (inverse) perform geodesic („Great
-Circle“) computations for determining latitude, longitude and
-back azimuth of a terminus point given a initial point latitude,
-longitude, azimuth and distance (direct) or the forward
-and back azimuths and distance between an initial and terminus
-point latitudes and longitudes (inverse). The results are
-accurate to round off for <cite>|f| &lt; 1/50</cite>, where f is flattening.</p>
-<p><code class="docutils literal"><span class="pre">invgeod</span></code> may not be available on all platforms; in this case
-call geod with the -I option.</p>
+<p>‚‘geod‘‘ (direkt) und ‚‘invgeod‘‘ (inverse) führen geodätische („Great Circle“) Berechnungen zur Bestimmung von Breiten-, Längen- und back azimut eines Endpunkts unter einem Anfangspunkt Breitengrad, Längengrad, Azimut und Entfernung (direkt) oder der vorwärts und hinten Azimuts und Abstand zwischen einem Anfangs- und Endpunkt Laititude und Longituden (inverse).  Die Ergebnisse sind genau, um für <cite>|f| &lt; 1/50</cite> abzurunden, wobei f abflacht.</p>
+<p>‚‘invgeod‘‘ ist möglicherweise nicht auf allen Plattformen verfügbar;  rufen Sie in diesem Fall geod mit der Option -I auf.</p>
 </div>
 <div class="section" id="geod-synopsis">
 <h3>geod Synopsis<a class="headerlink" href="#geod-synopsis" title="Link zu dieser Überschrift">¶</a></h3>
@@ -191,12 +170,11 @@ call geod with the -I option.</p>
 <span class="n">invgeod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=&lt;</span><span class="n">ellipse</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">-</span><span class="n">afFIlptwW</span> <span class="p">[</span> <span class="n">args</span>  <span class="p">]</span>  <span class="p">]</span>  <span class="p">[</span>  <span class="o">+</span><span class="n">args</span>  <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>These commands are fully describe in <a class="reference external" href="https://proj.org/apps/proj.html">PROJ documentation</a> for the latest version.</p>
+<p>Diese Befehle werden in der ‚PROJ-Dokumentation &lt;<a class="reference external" href="https://proj.org/apps/proj.html">https://proj.org/apps/proj.html</a>&gt;`_  für die neueste Version vollständig beschrieben</p>
 </div>
 <div class="section" id="geod-example">
 <h3>geod-Beispiel<a class="headerlink" href="#geod-example" title="Link zu dieser Überschrift">¶</a></h3>
-<p>The following script determines the geodesic azimuths and distance in U.S.
-statute miles from Boston, MA, to Portland, OR:</p>
+<p>Das folgende Skript bestimmt die geodätichenen Winkel und die Entfernung in den US-Bestimmungen in Meilen von Boston, MA, nach Portland, OR:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">geod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span> <span class="o">-</span><span class="n">I</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">mi</span>
 <span class="mi">42</span><span class="n">d15</span><span class="s1">&#39;N 71d07&#39;</span><span class="n">W</span> <span class="mi">45</span><span class="n">d31</span><span class="s1">&#39;N 123d41&#39;</span><span class="n">W</span>
 <span class="n">EOF</span>
@@ -207,8 +185,7 @@ statute miles from Boston, MA, to Portland, OR:</p>
 </pre></div>
 </div>
 <p>wobei die ersten beiden Werte der Winkel von Boston nach Portland sind, der hintere Winkel von Portland nach Boston gefolgt von der Entfernung.</p>
-<p>An example of forward geodesic use is to use the Boston loca-
-tion and determine Portland’s location by azimuth and distance:</p>
+<p>Ein Beispiel für die weitere Nutzung geodätischer Berechnungen ist die Verwendung der Boston-Loca- tion und die Bestimmung der Position von Portland durch Winkel und Entfernung:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">geod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">us</span><span class="o">-</span><span class="n">mi</span>
 <span class="mi">42</span><span class="n">d15</span><span class="s1">&#39;N 71d07&#39;</span><span class="n">W</span> <span class="o">-</span><span class="mi">66</span><span class="n">d31</span><span class="s1">&#39;50.141&quot; 2587.504</span>
 <span class="n">EOF</span>
@@ -220,8 +197,7 @@ tion and determine Portland’s location by azimuth and distance:</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p class="last">Lack of precision in the distance value compromises the
-precision of the Portland location.</p>
+<p class="last">Mangelnde Genauigkeit im Entfernungswert beeinträchtigt die Genauigkeit des Standorts Portland.</p>
 </div>
 </div>
 <div class="section" id="further-reading">

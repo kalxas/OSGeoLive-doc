@@ -138,6 +138,9 @@
 <p>Puede elegir que la carpeta compartida sea de solo lectura y montada automáticamente. Una vez definidas la «Ruta de carpeta» y el «Nombre de carpeta», haga clic en Aceptar y, de nuevo, en Aceptar para finalizar y cerrar la ventana de configuración.</p>
 <p><strong>Ejecutando la Máquina Virtual</strong></p>
 <p>Ahora, inicie la VM haciendo clikk en el botón Iniciar (flecha verde).</p>
+<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
 <p>Al instalar el iso en la máquina virtual, el nombre de usuario debe establecerse en «user»</p>
 <p>El usuario «user» no es miembro del grupo «users» en la máquina virtual OSGeoLive. Esto evita que algunas herramientas escriban en su directorio de datos y cause algún software falle al iniciar.</p>
 <p>La solución consiste en corregir el vmdk con el siguiente procedimiento que se hace una sola vez:</p>

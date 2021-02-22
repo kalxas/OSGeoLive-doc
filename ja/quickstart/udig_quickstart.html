@@ -92,7 +92,7 @@
 <li><a class="reference internal" href="#map" id="id6">マップ</a></li>
 <li><a class="reference internal" href="#web-map-server" id="id7">Web Map サーバ</a></li>
 <li><a class="reference internal" href="#style" id="id8">スタイル</a></li>
-<li><a class="reference internal" href="#things-to-try" id="id9">Things to Try</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id9">試してみること</a></li>
 <li><a class="reference internal" href="#what-next" id="id10">次のステップ</a></li>
 </ul>
 </li>
@@ -210,7 +210,7 @@
 <ol class="arabic">
 <li><p class="first">メニューバーから <span class="menuselection">ファイル ‣ 新規 ‣ 新規マップ</span> を選択します。</p>
 </li>
-<li><p class="first">Change to the <strong>Web</strong> view, click on the tab next to the <strong>Catalog</strong> view to reveal the <em>Web</em> view.</p>
+<li><p class="first"><strong>Web</strong> ビューに切り替えるため、<strong>カタログ</strong> ビューの次のタブをクリックして、<em>Web</em> ビューを表示します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/udig_WebViewClick.png"><img alt="../../_images/udig_WebViewClick.png" src="../../_images/udig_WebViewClick.png" style="width: 415.5px; height: 177.0px;" /></a>
 </div></blockquote>
@@ -232,14 +232,14 @@
 </li>
 </ul>
 </li>
-<li><p class="first">Press <span class="guilabel">Finish</span> to add these layers to your map</p>
+<li><p class="first"><span class="guilabel">Finish</span> をクリックして、これらのレイヤをマップに追加します。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/udig_WMSMap.png"><img alt="../../_images/udig_WMSMap.png" src="../../_images/udig_WMSMap.png" style="width: 714.0px; height: 517.3px;" /></a>
 </div></blockquote>
 </li>
-<li><p class="first">Use the <img alt="ZOOM" src="../../_images/udig_zoom_mode.png" /> Zoom Tool to move closer to one of the Parks</p>
+<li><p class="first"><img alt="ZOOM" src="../../_images/udig_zoom_mode.png" /> Zoom ツールを使用して、公園の一つに移動します。</p>
 </li>
-<li><p class="first"><img alt="INFO" src="../../_images/udig_info_mode.png" />  Info Toolに切り替えて、公園の1つをクリックすると、さらに詳しく知ることができます。</p>
+<li><p class="first"><img alt="INFO" src="../../_images/udig_info_mode.png" /> Info Toolに切り替えて、公園の1つをクリックすると、さらに詳しく知ることができます。</p>
 </li>
 </ol>
 <div class="admonition tip">
@@ -254,52 +254,48 @@
 </li>
 <li><p class="first">レイヤビューのレイヤの国を選択</p>
 </li>
-<li><p class="first">Open up the <strong>Style Editor</strong> by right clicking on <cite>ne 10m admin 0 countries</cite> layer and choosing <span class="guilabel">Change Style</span></p>
+<li><p class="first"><strong>Style Editor</strong> を開くには、 <cite>ne 10m admin 0 countries</cite> レイヤを右クリックし、<span class="guilabel">Change Style</span> を選択します。</p>
 </li>
 <li><p class="first">国の表示方法について、いくつかの点を変更します。</p>
 <ul class="simple">
-<li>Line: Click <span class="guilabel">Border</span>, click on the Color button and change the color to BLACK</li>
-<li>Fill: On Tab <span class="guilabel">Fill</span> uncheck the box <span class="guilabel">enable/disable fill</span> to turn off fill</li>
-<li>Label: On Tab <span class="guilabel">Labels</span> check the box <span class="guilabel">enable/disable labeling</span>, and choose the attribute <strong>NAME</strong> from the list of attributes</li>
+<li>ライン:  <span class="guilabel">Border</span> をクリックし、色ボタンをクリックして、色を黒色に変更します。</li>
+<li>ぬりつぶし: ぬりつぶしをオフにするには、タブ  <span class="guilabel">Fill</span> のチェックボックス   <span class="guilabel">enable/disable fill</span> のチェックをはずす</li>
+<li>ラベル:  タブ <span class="guilabel">Labels</span> のチェックボックス <span class="guilabel">enable/disable labeling</span> のチェックを いれ、一覧からアトリビュート <strong>NAME</strong> を選択します。</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/udig_StyleEditor.png"><img alt="../../_images/udig_StyleEditor.png" src="../../_images/udig_StyleEditor.png" style="width: 716.8px; height: 498.4px;" /></a>
 </li>
-<li><p class="first">Press <span class="guilabel">Apply</span> to see what this looks like on your Map, the <strong>Layer</strong> view will also be updated
-to reflect the current style</p>
+<li><p class="first"><span class="guilabel">適用</span> をおすと、<strong>レイヤ</strong> ビューが現在のスタイルを反映して更新されるので、あなたのマップの見えかたを確認してみてください。</p>
 </li>
-<li><p class="first">When you are happy with the result you can press <span class="guilabel">Close</span> to dismiss the dialog</p>
+<li><p class="first">問題なければ、 <span class="guilabel">閉じる</span> を押してダイログを閉じてください。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Some files include style settings. The Style definition can be found in files with the <code class="file docutils literal"><span class="pre">*.sld</span></code> extension. The name itself should be equal to the file containing the data. If such a <a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a> file exists, the style will be applied automatically.</p>
+<p class="last">一部のファイルにはスタイル設定が含まれています。スタイル定義は <code class="file docutils literal"><span class="pre">*.sld</span></code> 拡張子のファイルにあります。名前自体は、データを含むファイルと同じでなければなりません。そのような <a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a> ファイルが存在する場合、スタイルは自動的に適用されます。</p>
 </div>
-<p>Sometimes it is a bit hard to see what is going on with layer providing much details. To get focused on the task you like to work on, you can choose <span class="menuselection">Map ‣ Mylar</span> from the menu bar. Using the <em>Layer</em> view select different layers in turn to see the effect. You can turn off this effect at any time using <span class="menuselection">Map ‣ Mylar</span> from the menu bar.</p>
+<p>多くの詳細が含まれるレイヤで状況を確認するのは、時として少し難しいことがあります。作業したいタスクに集中するには、メニューバーから <span class="menuselection">マップ‣Mylar</span> を選択します。<em>レイヤ</em> ビューを使用して、順番にレイヤを選択して効果を確認します。この効果は、メニューバーから <span class="menuselection">マップ‣Mylar</span> を使用して、いつでもオフにすることができます。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/udig_MapMylar.png"><img alt="../../_images/udig_MapMylar.png" src="../../_images/udig_MapMylar.png" style="width: 718.9px; height: 524.3px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id9">Things to Try</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">試してみること</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次に、試すべき追加の課題をいくつか示します。</p>
 <ol class="arabic simple">
-<li>Try viewing your own GIS map layers, or try adding a layer from a <a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a></li>
-<li>Try styling the WFS layer.</li>
+<li>独自のGISマップレイヤを表示するか、<a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a> からレイヤを追加してみてください</li>
+<li>WFSレイヤのスタイリングを試してください。</li>
 </ol>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id10">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>This is only the first step on the road to using uDig. There is a lot more great material (and ability) left for you to discover in our <strong>walkthrough</strong> documents.</p>
+<p>これはuDigを使用するための最初のステップです。<strong>ウォークスルー</strong> 文書には、さらに多くの優れた資料(と能力)が残されています。</p>
 <ul>
-<li><p class="first">Walkthrough 1</p>
-<p>Try out the use of <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>, extract data from a Web Feature Server and explore the
-use of <strong>Themes</strong> with our powerful <cite>Color Brewer</cite> technology.</p>
+<li><p class="first">ウォークスルー1</p>
+<p><a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> を使用する。WFSサーバからデータを取得をする。 <cite>Color Brewer</cite> 技術を使用して <strong>Themes</strong> の活用をする。</p>
 <p><code class="file docutils literal"><span class="pre">/usr/local/share/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></code></p>
 </li>
-<li><p class="first">Walkthrough 2 - Learn how to create shapefiles and use the Edit tools to manipulate
-feature data, covers the installation of <a class="reference internal" href="../overview/geoserver_overview.html"><span class="doc">GeoServer</span></a> and editing with a Web Feature
-Server.</p>
-<p>Available on <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+<li><p class="first">ウオークスルー 2 -シェイプファイルを作成し、編集ツールを使用して地物データを操作する方法を学習します。 <a class="reference internal" href="../overview/geoserver_overview.html"><span class="doc">GeoServer</span></a> のインストールと、 Web Feature Serverでの編集ができます。</p>
+<p><a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a> にあります。</p>
 </li>
 </ul>
 </div>

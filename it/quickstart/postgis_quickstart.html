@@ -94,8 +94,8 @@ describing the additional spatial functionality provided by PostGIS.</p>
 <li><a class="reference internal" href="#spatial-queries" id="id5">Spatial queries</a></li>
 <li><a class="reference internal" href="#mapping" id="id6">Mapping</a></li>
 <li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">Importing spatial data into the database</a></li>
-<li><a class="reference internal" href="#get-to-know-pgadmin-iii" id="id8">Get to know pgAdmin III</a></li>
-<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin-iii" id="id9">Executing a SQL query from pgAdmin III</a></li>
+<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Get to know pgAdmin</a></li>
+<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Executing a SQL query from pgAdmin</a></li>
 <li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Get to know Foreign Data Wrappers (FDW)</a></li>
 <li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Connect to a remote OGR data source via ogr_fdw</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id12">Things to try</a></li>
@@ -370,13 +370,13 @@ parameters for connecting to the Natural Earth data in PostGIS are already defin
 drop-down menu. You can define new server connections here, and store the settings for easy
 recall. Click on Connections drop down menu and choose Natural Earth. Hit <code class="docutils literal"><span class="pre">Edit</span></code> if you want to see what those parameters are for Natural Earth, or just
 hit <code class="docutils literal"><span class="pre">Connect</span></code> to continue:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 450.0px; height: 378.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 706.5px; height: 474.75px;" /></a>
 <p>You will now get a list of the spatial tables in the database:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 450.0px; height: 378.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 711.0px; height: 474.75px;" /></a>
 <p>Choose the ne_10m_lakes table and hit <code class="docutils literal"><span class="pre">Add</span></code> at the bottom (not <code class="docutils literal"><span class="pre">Load</span></code> at the
 top - that loads database connection parameters), and it should be
 loaded into QGIS:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 1146.0px; height: 952.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 1029.0px; height: 605.25px;" /></a>
 <p>You should now see a map of the lakes. QGIS doesn’t know they are lakes, so might not colour
 them blue for you - use the QGIS documentation to work out how to change this. Zoom in to
 a famous group of lakes in Canada.</p>
@@ -384,66 +384,62 @@ a famous group of lakes in Canada.</p>
 <div class="section" id="importing-spatial-data-into-the-database">
 <h2><a class="toc-backref" href="#id7">Importing spatial data into the database</a><a class="headerlink" href="#importing-spatial-data-into-the-database" title="Link a questa intestazione">¶</a></h2>
 <p>Most of the OSGeo desktop tools have functions for importing spatial data from other formats (f.e. ESRI Shape) into the database. Again we’ll use QGIS to show this.</p>
-<p>Importing shapefiles to QGIS can be done via the handy QGIS Database Manager. You find the manager in the menu. Go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
+<p>Importing shapefiles to QGIS can be done via the handy QGIS Database Manager. You find the manager in the menu. Go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
 <p>Deploys the Postgis item, then the NaturalEarth item. It will then  connect to the Natural Earth database. Leave
 the password blank if it asks. In the public item, there is the list of the layers provided by the database. You’ll see the main manager window. On the left you can select
 tables from the database and use the tabs on the right find out about them. The Preview tab
 will show you a little map.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 610.5px; height: 428.25px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 1026.0px; height: 603.75px;" /></a>
 <p>We will now use the DB Manager to import a shapefile into the database. We’ll use
 the North Carolina sudden infant death syndrome (SIDS) data that is included with one
 of the R statistics package add-ons.</p>
 <p>From the <code class="docutils literal"><span class="pre">Table</span></code> menu choose the <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> option.
-Hit the <code class="docutils literal"><span class="pre">...</span></code> button and browse to the <code class="docutils literal"><span class="pre">sids.shp</span></code> shapefile in the R <code class="docutils literal"><span class="pre">maptools</span></code> package
-(located in /usr/local/lib/R/site-library/spData/shapes):</p>
+Hit the <code class="docutils literal"><span class="pre">...</span></code> button and browse to the <code class="docutils literal"><span class="pre">sids.shp</span></code> shapefile in the R directory.
+(located in /home/user/data/vector/R/shapes):</p>
 <a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 632.25px; height: 492.0px;" /></a>
 <p>Leave everything else as it is and hit <code class="docutils literal"><span class="pre">Load</span></code></p>
 <a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 346.5px; height: 400.5px;" /></a>
-<p>Let the Coordinate Reference System Selector default to (WGS 84 EPSG:4326) and hit <code class="docutils literal"><span class="pre">OK</span></code>. The shapefile should be imported into PostGIS with no errors. Close the PostGIS manager and
+<p>Let the Coordinate Reference System Selector default to (WGS 84 EPSG:4326) and hit <code class="docutils literal"><span class="pre">OK</span></code>. The shapefile should be imported into PostGIS with no errors. Close the DB Manager and
 get back to the main QGIS window.</p>
 <p>Now load the SIDS data into the map using the “Add PostGIS Layer”
 option. With a bit of rearranging of the layers and some colouring, you should be able to produce
 a choropleth map of the sudden infant death syndrome counts (sid74 or sid79 fields) in North Carolina:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1143.75px; height: 948.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1036.5px; height: 607.5px;" /></a>
 </div>
-<div class="section" id="get-to-know-pgadmin-iii">
-<h2><a class="toc-backref" href="#id8">Get to know pgAdmin III</a><a class="headerlink" href="#get-to-know-pgadmin-iii" title="Link a questa intestazione">¶</a></h2>
-<p>You can use the graphical database client <code class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></code> from the Databases menu to query and modify your database non-spatially. This is the official client for PostgreSQL.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Suggerimento</p>
-<p class="last">Please note that there is a new version of pgAdmin called pgAdmin4 that can get installed via apt install pgadmin4</p>
-</div>
-<p>pgAdmin III lets you use SQL to manipulate your data tables. You can find and launch pgAdmin III
+<div class="section" id="get-to-know-pgadmin">
+<h2><a class="toc-backref" href="#id8">Get to know pgAdmin</a><a class="headerlink" href="#get-to-know-pgadmin" title="Link a questa intestazione">¶</a></h2>
+<p>You can use the graphical database client <code class="docutils literal"><span class="pre">pgAdmin</span></code> from the Databases menu to query and modify your database non-spatially. This is the official client for PostgreSQL.</p>
+<p>pgAdmin lets you use SQL to manipulate your data tables. You can find and launch pgAdmin
 from the Databases folder, existing on the OSGeoLive Desktop.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 511.0px; height: 370.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 579.5px; height: 423.5px;" /></a>
+<p>Enter the master password  <code class="docutils literal"><span class="pre">user</span></code>.</p>
 <p>Here, you have the option of creating a new connection to a PostgreSQL server, or connecting to an existing server.
-In this case, we are going to connect to the predefined <code class="docutils literal"><span class="pre">local</span></code> server.</p>
+In this case, we are going to connect to the predefined <code class="docutils literal"><span class="pre">localhost</span></code> server.</p>
 <p>After connection established, you can see the list of the databases already existing in the system.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 768.75px; height: 556.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 871.5px; height: 639.0px;" /></a>
 <p>The red «X» on the image of most of the databases, denotes that you haven’t been yet connected to any of them (you are connected only
 to the default <code class="docutils literal"><span class="pre">postgres</span></code> database).
 At this point you are able only to see the existing databases on the system. You can connect, by double clicking,
 on the name of a database. Do it for the natural_earth2 database.</p>
-<p>You can see now that the red X disappeared and a «+» appeared on the left. By pressing it a tree is going to appear,
+<p>You can see now that the red X disappeared and a «&gt;» appeared on the left. By pressing it a tree is going to appear,
 displaying the contents of the database.</p>
 <p>Navigate at the <code class="docutils literal"><span class="pre">schemas</span></code> subtree, expand it. Afterwards expand the
 <code class="docutils literal"><span class="pre">public</span></code> schema. By navigating and expanding the
 <code class="docutils literal"><span class="pre">Tables</span></code>, you can see all the tables contained within this schema.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 768.0px; height: 557.25px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 872.25px; height: 638.25px;" /></a>
 </div>
-<div class="section" id="executing-a-sql-query-from-pgadmin-iii">
-<h2><a class="toc-backref" href="#id9">Executing a SQL query from pgAdmin III</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin-iii" title="Link a questa intestazione">¶</a></h2>
-<p>pgAdmin III, offers the capability of executing queries to a relational database.</p>
-<p>To perform a query on the database, you have to press the <code class="docutils literal"><span class="pre">SQL</span></code> button from the main toolbar (the one with the
-yellow Magnifying lens).</p>
+<div class="section" id="executing-a-sql-query-from-pgadmin">
+<h2><a class="toc-backref" href="#id9">Executing a SQL query from pgAdmin</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="Link a questa intestazione">¶</a></h2>
+<p>pgAdmin, offers the capability of executing queries to a relational database.</p>
+<p>To perform a query on the database, you have to press the <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> button from the main toolbar (the one at the left with the database symbol).</p>
 <p>We are going to find the rate of the SIDS over the births for the 1974 for each city.
 Furthermore we are going to sort the result, based on the computed rate. To do that, we need to perform the following query (submit it
 on the text editor of the SQL Window):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">name</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sid74</span><span class="o">/</span><span class="n">bir74</span> <span class="k">as</span> <span class="n">rate</span> <span class="kn">from</span> <span class="nn">sids</span> <span class="n">order</span> <span class="n">by</span> <span class="n">rate</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Afterwards, you should press the green arrow button, pointing to the right (execute query).</p>
-<a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 768.0px; height: 557.25px;" /></a>
+<p>Afterwards, you should press the arrow button, pointing to the right (Execute).</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 870.75px; height: 636.75px;" /></a>
 </div>
 <div class="section" id="get-to-know-foreign-data-wrappers-fdw">
 <h2><a class="toc-backref" href="#id10">Get to know Foreign Data Wrappers (FDW)</a><a class="headerlink" href="#get-to-know-foreign-data-wrappers-fdw" title="Link a questa intestazione">¶</a></h2>
@@ -457,11 +453,6 @@ You also can connect via ODBC, connect to CSV, Geospatial Data and even to twitt
 <p>First load the extension for the Foreign Data Wrapper that you want to use. For a connection to a different PostgreSQL database you need <code class="docutils literal"><span class="pre">postgres_fdw</span></code></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">postgres_fdw</span><span class="p">;</span>
 </pre></div>
-</div>
-<div class="admonition tip">
-<p class="first admonition-title">Suggerimento</p>
-<p class="last">Please note that in pgAdmin III the foreign data wrappers, foreign servers, user mappings and foreign tables are not displayed by default in the tree.
-You have to activate them via menu via <span class="menuselection">File ‣ Options ‣ Browser ‣ Display</span></p>
 </div>
 <p>Create a foreign Server that tells you where to find the data source that you want to connect</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
@@ -491,9 +482,11 @@ You have to activate them via menu via <span class="menuselection">File ‣ Opti
 <h2><a class="toc-backref" href="#id11">Connect to a remote OGR data source via ogr_fdw</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Link a questa intestazione">¶</a></h2>
 <p>The extension <code class="docutils literal"><span class="pre">ogr_fdw</span></code> allows connection too several geodata formats like KML,
 GeoPackage, WFS, GeoJSON, GPX, GML and more.</p>
-<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:
-* Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a>
-* New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></p>
+<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:</p>
+<ul class="simple">
+<li>Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
+<li>New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
+</ul>
 <p class="rubric">Install the extension <code class="docutils literal"><span class="pre">ogr_fdw</span></code> in your database.</p>
 <p>On the database prompt type:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">ogr_fdw</span><span class="p">;</span>

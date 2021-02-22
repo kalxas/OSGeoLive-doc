@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="PROJ Quickstart" href="../quickstart/proj_quickstart.html" />
+    <link rel="next" title="PROJクイックスタート" href="../quickstart/proj_quickstart.html" />
     <link rel="prev" title="GeoTools" href="geotools_overview.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -73,24 +73,20 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="proj">
 <h1>PROJ<a class="headerlink" href="#proj" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>PROJ is a library that provides methods to transform between different coordinate
-reference systems. A geographic coordinate reference system allows all points on the
-earth to be described as a set of coordinates (such as latitude, longitude and
-elevation). Different systems are used to represent the tridimensional earth
-on a flat, bidimensional map.</p>
-<p>PROJ is used in <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a>, <a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a>, <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a>, <a class="reference internal" href="mapnik_overview.html"><span class="doc">Mapnik</span></a>, Thuban, OGDI, TopoCad, OGRCoordinateTransformation and various others.</p>
-<p>PROJ has been translated from C to <a class="reference external" href="https://trac.osgeo.org/metacrs/wiki">other languages</a>. These sub-projects include:</p>
+<p>PROJは、異なる座標参照システム間で変換するメソッドを提供するライブラリです。地理座標参照システムでは、地球上のすべての点を座標(緯度、経度、高度など)のセットとして記述できます。それぞれのシステムは、平坦な二次元マップ上に三次元地球を表現ししています。</p>
+<p>PROJは、 <a class="reference internal" href="mapserver_overview.html"><span class="doc">MapServer</span></a> 、 <a class="reference internal" href="grass_overview.html"><span class="doc">GRASS GIS</span></a> 、 <a class="reference internal" href="postgis_overview.html"><span class="doc">PostGIS</span></a> 、 <a class="reference internal" href="mapnik_overview.html"><span class="doc">Mapnik</span></a> 、そして、 Thuban, OGDI, TopoCad, OGRCoordinateTransformation などなどで利用されています。</p>
+<p>PROJ は、Cから、 <a class="reference external" href="https://trac.osgeo.org/metacrs/wiki">ほかの言語へ</a> 変換されています。サブプロジェクトには、:</p>
 <ul class="simple">
-<li>Proj4js (JavaScript) - used in <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a>.</li>
-<li>CS-Map (C++) - used in MapGuide.</li>
-<li>GeoTIFF/libgeotiff (C++).</li>
-<li>Proj4J (Java).</li>
-<li><a class="reference external" href="https://epsg.io/">EPSG.io</a> - website to retrieve coordinate system definitions</li>
-<li><a class="reference external" href="https://spatialreference.org/">SpatialReference.org</a> - website to retrieve coordinate system definitions (obsolete).</li>
+<li>Proj4js (JavaScript) -  <a class="reference internal" href="openlayers_overview.html"><span class="doc">OpenLayers</span></a> で使われている。</li>
+<li>CS-Map (C++) -   MapGuide に採用</li>
+<li>GeoTIFF/libgeotiff (C++)。</li>
+<li>Proj4J (Java)。</li>
+<li><a class="reference external" href="https://epsg.io/">EPSG.io</a>  - 座標系定義を取得するためのWebサイトです</li>
+<li><a class="reference external" href="https://spatialreference.org/">SpatialReference.org</a>  - 座標系定義を取得するためのWebサイトです(旧式)</li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/proj_screenshot.png"><img alt="proj screenshot" class="align-right" src="../../_images/proj_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h2>主要機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>主な機能<a class="headerlink" href="#core-features" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
 <li>ある座標参照システムから別の座標参照システムへの点変換を提供します。</li>
 <li>データ間の変換が含まれます。</li>
@@ -99,23 +95,21 @@ on a flat, bidimensional map.</p>
 </div>
 <div class="section" id="implemented-standards">
 <h2>実装されている標準規格<a class="headerlink" href="#implemented-standards" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>PROJ uses coordinate system definitions defined by the
-<a class="reference external" href="https://www.epsg.org/">European Petroleum Survey Group (EPSG)</a>.
-Well Known Text (WKT) format.</p>
+<p>PROJ は、 <a class="reference external" href="https://www.epsg.org/">European Petroleum Survey Group (EPSG)</a> で定義されている座標系定義を使用しています。Well Known Text(WKT)形式。</p>
 </div>
 <div class="section" id="details">
 <h2>詳細<a class="headerlink" href="#details" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://proj.org/">https://proj.org/</a></p>
-<p><strong>Licence:</strong> <a class="reference external" href="https://proj.org/about.html#license">X/MIT Open Source license</a></p>
-<p><strong>Software Version:</strong> 7.2.1</p>
+<p><strong>Webサイト:</strong> <a class="reference external" href="https://proj.org/">https://proj.org/</a></p>
+<p><strong>ライセンス:</strong> <a class="reference external" href="https://proj.org/about.html#license">X/MIT Open Source license</a></p>
+<p><strong>ソフトウエアバージョン:</strong> 7.2.1</p>
 <p><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</p>
-<p><strong>API インターフェイス:</strong> C, C++, Python, Java, Ruby</p>
+<p><strong>API インタフェース:</strong> C, C++, Python, Java, Ruby</p>
 <p><strong>サポート:</strong> <a class="reference external" href="https://lists.osgeo.org/mailman/listinfo/proj">https://lists.osgeo.org/mailman/listinfo/proj</a></p>
 </div>
 <div class="section" id="quickstart">
 <h2>クイックスタート<a class="headerlink" href="#quickstart" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/proj_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/proj_quickstart.html"><span class="doc">クイックスタート文書</span></a></li>
 </ul>
 </div>
 </div>

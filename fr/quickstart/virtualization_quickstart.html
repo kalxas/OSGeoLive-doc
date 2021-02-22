@@ -138,6 +138,9 @@
 <p>Vous pouvez choisir de rendre le dossier partagé en lecture seule et monté automatiquement. Une fois que le « chemin d’accès au dossier » et le « nom du dossier » sont définis, cliquez sur OK, puis à nouveau OK pour terminer et fermer la fenêtre de paramétrage.</p>
 <p><strong>Exécuter une machine virtuelle</strong></p>
 <p>Démarrez maintenant la VM en cliquant sur le bouton Démarrer (flèche verte).</p>
+<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
 <p>Lorsque vous installez l’iso dans la VM, le nom d’utilisateur doit être réglé sur «&nbsp;user&nbsp;»</p>
 <p>L’utilisateur «&nbsp;user&nbsp;» n’est pas membre du groupe «&nbsp;users&nbsp;» dans la machine virtuelle OSGeoLive. Cela empêche certains outils d’écrire dans le répertoire de données et empêche certains logiciels de démarrer.</p>
 <p>La solution est de réparer le vmdk avec la procédure unique suivante:</p>

@@ -72,12 +72,12 @@
   <a class="reference external image-reference" href="https://www.openstreetmap.org/"><img alt="../../_images/logo_osm.png" class="align-right" src="../../_images/logo_osm.png" /></a>
 <div class="section" id="openstreetmap-quickstart">
 <h1>OpenStreetMapクイックスタート<a class="headerlink" href="#openstreetmap-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>OpenStreetMapは、世界のストリートレベルのフリーマップで、増え続けるマッパーのコミュニティによって作成されています。OpenStreetMapは誰でも編集できます。<a class="reference external" href="https://learnosm.org">Learn OSM サイト</a>  は、OpenStreetMapへの貢献、OpenStreetMapの使用、およびOpenStreetMapデータの使用を開始するための、理解しやすいステップバイステップのガイドを提供します。上記のリンクにある『Learn OSM』ガイドでは、OpenStreetMapのWebサイトの操作方法、マップの表示と印刷方法、ユーザアカウントへのサインアップ方法を順を追って説明しています。独自のユーザー名とパスワードを入力すると、地図に最初のポイントを追加したり、街路調査の方法を学習したり、航空画像を操作したりできるようになります。</p>
+<p>OpenStreetMapは、世界のストリートレベルのフリーマップで、増え続けるマッパーのコミュニティによって作成されています。OpenStreetMapは誰でも編集できます。<a class="reference external" href="https://learnosm.org">Learn OSM Webサイト</a> は、OpenStreetMapへの貢献、OpenStreetMapの使用、およびOpenStreetMapデータの使用を開始するための、理解しやすいステップバイステップのガイドを提供します。上記のリンクにある『Learn OSM』ガイドでは、OpenStreetMapのWebサイトの操作方法、マップの表示と印刷方法、ユーザアカウントへのサインアップ方法を順を追って説明しています。独自のユーザー名とパスワードを入力すると、地図に最初のポイントを追加したり、街路調査の方法を学習したり、航空画像を操作したりできるようになります。</p>
 <p>このガイドの残りの部分では、OSMデータの編集とレンダリングに使用するオンラインソフトウェアとオフラインソフトウェアの一部を紹介します。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#programs-that-work-with-osm-data" id="id4">OS Mデータを扱うプログラム</a><ul>
+<li><a class="reference internal" href="#programs-that-work-with-osm-data" id="id4">OSMデータを扱うプログラム</a><ul>
 <li><a class="reference internal" href="#id" id="id5">iD</a></li>
 <li><a class="reference internal" href="#josm" id="id6">JOSM</a></li>
 <li><a class="reference internal" href="#qgis" id="id7">QGIS</a></li>
@@ -85,16 +85,16 @@
 <li><a class="reference internal" href="#osm2pgsql" id="id9">osm2pgsql</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#working-with-osm-data-in-qgis" id="id10">Working with OSM data in QGIS</a><ul>
+<li><a class="reference internal" href="#working-with-osm-data-in-qgis" id="id10">QGISでOSMデータを操作する</a><ul>
 <li><a class="reference internal" href="#quickosm" id="id11">QuickOSM</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-osm-as-basemap-in-qgis" id="id12">Using OSM as basemap in QGIS</a><ul>
-<li><a class="reference internal" href="#xyz-tiles" id="id13">XYZ Tiles</a></li>
+<li><a class="reference internal" href="#using-osm-as-basemap-in-qgis" id="id12">QGISでOSMをベースマップとして使用する</a><ul>
+<li><a class="reference internal" href="#xyz-tiles" id="id13">XYZ タイル</a></li>
 <li><a class="reference internal" href="#quickmapservices" id="id14">QuickMapServices</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#start-working-with-osm-data" id="id15">Start working with OSM data</a><ul>
+<li><a class="reference internal" href="#start-working-with-osm-data" id="id15">OSMデータで作業を開始</a><ul>
 <li><a class="reference internal" href="#geofabrik" id="id16">Geofabrik</a></li>
 <li><a class="reference internal" href="#overpass-turbo" id="id17">Overpass turbo</a></li>
 <li><a class="reference internal" href="#hot-export-tool" id="id18">HOT Export Tool</a></li>
@@ -104,13 +104,13 @@
 </ul>
 </div>
 <div class="section" id="programs-that-work-with-osm-data">
-<h2><a class="toc-backref" href="#id4">OS Mデータを扱うプログラム</a><a class="headerlink" href="#programs-that-work-with-osm-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">OSMデータを扱うプログラム</a><a class="headerlink" href="#programs-that-work-with-osm-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id">
 <h3><a class="toc-backref" href="#id5">iD</a><a class="headerlink" href="#id" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>iD</strong> は、OpenStreetMap(OSM)のデフォルトのオンラインエディタです。iDは高速で使いやすく、地上測量、衛星および航空画像、GPS追跡または街路レベルの画像など、さまざまなデータソースからのマッピングが可能です。</p>
 <ul class="simple">
-<li>スタートページ： <a class="reference external" href="https://www.openstreetmap.org/edit">https://www.openstreetmap.org/edit</a></li>
-<li>ドキュメンテーション： <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+<li>スタートページ: <a class="reference external" href="https://www.openstreetmap.org/edit">https://www.openstreetmap.org/edit</a></li>
+<li>ドキュメンテーション: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
 <li>チュートリアル: <a class="reference external" href="https://learnosm.org/en/beginner/id-editor/">https://learnosm.org/en/beginner/id-editor/</a></li>
 </ul>
 </div>
@@ -121,15 +121,15 @@
 <li>ホームページ: <a class="reference external" href="https://josm.openstreetmap.de">https://josm.openstreetmap.de</a></li>
 <li>ユーザーガイド: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/JOSM/Guide">https://wiki.openstreetmap.org/wiki/JOSM/Guide</a></li>
 <li>チュートリアル: <a class="reference external" href="https://learnosm.org/en/josm/start-josm/">https://learnosm.org/en/josm/start-josm/</a></li>
-<li>JOSMプラグインコレクション： <a class="reference external" href="https://josm.openstreetmap.de/wiki/Plugins">https://josm.openstreetmap.de/wiki/Plugins</a></li>
+<li>JOSMプラグインコレクション: <a class="reference external" href="https://josm.openstreetmap.de/wiki/Plugins">https://josm.openstreetmap.de/wiki/Plugins</a></li>
 </ul>
 </div>
 <div class="section" id="qgis">
 <h3><a class="toc-backref" href="#id7">QGIS</a><a class="headerlink" href="#qgis" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>OpenStreetMapデータは、ベクトルレイヤとして、コア機能として、またはQuickOSMのようなプラグインを通じて、<strong>QGIS</strong> にロードすることができます。</p>
+<p>OpenStreetMapデータは、ベクトルレイヤとして、コア機能として、またはQuickOSMのようなプラグインを通じて、 <strong>QGIS</strong> にロードすることができます。</p>
 <ul class="simple">
-<li>QuickOSM: See the <a class="reference internal" href="#quickosm">QuickOSM</a> section</li>
-<li>オンラインヘルプ： <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
+<li>QuickOSM:  <a class="reference internal" href="#quickosm">QuickOSM</a> の章を参照ください</li>
+<li>オンラインヘルプ: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
 <li>チュートリアル: <a class="reference external" href="https://learnosm.org/en/osm-data/osm-in-qgis/">https://learnosm.org/en/osm-data/osm-in-qgis/</a></li>
 </ul>
 </div>
@@ -145,66 +145,65 @@
 <span id="id1"></span><h3><a class="toc-backref" href="#id9">osm2pgsql</a><a class="headerlink" href="#osm2pgsql" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>osm2pgsql</strong> は、OpenStreetMap(.osm)データをPostgreSQL(PostGIS)にロード可能な形式に変換するユーティリティプログラムです。多くの場合、Mapnikを使用してOSMデータを視覚的にレンダリングするために使用されます。これは、MapnikがPostgreSQLにOSMデータを視覚的にレンダリングする場合によく使用されます。</p>
 <ul class="simple">
-<li>ホームページ：<a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
+<li>ホームページ: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
 <li>チュートリアル: <a class="reference external" href="https://learnosm.org/en/osm-data/osm2pgsql/">https://learnosm.org/en/osm-data/osm2pgsql/</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="working-with-osm-data-in-qgis">
-<h2><a class="toc-backref" href="#id10">Working with OSM data in QGIS</a><a class="headerlink" href="#working-with-osm-data-in-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>OSGeoLive comes with OSM data for the city where the global <a class="reference external" href="https://foss4g.org">FOSS4G conference</a> takes place.
-You find the data in the file system at <cite>/usr/local/share/data/osm/</cite> or in the PostgreSQL database <cite>osm_local</cite>.</p>
-<p>Start QGIS and have a look at the data.</p>
+<h2><a class="toc-backref" href="#id10">QGISでOSMデータを操作する</a><a class="headerlink" href="#working-with-osm-data-in-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OSGeoLiveには、世界的な <a class="reference external" href="https://FOSS4G.org/">FOSS4Gカンファレンス</a> が開催されている都市のOSMデータが用意されています。ファイルシステムの <cite>/usr/local/share/data/osm/</cite> またはPostgreSQLデータベースの <cite>osm_local</cite> にデータがあります。</p>
+<p>QGISを起動し、データを確認しましょう。</p>
 <ol class="arabic simple">
-<li>Open the <cite>Desktop GIS</cite> folder.</li>
-<li>Double click on the <cite>QGIS</cite> icon.</li>
-<li>Go the browser panel on the left of the screen.</li>
-<li>Navigate to <cite>PostGIS</cite> and then to the database <cite>osm_local</cite>. You will find the data in the schema <cite>public</cite>.</li>
-<li>Drag the layers from the <cite>Browser</cite> panel and drop them in the map canvas.</li>
+<li><cite>デスクトップGIS</cite> フォルダを開きます。</li>
+<li><cite>QGIS</cite> アイコンをダブルクリックします。</li>
+<li>画面の左側にあるブラウザパネルに移動します。</li>
+<li><cite>PostGIS</cite> に移動し、次にデータベース <cite>osm_local</cite> に移動します。データはスキーマの <cite>public</cite> にあります。</li>
+<li><cite>ブラウザ</cite> パネルからレイヤをドラッグし、マップキャンバスにドロップします。</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_postgis_qgis.jpg"><img alt="../../_images/osm_postgis_qgis.jpg" src="../../_images/osm_postgis_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
 </div></blockquote>
-<p>You find a QGIS introduction in the <a class="reference internal" href="qgis_quickstart.html"><span class="doc">QGIS Quickstart</span></a></p>
+<p><a class="reference internal" href="qgis_quickstart.html"><span class="doc">QGISクイックスタート</span></a> にQGISの紹介があります。</p>
 <div class="section" id="quickosm">
 <span id="id2"></span><h3><a class="toc-backref" href="#id11">QuickOSM</a><a class="headerlink" href="#quickosm" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><cite>QuickOSM</cite> allows you to work quickly with OSM data in QGIS thanks to Overpass API.</p>
+<p><cite>QuickOSM</cite> では、Overpass APIのおかげで、QGISでOSMデータをすばやく操作できます。</p>
 <ul class="simple">
-<li>Homepage: <a class="reference external" href="https://github.com/3liz/QuickOSM">https://github.com/3liz/QuickOSM</a></li>
+<li>ホームページ: <a class="reference external" href="https://github.com/3liz/QuickOSM">https://github.com/3liz/QuickOSM</a></li>
 </ul>
 <ol class="arabic simple">
-<li>You have to enable the Plugin in QGIS. Search for <cite>QuickOSM</cite> from <cite>Plugins –&gt; Manage and Install Plugins</cite> in QGIS</li>
-<li>Open QuickOSM from <cite>Vector –&gt; QuickOSM –&gt; QuickOSM</cite></li>
-<li>Search for all the pubs in the FOSS4G city</li>
-<li>Choose key <cite>amenity</cite>, value <cite>pub</cite>, in <cite>Buenos Aires</cite></li>
-<li>Show the query to see the Overpass query</li>
-<li>Click  <cite>Run query</cite>. The resulting data will be loaded in your QGIS project as temporal data</li>
-<li>You can now save the data via <cite>Export -&gt; Save as….</cite>. Choose i.e. Geopackage and save the data as <cite>buenos_aires_pubs</cite>.</li>
+<li>QGISでプラグインを有効にしてください。QGISの <cite>プラグイン –&gt; プラグインの管理とインストール…</cite> から <cite>QuickOSM</cite> を検索します。</li>
+<li><cite>ベクタ –&gt;QuickOSM–&gt;QuickOSM</cite> からQuickOSMを開く</li>
+<li>FOSS4Gの開催都市のすべてのパブを検索</li>
+<li><cite>Buenos Aires</cite> 内のキー <cite>amenity</cite> 、値は <cite>pub</cite> を選択してください</li>
+<li>Overpassのクエリを表示する</li>
+<li><cite>クエリの実行</cite> をクリックします。結果のデータは、時系列データとしてQGISプロジェクトにロードされます。</li>
+<li>これで、 <cite>Export-&gt;Save as….</cite> を使用してデータを保存できます。i.e.Geopackageを選択し、データを <cite>buenos_aires_pubs</cite> として保存します。</li>
 </ol>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">You also find many OSM Plugins for QGIS. Search for <cite>OSM</cite> in the plugin repository.</p>
+<p class="last">また、QGIS用のOSMプラグインも多数用意されています。プラグインリポジトリで <cite>OSM</cite> を検索します。</p>
 </div>
 </div>
 </div>
 <div class="section" id="using-osm-as-basemap-in-qgis">
-<h2><a class="toc-backref" href="#id12">Using OSM as basemap in QGIS</a><a class="headerlink" href="#using-osm-as-basemap-in-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">QGISでOSMをベースマップとして使用する</a><a class="headerlink" href="#using-osm-as-basemap-in-qgis" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="xyz-tiles">
-<h3><a class="toc-backref" href="#id13">XYZ Tiles</a><a class="headerlink" href="#xyz-tiles" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>By default, QGIS comes with OpenStreetMap basemap layer and is located in the <cite>Browser Panel</cite> under <cite>XYZ Tiles</cite>.</p>
+<h3><a class="toc-backref" href="#id13">XYZ タイル</a><a class="headerlink" href="#xyz-tiles" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>デフォルトでは、QGISにはOpenStreetMapベースマップのレイヤが付属しており、<cite>XYZ タイル</cite> の下の <cite>ブラウザパネル</cite> にあります。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_xyz_qgis.jpg"><img alt="../../_images/osm_xyz_qgis.jpg" src="../../_images/osm_xyz_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="quickmapservices">
 <h3><a class="toc-backref" href="#id14">QuickMapServices</a><a class="headerlink" href="#quickmapservices" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><cite>QuickMapServices</cite> plugin allows you to easily add various map services as basemaps with one click in QGIS.</p>
+<p><cite>QuickMapServices</cite> プラグインを使用すると、QGISで一回クリックするだけで、さまざまなマップサービスをベースマップとして追加できます。</p>
 <ul class="simple">
-<li>Homepage: <a class="reference external" href="https://github.com/nextgis/quickmapservices">https://github.com/nextgis/quickmapservices</a></li>
+<li>ホームページ: <a class="reference external" href="https://github.com/nextgis/quickmapservices">https://github.com/nextgis/quickmapservices</a></li>
 </ul>
 <ol class="arabic simple">
-<li>You have to enable the Plugin in QGIS. Search for <cite>QuickMapServices</cite> from <cite>Plugins –&gt; Manage and Install Plugins</cite> in QGIS</li>
-<li>Add an OSM basemap from <cite>Web –&gt; QuickMapServices –&gt; OSM</cite></li>
+<li>QGISでプラグインを有効にしてください。QGISの <cite>プラグイン –&gt; プラグインの管理とインストール…</cite> から、 <cite>QuickMapServices</cite> を検索します。</li>
+<li><cite>Web–&gt;QuickMapServices–&gt;OSM</cite> からOSMベースマップを追加</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_quickmapservices_qgis.jpg"><img alt="../../_images/osm_quickmapservices_qgis.jpg" src="../../_images/osm_quickmapservices_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
@@ -212,29 +211,27 @@ You find the data in the file system at <cite>/usr/local/share/data/osm/</cite> 
 </div>
 </div>
 <div class="section" id="start-working-with-osm-data">
-<h2><a class="toc-backref" href="#id15">Start working with OSM data</a><a class="headerlink" href="#start-working-with-osm-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>There are several ways to download OpenStreetMap data for your region. You can get the data in several formats.</p>
-<p>You can use the following tools and services to extract OSM data for your area of interest.</p>
+<h2><a class="toc-backref" href="#id15">OSMデータで作業を開始</a><a class="headerlink" href="#start-working-with-osm-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>OpenStreetMapデータをダウンロードする方法が複数あります。データは複数の形式で取得できます。</p>
+<p>次のツールとサービスを使用して、対象エリアのOSMデータを抽出できます。</p>
 <div class="section" id="geofabrik">
 <h3><a class="toc-backref" href="#id16">Geofabrik</a><a class="headerlink" href="#geofabrik" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference external" href="https://download.geofabrik.de/">Geofabrik</a> provides daily worldwide OpenStreetMap data extracts by subregion and country.
-Choose the region or country you are interested in. Data is provided in three formats: <cite>.osm.pbf</cite>, <cite>.shp.zip</cite> and <cite>.osm.bz2</cite>.
-<cite>.osm.pbf</cite> and`.shp.zip` can be opened directly in QGIS.</p>
+<p><a class="reference external" href="https://download.geofabrik.de/">Geofabrik</a>  は、地域や国ごとに、世界中の OpenStreetMap データを抽出して提供しています。興味のある地域または国を選択してください。データは次の3つのフォーマットで提供されています: <cite>.osm.pbf</cite>, <cite>.shp.zip</cite> and <cite>.osm.bz2</cite>. <cite>.osm.pbf</cite> と`.shp.zip` は、QGISで直接開くことができます。</p>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last"><strong>.osm.bz2</strong> contains raw OSM XML files <cite>.osm</cite>, <a class="reference internal" href="#osm2pgsql">osm2pgsql</a> works well with them, find out more about working with them here <a class="reference external" href="https://wiki.openstreetmap.org/wiki/OSM_XML">https://wiki.openstreetmap.org/wiki/OSM_XML</a></p>
+<p class="last"><strong>.osm.bz2</strong> は、生のOSM XMLファイル <cite>.osm</cite> の圧縮形式で、 <a class="reference internal" href="#osm2pgsql">osm2pgsql</a> を使うことで利用できます。利用方法の詳細については次のWikiを参照してください。 <a class="reference external" href="https://wiki.openstreetmap.org/wiki/OSM_XML">https://wiki.openstreetmap.org/wiki/OSM_XML</a></p>
 </div>
 </div>
 <div class="section" id="overpass-turbo">
 <h3><a class="toc-backref" href="#id17">Overpass turbo</a><a class="headerlink" href="#overpass-turbo" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Overpass turbo is a web based data mining tool for OpenStreetMap based on the Overpass-API.</p>
-<p>Have a look at the web client and download all the pubs in the FOSS4G city.</p>
+<p>Overpass turbo は、Overpass APIをベースに、OpenStreetMap向けのWebベースのデータマイニングツールです。</p>
+<p>Webクライアントを開いて、FOSS4Gの開催都市にある全てのパブ(居酒屋)をダウンロードしましょう。</p>
 <ol class="arabic simple">
-<li>Open <a class="reference external" href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a></li>
-<li>Search for all the pubs in the FOSS4G city</li>
-<li>Click on the button <cite>Wizard</cite> and paste the query to the search column <cite>amenity=pub in 「Buenos Aires」</cite></li>
-<li>Then click the button <cite>build and run query</cite></li>
-<li>Click <cite>zoom to data</cite> in the map canvas to navigate to your results</li>
+<li><a class="reference external" href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a> を開く</li>
+<li>FOSS4Gの開催都市のすべてのパブを検索</li>
+<li><cite>Wizard</cite> ボタンをクリックし、<cite>amenity=pub in 「Buenos Aires」</cite> という検索行をはりつけます。</li>
+<li>次に、 <cite>build and run query</cite> をクリック</li>
+<li>マップキャンパスで <cite>zoom to data</cite> をクリックし、検索結果へ移動します。</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/overpass_turbo.jpg"><img alt="../../_images/overpass_turbo.jpg" src="../../_images/overpass_turbo.jpg" style="width: 941.0px; height: 586.0px;" /></a>
@@ -242,10 +239,8 @@ Choose the region or country you are interested in. Data is provided in three fo
 </div>
 <div class="section" id="hot-export-tool">
 <h3><a class="toc-backref" href="#id18">HOT Export Tool</a><a class="headerlink" href="#hot-export-tool" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The Humanitarian OpenStreetMap Team (HOT) provides an export tool for OpenStreetMap too.
-To use it you need an OSM account.
-You can download data in several formats and have history for your downloaded data and exports.</p>
-<p>Here is a quickstart: <a class="reference external" href="https://export.hotosm.org/en/v3/learn/quick_start">https://export.hotosm.org/en/v3/learn/quick_start</a></p>
+<p>人道的OpenStreetMapチーム(HOT: The Humanitarian OpenStreetMap Team) でも、OpenStreetMapのエキスポートツールを提供しています。これを使用するには、OSMアカウントが必要です。いくつかの形式でデータをダウンロードし、ダウンロードしたデータとエクスポートの履歴を持つことができます。</p>
+<p>クイックスタート: <a class="reference external" href="https://export.hotosm.org/en/v3/learn/quick_start">https://export.hotosm.org/en/v3/learn/quick_start</a></p>
 </div>
 </div>
 <div class="section" id="what-next">

@@ -138,6 +138,9 @@
 <p>共有フォルダを読み取り専用にし、自動マウントすることもできます。 「フォルダパス」 と 「フォルダ名」 を定義したら、[OK]をクリックし、もう一度[OK]をクリックして設定ウィンドウを閉じます。</p>
 <p><strong>仮想マシンの起動</strong></p>
 <p>Start (緑の矢印) ボタンをクリックして、VM を起動しましょう。</p>
+<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
 <p>VMにisoをインストールする場合は、ユーザー名を 「user」 に設定する必要があります。</p>
 <p>ユーザー 「user」 は、OSGeoLive仮想マシンの 「users」 グループのメンバーではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
 <p>この問題を解決するには、次の1回限りの手順でvmdkを修正します。</p>

@@ -77,7 +77,7 @@
 <p>In diesem Quickstart begleiten wir Sie beim Aufbau der Software und veranschaulichen den Einsatz an einzelnen Beispielen. Zwischendurch werden wir weitere Software vorstellen, denn pygeoapi ist ein Produkt, das typischerweise mit anderen Komponenten kombiniert wird.</p>
 <div class="section" id="prior-knowledge">
 <h2>Vorabinformation<a class="headerlink" href="#prior-knowledge" title="Link zu dieser Überschrift">¶</a></h2>
-<p>pygeoapi is a Python web application for the spatial domain, so you need to be aware of the concepts of web applications and geospatial aspects such as grid and vector formats, OGC standards and projection systems. Python knowledge is recommended, although you can do without by running the application from OSGeoLive.</p>
+<p>pygeoapi ist eine Python Web-Anwendung für räumliche Daten. Sie sollten sich also mit dem Konzept von Webanwendungen und räumlichen  Aspekten wie Grids, Vektorformaten, OGC Standards und Projektionssystemen auseinandersetzen. Python-Kenntnisse werden empfohlen, obwohl es auch ohne diese geht, wenn Sie die Anwendung von OSGeoLive verwenden.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -107,9 +107,7 @@
 <h3><a class="toc-backref" href="#id2">Konfiguration neuer Dienste</a><a class="headerlink" href="#configure-new-service" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Sie werden nun einen Vektordatensatz in pygeoapi veröffentlichen und dessen Objekte über einen OGC API - Features bereitstellen. OGC API - Features ist ein Standard des OGCs, um Vektor-Objekte als als Webservice bereitzustellen. OGC API - Features ist die OpenAPI Alternative zu WFS.</p>
 <p>pygeoapi unterstützt zahlreiche Vektorformate, z.B. Geopackage, PostGIS, Elasticsearch, WFS, etc. Über den GDAL OGR Provider kann nahezu jede Vektordatenquelle hinzugefügt werden.</p>
-<p>Interesting datasets to expose as OAPI-Features consist of real world data having multiple attributes and links to other resources.
-OSGeoLive contains a number of datasets we can use. An example is <code class="docutils literal"><span class="pre">/var/www/html/openlayers/examples/data/geojson/countries.geojson</span></code>.
-You can configure it in pygeoapi using the GeoJSON provider.</p>
+<p>Interessante Datensätze, die als OAPI-Features verfügbar gemacht werden sollen, bestehen aus realen Daten mit mehreren Attributen und Verknüpfungen zu anderen Ressourcen. OSGeoLive enthält eine Reihe von Datensätzen, die wir verwenden können. Ein Beispiel ist ‚‘/var/www/html/openlayers/examples/data/geojson/countries.geojson‘‘. Sie können es in pygeoapi mit dem GeoJSON-Provider konfigurieren.</p>
 <ol class="arabic simple">
 <li>Laden Sie die GeoJSON-Datei herunter und speichern Sie diese im  Verzeichnis tests/data.</li>
 <li>Passen Sie die Datei pygeoapi-config.yml an, so dass <code class="docutils literal"><span class="pre">countries</span></code> als eine neuen Collection in pygeoapi auftaucht (fügen Sie den Codeblock unten zwischen den anderen Collections ein. Beachten Sie die Einrückungen. Einrückungen sind wichtig im YAML-Syntax).</li>

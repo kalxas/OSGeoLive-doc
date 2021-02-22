@@ -140,6 +140,9 @@ Click on the «Download virtual machine» button. Then unzip the downloaded file
 <p>You can choose to make the shared folder read-only, and auto-mounted. Once the «Folder path» and «Folder name» are defined, click OK, and again OK to finish and close the settings window.</p>
 <p><strong>Running the Virtual Machine</strong></p>
 <p>Now bootup the VM by clicking the Start (green arrow) button.</p>
+<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
 <p>When you install the iso on the VM, the username must be set to «user»</p>
 <p>The user «user» is not a member of the «users» group on the OSGeoLive virtual machine. This prevents some tools from writing to its data directory and causes some software to fail to start.</p>
 <p>The solution is to fix the vmdk with the following one-time procedure:</p>

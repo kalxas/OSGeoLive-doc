@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OSGEoLive gyorstalpaló a Hyper-V virtuális gépen futtatáshoz &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>OSGeoLive gyorstalpaló a Hyper-V virtuális gépen futtatáshoz &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -70,9 +70,9 @@
           <div class="body" role="main">
             
   <div class="section" id="osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine">
-<h1>OSGEoLive gyorstalpaló a  Hyper-V virtuális gépen futtatáshoz<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<h1>OSGeoLive gyorstalpaló a  Hyper-V virtuális gépen futtatáshoz<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
 <p>Ez a gyorstalpaló írja le hogyan futtassuk az OSGeoLive-ot a Hyper-V, a Microsoft virtualizásiós szoftverében. Egy másik megoldáshoz kövesse a linket a <em>Lásd még fejezet</em> ben lentebb. A Hyper-V a Windows Server és a Windows 10 Professional rendszerekben érhető el - nem része a Windows Home verziónak.</p>
-<p>A virtuális gép használatának előnyei ugyanazok, melyeket a <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGEoLive gyorstalpaló a virtuális gép futtatásához</span></a>-ban kiemeltünk. Sajnos a Virtual Box és a Hyper-V nem futtatható párhuzamosan. Ez két lehetőséget hagy - a Hyper-V letiltása vagy egy új Hyper-V gép konfigurálása az OSGeoLive futtatásához. Egy szabad eszköz hypervswitch &lt;<a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">https://unclassified.software/en/apps/hypervswitch</a>&gt;`_ használható a Hyper-V gyors engedélyezéséhez és letiltásához - bár ez egy újraindítást igényel a beállítás minden módosítása után. Az oldal további része az OSGeoLive Hyper-V-n futtatását dokumentálja.</p>
+<p>A virtuális gép használatának előnyei ugyanazok, melyeket a <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive gyorstalpaló a virtuális gép futtatásához</span></a>-ban kiemeltünk. Sajnos a Virtual Box és a Hyper-V nem futtatható párhuzamosan. Ez két lehetőséget hagy - a Hyper-V letiltása vagy egy új Hyper-V gép konfigurálása az OSGeoLive futtatásához. Egy szabad eszköz hypervswitch &lt;<a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">https://unclassified.software/en/apps/hypervswitch</a>&gt;`_ használható a Hyper-V gyors engedélyezéséhez és letiltásához - bár ez egy újraindítást igényel a beállítás minden módosítása után. Az oldal további része az OSGeoLive Hyper-V-n futtatását dokumentálja.</p>
 <div class="section" id="system-requirements">
 <h2>Rendszer követelmények<a class="headerlink" href="#system-requirements" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>A Hyper-V követelmények <a class="reference external" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">itt találhatók</a>. Ez a link információt tartalmaz a gép kompatibilitásnak ellenőrzéséről a <code class="docutils literal"><span class="pre">systeminfo</span></code> paranccsal. Összefoglalóan a gazda gépnek a következő hardver feltételeknek kell megfelelnie:</p>
@@ -95,7 +95,7 @@
 <ol class="arabic simple">
 <li>Töltse le a <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter 3.0-t</a> és telepítse.</li>
 <li>Töltse le a DS File Ops Kit-et és tömörítse ki.</li>
-<li>Nyissa meg a PeorShell-t (adminisztrátori jogokkal)</li>
+<li>Nyissa meg a PowerShell-t (adminisztrátori jogokkal)</li>
 <li>Futtassa a következő parancsot az OSGeoLive vmdk lemez leírójának beszerzéséhez. Ez elmenti a lemez leírót a descriptor1.txt” fájlba.</li>
 </ol>
 <ol class="arabic">
@@ -129,7 +129,7 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 </div>
 <div class="section" id="how-to">
 <h2>Útmutató<a class="headerlink" href="#how-to" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Ez at útmutató feltételezi, hogy a Hyper-V-t telepítette és engedélyezte. Ha nem ez az eset, akkor tipikusabb megoldás a <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGEoLive gyorstalpaló a virtuális gép futtatásához</span></a>-ban leírt Virtua Box használata.</p>
+<p>Ez at útmutató feltételezi, hogy a Hyper-V-t telepítette és engedélyezte. Ha nem ez az eset, akkor tipikusabb megoldás a <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive gyorstalpaló a virtuális gép futtatásához</span></a>-ban leírt Virtua Box használata.</p>
 <p><strong>Egy virtuális gép létrehozása</strong></p>
 <ol class="arabic">
 <li><p class="first">Indítsa el a Hyper-V Manager alkalmazást és az Actions alatt válassza a New &gt; Virtual Machine-t és utána Next. Majd adja meg a virtuális gép nevét.</p>
@@ -151,14 +151,14 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 <p><strong>Virtuális gép futtatás</strong></p>
 <ol class="arabic simple">
 <li>Válassza ki a virtuális gépet a Virtuális gépek listából</li>
-<li>Jobb kattintás és válassza a „Connect”et.  A rendszer rákérdez a a ép elindítására és egy új „Virtual Machine Connection” ablak nyílik meg.</li>
+<li>Jobb kattintás és válassza a „Connect”et.  A rendszer rákérdez a gép elindítására és egy új „Virtual Machine Connection” ablak nyílik meg.</li>
 </ol>
 </div>
 <div class="section" id="see-also">
 <h2>Lásd még:<a class="headerlink" href="#see-also" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGEoLive gyorstalpaló a virtuális gép futtatásához</span></a>.</li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive gyorstalpaló a virtuális gép futtatásához</span></a>.</li>
 <li><dl class="first docutils">
 <dt>OSGeo wiki oldalak:</dt>
 <dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Más megoldások a virtuális gép létrehozására</a></dd>

@@ -77,36 +77,36 @@
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#start-qgis" id="id1">Start QGIS</a></li>
-<li><a class="reference internal" href="#create-a-project" id="id2">Create a project</a></li>
+<li><a class="reference internal" href="#start-qgis" id="id1">QGIS starten</a></li>
+<li><a class="reference internal" href="#create-a-project" id="id2">Erstellen eines Projekts</a></li>
 <li><a class="reference internal" href="#open-an-existing-project" id="id3">Öffnen eines vorhandenen Projekts</a></li>
-<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigate the map</a></li>
-<li><a class="reference internal" href="#style-your-layers" id="id5">Style your layers</a></li>
+<li><a class="reference internal" href="#navigate-the-map" id="id4">Navigieren in der Karte</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">Stylen Sie Ihre Layer</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id6">Was Sie noch ausprobieren können</a></li>
 <li><a class="reference internal" href="#what-next" id="id7">Was kommt als Nächstes?</a></li>
 </ul>
 </div>
 <div class="section" id="start-qgis">
-<h2><a class="toc-backref" href="#id1">Start QGIS</a><a class="headerlink" href="#start-qgis" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">QGIS starten</a><a class="headerlink" href="#start-qgis" title="Link zu dieser Überschrift">¶</a></h2>
 <ol class="arabic simple">
 <li>Öffnen Sie den Ordner „Desktop GIS“.</li>
 <li>Klicken Sie doppelt Sie auf das „QGIS“-Symbol.</li>
 </ol>
-<p>You will see QGIS launch with an empty project. The various parts of the QGIS Interface are listed below.</p>
+<p>QGIS startet mit einem leeren Projekt. Die verschiedenen Bereiche der  QGIS-Anwendung werden unten aufgeführt.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
 </div></blockquote>
 <ul class="simple">
-<li>[1] Menu bar: Access to various QGIS features using a standard hierarchical menu.</li>
-<li>[2] Toolbars: For interaction with the map, layers, attributes and selections.</li>
-<li>[3] Browser Panel: A spatial file browser allowing drag and drop content into the map frame.</li>
-<li>[4] Layer Panel: Controls the map layers, their order, and visibility.</li>
-<li>[5] Status Bar: General information about the map and access to a universal search bar.</li>
+<li>[1] Menüleiste: Zugriff auf verschiedene QGIS-Funktionen über ein hierarchisches Standardmenü.</li>
+<li>[2] Werkzeugleisten: Für die Interaktion mit der Karte, Layern, Attributen und Selektionen.</li>
+<li>[3] Browser-Panel: Ein räumlicher Dateibrowser, der es ermöglicht über Drag-and-Drop Inhalte in den Karten zu überführen.</li>
+<li>[4] Layer-Panel: Steuert die Karten-Layer (Themen), deren Reihenfolge und Sichtbarkeit.</li>
+<li>[5] Statusleiste: Allgemeine Informationen zur Karte und Zugriff auf eine universelle Suchleiste.</li>
 </ul>
 </div>
 <div class="section" id="create-a-project">
-<h2><a class="toc-backref" href="#id2">Create a project</a><a class="headerlink" href="#create-a-project" title="Link zu dieser Überschrift">¶</a></h2>
-<p>To create a new project, choose <span class="menuselection">Project ‣ New</span>.</p>
+<h2><a class="toc-backref" href="#id2">Erstellen eines Projekts</a><a class="headerlink" href="#create-a-project" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um ein neues Projekt zu erstellen, wählen Sie :menuselection:‘Project –&gt; New‘.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.1999999999999px; height: 499.09999999999997px;" /></a>
 </div></blockquote>
@@ -120,10 +120,9 @@
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 </div></blockquote>
-<p>Once the layer has been dragged onto the map frame, you will see a layer showing
-countries.</p>
+<p>Sobald der Layer auf den Kartenrahmen gezogen wurde, wird ein Layer angezeigt, der Länder anzeigt.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
-<p>Now let’s try adding a raster layer to the project.</p>
+<p>Versuchen wir nun, dem Projekt einen Raster-Layer hinzuzufügen.</p>
 <ol class="arabic simple">
 <li>Wechseln Sie in das Browser-Bedienfeld auf der linken Seite des Bildschirms.</li>
 <li>Navigieren Sie zum Ordner ‚home/data/natural_earth2‘.</li>
@@ -131,12 +130,11 @@ countries.</p>
 <li>Ziehen Sie den Layer aus dem Browserfenster, und lassen ihn im Kartenrahmen fallen.</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
-<p>Once the layer has been dragged onto the map frame, you will see a raster layer
-showing land cover and bathymetry.</p>
+<p>Sobald der Layer auf den Kartenrahmen gezogen wurde, wird ein Raster-Layer mit Bodenbedeckung und Bathymetrie angezeigt.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 <p>Nachdem wir nun einige Inhalte zu unserem Projekt hinzugefügt haben, können wir das Projekt speichern, damit wir zu einem späteren Zeitpunkt darauf zurückkommen können.</p>
 <ol class="arabic">
-<li><p class="first">Choose <span class="menuselection">Project ‣ Save</span>.</p>
+<li><p class="first">Wählen Sie :menuselection:‘Project –&gt; Speichern‘.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 </li>
 <li><p class="first">Speichern Sie das Projekt unter ‚/home/user/desktop‘.</p>
@@ -144,7 +142,7 @@ showing land cover and bathymetry.</p>
 <li><p class="first">Nennen Sie das Projekt ‚Mein QGIS-Projekt‘.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
 </li>
-<li><p class="first">Click ‚Save‘.</p>
+<li><p class="first">Klicken Sie auf „Speichern“.</p>
 </li>
 </ol>
 <p>Auf dem Desktop befindet sich nun eine Projektdatei mit dem Namen „Mein QGIS-Projekt“ und im oberen Teil ihres Projektes wird nun  nicht mehr „untitled“ angezeigt, sondern „Mein QGIS-Projekt“.</p>
@@ -155,11 +153,11 @@ showing land cover and bathymetry.</p>
 <p>Ein QGIS-Projekt speichert Layer, Stile, Kartenausdehnungen und Einstellungen für die Verwendung zu einem späteren Zeitpunkt. Diese Informationen werden als QGIS-Projektdatei gespeichert und haben eine Erweiterung von ‚.qgs‘ oder ‚.qgz‘, wobei ‚.qgz‘ das Standarddateiformat in QGIS ist, das in die Zukunft geht.</p>
 <p>Öffnen wir ein bestehendes QGIS-Projekt und werfen einen Blick darauf.</p>
 <ol class="arabic simple">
-<li>Open QGIS. Note that when QGIS is opened you will be presented with a list of recent projects to chose from. This is a convenient way to open a project you have used recently.</li>
-<li>Choose <span class="menuselection">Project ‣ Open</span>.</li>
+<li>Öffnen Sie QGIS. Beachten Sie, dass Ihnen beim Öffnen von QGIS eine Liste der letzten Projekte zur Auswahl angezeigt wird. Dies ist eine bequeme Möglichkeit, ein Projekt zu öffnen, das Sie vor kurzem verwendet haben.</li>
+<li>Wählen Sie :menuselection:‘Project –&gt; Öffnen‘.</li>
 <li>Navigieren Sie zu ‚/home/user/qgis-example‘.</li>
 <li>Wählen Sie das Projekt ‚QGIS-NaturalEarth-Example.qgs‘.</li>
-<li>Click ‚Open‘.</li>
+<li>Klicken Sie auf ‚Öffnen‘.</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
 <p>Dadurch wird ein QGIS-Projekt mit einer Reihe von Natural Earth-Datensätzen geöffnet, wie unten gezeigt. Dieses Projekt enthält eine Reihe von Layern im Ebenenbedienfeld und zeigt den räumlichen Inhalt im Kartenrahmen an.</p>
@@ -183,17 +181,17 @@ showing land cover and bathymetry.</p>
 <p>Versuchen Sie, den Layer ‚HYP_50M_SR_W‘ an den unteren Rand der Layer-Liste zu verschieben. Dies wäre eine geeignetere Position für einen Karten-Layer wie diesen.</p>
 </div>
 <div class="section" id="navigate-the-map">
-<h2><a class="toc-backref" href="#id4">Navigate the map</a><a class="headerlink" href="#navigate-the-map" title="Link zu dieser Überschrift">¶</a></h2>
-<p>The navigation toolbar allows users to move around the map and change the map extent.</p>
+<h2><a class="toc-backref" href="#id4">Navigieren in der Karte</a><a class="headerlink" href="#navigate-the-map" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Navigationssymbolleiste ermöglicht es Benutzern, sich auf der Karte zu bewegen und die Kartenausdehnung zu ändern.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
 <ul class="simple">
-<li>[1] Pan: Allows the map to be dragged (‚panned‘) to a new location.</li>
-<li>[2] Zoom in: Allows the map extent to be zoomed in.</li>
-<li>[3] Zoom out: Allows the map to be zoomed out.</li>
-<li>[4] Zoom to full extent: Changes the map extent to fit all of the map layers into the map frame.</li>
-<li>[5] Zoom to layer: Changes the map extent to fit the extent of the layer highlighted in the layer panel.</li>
+<li>[1] Pan: Ermöglicht das Ziehen der Karte („pannen“) an einen neue Position.</li>
+<li>[2] Zoom in: Ermöglicht das Vergrößern des Kartenbereichs.</li>
+<li>[3] Zoom out: Ermöglicht das Verkleinern der Karte.</li>
+<li>[4] Zoom auf volle Ausdehnung: Ändert die Kartenausdehnung so, dass alle Karten-Layer in den Kartenrahmen passen.</li>
+<li>[5] Zoom auf Layer: Ändert die Kartenausdehnung so, dass sie an die Ausdehnung des im Layer-Bedienfeld markierten Layers springt.</li>
 </ul>
-<p>Let’s try changing the map extent with the zoom-in tool.</p>
+<p>Ändern Sie nun die Kartenausdehnung mit dem Zoom-In-Werkzeug, so dass der Benutzer näher auf einem Bereich zoomt.</p>
 <ol class="arabic simple">
 <li>Wählen Sie das Werkzeug „Zoom in“ in der Navigationsleiste aus.</li>
 <li>Bewegen Sie den Cursor über der Karte.</li>
@@ -214,7 +212,7 @@ showing land cover and bathymetry.</p>
 <p>Die Karte sollte auf die Ausdehnung des ausgewählten (‚aktiven‘) Layers zoomen.</p>
 </div>
 <div class="section" id="style-your-layers">
-<h2><a class="toc-backref" href="#id5">Style your layers</a><a class="headerlink" href="#style-your-layers" title="Link zu dieser Überschrift">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Stylen Sie Ihre Layer</a><a class="headerlink" href="#style-your-layers" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Layer können in QGIS mit dem Stil-Editor gestylt werden. Der Style-Editor ist standardmäßig nicht sichtbar, aber leicht über eine Schaltfläche am oberen Rand des Ebenenbedienfelds zugänglich, wie unten gezeigt.</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
 <p>Die obige Schaltfläche fungiert als Umschalter, sodass der Stil-Editor leicht ausgeblendet werden kann, indem Sie erneut auf dieselbe Schaltfläche klicken. Wenn der Stil-Editor aktiviert ist, wird er auf der rechten Seite des Bildschirms angezeigt, um die aktive Ebene, die im Ebenenbereich hervorgehoben ist, zu bearbeiten.</p>
