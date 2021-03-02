@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fi">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OSGeoLive pika-aloitus suoritukseen Hyper-V virtuaalikoneessa &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Running in a Hyper-V Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,7 +26,7 @@
     <link rel="index" title="Sisällysluettelo" href="../genindex.html" />
     <link rel="search" title="Etsi" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="Command Line Quickstart" href="commandline_quickstart.html" />
+    <link rel="next" title="Command Line basics" href="commandline_quickstart.html" />
     <link rel="prev" title="OSGeoLiven käynnistettävän USB-muistitikun luominen" href="usb_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -69,10 +69,10 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine">
-<h1>OSGeoLive pika-aloitus suoritukseen Hyper-V virtuaalikoneessa<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="running-in-a-hyper-v-virtual-machine">
+<h1>Running in a Hyper-V Virtual Machine<a class="headerlink" href="#running-in-a-hyper-v-virtual-machine" title="Permalink to this headline">¶</a></h1>
 <p>Tämä pika-aloitus kuvailee kuinka suorittaa OSGeoLive käytettäessä Hyper-V, Microsoftinvirtualisointi ohjelmistoa. Tutustuaksesi muihin menetelmiin seuraa linkkejä ”Katso myös” osiosta alempana. Hyper-V on saataville sekä Windows Serverille kuin Windows 10 Professional järjestelmille - se ei ole osa Windows 10 Home järjestelmää.</p>
-<p>Virtuaalikoneen käyttämisen edut ovat samat kuin ne, jotka on kuvattu kohdassa <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a>.&nbsp;valitettavasti Virtual Boxia ja Hyper-V ei voi suorittaa saman aikaisesti.  Tämä - poistetaan jättää 2 vaihtoehtoa - Hyper-V ominaisuus, tai konfiguroidaan uusi Hyper-V kone suorittamaan OSGeoLiveä. Vapaata työkalua <a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">hypervswitch</a> voidaan käyttää nopeasti ottamaan tai poistamaan Hyper-V käytöstä - se kuitenkin edellyttää tietokoneen uudelleen käynnistystä joka kerta kun asetuksia muutetaan. Loppu tästä sivusta dokumentoi kuinka konfiguroida OSGeolive suoritettavaksi Hyper-V:llä</p>
+<p>Virtuaalikoneen käyttämisen edut ovat samat kuin ne, jotka on kuvattu kohdassa <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>.&nbsp;valitettavasti Virtual Boxia ja Hyper-V ei voi suorittaa saman aikaisesti.  Tämä - poistetaan jättää 2 vaihtoehtoa - Hyper-V ominaisuus, tai konfiguroidaan uusi Hyper-V kone suorittamaan OSGeoLiveä. Vapaata työkalua <a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">hypervswitch</a> voidaan käyttää nopeasti ottamaan tai poistamaan Hyper-V käytöstä - se kuitenkin edellyttää tietokoneen uudelleen käynnistystä joka kerta kun asetuksia muutetaan. Loppu tästä sivusta dokumentoi kuinka konfiguroida OSGeolive suoritettavaksi Hyper-V:llä</p>
 <div class="section" id="system-requirements">
 <h2>Järjestelmävaatimukset<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
 <p>Hyper-V vaatimukset voit löytää <a class="reference external" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">täältä</a>. Tästä linkistä löydät myös tiedon tarkastamisesta onko koneesi yhteensopiva käyttäen <code class="docutils literal"><span class="pre">systeminfo</span></code> komentoa. Yhteenvedoksi koneesi tulee täyttää seuraavat laitteisto edellytykset:</p>
@@ -129,7 +129,7 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 </div>
 <div class="section" id="how-to">
 <h2>Kuinka teen<a class="headerlink" href="#how-to" title="Permalink to this headline">¶</a></h2>
-<p>Tämä opas olettaa Hyper-V jo asennetuksi ja käytettäväksi - jos näin ei ole laita tyypillisempi lähestyminen on käyttää VirtualBoxia on kuvailtu dokumentissa  <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a>&nbsp;.</p>
+<p>Tämä opas olettaa Hyper-V jo asennetuksi ja käytettäväksi - jos näin ei ole laita tyypillisempi lähestyminen on käyttää VirtualBoxia on kuvailtu dokumentissa  <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>&nbsp;.</p>
 <p><strong>Luo virtuaalikone</strong></p>
 <ol class="arabic">
 <li><p class="first">Käynnistä Hyper-V Manager ohjelma ja Actions valinnasta valitse New -&gt; Virtual Machine, ja sitten Next. Tämän jälkeen anna sopiva nimi virtuaalikoneelle,</p>
@@ -158,13 +158,13 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 <h2>Katso myös:<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">OSGeoLive Quickstart for Running in a Virtual Machine</span></a>.</li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>.</li>
 <li><dl class="first docutils">
 <dt>OSGeo wiki sivut:</dt>
 <dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Muita tapoja luoda virtuaalikone</a></dd>
 </dl>
 </li>
-<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive Pika-aloitus</span></a></li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Asenna OSGeoLive kovalevyllesi</span></a></li>
 <li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLiven käynnistettävän USB-muistitikun luominen</span></a></li>
 </ul>

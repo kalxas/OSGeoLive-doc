@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Inicio rápido de OSGeoLive para correr en una máquina Virtual de Hyper-V &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Running in a Hyper-V Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,7 +26,7 @@
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Búsqueda" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="Command Line Quickstart" href="commandline_quickstart.html" />
+    <link rel="next" title="Command Line basics" href="commandline_quickstart.html" />
     <link rel="prev" title="Crear una unidad flash USB de arranque OSGeoLive" href="usb_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -69,10 +69,10 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine">
-<h1>Inicio rápido de OSGeoLive para correr en una máquina Virtual de Hyper-V<a class="headerlink" href="#osgeolive-quickstart-for-running-in-a-hyper-v-virtual-machine" title="Enlazar permanentemente con este título">¶</a></h1>
+  <div class="section" id="running-in-a-hyper-v-virtual-machine">
+<h1>Running in a Hyper-V Virtual Machine<a class="headerlink" href="#running-in-a-hyper-v-virtual-machine" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Esta Guía de Inicio Rápido describe cómo ejecutar OSGeoLive utilizando Hyper-V, el software de virtualización de Microsoft. Para otros métodos, siga los enlaces de la sección «Ver también» a continuación. Hyper-V está disponible en Windows Server y Windows 10 Professional, no es parte de Windows 10 Home.</p>
-<p>Las ventajas de usar una máquina virtual son las mismas que se describen en <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Inicio Rápido de OSGeoLive para Ejecutar en una Máquina Virtual</span></a>. Lamentablemente, Virtual Box e Hyper-V no se pueden ejecutar simultáneamente. Esto deja 2 opciones - deshabilitar la característica Hyper-V o configurar una nueva máquina Hyper-V para ejecutar OSGeoLive. Se puede usar una herramienta gratuita <cite>hypervswitch &lt;https://unclassified.software/en/apps/hypervswitch&gt;</cite> _ para habilitar e inhabilitar Hyper-V rápidamente, sin embargo, todavía se requiere reiniciar cada vez que se cambia la configuración. El resto de esta página documenta cómo configurar OSGeoLive para que se ejecute en Hyper-V.</p>
+<p>Las ventajas de usar una máquina virtual son las mismas que se describen en <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>. Lamentablemente, Virtual Box e Hyper-V no se pueden ejecutar simultáneamente. Esto deja 2 opciones - deshabilitar la característica Hyper-V o configurar una nueva máquina Hyper-V para ejecutar OSGeoLive. Se puede usar una herramienta gratuita <cite>hypervswitch &lt;https://unclassified.software/en/apps/hypervswitch&gt;</cite> _ para habilitar e inhabilitar Hyper-V rápidamente, sin embargo, todavía se requiere reiniciar cada vez que se cambia la configuración. El resto de esta página documenta cómo configurar OSGeoLive para que se ejecute en Hyper-V.</p>
 <div class="section" id="system-requirements">
 <h2>Requerimientos del Sistema<a class="headerlink" href="#system-requirements" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los requisitos de Hyper-V pueden encontrarse <cite>aquí &lt; https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements &gt;</cite> _. Este enlace también proporciona información sobre comprobar si tu máquina es compatible con el comando `` systeminfo``. En resumen el equipo host debe tener los siguientes requisitos de hardware:</p>
@@ -129,7 +129,7 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 </div>
 <div class="section" id="how-to">
 <h2>Cómo hacer<a class="headerlink" href="#how-to" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Esta guía asume que Hyper-V ya está instalado y habilitado - si esto no es el caso, se puede utilizar el enfoque más típico de Virtual Box, esbozado en <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Inicio Rápido de OSGeoLive para Ejecutar en una Máquina Virtual</span></a></p>
+<p>Esta guía asume que Hyper-V ya está instalado y habilitado - si esto no es el caso, se puede utilizar el enfoque más típico de Virtual Box, esbozado en <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a></p>
 <p>** Crear una Máquina Virtual **</p>
 <ol class="arabic">
 <li><p class="first">Iniciar la aplicación Hyper-V Manager y debajo de Acciones, seleccione New &gt; Virtual Machine, y después Next. A continuación, introduzca un nombre apropiado para la máquina virtual.</p>
@@ -158,13 +158,13 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 <h2>Vea también:<a class="headerlink" href="#see-also" title="Enlazar permanentemente con este título">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Inicio Rápido de OSGeoLive para Ejecutar en una Máquina Virtual</span></a>.</li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>.</li>
 <li><dl class="first docutils">
 <dt>Páginas de OSGeo wiki:</dt>
 <dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Otras formas de crear una Virtual Machine</a></dd>
 </dl>
 </li>
-<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Guía de Inicio Rápido para OSGeoLive</span></a></li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">Instalar OSGeoLive en el Disco Duro</span></a></li>
 <li><a class="reference internal" href="usb_quickstart.html"><span class="doc">Crear una unidad flash USB de arranque OSGeoLive</span></a></li>
 </ul>
