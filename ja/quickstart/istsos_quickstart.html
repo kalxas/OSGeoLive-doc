@@ -73,8 +73,8 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="istsos-quickstart">
 <h1>istSOSクイックスタート<a class="headerlink" href="#istsos-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>istSOSは、<a class="reference external" href="https://www.python.org/">Python</a>  で記述されたOGC <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> サーバ実装です。istSOSは、Sensor Observation Service標準に従って、モニタリングセンサーからの観測情報を管理し、ディスパッチすることを可能にします。</p>
-<p>このプロジェクトはまた、日常的な操作を容易にするグラフィカル・ユーザー・インターフェースと、管理手順を自動化するためのRESTフル Web apiも提供しています。</p>
+<p>istSOSは、 <a class="reference external" href="https://www.python.org/">Python</a> で記述されたOGC <a class="reference external" href="https://www.ogc.org/standards/sos">Sensor Observation Service (SOS)</a> サーバ実装です。istSOSは、Sensor Observation Service標準に従って、モニタリングセンサーからの観測情報を管理し、ディスパッチすることを可能にします。</p>
+<p>このプロジェクトはまた、日常的な操作を容易にするグラフィカル・ユーザ・インタフェースと、管理手順を自動化するためのRESTful Web apiも提供しています。</p>
 <p>istSOSはGPLv2ライセンスでリリースされ、すべての主要プラットフォーム(Windows、Linux、Mac OS X)で動作します。ただし、これまでLinux環境でのみ使用されていました。</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
@@ -100,11 +100,11 @@
 <p>istSOSを使用すると、センサーデータをさまざまなインスタンスまとめることができます。すべてのインスタンスには、他のインスタンスから独立した独自のデータベーススキーマがあります。必要に応じて、ネットワーク上に他のデータベースを展開することもできます。</p>
 <p>istSOSセットアップの最初のステップは、デフォルトの設定オプションを設定することです。これらのオプションは、新しいistSOSインスタンスが作成されるたびに自動的に使用されます。</p>
 <ol class="arabic">
-<li><p class="first"><span class="menuselection">Geospatial‣Webservices‣istSOS</span> をクリックして、Web Adminインターフェイスを開きます。または、ブラウザを開き、<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a> に移動します。</p>
+<li><p class="first"><span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span> をクリックして、Web Adminインタフェースを開きます。または、ブラウザを開き、 <a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a> に移動します。</p>
 </li>
 <li><p class="first">管理ページで <span class="guilabel">Enter</span> ボタンをクリックします。</p>
 </li>
-<li><p class="first">データベース接続を設定します。ツールバーのボタンメニューから、」Database」ボタンを押し、データベース設定オプションを入力します。</p>
+<li><p class="first">データベース接続を設定します。ツールバーのボタンメニューから、 「Database」ボタンを押し、データベース設定オプションを入力します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">user</span><span class="p">:</span> <span class="n">postgres</span>
 <span class="n">password</span><span class="p">:</span> <span class="n">postgres</span>
 <span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
@@ -117,13 +117,13 @@
 </li>
 <li><p class="first">「Service identification」ボタンを押して、サービスの使用状況を説明するカスタムメタデータを入力します。</p>
 </li>
-<li><p class="first">座標参照系(CRS)を管理するには、」Coordinates system」 ボタンを押します。</p>
+<li><p class="first">座標参照系(CRS)を管理するには、 「Coordinates system」 ボタンを押します。</p>
 <ul class="simple">
-<li><em>Default EPSG code</em>:これはデータベース内のジオメトリのネイティブの座標参照システムになります。</li>
+<li><em>Default EPSG code</em>: これはデータベース内のジオメトリのネイティブの座標参照システムになります。</li>
 <li><em>Permitted EPSG</em>: ここでは、システムがサポートして再投影する他の座標参照系を設定できます。</li>
 </ul>
 </li>
-<li><p class="first">ツールバーのボタンメニューから、」GetObservation Configuration」ボタンを押して、getObservation要求ごとの最大時間間隔(無制限の場合は0)と集計のno-data値を設定します。</p>
+<li><p class="first">ツールバーのボタンメニューから、 「GetObservation Configuration」ボタンを押して、getObservation要求ごとの最大時間間隔(無制限の場合は0)と集計のno-data値を設定します。</p>
 </li>
 <li><p class="first">サービスプロキシアドレスを設定します。プロキシURLフィールドは、リバースプロキシ越しで見えるベースのURLをいれます。</p>
 </li>
@@ -133,22 +133,22 @@
 <h2><a class="toc-backref" href="#id3">新しいサービスを作成する</a><a class="headerlink" href="#create-a-new-service" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>istSOSを設定したので、次は新しいサービスインスタンスを作成します。</p>
 <ol class="arabic simple">
-<li>ツールバーのボタンメニューから」new service」ボタンを押し、<span class="guilabel">Next</span> をクリックします。</li>
-<li>サービス名に**demo**と入力します。</li>
+<li>ツールバーのボタンメニューから 「new service」 ボタンを押し、 <span class="guilabel">Next</span> をクリックします。</li>
+<li>サービス名に <strong>demo</strong> と入力します。</li>
 <li>EPSGフィールドでは、データベースのネイティブ投影を設定できます。デフォルトを使用する場合は空のままにします。<span class="guilabel">Next</span> をクリックします。</li>
-<li>「Customize database」ボックスをクリックすると、この新しいistSOSインスタンスのデフォルトデータベース設定を変更できます。</li>
+<li>「Customize database」 ボックスをクリックすると、この新しいistSOSインスタンスのデフォルトデータベース設定を変更できます。</li>
 <li><span class="guilabel">Next</span> を押します。サーバステータスパネルが表示されます。作成中に何か問題が発生した場合ここに警告が表示されます。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">istSOSの」demo」インスタンスは、デフォルト設定からすべての設定オプションを継承しています。何らかの理由で変更した場合、変更はこのインスタンスにのみ影響します。</p>
+<p class="last">istSOSの 「demo」 インスタンスは、デフォルト設定からすべての設定オプションを継承しています。何らかの理由で変更した場合、変更はこのインスタンスにのみ影響します。</p>
 </div>
 </div>
 <div class="section" id="add-a-new-procedure">
 <h2><a class="toc-backref" href="#id4">新しいプロシージャを追加する</a><a class="headerlink" href="#add-a-new-procedure" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ol class="arabic simple">
-<li>管理インターフェイス(<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a>)の」services」ドロップダウンボタンから、目的のインスタンスを選択します。</li>
-<li>ツールバーのボタンメニューから: guilabel:<cite>New procedure</cite> ボタンを押します。</li>
+<li>管理インタフェース(<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a>)の 「services」 ドロップダウンボタンから、目的のインスタンスを選択します。</li>
+<li>ツールバーのボタンメニューから <span class="guilabel">New procedure</span> ボタンを押します。</li>
 <li>適切な情報を使用してフォームに入力します。</li>
 </ol>
 <div class="admonition warning">
@@ -183,7 +183,7 @@
 </tr>
 </tbody>
 </table>
-<p><em>出力(「add」ボタンを押して出力を確認):</em></p>
+<p><em>出力(「add」 ボタンを押して出力を確認):</em></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="100%" />
@@ -206,11 +206,11 @@
 </div>
 <div class="section" id="add-new-observations">
 <h2><a class="toc-backref" href="#id5">新しい観測情報を追加する</a><a class="headerlink" href="#add-new-observations" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>まず、」text/csv,subtype=istSOS」に従ってフォーマットされたセンサーデータのテキストファイルを作成します。このファイルはCSV(カンマ区切りテキスト)形式を使用しています。最初の行には、観測されたプロパティのURI名を含むヘッダ情報が含まれます。次の行にデータが含まれています。</p>
+<p>まず、 「text/csv,subtype=istSOS」 に従ってフォーマットされたセンサーデータのテキストファイルを作成します。このファイルはCSV(カンマ区切りテキスト)形式を使用しています。最初の行には、観測されたプロパティのURI名を含むヘッダ情報が含まれます。次の行にデータが含まれています。</p>
 <ol class="arabic">
-<li><p class="first"><span class="menuselection">アクセサリ‣FeatherPad</span> を選択して、テキストエディタを開きます。</p>
+<li><p class="first"><span class="menuselection">アクセサリ ‣ FeatherPad</span> を選択して、テキストエディタを開きます。</p>
 </li>
-<li><p class="first">Copy and paste the following text into the text editor window:</p>
+<li><p class="first">次のテキストをコピーしてテキストエディタウィンドウに貼り付けます:</p>
 <blockquote>
 <div><div class="highlight-rest"><div class="highlight"><pre><span></span>urn:ogc:def:parameter:x-istsos:1.0:time:iso8601,urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature
 2014-06-03T14:30:00.00Z,22.20
@@ -228,17 +228,17 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Save the file as 「T_LUGANO_20140603161000000.dat」 on the Desktop. The filename convention being used is: PROCEDURENAME_YYYYMMDDhhmmssfff.dat</p>
+<li><p class="first">デスクトップ上に 「T_LUGANO_20140603161000000.dat」 という名前で保存します。ファイル名の命名方法は次のとおりです: PROCEDURENAME_YYYYMMDDhhmmssfff.dat</p>
 </li>
-<li><p class="first">Open a terminal by selecting <span class="menuselection">System Tools ‣ LXTerminal</span>.</p>
+<li><p class="first"><span class="menuselection">System Tools ‣ LXTerminal</span> を選択して端末を開きます。</p>
 </li>
-<li><p class="first">端末で:」cd/usr/share/istSOS/」と入力し、ENTERを押します。</p>
+<li><p class="first">端末で: 「cd/usr/share/istSOS/」 と入力し、ENTERを押します。</p>
 </li>
-<li><p class="first">Write 「python scripts/csv2istsos.py -p T_LUGANO -u <a class="reference external" href="http://localhost/istsos">http://localhost/istsos</a> -s demo -w ~/Desktop」 and press ENTER</p>
+<li><p class="first">「python scripts/csv2istsos.py -p T_LUGANO -u <a class="reference external" href="http://localhost/istsos">http://localhost/istsos</a> -s demo -w ~/Desktop」 とうちこんで、ENTERを押します</p>
 </li>
-<li><p class="first">「Insert observation success:True」というメッセージが表示されます。</p>
+<li><p class="first">「Insert observation success:True」 というメッセージが表示されます。</p>
 </li>
-<li><p class="first"><span class="menuselection">Geospatial‣Webservices‣istSOS</span> をクリックします。</p>
+<li><p class="first"><span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span> をクリックします。</p>
 </li>
 <li><p class="first">管理ページで <span class="guilabel">Enter</span> ボタンをクリックします</p>
 </li>

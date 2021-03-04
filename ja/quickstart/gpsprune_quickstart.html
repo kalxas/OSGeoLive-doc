@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GpsPrune Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>GpsPruneクイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,26 +71,26 @@
             
   <a class="reference external image-reference" href="https://activityworkshop.net/software/gpsprune"><img alt="../../_images/logo_gpsprune.png" class="align-right" src="../../_images/logo_gpsprune.png" /></a>
 <div class="section" id="gpsprune-quickstart">
-<h1><a class="toc-backref" href="#id1">GpsPrune Quickstart</a><a class="headerlink" href="#gpsprune-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>GpsPrune is a java application for viewing and editing coordinate data.  It can be used for preparing data for GPS devices and for analyzing the data recorded by them.</p>
-<p>In this Quick Start, we will load and view a data file included on this live image, and access some online information to supplement it.  It will be useful therefore if you have some kind of internet connection for this demonstration.</p>
+<h1><a class="toc-backref" href="#id1">GpsPruneクイックスタート</a><a class="headerlink" href="#gpsprune-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>GpsPruneは、座標データを表示および編集するためのJavaアプリケーションです。GPS機器のデータの準備や、記録されたデータの分析に使用できます。</p>
+<p>このクイックスタートでは、このライブイメージに含まれるデータファイルをロードして表示し、オンライン情報を使って追加情報を確認します。したがってこのデモでは、インターネット接続が必須です。</p>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#gpsprune-quickstart" id="id1">GpsPrune Quickstart</a><ul>
-<li><a class="reference internal" href="#start-gpsprune" id="id2">Start GpsPrune</a><ul>
-<li><a class="reference internal" href="#customizing-the-display" id="id3">Customizing the display</a></li>
+<li><a class="reference internal" href="#gpsprune-quickstart" id="id1">GpsPruneクイックスタート</a><ul>
+<li><a class="reference internal" href="#start-gpsprune" id="id2">GpsPruneの開始</a><ul>
+<li><a class="reference internal" href="#customizing-the-display" id="id3">表示のカスタマイズ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#advanced-functions" id="id4">Advanced Functions</a><ul>
+<li><a class="reference internal" href="#advanced-functions" id="id4">高度な機能</a><ul>
 <li><a class="reference internal" href="#wikipedia" id="id5">Wikipedia</a></li>
 <li><a class="reference internal" href="#gpsies" id="id6">Gpsies</a></li>
-<li><a class="reference internal" href="#measuring-distances" id="id7">Measuring distances</a></li>
+<li><a class="reference internal" href="#measuring-distances" id="id7">距離の測定</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#things-to-try" id="id8">Things to Try</a><ul>
-<li><a class="reference internal" href="#using-gpsprune-on-other-systems" id="id9">Using GpsPrune on other systems</a></li>
-<li><a class="reference internal" href="#further-reading" id="id10">Further reading</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id8">試してみること</a><ul>
+<li><a class="reference internal" href="#using-gpsprune-on-other-systems" id="id9">他のシステムでの GpsPrune の利用</a></li>
+<li><a class="reference internal" href="#further-reading" id="id10">さらに読む</a></li>
 </ul>
 </li>
 </ul>
@@ -98,77 +98,74 @@
 </ul>
 </div>
 <div class="section" id="start-gpsprune">
-<h2><a class="toc-backref" href="#id2">Start GpsPrune</a><a class="headerlink" href="#start-gpsprune" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>From the Start menu, choose <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ GpsPrune</span>.  This will then give you the empty window shown below.</p>
+<h2><a class="toc-backref" href="#id2">GpsPruneの開始</a><a class="headerlink" href="#start-gpsprune" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>スタートメニューから <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ GpsPrune</span> を選択します。これにより、次のような空のウィンドウが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_emptywindow.png"><img alt="../../_images/gpsprune_emptywindow.png" src="../../_images/gpsprune_emptywindow.png" style="width: 471.35px; height: 325.05px;" /></a>
-<p>We will now load a file by using the menu command <span class="menuselection">File ‣ Open file</span> and selecting the file to load.  This can be a GPX file, a KML or KMZ file, or even a comma-separated or tab-separated file if you have one.  A suitable GPX file containing a couple of tracks can be found on the disc at <code class="file docutils literal"><span class="pre">~/data/vector/gpx/test_trk2.gpx</span></code> so we will load this one.</p>
+<p>次に、メニューコマンド <span class="menuselection">File ‣ Open file</span> を使用して、読み込むファイルを選択します。読み込むファイルには、GPXファイル、KML、 KMZ、 CSV(カンマ区切り値)、TSV(タブ区切り値)ファイルが使用できます。それなりの量の記録が含まれるGPXファイルは、ディスク上の <code class="file docutils literal"><span class="pre">~/data/vector/gpx/test_trk2.gpx</span></code> にあり、読み込むことができます。</p>
 <img alt="../../_images/gpsprune_trackselect.png" src="../../_images/gpsprune_trackselect.png" />
-<p>Because this file contains two tracks, we are offered the choice of which one(s) to load.  We choose just the first one and press OK.</p>
-<p>Now you should see the track marked in blue against a white background.  If this track had any waypoints (which it doesn’t), then they would be shown too, marked with their names.  Below the main map display is an altitude chart, which shows the profile of the track
-if it contains altitudes.</p>
+<p>このファイルには二つのトラックがはいっているので、どちらのトラックを読み込むか聞かれます。最初のトラックを選択して、OKを押してください。</p>
+<p>白い背景に青でマークされたトラックが表示されるはずです。このトラックにウェイポイントがある場合(ない場合もあります)は、それも表示され、その名前が付加されます。メインマップ表示の下には高度チャートがあり、トラックに高度が含まれている場合は、そのトラックのプロファイルが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_test_trk2.png"><img alt="../../_images/gpsprune_test_trk2.png" src="../../_images/gpsprune_test_trk2.png" style="width: 523.6px; height: 371.8px;" /></a>
-<p>Now, assuming you have a network connection, you can activate the map by clicking the globe
-icon at the top of the main map display, or with the menu option <span class="menuselection">View ‣ Show Map</span>.</p>
+<p>ネットワークに接続している場合は、メインマップ表示の上部にある地球のアイコンをクリックするか、メニューオプション <span class="menuselection">View‣Show Map</span> でマップをアクティブにできます。</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_mapnik.png"><img alt="../../_images/gpsprune_mapnik.png" src="../../_images/gpsprune_mapnik.png" style="width: 523.6px; height: 371.8px;" /></a>
-<p>You can drag the map around with the mouse, and zoom in and out with the mousewheel or by double-clicking.  Dragging with the right mouse button defines a rectangle to zoom to, and the right-click menu offers further options.  Clicking on a point will show the details including altitude and timestamp if available.  You can also click on the altitude profile to select the corresponding point.</p>
+<p>マウスでマップをドラッグして移動したり、マウスホイールまたはダブルクリックで拡大または縮小できます。マウスの右ボタンでドラッグすると、ズームする長方形が定義されます。右クリックメニューには、その他のオプションがあります。ポイントをクリックすると、高度やタイムスタンプなどの詳細が表示されます。高度プロファイルをクリックして、対応するポイントを選択することもできます。</p>
 <div class="section" id="customizing-the-display">
-<h3><a class="toc-backref" href="#id3">Customizing the display</a><a class="headerlink" href="#customizing-the-display" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>You can change the map with the menu option <span class="menuselection">Settings ‣ Set map background</span>.
-Let’s have a look at an alternative map source by selecting the fifth one, 「Hikebikemap」.  This uses the maps from hikebikemap.org to show additional information useful for hiking and cycling such as contour lines and cycle routes.</p>
+<h3><a class="toc-backref" href="#id3">表示のカスタマイズ</a><a class="headerlink" href="#customizing-the-display" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><span class="menuselection">Settings ‣ Set map background</span> のメニューオプションでマップを変更できます。5番目の 「Hikebikemap」 を選択して、別のマップソースを見てみましょう。hikebikemap.org の地図を使用して、等高線やサイクルルートなど、ハイキングやサイクリングに役立つ追加情報を表示します。</p>
 <a class="reference internal image-reference" href="../../_images/gpsprune_hikebikemap.png"><img alt="../../_images/gpsprune_hikebikemap.png" src="../../_images/gpsprune_hikebikemap.png" style="width: 523.6px; height: 371.8px;" /></a>
 </div>
 </div>
 <div class="section" id="advanced-functions">
-<h2><a class="toc-backref" href="#id4">Advanced Functions</a><a class="headerlink" href="#advanced-functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now that we can load and view files from the included file system, let’s see if we can supplement this with some online information as well, using some more advanced functions.</p>
+<h2><a class="toc-backref" href="#id4">高度な機能</a><a class="headerlink" href="#advanced-functions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、組み込まれているファイル・システムからファイルをロードして表示できるようになったので、さらに高度な機能を使用して、オンライン情報でこれを補完できるかどうかを確認してみましょう。</p>
 <div class="section" id="wikipedia">
 <h3><a class="toc-backref" href="#id5">Wikipedia</a><a class="headerlink" href="#wikipedia" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Now let’s find out some more information about where this track is.  We can do this by selecting a point, and then choosing the menu option <span class="menuselection">Online ‣ Get nearby Wikipedia articles</span>.  This shows a list of articles whose coordinates are nearest to the selected point.  Clicking one of these entries in the list will show more information in the box below.</p>
+<p>では、このトラックがどこにあるのか、もう少し詳しく調べてみましょう。これを行うには、ポイントを選択し、メニューオプション <span class="menuselection">Online‣Get nearby Wikipedia articles</span> を選択します。選択した点に最も近い座標を持つ記事のリストが表示されます。これらのエントリのいずれかをクリックすると、下のボックスに詳細情報が表示されます。</p>
 <img alt="../../_images/gpsprune_wikipedialist.png" src="../../_images/gpsprune_wikipedialist.png" />
-<p>You can then use the button <cite>Load</cite> to load that point into GpsPrune, or <cite>Show webpage</cite> to load the Wikipedia page in a browser.</p>
+<p>その後、 <cite>Load</cite> ボタンを使ってそのポイントをGpsPruneに読み込んだり、 <cite>Show webpage</cite>  ボタンを使ってWikipediaページをブラウザにロードしたりできます。</p>
 </div>
 <div class="section" id="gpsies">
 <h3><a class="toc-backref" href="#id6">Gpsies</a><a class="headerlink" href="#gpsies" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>We can also use an online service to download another track from the same area.  We can use the menu command <span class="menuselection">Online ‣ Get Gpsies tracks</span> to search for tracks on the website gpsies.com.  Again, we get a list of matching entries, and we can select one to view the description.</p>
+<p>同じエリアから別のトラックをダウンロードするオンラインサービスもあります。メニューコマンド <span class="menuselection">Online‣Get Gpsies tracks</span> を使ってウェブサイト gpsies.com でトラックを検索することができます。ここでも、一致するエントリのリストを取得し、その中から1つを選択して説明を表示できます。</p>
 <img alt="../../_images/gpsprune_gpsieslist.png" src="../../_images/gpsprune_gpsieslist.png" />
-<p>Click the <cite>Load</cite> button to load the track, and select to append this track to the data we’ve already got.  Now we can see both tracks in the same view.</p>
+<p><cite>ロード</cite> ボタンをクリックしてトラックをロードし、このトラックをすでに取得したデータに追加することを選択します。これで、両方のトラックが同じビューに表示されます。</p>
 </div>
 <div class="section" id="measuring-distances">
-<h3><a class="toc-backref" href="#id7">Measuring distances</a><a class="headerlink" href="#measuring-distances" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To find out how long the climb is, we will select just the part of the track which contains the climb, and then we will be able to view the properties of this selected range, such as the distance, climb and descent.</p>
+<h3><a class="toc-backref" href="#id7">距離の測定</a><a class="headerlink" href="#measuring-distances" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上昇の長さを確認するには、上昇を含むトラックの部分だけを選択し、選択した範囲のプロパティ(距離、上昇、下降など)を表示します。</p>
 <ol class="arabic simple">
-<li>Click on the point at the start of the climb, just north of Dunedin, to select it.</li>
-<li>Select <span class="menuselection">Range ‣ Set range start</span> to make this point the start of the selection.</li>
-<li>Select a point at the top of the climb by clicking on the highest point of the altitude profile.</li>
-<li>Select <span class="menuselection">Range ‣ Set range end</span> to finish the selection.</li>
-<li>You can now see in the 「Range details」 section that this part of the track is 8.55 km long, climbs 346 m and descends just 10 m.</li>
+<li>ダニーデンのすぐ北にある登山口のポイントをクリックして選択します。</li>
+<li><span class="menuselection">Range ‣ Set range start</span> を選択して、この地点を選択開始点とします。</li>
+<li>高度プロファイルの最高点をクリックして、上昇の頂点を選択します。</li>
+<li><span class="menuselection">Range ‣ Set range end</span> を選択して、選択終了点とします。</li>
+<li>「Range Details」 セクションでは、この部分の長さが8.55kmで、346mを登って10mだけ下っていることがわかります。</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/gpsprune_rangedetails.png"><img alt="../../_images/gpsprune_rangedetails.png" src="../../_images/gpsprune_rangedetails.png" style="width: 523.6px; height: 371.8px;" /></a>
 </div>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id8">Things to Try</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">試してみること</a><a class="headerlink" href="#things-to-try" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li>Select a point in the track and delete it with <span class="menuselection">Point ‣ Delete point</span></li>
-<li>Draw your own track with <cite>Create series of points</cite> from the right-click menu and measure the total distance</li>
-<li>Export an image of your track with <span class="menuselection">File ‣ Export image</span></li>
-<li>If you have your own track files in any of the formats gpx, kml, kmz or csv, load one of these into GpsPrune and view it using one of the available maps</li>
+<li>トラック内のポイントを選択し、次のコマンドで削除します。  <span class="menuselection">Point ‣ Delete point</span></li>
+<li>右クリックメニューから  <cite>Create series of points</cite>  で独自のトラックを描画し、合計距離を測定する</li>
+<li><span class="menuselection">File ‣ Export image</span> を使って、作成したトラックの画像をエキスポートする。</li>
+<li>gpx、kml、kmz、csvのどれかの形式の独自トラックファイルがある場合は、GpsPruneにロードしてみて、使用可能なマップ上でトラックを表示します。</li>
 </ul>
 </div></blockquote>
 <div class="section" id="using-gpsprune-on-other-systems">
-<h3><a class="toc-backref" href="#id9">Using GpsPrune on other systems</a><a class="headerlink" href="#using-gpsprune-on-other-systems" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>After trying out GpsPrune on this live image, you may want to use it on another system, whether it’s another Linux system or Mac OSX or Windows.  Some linux distributions include GpsPrune in their normal software libraries (just search for 「Prune」 or 「GpsPrune」), or you can just download the latest copy from the home page.</p>
-<p>It doesn’t need to be installed, but it does need a java runtime to be installed, version 1.5 or higher.  You can extend GpsPrune’s functionalities by installing other free software, such as <em>GPSBabel</em>, <em>Gnuplot</em>, <em>Exiftool</em> and <em>Java3d</em>.</p>
-<p>Once you’ve installed GpsPrune on your permanent system, you can save your settings with the menu option <span class="menuselection">Settings ‣ Save settings</span>.  Then they will be remembered for the next time you run GpsPrune.  However, note that when using this live system, all files that you save in the regular file system are lost when you shut down the computer.</p>
-<p>You can also save the downloaded map tiles to disk by selecting the menu option <span class="menuselection">Settings ‣ Save maps to disk</span> and selecting a directory in which to save the images.  This helps to speed up the display as it doesn’t have to download the images again.</p>
+<h3><a class="toc-backref" href="#id9">他のシステムでの GpsPrune の利用</a><a class="headerlink" href="#using-gpsprune-on-other-systems" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>このライブイメージでGpsPruneを試した後に、別のLinuxシステムでもMac OSXでもWindowsでも利用できます。一部のLinuxディストリビューションでは、通常のソフトウェアライブラリにGpsPruneが含まれています( 「Prune」 や 「GpsPrune」 を検索してください)。あるいは、ホームページから最新版をダウンロードすることもできます。</p>
+<p>インストールする必要はありませんが、バージョン1.5以上のJavaランタイムをインストールする必要があります。<em>GPSBabel</em> 、<em>gnuplot</em> 、<em>Exiftool</em> 、<em>Java3d</em> などのフリーソフトウェアをインストールすることで、GpsPruneの機能を拡張することができます。</p>
+<p>永続的なシステムにGpsPruneをインストールしたら、メニューオプションの <span class="menuselection">Settings‣Save settings</span> を使って設定を保存することができます。すると次にGpsPruneを使うときに、設定が記憶されるようになります。ただし、このライブシステムを使用している場合は、コンピュータをシャットダウンすると、通常のファイルシステムに保存されているすべてのファイルが失われます。</p>
+<p>ダウンロードしたマップタイルをディスクに保存するには、メニューオプションの <span class="menuselection">Settings‣Save maps to disk</span> を選択し、イメージを保存するディレクトリを選択します。これにより、イメージを再度ダウンロードする必要がなくなるため、表示速度が向上します。</p>
 </div>
 <div class="section" id="further-reading">
-<h3><a class="toc-backref" href="#id10">Further reading</a><a class="headerlink" href="#further-reading" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">さらに読む</a><a class="headerlink" href="#further-reading" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li>GpsPrune home page: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/">https://activityworkshop.net/software/gpsprune/</a></li>
-<li>Screenshots: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/screenshots.html">https://activityworkshop.net/software/gpsprune/screenshots.html</a></li>
-<li>How-tos and instructions: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/how-tos.html">https://activityworkshop.net/software/gpsprune/how-tos.html</a></li>
+<li>GpsPrune ホームページ: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/">https://activityworkshop.net/software/gpsprune/</a></li>
+<li>スクリーンショット: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/screenshots.html">https://activityworkshop.net/software/gpsprune/screenshots.html</a></li>
+<li>ノウハウや手順: <a class="reference external" href="https://activityworkshop.net/software/gpsprune/how-tos.html">https://activityworkshop.net/software/gpsprune/how-tos.html</a></li>
 </ul>
 </div>
 </div>

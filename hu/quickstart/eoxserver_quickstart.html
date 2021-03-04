@@ -72,9 +72,7 @@
   <a class="reference external image-reference" href="https://docs.eoxserver.org/en/stable/"><img alt="../../_images/logo_eoxserver.png" class="align-right" src="../../_images/logo_eoxserver.png" /></a>
 <div class="section" id="eoxserver-quickstart">
 <h1>EOxServer gyorstalpaló<a class="headerlink" href="#eoxserver-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
-<p>EOxServer is a server for presenting big Earth Observation (EO) data
-archives and metadata via Open Standards. It builds upon an Open Source
-stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>,  <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
+<p>Az EOxServer egy szerver nagy Föld megfigyelési  (EO) adat archívumok és metaadatok prezentálására nyílt szabványok alkalmazásával. Több nyílt forráskódú szoftverre épül, többek között Python,  <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>, <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> vagy <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> adatbázis.</p>
 <p>Ez a gyorstalpaló leírja:</p>
 <ul class="simple">
 <li>Használja a Web klienst az EO adatok megjelenítéséhez, szűréséhez, részhalmaz képzéséhez és letöltéséhez</li>
@@ -99,25 +97,15 @@ stack of software which includes Python, <a class="reference internal" href="../
 <p>Kattintson a <strong>Web Client</strong> linkre az integrált EOxServer kliens megnyitásához.</p>
 <p>Ebben a kliensben felfedezheti a EOxServer példány tartalmát. A bemutató példányt ENVISAT MERIS helyszínekkel töltötték fel.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient1.png"><img alt="Main view of the EOxServer Web Client" src="../../_images/eoxserver_webclient1.png" style="width: 749.5px; height: 433.0px;" /></a>
-<p>The client consists of the map view and widgets that contain the main interactions.
-The main area is the map widget of the client with a set of datasets already displayed.
-On the bottom, you’ll find the timeslider widget, that allows you to explore the
-contents in the temporal dimension.</p>
+<p>A kliens a térkép nézetből és a fő interakciót biztosító vezérlőkből áll. A kliens fő területe a térkép vezérlőé, a már megjelenített adatállományokkal.  Alul egy idő csúszkát talál, mellyel felfedezheti a tartalom idő dimenzióját.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient2.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient2.png" style="width: 748.0px; height: 431.0px;" /></a>
-<p>The Layer Selection widget can be expanded by clicking the cogwheel on the top left and
-it allows you to enable or disable the visibility and
-configure the rendering of the layers. Also, you can show or hide the
-streets-overlay and select the background layer. The Filters tab in this widget enables
-querying for different spatial and temporal values.</p>
+<p>A réteg kiválasztó vezérlő a bal felső sarokban lévő fogaskerékre kattintva nyitható ki és ez lehetővé teszi a láthatóságot be- és kikapcsolja és a rétegek megjelenítését beállíthassa. Megjelenítheti és elrejtheti az utcákat és kiválaszthatja a háttér réteget. Ebben a vezérlőben a Filters fülön különböző térbeli és időbeli értékeket kérdezhet le.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient3.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient3.png" style="width: 747.0px; height: 431.5px;" /></a>
 <p>A térképhez hasonlóan nagyíthatja és eltolhatja az aktuálisan látható időt és kiválaszthat egy időpontot a piros pontokat tartalmazó területen rajzolva. Egy pontra mozogva láthatja az adatállomány azonosítóját. A pontra kattintva a térkép automatikusan az adatállomány terjedelmére nagyít.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient4.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient4.png" style="width: 748.0px; height: 432.5px;" /></a>
-<p>When a spatial filter is enabled, you can draw a bounding box, polygon or point
-directly on the map. The drawn feature is used for querying within the Download Tool.</p>
+<p>Amikor a térbeli szűrőket bekapcsolja, közvetlenül a térképre rajzolhat egy befoglaló téglalapot, egy zárt idomot vagy pontot. A megrajzolt elemet használjuk a lekérdezéshez a lekérdezés eszközben (Download Tool).</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient5.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient5.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>You can get more information of available services and metadata on the selected product
-by hovering on the product in the search results widget and clicking on the icon in the
-top right.</p>
+<p>A kiválasztott produktumon elérhető szolgáltatásokról és metaadatokról a keresési eredmények vezérlőben húzza az egeret a termékre és a jobb felső sarokban található ikonra kattintva kaphat további információt.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient6.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient6.png" style="width: 749.0px; height: 432.5px;" /></a>
 <p>Amikor a Download Tool-t  bekapcsolja egy lekérdezést küldünk a szervernek. Ez a lekérdezés tartalmazza a kiválasztott időpontot és a befoglaló téglalapot. Az eredmények megjelennek a Download vezérlőben, ahol kiválaszthatja a formátumot, a vetületet és a letöltendő adatállományokat.</p>
 <p>Ez a  EOxServer Web kliens rövid bemutatása volt. További információkért kérjük forduljon az <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">online dokumentációhoz</a>.</p>
@@ -128,10 +116,9 @@ top right.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient1.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient1.png" style="width: 438.0px; height: 272.5px;" /></a>
 <p>Az <cite>Admin Client</cite> egy Django szabványos admin és az elérhető adatok konfigurálását teszi lehetővé. Kérjük, nyugodtan fedezze fel a klienst. További információ található az <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">operators» kézikönyvben</a>.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient2.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient2.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>For example, you can inspect the collection that is loaded by default by
-clicking the „Collections” link and then the „MER_FRS_1P_RGB_reduced” link.</p>
+<p>Megvizsgálhatja például az alapértelmezés szerint betöltött gyűjteményt a „Collection” linkre kattintva és utána a „MER_FRS_1P_RGB_reduced” linkre.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient3.png"><img alt="EOxServer demonstration admin client Dataset Series" src="../../_images/eoxserver_adminclient3.png" style="width: 742.0px; height: 429.0px;" /></a>
-<p>You can preview the coverages by going back and clicking on the „Coverages” link.</p>
+<p>A fedvények előnézetét megtekintheti visszalépve és a „Coverages” linkre kattintva.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient4.png"><img alt="EOxServer demonstration admin client Dataset Series Management" src="../../_images/eoxserver_adminclient4.png" style="width: 746.5px; height: 429.5px;" /></a>
 </div>
 <div class="section" id="what-next">
@@ -140,7 +127,7 @@ clicking the „Collections” link and then the „MER_FRS_1P_RGB_reduced” li
 <ul class="simple">
 <li>További információkért lásd a <a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer összefoglalót</span></a>.</li>
 <li>Olvassa el az <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer Operators» kézikönyvet</a>.</li>
-<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
+<li>Olvassa el az <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer alapokat</a>.</li>
 <li>Készen áll a EOxServer használatára? Az elképzelések megosztásához, a lehetséges szoftver fejlesztések megbeszéléséhez és kérdések feltételéhez csatlakozzon a közösséghez <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">a levelező listákon</a>.</li>
 </ul>
 </div>

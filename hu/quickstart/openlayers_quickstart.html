@@ -73,7 +73,7 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="openlayers-quickstart">
 <h1>OpenLayers gyorstalpaló<a class="headerlink" href="#openlayers-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
-<p>Ez a gyorstalpaló leírja a munka elkezdéséhez szükséges alapvető lépéseket tartalmazza az OpenLayers-el: alaptérkép létrehozása,  raszter és vektor réteg hozzáadása és az elemek stílusának beállítása</p>
+<p>Ez a gyorstalpaló a munka elkezdéséhez szükséges alapvető lépéseket tartalmazza az OpenLayers-el: alaptérkép létrehozása,  raszter és vektor réteg hozzáadása és az elemek stílusának beállítása</p>
 <p>Az OpenLayers egyszerűvé teszi dinamikus térképek hozzáadását bármelyik honlaphoz. Térkép csempéket, vektor adatokat és szimbólumokat tud megjeleníteni tetszőleges forrásból. Az OpenLayers-t mindenféle térinformatikai adat használatára fejlesztették. Teljesen szabad, nyílt forráskódú JavaScript, melyet a 2-záradék BSD licenc (úgyis ismert mint FreeBSD) alatt bocsájtanak ki.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
@@ -157,7 +157,7 @@
 <p>Megjegyzés:</p>
 <ul class="simple">
 <li>A kód követi a legjobb gyakorlatot, a JavaScript kód betöltése a html fájl végén.</li>
-<li>Egy OpenLayers térképet egy HTML DOM elemhez kapcsolnunk, ezért létrehoztunk egy <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> elemet, a <em>map</em> azonosítóval (id).</li>
+<li>Egy OpenLayers térképet egy HTML DOM elemhez kapcsolunk, ezért létrehoztunk egy <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> elemet, a <em>map</em> azonosítóval (id).</li>
 <li>A térképeket az <code class="docutils literal"><span class="pre">olMap</span></code> osztály reprezentálja. A DOM elemet, melyben a térképet megjelentjük a <strong>target</strong> tulajdonság beállításával adjuk meg.</li>
 <li>OpenLayers a térképrajzolást két különböző mechanizmus felhasználásával teszi lehetővé: a Canvas és a WebGL. Az alapértelmezett megjelenítő a <em>canvas</em>.</li>
 <li>A térkép a rétegekben tárolt adatokat mutatja, így egy csempékből álló réteget hoztunk létre, melyet az <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> osztály reprezentál, ez a tartalmat az OpenStreetMap projektből tölti be az <cite>ol.source.OSM`</cite> forrás osztály felhasználásával.</li>
@@ -191,7 +191,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">Manuális hozzáadásuk a  <code class="docutils literal"><span class="pre">map.addLayer()</span></code> metódussal:</p>
+<li><p class="first">Manuális hozzáadás a  <code class="docutils literal"><span class="pre">map.addLayer()</span></code> metódussal:</p>
 <blockquote>
 <div><div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">osm</span><span class="p">);</span>
 <span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">stamen</span><span class="p">);</span>

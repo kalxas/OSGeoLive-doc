@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>EOxServer クイックスタートt &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>EOxServer クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,10 +71,8 @@
             
   <a class="reference external image-reference" href="https://docs.eoxserver.org/en/stable/"><img alt="../../_images/logo_eoxserver.png" class="align-right" src="../../_images/logo_eoxserver.png" /></a>
 <div class="section" id="eoxserver-quickstart">
-<h1>EOxServer クイックスタートt<a class="headerlink" href="#eoxserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>EOxServer is a server for presenting big Earth Observation (EO) data
-archives and metadata via Open Standards. It builds upon an Open Source
-stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>,  <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
+<h1>EOxServer クイックスタート<a class="headerlink" href="#eoxserver-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>EOxServerは、大規模な地球観測(EO)データアーカイブとメタデータをオープン標準で提供するサーバです。これは、Python、<a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>、  Django/GeoDjango、<a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>、<a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> と  <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a>  または  <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> データベースを含むソフトウェアのオープンソーススタック上に構築されています。</p>
 <p>このクイックスタートでは、次の方法について説明します:</p>
 <ul class="simple">
 <li>Web Clientを使用して、EOデータをビュー、フィルタリング、サブセット、ダウンロード</li>
@@ -99,53 +97,37 @@ stack of software which includes Python, <a class="reference internal" href="../
 <p><strong>Web Client</strong> リンクをクリックして、統合されたEOxServerクライアントを開きます。</p>
 <p>このクライアントでは、EOxServerインスタンスの内容を表示できます。デモインスタンスはENVISAT MERISのシーンで構成されています。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient1.png"><img alt="Main view of the EOxServer Web Client" src="../../_images/eoxserver_webclient1.png" style="width: 749.5px; height: 433.0px;" /></a>
-<p>The client consists of the map view and widgets that contain the main interactions.
-The main area is the map widget of the client with a set of datasets already displayed.
-On the bottom, you’ll find the timeslider widget, that allows you to explore the
-contents in the temporal dimension.</p>
+<p>クライアントは、マップ・ビューと、主要な相互作用を含むウィジェットで構成されています。主な領域は、クライアントのマップウィジェットで、一連のデータセットがすでに表示されています。下部にはタイムスライダウィジェットが表示され、時間次元のコンテンツを表示できます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient2.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient2.png" style="width: 748.0px; height: 431.0px;" /></a>
-<p>The Layer Selection widget can be expanded by clicking the cogwheel on the top left and
-it allows you to enable or disable the visibility and
-configure the rendering of the layers. Also, you can show or hide the
-streets-overlay and select the background layer. The Filters tab in this widget enables
-querying for different spatial and temporal values.</p>
+<p>[レイヤ選択]ウィジェットを展開するには、左上の歯車をクリックします。このウィジェットでは、レイヤの表示/非表示を切り替えたり、レイヤのレンダリングを設定したりできます。また、通りのオーバーレイを表示または非表示にしたり、背景のレイヤを選択したりすることもできます。このウィジェットの[フィルタ]タブでは、さまざまな空間値と時間値を照会できます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient3.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient3.png" style="width: 747.0px; height: 431.5px;" /></a>
 <p>マップと同様に、現在表示されている注視点をズームおよびパンしたり、赤い点を含む領域を描画して注視点を選択したりできます。点の上にカーソルを置くと、データセットIDを表示することもできます。点をクリックすると、マップは自動的にデータセットの範囲にズームします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient4.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient4.png" style="width: 748.0px; height: 432.5px;" /></a>
-<p>When a spatial filter is enabled, you can draw a bounding box, polygon or point
-directly on the map. The drawn feature is used for querying within the Download Tool.</p>
+<p>空間フィルタを有効にすると、マップ上に境界ボックス、ポリゴン、または点を直接描画できます。描画された地物は、ダウンロードツール内のクエリーに使用されます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient5.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient5.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>You can get more information of available services and metadata on the selected product
-by hovering on the product in the search results widget and clicking on the icon in the
-top right.</p>
+<p>検索結果ウィジェットの結果上にマウスポインタを置き、右上のアイコンをクリックすると、選択した結果で利用可能なサービスとメタデータの詳細情報を取得できます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient6.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient6.png" style="width: 749.0px; height: 432.5px;" /></a>
-<p>When the Download Tool is enabled, a query to the server is sent. This query
-includes the selected time of interest and bounding box. The results are shown
-in the Download widget, where you can select the format, projection and datasets
-to download.</p>
+<p>ダウンロードツールが有効になると、サーバーへのクエリーが送信されます。このクエリには、選択された対象の時刻と境界ボックスが含まれています。結果はダウンロードウィジェットに表示され、ダウンロードするフォーマット、投影、データセットを選択できます。</p>
 <p>これは、EOxServer Web Clientの簡単な説明です。このトピックの詳細については、 <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">オンライン文書</a> を参照してください。</p>
 </div>
 <div class="section" id="work-with-the-admin-client">
 <h2><a class="toc-backref" href="#id3">管理クライアントとの連携</a><a class="headerlink" href="#work-with-the-admin-client" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>EOxServerのメインページで <strong>Admin Client</strong> リンクをクリックし、ユーザー <cite>admin</cite> とパスワード <cite>admin</cite> でログインします。</p>
+<p>EOxServerのメインページで <strong>Admin Client</strong> リンクをクリックし、ユーザ <cite>admin</cite> とパスワード <cite>admin</cite> でログインします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient1.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient1.png" style="width: 438.0px; height: 272.5px;" /></a>
-<p>The <cite>Admin Client</cite> is Djangos standard admin and allows you to configure the
-available data. Please feel free to explore the client. More information can
-be found in the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">operators』 guide</a>.</p>
+<p><cite>Admin Client</cite> はDjangos標準の管理者であり、利用可能なデータを設定できます。クライアントを自由にご覧ください。詳細については、 <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">オペレーターズ・ガイド</a> を参照してください。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient2.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient2.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>For example, you can inspect the collection that is loaded by default by
-clicking the 「Collections」 link and then the 「MER_FRS_1P_RGB_reduced」 link.</p>
+<p>たとえば、デフォルトでロードされているコレクションを検査するには、 「コレクション」 リンクをクリックし、 「MER_FRS_1P_RGB_reduced」 リンクをクリックします。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient3.png"><img alt="EOxServer demonstration admin client Dataset Series" src="../../_images/eoxserver_adminclient3.png" style="width: 742.0px; height: 429.0px;" /></a>
-<p>You can preview the coverages by going back and clicking on the 「Coverages」 link.</p>
+<p>「Coverages」 リンクをクリックすると、カバレッジをプレビューできます。</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient4.png"><img alt="EOxServer demonstration admin client Dataset Series Management" src="../../_images/eoxserver_adminclient4.png" style="width: 746.5px; height: 429.5px;" /></a>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id4">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>これは簡単なデモですが、EOxServerでできることはたくさんあります。プロジェクトのWebサイトには、はじめての人に役立つ資材がたくさん用意されています。次に、いくつかのをいくつか紹介しましょう。</p>
+<p>これは簡単なデモですが、EOxServerでできることはたくさんあります。プロジェクトのWebサイトには、はじめての人に役立つ資材がたくさん用意されています。次にチェックすべきリソースはこちらです:</p>
 <ul class="simple">
-<li>詳細については、 <a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer Overview</span></a> を参照してください。</li>
-<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer Operators』 Guide</a>.</li>
-<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
+<li>詳細については、<a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer Overview</span></a> を参照してください。</li>
+<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">EOxServer オペレーターズ・ガイド</a> を読んでください。</li>
+<li><a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer の基本</a> を読んでください。</li>
 <li>EOxServerを使用する準備はできていますか?次に、 <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">メーリングリスト</a> のコミュニティに参加して、アイデアを交換したり、ソフトウェアの改善点について話し合ったり、質問したりします。</li>
 </ul>
 </div>

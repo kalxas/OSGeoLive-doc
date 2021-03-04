@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Running in a Hyper-V Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Hyper-V 仮想マシンで動作させる &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,8 +26,8 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="Command Line basics" href="commandline_quickstart.html" />
-    <link rel="prev" title="OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成" href="usb_quickstart.html" />
+    <link rel="next" title="コマンドラインの基本" href="commandline_quickstart.html" />
+    <link rel="prev" title="OSGeoLive のブータブル USB フラッシュドライブを作成する" href="usb_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -70,9 +70,9 @@
           <div class="body" role="main">
             
   <div class="section" id="running-in-a-hyper-v-virtual-machine">
-<h1>Running in a Hyper-V Virtual Machine<a class="headerlink" href="#running-in-a-hyper-v-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>ここでは、OSGeoLive を マイクロソフトの仮想マシン技術ソフトウエアのHyper-V から起動する方法を説明します。他の方法については、以下の 「参照」 の章のリンクにしたがってください。Hyper-V は、Windowsサーバか、Windows 10 プロフェッショナル版で利用することができます。Windows 10 Homeには含まれていません。</p>
-<p>仮想マシンを利用する利点は、 <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a> にまとまっています。残念ですが、VirtualBoxと、Hyper-Vの両方を同時に試すことはできません。つまり、二つの選択肢のどちらかだけです。Hyper-Vを無効にするか、OSGeoLiveをHyper-Vで起動できるように設定するか、です。無料ツールの <a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">hypervswitch</a> を使えば、簡単にすぐにHyper-Vの有効/無効を切りかえできます。しかし、設定を変更したときは再起動が必要です。このページのこれ以降は、OSGeoLiveをHyper-Vで稼動させる方法を説明します。</p>
+<h1>Hyper-V 仮想マシンで動作させる<a class="headerlink" href="#running-in-a-hyper-v-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここでは、OSGeoLive を Microsoft の仮想化ソフトウエアである Hyper-V から起動する方法を説明します。他の方法については、以下の 「参照」 の章のリンクにしたがってください。Hyper-V は、Windows Serverか、Windows 10 Professionalで利用することができます。Windows 10 Homeには含まれていません。</p>
+<p>仮想マシンを利用する利点は、 <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">仮想マシンで動作させる</span></a> にまとまっています。残念ですが、VirtualBoxと、Hyper-Vの両方を同時に試すことはできません。つまり、二つの選択肢のどちらかだけです。Hyper-Vを無効にするか、OSGeoLiveをHyper-Vで起動できるように設定するか、です。無料ツールの <a class="reference external" href="https://unclassified.software/en/apps/hypervswitch">hypervswitch</a> を使えば、簡単にすぐにHyper-Vの有効/無効を切りかえできます。しかし、設定を変更したときは再起動が必要です。このページのこれ以降は、OSGeoLiveをHyper-Vで稼動させる方法を説明します。</p>
 <div class="section" id="system-requirements">
 <h2>動作環境<a class="headerlink" href="#system-requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Hyper-V の必要要件は <a class="reference external" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">ここ</a> で確認できます。このリンク先には、あなたが利用しているPCが、Hyper-Vをサポートできるかをチェックするツールの <code class="docutils literal"><span class="pre">systeminfo</span></code> コマンドの情報もあります。簡単にまとめると、ホストマシンは次のハードウエア要件を満す必要があります:</p>
@@ -96,7 +96,7 @@
 <li><a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=42497">Microsoft Virtual Machine Converter 3.0</a> をダウンロードしてインストールします。</li>
 <li>DS File Ops Kit をダウンロードして、unzipします。</li>
 <li>PowerShellを管理者権限で開きます。</li>
-<li>OSGeoLiveのvmdkファイルから、ディスクの記述子を取得するため、次のコマンドを実行します。」descriptor1.txt」 に仮想ディスクの情報が保存されます。</li>
+<li>OSGeoLiveのvmdkファイルから、ディスクの記述子を取得するため、次のコマンドを実行します。 「descriptor1.txt」 に仮想ディスクの情報が保存されます。</li>
 </ol>
 <ol class="arabic">
 <li><p class="first">メモ帳などのテキストエディタでこのフィアルを開き、次の行について、行頭の#をつかってコメントアウト(除外)します。(このメタデータは、VirtualBoxに特有で、変換プログラムが理解できません)。</p>
@@ -129,7 +129,7 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 </div>
 <div class="section" id="how-to">
 <h2>How-To<a class="headerlink" href="#how-to" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>このガイドでは、Hyper-V がすでに導入されており、有効化されていることを前提にしています。まだ有効でない場合のより一般的なVirtualBoxをつかう方法が  <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a> に文書があり、利用できます。</p>
+<p>このガイドでは、Hyper-V がすでに導入されており、有効化されていることを前提にしています。まだ有効でない場合のより一般的なVirtualBoxをつかう方法が  <a class="reference internal" href="virtualization_quickstart.html"><span class="doc">仮想マシンで動作させる</span></a> に文書があり、利用できます。</p>
 <p><strong>仮想マシンの作成</strong></p>
 <ol class="arabic">
 <li><p class="first">Hyper-V管理アプリケーションを開始して、アクションメニューの 新規 &gt; 仮想マシンを選択し、次へすすみます。仮想マシンに適切な名前をつけます。</p>
@@ -158,15 +158,15 @@ ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath .\osgeo-live-11.0-vm.vmdk -VhdF
 <h2>参照:<a class="headerlink" href="#see-also" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a>.</li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">仮想マシンで動作させる</span></a>.</li>
 <li><dl class="first docutils">
 <dt>OSGeo Wiki ページ:</dt>
 <dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">仮想マシンを作成するその他の方法</a></dd>
 </dl>
 </li>
-<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a></li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive を始める</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">ハードディスクに OSGeoLive をインストール</span></a></li>
-<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLive のブータブル USB フラッシュドライブを作成する</span></a></li>
 </ul>
 </div></blockquote>
 </div>

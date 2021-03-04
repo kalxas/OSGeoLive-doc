@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Leaflet Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Leaflet クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -71,38 +71,37 @@
             
   <a class="reference external image-reference" href="https://leafletjs.com"><img alt="../../_images/logo_leaflet.png" class="align-right" src="../../_images/logo_leaflet.png" /></a>
 <div class="section" id="leaflet-quickstart">
-<h1><a class="toc-backref" href="#id1">Leaflet Quickstart</a><a class="headerlink" href="#leaflet-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Leaflet is a JavaScript library for browser-based, mobile-friendly, interactive maps.  It is lightweight, yet has all the features most developers ever need for online maps. Leaflet is designed with simplicity, performance and usability in mind.</p>
+<h1><a class="toc-backref" href="#id1">Leaflet クイックスタート</a><a class="headerlink" href="#leaflet-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Leaflet はブラウザベースで、モバイルフレンドリーなインタラクティブ地図のための JavaScript ライブラリです。軽量ですが、ほとんどの開発者がオンライン地図に必要とするすべての機能を備えています。Leaflet はシンプル、パフォーマンス、ユーザビリティを念頭に設計されています。</p>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#leaflet-quickstart" id="id1">Leaflet Quickstart</a><ul>
-<li><a class="reference internal" href="#running" id="id2">Running</a></li>
-<li><a class="reference internal" href="#preparing-your-page" id="id3">Preparing your page</a></li>
-<li><a class="reference internal" href="#setting-up-the-map" id="id4">Setting up the Map</a></li>
-<li><a class="reference internal" href="#markers-circles-and-polygons" id="id5">Markers, circles and polygons</a></li>
-<li><a class="reference internal" href="#working-with-popups" id="id6">Working with popups</a></li>
-<li><a class="reference internal" href="#dealing-with-events" id="id7">Dealing with events</a></li>
-<li><a class="reference internal" href="#what-next" id="id8">What Next?</a></li>
+<li><a class="reference internal" href="#leaflet-quickstart" id="id1">Leaflet クイックスタート</a><ul>
+<li><a class="reference internal" href="#running" id="id2">実行する</a></li>
+<li><a class="reference internal" href="#preparing-your-page" id="id3">HTMLページを用意する</a></li>
+<li><a class="reference internal" href="#setting-up-the-map" id="id4">地図を設定する</a></li>
+<li><a class="reference internal" href="#markers-circles-and-polygons" id="id5">マーカー、円、ポリゴン</a></li>
+<li><a class="reference internal" href="#working-with-popups" id="id6">ポップアップの操作</a></li>
+<li><a class="reference internal" href="#dealing-with-events" id="id7">イベントへの対応</a></li>
+<li><a class="reference internal" href="#what-next" id="id8">次のステップ</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="running">
-<h2><a class="toc-backref" href="#id2">Running</a><a class="headerlink" href="#running" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Prior to running this quick start you should start TileStache. On OSGeoLive this can be found under <strong>Geospatial\Spatial Tools\Start Mapnik &amp; TileStache</strong>.
-This will provide background tiles that will be used in this demo.</p>
-<p>View the <a class="reference external" href="https://localhost/leaflet-demo.html">example</a></p>
+<h2><a class="toc-backref" href="#id2">実行する</a><a class="headerlink" href="#running" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このクイックスタートを開始するまえに、TileStacheを開始します。OSGeoLiveでは、<strong>Geospatial\Spatial Tools\Start Mapnik &amp; TileStache</strong> にあります。これで、このデモで必要な背景タイルを提供できるようになります。</p>
+<p><a class="reference external" href="https://localhost/leaflet-demo.html">example</a> を見る</p>
 <div class="admonition tip">
 <p class="first admonition-title">ちなみに</p>
-<p class="last">If you are reading this quickstart outside OSGeoLive you may prefer reading the original demo on: <a class="reference external" href="https://leafletjs.com/examples/quick-start/">https://leafletjs.com/examples/quick-start/</a>, since this demo uses tilestache on OSGeoLive.</p>
+<p class="last">OSGeoLiveの外部でこのクイックスタートを読んでいる場合は、<a class="reference external" href="https://leafletjs.com/examples/quick-start/">https://leafletjs.com/examples/quick-start/</a> で元のデモを読むことをお勧めします。このデモはOSGeoLiveでtilestacheを使用しているためです。</p>
 </div>
 </div>
 <div class="section" id="preparing-your-page">
-<h2><a class="toc-backref" href="#id3">Preparing your page</a><a class="headerlink" href="#preparing-your-page" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Before writing any code for the map, you need to do the following preparation steps on your page:</p>
+<h2><a class="toc-backref" href="#id3">HTMLページを用意する</a><a class="headerlink" href="#preparing-your-page" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>地図のコードをかきはじめる前に、ページで、次の準備ステップを実施する必要があります:</p>
 <ul class="simple">
-<li>Include Leaflet CSS files in the head section of your document</li>
+<li>ドキュメントのヘッダーセクションで、Leaflet CSSファイルをよみこむ</li>
 </ul>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/leaflet/leaflet.css&quot;</span> <span class="p">/&gt;</span>
 <span class="c">&lt;!--[if lte IE 8]&gt;</span>
@@ -111,54 +110,52 @@ This will provide background tiles that will be used in this demo.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Include Leaflet JavaScript file:</li>
+<li>Leaflet JavaScritファイルをよみこむ:</li>
 </ul>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/leaflet/leaflet.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>put a <strong>div</strong> element with a certain <strong>id</strong> where you want your map to be:</li>
+<li>地図を表示したい場所に適切な <strong>id</strong> をもつ  <strong>div</strong> エレメントを配置する:</li>
 </ul>
 <div class="highlight-html"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Make sure the map container has a defined height, for example by setting it in CSS:</li>
+<li>地図コンテナには、高さが定義されていること。CSSの例は次のとおり:</li>
 </ul>
 <div class="highlight-css"><div class="highlight"><pre><span></span><span class="p">#</span><span class="nn">map</span> <span class="p">{</span> <span class="k">height</span><span class="p">:</span> <span class="mi">180</span><span class="kt">px</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now you are ready to initialize the map and do some stuff with it.</p>
+<p>これで地図を表示し、応用する準備がととのいました。</p>
 </div>
 <div class="section" id="setting-up-the-map">
-<h2><a class="toc-backref" href="#id4">Setting up the Map</a><a class="headerlink" href="#setting-up-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Let’s create a map of eastern Africa with an indication of the 2018 FOSS4G conference. First we’ll initialize the map and set its view to our chosen geographical coordinates and a zoom level:</p>
+<h2><a class="toc-backref" href="#id4">地図を設定する</a><a class="headerlink" href="#setting-up-the-map" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>では、2018年のFOSS4Gカンファレンスが開催された東アフリカの地図を作成してみましょう。最初に地図の初期化をおこないます。ビューを設定し投影法とズームレベルを選択します:</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">44.43743</span><span class="p">,</span> <span class="mf">26.104</span><span class="p">],</span> <span class="mf">15</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>By default (as we didn’t pass any options when creating the map instance), all mouse and touch interactions on the map are enabled, and it has zoom and attribution controls.</p>
-<p>Note that setView call also returns the map object - most Leaflet methods act like this when they don’t return an explicit value, which allows convenient jQuery-like method chaining.</p>
-<p>Next we’ll add a tile layer to our map.
-In this case we will be using the tile images provided by TileStache on the live dvd. Note that using nicer background maps such as openstreetmap will result in a much better user experience.</p>
-<p>Creating a tile layer usually involves setting the URL template for the tile images, the attribution text and the maximum zoom level of the layer:</p>
+<p>デフォルトで (地図インスタンスを作成するときに、設定オプションを与えない場合)、全てのマウス操作とタッチ操作は有効化されます。ズームと属性コントロールがあります。</p>
+<p>setView のよびだしも、地図オブジェクトを返却します。 - 多くのLeafletのメソッドは、明示的な戻り値がない場合、同様に動作します。 jQueryのようなメソッドのチェイニングができて便利です。</p>
+<p>次に、地図にレイヤを追加します。この例では、ライブDVDでTileStacheから提供されたタイルイメージを使用します。OpenStreetMap などの、より良い背景地図を使用すると、ユーザ体験を向上させられることに注意してください。</p>
+<p>タイルレイヤ を作成するには、通常、タイルイメージのURLテンプレート、属性テキスト、およびレイヤの最大ズームレベルを設定します。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://localhost:8012/example/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png,</span><span class="si">{}</span><span class="s1">).addTo(map);</span>
 </pre></div>
 </div>
-<p>If you have online access you may want to use a nicer tilemap as the background:</p>
+<p>オンラインアクセスがある場合は、バックグラウンドとしてより良いタイルマップサービスを使用することができます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://</span><span class="si">{s}</span><span class="s1">.tile.openstreetmap.org/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png&#39;</span><span class="p">,{</span><span class="n">maxZoom</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span> <span class="n">attribution</span><span class="p">:</span> <span class="s1">&#39;© &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">addTo</span><span class="p">(</span><span class="nb">map</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Make sure all the code is called after the <strong>div</strong> and <strong>leaflet.js</strong> inclusion. That’s it! You have a working Leaflet map now.</p>
-<p>It’s worth noting that Leaflet is provider-agnostic, meaning that it doesn’t enforce a particular choice of providers for tiles, and it doesn’t even contain a single provider-specific line of code, so you’re free to use other providers if you need to.</p>
+<p>すべてのコードが <strong>div</strong> タグと <strong>leaflet.js</strong> の読み込みの後に呼び出されていることを確認してください。これが全てです。これで、Leaflet の地図を動かすことができました。</p>
+<p>Leaflet はプロバイダに依存しないので、タイルに対して特定のプロバイダの選択を強制することはなく、プロバイダ固有のコード行も含まれていないので、必要に応じて他のプロバイダを使用することもできます。</p>
 </div>
 <div class="section" id="markers-circles-and-polygons">
-<h2><a class="toc-backref" href="#id5">Markers, circles and polygons</a><a class="headerlink" href="#markers-circles-and-polygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Besides tile layers, you can easily add other things to your map, including markers, polylines, polygons, circles and popups.
-Let’s add a marker:</p>
+<h2><a class="toc-backref" href="#id5">マーカー、円、ポリゴン</a><a class="headerlink" href="#markers-circles-and-polygons" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>タイルレイヤ以外にも、マーカー、ポリライン、ポリゴン、円、ポップアップなど、他のものをマップに簡単に追加できます。マーカーを追加しましょう：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">marker</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">([</span><span class="mf">44.437</span> <span class="p">,</span><span class="mf">26.104</span><span class="p">]).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Adding a circle is the same (except for specifying the radius in meters as a second argument), but lets you control how it looks by passing options as the last argument when creating the object:</p>
+<p>円の追加もだいたい同じです。ただし、2番目の引数として半径をメートル単位で指定する点が違います。 さらに、オブジェクトの作成時に最後の引数としてオプションを渡すことで、円の外観を制御できます。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circle</span><span class="p">([</span><span class="mf">44.435</span><span class="p">,</span> <span class="mf">26.11</span><span class="p">],</span> <span class="mf">250</span><span class="p">,</span> <span class="p">{</span>
    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
    <span class="nx">fillColor</span><span class="o">:</span> <span class="s1">&#39;#f03&#39;</span><span class="p">,</span>
@@ -166,7 +163,7 @@ Let’s add a marker:</p>
 <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Adding a polygon is as easy:</p>
+<p>ポリゴンの追加は簡単です：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">polygon</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">polygon</span><span class="p">([</span>
     <span class="p">[</span><span class="mf">44.433</span><span class="p">,</span> <span class="mf">26.102</span><span class="p">],</span>
     <span class="p">[</span><span class="mf">44.442</span><span class="p">,</span> <span class="mf">26.095</span><span class="p">],</span>
@@ -176,19 +173,19 @@ Let’s add a marker:</p>
 </div>
 </div>
 <div class="section" id="working-with-popups">
-<h2><a class="toc-backref" href="#id6">Working with popups</a><a class="headerlink" href="#working-with-popups" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Popups are usually used when you want to attach some information to a particular object on a map. Leaflet has a very handy shortcut for this:</p>
+<h2><a class="toc-backref" href="#id6">ポップアップの操作</a><a class="headerlink" href="#working-with-popups" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ポップアップは通常、マップ上の特定のオブジェクトに情報をアタッチする場合に使用します。リーフレットには非常に便利なショートカットがあります：</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">()</span>
    <span class="p">.</span><span class="nx">setLatLng</span><span class="p">([</span><span class="mf">44.437</span><span class="p">,</span> <span class="mf">26.104</span><span class="p">])</span>
    <span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;I am a standalone popup.&quot;</span><span class="p">)</span>
    <span class="p">.</span><span class="nx">openOn</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Here we use <strong>openOn</strong> instead of <strong>addTo</strong> because it handles automatic closing of a previously opened popup when opening a new one which is good for usability.</p>
+<p>ここでは、 <strong>addTo</strong> の代わりに <strong>openOn</strong> を使用しています。これは、新しいポップアップを開いたときに、以前に開いたポップアップを閉じる処理を自動化します。使いやすさを優先しています。</p>
 </div>
 <div class="section" id="dealing-with-events">
-<h2><a class="toc-backref" href="#id7">Dealing with events</a><a class="headerlink" href="#dealing-with-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Every time something happens in Leaflet, e.g. user clicks on a marker or map zoom changes, the corresponding object sends an event which you can subscribe to with a function. It allows you to react to user interaction:</p>
+<h2><a class="toc-backref" href="#id7">イベントへの対応</a><a class="headerlink" href="#dealing-with-events" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>ユーザがマーカーをクリックしたり、地図のズームを変更したりするなど、何か Leaflet に起こるたびに、対応するオブジェクトがイベントを送信し、ユーザはそのイベントを関数でsubscribe (受信) することができます。この仕組みで、ユーザの操作に反応できます。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You clicked the map at &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">);</span>
 <span class="p">}</span>
@@ -196,8 +193,8 @@ Let’s add a marker:</p>
 <span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Each object has its own set of events - see <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> for details. The first argument of the listener function is an event object - it contains useful information about the event that happened. For example, map click event object (e in the example above) has latlng property which is a location at which the click occured.</p>
-<p>Let’s improve our example by using a popup instead of an alert:</p>
+<p>各オブジェクトには独自のイベント・セットがあります。詳細は <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> を参照してください。リスナー関数の最初の引数はイベントオブジェクトです。イベントオブジェクトには、発生したイベントに関する有用な情報が含まれています。たとえば、マップクリックイベントオブジェクト(上の例のe)には、クリックが発生した場所であるlatlngプロパティがあります。</p>
+<p>アラートの代わりにポップアップを使用して、例を改善しましょう。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">();</span>
 
 <span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
@@ -210,11 +207,11 @@ Let’s add a marker:</p>
 <span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Try clicking on the map and you will see the coordinates in a popup. View the full <a class="reference external" href="https://localhost/leaflet-demo.html">example</a></p>
+<p>マップをクリックすると、座標がポップアップで表示されます。完全な <a class="reference external" href="https://localhost/leaflet-demo.html">example</a> を表示します</p>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id8">What Next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now you’ve learned Leaflet basics and can start building map apps straight away! Don’t forget to take a look at the detailed <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> or other <a class="reference external" href="https://leafletjs.com/examples.html">examples</a>.</p>
+<h2><a class="toc-backref" href="#id8">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>これで、Leaflet の基礎を学び、地図アプリをすぐに作ることができます! 詳細な <a class="reference external" href="https://leafletjs.com/reference.html">documentation</a> やその他の <a class="reference external" href="https://leafletjs.com/examples.html">examples</a> をぜひ見てください。</p>
 </div>
 </div>
 

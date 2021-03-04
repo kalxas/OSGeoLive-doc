@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>actinia Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Guía de Inicio Rápido de Actinia &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -72,7 +72,7 @@
   <a class="reference external image-reference" href="https://actinia.mundialis.de/"><img alt="../../_images/logo_actinia.png" class="align-right" src="../../_images/logo_actinia.png" /></a>
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="actinia-quickstart">
-<h1>actinia Quickstart<a class="headerlink" href="#actinia-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<h1>Guía de Inicio Rápido de Actinia<a class="headerlink" href="#actinia-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Actinia es una API REST de código abierto para el procesamiento escalable, distribuido y de alto rendimiento de datos geográficos que utiliza GRASS GIS para tareas computacionales. Actinia proporciona una API REST para procesar imágenes satelitales, series temporales de imágenes satelitales, datos ráster y vectoriales.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
@@ -109,19 +109,14 @@
 <p>En este inicio rápido, hacemos uso de GRASS GIS para iniciar convenientemente comandos desde la sesión al servidor actinia (que a su vez usa GRASS GIS). La idea es desarrollar rápidamente un flujo de trabajo localmente en pequeños conjuntos de datos para luego ejecutarlo en el servidor.</p>
 <div class="section" id="introduction-to-ace-actinia-command-execution">
 <h2><a class="toc-backref" href="#id2">Introducción a ace - ejecución del comando actinia</a><a class="headerlink" href="#introduction-to-ace-actinia-command-execution" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">ace</span></code> tool (<a class="reference external" href="https://github.com/mundialis/actinia_core/tree/master/scripts/README.md">details</a>)
-allows the execution of a single GRASS GIS command or a
-list of GRASS GIS commands on an actinia REST service
-(<a class="reference external" href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>). In addition it provides job management,
-the ability to list locations, mapsets and map layer the user has access
-to as well as the creation and deletion of mapsets.</p>
+<p>La herramienta `` ace`` (<a class="reference external" href="https://github.com/mundialis/actinia_core/tree/master/scripts/README.md">detalles</a>) permite la ejecución de un solo comando GRASS GIS o una lista de comandos GRASS GIS en un servicio REST de actinia (<a class="reference external" href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>). Además, proporciona gestión de trabajos, la capacidad de enumerar ubicaciones, conjuntos de mapas y capas de mapas a las que el usuario tiene acceso, así como la creación y eliminación de conjuntos de mapas.</p>
 <p>La herramienta <code class="docutils literal"><span class="pre">ace</span></code> debe ejecutarse en una sesión activa de GRASS GIS session y usará la ubicación actual de esta sesión para acceder al servicio actinia.</p>
 <p>La configuración de ubicación actual puede ser anulada por la opción <code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code>. Todos los comandos se ejecutarán por defecto en una base de datos <strong>efímera</strong> . Por lo tanto, la salida generada debe exportarse utilizando comandos GRASS aumentados.</p>
 <p>La opción  <code class="docutils literal"><span class="pre">--persistent</span> <span class="pre">MAPSET_NAME</span></code> permite la ejecución de comandos en la base de datos de usuario <strong>persistente</strong>. Se puede usar con la opción <code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code>.</p>
 </div>
 <div class="section" id="setup-your-environment">
 <h2><a class="toc-backref" href="#id3">Configurar su entorno</a><a class="headerlink" href="#setup-your-environment" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Be sure to run the following commands in a GRASS GIS session.</p>
+<p>Asegúrese de ejecutar los siguientes comandos en una sesión de GRASS SIG .</p>
 <p>El usuario debe configurar las siguientes variables de entorno para especificar el servidor actinia y las credenciales:</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># set credentials and REST server URL</span>
 <span class="n">export</span> <span class="n">ACTINIA_USER</span><span class="o">=</span><span class="s1">&#39;demouser&#39;</span>
@@ -156,15 +151,11 @@ to as well as the creation and deletion of mapsets.</p>
 </ul>
 </li>
 <li>Ubicación de Latitud-Longitud (LatLong WGS84, EPSG:4326):<ul>
-<li>empty (<code class="docutils literal"><span class="pre">latlong_wgs84/PERMANENT/</span></code>)</li>
-<li>16-days NDVI, MOD13C1, V006, CMG 0.05 deg res.
-(<code class="docutils literal"><span class="pre">latlong_wgs84/modis_ndvi_global/</span></code>; source:
-<a class="reference external" href="https://lpdaac.usgs.gov/products/mod13c1v006/">https://lpdaac.usgs.gov/products/mod13c1v006/</a>)</li>
-<li>LST growing degree days asia 2017 (<code class="docutils literal"><span class="pre">latlong_wgs84/asia_gdd_2017/</span></code>;
-source: <a class="reference external" href="https://www.mundialis.de/en/temperature-data/">https://www.mundialis.de/en/temperature-data/</a>)</li>
+<li>vacío (<code class="docutils literal"><span class="pre">latlong_wgs84/PERMANENTE/</span></code>)</li>
+<li>16-days NDVI, MOD13C1, V006, CMG 0.05 deg res. (<code class="docutils literal"><span class="pre">latlong_wgs84/modis_ndvi_global/</span></code>; fuente:  <a class="reference external" href="https://lpdaac.usgs.gov/products/mod13c1v006/">https://lpdaac.usgs.gov/products/mod13c1v006/</a>)</li>
+<li>LST growing degree days asia 2017 (<code class="docutils literal"><span class="pre">latlong_wgs84/asia_gdd_2017/</span></code>; fuente: <a class="reference external" href="https://www.mundialis.de/en/temperature-data/">https://www.mundialis.de/en/temperature-data/</a>)</li>
 <li>LST tropical days asia 2017 (<code class="docutils literal"><span class="pre">latlong_wgs84/asia_tropical_2017/</span></code>)</li>
-<li>LST temperature daily asia 2017, including min, max and avg
-(<code class="docutils literal"><span class="pre">latlong_wgs84/asia_lst_daily_2017/</span></code>)</li>
+<li>Temperatura LST diaria asia 2017, incluyendo min, max y avg (<code class="docutils literal"><span class="pre">latlong_wgs84/asia_lst_daily_2017/</span></code>)</li>
 </ul>
 </li>
 <li>Europa (EU LAEA CRS, EPSG:3035):<ul>
@@ -181,8 +172,7 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 </div>
 <div class="section" id="inspect-the-rest-call-prior-to-submission">
 <h2><a class="toc-backref" href="#id6">Inspeccione la llamada REST antes del envío</a><a class="headerlink" href="#inspect-the-rest-call-prior-to-submission" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>To generate the actinia process chain JSON request simply add the
-–dry-run flag:</p>
+<p>Para generar la solicitud JSON de cadena de proceso actinia, simplemente agregue la marca –dry-run:</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="n">r</span><span class="o">.</span><span class="n">slope</span><span class="o">.</span><span class="n">aspect</span> <span class="n">elevation</span><span class="o">=</span><span class="n">elevation</span> <span class="n">slope</span><span class="o">=</span><span class="n">myslope</span>
 </pre></div>
 </div>
@@ -201,7 +191,7 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 </div>
 <p>El procesamiento efímero es el enfoque de procesamiento predeterminado de actinia. Los comandos se ejecutan en un conjunto de mapas efímero que se eliminará después del procesamiento. Puede exportar la salida de los módulos GRASS GIS para almacenar el resultado computacional para su descarga y análisis posterior. Actualmente se admiten los siguientes formatos de exportación:</p>
 <ul class="simple">
-<li>raster: <code class="docutils literal"><span class="pre">COG</span></code>, <code class="docutils literal"><span class="pre">GTiff</span></code></li>
+<li>ráster: <code class="docutils literal"><span class="pre">COG</span></code>, <code class="docutils literal"><span class="pre">GTiff</span></code></li>
 <li>vector: <code class="docutils literal"><span class="pre">ESRI_Shapefile</span></code>, <code class="docutils literal"><span class="pre">GeoJSON</span></code>, <code class="docutils literal"><span class="pre">GML</span></code>, <code class="docutils literal"><span class="pre">GPKG</span></code></li>
 <li>tabla: <code class="docutils literal"><span class="pre">CSV</span></code>, <code class="docutils literal"><span class="pre">TXT</span></code></li>
 </ul>
@@ -227,9 +217,8 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">script</span> <span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>The results (messages, statistics, files) are provided as REST resources.</p>
-<p>To generate the actinia process chain JSON request simply add the
-–dry-run flag</p>
+<p>Los resultados (mensajes, estadísticas, archivos) se proporcionan como recursos REST.</p>
+<p>Para generar la solicitud JSON de cadena de proceso actinia simplemente agregue la marca –dry-run</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
@@ -357,7 +346,7 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_segmentation</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
-<p>The results (messages, statistics, files) are provided as REST resources.</p>
+<p>Los resultados (mensajes, estadísticas, archivos) se proporcionan como recursos REST.</p>
 </div>
 <div class="section" id="examples-for-persistent-processing">
 <h3><a class="toc-backref" href="#id11">Ejemplos de procesamiento persistente</a><a class="headerlink" href="#examples-for-persistent-processing" title="Enlazar permanentemente con este título">¶</a></h3>
@@ -379,13 +368,11 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 <span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span><span class="nd">@test_mapset</span>
 </pre></div>
 </div>
-<p>Delete the test_mapset (always double check names when deleting)</p>
+<p>Eliminar el test_mapset (siempre compruebe los nombres al eliminar)</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">delete</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
 </pre></div>
 </div>
-<p>If the active GRASS GIS session has identical location/mapset names,
-then an alias can be used to avoid the persistent option in each single
-command call:</p>
+<p>Si la sesión SIG GRASS activa tiene nombres de ubicación/conjunto de mapas idénticos, se puede utilizar un alias para evitar la opción persistente en cada llamada de comando único:</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">acp</span><span class="o">=</span><span class="s2">&quot;ace --persistent `g.mapset -p`&quot;</span>
 </pre></div>
 </div>
@@ -427,7 +414,7 @@ command call:</p>
 <ul class="simple">
 <li>Visite el sitio web de actinia en <a class="reference external" href="https://actinia.mundialis.de">https://actinia.mundialis.de</a></li>
 <li>Tutorial de actinia: <a class="reference external" href="https://neteler.gitlab.io/actinia-introduction">https://neteler.gitlab.io/actinia-introduction</a></li>
-<li>Further reading: Neteler, M., Gebbert, S., Tawalika, C., Bettge, A., Benelcadi, H., Löw, F., Adams, T, Paulsen, H. (2019). Actinia: cloud based geoprocessing. In Proc. of the 2019 conference on Big Data from Space (BiDS’2019) (pp. 41-44). EUR 29660 EN, Publications Office of the European Union 5, Luxembourg: P. Soille, S. Loekken, and S. Albani (Eds.). (<a class="reference external" href="https://zenodo.org/record/2631917">DOI</a>)</li>
+<li>Otras lecturas: Neteler, M., Gebbert, S., Tawalika, C., Bettge, A., Benelcadi, H., Löw, F., Adams, T, Paulsen, H. (2019). Actinia: cloud based geoprocessing. In Proc. of the 2019 conference on Big Data from Space (BiDS’2019) (pp. 41-44). EUR 29660 EN, Publications Office of the European Union 5, Luxembourg: P. Soille, S. Loekken, and S. Albani (Eds.). (<a class="reference external" href="https://zenodo.org/record/2631917">DOI</a>)</li>
 </ul>
 </div>
 </div>

@@ -73,15 +73,14 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="pgrouting-quickstart">
 <h1>Inicio Rápido de pgRouting<a class="headerlink" href="#pgrouting-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>pgRouting is an extension that adds routing and other network analysis functionality
-to <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> databases.</p>
+<p>pgRouting es una extensión que agrega enrutamiento y otras funciones de análisis de red a bases de datos <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a>/<a class="reference external" href="https://www.postgresql.org">PostgreSQL</a> databases.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#enabling-pgrouting-in-a-database" id="id1">Habilitar PgRouting en una base de datos</a></li>
 <li><a class="reference internal" href="#loading-osm-data-with-osm2pgrouting" id="id2">Carga de datos OSM con osm2pgrouting</a></li>
-<li><a class="reference internal" href="#check-the-imported-data" id="id3">Check the imported data</a></li>
-<li><a class="reference internal" href="#inner-query" id="id4">Inner Query</a></li>
+<li><a class="reference internal" href="#check-the-imported-data" id="id3">Compruebe los datos importados</a></li>
+<li><a class="reference internal" href="#inner-query" id="id4">Consulta interna</a></li>
 <li><a class="reference internal" href="#pgr-dijkstra" id="id5">pgr_Dijkstra</a></li>
 <li><a class="reference internal" href="#what-next" id="id6">¿Qué sigue?</a></li>
 </ul>
@@ -90,13 +89,12 @@ to <a class="reference internal" href="../overview/postgis_overview.html"><span 
 <h2><a class="toc-backref" href="#id1">Habilitar PgRouting en una base de datos</a><a class="headerlink" href="#enabling-pgrouting-in-a-database" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En este ejemplo crearemos una base de datos llamada <cite>city_routing</cite> y habilitar pgRouting en la base de datos.</p>
 <ul class="simple">
-<li>Open a <span class="menuselection">System Tools ‣ QTerminal</span> window and execute the commandline
-tool packaged with PostgreSQL <cite>psql</cite></li>
+<li>Abra una ventana <span class="menuselection">System Tools ‣ QTerminal</span> y ejecute la herramienta de línea de comandos empaquetada con PostgreSQL <cite>psql</cite></li>
 </ul>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span>
 </pre></div>
 </div>
-<p>At the <cite>psql</cite> prompt type:</p>
+<p>En el indicador de <cite>psql</cite> escribir:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">city_routing</span><span class="p">;</span>
 \<span class="n">connect</span> <span class="n">city_routing</span><span class="p">;</span>
 <span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">pgrouting</span> <span class="n">CASCADE</span><span class="p">;</span>
@@ -112,25 +110,24 @@ tool packaged with PostgreSQL <cite>psql</cite></li>
 <span class="p">(</span><span class="mi">1</span> <span class="n">row</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Your version should be 3.1.0 or higher</p>
-<p>Exit the database</p>
+<p>Su versión debe ser 3.1.0 o superior</p>
+<p>Salir de la base de datos</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>\<span class="n">q</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="loading-osm-data-with-osm2pgrouting">
 <h2><a class="toc-backref" href="#id2">Carga de datos OSM con osm2pgrouting</a><a class="headerlink" href="#loading-osm-data-with-osm2pgrouting" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>osm2pgrouting is a command-line tool for loading <cite>.osm</cite> files into the database
-with a pgRouting compatible format.</p>
-<p>Check the installed version</p>
+<p>osm2pgrouting es una herramienta de línea de comandos para cargar archivos <cite>.osm</cite> en la base de datos con un formato compatible con pgRouting.</p>
+<p>Compruebe la versión instalada</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">osm2pgrouting</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>Output shows</p>
+<p>La salida muestra</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">osm2pgrouting</span> <span class="n">Version</span> <span class="mf">2.3</span><span class="o">.</span><span class="mi">6</span>
 </pre></div>
 </div>
-<p>Load the data from osm file:</p>
+<p>Cargue los datos del archivo osm:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzcat</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span>
 <span class="n">osm2pgrouting</span> \
   <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span> \
@@ -209,12 +206,12 @@ with a pgRouting compatible format.</p>
 </div>
 </div>
 <div class="section" id="check-the-imported-data">
-<h2><a class="toc-backref" href="#id3">Check the imported data</a><a class="headerlink" href="#check-the-imported-data" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Connect to the <cite>city_routing</cite> database</p>
+<h2><a class="toc-backref" href="#id3">Compruebe los datos importados</a><a class="headerlink" href="#check-the-imported-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Conéctese a la base de datos <cite>city_routing</cite></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="n">city_routing</span>
 </pre></div>
 </div>
-<p>The <strong class="command">\d</strong> command will list all available tables and sequences</p>
+<p>El comando <strong class="command">\d</strong> enumerará todas las tablas y secuencias disponibles</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>                  <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
  <span class="n">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="n">Type</span>   <span class="o">|</span> <span class="n">Owner</span>
 <span class="o">--------+--------------------------+----------+-------</span>
@@ -232,14 +229,13 @@ with a pgRouting compatible format.</p>
 <span class="p">(</span><span class="mi">11</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>osm2pgrouting loads the OSM identifiers <cite>osm_id</cite> and it also generates a unique
-identifier for all the data: <cite>id</cite> on the vertices, <cite>gid</cite> on the edges.</p>
+<p>osm2pgrouting carga los identificadores de OSM <cite>osm_id</cite> y también genera un identificador único para todos los datos: <cite>id</cite> en los vértices, <cite>gid</cite> en los bordes.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="nb">id</span><span class="p">,</span> <span class="n">osm_id</span>
 <span class="n">FROM</span> <span class="n">ways_vertices_pgr</span>
 <span class="n">WHERE</span> <span class="nb">id</span> <span class="n">IN</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The results are:</p>
+<p>Los resultados son:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="nb">id</span>  <span class="o">|</span>  <span class="n">osm_id</span>
 <span class="o">-----+----------</span>
  <span class="mi">100</span> <span class="o">|</span> <span class="mi">81622364</span>
@@ -249,20 +245,17 @@ identifier for all the data: <cite>id</cite> on the vertices, <cite>gid</cite> o
 </div>
 </div>
 <div class="section" id="inner-query">
-<h2><a class="toc-backref" href="#id4">Inner Query</a><a class="headerlink" href="#inner-query" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Most of the pgRouting functions have a parameter that is an SQL statement, it is
-called <strong>inner query</strong></p>
-<p>The inner SQL statement must always have field names <cite>id</cite>, <cite>source</cite>, <cite>target</cite>, and <cite>cost</cite>
-having <cite>reverse_cost</cite> as optional.</p>
-<p>Inner query that use <cite>gid</cite> as identifier of the segments</p>
+<h2><a class="toc-backref" href="#id4">Consulta interna</a><a class="headerlink" href="#inner-query" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La mayoría de las funciones pgRouting tienen un parámetro que es una instrucción SQL, se llama <strong>consulta interna</strong></p>
+<p>La instrucción SQL interna siempre debe tener nombres de campo <cite>id</cite>, <cite>source</cite>, <cite>target</cite> y <cite>cost</cite> que tengan <cite>reverse_cost</cite> como opción.</p>
+<p>Consulta interna que usa <cite>gid</cite> como identificador de los segmentos</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
        <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
        <span class="n">cost</span><span class="p">,</span> <span class="n">reverse_cost</span>
 <span class="n">FROM</span> <span class="n">ways</span>
 </pre></div>
 </div>
-<p>Inner query that use <cite>gid</cite> as identifier of the segments and lenght as <cite>cost</cite>
-without the optional <cite>reverse_cost</cite></p>
+<p>Consulta interna que utiliza <cite>gid</cite> como identificador de los segmentos y la longitud como <cite>coste</cite> sin el <cite>reverse_cost</cite> opcional</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">gid</span> <span class="k">as</span> <span class="nb">id</span><span class="p">,</span>
        <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span>
        <span class="n">length</span> <span class="n">AS</span> <span class="n">cost</span>
@@ -272,8 +265,7 @@ without the optional <cite>reverse_cost</cite></p>
 </div>
 <div class="section" id="pgr-dijkstra">
 <h2><a class="toc-backref" href="#id5">pgr_Dijkstra</a><a class="headerlink" href="#pgr-dijkstra" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Run the Dijkstra shortest path function based on the time in seconds to traverse
-a segment on an undirected graph, using <cite>id</cite> as the identifier of a vertex</p>
+<p>Ejecute la función de la ruta más corta de Dijkstra en función del tiempo en segundos para atravesar un segmento en un grafo no dirigido, utilizando <cite>id</cite> como identificador de un vértice</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -285,7 +277,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>The results are:</p>
+<p>Los resultados son:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>      <span class="n">cost</span>          <span class="o">|</span>       <span class="n">agg_cost</span>
 <span class="o">-----+----------+------+-------+--------------------+--------------------</span>
    <span class="mi">1</span> <span class="o">|</span>        <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span>  <span class="mf">8.994104012024671</span> <span class="o">|</span>                  <span class="mi">0</span>
@@ -304,7 +296,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="rubric">A query that use the OSM identifier becomes:</p>
+<p class="rubric">Una consulta que utiliza el identificador OSM se convierte en:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -316,8 +308,7 @@ a segment on an undirected graph, using <cite>id</cite> as the identifier of a v
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Because the query is using fields <cite>source_osm</cite> and <cite>target_osm</cite> the query aliases them to have
-the required names <cite>source</cite> and <cite>target</cite>.</p>
+<p>Debido a que la consulta usa campos <cite>source_osm</cite> y <cite>target_osm</cite>, la consulta les asigna un alias para que tengan los nombres requeridos <cite>origen</cite> y <cite>destino</cite>.</p>
 <p>La salida es:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">path_seq</span> <span class="o">|</span>    <span class="n">node</span>    <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>        <span class="n">cost</span>        <span class="o">|</span>      <span class="n">agg_cost</span>
 <span class="o">-----+----------+------------+-------+--------------------+--------------------</span>
@@ -337,9 +328,9 @@ the required names <cite>source</cite> and <cite>target</cite>.</p>
 <span class="p">(</span><span class="mi">13</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The costs are the same as in the first query</p>
-<p class="rubric">A query to get the geometry of the path</p>
-<p>The results of <cite>pgr_dijkstra</cite> need to be joined with the table ways.</p>
+<p>Los costos son los mismos que en la primera consulta</p>
+<p class="rubric">Una consulta para obtener la geometría de la ruta</p>
+<p>Los resultados de <cite>pgr_dijkstra</cite> deben unirse con las formas de la tabla.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">rpad</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">the_geom</span><span class="p">::</span><span class="n">text</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="n">AS</span> <span class="s2">&quot;the_geom (truncated)&quot;</span>
 <span class="n">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span>
   <span class="s1">&#39;SELECT gid as id,</span>
@@ -352,8 +343,7 @@ the required names <cite>source</cite> and <cite>target</cite>.</p>
 <span class="n">JOIN</span> <span class="n">ways</span> <span class="n">AS</span> <span class="n">b</span> <span class="n">ON</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">edge</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">gid</span><span class="p">)</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">seq</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The results, for visual purposes are truncated here, the geometries are much longer
-than shown</p>
+<p>Los resultados, con fines visuales se truncan aquí, las geometrías son mucho más largas de lo que se muestra</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">seq</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>                     <span class="n">the_geom</span> <span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
 <span class="o">-----+-------+--------------------------------------------------------------</span>
    <span class="mi">1</span> <span class="o">|</span>  <span class="mi">6199</span> <span class="o">|</span> <span class="mf">0102000020E6100000050000009</span><span class="n">F3825C56C3C4DC0D8367B56884A41C011</span>

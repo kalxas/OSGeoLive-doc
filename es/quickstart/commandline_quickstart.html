@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Command Line basics &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Conceptos básicos de la línea de comandos &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -27,7 +27,7 @@
     <link rel="search" title="Búsqueda" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="OSGeoLive 14.0 Contenido" href="../overview/overview.html" />
-    <link rel="prev" title="Running in a Hyper-V Virtual Machine" href="hyperv_quickstart.html" />
+    <link rel="prev" title="Ejecución en una máquina virtual de Hyper-V" href="hyperv_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -70,42 +70,42 @@
           <div class="body" role="main">
             
   <div class="section" id="command-line-basics">
-<h1>Command Line basics<a class="headerlink" href="#command-line-basics" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>When you work with GNU/Linux Operating Systems such as OSGeoLive, Ubuntu, etc., it is good to know how to work on the command line.</p>
-<p>Don’t worry. It is not difficult to learn and you will discover that it is fun and very powerful.</p>
-<p>In this quickstart you will learn some basic commands.</p>
-<p>The following commands run from within a Terminal Emulator window.</p>
-<p>Start a Terminal Emulator (<cite>QTerminal</cite> currently) from the <cite>Applications</cite> menu in the <cite>System Tools</cite> section. This gives you a Unix shell command prompt.</p>
+<h1>Conceptos básicos de la línea de comandos<a class="headerlink" href="#command-line-basics" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Cuando se trabaja con sistemas operativos GNU/Linux como OSGeoLive, Ubuntu, etc., es bueno saber cómo trabajar en la línea de comandos.</p>
+<p>No te preocupes. No es difícil de aprender y descubrirás que es divertido y muy potente.</p>
+<p>En esta guía de inicio rápido aprenderá algunos comandos básicos.</p>
+<p>Los siguientes comandos se ejecutan desde una ventana del Emulador de Terminal.</p>
+<p>Iniciar un Emulador de Terminal (<cite>QTerminal</cite> actualmente) desde el menú <cite>Aplicaciones</cite> en la sección <cite>Herramientas del Sistema</cite>. Esto le proporciona un símbolo del sistema de shell de Unix.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#where-am-i" id="id1">Where am I?</a></li>
-<li><a class="reference internal" href="#how-to-navigate-in-the-file-system" id="id2">How to navigate in the file system?</a></li>
-<li><a class="reference internal" href="#create-a-directory" id="id3">Create a directory</a></li>
-<li><a class="reference internal" href="#how-to-create-a-new-file" id="id4">How to create a new file</a></li>
-<li><a class="reference internal" href="#show-me-what-is-in-a-directory" id="id5">Show me what is in a directory</a></li>
-<li><a class="reference internal" href="#copy-files-and-directories" id="id6">Copy files and directories</a></li>
-<li><a class="reference internal" href="#who-is-sudo" id="id7">Who is sudo?</a></li>
-<li><a class="reference internal" href="#search-and-install-programs" id="id8">Search and install programs</a></li>
-<li><a class="reference internal" href="#services" id="id9">Services</a></li>
-<li><a class="reference internal" href="#how-to-edit-files" id="id10">How to edit files</a></li>
-<li><a class="reference internal" href="#owner-and-access-rights" id="id11">Owner and access rights</a></li>
-<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12">Change the owner with <cite>chown</cite></a></li>
-<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13">Change access rights with <cite>chmod</cite></a></li>
-<li><a class="reference internal" href="#things-to-try" id="id14">Things to try</a></li>
-<li><a class="reference internal" href="#what-next" id="id15">What next?</a></li>
+<li><a class="reference internal" href="#where-am-i" id="id1">¿Dónde estoy?</a></li>
+<li><a class="reference internal" href="#how-to-navigate-in-the-file-system" id="id2">¿Cómo navegar en el sistema de archivos?</a></li>
+<li><a class="reference internal" href="#create-a-directory" id="id3">Crear un directorio</a></li>
+<li><a class="reference internal" href="#how-to-create-a-new-file" id="id4">Cómo crear un nuevo archivo</a></li>
+<li><a class="reference internal" href="#show-me-what-is-in-a-directory" id="id5">Mostrar lo que hay en un directorio</a></li>
+<li><a class="reference internal" href="#copy-files-and-directories" id="id6">Copiar archivos y directorios</a></li>
+<li><a class="reference internal" href="#who-is-sudo" id="id7">¿Quién es Sudo?</a></li>
+<li><a class="reference internal" href="#search-and-install-programs" id="id8">Buscar e instalar programas</a></li>
+<li><a class="reference internal" href="#services" id="id9">Servicios</a></li>
+<li><a class="reference internal" href="#how-to-edit-files" id="id10">Cómo editar archivos</a></li>
+<li><a class="reference internal" href="#owner-and-access-rights" id="id11">Derechos de propietario y acceso</a></li>
+<li><a class="reference internal" href="#change-the-owner-with-chown" id="id12">Cambia al dueño por <cite>chown</cite></a></li>
+<li><a class="reference internal" href="#change-access-rights-with-chmod" id="id13">Cambiar derechos de acceso con <cite>chmod</cite></a></li>
+<li><a class="reference internal" href="#things-to-try" id="id14">Cosas para probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id15">¿Qué sigue?</a></li>
 </ul>
 </div>
 <div class="section" id="where-am-i">
-<h2><a class="toc-backref" href="#id1">Where am I?</a><a class="headerlink" href="#where-am-i" title="Enlazar permanentemente con este título">¶</a></h2>
-<p><cite>pwd</cite> shows the path of your current location.</p>
+<h2><a class="toc-backref" href="#id1">¿Dónde estoy?</a><a class="headerlink" href="#where-am-i" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><cite>pwd</cite> muestra el camino de su ubicación actual.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Truco</p>
-<p class="last">You can ask all commands for help and get information on how they can be used and find out about additional options.</p>
+<p class="last">Puede pedir ayuda a todos los comandos y obtener información sobre cómo se pueden usar y averiguar sobre opciones adicionales.</p>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span>pwd --help
 pwd: pwd [-LP]
@@ -124,24 +124,20 @@ pwd: pwd [-LP]
 </div>
 </div>
 <div class="section" id="how-to-navigate-in-the-file-system">
-<h2><a class="toc-backref" href="#id2">How to navigate in the file system?</a><a class="headerlink" href="#how-to-navigate-in-the-file-system" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>First you should get to know how the file system under Linux is organized. The file system is organized in a tree. It starts with the <cite>/</cite> known as root directory. All files and directories are under the root directory (<cite>/</cite>).</p>
-<p>The current user is «<cite>user</cite>» and has a home directory located at <cite>/home/user</cite>. Anytime you open a terminal window it will start in your home directory (see pwd).</p>
-<p>You can easily navigate in the file system with the command cd.</p>
-<p>cd / navigated to the root directory
-cd /home/user goes to your home directory
-same as
-cd ~</p>
-<p><cite>cd ..</cite> moves you one directory to the top,
-<cite>cd</cite> user goes from your current location to the home directory of user. This is not the same as <cite>/user</cite></p>
+<h2><a class="toc-backref" href="#id2">¿Cómo navegar en el sistema de archivos?</a><a class="headerlink" href="#how-to-navigate-in-the-file-system" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En primer lugar, debe conocer cómo se organiza el sistema de archivos en Linux. El sistema de archivos está organizado en un árbol. Comienza con el <cite>/</cite> conocido como directorio raíz. Todos los archivos y directorios están bajo el directorio (<cite>/</cite>).</p>
+<p>El usuario actual es «<cite>usuario</cite>» y tiene un directorio de inicio ubicado en <cite>/home/user</cite>. Cada vez que abra una ventana de terminal, se iniciará en su directorio de inicio (consulte pwd).</p>
+<p>Puede navegar fácilmente por el sistema de archivos con el comando cd.</p>
+<p>cd / navegado al directorio raíz cd /home/user va a su directorio de inicio igual que cd ~</p>
+<p><cite>cd ..</cite> lleva a un directorio a la parte superior, el usuario <cite>cd</cite> va de tu ubicación actual al directorio de inicio del usuario. Esto no es lo mismo que <cite>/usuario</cite></p>
 <div class="admonition tip">
 <p class="first admonition-title">Truco</p>
-<p class="last">Use the tab key to autocomplete the path while you are typing.</p>
+<p class="last">Utilice la tecla tabulador para autocompletar la ruta mientras escribe.</p>
 </div>
 </div>
 <div class="section" id="create-a-directory">
-<h2><a class="toc-backref" href="#id3">Create a directory</a><a class="headerlink" href="#create-a-directory" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You have write access in your user-directory. You can create files and directories there. Next we will create a directory for some command line tests.</p>
+<h2><a class="toc-backref" href="#id3">Crear un directorio</a><a class="headerlink" href="#create-a-directory" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tiene acceso de escritura en el directorio de usuario. Puede crear archivos y directorios allí. A continuación, crearemos un directorio para algunas pruebas de línea de comandos.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
 <span class="n">mkdir</span> <span class="n">demo</span> <span class="o">-</span> <span class="n">creates</span> <span class="n">the</span> <span class="n">directory</span> <span class="n">demo</span>
 <span class="n">cd</span> <span class="n">demo</span>
@@ -149,33 +145,33 @@ cd ~</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Truco</p>
-<p class="last">You have a command history. You can navigate in the history with the arrow up and down key.</p>
+<p class="last">Tienes un historial de comandos. Puede navegar en el historial con la tecla de flecha arriba y abajo.</p>
 </div>
 </div>
 <div class="section" id="how-to-create-a-new-file">
-<h2><a class="toc-backref" href="#id4">How to create a new file</a><a class="headerlink" href="#how-to-create-a-new-file" title="Enlazar permanentemente con este título">¶</a></h2>
-<p><cite>touch</cite> creates a new empty file.</p>
+<h2><a class="toc-backref" href="#id4">Cómo crear un nuevo archivo</a><a class="headerlink" href="#how-to-create-a-new-file" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><cite>touch</cite> crea un nuevo archivo vacío.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">demo</span>
 <span class="n">touch</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Truco</p>
-<p class="last">You can pipe the information from a command to a file i.e. the command history. <cite>history</cite> displays the command history. With the following command it can be saved in a file.</p>
+<p class="last">Es posible canalizar la información de un comando a un archivo, es decir, el historial de comandos. <cite>historial</cite> muestra el historial de comandos. Con el siguiente comando se puede guardar en un archivo.</p>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">&gt;</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="show-me-what-is-in-a-directory">
-<h2><a class="toc-backref" href="#id5">Show me what is in a directory</a><a class="headerlink" href="#show-me-what-is-in-a-directory" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You would like to know more about the content of a directory. <cite>ls</cite> is the program that gives you a lot of information.</p>
+<h2><a class="toc-backref" href="#id5">Mostrar lo que hay en un directorio</a><a class="headerlink" href="#show-me-what-is-in-a-directory" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para saber más sobre el contenido de un directorio. <cite>ls</cite> es el programa que te da mucha información.</p>
 <ul class="simple">
-<li><cite>ls</cite> lists all files and directories</li>
-<li><cite>ls -l</cite> shows a more detailed list of the files/directories with time, user access rights</li>
-<li><cite>ls -a</cite> also shows hidden files</li>
-<li><cite>ls -al</cite> you can combine the different options</li>
-<li><cite>ls -1</cite> shows only the file names</li>
+<li><cite>Is</cite> enumera todos los archivos y directorios</li>
+<li><cite>ls -l</cite> muestra una lista más detallada de los archivos/directorios con tiempo, derechos de acceso de los usuarios</li>
+<li><cite>ls -a</cite> también muestra archivos ocultos</li>
+<li><cite>ls -al</cite> hace posible combinar las diferentes opciones</li>
+<li><cite>ls -1</cite> muestra sólo los nombres de archivo</li>
 </ul>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">demo</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
@@ -187,47 +183,45 @@ cd ~</p>
 </div>
 </div>
 <div class="section" id="copy-files-and-directories">
-<h2><a class="toc-backref" href="#id6">Copy files and directories</a><a class="headerlink" href="#copy-files-and-directories" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You can copy files from one location to another.</p>
-<p>Copy a file to a new file</p>
+<h2><a class="toc-backref" href="#id6">Copiar archivos y directorios</a><a class="headerlink" href="#copy-files-and-directories" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es posible copiar archivos de una ubicación a otra.</p>
+<p>Copiar un archivo en un nuevo archivo</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="n">hello_again</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>Copy a file to another directory</p>
+<p>Copiar un archivo en otro directorio</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>Copy a whole directory to a new location (-R recursive)</p>
+<p>Copiar un directorio completo en una nueva ubicación (-R recursivo)</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span> <span class="o">/</span><span class="n">tmp</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="who-is-sudo">
-<h2><a class="toc-backref" href="#id7">Who is sudo?</a><a class="headerlink" href="#who-is-sudo" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>With <cite>sudo</cite> you can do things that you are normally not allowed to.
-<cite>sudo</cite> runs commands with the rights of the superuser also known as root
-With <cite>sudo</cite> you can i.e. install more software, administrate services, change access rights and more fun. You will see the use of <cite>sudo</cite> in some of the following commands.</p>
+<h2><a class="toc-backref" href="#id7">¿Quién es Sudo?</a><a class="headerlink" href="#who-is-sudo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Con <cite>sudo</cite> es posible hacer cosas que normalmente no se te permiten. <cite>sudo</cite> ejecuta comandos con los derechos del superusuario también conocidos como root. Con <cite>sudo</cite> es posible instalar más software, administrar servicios, cambiar los derechos de acceso y más diversión. Verá el uso de <cite>sudo</cite> en algunos de los siguientes comandos.</p>
 </div>
 <div class="section" id="search-and-install-programs">
-<h2><a class="toc-backref" href="#id8">Search and install programs</a><a class="headerlink" href="#search-and-install-programs" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Show information about programs.</p>
+<h2><a class="toc-backref" href="#id8">Buscar e instalar programas</a><a class="headerlink" href="#search-and-install-programs" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Mostrar información sobre los programas.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">show</span> <span class="n">postgis</span>
 </pre></div>
 </div>
-<p>Search for programs</p>
+<p>Búsqueda de programas</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">search</span> <span class="n">postgis</span>
 </pre></div>
 </div>
-<p>Install programs</p>
+<p>Instalar programas</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">sl</span>
 </pre></div>
 </div>
-<p>You will love the program <cite>sl</cite>. Run the new program with <cite>sl</cite> see also <cite>apt show sl</cite>.</p>
+<p>El programa <cite>sl</cite> es un amor. Ejecute el nuevo programa con <cite>sl</cite> ver también <cite>apt show sl</cite>.</p>
 </div>
 <div class="section" id="services">
-<h2><a class="toc-backref" href="#id9">Services</a><a class="headerlink" href="#services" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Some programms run as services like PostgreSQL, tomcat or Apache Webserver. You can start or stop the services.</p>
-<p>Restart your Apache Service</p>
+<h2><a class="toc-backref" href="#id9">Servicios</a><a class="headerlink" href="#services" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Algunos programas se ejecutan como servicios como PostgreSQL, tomcat o Apache Webserver. Puede iniciar o detener los servicios.</p>
+<p>Reinicie su Servicio Apache</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">service</span> <span class="n">apache2</span> <span class="n">restart</span>
 
 <span class="n">sudo</span> <span class="n">service</span> <span class="n">apache2</span> <span class="o">--</span><span class="n">help</span>
@@ -237,117 +231,117 @@ With <cite>sudo</cite> you can i.e. install more software, administrate services
 </div>
 </div>
 <div class="section" id="how-to-edit-files">
-<h2><a class="toc-backref" href="#id10">How to edit files</a><a class="headerlink" href="#how-to-edit-files" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You can either edit files in the terminal or open them with an external program like Geany.</p>
-<p>In the terminal window you can use the <cite>vim</cite> editor (Vi IMproved). <cite>vim</cite> is very powerful and has many options.</p>
-<p>See also</p>
+<h2><a class="toc-backref" href="#id10">Cómo editar archivos</a><a class="headerlink" href="#how-to-edit-files" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es posible editar archivos en el terminal o abrirlos con un programa externo como Geany.</p>
+<p>En la ventana del terminal se puede utilizar el editor <cite>vim</cite> (Vi IMproved). <cite>vim</cite> es muy potente y tiene muchas opciones.</p>
+<p>Véase también</p>
 <ul class="simple">
 <li><a class="reference external" href="https://help.ubuntu.com/community/VimHowto">https://help.ubuntu.com/community/VimHowto</a></li>
 <li><a class="reference external" href="https://vim.rtorr.com/lang/en_en">https://vim.rtorr.com/lang/en_en</a></li>
 </ul>
-<p>Open a file with <cite>vim</cite>:</p>
+<p>Abra un archivo con <cite>vim</cite>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>press <cite>i</cite> to switch to the input mode</li>
-<li><cite>ESC</cite> leaves the input mode</li>
-<li><cite>:w</cite> saves your changes</li>
-<li><cite>:wq</cite> saves your changes and closes the file</li>
-<li><cite>:q</cite> closes the file</li>
-<li><cite>:q!</cite> closes the file without saving</li>
+<li>pulse <cite>i</cite> para cambiar al modo de entrada</li>
+<li><cite>ESC</cite> sale del modo de entrada</li>
+<li><cite>:w</cite> guarda los cambios</li>
+<li><cite>:wq</cite> guarda los cambios y cierra el archivo</li>
+<li><cite>:q</cite> cierra el archivo</li>
+<li><cite>:q!</cite> cierra el archivo sin guardar</li>
 </ul>
 </div>
 <div class="section" id="owner-and-access-rights">
-<h2><a class="toc-backref" href="#id11">Owner and access rights</a><a class="headerlink" href="#owner-and-access-rights" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Access rights define whether a <cite>user</cite> or <cite>group</cite> or <cite>others</cite> have access to a file and what sort of access is given. You can have <cite>read</cite>, <cite>write</cite> or <cite>excecute</cite> access.</p>
-<p>Directories or files have an owner and a group definition. By default the creator of a file/directory is the owner. But this definition can be changed. You will learn this in the next section.</p>
-<p>You can show the owner and group via <cite>ls -l</cite></p>
+<h2><a class="toc-backref" href="#id11">Derechos de propietario y acceso</a><a class="headerlink" href="#owner-and-access-rights" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los derechos de acceso definen si un <cite>usuario</cite> o <cite>grupo</cite> u <cite>otros</cite> tienen acceso a un archivo y qué tipo de acceso se da. Puede tener acceso <cite>leer</cite>, <cite>escribir</cite> o <cite>ejecutar</cite>.</p>
+<p>Los directorios o archivos tienen un propietario y una definición de grupo. De forma predeterminada, el creador de un archivo/directorio es el propietario. Pero esta definición se puede cambiar. Aprenderás esto en la siguiente sección.</p>
+<p>Puede mostrar al propietario y al grupo a través de <cite>ls -l</cite></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">demo</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
 <span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">user</span> <span class="n">user</span> <span class="mi">122</span> <span class="n">Dec</span> <span class="mi">26</span> <span class="mi">16</span><span class="p">:</span><span class="mi">11</span> <span class="n">history</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>the initial character can be <cite>-</cite> for a file or <cite>d</cite> for directory</li>
-<li><cite>user</cite> is defined as the owner and the group</li>
+<li>el carácter inicial puede ser <cite>-</cite> para un archivo o <cite>d</cite> para el directorio</li>
+<li><cite>usuario</cite> se define como el propietario y el grupo</li>
 </ul>
-<p>Access rights are listed at the beginning of the row:</p>
+<p>Los derechos de acceso se enumeran al principio de la fila:</p>
 <ul class="simple">
-<li><cite>r</cite> read</li>
-<li><cite>w</cite> write</li>
-<li><cite>x</cite> execute</li>
-<li>first 3 letters for the owner</li>
-<li>then next 3 letters for the group</li>
-<li>followed by the last 3 letters for others</li>
+<li><cite>r</cite> leer</li>
+<li><cite>w</cite> escribir</li>
+<li><cite>x</cite> ejecutar</li>
+<li>primeras 3 cartas para el propietario</li>
+<li>siguientes 3 letras para el grupo</li>
+<li>seguido por las últimas 3 letras para los demás</li>
 </ul>
 </div>
 <div class="section" id="change-the-owner-with-chown">
-<h2><a class="toc-backref" href="#id12">Change the owner with <cite>chown</cite></a><a class="headerlink" href="#change-the-owner-with-chown" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Cambia al dueño por <cite>chown</cite></a><a class="headerlink" href="#change-the-owner-with-chown" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">user</span><span class="p">:</span><span class="n">www</span><span class="o">-</span><span class="n">data</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>first pass the user then the group - like <cite>user:www-data</cite></li>
-<li><cite>-R</cite> recursive</li>
+<li>primero pase el usuario y luego el grupo - como <cite>user:www-data</cite></li>
+<li><cite>-R</cite> recursivo</li>
 </ul>
 </div>
 <div class="section" id="change-access-rights-with-chmod">
-<h2><a class="toc-backref" href="#id13">Change access rights with <cite>chmod</cite></a><a class="headerlink" href="#change-access-rights-with-chmod" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">Cambiar derechos de acceso con <cite>chmod</cite></a><a class="headerlink" href="#change-access-rights-with-chmod" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>777 everyone can do everything</li>
-<li><cite>-R</cite> recursive</li>
+<li>777 todo el mundo puede hacer todo</li>
+<li><cite>-R</cite> recursivo</li>
 <li><ol class="first arabic">
-<li>number: owner (u)</li>
+<li>número: propietario (u)</li>
 </ol>
 </li>
 <li><ol class="first arabic" start="2">
-<li>number: group (g)</li>
+<li>número: grupo (g)</li>
 </ol>
 </li>
 <li><ol class="first arabic" start="3">
-<li>number: other (o)</li>
+<li>número: otro (o)</li>
 </ol>
 </li>
-<li>4 read</li>
-<li>2 write</li>
-<li>1 execute</li>
-<li>660 - owner and group are allowed to read and write, other have no rights</li>
-<li>744 - owner can do everything, group and others can only read</li>
+<li>4 leer</li>
+<li>2 escribir</li>
+<li>1 ejecución</li>
+<li>660 - propietario y grupo pueden leer y escribir, otros no tienen derechos</li>
+<li>744 - el propietario puede hacer todo, grupo y otros sólo pueden leer</li>
 </ul>
-<p>or use it like this</p>
+<p>o usarlo así</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="n">u</span><span class="o">+</span><span class="n">rwx</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">TBD</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>u = user</li>
-<li>g = group</li>
-<li>o = other</li>
-<li>a = all</li>
-<li>+/- right: r = read / w = write / x = execute</li>
+<li>u = usuario</li>
+<li>g = grupo</li>
+<li>o = otros</li>
+<li>a = todos</li>
+<li>+/- derecha: r = lectura / w = escritura / x = ejecutar</li>
 </ul>
 </div>
 <div class="section" id="things-to-try">
-<h2><a class="toc-backref" href="#id14">Things to try</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Here are other commands you may try.</p>
+<h2><a class="toc-backref" href="#id14">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Aquí hay otros comandos que puede probar.</p>
 <ul class="simple">
-<li>grep - search for a pattern in a text</li>
-<li>history | grep cd</li>
-<li>rm - remove a file</li>
-<li>rmdir - remove an empty directory</li>
-<li>mv - rename/move</li>
-<li>head - show the beginning of a file</li>
-<li>tail - show the end of a file</li>
-<li>find - search for files in a directory hierarchy</li>
-<li>locate - find files by name</li>
+<li>grep - buscar un patrón en un texto</li>
+<li>historia | grep cd</li>
+<li>rm - eliminar un archivo</li>
+<li>rmdir - eliminar un directorio vacío</li>
+<li>mv - cambiar el nombre/mover</li>
+<li>head - mostrar el comienzo de un archivo</li>
+<li>tail - mostrar el final de un archivo</li>
+<li>buscar - buscar archivos en una jerarquía de directorios</li>
+<li>localizar - encontrar archivos por nombre</li>
 </ul>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id15">What next?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>You have learned some important commands and information to work with the command line. Hopefully you have discovered how powerful the command line is.</p>
+<h2><a class="toc-backref" href="#id15">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora ha aprendido algunos comandos e información importantes para trabajar con la línea de comandos. Esperemos que haya descubierto lo poderosa que es la línea de comandos.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">https://ubuntu.com/tutorials/command-line-for-beginners#1-overview</a></li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/Category:Standard_Unix_programs">https://en.wikipedia.org/wiki/Category:Standard_Unix_programs</a></li>

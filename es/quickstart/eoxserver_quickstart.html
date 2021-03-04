@@ -72,9 +72,7 @@
   <a class="reference external image-reference" href="https://docs.eoxserver.org/en/stable/"><img alt="../../_images/logo_eoxserver.png" class="align-right" src="../../_images/logo_eoxserver.png" /></a>
 <div class="section" id="eoxserver-quickstart">
 <h1>Inicio Rápido de EOxServer<a class="headerlink" href="#eoxserver-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>EOxServer is a server for presenting big Earth Observation (EO) data
-archives and metadata via Open Standards. It builds upon an Open Source
-stack of software which includes Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>,  <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> or <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a> database.</p>
+<p>EOxServer es un servidor para presentar archivos de datos y metadatos de Observación de la Tierra (EO) a través de Estándares Abiertos. Se basa en una pila de software de código abierto que incluye Python, <a class="reference internal" href="../overview/mapserver_overview.html"><span class="doc">MapServer</span></a>, Django/GeoDjango, <a class="reference internal" href="../overview/gdal_overview.html"><span class="doc">GDAL</span></a>, <a class="reference internal" href="../overview/proj_overview.html"><span class="doc">PROJ</span></a> and a <a class="reference internal" href="../overview/spatialite_overview.html"><span class="doc">SpatiaLite</span></a> o base de datos de <a class="reference internal" href="../overview/postgis_overview.html"><span class="doc">PostGIS</span></a></p>
 <p>Esta Guía de Inicio Rápido describe cómo:</p>
 <ul class="simple">
 <li>Utilice el Cliente Web para ver, filtrar, crear subconjuntos y descargar datos de EO</li>
@@ -99,30 +97,17 @@ stack of software which includes Python, <a class="reference internal" href="../
 <p>Click en el vínculo <strong>Cliente Web</strong> para abrir el cliente EOxServer integrado.</p>
 <p>Dentro de este cliente puede explorar el contenido de la instancia de EOxServer. La instancia de demostración está llena de escenas de ENVISAT MERIS.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient1.png"><img alt="Main view of the EOxServer Web Client" src="../../_images/eoxserver_webclient1.png" style="width: 749.5px; height: 433.0px;" /></a>
-<p>The client consists of the map view and widgets that contain the main interactions.
-The main area is the map widget of the client with a set of datasets already displayed.
-On the bottom, you’ll find the timeslider widget, that allows you to explore the
-contents in the temporal dimension.</p>
+<p>El cliente consta de la vista de mapa y widgets que contienen las interacciones principales. El área principal es el widget de mapa del cliente con un conjunto de conjuntos de datos ya mostrados. En la parte inferior, encontrará el widget de timeslider, que le permite explorar el contenido en la dimensión temporal.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient2.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient2.png" style="width: 748.0px; height: 431.0px;" /></a>
-<p>The Layer Selection widget can be expanded by clicking the cogwheel on the top left and
-it allows you to enable or disable the visibility and
-configure the rendering of the layers. Also, you can show or hide the
-streets-overlay and select the background layer. The Filters tab in this widget enables
-querying for different spatial and temporal values.</p>
+<p>El widget Selección de Capas se puede ampliar haciendo clic en el ícono de engranaje en la parte superior izquierda, que le permite activar o deshabilitar la visibilidad y configurar la representación de las capas. Además, puede mostrar u ocultar la superposición de calles y seleccionar la capa de fondo. La pestaña Filtros de este widget permite consultar diferentes valores espaciales y temporales.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient3.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient3.png" style="width: 747.0px; height: 431.5px;" /></a>
 <p>De manera similar a un mapa, puede hacer zoom o mover el actual tiempo de interés visible y seleccionar un tiempo de interés dibujando en el área que contiene los puntos rojos. Tambén puede mover el cursor sobre un punto para ver el conjunto de datos ID. Haciendo click en el punto, el mapa se acerca automáticamente a la extensión del conjunto de datos.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient4.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient4.png" style="width: 748.0px; height: 432.5px;" /></a>
-<p>When a spatial filter is enabled, you can draw a bounding box, polygon or point
-directly on the map. The drawn feature is used for querying within the Download Tool.</p>
+<p>Cuando un filtro espacial está habilitado, puede dibujar un cuadro delimitador, polígono o punto directamente en el mapa. La función dibujada se utiliza para consultar dentro de la Herramienta de Descarga.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient5.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient5.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>You can get more information of available services and metadata on the selected product
-by hovering on the product in the search results widget and clicking on the icon in the
-top right.</p>
+<p>Puede obtener más información de los servicios y metadatos disponibles en el producto seleccionado pasando el cursor sobre el producto en el widget de resultados de búsqueda y haciendo clic en el icono en la parte superior derecha.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_webclient6.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient6.png" style="width: 749.0px; height: 432.5px;" /></a>
-<p>When the Download Tool is enabled, a query to the server is sent. This query
-includes the selected time of interest and bounding box. The results are shown
-in the Download widget, where you can select the format, projection and datasets
-to download.</p>
+<p>Cuando la Herramienta de Descarga está habilitada, se envía una consulta al servidor. Esta consulta incluye la hora de interés y el cuadro delimitador seleccionados. Los resultados se muestran en el widget Descargar, donde puede seleccionar el formato, la proyección y los conjuntos de datos que desea descargar.</p>
 <p>Esto fue una rápida introducción al Cliente Web EOxServer. Por favor consulte la  <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/webclient.html">documentación en línea</a> para obtener más información sobre este tema.</p>
 </div>
 <div class="section" id="work-with-the-admin-client">
@@ -131,10 +116,9 @@ to download.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient1.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient1.png" style="width: 438.0px; height: 272.5px;" /></a>
 <p>El  <cite>Cliente de Administración</cite> es administrador estándar de Djangos y le permite configurar los datos disponibles. Por favor, siéntase libre de explorar al cliente. Puede encontrar más información en <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">operators” guide</a>.</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient2.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient2.png" style="width: 746.0px; height: 431.0px;" /></a>
-<p>For example, you can inspect the collection that is loaded by default by
-clicking the «Collections» link and then the «MER_FRS_1P_RGB_reduced» link.</p>
+<p>Por ejemplo, puede inspeccionar la colección que se carga de forma predeterminada haciendo clic en el vínculo «Colecciones» y, a continuación, en el vínculo «MER_FRS_1P_RGB_reduced».</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient3.png"><img alt="EOxServer demonstration admin client Dataset Series" src="../../_images/eoxserver_adminclient3.png" style="width: 742.0px; height: 429.0px;" /></a>
-<p>You can preview the coverages by going back and clicking on the «Coverages» link.</p>
+<p>Puede obtener una vista previa de las coberturas volviendo y haciendo clic en el enlace «Coberturas».</p>
 <a class="reference internal image-reference" href="../../_images/eoxserver_adminclient4.png"><img alt="EOxServer demonstration admin client Dataset Series Management" src="../../_images/eoxserver_adminclient4.png" style="width: 746.5px; height: 429.5px;" /></a>
 </div>
 <div class="section" id="what-next">
@@ -143,7 +127,7 @@ clicking the «Collections» link and then the «MER_FRS_1P_RGB_reduced» link.<
 <ul class="simple">
 <li>Ver <a class="reference internal" href="../overview/eoxserver_overview.html"><span class="doc">EOxServer Overview</span></a> para mayor información.</li>
 <li>Lea la <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/operators.html">Guía de Operadores de EOxServer</a>.</li>
-<li>Read the <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
+<li>Leer <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/basics.html">EOxServer Basics</a>.</li>
 <li>¿Listo para usar EOxServer? Entonces únete a la comunidad en <a class="reference external" href="https://docs.eoxserver.org/en/latest/users/mailing_lists.html">listas de correo</a>  para intercambiar ideas, discutir posibles mejoras de software y preguntas.</li>
 </ul>
 </div>

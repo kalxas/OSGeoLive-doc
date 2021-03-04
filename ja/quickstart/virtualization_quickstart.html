@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Running in a Virtual Machine &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>仮想マシンで動作させる &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
-    <link rel="next" title="OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成" href="usb_quickstart.html" />
+    <link rel="next" title="OSGeoLive のブータブル USB フラッシュドライブを作成する" href="usb_quickstart.html" />
     <link rel="prev" title="ハードディスクに OSGeoLive をインストール" href="osgeolive_install_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
@@ -70,8 +70,8 @@
           <div class="body" role="main">
             
   <div class="section" id="running-in-a-virtual-machine">
-<h1>Running in a Virtual Machine<a class="headerlink" href="#running-in-a-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>ここでは、 OSGeo-Live を VirtualBox の仮想マシン内で動作させる1つの方法について記載します。他の方法については、以下の 「参照」 の章のリンクにしたがってください。</p>
+<h1>仮想マシンで動作させる<a class="headerlink" href="#running-in-a-virtual-machine" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここでは、 OSGeoLive を VirtualBox の仮想マシン内で動作させる1つの方法について記載します。他の方法については、以下の 「参照」 の章のリンクにしたがってください。</p>
 <div class="section" id="virtual-machine-advantages">
 <h2>仮想マシンの利点<a class="headerlink" href="#virtual-machine-advantages" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
@@ -138,16 +138,16 @@
 <p>共有フォルダを読み取り専用にし、自動マウントすることもできます。 「フォルダパス」 と 「フォルダ名」 を定義したら、[OK]をクリックし、もう一度[OK]をクリックして設定ウィンドウを閉じます。</p>
 <p><strong>仮想マシンの起動</strong></p>
 <p>Start (緑の矢印) ボタンをクリックして、VM を起動しましょう。</p>
-<p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
+<p>VirtualBox Guest Addition をインストールする必要があります。これにより、フルスクリーンモードを利用できます。</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
-<p>VMにisoをインストールする場合は、ユーザー名を 「user」 に設定する必要があります。</p>
-<p>ユーザー 「user」 は、OSGeoLive仮想マシンの 「users」 グループのメンバーではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
+<p>VMにisoをインストールする場合は、ユーザ名を 「user」 に設定する必要があります。</p>
+<p>ユーザ 「user」 は、OSGeoLive仮想マシンの 「users」 グループのメンバではありません。これにより、一部のツールがデータディレクトリに書き込みできなくなり、一部のソフトウェアが起動できなくなります。</p>
 <p>この問題を解決するには、次の1回限りの手順でvmdkを修正します。</p>
 <ol class="arabic simple">
 <li>端末を起動します。</li>
 <li>sudo adduser user usersを実行します。</li>
-<li>この変更を適用するには、新しいデスクトップセッションを開始します。仮想マシンを再起動するか、ログアウトして再度ログインします(ユーザー名 「user」、パスワード 「user」)。</li>
+<li>この変更を適用するには、新しいデスクトップセッションを開始します。仮想マシンを再起動するか、ログアウトして再度ログインします(ユーザ名 「user」、パスワード 「user」)。</li>
 </ol>
 <p>また、OSGeoシステムが起動したら、vboxsfグループに自分自身を追加し、ターミナルウィンドウでを実行して共有フォルダ(上記で定義)にアクセスできるようにします。</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
@@ -165,9 +165,9 @@
 <dd><a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">仮想マシンを作成するその他の方法</a></dd>
 </dl>
 </li>
-<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a></li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">OSGeoLive を始める</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">ハードディスクに OSGeoLive をインストール</span></a></li>
-<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLive を起動できる ブータブル USB フラッシュドライブの作成</span></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><span class="doc">OSGeoLive のブータブル USB フラッシュドライブを作成する</span></a></li>
 </ul>
 </div></blockquote>
 </div>

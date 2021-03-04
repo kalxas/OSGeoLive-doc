@@ -75,8 +75,8 @@
 <div class="section" id="virtual-machine-advantages">
 <h2>Vorteile einer Virtuellen Maschine<a class="headerlink" href="#virtual-machine-advantages" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">
-<li>The response speed of a VM is much faster than on the DVD, and typically comparable with installing directly on the host machine.</li>
-<li>All configuration changes, software updates, and saved files are permanent, just like on any „regular“ computer. So:</li>
+<li>Die Antwortzeiten einer VM sind viel schneller als die einer DVD und vergleichbar mit einer direkten Installation auf einem Hostrechner.</li>
+<li>Alle Konfigurationsanpassungen, Softwareaktualisierungen und gespeicherte Dateien sind permanent, so wie auf einem normalen Computer. Daher</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -92,9 +92,8 @@
 <div class="section" id="system-requirements">
 <h2>Systemvoraussetzungen<a class="headerlink" href="#system-requirements" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">
-<li>RAM: 2 GB at least. The Lubuntu system runs well with 1 GB of RAM, and you’ll need to keep at least the same amount of memory for your host system.
-So a total of 2 GB will be needed for smooth operation. Some applications, like GeoServer, needs the virtual machine to have at least 2GB of RAM. So if possible, consider providing 2 GB or more for your virtual machine.</li>
-<li>Spare Hard Disk Space: The virtual disk file (vmdk) from <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  unzips to almost 10 GB. You’ll also want more space to allow some room to work on the virtual machine. So 20 GB is a good recommendation.</li>
+<li>RAM: mindestens 2 GB. Das Lubuntu System läuft gut mit 1 GB RAM, es werden mindestens ebenso viel RAM für das Gastsystem benötigt. So werden 2 GB für reibungslosen Einsatz benötigt. Einige Anwendungen, wie z.B. der GeoServer, benötigen mindestens 2 GB RAM. Sie sollten daher der Virtuellen Maschine mindestens 2GB zur Verfügung stellen.</li>
+<li>Freier Festplattenspeicher: Die Virtuelle Maschinen Datei (vmdk) von: <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>  ist entpackt etwa 10 GB groß. Sie benötigt noch weiteren Speicher, um Arbeiten auf der Virtuellen Maschine zu ermöglichen. So sind 20 GB Speicher eine gute Empfehlung.</li>
 <li>CPU: Jede CPU reicht aus, doch ist ein Prozessor, der „Virtualization Technology“ unterstützt schneller. Sie können ihre CPU <a class="reference external" href="https://www.intel.com/content/www/us/en/support/articles/000005486/processors.html">hier</a> prüfen.</li>
 </ul>
 <p>Die meisten Maschinen, die in den letzten 4-5 Jahren produziert wurden, erfüllen die Anforderungen.</p>
@@ -102,11 +101,10 @@ So a total of 2 GB will be needed for smooth operation. Some applications, like 
 <div class="section" id="howto">
 <h2>Die Einrichtung<a class="headerlink" href="#howto" title="Link zu dieser Überschrift">¶</a></h2>
 <p><strong>Downloads</strong></p>
-<p>Download <a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a>  for your platform, and install the software. On Windows run the installer, or on Ubuntu-like Linux systems do the following:</p>
+<p>Laden Sie <a class="reference external" href="https://www.virtualbox.org/">Virtual Box</a> für ihr System herunter und installieren Sie die Software. Durchlaufen Sie unter Windows den Installer. Führen Sie unter Ubuntu-ähnlichen Linux Systemen den folgenden Befehl aus:</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
-<p>In addition download the OSGeo Virtual disk file (vmdk) from <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a>.
-Click on the „Download virtual machine“ button. Then unzip the downloaded file (using <a class="reference external" href="https://www.7-zip.org">7zip</a> ).</p>
+<p>Laden Sie die OSGeo Virtual Disk Datei (vmdk) von <a class="reference internal" href="../download.html"><span class="doc">live.osgeo.org</span></a> herunter. Klicken Sie auf den „Download Virtuelle Maschine“ Button. Entpacken Sie die heruntergeladene Datei (nutzen Sie dazu <a class="reference external" href="https://www.7-zip.org">7zip</a> ).</p>
 <p><strong>Erzeugen einer Virtuellen Maschine</strong></p>
 <p>Starten Sie die VirtualBox Anwendung und klicken Sie auf den Neu Button, um eine neue VM zu erzeugen, klicken Sie anschließend auf weiter.</p>
 <blockquote>
@@ -116,15 +114,15 @@ Click on the „Download virtual machine“ button. Then unzip the downloaded fi
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name.png"><img alt="../../_images/virtualbox_select_name.png" src="../../_images/virtualbox_select_name.png" style="width: 247.79999999999998px; height: 280.0px;" /></a>
 </div></blockquote>
-<p>In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB, like in the screenshot below).</p>
+<p>Setzen Sie im nächsten Fenster den Speicher auf 1024 MB (oder mehr, wenn ihr Gastrechner über mehr als 4GB verfügt).</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_memory.png"><img alt="../../_images/vmdk_memory.png" src="../../_images/vmdk_memory.png" style="width: 228.8px; height: 261.3px;" /></a>
 </div></blockquote>
-<p>Continue to the next screen and choose „Use an existing virtual hard disk file“. Now click on the button (a folder icon) to browse to where you saved the OSGeoLive vmdk-file. Select this file, press Next and Create.</p>
+<p>Gehen Sie zum nächsten Fenster und wählen Sie „Bestehende Festplatte verwenden“. Klicken Sie nun auf den Button (ein Ordnersymbol), um zu dem Speicherort der OSGeo-Live vmdk-Datei zu gelangen. Wählen Sie diese Datei aus und klicken Sie weiter und Erzeugen.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_disk.png"><img alt="../../_images/vmdk_disk.png" src="../../_images/vmdk_disk.png" style="width: 229.45000000000002px; height: 261.3px;" /></a>
 </div></blockquote>
-<p><strong>Config tips and tweaks</strong></p>
+<p><strong>Konfigurationstipps</strong></p>
 <p>Sobald die VM erzeugt wurde, klicken Sie auf den Einstellungen Button. Gehen Sie im Bereich „Allgemein“ zum Reiter „Erweitert“ und klicken Sie „Show at top of screen“ zur Anzeige der Werkzeugleiste im oberen Bereich.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced.png"><img alt="../../_images/vmdk_general_advanced.png" src="../../_images/vmdk_general_advanced.png" style="width: 425.75px; height: 282.75px;" /></a>
@@ -137,23 +135,23 @@ Click on the „Download virtual machine“ button. Then unzip the downloaded fi
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders.png"><img alt="../../_images/vmdk_shared_folders.png" src="../../_images/vmdk_shared_folders.png" style="width: 423.15000000000003px; height: 280.8px;" /></a>
 </div></blockquote>
-<p>You can choose to make the shared folder read-only, and auto-mounted. Once the „Folder path“ and „Folder name“ are defined, click OK, and again OK to finish and close the settings window.</p>
+<p>Dabei können gemeinsame Ordner wahlweise nur lesend und automatisch verbunden werden. Klicken Sie ok, sobald der „Ordnerpfad“ und „Ordnername“ definiert wurde und nochmals OK, um die Einstellungen zu speichern und das Fenster zu schließen.</p>
 <p><strong>Start der Virtuellen Maschine</strong></p>
 <p>Starten Sie nun die VM durch Klicken von Start (grüner Pfeilbutton).</p>
 <p>You should install the virtualbox guest additions, this will allow you to use full-screen mode.</p>
 <blockquote>
 <div><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">--yes</span> <span class="pre">virtualbox-guest-dkms</span> <span class="pre">virtualbox-guest-utils</span> <span class="pre">virtualbox-guest-x11</span></code></div></blockquote>
-<p>When you install the iso on the VM, the username must be set to „user“</p>
-<p>The user „user“ is not a member of the „users“ group on the OSGeoLive virtual machine. This prevents some tools from writing to its data directory and causes some software to fail to start.</p>
-<p>The solution is to fix the vmdk with the following one-time procedure:</p>
+<p>Wenn Sie die Iso auf der VM installieren, muss der Benutzername auf „user“ festgelegt werden.</p>
+<p>Der Benutzer „user“ ist kein Mitglied der Gruppe „user“ auf der virtuellen OSGeoLive-Maschine. Dadurch wird verhindert, dass einige Tools in das Datenverzeichnis schreiben, und es kann verhindert werden, dass Software nicht gestartet wird.</p>
+<p>Die Lösung besteht darin, den vmdk mit der folgenden einmaligen Aufruf zu beheben:</p>
 <ol class="arabic simple">
-<li>Start a terminal.</li>
-<li>Run „sudo adduser user users“.</li>
-<li>Apply this change by starting a new desktop session: either restart the virtual machine or log out and log back in (username „user“, password „user“).</li>
+<li>Starten Sie ein Terminal.</li>
+<li>Führen Sie „sudo adduser user users“ aus.</li>
+<li>Wenden Sie diese Änderung an, indem Sie eine neue Desktopsitzung starten: Starten Sie entweder die virtuelle Maschine neu oder melden Sie sich ab und melden Sie sich wieder an (Benutzername „user“, Kennwort „user“).</li>
 </ol>
-<p>Also once the OSGeo system starts, add yourself to the vboxsf group so that the shared folders (defined above) are accessible by running in a terminal window:</p>
+<p>Fügen Sie ihren Benutzer sobald das OSGeo System startet zur vboxsf Gruppe hinzu, so dass auf die gemeinsamen Ordner (siehe oben) zugegriffen werden kann. Öffnen Sie dazu ein Befehlsfenster:</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-a</span> <span class="pre">-G</span> <span class="pre">vboxsf</span> <span class="pre">user</span></code></p>
-<p>In the above example, we defined a Shared Folder path on the host system and named it „GIS“ in the VM Settings. The shared folder will appear in the file system under /media/sf_GIS/. To mount this folder in the user’s home directory, for example, in a terminal run:</p>
+<p>Im oberen Beispiel wurde ein gemeinsamer Ordner auf dem Gastrechner mit Namen „GIS“ in den VM Einstellungen definiert. Der gemeinsame Ordner wird im Dateisystem unter /media/sf_GIS/ auftauchen. Um das Verzeichnis in das Home-Verzeichnis zu leiten, geben Sie Folgendes im Befehlsfenster ein:</p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></code></p>
 <p><code class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></code></p>
 <p>Nun sind Dateien in diesem Verzeichnis auf ihrem Rechner auch in der VM im „GIS“-Verzeichnis im Home-Verzeichnis des Benutzers user verfügbar.</p>

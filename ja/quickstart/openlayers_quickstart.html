@@ -159,14 +159,14 @@
 <li>このコードは、JavaSciptコードをhtmlファイルの最後にロードするというベスト・プラクティスに従います。</li>
 <li>OpenLayersマップはHTML DOM要素にアタッチする必要があるため、 <em>map</em> idで識別される <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> 要素を作成しました。</li>
 <li>マップは <code class="docutils literal"><span class="pre">ol.Map</span></code> クラスで表されます。 <strong>target</strong> プロパティーを使用して、マップをレンダリングするDOM要素を指定します。</li>
-<li>OpenLayersでは、キャンバスとWebGLという2つの異なるメカニズムを使用したマップレンダリングが可能です。既定のレンダラーは <em>canvas</em> です。</li>
+<li>OpenLayersでは、キャンバスとWebGLという2つの異なるメカニズムを使用したマップレンダリングが可能です。デフォルトのレンダラは <em>canvas</em> です。</li>
 <li>レイヤ内にマップのデータを表示するため、 <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> ソースクラスを使用してOpenStreetMapプロジェクトからコンテンツをロードするようにしたタイルレイヤの <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> クラスを作成しました。</li>
 <li>最後に、 <code class="docutils literal"><span class="pre">ol.View</span></code> クラスを使用して <em>camera</em> の初期位置を設定し、初期ズームレベルと中心位置を設定します。</li>
 </ul>
 </div>
 <div class="section" id="add-raster-layers">
 <h2><a class="toc-backref" href="#id3">ラスタレイヤ追加する</a><a class="headerlink" href="#add-raster-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>OpenStreetMap、Stamen、Bingなどによって提供されるタイルレイヤが、最も使用されるラスタレイヤです。タイルレイヤーは <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> クラスで表され、 <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> または <code class="docutils literal"><span class="pre">ol.source.Stamen</span></code> のように、特定のプロバイダからタイルをロードする方法を知っているソースを使用する必要があります。</p>
+<p>OpenStreetMap、Stamen、Bingなどによって提供されるタイルレイヤが、最も使用されるラスタレイヤです。タイルレイヤは <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> クラスで表され、 <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> または <code class="docutils literal"><span class="pre">ol.source.Stamen</span></code> のように、特定のプロバイダからタイルをロードする方法を知っているソースを使用する必要があります。</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">osm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
   <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
 <span class="p">});</span>

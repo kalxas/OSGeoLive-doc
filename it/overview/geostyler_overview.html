@@ -73,35 +73,26 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_community.png" class="align-right" src="../../_images/OSGeo_community.png" /></a>
 <div class="section" id="geostyler">
 <h1>GeoStyler<a class="headerlink" href="#geostyler" title="Link a questa intestazione">¶</a></h1>
-<p>GeoStyler is an Open Source JavaScript library that enables users to style maps with the help of a Graphical User Interface.
-The goal of GeoStyler is a universally applicable GUI that works with any given style format; be it SLD, QML, OpenLayers, etc.</p>
-<p>GeoStyler provides a set of UI Components for map styling. Just like a modular building block system all components can be stacked
-together to create a nice UI for your web applications. To simplify the setup, we also provide some high-level components
-(based on our building blocks) that already do the work for you. These include, among many others, Symbolizer Editors, RuleTables and
-a fully-fledged StyleEditor including filters and scale denominators.</p>
-<p>Furthermore, GeoStyler allows for the translation between multiple styling formats, i.e. SLD, OpenLayers, QGIS, Mapbox. Since we are
-following the concept of micro packages, these translators (we call them parsers) can be used as standalone libraries, without the need to
-include the UI components as a dependency. Currently we have parsers for SLD, QGIS-styles, Mapbox styles and OpenLayers styles. Parsing of
-Mapfiles is in the works. Please take a look at StyleParser Implementations. Since attributively styling geodata is easier when you can look
-at the data to be styled, we can connect to several datasources like WFS, Shapefiles and GeoJSON files. We plan on developing a data reader for
-the Geopackage format.</p>
+<p>GeoStyler è una libreria JavaScript Open Source che permette agli utenti di dare stile alle mappe con l’aiuto di un’interfaccia grafica. L’obiettivo di GeoStyler è un’interfaccia grafica universalmente applicabile che funziona con qualsiasi formato di stile, sia esso SLD, QML, OpenLayers, ecc.</p>
+<p>GeoStyler fornisce un insieme di componenti UI per lo stile delle mappe. Proprio come un sistema modulare di building block tutti i componenti possono essere impilati insieme per creare una bella UI per le vostre applicazioni web. Per semplificare la configurazione, forniamo anche alcuni componenti di alto livello (basati sui nostri building block) che fanno già il lavoro per voi. Questi includono, tra molti altri, editor di simboli, RuleTables e uno StyleEditor completo che include filtri e denominatori di scala.</p>
+<p>Inoltre, GeoStyler permette la traduzione tra più formati di stile, cioè SLD, OpenLayers, QGIS, Mapbox. Poiché stiamo seguendo il concetto di micropacchetti, questi traduttori (noi li chiamiamo parser) possono essere usati come librerie indipendenti, senza la necessità di includere i componenti UI come dipendenza. Attualmente abbiamo parser per SLD, stili QGIS, stili Mapbox e stili OpenLayers. Il parsing di Mapfiles è in lavorazione. Si guardi alle implementazioni di StyleParser. Dal momento che l’attribuzione dello stile ai geodati è più facile quando puoi guardare i dati da stilizzare, possiamo connetterci a diverse fonti di dati come WFS, Shapefiles e file GeoJSON. È in programma lo sviluppo di un lettore di dati per il formato Geopackage.</p>
 <a class="reference internal image-reference" href="../../_images/geostyler_screenshot.png"><img alt="geostyler screenshot" class="align-right" src="../../_images/geostyler_screenshot.png" style="width: 500px;" /></a>
 <div class="section" id="core-features">
-<h2>Core Features<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h2>
+<h2>Caratteristiche principali<a class="headerlink" href="#core-features" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
 <li>Generic - not bound to one format only</li>
-<li>Supports common formats (e.g. SLD, QGIS) already out of the box</li>
-<li>Graphical User Interface (GUI) including support for reordering of rules, a mapview, pickers for colors and symbols and a ton more</li>
-<li>Has a GUI - but you are not required to use it</li>
-<li>Extensible - you’re invited to build your own data readers or parsers</li>
-<li>Continues to grow - we are planning new features (like a commandline interface, more parsers etc.) and small improvements</li>
+<li>Il supporto per i formati comuni (es. SLD, QGIS) è presente di default</li>
+<li>Interfaccia grafica utente (GUI) che include il supporto per il riordino delle regole, una visualizzazione della mappa, selezionatori di colori e simboli e molto altro ancora</li>
+<li>Ha una GUI - ma non è richiesto di utilizzarla</li>
+<li>Estensibile - sei invitato a costruire i tuoi lettori o analizzatori di dati</li>
+<li>Continua a crescere - si stanno pianificando nuove caratteristiche (come un’interfaccia a riga di comando, più parser ecc.) e piccoli miglioramenti</li>
 </ul>
 </div>
 <div class="section" id="implemented-standards">
-<h2>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h2>
+<h2>Standard implementati<a class="headerlink" href="#implemented-standards" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.ogc.org/standards/filter">Filter Encoding (FE)</a></li>
-<li>Geographic JSON (GeoJSON)</li>
+<li>JSON geografico (GeoJSON)</li>
 <li><a class="reference external" href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/sld">Styled Layer Descriptor (SLD)</a></li>
 <li><a class="reference external" href="https://www.ogc.org/standards/wfs">Web Feature Service (WFS)</a></li>
@@ -109,18 +100,18 @@ the Geopackage format.</p>
 </ul>
 </div>
 <div class="section" id="details">
-<h2>Details<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h2>
-<p><strong>Website:</strong> <a class="reference external" href="https://geostyler.org">https://geostyler.org</a></p>
-<p><strong>Licence:</strong> BSD-2-Clause</p>
-<p><strong>Software Version:</strong> 4.6.0</p>
-<p><strong>API Interfaces:</strong> JavaScript</p>
-<p><strong>Support:</strong> Issues on <a class="reference external" href="https://github.com/geostyler/geostyler">https://github.com/geostyler/geostyler</a></p>
-<p><strong>Developers:</strong> <a class="reference external" href="https://github.com/geostyler/geostyler/graphs/contributors">https://github.com/geostyler/geostyler/graphs/contributors</a></p>
+<h2>Dettagli<a class="headerlink" href="#details" title="Link a questa intestazione">¶</a></h2>
+<p><strong>Sito internet:</strong> <a class="reference external" href="https://geostyler.org">https://geostyler.org</a></p>
+<p><strong>Licenza:</strong> BSD-2-Clause</p>
+<p><strong>Versione del software:</strong> 4.6.0</p>
+<p><strong>Interfacce API:</strong> JavaScript</p>
+<p><strong>Supporto:</strong> Problemi su <a class="reference external" href="https://github.com/geostyler/geostyler">https://github.com/geostyler/geostyler</a></p>
+<p><strong>Sviluppatori:</strong> <a class="reference external" href="https://github.com/geostyler/geostyler/graphs/contributors">https://github.com/geostyler/geostyler/graphs/contributors</a></p>
 </div>
 <div class="section" id="quickstart">
-<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h2>
+<h2>Guida rapida<a class="headerlink" href="#quickstart" title="Link a questa intestazione">¶</a></h2>
 <ul class="simple">
-<li><a class="reference internal" href="../quickstart/geostyler_quickstart.html"><span class="doc">Quickstart documentation</span></a></li>
+<li><a class="reference internal" href="../quickstart/geostyler_quickstart.html"><span class="doc">Documentazione rapida</span></a></li>
 </ul>
 </div>
 </div>

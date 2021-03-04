@@ -91,8 +91,8 @@
 <li><a class="reference internal" href="#spatial-queries" id="id5">Térbeli lekérdezések</a></li>
 <li><a class="reference internal" href="#mapping" id="id6">Térkép</a></li>
 <li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">Téradatok importálása az adatbázisba</a></li>
-<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Get to know pgAdmin</a></li>
-<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Executing a SQL query from pgAdmin</a></li>
+<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Ismerjük meg a pgAdmin-t</a></li>
+<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Egy SQL lekérdezés végrehajtása a pgAdmin-ból</a></li>
 <li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Foreign Data Wrappers (FDW) megismerése</a></li>
 <li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Csatlakozzon egy távoli OGR adatforráshoz az ogr_fdw-n keresztül</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id12">Kipróbálandó dolgok</a></li>
@@ -102,7 +102,7 @@
 <div class="section" id="client-server-architecture">
 <h2><a class="toc-backref" href="#id1">Kliens-szerver architektúra</a><a class="headerlink" href="#client-server-architecture" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>PostgreSQL, mint sok más adatbázis kliens-szerver rendszerként működik. A kliens egy kérést  küld a szervernek és egy választ kap vissza. Ez ugyanaz a mód, ahogy az internet működik - a böngésző a kliens és a webszerver weblapokat küld vissza. A PostgreSQL esetén a kérések  SQL nyelven készülnek és a válasz általában egy adattáblázat az adatbázisból.</p>
-<p>Semmi sem akadályozza meg, hogy a szerver ugyanazon a számtógépen legyen mint a kliens, ez lehetővé teszi, hogy egy gépen használjuk a PostgreSQL-t. A kliense a belső «loopback» hálózati kapcsolaton keresztül kapcsolódik a szerverhez és más számítógépekről el sem érhető, hacsak nem konfigurálja úgy.</p>
+<p>Semmi sem korlátozza, hogy a szerver ugyanazon a számtógépen legyen mint a kliens, ez lehetővé teszi, hogy egy gépen használjuk a PostgreSQL-t. A kliense a belső «loopback» hálózati kapcsolaton keresztül kapcsolódik a szerverhez és más számítógépekről el sem érhető, hacsak nem konfigurálja úgy.</p>
 </div>
 <div class="section" id="creating-a-spatially-enabled-database">
 <h2><a class="toc-backref" href="#id2">Téradatbázis létrehozása</a><a class="headerlink" href="#creating-a-spatially-enabled-database" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
@@ -117,7 +117,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">l</span>
 </pre></div>
 </div>
-<p>Számos adatbázist láthat, melyeket valamely a rendszeren lévő projekt használ. Egy újat fogunk létrehozni ehhez a gyorstalpalóhoz.</p>
+<p>Számos adatbázist láthat, melyeket valamely a rendszeren lévő projektek használnak. Egy újat fogunk létrehozni ehhez a gyorstalpalóhoz.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Javaslat</p>
 <p class="last">A lista a standard unix lapkezelőt használja - szóköz a következő laphoz,  <code class="kbd docutils literal"><span class="pre">b</span></code> a visszalépéshez, <code class="kbd docutils literal"><span class="pre">q</span></code> a kilépéshez, h a súgóhoz.</p>
@@ -148,7 +148,7 @@
 <p class="first admonition-title">Javaslat</p>
 <p class="last">Nyomjon <code class="kbd docutils literal"><span class="pre">CTRL</span></code> + <code class="kbd docutils literal"><span class="pre">C</span></code>-t, ha a psql prompt jelenik meg a return megnyomása után. Ez törli a korábbi inputot és újrakezdheti. Valószínűleg egy záró idézőjelre, pontosvesszőre vagy valami másra vár.</p>
 </div>
-<p>Egy információ üzenetet kellene látnia és a prompt megváltozik, hogy mutassa most a <code class="docutils literal"><span class="pre">demo</span></code> adatbázishoz csatlakozik.</p>
+<p>Egy információs üzenetet kellene látnia és a prompt megváltozik, hogy mutassa most a <code class="docutils literal"><span class="pre">demo</span></code> adatbázishoz csatlakozik.</p>
 <p>Ezután adja hozzá a PostGIS bővítményt:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># create extension postgis;</span>
 </pre></div>
@@ -213,18 +213,18 @@
 <dd>a térben és minden sáv (dimenzió) egy értékkel rendelkezik az egyes pixelekre.</dd>
 </dl>
 </div></blockquote>
-<p>A <code class="docutils literal"><span class="pre">geometry_columns</span></code>, <code class="docutils literal"><span class="pre">geography_columns</span></code> és <code class="docutils literal"><span class="pre">raster_columns</span></code> nézettáblák feladat, hogy a PostGIS felé jelezzék mely táblákban van geometry, geography és raster oszlopokat.</p>
-<p>Az overview-ek kisebb felbontású táblák a raszter adatokhoz. A <code class="docutils literal"><span class="pre">raster_overviews</span></code> tartalmazza a táblákat, a raszter oszlopokat és a táblákat, melyhez az áttekintők tartoznak.A raszter áttekintő táblákat olyan eszközök használják mint például a QGIS, hogy a kisebb felbontású raszter adatokat gyorsabban töltsék be.</p>
+<p>A <code class="docutils literal"><span class="pre">geometry_columns</span></code>, <code class="docutils literal"><span class="pre">geography_columns</span></code> és <code class="docutils literal"><span class="pre">raster_columns</span></code> nézettáblák feladata, hogy a PostGIS felé jelezzék mely táblákban van geometry, geography és raszter oszlopok.</p>
+<p>Az overview-ek kisebb felbontású táblák a raszter adatokhoz. A <code class="docutils literal"><span class="pre">raster_overviews</span></code> tartalmazza azokat a táblákat és  raszter oszlopait és a táblákat, melyhez az áttekintő tartozik. A raszter áttekintő táblákat olyan eszközök használják mint például a QGIS, hogy a kisebb felbontású raszter adatokat gyorsabban töltsék be.</p>
 <p>A PostGIS geometry típus az első és még most is a legnépszerűbb típus melyet a PostGIS felhasználók használnak. A figyelmünket erre a típusra fókuszáljuk.</p>
 </div>
 <div class="section" id="creating-a-spatial-table-using-sql">
 <h2><a class="toc-backref" href="#id3">Téradat tábla létrehozása SQL használatával</a><a class="headerlink" href="#creating-a-spatial-table-using-sql" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Most hogy van a téradatbázisunk létrehozhatunk néhány térbeli táblát.</p>
-<p>Először hozzunk létre egy közönséges adatbázis táblát város adatok tárolásához. Ez a tábla három mezőt tartalmaz - egyet a város azonosító számának. egyet a városnévnek és egy másikat a geometry oszlophoz:</p>
+<p>Először hozzunk létre egy közönséges adatbázis táblát város adatok tárolásához. Ez a tábla három mezőt tartalmaz - egyet a város azonosító számának. egyet a városnévhez és egy másikat a geometry oszlophoz:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># CREATE TABLE cities ( id int4 primary key, name varchar(50), geom geometry(POINT,4326) );</span>
 </pre></div>
 </div>
-<p>Hagyományosan a geometria oszlopot <code class="docutils literal"><span class="pre">geom</span></code>-nak nevezzük (a korábbi PostGIS konvenció a <code class="docutils literal"><span class="pre">the_geom</span></code> volt). Ez megadja a PostGIS-nek milyen típusú geometria tartozik az egyes elemekhez (pontok, törtvonalak, területek, stb.), hány dimenziósak (ebben az esetben 2, 3 vagy 4 dimenzióhoz a POINZ, POINTM vagy POINTZM kell használni) és megadja a vetületet. EPSG:4326 koordinátákat használunk a városokhoz.</p>
+<p>Hagyományosan a geometria oszlopot <code class="docutils literal"><span class="pre">geom</span></code>-nak nevezzük (a korábbi PostGIS konvenció a <code class="docutils literal"><span class="pre">the_geom</span></code> volt). Ez megadja a PostGIS-nek milyen típusú geometria tartozik az egyes elemekhez (pontok, törtvonalak, területek, stb.), hány dimenziósak (ebben az esetben 2, 3 vagy 4 dimenzióhoz a POINTZ, POINTM vagy POINTZM kell használni) és megadja a vetületet. EPSG:4326 koordinátákat használunk a városokhoz.</p>
 <p>Ha most ellenőrzi a cities táblát, láthatja az új oszlopot és azt az információt, hogy tábla aktuálisan egy sort sem tartalmaz.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT * from cities;</span>
  <span class="nb">id</span> <span class="o">|</span> <span class="n">name</span> <span class="o">|</span> <span class="n">geom</span>
@@ -240,13 +240,13 @@
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Javaslat</p>
-<p class="last">Használja a nyíl billentyűket korábbi parancsok elővételéhez és szerkesztéséhez.</p>
+<p class="last">Használja a nyíl billentyűket korábbi parancsok visszahívásához és szerkesztéséhez.</p>
 </div>
 <p>Amint látja, ez nagyon gyorsan unalmassá válik. Szerencsére vannak más, sokkal könnyebb módszerek az adatok PostGIS táblákba juttatására. De most már van három város az adatbázisunkban, és dolgozhatunk azokkal.</p>
 </div>
 <div class="section" id="simple-queries">
 <h2><a class="toc-backref" href="#id4">Egyszerű lekérdezések</a><a class="headerlink" href="#simple-queries" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Az összes szokásos SQL-művelet alkalmazható a PostGIS táblából származó adatok kiolvasásához:</p>
+<p>Az összes szokásos SQL-művelet alkalmazható a PostGIS táblából származó adatok szelektálásához:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT * FROM cities;</span>
  <span class="nb">id</span> <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span>                      <span class="n">geom</span>
 <span class="o">----+-----------------+----------------------------------------------------</span>
@@ -270,7 +270,7 @@
 </div>
 <div class="section" id="spatial-queries">
 <h2><a class="toc-backref" href="#id5">Térbeli lekérdezések</a><a class="headerlink" href="#spatial-queries" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>A PostGIS sok térbeli funkcionalitással rendelkező függvényt ad a PostgreSQL-hez. Már láttuk a ST_GeomFromText, mely WKT formátumátumot alakítja át geometriává. A legtöbb közülük  ST-vel (a térbeli típus) kezdődik, és a PostGIS dokumentáció egy fejezete sorolja fel őket. Most használjunk egyet egy gyakorlati kérdés megválaszolására - milyen messze van ez a három London egymástól méterben, feltételezve, hogy a föld gömb alakú?</p>
+<p>A PostGIS sok térbeli funkcionalitással rendelkező függvényt ad a PostgreSQL-hez. Már láttuk a ST_GeomFromText, mely a WKT formátumot alakítja át geometriává. A legtöbb közülük  ST-vel (a térbeli típus) kezdődik, és a PostGIS dokumentáció egyik fejezete sorolja fel őket. Most használjunk egyet egy gyakorlati kérdés megválaszolására - milyen messze van ez a három London egymástól méterben, feltételezve, hogy a föld gömb alakú?</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT p1.name,p2.name,ST_DistanceSphere(p1.geom,p2.geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;</span>
       <span class="n">name</span>       <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span> <span class="n">st_distancesphere</span>
 <span class="o">-----------------+-----------------+--------------------</span>
@@ -305,64 +305,58 @@
 </div>
 <div class="section" id="mapping">
 <h2><a class="toc-backref" href="#id6">Térkép</a><a class="headerlink" href="#mapping" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Az adatokat fogadni képes kliens szükséges a PostGIS adatokból térkép készítéshez. A legtöbb nyílt forráskódú asztali GIS meg tudja csinálni ezt - például a QGIS, a gvSIG, a uDIG. Most megmutatjuk hogyan készíthet térképet a QGIS-ből</p>
+<p>A PostGIS adatokból térkép készítéshez adatokat fogadni képes kliens szükséges. A legtöbb nyílt forráskódú asztali GIS képes erre - például a QGIS, a gvSIG, a uDIG. Most megmutatjuk hogyan készíthet térképet a QGIS-ből.</p>
 <p>Indítsa el a QGIS-t a Desktop GIS menüből és válassza az <code class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layers</span></code>-t (PostGIS réteg hozzáadás) a Layer (Réteg) menüből. A PostGIS-ban tárolt Natural Earth adatokhoz kapcsolódás paramétereit már beállítottuk a Connections (Kapcsolatok) legördülő listában. Itt új szerver kapcsolatokat adhat meg és tárolhatja a beállításokat a könnyű újrafelhasználáshoz. Kattintson a Connections (Kapcsolatok) legördülő listára és válassza a Natural Earth-t.Kattintson az <code class="docutils literal"><span class="pre">Edit</span></code> (Szerkeszt) gombra, ha meg akarja tekinteni a Natural Earth-höz tartozó paramétereket vagy egyszerűen kattintson a <code class="docutils literal"><span class="pre">Connect</span></code>-re (Kapcsolódás) gombra a folytatáshoz:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 706.5px; height: 474.75px;" /></a>
 <p>Az adatbázisban lévő téradat táblák listáját kapja meg:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 711.0px; height: 474.75px;" /></a>
 <p>Válassza az ne_10m_lake táblát és kattintson az <code class="docutils literal"><span class="pre">Add</span></code> (Hozzáad) gombra alul (ne a <code class="docutils literal"><span class="pre">Load</span></code>-ra (Betölt) felül - az az adatbázis paramétereket tölti be) és ezzel betöltjük a QGIS-be:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 1029.0px; height: 605.25px;" /></a>
-<p>A tavak térképét kellene látnia a QGIS-ben. A QGIS nem tudja, hogy ezek tavak, így lehet hogy nem kékre színezi azokat - deritse ki a QGIS dokumentációból, hogyan változtathatja meg a színt. Nagyítson rá a kanadai tavak egy híres csoportjára.</p>
+<p>A tavak térképét kellene látnia a QGIS-ben. A QGIS nem tudja, hogy ezek tavak, így lehet hogy nem kékre színezi azokat - derítse ki a QGIS dokumentációból, hogyan változtathatja meg a színt. Nagyítson rá a kanadai tavak egy híres csoportjára.</p>
 </div>
 <div class="section" id="importing-spatial-data-into-the-database">
 <h2><a class="toc-backref" href="#id7">Téradatok importálása az adatbázisba</a><a class="headerlink" href="#importing-spatial-data-into-the-database" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>A legtöbb OSGeo asztali eszközben van más formátumú téradatok fájlból (például ESRI shape)  importálás funkciója az adatbázisba. Ismét a QGIS használjuk ennek bemutatására.</p>
-<p>Importing shapefiles to QGIS can be done via the handy QGIS Database Manager. You find the manager in the menu. Go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
+<p>A legtöbb OSGeo asztali eszközben van funkció az egyéb formátumú téradatok fájlból (például ESRI shape)  importálására az adatbázisba. Ismét a QGIS használjuk ennek bemutatására.</p>
+<p>A QGIS-ben a shape fájlok importálását a praktikus QGIS Database Manager (QGIS adatbázis-kezelő) segítségével tehetjük meg. A menüben találja meg a kezelőt. Menjen a menüben ide <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code> (Adatbázis-&gt;DB kezelő-&gt;DB kezelő).</p>
 <p>Bontsa szét a PostGIS elemet, majd a NaturalEarth elemet. Ezután kapcsolódik a Natural Earth adatbázishoz. Hagyja üresen a jelszót, ha kérdezik. A public elemben az adatbázis által szolgáltatott rétegek listája van. A fő kezelő ablakot látja. A bal oldalon az adatbázisból választhat egy táblát és használja a füleket a jobb oldalon, hogy megtudjon valamit róluk. A Preview (Előnézet) fül egy kis térképet mutat.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 1026.0px; height: 603.75px;" /></a>
-<p>Most a DB manager-t használjuk egy shape fájl adatbázisba importálásához. Az észak karolinai hirtelen csecsemőhalál-szindróma adatokat fogjuk használni, melyeket az egyik R statisztikai csomag bővítmény tartalmaz.</p>
-<p>From the <code class="docutils literal"><span class="pre">Table</span></code> menu choose the <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> option.
-Hit the <code class="docutils literal"><span class="pre">...</span></code> button and browse to the <code class="docutils literal"><span class="pre">sids.shp</span></code> shapefile in the R directory.
-(located in /home/user/data/vector/R/shapes):</p>
+<p>Most a DB kezelőt használjuk egy shape fájl adatbázisba importálásához. Az észak karolinai hirtelen csecsemőhalál-szindróma adatokat fogjuk használni, melyeket az egyik R statisztikai bővítmény tartalmazza.</p>
+<p>A <code class="docutils literal"><span class="pre">Table</span></code> menüből válassza az <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> opciót. Kattintson a  <code class="docutils literal"><span class="pre">...</span></code> gombra és tallózzon a <code class="docutils literal"><span class="pre">sids.shp</span></code> shape fájlhoz az R könyvtárban (a /usr/local/lib/R/site-library/spData/shapes mappában):</p>
 <a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 632.25px; height: 492.0px;" /></a>
 <p>Hagyjon minden mást változatlanul és kattintson a <code class="docutils literal"><span class="pre">Load</span></code>-ra</p>
 <a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 346.5px; height: 400.5px;" /></a>
-<p>Let the Coordinate Reference System Selector default to (WGS 84 EPSG:4326) and hit <code class="docutils literal"><span class="pre">OK</span></code>. The shapefile should be imported into PostGIS with no errors. Close the DB Manager and
-get back to the main QGIS window.</p>
-<p>Most töltse be az SIDS adatokat a térképre az «Add PostGIS Layer» opcióval. A rétegek egy kis átrendezésével és némi színezéssel képes lehet a következő kartogram létrehozására a hirtelen csecsemőhalál-szindróma számokból (sid74 vagy sid79 mező) Észak-Carolina-ban:</p>
+<p>Hagyja a vetületi rendszer kiválasztását az alapértelmezetten (WGS 84 EPSG:4326) és kattintson az <code class="docutils literal"><span class="pre">OK</span></code>-ra. A shape fájlt hiba nélkül kellene importálnia a rendszernek. Zárja be a DB kezelőt és térjen vissza a QGIS fő ablakhoz.</p>
+<p>Most töltse be az SIDS adatokat a térképre az «Add PostGIS Layer» opcióval. A rétegek egy kis átrendezésével és némi színezéssel képes lehet a következő kartogram létrehozására a hirtelen csecsemőhalál-szindróma számokból (sid74 vagy sid79 mező) Észak-Karolinában:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1036.5px; height: 607.5px;" /></a>
 </div>
 <div class="section" id="get-to-know-pgadmin">
-<h2><a class="toc-backref" href="#id8">Get to know pgAdmin</a><a class="headerlink" href="#get-to-know-pgadmin" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>You can use the graphical database client <code class="docutils literal"><span class="pre">pgAdmin</span></code> from the Databases menu to query and modify your database non-spatially. This is the official client for PostgreSQL.</p>
-<p>pgAdmin lets you use SQL to manipulate your data tables. You can find and launch pgAdmin
-from the Databases folder, existing on the OSGeoLive Desktop.</p>
+<h2><a class="toc-backref" href="#id8">Ismerjük meg a pgAdmin-t</a><a class="headerlink" href="#get-to-know-pgadmin" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Használhatja a <code class="docutils literal"><span class="pre">pgAdmin</span></code> grafikus adatbázis klienst a Databeses menüből a nem térbeli adatok lekérdezéséhez és módosításához. Ez a hivatalos kliens a PostgreSQL-hez.</p>
+<p>A pgAdmin lehetővé teszi az adattábláinak kezelését az SQL használatával. Az OSGeoLive asztalon a Databases mappában találja és indíthatja a pgAdmin-t.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 579.5px; height: 423.5px;" /></a>
-<p>Enter the master password  <code class="docutils literal"><span class="pre">user</span></code>.</p>
-<p>Here, you have the option of creating a new connection to a PostgreSQL server, or connecting to an existing server.
-In this case, we are going to connect to the predefined <code class="docutils literal"><span class="pre">localhost</span></code> server.</p>
+<p>Írja be a mester jelszót <code class="docutils literal"><span class="pre">user</span></code>.</p>
+<p>Itt lehetősége van új kapcsolat létrehozására egy PostgreSQL szerverhez vagy kapcsolódhat egy már ismert szerverhez. Esetünkben az előre definiált <code class="docutils literal"><span class="pre">localhost</span></code> szerverhez fogunk kapcsolódni.</p>
 <p>A kapcsolat létrejötte után láthatja a rendszerben már meglévő adatbázisok listáját.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 871.5px; height: 639.0px;" /></a>
-<p>A piros „X” a legtöbb adatbázis előtti képen azt jelenti, hogy még nem kapcsolódott egyikhez sem (csak az alapértelmezett <code class="docutils literal"><span class="pre">postgres</span></code> adatbázishoz kapcsolódik). Ezen a ponton csak a létező adatbázisokat látja a rendszerben. Az adatbázis nevére duplán kattintva kapcsolódhat ahhoz. Tegye ezt a natural_earth2 adatbázisra.</p>
-<p>You can see now that the red X disappeared and a „&gt;” appeared on the left. By pressing it a tree is going to appear,
-displaying the contents of the database.</p>
-<p>Navigáljon a <code class="docutils literal"><span class="pre">schemas</span></code> részfára és nyissa szét. Ezután nyissa szét a <code class="docutils literal"><span class="pre">public</span></code> sémát. A <code class="docutils literal"><span class="pre">Tables</span></code>-re navgálva és szétnyitva láthatja az összes táblát ebben a sémában.</p>
+<p>A piros „X” a legtöbb adatbázis előtti képen azt jelenti, hogy még nem kapcsolódott egyikhez sem (csak az alapértelmezett <code class="docutils literal"><span class="pre">postgres</span></code> adatbázishoz kapcsolódik). Ezen a ponton csak a létező adatbázisokat látja a rendszerben. Az adatbázis nevére duplán kattintva kapcsolódhat ahhoz. Tegye ezt a natural_earth2 adatbázissal.</p>
+<p>Most azt láthatja, hogy a piros X eltűnt és egy „&gt;” jelent meg balra. Ezt megnyomva egy fa jelenik meg mely az adatbázis tartalmát mutatja.</p>
+<p>Navigáljon a <code class="docutils literal"><span class="pre">schemas</span></code> részfára és nyissa szét. Ezután nyissa szét a <code class="docutils literal"><span class="pre">public</span></code> sémát. A <code class="docutils literal"><span class="pre">Tables</span></code>-re navigálva és szétnyitva láthatja az összes táblát ebben a sémában.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 872.25px; height: 638.25px;" /></a>
 </div>
 <div class="section" id="executing-a-sql-query-from-pgadmin">
-<h2><a class="toc-backref" href="#id9">Executing a SQL query from pgAdmin</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>pgAdmin, offers the capability of executing queries to a relational database.</p>
-<p>To perform a query on the database, you have to press the <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> button from the main toolbar (the one at the left with the database symbol).</p>
+<h2><a class="toc-backref" href="#id9">Egy SQL lekérdezés végrehajtása a pgAdmin-ból</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>pgAdmin a lekérdezések végrehajtásának lehetőségét biztosítja a relációs adatbázisból.</p>
+<p>Az adatbázison történő lekérdezés végrehajtásához nyomja meg az <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> gombot a fő eszközsorból (az adatbázis szimbólumot tartalmazót).</p>
 <p>Az SIDS arányát keressük a születésekhez minden városban 1974-ben. Továbbá rendezzük az eredményt a számított arányok alapján. Ehhez a következő lekérdezést kell végrehajtanunk (küldje el ezt az SQL ablak szövegszerkesztőjéből):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">name</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sid74</span><span class="o">/</span><span class="n">bir74</span> <span class="k">as</span> <span class="n">rate</span> <span class="kn">from</span> <span class="nn">sids</span> <span class="n">order</span> <span class="n">by</span> <span class="n">rate</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Afterwards, you should press the arrow button, pointing to the right (Execute).</p>
+<p>Ezután meg kell nyomnia a jobbra mutató nyíl gombot (lekérdezés végrehajtása).</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 870.75px; height: 636.75px;" /></a>
 </div>
 <div class="section" id="get-to-know-foreign-data-wrappers-fdw">
 <h2><a class="toc-backref" href="#id10">Foreign Data Wrappers (FDW) megismerése</a><a class="headerlink" href="#get-to-know-foreign-data-wrappers-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Az adatbázisából hozzáférhet a távoli objektumokhoz, mint például táblák más PostgreSQL adatbázisokból vagy távoli adatbázishoz csatlakozás, mint Oracle, MySQL, MS SQL vagy CouchDB. Csatlakozhat ODBC-n keresztül, CSV-hez, térinformatikai adatokhoz, sőt még twitterhez is kapcsolódhat.</p>
+<p>Az adatbázisából hozzáférhet távoli objektumokhoz, mint például táblák más PostgreSQL adatbázisokból vagy távoli adatbázishoz csatlakozás, mint Oracle, MySQL, MS SQL vagy CouchDB. Csatlakozhat ODBC-n keresztül, CSV-hez, térinformatikai adatokhoz, sőt még twitterhez is kapcsolódhat.</p>
 <p>Az különböző FDW-k listáját itt találhatja:</p>
 <blockquote>
 <div><a class="reference external" href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers">https://wiki.postgresql.org/wiki/Foreign_data_wrappers</a></div></blockquote>
@@ -398,11 +392,11 @@ displaying the contents of the database.</p>
 </div>
 <div class="section" id="connect-to-a-remote-ogr-data-source-via-ogr-fdw">
 <h2><a class="toc-backref" href="#id11">Csatlakozzon egy távoli OGR adatforráshoz az ogr_fdw-n keresztül</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
-<p>Az <code class="docutils literal"><span class="pre">ogr_fdw</span></code> bővítmény lehetővé teszi számos térinformatikai formátumhoz kapcsolódást, mint például KML, GeoPackage, WFS, GeoJSON, GPX, GML és továbbiak.</p>
-<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:</p>
+<p>Az <code class="docutils literal"><span class="pre">ogr_fdw</span></code> bővítmény lehetővé teszi számos térinformatikai formátumhoz kapcsolódást, mint például KML, GeoPackage, WFS, GeoJSON, GPX, GML és még továbbiak.</p>
+<p>További információ az <code class="docutils literal"><span class="pre">ogr_fdw</span></code>-ről:</p>
 <ul class="simple">
-<li>Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
-<li>New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
+<li>Tárház: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
+<li>Új és pontosított: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
 </ul>
 <p class="rubric">Telepítse az <code class="docutils literal"><span class="pre">ogr_fdw</span></code> bővítményt az adatbázisába.</p>
 <p>Az adatbázis promptjánál gépelje be:</p>

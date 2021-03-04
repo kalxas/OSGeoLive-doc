@@ -77,11 +77,11 @@
 <p>このクイックスタートでは、次の方法について説明します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>GeoServerにベクターとラスターデータソースを追加する</li>
+<li>GeoServerにベクタとラスターデータソースを追加する</li>
 <li>スタイルを使用してマップフィーチャーに色を適用する</li>
-<li>シンプルなWebマップでレイヤーをテストする</li>
+<li>シンプルなWebマップでレイヤをテストする</li>
 <li>マップを表示できるクライアントについて学習</li>
-<li>NetCDFファイルからレイヤーを追加する</li>
+<li>NetCDFファイルからレイヤを追加する</li>
 </ul>
 </div></blockquote>
 <div class="contents local topic" id="contents">
@@ -95,7 +95,7 @@
 <li><a class="reference internal" href="#adding-the-style-to-the-layer" id="id6">レイヤにスタイルを追加</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#clients-for-wms-layers" id="id7">WMSレイヤーのクライアント</a></li>
+<li><a class="reference internal" href="#clients-for-wms-layers" id="id7">WMSレイヤのクライアント</a></li>
 <li><a class="reference internal" href="#add-a-layer-from-a-netcdf-file" id="id8">NetCDFファイルからレイヤを追加する</a><ul>
 <li><a class="reference internal" href="#configure-a-netcdf-store" id="id9">NetCDFストアを設定</a></li>
 <li><a class="reference internal" href="#preview-the-netcdf-layer" id="id10">NetCDFレイヤをプレビュー</a></li>
@@ -110,7 +110,7 @@
 <li><p class="first">スタートメニューから、 <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> を選択します。アプリケーションの起動には少し時間がかかり、<a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a> でWebページが開きます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-login.png"><img alt="../../_images/geoserver-login.png" src="../../_images/geoserver-login.png" style="width: 562.0999999999999px; height: 289.79999999999995px;" /></a>
 </li>
-<li><p class="first">ユーザー名 <strong>admin</strong> とパスワード <strong>geoserver</strong> を使用してログインします。これで、 <em>admin page</em> が表示されます。</p>
+<li><p class="first">ユーザ名 <strong>admin</strong> とパスワード <strong>geoserver</strong> を使用してログインします。これで、 <em>admin page</em> が表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-welcome.png"><img alt="../../_images/geoserver-welcome.png" src="../../_images/geoserver-welcome.png" style="width: 556.5px; height: 350.0px;" /></a>
 </li>
 <li><p class="first">左側のメニューの <em>Data</em> セクションの一番上にある <strong>Layer Preview</strong> リンクをクリックすると、サーバーにロードされているレイヤのプレビューが表示されます。</p>
@@ -152,7 +152,7 @@
 <li><p class="first"><span class="guilabel">保存</span> を押します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-naturalearth.png"><img alt="The Natural Earth Datastore" class="align-center" src="../../_images/geoserver-naturalearth.png" style="width: 536.1999999999999px; height: 303.79999999999995px;" /></a>
 </li>
-<li><p class="first">いずれかのレイヤーの横にある <span class="guilabel">公開</span> を押して、データの追加を完了します。これにより、 <em>レイヤ</em> ページに移動します。</p>
+<li><p class="first">いずれかのレイヤの横にある <span class="guilabel">公開</span> を押して、データの追加を完了します。これにより、 <em>レイヤ</em> ページに移動します。</p>
 <a class="reference internal image-reference" href="../../_images/geoserver-publish.png"><img alt="The layer publishing page" class="align-center" src="../../_images/geoserver-publish.png" style="width: 532.6999999999999px; height: 1051.3999999999999px;" /></a>
 <p>ページをスクロールすると、 GeoServer が多くのフィールドにデータ挿入していることがわかります。<span class="guilabel">Coordinate Reference System</span> に到達すると、 <em>Native SRS</em> の下に UNKNOWN と表示されていることがわかります。次のボックス(<em>declared SRS</em>)に入力して、 GeoServer がデータの場所を確実に認識できるようにする必要があります。</p>
 </li>
@@ -165,9 +165,9 @@
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">レイヤのプレビューは既定のスタイルを使用しているため、あまり見栄えがしなくても心配ありません。次のセクションでは、より良いスタイルの作成について説明します。</p>
+<p class="last">レイヤのプレビューはデフォルトのスタイルを使用しているため、あまり見栄えがしなくても心配ありません。次のセクションでは、より良いスタイルの作成について説明します。</p>
 </div>
-<p>ディレクトリ内の他のレイヤーについても、レイヤーページの <span class="guilabel">Add a new resource</span> ボタンを使用して同じ手順を実行できます。ドロップダウンボックスからNatural Earthストアを選択するだけで、ストアのページに戻ります。</p>
+<p>ディレクトリ内の他のレイヤについても、レイヤページの <span class="guilabel">Add a new resource</span> ボタンを使用して同じ手順を実行できます。ドロップダウンボックスからNatural Earthストアを選択するだけで、ストアのページに戻ります。</p>
 </div>
 <div class="section" id="styling-data">
 <h2><a class="toc-backref" href="#id3">データをスタイリング</a><a class="headerlink" href="#styling-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -231,7 +231,7 @@
 </div>
 </div>
 <div class="section" id="clients-for-wms-layers">
-<h2><a class="toc-backref" href="#id7">WMSレイヤーのクライアント</a><a class="headerlink" href="#clients-for-wms-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">WMSレイヤのクライアント</a><a class="headerlink" href="#clients-for-wms-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>GeoServer から提供されている <a class="reference external" href="https://www.ogc.org/standards/wms">Web Map Service (WMS)</a> レイヤは、このOSGeoLiveディストリビューションのさまざまなクライアントで使用できます。次のものがあります。</p>
 <ul class="simple">
 <li><a class="reference internal" href="../overview/udig_overview.html"><span class="doc">uDig</span></a></li>
@@ -289,7 +289,7 @@
 <p>これは、GeoServerを使用するための最初のステップにすぎません。他にも多くの機能を試すことができます。</p>
 <ul class="simple">
 <li>GeoServer プロジェクト ホーム - <a class="reference external" href="http://geoserver.org/">http://geoserver.org/</a></li>
-<li>GeoServer ユーザーマニュアル -  <a class="reference external" href="https://docs.geoserver.org/latest/en/user/">https://docs.geoserver.org/latest/en/user/</a></li>
+<li>GeoServer ユーザマニュアル -  <a class="reference external" href="https://docs.geoserver.org/latest/en/user/">https://docs.geoserver.org/latest/en/user/</a></li>
 <li>GeoServer チュートリアル - <a class="reference external" href="https://docs.geoserver.org/latest/en/user/tutorials/index.html">https://docs.geoserver.org/latest/en/user/tutorials/index.html</a></li>
 <li>GeoServer スタイリングワークショップ - <a class="reference external" href="https://docs.geoserver.org/latest/en/user/styling/workshop/index.html">https://docs.geoserver.org/latest/en/user/styling/workshop/index.html</a></li>
 </ul>

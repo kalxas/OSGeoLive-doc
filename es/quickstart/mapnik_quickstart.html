@@ -77,41 +77,34 @@
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#mapnik-python" id="id1">Mapnik &amp; Python</a></li>
-<li><a class="reference internal" href="#mapnik-mapproxy" id="id2">Mapnik &amp; MapProxy</a></li>
+<li><a class="reference internal" href="#mapnik-mapproxy" id="id2">Mapnik y MapProxy</a></li>
 <li><a class="reference internal" href="#what-next" id="id3">¿Qué sigue?</a></li>
 </ul>
 </div>
 <div class="section" id="mapnik-python">
 <h2><a class="toc-backref" href="#id1">Mapnik &amp; Python</a><a class="headerlink" href="#mapnik-python" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Mapnik y sus enlaces de python están instalados y listos para ser utilizados para scripting en esta máquina.</p>
-<p>Creating maps in python is easy with Mapnik. Open a terminal window and type <cite>python3</cite> on the command line to enter a python interpreter. Then try this:</p>
+<p>Crear mapas en python es fácil con Mapnik. Abra una ventana de terminal y escriba <cite>python3</cite> en la línea de comandos para introducir un intérprete de Python. Después pruebe esto:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">::</span>
 </pre></div>
 </div>
 <blockquote>
-<div>import mapnik, os
-m = mapnik.Map(600,400)
-style = “/usr/local/share/mapnik/world_population.xml”
-mapnik.load_map(m,style)
-m.zoom_all()
-mapnik.render_to_file(m,”world_population.png”)
-os.system(“xdg-open world_population.png”)</div></blockquote>
+<div>importar mapnik, os m = mapnik.Map(600,400) style = “/usr/local/share/mapnik/world_population.xml” mapnik.load_map(m,style) m.zoom_all() mapnik.render_to_file(m,”world_population.png”) os.system(“xdg-open world_population.png”)</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p class="last">The above code depends on having an XML stylesheet that Mapnik can read (world_population.xml), defining the layers
-to read data from and the styles to apply to those layers.</p>
+<p class="last">El código anterior depende de tener una hoja de estilos XML que Mapnik pueda leer (world_population.xml), definiendo las capas desde las que leer datos y los estilos que se aplicarán a esas capas.</p>
 </div>
 </div>
 <div class="section" id="mapnik-mapproxy">
-<h2><a class="toc-backref" href="#id2">Mapnik &amp; MapProxy</a><a class="headerlink" href="#mapnik-mapproxy" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>A basic demo application is available which demonstrates using Mapnik with MapProxy</p>
-<p>The demo uses the world_population.xml from the Mapnik demo.</p>
+<h2><a class="toc-backref" href="#id2">Mapnik y MapProxy</a><a class="headerlink" href="#mapnik-mapproxy" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Una aplicación de demostración básica que muestra el uso de Mapnik con MapProxy está disponible</p>
+<p>La demostración utiliza el world_population.xml de la demostración Mapnik.</p>
 <ol class="arabic simple">
-<li>Click <span class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</span>. The server starts in a terminal window (which stays open and outputs basic debugging information).</li>
-<li>Open the MapProxy demo application <a class="reference external" href="http://0.0.0.0:8011/demo/">http://0.0.0.0:8011/demo/</a></li>
-<li>You find the world population demo by Mapnik as a WMS layer and also the world population in combination with a the GeoServer layer topp:states (make sure GeoServer is running)</li>
-<li>You can use the MapProxy WMS in other applications for example in QGIS or in Mapbender (<a class="reference external" href="http://localhost/mapbender/application/mapbender_user">http://localhost/mapbender/application/mapbender_user</a>).</li>
-<li>Observe the output in the server terminal window.</li>
+<li>Clic en <span class="menuselection">Geospatial ‣ Servicios Web ‣ MapProxy ‣ Iniciar MapProxy</span>. El servidor se inicia en una ventana de terminal (que permanece abierta y genera información básica de depuración).</li>
+<li>Abra la aplicación de demostración MapProxy <a class="reference external" href="http://0.0.0.0:8011/demo/">http://0.0.0.0:8011/demo/</a></li>
+<li>Encontrará la demostración de población mundial de Mapnik como una capa WMS y también la población mundial en combinación con una capa GeoServer topp:states (asegúrese de que GeoServer se está ejecutando)</li>
+<li>Puede utilizar mapproxy WMS en otras aplicaciones, por ejemplo, en QGIS o en Mapbender (<a class="reference external" href="http://localhost/mapbender/application/mapbender_user">http://localhost/mapbender/application/mapbender_user</a>).</li>
+<li>Observe la salida en la ventana del terminal del servidor.</li>
 </ol>
 </div>
 <div class="section" id="what-next">

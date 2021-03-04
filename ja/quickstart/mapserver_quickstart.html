@@ -257,7 +257,7 @@
 <span class="n">END</span>
 </pre></div>
 </div>
-<p>新しいCLASSオブジェクトは何をしますか?基本的には、MapServerに対して、 「0」 または 「1」 に等しい 「ScaleRank」 プロパティを持つ要素を黒いアウトラインで描画するように指示します。クラスオブジェクトは、描画されるフィーチャごとに常に上から下に読み込まれます。フィーチャがクラスで指定された 「EXPRESSION」 に一致すると、そのクラスはフィーチャをレンダリングします。フィーチャがクラスと一致しない場合、次のクラスがチェックされます。フィーチャがどのクラスとも一致しない場合、フィーチャはまったくレンダリングされませんが、画層の最後のクラスにEXPRESSIONが含まれていない場合、そのクラスが既定として機能します。LAYERの 「CLASSITEM」 プロパティは、CLASSオブジェクトで定義された式を評価するときに使用する属性をMapServerに伝えます。</p>
+<p>新しいCLASSオブジェクトは何をしますか?基本的には、MapServerに対して、 「0」 または 「1」 に等しい 「ScaleRank」 プロパティを持つ要素を黒いアウトラインで描画するように指示します。クラスオブジェクトは、描画されるフィーチャごとに常に上から下に読み込まれます。フィーチャがクラスで指定された 「EXPRESSION」 に一致すると、そのクラスはフィーチャをレンダリングします。フィーチャがクラスと一致しない場合、次のクラスがチェックされます。フィーチャがどのクラスとも一致しない場合、フィーチャはまったくレンダリングされませんが、レイヤの最後のクラスにEXPRESSIONが含まれていない場合、そのクラスがデフォルト値として機能します。LAYERの 「CLASSITEM」 プロパティは、CLASSオブジェクトで定義された式を評価するときに使用する属性をMapServerに伝えます。</p>
 <p>この新しい追加の結果、地図イメージ内の大きな湖が黒いアウトラインでレンダリングされます。</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>

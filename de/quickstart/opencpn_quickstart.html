@@ -84,19 +84,17 @@
 </div>
 <div class="section" id="setting-up-your-charts">
 <h2><a class="toc-backref" href="#id1">Seekarten vorbereiten</a><a class="headerlink" href="#setting-up-your-charts" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Before running OpenCPN on the LiveDVD you should activate the sample data.
-This is a condition of redistributing NOAA’s free nautical charts. The first time you open OpenCPN you are presented with the option to do this automatically.</p>
+<p>Bevor Sie OpenCPN auf OSGeoLive ausführen, sollten Sie die Beispieldaten aktivieren. Dies ist eine Bedingung für die Umverteilung der kostenlosen Seekarten der NOAA. Wenn Sie OpenCPN zum ersten Mal öffnen, erhalten Sie die Möglichkeit, dies automatisch zu tun.</p>
 <ol class="arabic simple">
-<li>From the Start menu, select <span class="menuselection">Geospatial ‣ Navigation and Maps ‣ OpenCPN</span>.</li>
-<li>Click <span class="guilabel">I agree</span> to the NOAA Nautical Chart Data Agreement.</li>
-<li>Click <span class="guilabel">OK</span> to agree to the OpenCPN license.</li>
+<li>Wählen Sie im Startmenü :menuselection:‘Geospatial –&gt; Navigation and Maps –&gt; OpenCPN‘.</li>
+<li>Klicken Sie auf <span class="guilabel">I agree</span> to the NOAA Nautical Chart Data Agreement.</li>
+<li>Klicken Sie <span class="guilabel">OK</span>, um der OpenCPN Lizenz zuzustimmen.</li>
 </ol>
-<p>You can download additional US nautical charts from NOAA at <a class="reference external" href="https://www.charts.noaa.gov/">https://www.charts.noaa.gov/</a></p>
+<p>Weitere US-Seekarten von NOAA können Sie unter dem folgenden Link herunterladen <a class="reference external" href="https://www.charts.noaa.gov/">https://www.charts.noaa.gov/</a></p>
 </div>
 <div class="section" id="setting-up-your-gps">
 <h2><a class="toc-backref" href="#id2">GPS einstellen</a><a class="headerlink" href="#setting-up-your-gps" title="Link zu dieser Überschrift">¶</a></h2>
-<p>If you have a GPS connected you will want to start the gpsd service.
-To do that, open a terminal and run:</p>
+<p>Wenn Sie ein GPS angeschlossen haben, sollten Sie den GPS-Dienst starten. Öffnen Sie dazu ein Terminal und führen Sie folgenden Befehl aus:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">gpsd</span>
 </pre></div>
 </div>
@@ -112,24 +110,24 @@ To do that, open a terminal and run:</p>
 </div>
 <div class="section" id="things-to-try">
 <h2><a class="toc-backref" href="#id3">Was Sie noch ausprobieren können</a><a class="headerlink" href="#things-to-try" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Current weather and wave forecast data can be downloaded and draped over your charts using the GRIB plugin. The <a class="reference internal" href="../overview/xygrib_overview.html"><span class="doc">XyGrib software</span></a> (also on this disc) is an easy way to download that.</p>
+<p>Aktuelle Wetter- und Wellenvorhersagedaten können mit dem GRIB-Plugin heruntergeladen und über Ihre Charts drapiert werden. Die <a class="reference internal" href="../overview/xygrib_overview.html"><span class="doc">XyGrib</span></a> Software‘ (auch auf dieser Disc) ist eine einfache Möglichkeit, diese herunterzuladen.&lt;/..&gt;</p>
 <ol class="arabic simple">
-<li>Click the <span class="guilabel">Options</span> icon on the toolbar. The Options window displays.</li>
-<li>Select the <span class="guilabel">Plugins</span> tab.</li>
-<li>Choose GRIB and then click <span class="guilabel">Enable</span>.</li>
-<li>Click <span class="guilabel">OK</span>. A windsock icon is now displayed on the toolbar.</li>
+<li>Klicken Sie auf der Symbolleiste :guilabel:‘Optionen‘. Das Fenster Optionen wird angezeigt.</li>
+<li>Wählen Sie die Registerkarte :guilabel:‘Plugins‘.</li>
+<li>Wählen Sie GRIB und klicken Sie dann auf :guilabel:‘Enable‘.</li>
+<li>Klicken Sie auf :guilabel:‘OK‘. Auf der Symbolleiste wird nun ein Windsack-Symbol angezeigt.</li>
 </ol>
-<p>Run through the <a class="reference internal" href="xygrib_quickstart.html"><span class="doc">XyGrib quickstart</span></a> and load the XyGrib file over your chart.</p>
+<p>Führen Sie den <a class="reference internal" href="xygrib_quickstart.html"><span class="doc">XyGrib-Quickstart aus</span></a> und laden Sie die XyGrib-Datei über Ihr Diagramm.</p>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p>If you saved the XyGrib file into your home directory, navigate to <code class="file docutils literal"><span class="pre">/home</span></code> and select your <code class="docutils literal"><span class="pre">user</span></code> directory as the GRIB data directory. Then right click on the file listing’s background to show hidden files, including the <code class="docutils literal"><span class="pre">.xygrib</span></code> directory that contains the GRIB download files.</p>
+<p>Haben Sie die XyGrib-Datei im Home-Verzeichnis des Benutzers gespeichert, navigieren Sie nach <code class="file docutils literal"><span class="pre">/home</span></code> und wählen Sie Ihr <code class="docutils literal"><span class="pre">user</span></code>-Verzeichnis als das GRIB Datenverzeichnis. Versteckte Dateien inklusive des <code class="docutils literal"><span class="pre">.xygrib</span></code>-Verzeichnissen mit den GRIB download Dateien werden über den rechten Klick auf die Dateieigenschaften angezeigt.</p>
 <p class="last">Die Datei muss nicht dekomprimiert werden. Klicken Sie auf „&gt;“ links neben dem Dateinamen und wählen Sie aus der Liste der Vorhersagenzeiten.</p>
 </div>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id4">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">
-<li>Documentation is available from the Help menu or online at <a class="reference external" href="https://opencpn.org/OpenCPN/info/manuals.html">https://opencpn.org/OpenCPN/info/manuals.html</a></li>
+<li>Die Dokumentation ist im Hilfemenü oder online unter <a class="reference external" href="https://opencpn.org/OpenCPN/info/manuals.html">https://opencpn.org/OpenCPN/info/manuals.html</a> verfügbar</li>
 <li><a class="reference external" href="../../opencpn/tips.html">Tipps zum Einstieg</a></li>
 <li>Webseite: <a class="reference external" href="https://www.opencpn.org">https://www.opencpn.org</a></li>
 <li>Support: <a class="reference external" href="https://www.cruisersforum.com/forums/f134">https://www.cruisersforum.com/forums/f134</a></li>

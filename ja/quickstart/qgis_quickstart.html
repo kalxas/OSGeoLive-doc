@@ -81,7 +81,7 @@
 <li><a class="reference internal" href="#create-a-project" id="id2">プロジェクトを作成する</a></li>
 <li><a class="reference internal" href="#open-an-existing-project" id="id3">既存のプロジェクトを開く</a></li>
 <li><a class="reference internal" href="#navigate-the-map" id="id4">マップをナビゲートする</a></li>
-<li><a class="reference internal" href="#style-your-layers" id="id5">レイヤーのスタイルを設定</a></li>
+<li><a class="reference internal" href="#style-your-layers" id="id5">レイヤのスタイルを設定</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id6">試してみること</a></li>
 <li><a class="reference internal" href="#what-next" id="id7">次のステップ</a></li>
 </ul>
@@ -100,7 +100,7 @@
 <li>[1] メニューバー: 標準の階層メニューを使用して、さまざまなQGIS機能にアクセスできます。</li>
 <li>[2] ツールバー: マップ、画層、属性、および選択を操作します。</li>
 <li>[3] ブラウザパネル: マップフレームにコンテンツをドラッグアンドドロップできる空間ファイルブラウザ。</li>
-<li>[4] レイヤーパネル: マップ画層、画層の順序、表示/非表示をコントロールします。</li>
+<li>[4] レイヤパネル: マップ画層、画層の順序、表示/非表示をコントロールします。</li>
 <li>[5] ステータスバー: マップに関する一般情報とユニバーサル検索バーへのアクセス。</li>
 </ul>
 </div>
@@ -150,19 +150,19 @@
 </div>
 <div class="section" id="open-an-existing-project">
 <h2><a class="toc-backref" href="#id3">既存のプロジェクトを開く</a><a class="headerlink" href="#open-an-existing-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>QGISプロジェクトは、レイヤ、スタイル、マップ範囲、および設定を保存し、後で使用できるようにします。この情報はQGISのプロジェクトファイルとして保存され、拡張子は 『.qgs』 または 『.qgz』 になります。 『.qgz』 は将来のQGISでの既定のファイル形式です。</p>
+<p>QGISプロジェクトは、レイヤ、スタイル、マップ範囲、および設定を保存し、後で使用できるようにします。この情報はQGISのプロジェクトファイルとして保存され、拡張子は 『.qgs』 または 『.qgz』 になります。 『.qgz』 は将来のQGISでのデフォルトのファイル形式です。</p>
 <p>既存のQGISプロジェクトを開いて、その仕組みを見てみましょう。</p>
 <ol class="arabic simple">
 <li>QGISを開くQGISを開くと、最近選択したプロジェクトのリストが表示されます。これは、最近使用したプロジェクトを開くのに便利な方法です。</li>
-<li>Choose <span class="menuselection">Project ‣ Open</span>.</li>
-<li>Navigate to 『/home/user/qgis-example』.</li>
+<li><span class="menuselection">Project ‣ Open</span> を選択</li>
+<li>『/home/user/qgis-example』 に移動します。</li>
 <li>プロジェクト 『QGIS-NaturalEarth-Example.qgs』 を選択します。</li>
 <li>[開く]をクリックします。</li>
 </ol>
 <a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.79999999999995px; height: 309.4px;" /></a>
-<p>以下に示すように、Natural Earchデータセットを持つQGISプロジェクトが開かれます。このプロジェクトには、レイヤーパネルに複数のレイヤーが含まれ、マップフレームに空間コンテンツが表示されています。</p>
+<p>以下に示すように、Natural Earchデータセットを持つQGISプロジェクトが開かれます。このプロジェクトには、レイヤパネルに複数のレイヤーが含まれ、マップフレームに空間コンテンツが表示されています。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.6999999999999px;" /></a>
-<p>レイヤーパネルでレイヤー名の横にあるチェックボックスをクリックすると、レイヤーの表示/非表示を切り替えることができます。レイヤパネルでレイヤをオンにすると、マップフレームが更新されてレイヤが表示されます。レイヤーパネルの拡大図を以下に示します。</p>
+<p>レイヤパネルでレイヤ名の横にあるチェックボックスをクリックすると、レイヤ表示/非表示を切り替えることができます。レイヤパネルでレイヤをオンにすると、マップフレームが更新されてレイヤが表示されます。レイヤパネルの拡大図を以下に示します。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.49999999999997px;" /></a>
 <p>レイヤパネルを操作して、マップレイヤの表示/非表示を変更してみましょう。</p>
 <ol class="arabic simple">
@@ -176,7 +176,7 @@
 <li>レイヤ 『HYP_50M_SR_W』 を左クリックします。</li>
 <li>マウスボタンを押したまま、レイヤをリストの一番上にドラッグします。</li>
 </ol>
-<p>ラスタレイヤがレイヤパネルの他のすべてのレイヤーの上に表示されます。これで、ラスタレイヤがマップフレームの他のすべてのレイヤの上にレンダリングされます。</p>
+<p>ラスタレイヤがレイヤパネルの他のすべてのレイヤの上に表示されます。これで、ラスタレイヤがマップフレームの他のすべてのレイヤの上にレンダリングされます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.6999999999999px;" /></a>
 <p>『HYP_50M_SR_W』 レイヤをレイヤリストの一番下に移動してみてください。これは、このようなマップレイヤに適した位置です。</p>
 </div>
@@ -188,7 +188,7 @@
 <li>[1] パン: マップを新しい位置にドラッグ(『パン』)できます。</li>
 <li>[2] ズームイン: マップの範囲をズームインできます。</li>
 <li>[3] ズームアウト: マップのズームアウトを許可します。</li>
-<li>[4] 全範囲ズーム: マップの範囲を変更して、すべてのマップレイヤーをマップの枠に合わせます。</li>
+<li>[4] 全範囲ズーム: マップの範囲を変更して、すべてのマップレイヤをマップの枠に合わせます。</li>
 <li>[5] レイヤにズーム: マップパネルで強調表示されているレイヤの範囲に合わせてレイヤの範囲を変更します。</li>
 </ul>
 <p>ズームインツールでマップの範囲を変更してみましょう。</p>
@@ -203,7 +203,7 @@
 <p class="first admonition-title">注釈</p>
 <p class="last">ズームアウトツールを使用するプロセスは、ズームインツールと同じです。結果は正反対です。</p>
 </div>
-<p>次に、全範囲ズームツールを見てみましょう。このツールは、マップのすべてのレイヤーに収まるようにマップをズームアウトします。このツールを使用するには、[全体にズーム]ボタンをクリックします。</p>
+<p>次に、全範囲ズームツールを見てみましょう。このツールは、マップのすべてのレイヤに収まるようにマップをズームアウトします。このツールを使用するには、[全体にズーム]ボタンをクリックします。</p>
 <p>最後に、レイヤズームツールを使用してみます。このツールを使用するには、次の手順に従います。</p>
 <ol class="arabic simple">
 <li>レイヤパネルでレイヤの名前をクリックします。</li>
@@ -212,8 +212,8 @@
 <p>マップは選択された(『アクティブ』)レイヤの範囲にズームします。</p>
 </div>
 <div class="section" id="style-your-layers">
-<h2><a class="toc-backref" href="#id5">レイヤーのスタイルを設定</a><a class="headerlink" href="#style-your-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>レイヤーは、スタイルドックを使用してQGISでスタイル設定できます。スタイル枠は既定では表示されていませんが、次に示すように、レイヤパネルの上部にあるボタンから簡単にアクセスできます。</p>
+<h2><a class="toc-backref" href="#id5">レイヤのスタイルを設定</a><a class="headerlink" href="#style-your-layers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>レイヤは、スタイルドックを使用してQGISでスタイル設定できます。スタイル枠はデフォルトでは表示されていませんが、次に示すように、レイヤパネルの上部にあるボタンから簡単にアクセスできます。</p>
 <a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.6999999999999px;" /></a>
 <p>上記のボタンはトグルとして機能するため、同じボタンをもう一度クリックすると、スタイル枠をビューから簡単に隠すことができます。スタイル枠が有効になると、画面の右側に表示され、レイヤパネルで強調表示されているアクティブなレイヤのスタイルを設定できます。</p>
 <p>スタイル枠を開くと、スタイル枠の最上部に表示されるレイヤの外観を変更できます。</p>
@@ -254,7 +254,7 @@
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id7">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>QGISの詳細については、QGISホームページの <a class="reference external" href="https://www.qgis.org/en/docs/index.html">ドキュメントページ</a> と <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS(英語)</a> eBookを参照してください。</p>
+<p>QGISの詳細については、QGISホームページの <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">ドキュメントページ</a> と <a class="reference external" href="https://www.qgis.org/en/docs/index.html">A Gentle Introduction to GIS(英語)</a> eBookを参照してください。</p>
 </div>
 </div>
 

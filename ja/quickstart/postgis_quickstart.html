@@ -91,8 +91,8 @@
 <li><a class="reference internal" href="#spatial-queries" id="id5">空間クエリー</a></li>
 <li><a class="reference internal" href="#mapping" id="id6">マッピング</a></li>
 <li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">空間データをデータベースに読み込む</a></li>
-<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Get to know pgAdmin</a></li>
-<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Executing a SQL query from pgAdmin</a></li>
+<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">pgAdminを知る</a></li>
+<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">pgAdminからのSQLクエリの実行</a></li>
 <li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">外部データラッパー(FDW)について知る</a></li>
 <li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">ogr_fdw経由でリモートOGRデータソースに接続</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id12">試してみること</a></li>
@@ -101,18 +101,18 @@
 </div>
 <div class="section" id="client-server-architecture">
 <h2><a class="toc-backref" href="#id1">クライアント/サーバ・アーキテクチャ</a><a class="headerlink" href="#client-server-architecture" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>PostgreSQLは、多くのデータベースと同様に、クライアント/サーバシステムのサーバとして機能します。クライアントはサーバーに要求を行い、応答を受け取ります。これは、インターネットが動作するのと同じ方法です。つまり、ブラウザあり、WebサーバはWebページを送り返します。PostgreSQLでは、要求はSQL言語で行われ、応答は通常データベースからのデータのテーブルです。</p>
+<p>PostgreSQLは、多くのデータベースと同様に、クライアント/サーバシステムのサーバとして機能します。クライアントはサーバーに要求を行い、応答を受け取ります。これは、インターネットが動作するのと同じ方法です。つまり、ブラウザがクライアントで、WebサーバはWebページを送り返します。PostgreSQLでは、要求はSQL言語で行われ、応答は通常データベースからのデータのテーブルです。</p>
 <p>サーバがクライアントと同じコンピュータ上にあることを止めるものは何もありません。これにより、単一のマシン上でPostgreSQLを使用することができます。クライアントは、内部の 『ループバック』 ネットワーク接続を介してサーバに接続し、そのように設定しない限り、他のコンピュータからは見えません。</p>
 </div>
 <div class="section" id="creating-a-spatially-enabled-database">
 <h2><a class="toc-backref" href="#id2">空間的に有効なデータベースの作成</a><a class="headerlink" href="#creating-a-spatially-enabled-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>コマンドラインクライアントは、ターミナルエミュレータウィンドウから実行します。</p>
-<p>「システムツール」メニューからターミナルエミュレータ(現在はLXTerminal)を起動します。これにより、Unixシェルのコマンドプロンプトが表示されます。Type:</p>
+<p>「システムツール」メニューからターミナルエミュレータ(現在はLXTerminal)を起動します。これにより、Unixシェルのコマンドプロンプトが表示されます。以下を入力し:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">V</span>
 </pre></div>
 </div>
-<p>エンターを押してPostgreSQLのバージョン番号を確認します。</p>
-<p>単一のPostgreSQLサーバでは、作業を別々のデータベースに整理することで、作業を組織することができます。各データベースは、独自のテーブル、ビュー、ユーザなどを持つ独立したシステムです。PostgreSQLサーバに接続する場合、データベースを指定する必要があります。</p>
+<p>Enterを押してPostgreSQLのバージョン番号を確認します。</p>
+<p>単一のPostgreSQLサーバでは、作業を別々のデータベースに整理することができます。各データベースは、独自のテーブル、ビュー、ユーザなどを持つ独立したシステムです。PostgreSQLサーバに接続する場合、データベースを指定する必要があります。</p>
 <p>次のコマンドを使用すると、サーバ上のデータベースのリストを取得できます:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">l</span>
 </pre></div>
@@ -122,7 +122,7 @@
 <p class="first admonition-title">ちなみに</p>
 <p class="last">このリストでは標準的なUNIXのページャの使いかたを示します - スペースで次のページ、 <code class="kbd docutils literal"><span class="pre">b</span></code> は戻る、 <code class="kbd docutils literal"><span class="pre">q</span></code> は終了、h はヘルプを表示します。</p>
 </div>
-<p>PostgreSQLは、データベースを作成するためのユーティリティプログラム <code class="docutils literal"><span class="pre">createdb</span></code> を提供します。PostGIS拡張を追加する前に、データベースを作成する必要があります。わたしたちのデータベースを <code class="docutils literal"><span class="pre">demo</span></code> と呼びます。コマンドは次のようになります:</p>
+<p>PostgreSQLは、データベースを作成するためのユーティリティプログラム <code class="docutils literal"><span class="pre">createdb</span></code> を提供します。PostGIS拡張を追加する前に、データベースを作成する必要があります。私たちのデータベースを <code class="docutils literal"><span class="pre">demo</span></code> と呼びます。コマンドは次のようになります:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">createdb</span> <span class="n">demo</span>
 </pre></div>
 </div>
@@ -163,7 +163,7 @@
 </pre></div>
 </div>
 <p>PostGISは、多くの関数、テーブル、および複数のビューをインストールします。</p>
-<p><code class="docutils literal"><span class="pre">\dt</span></code> と入力、データベース内のテーブルを一覧表示します。次のように表示されます。</p>
+<p><code class="docutils literal"><span class="pre">\dt</span></code> と入力し、データベース内のテーブルを一覧表示します。次のように表示されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># \dt</span>
              <span class="n">List</span> <span class="n">of</span> <span class="n">relations</span>
  <span class="n">Schema</span> <span class="o">|</span>       <span class="n">Name</span>       <span class="o">|</span> <span class="n">Type</span>  <span class="o">|</span> <span class="n">Owner</span>
@@ -213,8 +213,8 @@
 <dd>空間の領域を示し、各バンド(次元)は各ピクセル空間の値を持つ。</dd>
 </dl>
 </div></blockquote>
-<p><code class="docutils literal"><span class="pre">geometry_columns</span></code> と、 <code class="docutils literal"><span class="pre">geography_columns</span></code> 、 <code class="docutils literal"><span class="pre">raster_columns</span></code> ビューは、PostGISのジオメトリ、地理、およびラスター列を持つテーブルをPostGIS に伝える役割をもっています。</p>
-<p>概要は、ラスターデータの低解像度テーブルです。<code class="docutils literal"><span class="pre">raster_overviews</span></code> このようなテーブルとそのラスタ列がリストされ、それぞれのテーブルが概要を示しています。ラスタデータ概要テーブルは、QGISなどのツールで使用され、ラスタデータの低解像度バージョンを提供して、読み込みを高速化します。</p>
+<p><code class="docutils literal"><span class="pre">geometry_columns</span></code> と、<code class="docutils literal"><span class="pre">geography_columns</span></code>、<code class="docutils literal"><span class="pre">raster_columns</span></code> ビューは、PostGISのジオメトリ、地理、およびラスター列を持つテーブルをPostGIS に伝える役割をもっています。</p>
+<p>概要(Overviews)は、ラスタデータの低解像度テーブルです。<code class="docutils literal"><span class="pre">raster_overviews</span></code> このようなテーブルとそのラスタ列がリストされ、それぞれのテーブルが概要を示しています。ラスタ概要テーブルは、QGISなどのツールで使用され、ラスタデータの低解像度バージョンを提供して、読み込みを高速化します。</p>
 <p>PostGISジオメトリタイプは、PostGISユーザが使用する最初の最も一般的なタイプです。そのタイプに注目してみましょう。</p>
 </div>
 <div class="section" id="creating-a-spatial-table-using-sql">
@@ -224,7 +224,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># CREATE TABLE cities ( id int4 primary key, name varchar(50), geom geometry(POINT,4326) );</span>
 </pre></div>
 </div>
-<p>従来、このジオメトリカラムには <code class="docutils literal"><span class="pre">geom</span></code> という名前(古いPostGISでは <code class="docutils literal"><span class="pre">the_geom</span></code> でした)を使います。これにより、PostGISに、各フィーチャが持つジオメトリの種類(ポイント、ライン、ポリゴンなど)、寸法の数(この場合は2、寸法が3または4の場合はPOINTZ、POINTM、またはPOINTZMを使用)、および空間参照システムが通知されます。我々の都市には、EPSG:4326座標を使用しました。</p>
+<p>従来、このジオメトリカラムには <code class="docutils literal"><span class="pre">geom</span></code> という名前(古いPostGISでは <code class="docutils literal"><span class="pre">the_geom</span></code> でした)を使います。これにより、PostGISに、各フィーチャが持つジオメトリの種類(ポイント、ライン、ポリゴンなど)、次元の数(この場合は2、次元が3または4の場合はPOINTZ、POINTM、またはPOINTZMを使用)、および空間参照システムが通知されます。私たちの都市には、EPSG:4326座標を使用しました。</p>
 <p>citiesテーブルをチェックすると、新しい列が表示され、テーブルに現在行が含まれていないことが通知されます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT * from cities;</span>
  <span class="nb">id</span> <span class="o">|</span> <span class="n">name</span> <span class="o">|</span> <span class="n">geom</span>
@@ -270,7 +270,7 @@
 </div>
 <div class="section" id="spatial-queries">
 <h2><a class="toc-backref" href="#id5">空間クエリー</a><a class="headerlink" href="#spatial-queries" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>PostGISはPostgreSQLに空間機能を持つ多くの関数を追加します。WKTをジオメトリに変換するST_GeomFromTextについては、すでに説明しました。そのほとんどはST(空間タイプ)で始まり、PostGISドキュメントのセクションにリストされています。ここでは、球形の地球を仮定して、これら3つのロンドンが互いにどのくらい離れているのかという現実的な疑問に答えるために1つを使うことにしよう。</p>
+<p>PostGISはPostgreSQLに空間機能を持つ多くの関数を追加します。WKTをジオメトリに変換するST_GeomFromTextについては、すでに説明しました。そのほとんどはST(空間タイプ)で始まり、PostGISドキュメントのセクションにリストされています。ここでは、球形の地球を仮定して、これら3つのロンドンの場所が互いにどのくらい離れているのかという現実的な疑問に答えるために1つを使うことにしましょう。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT p1.name,p2.name,ST_DistanceSphere(p1.geom,p2.geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;</span>
       <span class="n">name</span>       <span class="o">|</span>      <span class="n">name</span>       <span class="o">|</span> <span class="n">st_distancesphere</span>
 <span class="o">-----------------+-----------------+--------------------</span>
@@ -280,7 +280,7 @@
  <span class="p">(</span><span class="mi">3</span> <span class="n">rows</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>これにより、都市間の距離がメートル単位でわかります。SQL行の’WHERE’部分が、都市からそれ自体までの距離(すべて0)または上記の表の逆方向の距離(英国ロンドンからオンタリオロンドンまでは、オンタリオロンドンからイギリスロンドンまでと同じ距離)を取得するのを停止することに注意してください。』WHERE’の部分を外して試してみて、何が起こるか見てください。</p>
+<p>これにより、都市間の距離がメートル単位でわかります。SQL行の 『WHERE』 部分が、都市からそれ自体までの距離(すべて0)または上記の表の逆方向の距離(英国ロンドンからオンタリオロンドンまでは、オンタリオロンドンからイギリスロンドンまでと同じ距離)を取得するのを停止することに注意してください。 『WHERE』 の部分を外して試してみて、何が起こるか見てください。</p>
 <p>また、別の関数を使用し、回転楕円体の名前、半長軸、および逆平坦化パラメータを指定して、回転楕円体を使用して距離を計算することもできます。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">demo</span><span class="o">=</span><span class="c1"># SELECT p1.name,p2.name,ST_DistanceSpheroid(</span>
         <span class="n">p1</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span><span class="n">p2</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="s1">&#39;SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222]&#39;</span>
@@ -317,47 +317,41 @@
 <div class="section" id="importing-spatial-data-into-the-database">
 <h2><a class="toc-backref" href="#id7">空間データをデータベースに読み込む</a><a class="headerlink" href="#importing-spatial-data-into-the-database" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ほとんどのOSGeoデスクトップツールには、他の形式(例 ESRI Shape)から空間データをデータベースに読み込むための機能があります。ここでもQGISを使って説明します</p>
-<p>Importing shapefiles to QGIS can be done via the handy QGIS Database Manager. You find the manager in the menu. Go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
+<p>シェープファイルをQGISに読み込むには、QGISデータベースマネージャを使用します。マネージャーはメニューにあります。<code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code> に移動します。</p>
 <p>Postgisアイテムを展開し、次にNaturalEarthアイテムを展開します。その後、Natural Earthデータベースに接続します。パスワードを確認するメッセージが表示されたら、空白のままにします。パブリックアイテムには、データベースによって提供されるレイヤのリストがあります。メインマネージャウィンドウが表示されます。左側では、データベースからテーブルを選択し、右側のタブを使用してテーブルについて調べることができます。[プレビュー]タブに小さなマップが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 1026.0px; height: 603.75px;" /></a>
 <p>次に、DBマネージャを使用して、シェープファイルをデータベースにインポートします。ここでは、R Statistics Packageアドオンの1つに含まれているNorth Carolina Sudden Infant Death Syndrome(SIDS)データを使用します。</p>
-<p>From the <code class="docutils literal"><span class="pre">Table</span></code> menu choose the <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> option.
-Hit the <code class="docutils literal"><span class="pre">...</span></code> button and browse to the <code class="docutils literal"><span class="pre">sids.shp</span></code> shapefile in the R directory.
-(located in /home/user/data/vector/R/shapes):</p>
+<p><code class="docutils literal"><span class="pre">Table</span></code> メニューから <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> オプションを選択します。<code class="docutils literal"><span class="pre">...</span></code> ボタンを押して、R ディレクトリにある <code class="docutils literal"><span class="pre">sids.shp</span></code> シェープファイルを参照します。(/home/user/data/vector/R/shapes にあります):</p>
 <a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 632.25px; height: 492.0px;" /></a>
 <p>他のものはすべてそのままにして、 <code class="docutils literal"><span class="pre">Load</span></code> を押します。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 346.5px; height: 400.5px;" /></a>
-<p>Let the Coordinate Reference System Selector default to (WGS 84 EPSG:4326) and hit <code class="docutils literal"><span class="pre">OK</span></code>. The shapefile should be imported into PostGIS with no errors. Close the DB Manager and
-get back to the main QGIS window.</p>
-<p>次に、』PostGISマップを追加’オプションを使用して、SIDSデータをレイヤにロードします。レイヤの再配置と若干の色付けを行うことで、North Carolinaの乳幼児突然死症候群の発生数 (sid74またはsid79フィールド)の階級区分図を作成できるようになります。</p>
+<p>座標参照系セレクタのデフォルト値を(WGS 84 EPSG:4326)にして、 <code class="docutils literal"><span class="pre">OK</span></code> を押します。シェープファイルは、エラーなしでPostGISにインポートする必要があります。DB Manager を閉じて、メインの QGIS ウィンドウに戻ります。</p>
+<p>次に、 『PostGISマップを追加』 オプションを使用して、SIDSデータをレイヤにロードします。レイヤの再配置と若干の色付けを行うことで、North Carolinaの乳幼児突然死症候群の発生数 (sid74またはsid79フィールド)の階級区分図を作成できるようになります。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1036.5px; height: 607.5px;" /></a>
 </div>
 <div class="section" id="get-to-know-pgadmin">
-<h2><a class="toc-backref" href="#id8">Get to know pgAdmin</a><a class="headerlink" href="#get-to-know-pgadmin" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>You can use the graphical database client <code class="docutils literal"><span class="pre">pgAdmin</span></code> from the Databases menu to query and modify your database non-spatially. This is the official client for PostgreSQL.</p>
-<p>pgAdmin lets you use SQL to manipulate your data tables. You can find and launch pgAdmin
-from the Databases folder, existing on the OSGeoLive Desktop.</p>
+<h2><a class="toc-backref" href="#id8">pgAdminを知る</a><a class="headerlink" href="#get-to-know-pgadmin" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>「データベース」メニューからグラフィカルデータベースクライアント <code class="docutils literal"><span class="pre">pgAdmin</span></code> を使って、非空間的にデータベースのクエリと変更を行うことができます。これはPostgreSQLの公式クライアントです。</p>
+<p>pgAdminでは、SQLを使用してデータテーブルを操作できます。pgAdminは、OSGeoLiveのデスクトップにあるDatabasesフォルダから検索して起動できます。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 579.5px; height: 423.5px;" /></a>
-<p>Enter the master password  <code class="docutils literal"><span class="pre">user</span></code>.</p>
-<p>Here, you have the option of creating a new connection to a PostgreSQL server, or connecting to an existing server.
-In this case, we are going to connect to the predefined <code class="docutils literal"><span class="pre">localhost</span></code> server.</p>
+<p>マスターパスワードは  <code class="docutils literal"><span class="pre">user</span></code> です。</p>
+<p>ここでは、PostgreSQLサーバへの新しい接続を作成するか、既存のサーバに接続するかを選択できます。この場合、あらかじめ定義された <code class="docutils literal"><span class="pre">localhost</span></code> サーバに接続します。</p>
 <p>接続が確立されると、システムにすでに存在するデータベースの一覧が表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 871.5px; height: 639.0px;" /></a>
-<p>ほとんどのデータベースのイメージ上の赤い」X」は、まだどのデータベースにも接続していないことを示しています(あなたはデフォルトの <code class="docutils literal"><span class="pre">postgres</span></code> データベースにのみ接続しています)。この時点では、システム上の既存のデータベースしか表示できません。データベースの名前をダブルクリックすることで接続できます。Natural_earth2データベースで実行します。</p>
-<p>You can see now that the red X disappeared and a 「&gt;」 appeared on the left. By pressing it a tree is going to appear,
-displaying the contents of the database.</p>
-<p><code class="docutils literal"><span class="pre">schemas</span></code> サブツリーに移動して展開します。その後、 <code class="docutils literal"><span class="pre">public</span></code> スキーマを展開します。 <code class="docutils literal"><span class="pre">Tables</span></code> を移動して展開すると、このスキーマに含まれるすべてのテーブルを表示できます。</p>
+<p>ほとんどのデータベースのイメージ上の赤い 「X」 は、まだどのデータベースにも接続していないことを示しています(あなたはデフォルトの <code class="docutils literal"><span class="pre">postgres</span></code> データベースにのみ接続しています)。この時点では、システム上の既存のデータベースしか表示できません。データベースの名前をダブルクリックすることで接続できます。Natural_earth2データベースで実行します。</p>
+<p>赤いXが消え、左側に 「&gt;」 が表示されています。これを押すとツリーが表示され、データベースの内容が表示されます。</p>
+<p><code class="docutils literal"><span class="pre">schemas</span></code> サブツリーに移動して展開します。その後、<code class="docutils literal"><span class="pre">public</span></code> スキーマを展開します。 <code class="docutils literal"><span class="pre">Tables</span></code> を移動して展開すると、このスキーマに含まれるすべてのテーブルを表示できます。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 872.25px; height: 638.25px;" /></a>
 </div>
 <div class="section" id="executing-a-sql-query-from-pgadmin">
-<h2><a class="toc-backref" href="#id9">Executing a SQL query from pgAdmin</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>pgAdmin, offers the capability of executing queries to a relational database.</p>
-<p>To perform a query on the database, you have to press the <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> button from the main toolbar (the one at the left with the database symbol).</p>
+<h2><a class="toc-backref" href="#id9">pgAdminからのSQLクエリの実行</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>pgAdminは、リレーショナルデータベースに対してクエリを実行する機能を提供します。</p>
+<p>データベースに対してクエリを実行するには、メインツールバーの <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> ボタン(左側にデータベースシンボルがある)を押す必要があります。</p>
 <p>各都市の1974年の乳幼児突然死症候群の発生率を求めます。さらに、計算されたレートに基づいて結果を並べ替えます。そのためには、次のクエリを実行する必要があります(SQLウィンドウのテキストエディタで送信)。</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">name</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sid74</span><span class="o">/</span><span class="n">bir74</span> <span class="k">as</span> <span class="n">rate</span> <span class="kn">from</span> <span class="nn">sids</span> <span class="n">order</span> <span class="n">by</span> <span class="n">rate</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Afterwards, you should press the arrow button, pointing to the right (Execute).</p>
+<p>その後、右向きの矢印(実行)ボタンを押す必要があります。</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 870.75px; height: 636.75px;" /></a>
 </div>
 <div class="section" id="get-to-know-foreign-data-wrappers-fdw">
@@ -378,7 +372,7 @@ displaying the contents of the database.</p>
  <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">host</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span> <span class="s1">&#39;5432&#39;</span><span class="p">,</span> <span class="n">dbname</span> <span class="s1">&#39;osm_local&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>外部サーバーに接続するときに使用するユーザーを定義</p>
+<p>外部サーバに接続するときに使用するユーザを定義</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">USER</span> <span class="n">MAPPING</span> <span class="n">FOR</span> <span class="n">user</span>
       <span class="n">SERVER</span> <span class="n">fdw_pg_server_osm_local</span>
       <span class="n">OPTIONS</span> <span class="p">(</span><span class="n">user</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">password</span> <span class="s1">&#39;user&#39;</span><span class="p">);</span>
@@ -399,10 +393,10 @@ displaying the contents of the database.</p>
 <div class="section" id="connect-to-a-remote-ogr-data-source-via-ogr-fdw">
 <h2><a class="toc-backref" href="#id11">ogr_fdw経由でリモートOGRデータソースに接続</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>拡張 <code class="docutils literal"><span class="pre">ogr_fdw</span></code> は、KML、GeoPackage、WFS、GeoJSON、GPX、GMLなどのいくつかの地理データフォーマットの接続を可能にします。</p>
-<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:</p>
+<p><code class="docutils literal"><span class="pre">ogr_fdw</span></code> の詳細:</p>
 <ul class="simple">
-<li>Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
-<li>New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
+<li>リポジトリ: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
+<li>新しく改善された機能: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
 </ul>
 <p class="rubric">拡張機能 <code class="docutils literal"><span class="pre">ogr_fdw</span></code> をデータベースにインストールします。</p>
 <p>データベースプロンプトで、次のように入力します。</p>
@@ -434,10 +428,8 @@ displaying the contents of the database.</p>
 <ul class="simple">
 <li>GeoServerを開く <a class="reference external" href="http://localhost:8082/geoserver/web/">http://localhost:8082/geoserver/web/</a></li>
 <li>GeoServer WFS GetCapabilities <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</a></li>
-<li>GeoServer WFS DescribeFeatureType for topp:states
-<a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states</a></li>
-<li>GeoServer WFS GetFeature topp:states
-<a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states</a></li>
+<li>GeoServer WFS DescribeFeatureType - topp:states <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states</a></li>
+<li>GeoServer WFS GetFeature - topp:states <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states</a></li>
 </ul>
 <p class="rubric">接続するWFSを参照する外部サーバーを作成する</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
@@ -465,7 +457,7 @@ displaying the contents of the database.</p>
 <li>コマンドラインで <code class="docutils literal"><span class="pre">pgsql2shp</span></code> を使用して、テーブルをシェープファイルにエクスポートします。</li>
 <li>データベースにデータをインポート/エクスポートするには、コマンドラインで <code class="docutils literal"><span class="pre">ogr2ogr</span></code> を試してください。</li>
 <li>コマンドラインで <code class="docutils literal"><span class="pre">shp2pgsql</span></code> を使用して、データベースにデータをインポートしてみてください。</li>
-<li>Try to do road routing using <a class="reference internal" href="../overview/pgrouting_overview.html"><span class="doc">pgRouting</span></a>.</li>
+<li><a class="reference internal" href="../overview/pgrouting_overview.html"><span class="doc">pgRouting</span></a> を使用して、道路のルーティングを試みます。</li>
 </ul>
 </div>
 <div class="section" id="what-next">
