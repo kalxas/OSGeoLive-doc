@@ -94,10 +94,13 @@
 <dl class="docutils">
 <dt>On trouvera des exemples de données utilisées dans ce démarrage rapide dans&nbsp;:</dt>
 <dd><ul class="first last simple">
-<li>/home/user/data/north_carolina/rast_geotiffs</li>
+<li>/home/user/data/north_carolina/rast_geotiff</li>
 </ul>
 </dd>
 </dl>
+<p>Start a Terminal Emulator (LXTerminal currently) from the Applications menu in the Accessories section. This gives you a Unix shell command prompt. Go to the data directory.</p>
+<blockquote>
+<div>cd /home/user/data/north_carolina/rast_geotiff</div></blockquote>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -120,7 +123,7 @@
 <div class="section" id="calculator-on-image-bands">
 <h2><a class="toc-backref" href="#id2">Calculatrice sur bandes d’image</a><a class="headerlink" href="#calculator-on-image-bands" title="Lien permanent vers ce titre">¶</a></h2>
 <p>L’application <cite>otbcli_otbBandMath</cite> fournit un moyen efficace pour effectuer des opérations mathématique sur les bandes de l’image. La syntaxe est assez simple, par exemple soustraire deux bandes pour étudier les différences d’image sur les images <cite>lsat7_2002_10.tif</cite> et <cite>lsat7_2002_20.tif</cite>, utilisez seulement la commande:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_10</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_20</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span> <span class="n">difference</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;im1b1-im2b1&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbcli_BandMath</span> <span class="o">-</span><span class="n">il</span> <span class="n">lsat7_2002_10</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_20</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">out</span>  <span class="o">~/</span><span class="n">difference</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">exp</span> <span class="s2">&quot;im1b1-im2b1&quot;</span>
 </pre></div>
 </div>
 <p>L’application est en mesure d’effectuer des opérations mathématiques complexes sur des images (seuillage, redimensionnement logarithmique, etc). Cette calculatrice numérique «&nbsp;maison&nbsp;»  est également livrée avec des fonctions personnalisées vous permettant de calculer une expression complète. Par exemple, comme les images de télédétection mesurent des grandeurs physiques, il est possible d’extraire plusieurs indices ayant une signification physique comme le NDVI (indice de végétation par différence normalisé) pour la végétation. Avec la calculatrice, vous êtes en mesure de calculer le NDVI sur des images de capteurs multispectraux en faisant:</p>

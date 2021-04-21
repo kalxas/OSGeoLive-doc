@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Jupyter Notebook Quickstart &#8212; OSGeoLive 14.0 Documentation</title>
+    <title>Jupyterノートブック・クイックスタート &#8212; OSGeoLive 14.0 Documentation</title>
     <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -27,7 +27,7 @@
     <link rel="search" title="検索" href="../search.html" />
     <link rel="copyright" title="著作権" href="../copyright.html" />
     <link rel="next" title="Mapnik" href="../overview/mapnik_overview.html" />
-    <link rel="prev" title="Jupyter Notebook" href="../overview/jupyter_overview.html" />
+    <link rel="prev" title="Jupyterノートブック" href="../overview/jupyter_overview.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -71,80 +71,78 @@
             
   <a class="reference external image-reference" href="http://jupyter.org/"><img alt="../../_images/logo_jupyter.png" class="align-right" src="../../_images/logo_jupyter.png" /></a>
 <div class="section" id="jupyter-notebook-quickstart">
-<h1><a class="toc-backref" href="#id1">Jupyter Notebook Quickstart</a><a class="headerlink" href="#jupyter-notebook-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Jupyter Notebook is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.</p>
-<p>This Quick Start describes how to:</p>
+<h1><a class="toc-backref" href="#id1">Jupyterノートブック・クイックスタート</a><a class="headerlink" href="#jupyter-notebook-quickstart" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Jupyterノートブックは、ライブコード、数式、視覚化、および説明テキストを含むドキュメントを作成および共有できるWebアプリケーションです。データの消去と変換、数値シミュレーション、統計モデリング、機械学習などの用途があります。</p>
+<p>このクイックスタートでは、次の方法について説明します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Start a Jupyter Notebook server</li>
-<li>Load a jupyter notebook</li>
-<li>Interact with python code</li>
+<li>Jupyterノートブックサーバーを起動する</li>
+<li>Jupyterノートブックをロードする</li>
+<li>Pythonコードとの対話</li>
 </ul>
 </div></blockquote>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#jupyter-notebook-quickstart" id="id1">Jupyter Notebook Quickstart</a><ul>
-<li><a class="reference internal" href="#start-the-jupyter-server" id="id2">Start the Jupyter server</a></li>
-<li><a class="reference internal" href="#open-and-execute-an-existing-notebook" id="id3">Open and execute an existing notebook</a></li>
-<li><a class="reference internal" href="#change-code" id="id4">Change code</a></li>
-<li><a class="reference internal" href="#what-next" id="id5">What Next?</a></li>
+<li><a class="reference internal" href="#jupyter-notebook-quickstart" id="id1">Jupyterノートブック・クイックスタート</a><ul>
+<li><a class="reference internal" href="#start-the-jupyter-server" id="id2">Jupyterサーバを起動する</a></li>
+<li><a class="reference internal" href="#open-and-execute-an-existing-notebook" id="id3">既存のノートブックを開いて実行する</a></li>
+<li><a class="reference internal" href="#change-code" id="id4">コードの変更</a></li>
+<li><a class="reference internal" href="#what-next" id="id5">次のステップ</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="start-the-jupyter-server">
-<h2><a class="toc-backref" href="#id2">Start the Jupyter server</a><a class="headerlink" href="#start-the-jupyter-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>From the application launch menu in the lower left corner.</p>
+<h2><a class="toc-backref" href="#id2">Jupyterサーバを起動する</a><a class="headerlink" href="#start-the-jupyter-server" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>左下隅のアプリケーション起動メニューから。</p>
 <ul class="simple">
-<li>Choose  <em>Geospatial</em> -&gt; <em>Spatial Tools</em> -&gt; <em>Jupyter Notebook</em></li>
+<li><em>Geospatial</em> -&gt; <em>Spatial Tools</em> -&gt; <em>Jupyter Notebook</em> を選択する</li>
 </ul>
-<p>A terminal window will open and a startup log will begin to scroll. Afterwards a web browser is launched showing the Jupyter Notebook dashboard.
-From the Jupyter Notebook dashboard you can navigate the directory tree, start new notebooks, create files and directories, as well as rename, delete and upload files.</p>
+<p>ターミナルウィンドウが開き、起動ログがスクロールし始めます。その後、Webブラウザが起動し、Jupyterノートブックのダッシュボードが表示されます。Jupyterノートブックのダッシュボードから、ディレクトリツリーのナビゲート、新しいノートブックの起動、ファイルとディレクトリの作成、ファイルの名前変更、削除、およびアップロードを行うことができます。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter1-1.png"><img alt="../../_images/jupyter1-1.png" src="../../_images/jupyter1-1.png" style="width: 716.4px; height: 436.2px;" /></a>
 </div>
 <div class="section" id="open-and-execute-an-existing-notebook">
-<h2><a class="toc-backref" href="#id3">Open and execute an existing notebook</a><a class="headerlink" href="#open-and-execute-an-existing-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Let’s open an existing notebook. From the main page click on the directory geopandas-tutorial and choose the Introduction notebook (01-introduction-geospatial-data.ipynb).
-This is an introduction with many examples on how to use geospatial vector data in Python with geopandas using the Natural Earth2 data.</p>
+<h2><a class="toc-backref" href="#id3">既存のノートブックを開いて実行する</a><a class="headerlink" href="#open-and-execute-an-existing-notebook" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>既存のノートブックを開きます。メインページで geopandas-tutorial ディレクトリをクリックし、Introduction ノートブック (01-introduction-geospatial-data.ipynb)を選択します。ここでは、PythonでNatural Earth2データを使用してgeopandasで空間ベクトルデータを使用する方法について、多くの例を紹介します。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter2-1.png"><img alt="../../_images/jupyter2-1.png" src="../../_images/jupyter2-1.png" style="width: 952.8000000000001px; height: 636.0px;" /></a>
-<p>The tutorial is made up with explaining text and cells. The cells contain in this case python code, that can be run.</p>
-<p>From the toolbar on top of the notebook you can choose different options:</p>
+<p>チュートリアルは、テキストとセルの説明で構成されています。この場合、セルには実行可能なPythonコードが含まれています。</p>
+<p>ノートブックの上部にあるツールバーから、さまざまなオプションを選択できます。</p>
 <ul class="simple">
-<li>Cell-&gt; Run Cells: will run the code in the cell with the focus and will move to the next cell.</li>
-<li>Cell-&gt; Run All:  will run all the cells and show the results If everything worked as planned you should be able to see the results at the bottom of the page.</li>
+<li>Cell-&gt; Run Cells: フォーカスのあるセルでコードを実行し、次のセルに移動します。</li>
+<li>Cell-&gt; Run All:  すべてのセルを実行し、結果を表示します。すべてが計画どおりに動作した場合は、ページの下部に結果が表示されます。</li>
 </ul>
-<p>Have a look at the results after running all the cells.</p>
+<p>すべてのセルを実行した結果を確認します。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter2-2.png"><img alt="../../_images/jupyter2-2.png" src="../../_images/jupyter2-2.png" style="width: 712.1999999999999px; height: 477.0px;" /></a>
-<p>You will see additional Out[] section with different output for example tables, maps or calculations.</p>
-<p>In Out[3] you can see the country information as a table.</p>
+<p>テーブル、マップ、計算など、さまざまな出力を持つ追加のOut[]セクションが表示されます。</p>
+<p>Out[3]では、国の情報が表形式で表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter2-2.png"><img alt="../../_images/jupyter2-2.png" src="../../_images/jupyter2-2.png" style="width: 712.1999999999999px; height: 477.0px;" /></a>
-<p>In Out[4] a plot was generated from all the countries.</p>
+<p>Out[4] では、全ての国から生成されたグラフのプロットが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter2-3.png"><img alt="../../_images/jupyter2-3.png" src="../../_images/jupyter2-3.png" style="width: 716.4px; height: 477.0px;" /></a>
 </div>
 <div class="section" id="change-code">
-<h2><a class="toc-backref" href="#id4">Change code</a><a class="headerlink" href="#change-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Now let’s change some of the code.</p>
-<p>In In [10] a filter was defined for the countries. Only the continent <code class="docutils literal"><span class="pre">Africa</span></code> is selected from the countries:</p>
+<h2><a class="toc-backref" href="#id4">コードの変更</a><a class="headerlink" href="#change-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次に、コードの一部を変更しましょう。</p>
+<p>In [10]では、国々のフィルタが定義されます。<code class="docutils literal"><span class="pre">Africa</span></code> 大陸のみが国々から選択されます:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span>  <span class="n">africa</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Africa&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Therefore in the plot there is only the continent <code class="docutils literal"><span class="pre">Africa</span></code>.</p>
+<p>そのため、プロットでは <code class="docutils literal"><span class="pre">Africa</span></code> 大陸のみが表示されます。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter3-1.png"><img alt="../../_images/jupyter3-1.png" src="../../_images/jupyter3-1.png" style="width: 712.0px; height: 332.0px;" /></a>
-<p>Change the selection to <code class="docutils literal"><span class="pre">Asia</span></code> and rund the two cells again.</p>
+<p>選択を <code class="docutils literal"><span class="pre">Asia</span></code> に変更して、二つのセルを再実行してみましょう。</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span>  <span class="n">africa</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Asia&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>As result you will see that instead of <code class="docutils literal"><span class="pre">Africa</span></code> there will be <code class="docutils literal"><span class="pre">Asia</span></code> in the plot.</p>
+<p>その結果、 <code class="docutils literal"><span class="pre">Africa</span></code> のかわりに、プロットには <code class="docutils literal"><span class="pre">Asia</span></code> が表示されるでしょう。</p>
 <a class="reference internal image-reference" href="../../_images/jupyter3-2.png"><img alt="../../_images/jupyter3-2.png" src="../../_images/jupyter3-2.png" style="width: 704.0px; height: 338.40000000000003px;" /></a>
 </div>
 <div class="section" id="what-next">
-<h2><a class="toc-backref" href="#id5">What Next?</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">次のステップ</a><a class="headerlink" href="#what-next" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <ul class="simple">
-<li>Discover the other notebooks that are provided with OSGeoLive and find out how to work with Shapely, Rasterio, R, Iris &amp; other software.</li>
-<li>For more information about the jupyter notebook, please refer to the <a class="reference external" href="https://jupyter.readthedocs.io/">Jupyter Notebooks official documentation</a>.</li>
-<li>More notebook examples are available from the notebook root directory.</li>
-<li>Quick introduction on how to use the Jupyter Notebooks interface: <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html">Get started with Jupyter Notebook</a>.</li>
+<li>OSGeoLiveで提供されるその他のノートブック、およびShapely、Rasterio、R、Iris、その他のソフトウェアの操作方法をご覧ください。</li>
+<li>Jupyterノートブックについての詳細は  <a class="reference external" href="https://jupyter.readthedocs.io/">Jupyter Notebooks official documentation</a> を参照してください。</li>
+<li>ノートブックの例は、ノートブックのルートディレクトリから入手できます。</li>
+<li>jupiterノートブックのインターフェイスの使用方法については、 <a class="reference external" href="https://jupyter.readthedocs.io/en/latest/content-quickstart.html">Get started with Jupyter Notebook</a> を参照してください。</li>
 </ul>
 </div>
 </div>

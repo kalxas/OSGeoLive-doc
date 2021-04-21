@@ -102,17 +102,27 @@
 <p>Actinia se puede utilizar de diferentes maneras:</p>
 <ul class="simple">
 <li><cite>curl</cite> o herramientas de línea de comando similares</li>
-<li>la extensión <cite>Postman</cite> para navegadores</li>
+<li>the <cite>Postman</cite> or <cite>RESTman</cite> extension for browsers</li>
 <li>abrir una sesión GRASS GIS y usar la herramienta <cite>ace</cite> (ejecución de comando actinia)</li>
 <li>otras interfaces para la API REST</li>
 </ul>
 <p>En este inicio rápido, hacemos uso de GRASS GIS para iniciar convenientemente comandos desde la sesión al servidor actinia (que a su vez usa GRASS GIS). La idea es desarrollar rápidamente un flujo de trabajo localmente en pequeños conjuntos de datos para luego ejecutarlo en el servidor.</p>
 <div class="section" id="introduction-to-ace-actinia-command-execution">
 <h2><a class="toc-backref" href="#id2">Introducción a ace - ejecución del comando actinia</a><a class="headerlink" href="#introduction-to-ace-actinia-command-execution" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>La herramienta `` ace`` (<a class="reference external" href="https://github.com/mundialis/actinia_core/tree/master/scripts/README.md">detalles</a>) permite la ejecución de un solo comando GRASS GIS o una lista de comandos GRASS GIS en un servicio REST de actinia (<a class="reference external" href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>). Además, proporciona gestión de trabajos, la capacidad de enumerar ubicaciones, conjuntos de mapas y capas de mapas a las que el usuario tiene acceso, así como la creación y eliminación de conjuntos de mapas.</p>
-<p>La herramienta <code class="docutils literal"><span class="pre">ace</span></code> debe ejecutarse en una sesión activa de GRASS GIS session y usará la ubicación actual de esta sesión para acceder al servicio actinia.</p>
-<p>La configuración de ubicación actual puede ser anulada por la opción <code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code>. Todos los comandos se ejecutarán por defecto en una base de datos <strong>efímera</strong> . Por lo tanto, la salida generada debe exportarse utilizando comandos GRASS aumentados.</p>
-<p>La opción  <code class="docutils literal"><span class="pre">--persistent</span> <span class="pre">MAPSET_NAME</span></code> permite la ejecución de comandos en la base de datos de usuario <strong>persistente</strong>. Se puede usar con la opción <code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">ace</span></code> tool (<a class="reference external" href="https://neteler.gitlab.io/actinia-introduction/#controlling-actinia-from-a-running-grass-gis-session">details</a>)
+allows the execution of a single GRASS GIS command or a
+list of GRASS GIS commands on an actinia REST service
+(<a class="reference external" href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>). In addition it provides job management,
+the ability to list locations, mapsets and map layer the user has access
+to as well as the creation and deletion of mapsets.</p>
+<p>Th <code class="docutils literal"><span class="pre">ace</span></code> tool must be executed in an active GRASS GIS session. It is
+installed with <code class="docutils literal"><span class="pre">g.extension</span> <span class="pre">extension=ace</span> <span class="pre">url=https://github.com/mundialis/ace</span></code>.</p>
+<p>All commands will be executed per default in an <strong>ephemeral</strong> database.
+Hence, generated output must be exported using augmented GRASS
+commands.</p>
+<p>The option <code class="docutils literal"><span class="pre">mapset=MAPSET_NAME</span></code> allows the execution of commands in
+the persistent user database. It can be used with
+<code class="docutils literal"><span class="pre">location=LOCATION_NAME</span></code> option.</p>
 </div>
 <div class="section" id="setup-your-environment">
 <h2><a class="toc-backref" href="#id3">Configurar su entorno</a><a class="headerlink" href="#setup-your-environment" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -128,20 +138,22 @@
 <div class="section" id="access-sample-data">
 <h2><a class="toc-backref" href="#id4">Acceder a datos de muestra</a><a class="headerlink" href="#access-sample-data" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los conjuntos de datos seleccionados están disponibles para el usuario de demostración. Para enumerar las ubicaciones a las que tiene acceso, ejecute</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">locations</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">-</span><span class="n">l</span>
 <span class="p">[</span><span class="s1">&#39;latlong_wgs84&#39;</span><span class="p">,</span> <span class="s1">&#39;ECAD&#39;</span><span class="p">,</span> <span class="s1">&#39;nc_spm_08&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>El siguiente comando enlista los conjuntos de mapas de la ubicación actual en la sesión activa de GRASS GIS (nc_spm_08):</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># running ace in the &quot;nc_spm_08&quot; location</span>
 <span class="c1"># (the current location name is propagated to the server):</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong_wgs84</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">mapsets</span>
-<span class="p">[</span><span class="s1">&#39;PERMANENT&#39;</span><span class="p">,</span> <span class="s1">&#39;landsat&#39;</span><span class="p">]</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="o">-</span><span class="n">m</span>
+<span class="p">[</span><span class="s1">&#39;PERMANENT&#39;</span><span class="p">,</span> <span class="s1">&#39;landsat&#39;</span><span class="p">,</span> <span class="s1">&#39;modis_lst&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="section" id="access-data-from-external-sources">
 <h3><a class="toc-backref" href="#id5">Acceso a datos de fuentes externas</a><a class="headerlink" href="#access-data-from-external-sources" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Los comandos GRASS GIS  se pueden aumentar con extensiones específicas de actinia. El operador <code class="docutils literal"><span class="pre">+</span></code> se puede especificar para un parámetro de entrada para importar un recurso ubicado en la web y para especificar la exportación de un parámetro de salida.</p>
+<p>GRASS GIS commands can be augmented with actinia specific extensions.
+The <code class="docutils literal"><span class="pre">&#64;</span></code> operator can be specified for an input parameter to import a
+web located resource and to specify the export of an output parameter.</p>
 <p>Es importante destacar que el nombre de la ubicación local y el conjunto de mapas deben corresponder con el del servidor REST de actinia.</p>
 <p>Los conjuntos de datos disponibles actualmente son (organizados por proyecciones):</p>
 <ul class="simple">
@@ -172,8 +184,9 @@
 </div>
 <div class="section" id="inspect-the-rest-call-prior-to-submission">
 <h2><a class="toc-backref" href="#id6">Inspeccione la llamada REST antes del envío</a><a class="headerlink" href="#inspect-the-rest-call-prior-to-submission" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para generar la solicitud JSON de cadena de proceso actinia, simplemente agregue la marca –dry-run:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="n">r</span><span class="o">.</span><span class="n">slope</span><span class="o">.</span><span class="n">aspect</span> <span class="n">elevation</span><span class="o">=</span><span class="n">elevation</span> <span class="n">slope</span><span class="o">=</span><span class="n">myslope</span>
+<p>To generate the actinia process chain JSON request simply add the
+<code class="docutils literal"><span class="pre">-d</span></code> (dry-run) flag:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.slope.aspect elevation=elevation slope=myslope&quot;</span> <span class="o">-</span><span class="n">d</span>
 </pre></div>
 </div>
 </div>
@@ -181,8 +194,9 @@
 <h2><a class="toc-backref" href="#id7">Mostrar un mapa - representación del mapa</a><a class="headerlink" href="#display-a-map-map-rendering" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Es muy fácil (y rápido) renderizar un mapa:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># check amount of pixels, just FYI</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong_wgs84</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">globcover</span><span class="nd">@globcover</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong_wgs84</span> <span class="o">--</span><span class="n">render</span><span class="o">-</span><span class="n">raster</span> <span class="n">globcover</span><span class="nd">@globcover</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;latlong_wgs84&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.info globcover@globcover&quot;</span>
+<span class="c1"># render the map ... 7 billion pixels</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;latlong_wgs84&quot;</span> <span class="n">render_raster</span><span class="o">=</span><span class="s2">&quot;globcover@globcover&quot;</span>
 </pre></div>
 </div>
 <div class="figure" id="id1">
@@ -192,7 +206,7 @@
 <p>El procesamiento efímero es el enfoque de procesamiento predeterminado de actinia. Los comandos se ejecutan en un conjunto de mapas efímero que se eliminará después del procesamiento. Puede exportar la salida de los módulos GRASS GIS para almacenar el resultado computacional para su descarga y análisis posterior. Actualmente se admiten los siguientes formatos de exportación:</p>
 <ul class="simple">
 <li>ráster: <code class="docutils literal"><span class="pre">COG</span></code>, <code class="docutils literal"><span class="pre">GTiff</span></code></li>
-<li>vector: <code class="docutils literal"><span class="pre">ESRI_Shapefile</span></code>, <code class="docutils literal"><span class="pre">GeoJSON</span></code>, <code class="docutils literal"><span class="pre">GML</span></code>, <code class="docutils literal"><span class="pre">GPKG</span></code></li>
+<li>vector: <code class="docutils literal"><span class="pre">GPKG</span></code>, <code class="docutils literal"><span class="pre">GML</span></code>, <code class="docutils literal"><span class="pre">GeoJSON</span></code>, <code class="docutils literal"><span class="pre">ESRI_Shapefile</span></code></li>
 <li>tabla: <code class="docutils literal"><span class="pre">CSV</span></code>, <code class="docutils literal"><span class="pre">TXT</span></code></li>
 </ul>
 </div>
@@ -218,8 +232,9 @@
 </pre></div>
 </div>
 <p>Los resultados (mensajes, estadísticas, archivos) se proporcionan como recursos REST.</p>
-<p>Para generar la solicitud JSON de cadena de proceso actinia simplemente agregue la marca –dry-run</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+<p>To generate the actinia process chain JSON request simply add the
+<code class="docutils literal"><span class="pre">-d</span></code> (dry-run) flag:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">-</span><span class="n">d</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">script</span><span class="o">=</span><span class="s2">&quot;/tmp/ace_dtm_statistics.sh&quot;</span>
 </pre></div>
 </div>
 <p>La salida debería verse así:</p>
@@ -325,7 +340,7 @@
 <p>Almacene el siguiente script como archivo de texto <code class="docutils literal"><span class="pre">/tmp/ace_segmentation.sh</span></code>:</p>
 <div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grass78 ~/grassdata/nc_spm_08/user1/</span>
 <span class="c1"># Import the web resource and set the region to the imported map</span>
-<span class="c1"># we apply a trick for the import of multi-band GeoTIFFs:</span>
+<span class="c1"># we apply a importer trick for the import of multi-band GeoTIFFs:</span>
 <span class="c1"># install with: g.extension importer url=https://github.com/mundialis/importer</span>
 <span class="n">importer</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="nd">@https</span><span class="p">:</span><span class="o">//</span><span class="n">apps</span><span class="o">.</span><span class="n">mundialis</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">workshops</span><span class="o">/</span><span class="n">osgeo_ireland2017</span><span class="o">/</span><span class="n">north_carolina</span><span class="o">/</span><span class="n">ortho2010_t792_subset_20cm</span><span class="o">.</span><span class="n">tif</span>
 <span class="c1"># The importer has created three new raster maps, one for each band in the geotiff file</span>
@@ -343,7 +358,7 @@
 </pre></div>
 </div>
 <p>Ejecute el script guardado en un archivo de texto como</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_segmentation</span><span class="o">.</span><span class="n">sh</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">script</span><span class="o">=</span><span class="s2">&quot;/tmp/ace_segmentation.sh&quot;</span>
 </pre></div>
 </div>
 <p>Los resultados (mensajes, estadísticas, archivos) se proporcionan como recursos REST.</p>
@@ -352,24 +367,24 @@
 <h3><a class="toc-backref" href="#id11">Ejemplos de procesamiento persistente</a><a class="headerlink" href="#examples-for-persistent-processing" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Los comandos GRASS GIS se pueden ejecutar en una base de datos persistente específica del usuario. El usuario debe crear un conjunto de mapas en una ubicación existente. Se puede acceder a estos conjuntos de mapas a través de <code class="docutils literal"><span class="pre">ace</span></code>. Todos los resultados de procesamiento de los comandos ejecutados en este conjunto de mapas se almacenarán de forma persistente. Tenga en cuenta que el procesamiento se realizará en una base de datos efímera que se moverá al almacenamiento persistente usando el nombre correcto después del procesamiento.</p>
 <p>Para crear un nuevo conjunto de mapas en la ubicación <strong>nc_spm_08</strong> con el nombre <strong>test_mapset</strong>, se debe ejecutar el siguiente comando</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">create_mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span>
 </pre></div>
 </div>
 <p>Ejecute los comandos desde el script de estadísticas en el nuevo conjunto de mapas persistente</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span> <span class="n">script</span><span class="o">=</span><span class="s2">&quot;/path/to/ace_dtm_statistics.sh&quot;</span>
 </pre></div>
 </div>
 <p>Mostrar todos los mapas ráster que se han creado con el script en test_mapset</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span> <span class="nb">type</span><span class="o">=</span><span class="n">raster</span> <span class="n">mapset</span><span class="o">=</span><span class="n">test_mapset</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span> <span class="n">grass_commmand</span><span class="o">=</span><span class="s2">&quot;g.list type=raster mapset=test_mapset&quot;</span>
 </pre></div>
 </div>
 <p>Mostrar información sobre el mapa ráster elev y slope_elev</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">elev</span><span class="nd">@test_mapset</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span><span class="nd">@test_mapset</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.info elev@test_mapset&quot;</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.info slope_elev@test_mapset&quot;</span>
 </pre></div>
 </div>
 <p>Eliminar el test_mapset (siempre compruebe los nombres al eliminar)</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">delete</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">delete_mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span>
 </pre></div>
 </div>
 <p>Si la sesión SIG GRASS activa tiene nombres de ubicación/conjunto de mapas idénticos, se puede utilizar un alias para evitar la opción persistente en cada llamada de comando único:</p>
@@ -377,11 +392,11 @@
 </pre></div>
 </div>
 <p>Suponemos que en la sesión activa de GRASS GIS la ubicación actual es <strong>nc_spm_08</strong> y el conjunto de mapas actual es <strong>test_mapset</strong>. Luego, los comandos de arriba se pueden ejecutar de la siguiente manera:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
-<span class="n">acp</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">acp</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span> <span class="nb">type</span><span class="o">=</span><span class="n">raster</span> <span class="n">mapset</span><span class="o">=</span><span class="n">test_mapset</span>
-<span class="n">acp</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">elev</span><span class="nd">@test_mapset</span>
-<span class="n">acp</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span><span class="nd">@test_mapset</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">create_mapset</span><span class="o">=</span><span class="s2">&quot;test_mapset&quot;</span>
+<span class="n">acp</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">script</span><span class="o">=</span><span class="s2">&quot;/path/to/ace_dtm_statistics.sh&quot;</span>
+<span class="n">acp</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;g.list type=raster mapset=test_mapset&quot;</span>
+<span class="n">acp</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.info elev@test_mapset&quot;</span>
+<span class="n">acp</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;nc_spm_08&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;r.info slope_elev@test_mapset&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -390,23 +405,17 @@
 <h2><a class="toc-backref" href="#id12">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
 <div class="section" id="create-new-locations">
 <h3><a class="toc-backref" href="#id13">Crear nuevas ubicaciones</a><a class="headerlink" href="#create-new-locations" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># create new location</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">location</span> <span class="n">latlon_test</span> <span class="mi">4326</span>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># (note: the &quot;demouser&quot; is not enabled for this)</span>
+<span class="c1">#</span>
+<span class="c1"># create new location</span>
+<span class="n">ace</span> <span class="n">create_location</span><span class="o">=</span><span class="s2">&quot;mylatlon 4326&quot;</span>
 <span class="c1"># create new mapset within location</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon_test</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">user1</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;mylatlon&quot;</span> <span class="n">create_mapset</span><span class="o">=</span><span class="s2">&quot;user1&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-grass-gis-addons-extensions">
 <h3><a class="toc-backref" href="#id14">Instalar complementos GRASS GIS (extensiones)</a><a class="headerlink" href="#install-grass-gis-addons-extensions" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># list existing addons, see also</span>
-<span class="c1"># https://grass.osgeo.org/grass7/manuals/addons/</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon_test</span> <span class="n">g</span><span class="o">.</span><span class="n">extension</span> <span class="o">-</span><span class="n">l</span>
-
-<span class="c1"># install machine learning addon r.learn.ml</span>
-<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon_test</span> <span class="n">g</span><span class="o">.</span><span class="n">extension</span> <span class="n">r</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">ml</span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="what-next">
