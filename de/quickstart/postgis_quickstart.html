@@ -91,8 +91,8 @@
 <li><a class="reference internal" href="#spatial-queries" id="id5">Räumliche Abfragen</a></li>
 <li><a class="reference internal" href="#mapping" id="id6">Mapping</a></li>
 <li><a class="reference internal" href="#importing-spatial-data-into-the-database" id="id7">Import von räumlichen Daten in die Datenbank</a></li>
-<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Get to know pgAdmin</a></li>
-<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Executing a SQL query from pgAdmin</a></li>
+<li><a class="reference internal" href="#get-to-know-pgadmin" id="id8">Lernen Sie pgAdmin kennen</a></li>
+<li><a class="reference internal" href="#executing-a-sql-query-from-pgadmin" id="id9">Ausführen einer SQL-Abfrage über pgAdmin</a></li>
 <li><a class="reference internal" href="#get-to-know-foreign-data-wrappers-fdw" id="id10">Lernen Sie Foreign Data Wrappers (FDW) kennen</a></li>
 <li><a class="reference internal" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" id="id11">Aufbau einer Verbindung mit einer Remote-OGR-Datenquelle über ogr_fdw</a></li>
 <li><a class="reference internal" href="#things-to-try" id="id12">Weitere Aufgaben</a></li>
@@ -306,7 +306,7 @@
 <div class="section" id="mapping">
 <h2><a class="toc-backref" href="#id6">Mapping</a><a class="headerlink" href="#mapping" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um eine Karte aus Ihren PostGIS-Daten zu erzeugen, brauchen Sie einen Client, der auf die Daten zugreifen kann. Die meisten der Open Source Desktop GIS Programme unterstützen PostGIS - wie z. B. QGIS, gvSIG, uDig. Wir werden unsere Karte mit QGIS erzeugen.</p>
-<p>Starten Sie QGIS über das Desktop-GIS-Menü und wählen Sie im Menü ‚‘PostGIS-Layer hinzufügen‘‘. Die Parameter für die Verbindung mit den Natural Earth-Daten in PostGIS sind bereits im Dropdown-Menü Verbindungen definiert. Sie können hier neue Serververbindungen definieren und die Einstellungen speichern. Klicken Sie auf Connections Drop-down-Menü und wählen Sie Natural Earth. Klicken Sie auf ‚‘Bearbeiten‘‘ wenn Sie die Konfiguration für Verbindung zu Natural Earth anschauen möchten, oder drücken Sie einfach ‚‘Connect‘‘, um fortzufahren:</p>
+<p>Starten Sie QGIS über das Desktop-GIS-Menü und wählen Sie im Menü <code class="docutils literal"><span class="pre">PostGIS-Layer</span> <span class="pre">hinzufügen</span></code>. Die Parameter für die Verbindung mit den Natural Earth-Daten in PostGIS sind bereits im Dropdown-Menü Verbindungen definiert. Sie können hier neue Serververbindungen definieren und die Einstellungen speichern. Klicken Sie auf Connections Drop-down-Menü und wählen Sie Natural Earth. Klicken Sie auf <code class="docutils literal"><span class="pre">Bearbeiten</span></code> wenn Sie die Konfiguration für Verbindung zu Natural Earth anschauen möchten, oder drücken Sie einfach <code class="docutils literal"><span class="pre">Connect</span></code>, um fortzufahren:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 706.5px; height: 474.75px;" /></a>
 <p>Im Anschluss daran erscheint eine Liste der Tabellen mit räumlichen Informationen:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 711.0px; height: 474.75px;" /></a>
@@ -317,47 +317,41 @@
 <div class="section" id="importing-spatial-data-into-the-database">
 <h2><a class="toc-backref" href="#id7">Import von räumlichen Daten in die Datenbank</a><a class="headerlink" href="#importing-spatial-data-into-the-database" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die meisten OSGeo-Desktop-Werkzeuge verfügen über Funktionen zum Importieren räumlicher Daten aus anderen Formaten (z. B. ESRI Shape) in die Datenbank. Auch hier verwenden wir QGIS, um dies zu demonstrieren.</p>
-<p>Importing shapefiles to QGIS can be done via the handy QGIS Database Manager. You find the manager in the menu. Go to <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
+<p>Das Importieren von Shape-Dateien in QGIS kann über den praktischen QGIS-Datenbank-Manager erfolgen. Sie finden den Manager im Menü. Wechseln Sie zu <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code>.</p>
 <p>Stellt das PostGIS-Element und danach das NaturalEarth-Element bereit. Es wird eine Verbindung zur Natural Earth-Datenbank hergestellt. Lassen Sie das Kennwort leer, wenn danach gefragt wird. Im Bereich public befindet sich eine Liste der Layer, die von der Datenbank bereitgestellt werden. Sie sehen das Hauptfenster des Managers. Auf der linken Seite können Sie Tabellen aus der Datenbank auswählen und anschließend die Registerkarten auf der rechten Seite verwenden, um mehr über die Daten zu erfahren. Auf der Registerkarte Vorschau wird eine Ansicht der Daten angezeigt.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 1026.0px; height: 603.75px;" /></a>
 <p>Wir verwenden nun den DB-Manager, um ein Shapefile in die Datenbank zu importieren. Wir verwenden die Daten des sudden infant death syndrome (SIDS) aus North Carolina, die in einem der Add-Ons des R-Statistikpakets enthalten sind.</p>
-<p>From the <code class="docutils literal"><span class="pre">Table</span></code> menu choose the <code class="docutils literal"><span class="pre">Import</span> <span class="pre">layer/file</span></code> option.
-Hit the <code class="docutils literal"><span class="pre">...</span></code> button and browse to the <code class="docutils literal"><span class="pre">sids.shp</span></code> shapefile in the R directory.
-(located in /home/user/data/vector/R/shapes):</p>
+<p>Wählen Sie im Menü <code class="docutils literal"><span class="pre">Tabelle</span></code> die Option <code class="docutils literal"><span class="pre">Layer/Datei</span> <span class="pre">importieren</span></code>. Klicken Sie auf die Schaltfläche <code class="docutils literal"><span class="pre">...</span></code> und navigieren Sie zur Shape-Datei <code class="docutils literal"><span class="pre">sids.shp</span></code> im R-Verzeichnis (unter /home/user/data/vector/R/shapes):</p>
 <a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 632.25px; height: 492.0px;" /></a>
-<p>Lassen Sie alles andere so, wie es ist und drücken Sie ‚‘Load‘‘</p>
+<p>Lassen Sie alles andere so, wie es ist und drücken Sie <code class="docutils literal"><span class="pre">Load</span></code></p>
 <a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 346.5px; height: 400.5px;" /></a>
-<p>Let the Coordinate Reference System Selector default to (WGS 84 EPSG:4326) and hit <code class="docutils literal"><span class="pre">OK</span></code>. The shapefile should be imported into PostGIS with no errors. Close the DB Manager and
-get back to the main QGIS window.</p>
+<p>Lassen Sie die Koordinatenreferenzsystemauswahl standardmäßig auf WGS 84 (EPSG:4326) und drücken Sie <code class="docutils literal"><span class="pre">OK</span></code>. Die Shape-Datei sollte ohne Fehler in PostGIS importiert werden. Schließen Sie den DB-Manager, und kehren Sie zum QGIS-Hauptfenster zurück.</p>
 <p>Laden Sie nun die SIDS-Daten mit der Option „PostGIS-Layer hinzufügen“ in die Karte. Mit einer Neuanordnung der Layer und etwas Färbung sollten Sie in der Lage sein, eine Choropleth-Karte der plötzlichen Anzahl des Kindstodsyndroms (sid74 oder sid79 Felder) in North Carolina zu erstellen:</p>
 <a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 1036.5px; height: 607.5px;" /></a>
 </div>
 <div class="section" id="get-to-know-pgadmin">
-<h2><a class="toc-backref" href="#id8">Get to know pgAdmin</a><a class="headerlink" href="#get-to-know-pgadmin" title="Link zu dieser Überschrift">¶</a></h2>
-<p>You can use the graphical database client <code class="docutils literal"><span class="pre">pgAdmin</span></code> from the Databases menu to query and modify your database non-spatially. This is the official client for PostgreSQL.</p>
-<p>pgAdmin lets you use SQL to manipulate your data tables. You can find and launch pgAdmin
-from the Databases folder, existing on the OSGeoLive Desktop.</p>
+<h2><a class="toc-backref" href="#id8">Lernen Sie pgAdmin kennen</a><a class="headerlink" href="#get-to-know-pgadmin" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Sie können den grafischen Datenbankclient <code class="docutils literal"><span class="pre">pgAdmin</span></code> aus dem Menü Datenbanken verwenden, um ihre Daten abzufragen und zu ändern. Dies ist der offizielle Client für PostgreSQL.</p>
+<p>Mit pgAdmin können Sie SQL verwenden, um Ihre Datentabellen zu bearbeiten. Sie finden pgAdmin unter dem Menüeintrag Datenbanken auf dem OSGeoLive Desktop.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 579.5px; height: 423.5px;" /></a>
-<p>Enter the master password  <code class="docutils literal"><span class="pre">user</span></code>.</p>
-<p>Here, you have the option of creating a new connection to a PostgreSQL server, or connecting to an existing server.
-In this case, we are going to connect to the predefined <code class="docutils literal"><span class="pre">localhost</span></code> server.</p>
+<p>Geben Sie das Master-Passwort <code class="docutils literal"><span class="pre">user</span></code> ein.</p>
+<p>Hier haben Sie die Möglichkeit, eine neue Verbindung zu einem PostgreSQL-Server herzustellen oder eine Verbindung zu einem vorhandenen Server herzustellen. In diesem Fall stellen wir eine Verbindung zum vordefinierten <code class="docutils literal"><span class="pre">localhost</span></code>-Server her.</p>
 <p>Nachdem die Verbindung aufgebaut wurde, sehen Sie die Liste der Datenbanken, die bereits vorliegen.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen0.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen0.png" style="width: 871.5px; height: 639.0px;" /></a>
 <p>Das rote „X“ vor dem Symbol der meisten Datenbanken zeigt an, dass Sie sich mit keiner dieser Datenbanken bisher verbunden haben (Sie sind mit der default Datenbank <code class="docutils literal"><span class="pre">postgres</span></code> verbunden). An dieser Stelle sehen Sie lediglich die existierenden Datenbanken auf dem System. Sie können sich per Doppelklick auf dem Namen einer Datenbank mit dieser verbinden. Verbinden Sie sich mit der Datenbank natural_earth2.</p>
-<p>You can see now that the red X disappeared and a „&gt;“ appeared on the left. By pressing it a tree is going to appear,
-displaying the contents of the database.</p>
+<p>Sie können jetzt sehen, dass das rote X verschwunden ist und links ein „&gt;“ erscheint. Durch Drücken wird eine Baumstruktur angezeigt, in der der Inhalt der Datenbank angezeigt wird.</p>
 <p>Navigieren Sie zu <code class="docutils literal"><span class="pre">Schemata</span></code> und öffnen Sie den Unterbaum. Öffnen Sie danach das Schema <code class="docutils literal"><span class="pre">public</span></code>. Öffnen Sie anschließend <code class="docutils literal"><span class="pre">Tabellen</span></code>. Sie sehen hier alle Tabellen dieses Schemas.</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 872.25px; height: 638.25px;" /></a>
 </div>
 <div class="section" id="executing-a-sql-query-from-pgadmin">
-<h2><a class="toc-backref" href="#id9">Executing a SQL query from pgAdmin</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="Link zu dieser Überschrift">¶</a></h2>
-<p>pgAdmin, offers the capability of executing queries to a relational database.</p>
-<p>To perform a query on the database, you have to press the <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code> button from the main toolbar (the one at the left with the database symbol).</p>
+<h2><a class="toc-backref" href="#id9">Ausführen einer SQL-Abfrage über pgAdmin</a><a class="headerlink" href="#executing-a-sql-query-from-pgadmin" title="Link zu dieser Überschrift">¶</a></h2>
+<p>pgAdmin bietet die Möglichkeit, Abfragen an relationale Datenbanken abzusetzen.</p>
+<p>Um eine Abfrage an die Datenbank zu schicken, müssen Sie den <code class="docutils literal"><span class="pre">Query</span> <span class="pre">Tool</span></code>-Button der Hauptwerkzeugleiste klicken (Button mit Datenbanksymbol).</p>
 <p>Wir wollen die Rate der SIDS anhand der Geburten für 1974 für jede Stadt ermitteln. Darüber hinaus werden wir das Ergebnis auf der Grundlage der berechneten Rate sortieren. Dazu müssen wir die folgende Abfrage durchführen (im Texteditor des SQL-Fensters absenden):</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="n">name</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">sid74</span><span class="o">/</span><span class="n">bir74</span> <span class="k">as</span> <span class="n">rate</span> <span class="kn">from</span> <span class="nn">sids</span> <span class="n">order</span> <span class="n">by</span> <span class="n">rate</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Afterwards, you should press the arrow button, pointing to the right (Execute).</p>
+<p>Danach sollten Sie die Pfeiltaste drücken (Ausführen).</p>
 <a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 870.75px; height: 636.75px;" /></a>
 </div>
 <div class="section" id="get-to-know-foreign-data-wrappers-fdw">
@@ -368,7 +362,7 @@ displaying the contents of the database.</p>
 <div><a class="reference external" href="https://wiki.postgresql.org/wiki/Foreign_data_wrappers">https://wiki.postgresql.org/wiki/Foreign_data_wrappers</a></div></blockquote>
 <p>Schauen wir uns einmal an, wie es funktioniert! Am einfachsten ist es, eine Verbindung zu einer anderen PostgreSQL-Datenbank herzustellen.</p>
 <p>Hier sind die Schritte:</p>
-<p>Laden Sie zuerst die Erweiterung für den Foreign Data Wrapper, den Sie verwenden möchten. Für eine Verbindung zu einer anderen PostgreSQL-Datenbank benötigen Sie ‚‘postgres_fdw‘‘</p>
+<p>Laden Sie zuerst die Erweiterung für den Foreign Data Wrapper, den Sie verwenden möchten. Für eine Verbindung zu einer anderen PostgreSQL-Datenbank benötigen Sie <code class="docutils literal"><span class="pre">postgres_fdw</span></code></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">postgres_fdw</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -398,13 +392,13 @@ displaying the contents of the database.</p>
 </div>
 <div class="section" id="connect-to-a-remote-ogr-data-source-via-ogr-fdw">
 <h2><a class="toc-backref" href="#id11">Aufbau einer Verbindung mit einer Remote-OGR-Datenquelle über ogr_fdw</a><a class="headerlink" href="#connect-to-a-remote-ogr-data-source-via-ogr-fdw" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Die Erweiterung ‚‘ogr_fdw‘‘ ermöglicht die Verbindung zu unterschiedlichen Geodatenformaten wie KML, GeoPackage, WFS, GeoJSON, GPX, GML und mehr.</p>
-<p>Read more about <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:</p>
+<p>Die Erweiterung <code class="docutils literal"><span class="pre">ogr_fdw</span></code> ermöglicht die Verbindung zu unterschiedlichen Geodatenformaten wie KML, GeoPackage, WFS, GeoJSON, GPX, GML und mehr.</p>
+<p>Lesen Sie mehr über <code class="docutils literal"><span class="pre">ogr_fdw</span></code>:</p>
 <ul class="simple">
 <li>Repository: <a class="reference external" href="https://github.com/pramsey/pgsql-ogr-fdw">https://github.com/pramsey/pgsql-ogr-fdw</a></li>
-<li>New and improved: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
+<li>Neu und verbessert: <a class="reference external" href="http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html">http://blog.cleverelephant.ca/2016/04/ogr-fdw-update.html</a></li>
 </ul>
-<p class="rubric">Installieren Sie die Erweiterung ‚‘ogr_fdw‘‘ in Ihrer Datenbank.</p>
+<p class="rubric">Installieren Sie die Erweiterung <code class="docutils literal"><span class="pre">ogr_fdw</span></code> in Ihrer Datenbank.</p>
 <p>Tippen Sie innerhalb der Datenbankeingabe:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">EXTENSION</span> <span class="n">ogr_fdw</span><span class="p">;</span>
 </pre></div>
@@ -430,12 +424,13 @@ displaying the contents of the database.</p>
 </pre></div>
 </div>
 <p class="rubric">Erstellen einer FDW für einen OGC WFS</p>
-<p>Starten Sie GeoServer über :menuselection starten:‘Geospatial –&gt; Web Services –&gt; GeoServer –&gt; Start GeoServer‘</p>
+<p>Starten Sie GeoServer über :menuselection starten:<cite>Geospatial –&gt; Web Services –&gt; GeoServer –&gt; Start GeoServer</cite></p>
 <ul class="simple">
 <li>Öffnen von GeoServer <a class="reference external" href="http://localhost:8082/geoserver/web/">http://localhost:8082/geoserver/web/</a></li>
 <li>GeoServer WFS GetCapabilities <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetCapabilities</a></li>
-<li>GeoServer WFS DescribeFeatureType für topp:states ‚http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states &lt;http: localhost:8082/geoserver/ows?service=“wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states“&gt;‘__&lt;/http:&gt;</li>
-<li>GeoServer WFS GetFeature topp:states ‚http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states &lt;http: localhost:8082/geoserver/ows?service=“wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states“&gt;‘__&lt;/http:&gt;</li>
+<li>GeoServer WFS DescribeFeatureType für topp:states <a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=DescribeFeatureType&amp;typename=topp:states</a></li>
+<li>GeoServer WFS GetFeature topp:states
+<a class="reference external" href="http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states">http://localhost:8082/geoserver/ows?service=wfs&amp;version=2.0.0&amp;request=GetFeature&amp;typename=topp:states</a></li>
 </ul>
 <p class="rubric">Erstellen Sie einen Foreign Server, der auf den WFS verweist, mit dem Sie sich verbinden möchten</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">SERVER</span> <span class="n">fdw_ogr_server_wfs</span>
@@ -450,7 +445,7 @@ displaying the contents of the database.</p>
    <span class="n">INTO</span> <span class="n">public</span><span class="p">;</span>
 </pre></div>
 </div>
-<p class="rubric">Überprüfen Sie die Fremdtabelle ‚‘topp_states‘‘:</p>
+<p class="rubric">Überprüfen Sie die Fremdtabelle <cite>topp_states</cite>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">topp_states</span> <span class="n">WHERE</span> <span class="n">state_name</span> <span class="o">=</span> <span class="s1">&#39;Minnesota&#39;</span><span class="p">;</span>
 </pre></div>
 </div>

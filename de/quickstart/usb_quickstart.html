@@ -27,7 +27,7 @@
     <link rel="search" title="Suche" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="Running in a Hyper-V Virtual Machine" href="hyperv_quickstart.html" />
-    <link rel="prev" title="Running in a Virtual Machine" href="virtualization_quickstart.html" />
+    <link rel="prev" title="Ausführen einer virtuellen Maschine" href="virtualization_quickstart.html" />
 	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
 
 
@@ -77,7 +77,7 @@
 <h2>Systemvoraussetzungen<a class="headerlink" href="#requirements" title="Link zu dieser Überschrift">¶</a></h2>
 <ul class="simple">
 <li>Einen USB-Stick (mindestens 4GB, wir empfehlen 8GB oder mehr).</li>
-<li>Ein OSGeoLive ISO-Image (heruntergeladen von: <a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a>) oder nutzen Sie es von einer DVD.</li>
+<li>Ein OSGeoLive ISO-Image (heruntergeladen von: :<a class="reference internal" href="../download.html"><span class="doc">OSGeoLive downloads</span></a>) oder nutzen Sie es von einer DVD.</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -88,19 +88,19 @@
 </div>
 <div class="section" id="creating-bootable-usb-drive-with-dd-under-linux">
 <h2>Einen startbaren USB-Stick mit <code class="docutils literal"><span class="pre">dd</span></code> unter Linux erstellen<a class="headerlink" href="#creating-bootable-usb-drive-with-dd-under-linux" title="Link zu dieser Überschrift">¶</a></h2>
-<p>ISO-Images für OSGeoLive 10.5 und höher sind <em>isohybrid</em> (und für amd64, sie unterstützen auch UEFI boot). Unter Linux können diese Images direkt auf das Blockgerät für ein USB-Laufwerk mit dem Befehlszeilen-Dienstprogramm ‚‘dd‘‘ geschrieben werden:</p>
+<p>ISO-Images für OSGeoLive 10.5 und höher sind <em>isohybrid</em> (und für amd64, sie unterstützen auch UEFI boot). Unter Linux können diese Images direkt auf das Blockgerät für ein USB-Laufwerk mit dem Befehlszeilen-Dienstprogramm <code class="docutils literal"><span class="pre">dd</span></code> geschrieben werden:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo dd if=osgeolive-10.5-amd64.iso of=/dev/sdX bs=4M; sync</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>‚‘/dev/sdX‘‘ ist das Block Device für das USB-Laufwerk, wobei ‚‘X‘‘ ‚‘b‘‘ oder ‚‘c‘‘‘ sein könnte.</li>
-<li>Verwenden Sie ‚‘lsblk‘‘, um Block Devices aufzulisten, und ‚‘dmesg‘‘‘ um Kernel-Nachrichten anzuzeigen, die das USB-Laufwerk identifizieren, wenn es angeschlossen ist.</li>
+<li><code class="docutils literal"><span class="pre">/dev/sdX</span></code> ist das Block Device für das USB-Laufwerk, wobei <code class="docutils literal"><span class="pre">X</span></code> <code class="docutils literal"><span class="pre">b</span></code> oder <code class="docutils literal"><span class="pre">c</span></code> sein könnte.</li>
+<li>Verwenden Sie <code class="docutils literal"><span class="pre">lsblk</span></code>, um Block Devices aufzulisten, und <code class="docutils literal"><span class="pre">dmesg</span></code> um Kernel-Nachrichten anzuzeigen, die das USB-Laufwerk identifizieren, wenn es angeschlossen ist.</li>
 <li>Der USB-Stick darf nicht gemountet sein.</li>
-<li>‚‘sudo‘‘ ist nicht erforderlich, wenn der Befehl als ‚‘root‘‘ ausgeführt wird.</li>
+<li><code class="docutils literal"><span class="pre">sudo</span></code> ist nicht erforderlich, wenn der Befehl als <code class="docutils literal"><span class="pre">root</span></code> ausgeführt wird.</li>
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warnung</p>
-<p class="last">Achten Sie darauf, das richtige Block Device als ‚‘dd‘‘ zu wählen, es wird ohne Rückfrage überschreiben, auch wenn es Ihr primäres Systemlaufwerk ist.</p>
+<p class="last">Achten Sie darauf, das richtige Block Device als <code class="docutils literal"><span class="pre">dd</span></code> zu wählen, es wird ohne Rückfrage überschreiben, auch wenn es Ihr primäres Systemlaufwerk ist.</p>
 </div>
 </div>
 <div class="section" id="creating-bootable-usb-drive-with-ubuntu-startup-disk-creator">
@@ -111,7 +111,7 @@
 <p class="last">Die Version von Ubuntu, die Sie ausführen, muss die gleiche oder neuer als die Version von Lubuntu sein, die auf Ihrem USB installiert wird.  Wenn Sie OSGeoLive 8.0 auf einem USB installieren, müssen Sie Ubuntu 14.04 oder neuer ausführen.</p>
 </div>
 <p>Laden Sie <a class="reference internal" href="../download.html"><span class="doc">download</span></a> osgeo-live oder osgeo-live-mini auf ihren Computer herunter.</p>
-<p>Booten Sie ihren Computer mit einer aktuellen Ubuntu/Xbuntu Distribution. Sie können dies über den Start von einer OSGeo-Live DVD durchführen, siehe Dokumentation <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a>.</p>
+<p>Booten Sie ihren Computer mit einer aktuellen Ubuntu/Xbuntu Distribution. Sie können dies über den Start von einer OSGeo-Live DVD durchführen, siehe Dokumentation <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Erste Schritte mit OSGeoLive</span></a>.</p>
 <p>Schließen Sie einen USB-Stick an Ihren Rechner an.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
@@ -149,14 +149,14 @@
 </div>
 <div class="section" id="run">
 <h2>Starten:<a class="headerlink" href="#run" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Starten Sie wie unter: <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a> beschrieben.</p>
+<p>Starten Sie wie unter: <a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Erste Schritte mit OSGeoLive</span></a> beschrieben.</p>
 </div>
 <div class="section" id="see-also">
 <h2>Siehe auch:<a class="headerlink" href="#see-also" title="Link zu dieser Überschrift">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Getting started with OSGeoLive</span></a></li>
-<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Running in a Virtual Machine</span></a></li>
+<li><a class="reference internal" href="osgeolive_quickstart.html"><span class="doc">Erste Schritte mit OSGeoLive</span></a></li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><span class="doc">Ausführen einer virtuellen Maschine</span></a></li>
 <li><a class="reference internal" href="osgeolive_install_quickstart.html"><span class="doc">OSGeoLive auf Festplatte installieren</span></a></li>
 <li>Alternative Methoden zur Erstellung eines USB Sticks und aktuelle Hinweise finden Sie hier: <a class="reference external" href="https://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki</a></li>
 <li>Fragen können auch an unsere Mailingliste gestellt werden: <a class="reference external" href="https://lists.osgeo.org/pipermail/osgeolive/">https://lists.osgeo.org/pipermail/osgeolive/</a></li>

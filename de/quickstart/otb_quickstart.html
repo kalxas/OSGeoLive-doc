@@ -87,7 +87,7 @@
 <blockquote>
 <div><ul class="simple">
 <li>CLI (command line interface). Alle Anwendungen können von einem Terminal aus aufgerufen werden, beginnend mit <cite>otbcli_</cite>  plus dem Anwendungsnamen.</li>
-<li>GUI (eine eigenständige grafische Benutzeroberfläche in Qt). Die Anwendungen können von einem Terminal mit dem Alias <cite>otbgui_</cite>  plus dem Anwendungsnamen aufgerufen werden. Eine weitere Möglichkeit ist die Verwendung eines Launchers (verfügbar in der :menuselection:‘menu –&gt; Geospatial –&gt; Spatial Tools –&gt; OTB Launcher‘).</li>
+<li>GUI (eine eigenständige grafische Benutzeroberfläche in Qt). Die Anwendungen können von einem Terminal mit dem Alias <cite>otbgui_</cite>  plus dem Anwendungsnamen aufgerufen werden. Eine weitere Möglichkeit ist die Verwendung eines Launchers (verfügbar in der <span class="menuselection">menu ‣ Geospatial ‣ Spatial Tools ‣ OTB Launcher</span>).</li>
 <li>QGIS-Plugin - verfügbar über das Verarbeitungsframework (processing framework).</li>
 </ul>
 </div></blockquote>
@@ -131,14 +131,14 @@
 </pre></div>
 </div>
 <p>Die Datei <cite>lsat7_2002_30.tif</cite> entspricht dem Landsat 7 Rot-Kanal, <cite>lsat7_2002_40.tif</cite> entspricht dem Nahinfrarot.</p>
-<p>Sie können dann Eingabebilder und das Ergebnis mit dem Befehl :: visualisieren:</p>
+<p>Sie können dann Eingabebilder und das Ergebnis mit dem folgenden Befehl visualisieren</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">monteverdi</span> <span class="n">lsat7_2002_30</span><span class="o">.</span><span class="n">tif</span> <span class="n">lsat7_2002_40</span><span class="o">.</span><span class="n">tif</span> <span class="o">~/</span><span class="n">ndvi</span><span class="o">.</span><span class="n">tif</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="pixel-based-classification">
 <h2><a class="toc-backref" href="#id3">Pixelbasierte Klassifizierung</a><a class="headerlink" href="#pixel-based-classification" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Die Klassifizierung im Anwendungsframework bietet eine überwachte pixelweise Klassifizierungskette, die auf dem Lernen aus mehreren Bildern und der Verwendung einer bestimmten machine learning-Methode wie SVM, Bayes, KNN, Random Forests, Artificial Neural Network und anderen basiert. Weitere Informationen zu allen verfügbaren Klassifikatoren finden Sie in der Anwendungshilfe von ‚TrainImagesClassifier‘. Es unterstützt riesige Bilder durch Streaming und Multi-Threading. Die Klassifizierungskette führt einen Trainingsschritt basierend auf den Intensitäten jedes Pixels als Features durch. Bitte beachten Sie, dass alle Eingabebilder die gleiche Anzahl von Bändern haben müssen, um vergleichbar zu sein.</p>
+<p>Die Klassifizierung im Anwendungsframework bietet eine überwachte pixelweise Klassifizierungskette, die auf dem Lernen aus mehreren Bildern und der Verwendung einer bestimmten machine learning-Methode wie SVM, Bayes, KNN, Random Forests, Artificial Neural Network und anderen basiert. Weitere Informationen zu allen verfügbaren Klassifikatoren finden Sie in der Anwendungshilfe von <cite>TrainImagesClassifier</cite>. Es unterstützt riesige Bilder durch Streaming und Multi-Threading. Die Klassifizierungskette führt einen Trainingsschritt basierend auf den Intensitäten jedes Pixels als Features durch. Bitte beachten Sie, dass alle Eingabebilder die gleiche Anzahl von Bändern haben müssen, um vergleichbar zu sein.</p>
 <p>Um diese Anwendung anzuschauen, können Sie den Befehl verwenden:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">otbgui_TrainImagesClassifier</span>
 </pre></div>
@@ -184,7 +184,7 @@
 </div>
 <div class="section" id="otb-in-qgis">
 <h2><a class="toc-backref" href="#id5">OTB in QGis</a><a class="headerlink" href="#otb-in-qgis" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Die selben OTB-Anwendungen können auch aus dem Menü :menuselection:‘Processing –&gt; Toolbox‘ in QGis verwendet werden. Die Anwendungen sind nach Tags sortiert.</p>
+<p>Die selben OTB-Anwendungen können auch aus dem Menü <span class="menuselection">Processing ‣ Toolbox</span> in QGis verwendet werden. Die Anwendungen sind nach Tags sortiert.</p>
 <blockquote>
 <div><img alt="../../_images/otb-processing-qgis.png" src="../../_images/otb-processing-qgis.png" />
 </div></blockquote>

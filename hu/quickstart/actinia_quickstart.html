@@ -351,11 +351,11 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 <span class="n">importer</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="nd">@https</span><span class="p">:</span><span class="o">//</span><span class="n">apps</span><span class="o">.</span><span class="n">mundialis</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">workshops</span><span class="o">/</span><span class="n">osgeo_ireland2017</span><span class="o">/</span><span class="n">north_carolina</span><span class="o">/</span><span class="n">ortho2010_t792_subset_20cm</span><span class="o">.</span><span class="n">tif</span>
 <span class="c1"># The importer has created three new raster maps, one for each band in the geotiff file</span>
 <span class="c1"># stored them in an image group</span>
-<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">1</span>
-<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">2</span>
-<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">3</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="mf">.1</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="mf">.2</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="mf">.3</span>
 <span class="c1"># Set the region and resolution</span>
-<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">1</span> <span class="n">res</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="mf">.1</span> <span class="n">res</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">p</span>
 <span class="c1"># Note: the RGB bands are organized as a group</span>
 <span class="c1"># export as a as COG file (Cloud Optimized GeoTIFF)</span>
 <span class="n">i</span><span class="o">.</span><span class="n">segment</span> <span class="n">group</span><span class="o">=</span><span class="n">ortho2010</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.25</span> <span class="n">output</span><span class="o">=</span><span class="n">ortho2010_segment_25</span><span class="o">+</span><span class="n">COG</span> <span class="n">goodness</span><span class="o">=</span><span class="n">ortho2010_seg_25_fit</span><span class="o">+</span><span class="n">COG</span>
@@ -422,6 +422,16 @@ source: <a class="reference external" href="https://www.mundialis.de/en/temperat
 </div>
 <div class="section" id="install-grass-gis-addons-extensions">
 <h3><a class="toc-backref" href="#id14">GRASS GIS bővítmények telepítése</a><a class="headerlink" href="#install-grass-gis-addons-extensions" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># (requires elevated user privileges)</span>
+<span class="c1">#</span>
+<span class="c1"># list existing addons, see also</span>
+<span class="c1"># https://grass.osgeo.org/grass7/manuals/addons/</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;latlong_wgs84&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;g.extension -l&quot;</span>
+
+<span class="c1"># install machine learning addon r.learn.ml2</span>
+<span class="n">ace</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;latlong_wgs84&quot;</span> <span class="n">grass_command</span><span class="o">=</span><span class="s2">&quot;g.extension extension=</span><span class="se">\&quot;</span><span class="s2">r.learn.ml2</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="what-next">

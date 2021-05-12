@@ -98,7 +98,7 @@
 <span class="n">invproj</span> <span class="p">[</span> <span class="o">-</span><span class="n">bcCeEfiIlmorsStTwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">args</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Diese Befehle werden in der ‚PROJ-Dokumentation &lt;<a class="reference external" href="https://proj.org/apps/proj.html">https://proj.org/apps/proj.html</a>&gt;`_  für die neueste Version vollständig beschrieben</p>
+<p>Diese Befehle werden in der <a class="reference external" href="https://proj.org/apps/proj.html">PROJ-Dokumentation</a>  für die neueste Version vollständig beschrieben</p>
 </div>
 <div class="section" id="proj-example">
 <h3>PROJ Beispiel<a class="headerlink" href="#proj-example" title="Link zu dieser Überschrift">¶</a></h3>
@@ -106,7 +106,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">utm</span>  <span class="o">+</span><span class="n">lon_0</span><span class="o">=</span><span class="mi">112</span><span class="n">w</span>  <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">clrk66</span>
 <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
 <span class="mi">45</span><span class="n">d15</span><span class="s1">&#39;33.1&quot;   111.5W</span>
-<span class="mi">45</span><span class="n">d15</span><span class="o">.</span><span class="mi">551666667</span><span class="n">N</span>   <span class="o">-</span><span class="mi">111</span><span class="n">d30</span>
+<span class="mi">45</span><span class="n">d15</span><span class="mf">.551666667</span><span class="n">N</span>   <span class="o">-</span><span class="mi">111</span><span class="n">d30</span>
 <span class="o">+</span><span class="mf">45.25919444444</span>    <span class="mi">111</span><span class="n">d30</span><span class="s1">&#39;000w</span>
 <span class="n">EOF</span>
 </pre></div>
@@ -125,14 +125,14 @@
 </div>
 <div class="section" id="what-is-cs2cs">
 <h3>Was ist cs2cs?<a class="headerlink" href="#what-is-cs2cs" title="Link zu dieser Überschrift">¶</a></h3>
-<p>‚‘cs2cs‘‘ führt die Transformation zwischen dem kartographischen Quell- und Zielkoordinatensystem auf einer Reihe von Eingabepunkten durch.  Die Transformation des Koordinatensystems kann die Übersetzung zwischen projizierten und geographischen Koordinaten sowie die Anwendung von Datumsverschiebungen umfassen.</p>
+<p><code class="docutils literal"><span class="pre">cs2cs</span></code> führt die Transformation zwischen dem kartographischen Quell- und Zielkoordinatensystem auf einer Reihe von Eingabepunkten durch.  Die Transformation des Koordinatensystems kann die Übersetzung zwischen projizierten und geographischen Koordinaten sowie die Anwendung von Datumsverschiebungen umfassen.</p>
 </div>
 <div class="section" id="cs2cs-synopsis">
 <h3>cs2cs Synopsis<a class="headerlink" href="#cs2cs-synopsis" title="Link zu dieser Überschrift">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cs2cs</span> <span class="p">[</span> <span class="o">-</span><span class="n">eEfIlrstvwW</span> <span class="p">[</span> <span class="n">args</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">opts</span><span class="p">[</span><span class="o">=</span><span class="n">arg</span><span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="o">+</span><span class="n">to</span> <span class="p">[</span><span class="o">+</span><span class="n">opts</span><span class="p">[</span><span class="o">=</span><span class="n">arg</span><span class="p">]]</span> <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Diese Befehle werden in der ‚cs2cs-Dokumentation &lt;<a class="reference external" href="https://proj.org/apps/cs2cs.html">https://proj.org/apps/cs2cs.html</a>&gt;‘_ für die neueste Version vollständig beschrieben.</p>
+<p>Diese Befehle werden in der <a class="reference external" href="https://proj.org/apps/cs2cs.html">cs2cs-Dokumentation</a> für die neueste Version vollständig beschrieben.</p>
 </div>
 <div class="section" id="cs2cs-example">
 <h3>cs2cs Beispiel<a class="headerlink" href="#cs2cs-example" title="Link zu dieser Überschrift">¶</a></h3>
@@ -141,7 +141,7 @@
       <span class="o">+</span><span class="n">to</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">utm</span> <span class="o">+</span><span class="n">zone</span><span class="o">=</span><span class="mi">10</span>  <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">NAD27</span>
 <span class="o">-</span><span class="n">r</span> <span class="o">&lt;&lt;</span><span class="n">EOF</span>
 <span class="mi">45</span><span class="n">d15</span><span class="s1">&#39;33.1&quot;   111.5W</span>
-<span class="mi">45</span><span class="n">d15</span><span class="o">.</span><span class="mi">551666667</span><span class="n">N</span>   <span class="o">-</span><span class="mi">111</span><span class="n">d30</span>
+<span class="mi">45</span><span class="n">d15</span><span class="mf">.551666667</span><span class="n">N</span>   <span class="o">-</span><span class="mi">111</span><span class="n">d30</span>
 <span class="o">+</span><span class="mf">45.25919444444</span>    <span class="mi">111</span><span class="n">d30</span><span class="s1">&#39;000w</span>
 <span class="n">EOF</span>
 </pre></div>
@@ -160,8 +160,8 @@
 </div>
 <div class="section" id="what-is-geod">
 <h3>Was ist geod?<a class="headerlink" href="#what-is-geod" title="Link zu dieser Überschrift">¶</a></h3>
-<p>‚‘geod‘‘ (direkt) und ‚‘invgeod‘‘ (inverse) führen geodätische („Great Circle“) Berechnungen zur Bestimmung von Breiten-, Längen- und back azimut eines Endpunkts unter einem Anfangspunkt Breitengrad, Längengrad, Azimut und Entfernung (direkt) oder der vorwärts und hinten Azimuts und Abstand zwischen einem Anfangs- und Endpunkt Laititude und Longituden (inverse).  Die Ergebnisse sind genau, um für <cite>|f| &lt; 1/50</cite> abzurunden, wobei f abflacht.</p>
-<p>‚‘invgeod‘‘ ist möglicherweise nicht auf allen Plattformen verfügbar;  rufen Sie in diesem Fall geod mit der Option -I auf.</p>
+<p><code class="docutils literal"><span class="pre">geod</span></code> (direkt) und <code class="docutils literal"><span class="pre">invgeod</span></code> (inverse) führen geodätische („Great Circle“) Berechnungen zur Bestimmung von Breiten-, Längen- und back azimut eines Endpunkts unter einem Anfangspunkt Breitengrad, Längengrad, Azimut und Entfernung (direkt) oder der vorwärts und hinten Azimuts und Abstand zwischen einem Anfangs- und Endpunkt Laititude und Longituden (inverse).  Die Ergebnisse sind genau, um für <cite>|f| &lt; 1/50</cite> abzurunden, wobei f abflacht.</p>
+<p><code class="docutils literal"><span class="pre">invgeod</span></code> ist möglicherweise nicht auf allen Plattformen verfügbar;  rufen Sie in diesem Fall geod mit der Option -I auf.</p>
 </div>
 <div class="section" id="geod-synopsis">
 <h3>geod Synopsis<a class="headerlink" href="#geod-synopsis" title="Link zu dieser Überschrift">¶</a></h3>
@@ -170,7 +170,7 @@
 <span class="n">invgeod</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=&lt;</span><span class="n">ellipse</span><span class="o">&gt;</span> <span class="p">[</span> <span class="o">-</span><span class="n">afFIlptwW</span> <span class="p">[</span> <span class="n">args</span>  <span class="p">]</span>  <span class="p">]</span>  <span class="p">[</span>  <span class="o">+</span><span class="n">args</span>  <span class="p">]</span> <span class="n">file</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Diese Befehle werden in der ‚PROJ-Dokumentation &lt;<a class="reference external" href="https://proj.org/apps/proj.html">https://proj.org/apps/proj.html</a>&gt;`_  für die neueste Version vollständig beschrieben</p>
+<p>Diese Befehle werden in der <a class="reference external" href="https://proj.org/apps/proj.html">PROJ-Dokumentation</a>  für die neueste Version vollständig beschrieben</p>
 </div>
 <div class="section" id="geod-example">
 <h3>geod-Beispiel<a class="headerlink" href="#geod-example" title="Link zu dieser Überschrift">¶</a></h3>

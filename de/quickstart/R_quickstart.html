@@ -99,7 +99,7 @@
 <p class="first admonition-title">Tipp</p>
 <p class="last">Keine Angst vor der Kommandozeile - es ist eine Quelle großer Macht. Mit der Aufwärts- und Abwärts Pfeiltasten können Sie Befehle zurückholen und die Tastenkombination CTRL-C gibt den Eingabepromt wieder, wenn Sie mal irgendwo stecken bleiben.</p>
 </div>
-<p>Wählen Sie :menuselection:‘Geospatial –&gt; Spatial Tools –&gt; R Statistics‘. Ein Terminalfenster öffnet sich mit R.</p>
+<p>Wählen Sie <span class="menuselection">Geospatial ‣ Spatial Tools ‣ R Statistics</span>. Ein Terminalfenster öffnet sich mit R.</p>
 <p>Sie können mit einer einfachen Arithmetik starten</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">6</span>
@@ -114,8 +114,8 @@
 <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.155727</span>
 </pre></div>
 </div>
-<p>Eine vollständige Palette von arithmetischen, trigonometrischen und statistischen Funktionen sind integriert, und Tausende weitere sind über Paketen im &lt;https: cran.r-project.org/=““&gt;‘CRAN’_-Archiv verfügbar.&lt;/https:&gt;</p>
-<p>Die Haupteingabeaufforderung in R ist ‚‘&gt;‘‘, aber es gibt auch die Fortsetzungsaufforderung ‚‘+‘‘, die angezeigt wird, wenn R erwartet, dass weitere Eingaben erst einen gültigen Ausdruck ergeben. Sie werden dies sehen, wenn Sie beispielsweise eine schließende Klammer vergessen haben.</p>
+<p>Eine vollständige Palette von arithmetischen, trigonometrischen und statistischen Funktionen sind integriert, und Tausende weitere sind über Paketen im <a class="reference external" href="https://cran.r-project.org/">CRAN</a> Archiv verfügbar.&lt;/https:&gt;</p>
+<p>Die Haupteingabeaufforderung in R ist <code class="docutils literal"><span class="pre">&gt;</span></code>, aber es gibt auch die Fortsetzungsaufforderung <code class="docutils literal"><span class="pre">+</span></code>, die angezeigt wird, wenn R erwartet, dass weitere Eingaben erst einen gültigen Ausdruck ergeben. Sie werden dies sehen, wenn Sie beispielsweise eine schließende Klammer vergessen haben.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sqrt</span><span class="p">(</span>
 <span class="o">+</span> <span class="mi">2</span>
 <span class="o">+</span> <span class="p">)</span>
@@ -209,7 +209,7 @@
 </div>
 <p>Damit stellen wir eine einfache Weltkarte dar:</p>
 <img alt="../../_images/r_plot1.png" src="../../_images/r_plot1.png" />
-<p>Wenn ein OGR Datensatz auf diese Weise nach R eingelesen wird, bekommen wir ein Objekt, dass sich in vielerlei Hinsicht wie ein Daten Frame verhält. Wir können die Spalte <code class="docutils literal"><span class="pre">COUNTRY</span></code> benutzen, um eine Teilmenge der Weltdaten, nämlich nur das UK zu bekommen:</p>
+<p>Wenn ein OGR Datensatz auf diese Weise nach R eingelesen wird, bekommen wir ein Objekt, dass sich in vielerlei Hinsicht wie ein Daten Frame verhält. Wir können die Spalte <code class="docutils literal"><span class="pre">admin</span></code> benutzen, um eine Teilmenge der Weltdaten, nämlich nur das UK zu bekommen:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&gt; uk &lt;- countries[countries$admin == &#39;United Kingdom&#39;,]
 &gt; ggplot(uk) + geom_sf()
 </pre></div>
@@ -246,12 +246,12 @@
 <img alt="../../_images/r_plot3.png" src="../../_images/r_plot3.png" />
 <div class="admonition tip">
 <p class="first admonition-title">Tipp</p>
-<p class="last">Um R zu beenden, geben Sie ‚‘q()‘‘ ein und drücken Sie return. R fragt Sie, ob Sie Ihren Arbeitsbereich als R-Data-Image-Datei speichern möchten. Wenn Sie R erneut aus einem Verzeichnis mit einer <cite>.RData`</cite>-Datei starten,  wird R alle seine Daten daraus wiederherstellen.</p>
+<p class="last">Um R zu beenden, geben Sie <code class="docutils literal"><span class="pre">q()</span></code> ein und drücken Sie return. R fragt Sie, ob Sie Ihren Arbeitsbereich als R-Data-Image-Datei speichern möchten. Wenn Sie R erneut aus einem Verzeichnis mit einer <code class="docutils literal"><span class="pre">.RData</span></code>-Datei starten,  wird R alle seine Daten daraus wiederherstellen.</p>
 </div>
 </div>
 <div class="section" id="vignettes">
 <h2><a class="toc-backref" href="#id4">Vignetten</a><a class="headerlink" href="#vignettes" title="Link zu dieser Überschrift">¶</a></h2>
-<p>In der Vergangenheit waren die Dokumentationen für R-Pakete eher knapp. Nun werden Autoren von Paketen aufgefordert eine ‚Vignette‘ , d.h. eine Einführung für ihr Paket zu schreiben. Wenn Sie nun einfach die <code class="docutils literal"><span class="pre">vignette()</span></code>-Funktion ohne Argumente aufrufen, erhalten Sie eine Liste dieser Vignetten auf ihrem System. Rufen Sie <code class="docutils literal"><span class="pre">vignette(&quot;sf1&quot;)</span></code> für eine eher technische Einführung in das R Spatial Paket auf.</p>
+<p>In der Vergangenheit waren die Dokumentationen für R-Pakete eher knapp. Nun werden Autoren von Paketen aufgefordert eine <code class="docutils literal"><span class="pre">Vignette</span></code> , d.h. eine Einführung für ihr Paket zu schreiben. Wenn Sie nun einfach die <code class="docutils literal"><span class="pre">vignette()</span></code>-Funktion ohne Argumente aufrufen, erhalten Sie eine Liste dieser Vignetten auf ihrem System. Rufen Sie <code class="docutils literal"><span class="pre">vignette(&quot;sf1&quot;)</span></code> für eine eher technische Einführung in das R Spatial Paket auf.</p>
 </div>
 <div class="section" id="what-next">
 <h2><a class="toc-backref" href="#id5">Was kommt als Nächstes?</a><a class="headerlink" href="#what-next" title="Link zu dieser Überschrift">¶</a></h2>

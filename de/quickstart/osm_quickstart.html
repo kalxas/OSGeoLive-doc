@@ -126,16 +126,16 @@
 </div>
 <div class="section" id="qgis">
 <h3><a class="toc-backref" href="#id7">QGIS</a><a class="headerlink" href="#qgis" title="Link zu dieser Überschrift">¶</a></h3>
-<p>OpenStreetMap-Daten können mit ** QGIS ** als Vektor-Layer geladen werden: Diese Möglichkeit liegt als Kernfunktionalität vor oder kann durch Plugins wie QuickOSM erfolgen.</p>
+<p>OpenStreetMap-Daten können mit <strong>QGIS</strong> als Vektor-Layer geladen werden. Diese Möglichkeit liegt als Kernfunktionalität vor oder kann durch Plugins wie QuickOSM erfolgen.</p>
 <ul class="simple">
 <li>QuickOSM: Siehe Abschnitt <a class="reference internal" href="#quickosm">QuickOSM</a></li>
-<li>Online Hilfe: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
+<li>Online-Hilfe: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
 <li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osm-in-qgis/">https://learnosm.org/en/osm-data/osm-in-qgis/</a></li>
 </ul>
 </div>
 <div class="section" id="osmosis">
 <h3><a class="toc-backref" href="#id8">Osmosis</a><a class="headerlink" href="#osmosis" title="Link zu dieser Überschrift">¶</a></h3>
-<p><strong>Osmose</strong> ist ein äußerst fähiges Werkzeug für viele Aufgaben mit OSM-Rohdaten. Dazu gehören Datenimport und Export, Datenbanken, Sortierung, Reinigung und Erstellen von Daten-Sicherung.</p>
+<p><strong>Osmosis</strong> ist ein äußerst fähiges Werkzeug für viele Aufgaben mit OSM-Rohdaten. Dazu gehören Datenimport und Export, Datenbanken, Sortierung, Bereinigung von Daten und Erstellen von Daten-Sicherungen.</p>
 <ul class="simple">
 <li>Dokumentation: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osmosis#Usage">https://wiki.openstreetmap.org/wiki/Osmosis#Usage</a></li>
 <li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osmosis/">https://learnosm.org/en/osm-data/osmosis/</a></li>
@@ -143,7 +143,7 @@
 </div>
 <div class="section" id="osm2pgsql">
 <span id="id1"></span><h3><a class="toc-backref" href="#id9">osm2pgsql</a><a class="headerlink" href="#osm2pgsql" title="Link zu dieser Überschrift">¶</a></h3>
-<p><strong>osm2pgsql</strong> ist ein Hilfsprogramm, das (.osm) OpenStreetMap-Daten in ein Format umwandelt, das in PostgreSQL (PostGIS) geladen werden kann. Es wird oft zum Rendern von OSM-Daten über Mapnik verwendet, da  Mapnik PostgreSQL unterstützt, aber nicht direkt mit OSM-Dateien funktioniert.</p>
+<p><strong>osm2pgsql</strong> ist ein Hilfsprogramm, das (.osm) OpenStreetMap-Daten in ein Format umwandelt, das in PostgreSQL (PostGIS) geladen werden kann. Es wird oft zum Rendern von OSM-Daten über Mapnik verwendet, da  Mapnik PostgreSQL unterstützt, aber OSM-Dateien nicht direkt unterstützt.</p>
 <ul class="simple">
 <li>Webseite: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
 <li>Tutorial: <a class="reference external" href="https://learnosm.org/en/osm-data/osm2pgsql/">https://learnosm.org/en/osm-data/osm2pgsql/</a></li>
@@ -152,14 +152,14 @@
 </div>
 <div class="section" id="working-with-osm-data-in-qgis">
 <h2><a class="toc-backref" href="#id10">Arbeiten mit OSM-Daten in QGIS</a><a class="headerlink" href="#working-with-osm-data-in-qgis" title="Link zu dieser Überschrift">¶</a></h2>
-<p>OSGeoLive enthält OSM-Daten für die Stadt, in der die globale „FOSS4G-Konferenz“ &lt;https: foss4g.org=““&gt;stattfindet. Die Daten finden Sie im Dateisystem unter ‚/usr/local/share/data/osm/‘ oder in der PostgreSQL-Datenbank ‚osm_local‘.&lt;/https:&gt;</p>
+<p>OSGeoLive enthält OSM-Daten für die Stadt, in der die globale <a class="reference external" href="https://foss4g.org">FOSS4G- Konferenz</a> stattfindet. Die Daten finden Sie im Dateisystem unter ‚/usr/local/share/data/osm/‘ oder in der PostgreSQL-Datenbank ‚osm_local‘.</p>
 <p>Starten Sie QGIS und werfen Sie einen Blick auf die Daten.</p>
 <ol class="arabic simple">
-<li>Öffnen Sie den Ordner „Desktop GIS“.</li>
-<li>Doppelklicken Sie auf das „QGIS“-Symbol.</li>
+<li>Öffnen Sie den Ordner <cite>Desktop GIS</cite>.</li>
+<li>Doppelklicken Sie auf das <cite>QGIS</cite>-Symbol.</li>
 <li>Wechseln Sie in das Browser-Bedienfeld auf der linken Seite des Bildschirms.</li>
-<li>Navigieren Sie zu ‚PostGIS‘ und dann zur Datenbank ‚osm_local‘. Sie finden die Daten im Schema ‚public‘.</li>
-<li>Ziehen Sie die Layer aus dem „Browser“-Bedienfeld, und legen Sie sie im Kartenbereich ab.</li>
+<li>Navigieren Sie zu <cite>PostGIS</cite> und dann zur Datenbank <cite>osm_local</cite>. Sie finden die Daten im Schema <cite>public</cite>.</li>
+<li>Ziehen Sie die Layer aus dem <cite>Browser</cite>-Bedienfeld, und legen Sie sie im Kartenbereich ab.</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_postgis_qgis.jpg"><img alt="../../_images/osm_postgis_qgis.jpg" src="../../_images/osm_postgis_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
@@ -172,17 +172,17 @@
 <li>Homepage: <a class="reference external" href="https://github.com/3liz/QuickOSM">https://github.com/3liz/QuickOSM</a></li>
 </ul>
 <ol class="arabic simple">
-<li>Sie müssen das Plugin in QGIS aktivieren. Suchen Sie nach ‚QuickOSM‘ unter ‚Plugins –&gt; Verwalten und Installieren von Plugins‘ in QGIS</li>
-<li>Öffnen Sie QuickOSM über ‚Vector –&gt; QuickOSM –&gt; QuickOSM‘</li>
+<li>Sie müssen das Plugin in QGIS aktivieren. Suchen Sie nach <cite>QuickOSM</cite> unter <cite>Plugins –&gt; Verwalten und Installieren von Plugins</cite> in QGIS</li>
+<li>Öffnen Sie QuickOSM über <cite>Vector –&gt; QuickOSM –&gt; QuickOSM</cite></li>
 <li>Suche nach allen Kneipen in der FOSS4G Stadt</li>
-<li>Wählen Sie den Schlüssel ‚amenity‘, Wert ‚pub‘, in ‚Buenos Aires‘</li>
+<li>Wählen Sie den Schlüssel <cite>amenity</cite> Wert <cite>pub</cite>, in <cite>Buenos Aires</cite></li>
 <li>Anzeigen der Abfrage zum die Overpass-Abfrage anzuzeigen</li>
-<li>Klicken Sie auf ‚Abfrage ausführen‘. Die resultierenden Daten werden in Ihr QGIS-Projekt als temporäre Daten geladen.</li>
-<li>Sie können die Daten jetzt über ‚Export -&gt; Save as….‘ speichern. Wählen Sie z.B. Geopackage und speichern Sie die Daten als „buenos_aires_pubs“.</li>
+<li>Klicken Sie auf <cite>Abfrage ausführen</cite>. Die resultierenden Daten werden in Ihr QGIS-Projekt als temporäre Daten geladen.</li>
+<li>Sie können die Daten jetzt über <cite>Export -&gt; Save as….</cite> speichern. Wählen Sie z.B. Geopackage und speichern Sie die Daten als <cite>buenos_aires_pubs</cite>.</li>
 </ol>
 <div class="admonition tip">
 <p class="first admonition-title">Tipp</p>
-<p class="last">Sie finden auch viele OSM Plugins für QGIS. Suchen Sie im Plugin-Repository nach ‚OSM‘.</p>
+<p class="last">Sie finden auch viele OSM Plugins für QGIS. Suchen Sie im Plugin-Repository nach <cite>OSM</cite>.</p>
 </div>
 </div>
 </div>
@@ -190,20 +190,20 @@
 <h2><a class="toc-backref" href="#id12">Arbeiten mit OSM-Daten als Hintergrundkarte in QGIS</a><a class="headerlink" href="#using-osm-as-basemap-in-qgis" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="xyz-tiles">
 <h3><a class="toc-backref" href="#id13">XYZ Tiles</a><a class="headerlink" href="#xyz-tiles" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Standardmäßig kommt QGIS mit einem OpenStreetMap Basemap Layer. Dieses befindet sich im ‚Browser-Panel‘ unter ‚XYZ Tiles‘.</p>
+<p>Standardmäßig kommt QGIS mit einem OpenStreetMap Basemap Layer. Dieses befindet sich im <cite>Browser-Panel</cite> unter <cite>XYZ Tiles</cite>.</p>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_xyz_qgis.jpg"><img alt="../../_images/osm_xyz_qgis.jpg" src="../../_images/osm_xyz_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="quickmapservices">
 <h3><a class="toc-backref" href="#id14">QuickMapServices</a><a class="headerlink" href="#quickmapservices" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Mit dem ‚QuickMapServices‘-Plugin können Sie ganz einfach verschiedene Karten-Services als Basiskarten mit einem Klick in QGIS hinzufügen.</p>
+<p>Mit dem <cite>QuickMapServices</cite>-Plugin können Sie ganz einfach verschiedene Karten-Services als Basiskarten mit einem Klick in QGIS hinzufügen.</p>
 <ul class="simple">
 <li>Homepage: <a class="reference external" href="https://github.com/nextgis/quickmapservices">https://github.com/nextgis/quickmapservices</a></li>
 </ul>
 <ol class="arabic simple">
-<li>Sie müssen das Plugin in QGIS aktivieren. Suchen Sie nach ‚QuickMapServices‘ unter ‚Plugins –&gt; Verwalten und Installieren von Plugins‘ in QGIS</li>
-<li>Hinzufügen einer OSM-Grundkarte aus ‚Web –&gt; QuickMapServices –&gt; OSM‘</li>
+<li>Sie müssen das Plugin in QGIS aktivieren. Suchen Sie nach <cite>QuickMapServices</cite> unter <cite>Plugins –&gt; Verwalten und Installieren von Plugins</cite> in QGIS</li>
+<li>Hinzufügen einer OSM-Grundkarte aus <cite>Web –&gt; QuickMapServices –&gt; OSM</cite></li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/osm_quickmapservices_qgis.jpg"><img alt="../../_images/osm_quickmapservices_qgis.jpg" src="../../_images/osm_quickmapservices_qgis.jpg" style="width: 1004.8000000000001px; height: 599.2px;" /></a>
@@ -216,10 +216,10 @@
 <p>Sie können die folgenden Werkzeuge und Dienste verwenden, um OSM-Daten für Ihren Interessenbereich zu extrahieren.</p>
 <div class="section" id="geofabrik">
 <h3><a class="toc-backref" href="#id16">Geofabrik</a><a class="headerlink" href="#geofabrik" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Die ‚Geofabrik &lt;https: download.geofabrik.de/=““&gt;‘_ bietet tagesaktuelle weltweite OpenStreetMap-Datenextrakte nach Subregion und Land zum Downlaod. Wählen Sie die Region oder das Land, für das Sie sich interessieren aus. Die Daten werden in drei Formaten bereitgestellt: ‚.osm.pbf‘, ‚.shp.zip‘ und ‚.osm.bz2‘. ‚.osm.pbf‘ und ‚.shp.zip‘ und können direkt in QGIS geöffnet werden.&lt;/https:&gt;</p>
+<p>Die <a class="reference external" href="https://download.geofabrik.de/">Geofabrik</a>  bietet tagesaktuelle weltweite OpenStreetMap-Datenextrakte nach Subregion und Land zum Downlaod. Wählen Sie die Region oder das Land, für das Sie sich interessieren aus. Die Daten werden in drei Formaten bereitgestellt: <cite>.osm.pbf</cite>, <cite>.shp.zip</cite> und <cite>.osm.bz2</cite>., <cite>.osm.pbf</cite> und <cite>.shp.zip</cite> und können direkt in QGIS geöffnet werden.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tipp</p>
-<p class="last"><strong>.osm.bz2</strong> enthält rohe OSM-XML-Dateien <cite>.osm</cite>, <a class="reference internal" href="#osm2pgsql">osm2pgsql</a> funktioniert gut mit bz2-Dateien, erfahren Sie mehr über die Arbeit mit ihnen unter <a class="reference external" href="https://wiki.openstreetmap.org/wiki/OSM_XML">https://wiki.openstreetmap.org/wiki/OSM_XML</a></p>
+<p class="last"><strong>.osm.bz2</strong> enthält rohe OSM-XML-Dateien <cite>.osm</cite>, <a class="reference internal" href="#osm2pgsql">osm2pgsql</a> funktioniert gut mit bz2-Dateien. Erfahren Sie mehr über die Arbeit mit ihnen unter <a class="reference external" href="https://wiki.openstreetmap.org/wiki/OSM_XML">https://wiki.openstreetmap.org/wiki/OSM_XML</a></p>
 </div>
 </div>
 <div class="section" id="overpass-turbo">
@@ -230,8 +230,8 @@
 <li>Öffnen Sie <a class="reference external" href="https://overpass-turbo.eu/">https://overpass-turbo.eu/</a></li>
 <li>Suche nach allen Kneipen in der FOSS4G Stadt</li>
 <li>Klicken Sie auf den Button <cite>Wizard</cite> und kopieren Sie die Abfrage in das Suchfeld <cite>amenity=pub in „Buenos Aires“</cite></li>
-<li>Klicken Sie dann auf die Schaltfläche „Abfrage erstellen und ausführen“</li>
-<li>Klicken Sie im Kartenbereich auf „Zoom auf Daten“, um zu Ihren Ergebnissen zu navigieren</li>
+<li>Klicken Sie dann auf die Schaltfläche <cite>Abfrage erstellen und ausführen</cite></li>
+<li>Klicken Sie im Kartenbereich auf <cite>Zoom auf Daten</cite>, um zu Ihren Ergebnissen zu navigieren</li>
 </ol>
 <blockquote>
 <div><a class="reference internal image-reference" href="../../_images/overpass_turbo.jpg"><img alt="../../_images/overpass_turbo.jpg" src="../../_images/overpass_turbo.jpg" style="width: 941.0px; height: 586.0px;" /></a>

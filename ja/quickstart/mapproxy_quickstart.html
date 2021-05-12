@@ -129,7 +129,7 @@
 </pre></div>
 </div>
 <p>作成した設定でポート8011上のテストサーバを起動するには、次の手順を実行します:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mapproxy</span><span class="o">-</span><span class="n">util</span> <span class="n">serve</span><span class="o">-</span><span class="n">develop</span> <span class="o">~/</span><span class="n">mapproxy</span><span class="o">/</span><span class="n">mapproxy</span><span class="o">.</span><span class="n">yaml</span> <span class="o">-</span><span class="n">b</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">8011</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mapproxy</span><span class="o">-</span><span class="n">util</span> <span class="n">serve</span><span class="o">-</span><span class="n">develop</span> <span class="o">~/</span><span class="n">mapproxy</span><span class="o">/</span><span class="n">mapproxy</span><span class="o">.</span><span class="n">yaml</span> <span class="o">-</span><span class="n">b</span> <span class="mf">0.0.0.0</span><span class="p">:</span><span class="mi">8011</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="http://127.0.0.1:8011/demo/">http://127.0.0.1:8011/demo/</a>  でデモページを見ることができます。設定ファイルを変更すると、MapProxyが自動的にリロードされます。</p>

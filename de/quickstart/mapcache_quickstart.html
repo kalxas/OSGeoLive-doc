@@ -86,7 +86,7 @@
 </div>
 <div class="section" id="adding-a-new-tileset-and-displaying-in-openlayers">
 <h2><a class="toc-backref" href="#id1">Hinzufügen eines neuen Tileset und Anzeigen in OpenLayers</a><a class="headerlink" href="#adding-a-new-tileset-and-displaying-in-openlayers" title="Link zu dieser Überschrift">¶</a></h2>
-<p>MapCache wird über XML-Dateien konfiguriert. OSGeoLive enthält eine Beispielkonfigurationsdatei unter ‚‘/usr/local/share/mapcache/mapcache-quickstart.xml‘‘. Im Beispiel wird die OSGeoLive MapServe-Demoanwendung von Itasca County in den Vereinigten Staaten als Quelle verwendet.</p>
+<p>MapCache wird über XML-Dateien konfiguriert. OSGeoLive enthält eine Beispielkonfigurationsdatei unter <code class="docutils literal"><span class="pre">/usr/local/share/mapcache/mapcache-quickstart.xml</span></code>. Im Beispiel wird die OSGeoLive MapServe-Demoanwendung von Itasca County in den Vereinigten Staaten als Quelle verwendet.</p>
 <p>In diesem Schnellstart richten wir Tile Caching für einen zusätzlichen WMS-Layer ein und zeigen die Kacheln in einer einfachen HTML-Seite an, die eine OpenLayers-Karte enthält.</p>
 <p>Öffnen wir zunächst die MapCache-Konfigurationsdatei in FeatherPad - einem Texteditor. Öffnen Sie FeatherPad über die Befehlszeile mit erhöhten Berechtigungen, so dass Sie die Datei mit SystemTools &gt; QTerminal speichern und dann den folgenden Befehl ausführen können:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad
@@ -100,7 +100,7 @@
 <span class="nt">&lt;/forwarding_rule&gt;</span>
 </pre></div>
 </div>
-<p>Einer der Layer-Namen, die im WMS Capabilities-Dokument aufgeführt sind, ist ‚‘dlgstln2‘‘ - Streams von Itasca County. Wir fügen diesen als neues Kachelset zum MapCache-Service hinzu. Zuerst fügen wir einen  <code class="docutils literal"><span class="pre">&lt;source&gt;</span></code> Block hinzu - dies ist die Konfiguration, um Daten vom WMS-Server abzurufen. Fügen Sie den folgenden XML-Block nach dem vorhandenen ‚‘&lt;source name=“lake_source“ type=“wms“&gt;…&lt;/source&gt; ‚‘ Block für die Seen in die Datei ‚‘mapcache-quickstart.xml‘‘ ein:</p>
+<p>Einer der Layer-Namen, die im WMS Capabilities-Dokument aufgeführt sind, ist ‚‘dlgstln2‘‘ - Streams von Itasca County. Wir fügen diesen als neues Kachelset zum MapCache-Service hinzu. Zuerst fügen wir einen  <code class="docutils literal"><span class="pre">&lt;source&gt;</span></code> Block hinzu - dies ist die Konfiguration, um Daten vom WMS-Server abzurufen. Fügen Sie den folgenden XML-Block nach dem vorhandenen <code class="docutils literal"><span class="pre">&lt;source</span> <span class="pre">name=&quot;lake_source&quot;</span> <span class="pre">type=&quot;wms&quot;&gt;...&lt;/source&gt;</span> <span class="pre">``</span> <span class="pre">Block</span> <span class="pre">für</span> <span class="pre">die</span> <span class="pre">Seen</span> <span class="pre">in</span> <span class="pre">die</span> <span class="pre">Datei</span> <span class="pre">``mapcache-quickstart.xml</span></code> ein:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;source</span> <span class="na">name=</span><span class="s">&quot;streams_source&quot;</span> <span class="na">type=</span><span class="s">&quot;wms&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;getmap&gt;</span>
     <span class="nt">&lt;params&gt;</span>
@@ -125,7 +125,7 @@
 <span class="nt">&lt;/tileset&gt;</span>
 </pre></div>
 </div>
-<p>Wir setzen den Grid-Typ auf das integrierte Raster ‚‘GoogleMapsCompatible‘‘-Grid fest, das in vielen Webmapping-Anwendungen als Standard-Tile-Schema verwendet wird. Der <code class="docutils literal"><span class="pre">name=streams</span></code> wird von Clientanwendungen für den Zugriff auf das Kachelset verwendet. Wir verwenden einen datenträgerbasierten Cache (anstatt Kacheln in einer Datenbank oder in einer Cloudumgebung zu speichern).</p>
+<p>Wir setzen den Grid-Typ auf das integrierte Raster <code class="docutils literal"><span class="pre">GoogleMapsCompatible</span></code>-Grid fest, das in vielen Webmapping-Anwendungen als Standard-Tile-Schema verwendet wird. Der <code class="docutils literal"><span class="pre">name=streams</span></code> wird von Clientanwendungen für den Zugriff auf das Kachelset verwendet. Wir verwenden einen datenträgerbasierten Cache (anstatt Kacheln in einer Datenbank oder in einer Cloudumgebung zu speichern).</p>
 <p>Jedes Mal, wenn Sie die MapCache-Konfigurationsdatei ändern, müssen Sie Apache neu laden, damit die Änderungen in Kraft treten. Dies kann über die Befehlszeile wie folgt ausgeführt werden:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apachectl -k graceful
 </pre></div>
@@ -146,7 +146,7 @@
 </div>
 <p>Aktualisieren Sie nun die Seite unter <a class="reference external" href="http://localhost/mapcache-quickstart/">http://localhost/mapcache-quickstart/</a> - Sie sollten den neuen Streams-Layer sehen, der von MapCache bereitgestellt wird.</p>
 <img alt="../../_images/openlayers.png" src="../../_images/openlayers.png" />
-<p>Während Sie in der Karte navigieren, füllt sich der Kachel-Cache-Ordner unter ‚‘/var/cache/mapcache‘‘ mit PNG-Bildern.</p>
+<p>Während Sie in der Karte navigieren, füllt sich der Kachel-Cache-Ordner unter <code class="docutils literal"><span class="pre">/var/cache/mapcache</span></code> mit PNG-Bildern.</p>
 <img alt="../../_images/tilecache.png" src="../../_images/tilecache.png" />
 <p>Der Speicherort und Typ des Caches wird durch den folgenden Block in der Konfigurationsdatei festgelegt:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;cache</span> <span class="na">name=</span><span class="s">&quot;disk&quot;</span> <span class="na">type=</span><span class="s">&quot;disk&quot;</span><span class="nt">&gt;</span>
@@ -158,7 +158,7 @@
 </div>
 <div class="section" id="adding-new-services">
 <h2><a class="toc-backref" href="#id2">Hinzufügen von neuen Diensten</a><a class="headerlink" href="#adding-new-services" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Sie können den Apache-WebServer so konfigurieren, dass mehrere verschiedene MapCache-Dienste ausgeführt werden, die jeweils über eine eigene Konfigurationsdatei verfügen. Dies erfolgt indem Sie die Datei ‚‘/etc/apache2/conf-enabled/mapcache.conf‘‘ bearbeiten. Da dies Super-Benutzerberechtigungen erfordert, können Sie die Datei für die Bearbeitung in FeatherPad öffnen, indem Sie den folgenden Befehl ausführen:</p>
+<p>Sie können den Apache-WebServer so konfigurieren, dass mehrere verschiedene MapCache-Dienste ausgeführt werden, die jeweils über eine eigene Konfigurationsdatei verfügen. Dies erfolgt indem Sie die Datei <code class="docutils literal"><span class="pre">/etc/apache2/conf-enabled/mapcache.conf</span></code> bearbeiten. Da dies Super-Benutzerberechtigungen erfordert, können Sie die Datei für die Bearbeitung in FeatherPad öffnen, indem Sie den folgenden Befehl ausführen:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo featherpad /etc/apache2/conf-enabled/mapcache.conf
 </pre></div>
 </div>
@@ -181,18 +181,18 @@
 </div>
 <div class="section" id="the-seeder-application">
 <h2><a class="toc-backref" href="#id3">Die Seeder-Anwendung</a><a class="headerlink" href="#the-seeder-application" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Kartenkacheln werden dynamisch erstellt, wenn sie vom Webserver angefordert werden. Um die Anforderungszeiten zu beschleunigen, können wir Kacheln mithilfe einer Befehlszeilenanwendung generieren. Dieser Prozess wird als <em>seeding</em> bezeichnet. Die MapCache-Befehlszeilenanwendung für diese Aufgabe ist ‚‘mapcache_seed‘‘.</p>
-<p>Um sicherzustellen, dass die von der seeder-Anwendung erstellten Kacheln über das Webserverkonto zugänglich sind, fügen wir ‚‘sudo -u www-data‘‘ hinzu, bevor wir die Anwendung ‚‘mapcache_seed‘‘ ausführen.</p>
-<p>Im folgenden Beispiel geben wir drei Optionen an ‚‘mapcache_seed‘‘ weiter:</p>
+<p>Kartenkacheln werden dynamisch erstellt, wenn sie vom Webserver angefordert werden. Um die Anforderungszeiten zu beschleunigen, können wir Kacheln mithilfe einer Befehlszeilenanwendung generieren. Dieser Prozess wird als <em>seeding</em> bezeichnet. Die MapCache-Befehlszeilenanwendung für diese Aufgabe ist <code class="docutils literal"><span class="pre">mapcache_seed</span></code>.</p>
+<p>Um sicherzustellen, dass die von der seeder-Anwendung erstellten Kacheln über das Webserverkonto zugänglich sind, fügen wir <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">www-data</span></code> hinzu, bevor wir die Anwendung <code class="docutils literal"><span class="pre">mapcache_seed</span></code> ausführen.</p>
+<p>Im folgenden Beispiel geben wir drei Optionen an <code class="docutils literal"><span class="pre">mapcache_seed</span></code> weiter:</p>
 <ul class="simple">
-<li><em>config</em>: ‚‘/home/user/mapcache/mapcache-quickstart.xml‘‘ - Pfad zur MapCache-Konfigurationsdatei</li>
-<li><em>tileset</em>: ‚‘lakes‘‘ - dies ist der Name des Tilesets, das wir seeden werden. Sie finden es in der Datei ‚‘mapcache-quickstart.xml‘‘.</li>
-<li><em>zoom</em>: ‚‘0,5‘‘ - das ist der Bereich der Zoomstufen, die wir seeden wollen, von Zoomstufe 0 (die Ausdehnung der Welt in einer einzigen Kachel) bis zur Zoomstufe 5</li>
+<li><em>config</em>: <code class="docutils literal"><span class="pre">/home/user/mapcache/mapcache-quickstart.xml</span></code> - Pfad zur MapCache-Konfigurationsdatei</li>
+<li><em>tileset</em>: <code class="docutils literal"><span class="pre">lakes</span></code> - dies ist der Name des Tilesets, das wir seeden werden. Sie finden es in der Datei <code class="docutils literal"><span class="pre">mapcache-quickstart.xml</span></code>.</li>
+<li><em>zoom</em>: <code class="docutils literal"><span class="pre">0,5</span></code> - das ist der Bereich der Zoomstufen, die wir seeden wollen, von Zoomstufe 0 (die Ausdehnung der Welt in einer einzigen Kachel) bis zur Zoomstufe 5</li>
 </ul>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo -u www-data mapcache_seed --config /home/user/mapcache/mapcache-quickstart.xml --tileset lakes --zoom <span class="m">0</span>,5
 </pre></div>
 </div>
-<p>Die vielen anderen ‚‘mapcache_seed‘‘ Optionen finden Sie in der ‚Seeder-Dokumentation &lt;<a class="reference external" href="https://mapserver.org/mapcache/seed.html">https://mapserver.org/mapcache/seed.html</a>&gt;`_.</p>
+<p>Die vielen anderen <code class="docutils literal"><span class="pre">mapcache_seed</span></code> Optionen finden Sie in der <a class="reference external" href="https://mapserver.org/mapcache/seed.html">Seeder-Dokumentation</a>.</p>
 <img alt="../../_images/seeder.png" src="../../_images/seeder.png" />
 <p>Wenn Sie einen Cache-Ordner entfernen möchten, können Sie dies über den folgenden Befehl durchführen:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo rm -r /var/cache/mapcache/lakes

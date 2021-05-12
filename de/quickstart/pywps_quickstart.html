@@ -73,70 +73,51 @@
 <a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
 <div class="section" id="pywps-quickstart">
 <h1>PyWPS Quickstart<a class="headerlink" href="#pywps-quickstart" title="Link zu dieser Überschrift">¶</a></h1>
-<p>PyWPS is an OGC WPS (Web Processing Service 1.0.0) server implementation written
-in <a class="reference external" href="https://www.python.org">Python</a>.</p>
-<p>The PyWPS 4.0.0 library is installed by default on OSGeo-Live. This is a core
-library that is not intended to be executed directly, but rather to be used in the
-development of WPS services. An <a class="reference external" href="https://github.com/geopython/pywps-flask">example service</a>
-based on <a class="reference external" href="https://flask.palletsprojects.com">Flask</a> is available at
-GitHub to facilitate a first contact with PyWPS.</p>
-<p>This Quickstart describes how to:</p>
+<p>PyWPS ist eine OGC WPS (Web Processing Service 1.0.0) Server Implementierung, die in <a class="reference external" href="https://www.python.org">Python</a> geschrieben wurde.</p>
+<p>Die PyWPS 4.0.0-Bibliothek ist standardmäßig auf OSGeoLive installiert. Dies ist eine Kernbibliothek, die nicht direkt ausgeführt werden soll, sondern bei der Entwicklung von WPS-Diensten verwendet werden soll. Ein <a class="reference external" href="https://github.com/geopython/pywps-flask">Beispieldienst</a> basierend auf  <a class="reference external" href="https://flask.palletsprojects.com">Flask</a>  ist bei GitHub verfügbar, um einen ersten Kontakt mit PyWPS zu erleichtern.</p>
+<p>Diese Kurzanleitung beschreibt:</p>
 <ul class="simple">
-<li>Install and configure the pywps-flask example service</li>
-<li>Perform <code class="docutils literal"><span class="pre">GetCapabilities</span></code>, <code class="docutils literal"><span class="pre">DescribeProcess</span></code> and <code class="docutils literal"><span class="pre">Execute</span></code> requests</li>
-<li>Develop your own WPS processes</li>
+<li>Installiere und konfiguriere den pywps-flask-Beispiel-Service</li>
+<li>Führen Sie den <code class="docutils literal"><span class="pre">GetCapabilities</span></code>-, <code class="docutils literal"><span class="pre">DescribeProcess</span></code>- und <code class="docutils literal"><span class="pre">Execute</span></code>-Request durch.</li>
+<li>Entwickeln Sie Ihre eigenen WPS-Prozesse</li>
 </ul>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#installing-pywps-flask" id="id1">Installing pywps-flask</a></li>
-<li><a class="reference internal" href="#testing-available-processes" id="id2">Testing available processes</a></li>
-<li><a class="reference internal" href="#developing-wps-processes" id="id3">Developing WPS processes</a></li>
-<li><a class="reference internal" href="#what-s-next" id="id4">What’s next</a></li>
+<li><a class="reference internal" href="#installing-pywps-flask" id="id1">Installation von pywps-flask</a></li>
+<li><a class="reference internal" href="#testing-available-processes" id="id2">Testen Sie die verfügbaren Prozesse</a></li>
+<li><a class="reference internal" href="#developing-wps-processes" id="id3">Entwicklung von WPS-Prozessen</a></li>
+<li><a class="reference internal" href="#what-s-next" id="id4">Was kommt als nächstes</a></li>
 </ul>
 </div>
 <div class="section" id="installing-pywps-flask">
-<h2><a class="toc-backref" href="#id1">Installing pywps-flask</a><a class="headerlink" href="#installing-pywps-flask" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Since the example service depends on Flask, make sure it is installed on your
-OSGeo-Live:</p>
+<h2><a class="toc-backref" href="#id1">Installation von pywps-flask</a><a class="headerlink" href="#installing-pywps-flask" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Da der Beispieldienst von Flask abhängt, stellen Sie sicher, dass er auf Ihrem OSGeoLive installiert ist:</p>
 <p><cite>sudo apt install python-flask</cite></p>
-<p>Then clone the repository from GitHub:</p>
+<p>Klone dann das Repository von GitHub:</p>
 <p><cite>git clone https://github.com/geopython/pywps-flask.git</cite></p>
-<p>Now move into the repository folder and edit the configuration file. This can
-be done with a program like <cite>nano</cite>:</p>
+<p>Wechseln Sie nun in den Repository-Ordner, und bearbeiten Sie die Konfigurationsdatei. Dies kann mit einem Programm wie ‚nano‘ erfolgen:</p>
 <p><cite>nano pywps.cfg</cite></p>
-<p>The only critical thing to verify is the location of logging database.
-<cite>Pywps-flask</cite> provides a sample SQLite database that can be used for this
-purpose. Make sure the <cite>database</cite> setting reads like:</p>
+<p>Das einzige wichtige, zu überprüfende Thema ist der Speicherort der Protokollierungsdatenbank. ‚Pywps-flask‘ stellt eine SQLite-Beispieldatenbank bereit, die zu diesem Zweck verwendet werden kann. Stellen Sie sicher, dass sich die Einstellung „Datenbank“ wie folgt liest:</p>
 <p><cite>database=sqlite:////home/user/pywps-flask/logs/pywps-logs.sqlite3</cite></p>
-<p>Save the configuration file and exit <cite>nano</cite> you can now run the service:</p>
+<p>Speichern Sie die Konfigurationsdatei und beenden Sie ‚nano‘, sie können den Dienst jetzt ausführen:</p>
 <p><cite>python demo.py</cite></p>
-<p>If all goes well you will receive back a message like:</p>
-<p><cite>* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</cite></p>
+<p>Wenn alles gut geht, erhalten Sie eine Nachricht wie:</p>
+<p><cite>* Läuft unter http://127.0.0.1:5000/ (Beenden Sie den Dienst über CTRL+C)</cite></p>
 </div>
 <div class="section" id="testing-available-processes">
-<h2><a class="toc-backref" href="#id2">Testing available processes</a><a class="headerlink" href="#testing-available-processes" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Open a web browser and point it to the address where the example
-service is listening: <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> You will
-be presented with the following page:</p>
+<h2><a class="toc-backref" href="#id2">Testen Sie die verfügbaren Prozesse</a><a class="headerlink" href="#testing-available-processes" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Öffnen Sie einen Webbrowser, und zeigen Sie ihn auf die Adresse, an der der Beispieldienst lauscht: <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> Sie werden mit der folgenden Seite angezeigt:</p>
 <a class="reference internal image-reference" href="../../_images/pywps-4.0.0_example.png"><img alt="../../_images/pywps-4.0.0_example.png" src="../../_images/pywps-4.0.0_example.png" style="width: 1024.0px; height: 768.0px;" /></a>
-<p>Use the green buttons to explore the service. Issue a <cite>GetCapabilities</cite> request
-for an overview of the service; issue a <cite>DescribeProcess</cite> request to learn the
-details of a particular project. Note the request URL in the browser address.</p>
-<p>It is now time to test an <cite>Execute</cite> request. You can try the <cite>say_hello</cite>
-process, which is fairly simple. Direct your web browser to the following
-address:</p>
-<p><cite>http://localhost:5000/wps?service=WPS&amp;version=1.0.0&amp;request=Execute&amp;identifier=say_hello&amp;dataInputs=name=OSGeo-Live</cite></p>
-<p>The process simply replies back with a „Hello OSGeo“ message, encoded in a
-standard WPS response document. Your browser should be showing something like:</p>
+<p>Verwenden Sie die grünen Schaltflächen, um den Dienst zu erkunden. Stellen Sie eine „GetCapabilities“-Aufruf für eine Übersicht über den Dienst aus. Über den „DescribeProcess“-Aufruf können Sie Details eines bestimmten Projekts erhalten. Führen Sie die Reuquest-URLs im Browser aus.</p>
+<p>Es ist nun an der Zeit, einen ‚Execute‘-Aufruf zu testen. Sie können den „say_hello“-Prozess ausprobieren, der ziemlich einfach ist. Rufen Sie Ihren Webbrowser mit folgender Adresse auf:</p>
+<p>„<a class="reference external" href="http://localhost:5000/wps?service=WPS&amp;version=1.0.0&amp;request=Execute&amp;identifier=say_hello&amp;dataInputs=name=OSGeo-Live">http://localhost:5000/wps?service=WPS&amp;version=1.0.0&amp;request=Execute&amp;identifier=say_hello&amp;dataInputs=name=OSGeo-Live</a>“</p>
+<p>Der Prozess antwortet einfach mit einer „Hello OSGeo“-Meldung, die in einem Standard-WPS-Antwortdokument codiert ist. Ihr Browser sollte so etwas wie Folgendes anzeigen:</p>
 <a class="reference internal image-reference" href="../../_images/pywps-4.0.0_response.png"><img alt="../../_images/pywps-4.0.0_response.png" src="../../_images/pywps-4.0.0_response.png" style="width: 1024.0px; height: 768.0px;" /></a>
 </div>
 <div class="section" id="developing-wps-processes">
-<h2><a class="toc-backref" href="#id3">Developing WPS processes</a><a class="headerlink" href="#developing-wps-processes" title="Link zu dieser Überschrift">¶</a></h2>
-<p>To develop new processes all you need to do is create new Python modules
-inside the <cite>processes</cite> folder. Use the existing processes as templates to help
-you structure your code. A closer look at the <cite>say_hello</cite> process shows the
-main feature of a PyWPS process:</p>
+<h2><a class="toc-backref" href="#id3">Entwicklung von WPS-Prozessen</a><a class="headerlink" href="#developing-wps-processes" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um neue Prozesse zu entwickeln, müssen Sie lediglich neue Python-Module im Ordner „Prozesse“ erstellen. Verwenden Sie die vorhandenen Prozesse als Vorlagen, um den Code zu erstellen. Ein genauerer Blick auf den „say_hello“-Prozess zeigt das Hauptmerkmal eines PyWPS-Prozesses:</p>
 <p>1. Import the necessary assets and create a class inheriting from the PyWPS
 <cite>Process</cite> class. In the constructor create the necessary objects for inputs
 and outputs:</p>
@@ -150,7 +131,7 @@ and outputs:</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
-<li>Invoke the parent constructor, passing on the metadata of the process:</li>
+<li>Rufen Sie den übergeordneten Konstruktor auf und geben Sie die Metadaten des Prozesses weiter:</li>
 </ol>
 <div class="code highlight-default"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">(</span><span class="n">SayHello</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_handler</span><span class="p">,</span>
@@ -178,17 +159,12 @@ outputs.</p>
 </div>
 </div>
 <div class="section" id="what-s-next">
-<h2><a class="toc-backref" href="#id4">What’s next</a><a class="headerlink" href="#what-s-next" title="Link zu dieser Überschrift">¶</a></h2>
-<p>PyWPS gives you the freedom and flexibility to write your own Python processes and expose them
-accordingly.</p>
+<h2><a class="toc-backref" href="#id4">Was kommt als nächstes</a><a class="headerlink" href="#what-s-next" title="Link zu dieser Überschrift">¶</a></h2>
+<p>PyWPS gibt Ihnen die Freiheit und Flexibilität, Ihre eigenen Python-Prozesse zu schreiben und entsprechend verfügbar zu machen.</p>
 <ul class="simple">
-<li>Official documentation - For further information on PyWPS configuration and the API, consult the <a class="reference external" href="https://pywps.org/docs/">documentation</a> on the PyWPS website.</li>
-<li>Tutorial - Try out the <a class="reference external" href="https://github.com/PyWPS/pywps-workshop">workshop</a>, a tutorial used in workshops to introduce new users
-to PyWPS 4.</li>
-<li>Deployment to production -   The <cite>pywps-flask</cite> service is just an example and not designed for production.
-One possible alternative is a Django based service, <a class="reference external" href="https://github.com/jorgejesus/pywps-django">pywps-django</a>. The
-documentation provides further details on how to <a class="reference external" href="https://pywps.readthedocs.io/en/latest/deployment.html">set up a production service</a>
-with <a class="reference external" href="https://httpd.apache.org/">Apache</a> or <a class="reference external" href="https://nginx.org/">nginx</a> and <a class="reference external" href="https://gunicorn.org/">Gunicorn</a>.</li>
+<li>Offizielle Dokumentation – Weitere Informationen zur PyWPS-Konfiguration und der API finden Sie in der <a class="reference external" href="https://pywps.org/docs/">Dokumentation</a> auf der PyWPS-Website.</li>
+<li>Tutorial - Probieren Sie den <a class="reference external" href="https://github.com/PyWPS/pywps-workshop">workshop</a>, ein Tutorial, das in Workshops verwendet wird, um neue Benutzer an PyWPS 4 heranzuführen.</li>
+<li>Bereitstellung in der Produktion - Der „pywps-flask“-Dienst ist nur ein Beispiel und nicht für die Produktion konzipiert. Eine mögliche Alternative ist ein Django-basierter Dienst,  <a class="reference external" href="https://github.com/jorgejesus/pywps-django">pywps-django</a>. Die Dokumentation weitre Informaationen bereit wie ein <a class="reference external" href="https://pywps.readthedocs.io/en/latest/deployment.html">Dienst in Produktion</a> mit <a class="reference external" href="https://httpd.apache.org/">Apache</a> oder <a class="reference external" href="https://nginx.org/">nginx</a> und <a class="reference external" href="https://gunicorn.org/">Gunicorn</a> aufgebaut werden kann.</li>
 </ul>
 </div>
 </div>
