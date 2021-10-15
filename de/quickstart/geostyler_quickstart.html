@@ -106,7 +106,7 @@
 <div class="section" id="integrate-geostyler">
 <h2><a class="toc-backref" href="#id2">GeoStyler integrieren</a><a class="headerlink" href="#integrate-geostyler" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Importieren Sie die GeoStyler <code class="docutils literal"><span class="pre">Style</span></code> Komponente folgendermaßen in Ihre Anwendung:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Die <code class="docutils literal"><span class="pre">Style</span></code> Komponente stellt eine Vielzahl an Stylingfunktionalität bereit.</p>
@@ -122,8 +122,8 @@
 <div class="section" id="integrate-geostyler-sld-parser">
 <h2><a class="toc-backref" href="#id3">geostyler-sld-parser integrieren</a><a class="headerlink" href="#integrate-geostyler-sld-parser" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um ein bestehendes SLD mittels GeoStyler zu editieren, müssen wir zunächst den <code class="docutils literal"><span class="pre">geostyler-sld-parser</span></code> importieren und instanziieren.</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="k">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="kr">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Anschließend können wir ein existierendes SLD in das GeoStyler-lesbare Format überführen.</p>

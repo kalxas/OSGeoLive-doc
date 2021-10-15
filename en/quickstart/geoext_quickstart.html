@@ -137,29 +137,29 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 <div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">mapServerUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/cgi-bin/mapserv?map=/usr/local/www/docs_maps/mapserver_demos/itasca/itasca.map&amp;&#39;</span><span class="p">;</span>
 
-<span class="kd">var</span> <span class="nx">osmLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
-    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">(),</span>
+<span class="kd">var</span> <span class="nx">osmLayer</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">(),</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;OpenStreetMap&#39;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">wmsLayer1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
-    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">wmsLayer1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
         <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;ctybdpy2&#39;</span> <span class="p">}</span>
     <span class="p">}),</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;County Boundary&#39;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">wmsLayer2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
-    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">wmsLayer2</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
         <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;lakespy2&#39;</span> <span class="p">}</span>
     <span class="p">}),</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Lakes &amp; Rivers&#39;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">wmsLayer3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
-    <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">wmsLayer3</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Image</span><span class="p">({</span>
+    <span class="nx">source</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">ImageWMS</span><span class="p">({</span>
         <span class="nx">url</span><span class="o">:</span> <span class="nx">mapServerUrl</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="p">{</span> <span class="s1">&#39;LAYERS&#39;</span><span class="o">:</span> <span class="s1">&#39;majrdln3,majrdln3_anno&#39;</span> <span class="p">}</span>
     <span class="p">}),</span>
@@ -169,8 +169,8 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 </div>
 </li>
 <li><p class="first">Next we are going to add in a WFS vector layer - this is a little more complicated, but follows the same approach of creating a source and then a layer as the previous layers:</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
-    <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">(),</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">(),</span>
     <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">extent</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">mapServerUrl</span> <span class="o">+</span> <span class="s1">&#39;service=WFS&amp;&#39;</span> <span class="o">+</span>
             <span class="s1">&#39;version=1.1.0&amp;request=GetFeature&amp;typename=airports&amp;&#39;</span> <span class="o">+</span>
@@ -180,7 +180,7 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
     <span class="nx">strategy</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">loadingstrategy</span><span class="p">.</span><span class="nx">bbox</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
     <span class="nx">source</span><span class="o">:</span> <span class="nx">vectorSource</span><span class="p">,</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Airports&#39;</span>
 <span class="p">});</span>
@@ -189,17 +189,17 @@ We will be using the installed MapServer web services on OSGeoLive a MapServer t
 </li>
 <li><p class="first">Now we are going to create our OpenLayers map object configured with the layers we just created. We will also set the center
 and zoom level of the map, and add in a select interaction so we can select features in our vector layer.</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nb">Map</span><span class="p">({</span>
     <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
         <span class="nx">wmsLayer1</span><span class="p">,</span> <span class="nx">wmsLayer2</span><span class="p">,</span> <span class="nx">wmsLayer3</span><span class="p">,</span> <span class="nx">vectorLayer</span>
     <span class="p">],</span>
-    <span class="nx">view</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+    <span class="nx">view</span><span class="o">:</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
         <span class="nx">center</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">fromLonLat</span><span class="p">([</span><span class="o">-</span><span class="mf">93.33</span><span class="p">,</span> <span class="mf">47.32</span><span class="p">]),</span>
         <span class="nx">zoom</span><span class="o">:</span> <span class="mf">6</span>
     <span class="p">})</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">selectInteraction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">interaction</span><span class="p">.</span><span class="nx">Select</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">selectInteraction</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">interaction</span><span class="p">.</span><span class="nx">Select</span><span class="p">();</span>
 <span class="nx">map</span><span class="p">.</span><span class="nx">addInteraction</span><span class="p">(</span><span class="nx">selectInteraction</span><span class="p">);</span>
 </pre></div>
 </div>

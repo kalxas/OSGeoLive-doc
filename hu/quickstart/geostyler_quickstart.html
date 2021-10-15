@@ -106,7 +106,7 @@
 <div class="section" id="integrate-geostyler">
 <h2><a class="toc-backref" href="#id2">GeoStyler integráció</a><a class="headerlink" href="#integrate-geostyler" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Importálja a GeoStyler <cite>Style`</cite> komponensét az alkalmazásába a következők szerint:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>A <code class="docutils literal"><span class="pre">Style</span></code> komponens a stílus beállítás variációit biztosítja.</p>
@@ -122,8 +122,8 @@
 <div class="section" id="integrate-geostyler-sld-parser">
 <h2><a class="toc-backref" href="#id3">geostyler-sld-parser integrálása</a><a class="headerlink" href="#integrate-geostyler-sld-parser" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
 <p>Egy meglévő SLD GeoStylerrel szerkesztéséhez először importálni és példányosítani kell a „geostyler-sld-parser”-t.</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="k">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="kr">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Ezután be tudunk olvasni egy létező SLD a GeoStyler olvasható formátumba.</p>

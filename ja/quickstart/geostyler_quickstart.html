@@ -106,7 +106,7 @@
 <div class="section" id="integrate-geostyler">
 <h2><a class="toc-backref" href="#id2">GeoStylerを統合</a><a class="headerlink" href="#integrate-geostyler" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>GeoStyler <code class="docutils literal"><span class="pre">Style</span></code> コンポーネントを次のようにアプリケーションにインポートします:</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">Style</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;geostyler&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">Style</span></code> コンポーネントは、さまざまなスタイリング機能を提供します。</p>
@@ -122,8 +122,8 @@
 <div class="section" id="integrate-geostyler-sld-parser">
 <h2><a class="toc-backref" href="#id3">geostyler-sld-parserを統合</a><a class="headerlink" href="#integrate-geostyler-sld-parser" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>GeoStylerを使用して既存のSLDを編集するには、まず <code class="docutils literal"><span class="pre">geostyler-sld-parser</span></code> をインポートしてインスタンス化する必要があります。</p>
-<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="k">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nx">SLDParser</span> <span class="kr">from</span> <span class="s1">&#39;geostyler-sld-parser&#39;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">SLDParser</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>その後、既存のSLDをGeoStylerで読み取り可能な形式で読み込むことができます。</p>
