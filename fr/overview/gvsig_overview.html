@@ -1,0 +1,192 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gvSIG Desktop &#8212; OSGeoLive 14.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '14.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="gvSIG Desktop Quickstart" href="../quickstart/gvsig_quickstart.html" />
+    <link rel="prev" title="GRASS GIS Quickstart" href="../quickstart/grass_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gvsig.com/es"><img alt="../../_images/logo_gvsig.png" class="align-right" src="../../_images/logo_gvsig.png" /></a>
+<a class="reference external image-reference" href="https://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="gvsig-desktop">
+<h1>gvSIG Desktop<a class="headerlink" href="#gvsig-desktop" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="desktop-gis">
+<h2>SIG bureautique<a class="headerlink" href="#desktop-gis" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="http://www.gvsig.com/es">gvSIG</a> est une application bureautique SIG (Système d’Information Géographique) conçue pour saisir, stocker, manipuler, analyser et déployer toutes sortes d’information géographique afin de résoudre des problèmes de gestion complexe et d’aménagement. gvSIG est connu pour son interface facile à utiliser et est capable d’accéder à tous les formats communs vecteur et raster. Il offre une large gamme d’outils pour travailler avec de l’information géographique (requête, création de mise en page, géotraitements, réseaux, etc.), qui font de gvSIG un outil idéal pour les utilisateurs qui travaillent dans le domaine terrestre.</p>
+<p>gvSIG est connu pour:</p>
+<ul class="simple">
+<li>intégrer dans la même vue aussi bien des données locales qu’à distance grâce aux standards de l’OGC.</li>
+<li>être facilement étendu, permettant une amélioration continue de l’application, aussi bien que de permettre le développement de solutions sur mesure.</li>
+<li>être disponible dans plus de 20 langues (Espagnol, Anglais, Allemand, Français, Italien,…).</li>
+<li>être disponible sur Windows et Linux (il y a des aussi des versions de Mac OS X non officielles).</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/gvsig_screenshot.png"><img alt="gvsig screenshot" class="align-right" src="../../_images/gvsig_screenshot.png" style="width: 500px;" /></a>
+<div class="section" id="core-features">
+<h3>Caractéristiques principales<a class="headerlink" href="#core-features" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li>Fournit des outils de SIG courants tels le chargement de données, la navigation cartographique, les requêtes d’informations cartographiques tout comme alphanumériques, la mesure de distances, la cartographie thématique, l’édition de légende en utilisant les types de légende courants, l’étiquetage, la sélection d’entités par de nombreux types de sélection, les tables de données avec des statistiques, le tri, les relations entre, les liens entre tables, la gestion des mises en page, les outils de géotraitement, la DAO, le traitement raster etc.</li>
+<li>Interopérable, il est capable de travailler avec les formats de données les plus connus:<ul>
+<li>raster : ecw,  ENVI hdr, ERDAS img, (Geo)TIFF, GRASS, NetCDF…</li>
+<li>vecteur &amp; CAD: shapefile, NetCDF, GML, KML, DGN, DXF, DWG</li>
+<li>bases de données: PostGIS, MySQL, Oracle, ArcSDE</li>
+<li>distantes: standards OGC (WMS, WMTS, WFS, WCS), OSM, ECWP, ArcIMS</li>
+</ul>
+</li>
+<li>Client de services de recherche pour localiser des ressources de données dans une IDS ou Infrastructure de Données Spatiales (services de catalogage et d’indexation géographique)<ul>
+<li>Catalogues: Z3950, SRW, CSW (ISO/19115 et ebRIM)</li>
+<li>Index géographiques</li>
+</ul>
+</li>
+<li>Plus de 300 algorithmes spatiaux grâce la bibliothèque SEXTANTE</li>
+<li>Outils CAD avancés intégrés:<ul>
+<li>données vecteur: modification, création et suppression d’éléments</li>
+<li>console de commande d’éléments type dans les logiciels de CAD</li>
+<li>outils comme l’aide, la grille, enchaînement de commandes, sélections d’éléments complexes</li>
+<li>outils pour l’insertion d’éléments comme des points, des polygones, des lignes, des ellipses, etc…</li>
+<li>outils pour modifier la rotation, la symétrie,…</li>
+</ul>
+</li>
+<li>Outils raster avancés intégrés:<ul>
+<li>géoréférencement et reprojection</li>
+<li>exportation, découpage</li>
+<li>légendes, histogrammes</li>
+<li>filtres, vectorisation</li>
+<li>vues d’ensembles et gestion de régions d’intérêt</li>
+</ul>
+</li>
+<li>Vue 3D</li>
+<li>Autres fonctionnalités:<ul>
+<li>Support du scripting (à la fois pour les données vecteur et raster)</li>
+<li>Outil de reprojection puissant avec PROJ4</li>
+<li>Import/export de jeux de symboles</li>
+<li>Composition de feuilles de carte</li>
+<li>Diagrammes</li>
+<li>Outils de symbologie avancés</li>
+<li>Outils d’étiquetage avancés</li>
+<li>Extension de publication</li>
+<li>Vues portables</li>
+<li>Distributions personnalisées</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Standards implémentés<a class="headerlink" href="#implemented-standards" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Support avancé comme client de nombreux standards de l’Open Geospatial Consortium (OGC)</p>
+<ul class="simple">
+<li>Chargement de couches WMS, WMTS, WFS et WCS</li>
+<li>Export/import de légendes SLD</li>
+<li>Export/import de Web Map Context (WMC)</li>
+<li>Recherches dans des catalogues avec CSW (ISO/19115 et ebRIM)</li>
+<li>Recherche sur des services d’index géographiques utilisant la recommandation WFS-G</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Lien permanent vers ce titre">¶</a></h3>
+<p><strong>Site Internet:</strong> <a class="reference external" href="http://www.gvsig.com/es">http://www.gvsig.com/es</a></p>
+<p><strong>Licence:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Version du logiciel:</strong> 2.4.0</p>
+<p><strong>Plates-formes supportées:</strong> Windows, Linux</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://www.gvsig.com/en/gvsig-association">http://www.gvsig.com/en/gvsig-association</a>, <a class="reference external" href="http://www.gvsig.com/en/community/mailing-lists">http://www.gvsig.com/en/community/mailing-lists</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ce projet n’est inclus que sur le disque de machine virtuelle OSGeoLive (VMDK)</p>
+</div>
+</div>
+<div class="section" id="quickstart">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#quickstart" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gvsig_quickstart.html"><span class="doc">Documentation du guide de démarrage rapide</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>
